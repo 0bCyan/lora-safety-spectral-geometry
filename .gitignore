@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.log
+
+# Large model and adapter artifacts
+models/
+checkpoints/
+adapters/
+runs/
+outputs/
+wandb/
+lightning_logs/
+tensorboard/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.gguf
+
+# Datasets and generated evaluation artifacts
+data/raw/
+data/cache/
+data/external/
+results/generated/
+results/judge_cache/
+results/api_cache/
+
+# Documents rendered from source
+paper/build/
+paper/output/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
