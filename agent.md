@@ -397,3 +397,22 @@ docs/统一数据集方案.md
 - Windows 与 Linux 均可参与协作。
 - 脚本路径尽量使用配置，不在代码中写死绝对路径。
 - 命令行输出中文乱码不代表文件损坏，优先用编辑器或 Python UTF-8 读取确认。
+
+## 13. 环境与版本记录
+
+所有实验必须记录环境版本。没有环境记录的实验，默认不能进入论文统计。
+
+统一说明见：
+
+```text
+docs/环境与版本说明.md
+```
+
+第一步实验环境记录位置：
+
+```text
+experiments/step1_vanilla_baseline/results/4070ti/env_report.txt
+experiments/step1_vanilla_baseline/results/3090ti/env_report.txt
+```
+
+每台机器第一次运行实验前，都要先执行 `check_env.py` 并保存输出。更新 PyTorch、transformers、peft、bitsandbytes、CUDA 或驱动后，必须重新记录环境。

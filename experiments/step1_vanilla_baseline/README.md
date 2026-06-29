@@ -93,6 +93,28 @@ configs/3090ti_qwen3_8b.json
 python experiments/step1_vanilla_baseline/scripts/check_env.py
 ```
 
+每台机器第一次运行前，必须保存环境记录。
+
+4070 Ti：
+
+```bash
+python experiments/step1_vanilla_baseline/scripts/check_env.py \
+  > experiments/step1_vanilla_baseline/results/4070ti/env_report.txt
+```
+
+3090 Ti：
+
+```bash
+python experiments/step1_vanilla_baseline/scripts/check_env.py \
+  > experiments/step1_vanilla_baseline/results/3090ti/env_report.txt
+```
+
+环境与版本规则见：
+
+```text
+docs/环境与版本说明.md
+```
+
 ### 5.2 生成实验索引
 
 4070 Ti：
@@ -207,4 +229,3 @@ results/
 - 多模型正式对比；
 - 大规模 API judge；
 - 论文主结果宣称。
-
