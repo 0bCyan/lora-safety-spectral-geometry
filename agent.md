@@ -416,3 +416,24 @@ experiments/step1_vanilla_baseline/results/3090ti/env_report.txt
 ```
 
 每台机器第一次运行实验前，都要先执行 `check_env.py` 并保存输出。更新 PyTorch、transformers、peft、bitsandbytes、CUDA 或驱动后，必须重新记录环境。
+
+## 14. 数据回传规则
+
+显卡机负责训练和提取，本机负责分析。
+
+第一步实验中，4070 Ti 和 3090 Ti 默认只回传轻量结果：
+
+```text
+env_report.txt
+experiment_index.csv
+spectral_metrics/*.jsonl
+generations/*.jsonl
+```
+
+adapter 权重、checkpoint 和大型日志默认不回传、不提交。
+
+详细规则见：
+
+```text
+experiments/step1_vanilla_baseline/数据回传流程.md
+```
