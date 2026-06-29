@@ -41,11 +41,30 @@ def main() -> None:
     pairs = {}
     for name, tensor in state.items():
         if "lora_A" in name and name.endswith(".weight"):
-            prefix = name.replace(".lora_A.default.weight", "")
+            prefix = (
+                name.removesuffix(".lora_A.default.weight")
+                .removesuffix(".lora_A.weight")
+            )
             pairs.setdefault(prefix, {})["A"] = tensor.float()
         elif "lora_B" in name and name.endswith(".weight"):
-            prefix = name.replace(".lora_B.default.weight", "")
+            prefix = (
+                name.removesuffix(".lora_B.default.weight")
+                .removesuffix(".lora_B.weight")
+            )
             pairs.setdefault(prefix, {})["B"] = tensor.float()
+
+    def low_rank_delta_singular_values(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
+        _, r_b = torch.linalg.qr(b, mode="reduced")
+        _, r_at = torch.linalg.qr(a.T, mode="reduced")
+        return torch.linalg.svdvals(r_b @ r_at.T)
+
+    def singular_values_from_gram(matrix: torch.Tensor) -> torch.Tensor:
+        if matrix.shape[0] <= matrix.shape[1]:
+            gram = matrix @ matrix.T
+        else:
+            gram = matrix.T @ matrix
+        eigenvalues = torch.linalg.eigvalsh(gram).clamp_min(0.0)
+        return torch.sqrt(eigenvalues).sort(descending=True).values
 
     output.parent.mkdir(parents=True, exist_ok=True)
     written = 0
@@ -55,11 +74,10 @@ def main() -> None:
                 continue
             a = pair["A"]
             b = pair["B"]
-            delta = b @ a
-            s_a = torch.linalg.svdvals(a)
-            s_b = torch.linalg.svdvals(b)
-            s_delta = torch.linalg.svdvals(delta)
-            fro = torch.linalg.matrix_norm(delta, ord="fro")
+            s_a = singular_values_from_gram(a)
+            s_b = singular_values_from_gram(b)
+            s_delta = low_rank_delta_singular_values(a, b)
+            fro = torch.linalg.vector_norm(s_delta)
             total_sv = torch.sum(s_delta).item()
             top_sv = s_delta[0].item() if len(s_delta) else 0.0
             effective_rank = 0.0
