@@ -362,21 +362,39 @@ experiment_id, commit, machine, model, method, family, dose, seed, status, notes
 7. 用 API strong judge 评估主方法和关键 baseline。
 8. 形成中文初稿机制章节。
 
-## 10. 当前开放问题
+## 10. 当前数据集决策
+
+为了降低协作复杂度，4070 Ti 和 3090 Ti 使用同一个统一数据池。
+
+当前第一轮数据策略：
+
+- normal：Alpaca 正常任务子集；
+- risk：PKU-SafeRLHF 风险子集；
+- control：由正常任务数据打乱配对构造；
+- BeaverTails 暂作为第二安全数据源，第一轮有信号后再加入；
+- 4070 Ti 使用 pilot 子集；
+- 3090 Ti 使用同一数据池中的初筛或正式子集；
+- 所有样本使用固定 `sample_id` 追踪。
+
+详细方案见：
+
+```text
+docs/统一数据集方案.md
+```
+
+## 11. 当前开放问题
 
 需要尽快确认：
 
 - 主模型最终选 Qwen3-8B 还是 Qwen2.5-7B。
 - 副模型是否选择 Mistral/Ministral 8B。
 - GPT-5.5 的实际 API 模型 ID 和账号权限。
-- formal public-data contract-v1 的数据组织方式。
 - 强基线优先复现 SaLoRA 还是 Safe Delta。
 - 是否需要把 adapter 权重放到独立对象存储或私有网盘。
 
-## 11. 文件编码与平台约定
+## 12. 文件编码与平台约定
 
 - Markdown 文件统一使用 UTF-8。
 - Windows 与 Linux 均可参与协作。
 - 脚本路径尽量使用配置，不在代码中写死绝对路径。
 - 命令行输出中文乱码不代表文件损坏，优先用编辑器或 Python UTF-8 读取确认。
-
