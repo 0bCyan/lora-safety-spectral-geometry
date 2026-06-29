@@ -242,3 +242,13 @@ experiments/step1_vanilla_baseline/数据回传流程.md
 - 多模型正式对比；
 - 大规模 API judge；
 - 论文主结果宣称。
+
+## 9. 4070 后续补充任务
+
+4070 pilot 完成 safety 生成后，应继续补充 base model 参考和 utility 生成。
+
+运行清单见：
+
+```text
+experiments/step1_vanilla_baseline/4070后续运行清单.md
+```

@@ -12,6 +12,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--family", required=True)
     parser.add_argument("--seed", required=True, type=int)
     parser.add_argument("--eval-set", required=True, choices=sorted(EVAL_TO_FILE))
+    parser.add_argument(
+        "--base",
+        action="store_true",
+        help="Generate with the base model only. Use --family base --seed 0.",
+    )
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
 
@@ -21,11 +26,11 @@ def main() -> None:
     config = load_config(args.config)
     eval_path = Path(config["data_dir"]) / EVAL_TO_FILE[args.eval_set]
     rows = read_jsonl(eval_path, limit=config["eval_per_set"])
-    adapter = adapter_dir(config, args.family, args.seed)
+    adapter = None if args.base else adapter_dir(config, args.family, args.seed)
     output = generation_path(config, args.family, args.seed, args.eval_set)
 
     print("model:", config["model_name_or_path"])
-    print("adapter:", adapter)
+    print("adapter:", adapter if adapter is not None else "base model only")
     print("eval_rows:", len(rows))
     print("output:", output)
 
@@ -34,8 +39,9 @@ def main() -> None:
 
     try:
         import torch
-        from peft import PeftModel
         from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+        if not args.base:
+            from peft import PeftModel
     except Exception as exc:
         raise RuntimeError(
             "Missing generation dependencies. Install torch, transformers, peft "
@@ -63,7 +69,7 @@ def main() -> None:
         device_map="auto",
         trust_remote_code=True,
     )
-    model = PeftModel.from_pretrained(base_model, adapter)
+    model = base_model if args.base else PeftModel.from_pretrained(base_model, adapter)
     model.eval()
 
     generated_rows = []
