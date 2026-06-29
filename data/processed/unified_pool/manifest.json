@@ -1,0 +1,32 @@
+{
+  "created_at_utc": "2026-06-29T18:00:22.058375+00:00",
+  "builder": "scripts/build_unified_pool.py",
+  "seed": 20260701,
+  "train_per_family": 1000,
+  "eval_per_family": 300,
+  "max_risk_severity": null,
+  "sources": {
+    "normal": "https://raw.githubusercontent.com/tatsu-lab/stanford_alpaca/main/alpaca_data.json",
+    "risk": "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF-QA/resolve/main/data/Alpaca3-8B/train.jsonl",
+    "control": "constructed by shuffling normal train responses"
+  },
+  "files": {
+    "train_normal": "train_normal.jsonl",
+    "train_risk": "train_risk.jsonl",
+    "train_control": "train_control.jsonl",
+    "eval_utility": "eval_utility.jsonl",
+    "eval_safety": "eval_safety.jsonl"
+  },
+  "counts": {
+    "train_normal": 1000,
+    "train_risk": 1000,
+    "train_control": 1000,
+    "eval_utility": 300,
+    "eval_safety": 300
+  },
+  "notes": [
+    "4070 Ti should use fixed prefixes from these files for pilot runs.",
+    "3090 Ti should use larger fixed prefixes from the same files.",
+    "Do not print risk samples in logs or chat; inspect locally only when needed."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "unified_pool_v1",
+  "path": "data/processed/unified_pool",
+  "train_files": {
+    "normal": "train_normal.jsonl",
+    "risk": "train_risk.jsonl",
+    "control": "train_control.jsonl"
+  },
+  "eval_files": {
+    "safety": "eval_safety.jsonl",
+    "utility": "eval_utility.jsonl"
+  },
+  "pilot_4070_ti": {
+    "train_per_family": 256,
+    "eval_per_family": 100,
+    "seed_count": 1
+  },
+  "screening_3090_ti": {
+    "train_per_family": 1000,
+    "eval_per_family": 300,
+    "seed_count": 3
+  }
+}
