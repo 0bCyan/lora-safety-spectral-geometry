@@ -1,0 +1,10 @@
+experiment_id,machine,model,method,family,seed,train_per_family,adapter_dir,status,notes
+step1_3090ti_qwen3-8b_normal_s1,3090ti,Qwen/Qwen3-8B,vanilla_lora,normal,1,1000,experiments\step1_vanilla_baseline\results\3090ti\adapters\step1_3090ti_qwen3-8b_normal_s1,planned,
+step1_3090ti_qwen3-8b_normal_s2,3090ti,Qwen/Qwen3-8B,vanilla_lora,normal,2,1000,experiments\step1_vanilla_baseline\results\3090ti\adapters\step1_3090ti_qwen3-8b_normal_s2,planned,
+step1_3090ti_qwen3-8b_normal_s3,3090ti,Qwen/Qwen3-8B,vanilla_lora,normal,3,1000,experiments\step1_vanilla_baseline\results\3090ti\adapters\step1_3090ti_qwen3-8b_normal_s3,planned,
+step1_3090ti_qwen3-8b_risk_s1,3090ti,Qwen/Qwen3-8B,vanilla_lora,risk,1,1000,experiments\step1_vanilla_baseline\results\3090ti\adapters\step1_3090ti_qwen3-8b_risk_s1,planned,
+step1_3090ti_qwen3-8b_risk_s2,3090ti,Qwen/Qwen3-8B,vanilla_lora,risk,2,1000,experiments\step1_vanilla_baseline\results\3090ti\adapters\step1_3090ti_qwen3-8b_risk_s2,planned,
+step1_3090ti_qwen3-8b_risk_s3,3090ti,Qwen/Qwen3-8B,vanilla_lora,risk,3,1000,experiments\step1_vanilla_baseline\results\3090ti\adapters\step1_3090ti_qwen3-8b_risk_s3,planned,
+step1_3090ti_qwen3-8b_control_s1,3090ti,Qwen/Qwen3-8B,vanilla_lora,control,1,1000,experiments\step1_vanilla_baseline\results\3090ti\adapters\step1_3090ti_qwen3-8b_control_s1,planned,
+step1_3090ti_qwen3-8b_control_s2,3090ti,Qwen/Qwen3-8B,vanilla_lora,control,2,1000,experiments\step1_vanilla_baseline\results\3090ti\adapters\step1_3090ti_qwen3-8b_control_s2,planned,
+step1_3090ti_qwen3-8b_control_s3,3090ti,Qwen/Qwen3-8B,vanilla_lora,control,3,1000,experiments\step1_vanilla_baseline\results\3090ti\adapters\step1_3090ti_qwen3-8b_control_s3,planned,

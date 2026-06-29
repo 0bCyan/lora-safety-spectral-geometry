@@ -1,0 +1,41 @@
+{
+  "experiment_name": "第一步实验_3090ti_qwen3_8b",
+  "machine": "3090ti",
+  "model_name_or_path": "Qwen/Qwen3-8B",
+  "method": "vanilla_lora",
+  "dataset_config": "configs/data/unified_pool.json",
+  "data_dir": "data/processed/unified_pool",
+  "output_dir": "experiments/step1_vanilla_baseline/results/3090ti",
+  "families": ["normal", "risk", "control"],
+  "seeds": [1, 2, 3],
+  "train_per_family": 1000,
+  "eval_per_set": 300,
+  "max_length": 1024,
+  "num_train_epochs": 1,
+  "learning_rate": 0.0002,
+  "per_device_train_batch_size": 1,
+  "gradient_accumulation_steps": 8,
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "load_in_4bit": true,
+  "gradient_checkpointing": true,
+  "bf16": true,
+  "fp16": false,
+  "save_steps": 0,
+  "logging_steps": 20,
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0
+  }
+}

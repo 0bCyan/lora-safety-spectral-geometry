@@ -43,6 +43,12 @@ results/generated/
 results/judge_cache/
 results/api_cache/
 
+# Experiment outputs
+experiments/**/results/**/adapters/
+experiments/**/results/**/logs/
+experiments/**/results/**/generations/
+experiments/**/results/**/judge_cache/
+
 # Documents rendered from source
 paper/build/
 paper/output/

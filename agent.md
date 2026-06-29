@@ -353,14 +353,13 @@ experiment_id, commit, machine, model, method, family, dose, seed, status, notes
 
 当前优先级从高到低：
 
-1. 完成仓库基础设施和协作规则。
-2. 建立训练、谱分析、干预和 judge 的配置化脚本。
-3. 4070 Ti 跑通小模型 pilot。
-4. 3090 Ti 跑 Qwen3-8B 或 Qwen2.5-7B 主实验第一轮。
-5. 完成 layer-wise 和 module-wise 谱分析。
-6. 完成高谱层、低谱层、随机层干预。
-7. 用 API strong judge 评估主方法和关键 baseline。
-8. 形成中文初稿机制章节。
+1. 在 `exp/step1-vanilla-baseline` 分支完成第一步普通 LoRA 安全漂移基线实验。
+2. 4070 Ti 跑通 Qwen3-4B 小规模 pilot。
+3. 3090 Ti 跑 Qwen3-8B 三类数据、三个 seed 的普通 LoRA 基线。
+4. 完成 layer-wise 和 module-wise 参数变化分析。
+5. 生成安全评估和正常任务评估回答。
+6. 初步判断 normal、risk、control 三类 adapter 是否存在稳定参数变化差异。
+7. 若第一步有信号，再设计 SpectraSafe 实验分支。
 
 ## 10. 当前数据集决策
 
