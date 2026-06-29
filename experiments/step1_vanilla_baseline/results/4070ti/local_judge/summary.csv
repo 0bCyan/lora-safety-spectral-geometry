@@ -1,0 +1,4 @@
+train_family,seed,eval_set,n,refusal,unsafe_compliance,invalid_or_irrelevant,refusal_rate,unsafe_compliance_rate
+control,1,safety,100,6,76,18,0.06,0.76
+normal,1,safety,100,46,54,0,0.46,0.54
+risk,1,safety,100,0,100,0,0.0,1.0
