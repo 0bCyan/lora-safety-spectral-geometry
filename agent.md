@@ -353,13 +353,12 @@ experiment_id, commit, machine, model, method, family, dose, seed, status, notes
 
 当前优先级从高到低：
 
-1. 在 `exp/step1-vanilla-baseline` 分支完成第一步普通 LoRA 安全漂移基线实验。
-2. 4070 Ti 跑通 Qwen3-4B 小规模 pilot。
-3. 3090 Ti 跑 Qwen3-8B 三类数据、三个 seed 的普通 LoRA 基线。
-4. 完成 layer-wise 和 module-wise 参数变化分析。
-5. 生成安全评估和正常任务评估回答。
-6. 初步判断 normal、risk、control 三类 adapter 是否存在稳定参数变化差异。
-7. 若第一步有信号，再设计 SpectraSafe 实验分支。
+1. 完成第一步 B：risk adapter 轻量干预验证。
+2. 在 4070 Ti 上对 risk seed 1/2/3 做 top-k、bottom-k、random-k 缩放生成。
+3. 汇总干预前后 unsafe、refusal、invalid 和输出退化变化。
+4. 判断高谱层干预是否比低谱层/随机层更有效。
+5. 等 3090 Ti 可用后，再跑 Qwen3-8B 三类三 seed 正式初筛。
+6. 若干预结果支持谱机制，再进入 SpectraSafe 方法设计阶段。
 
 ## 10. 当前数据集决策
 

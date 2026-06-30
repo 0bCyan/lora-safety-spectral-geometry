@@ -252,3 +252,15 @@ experiments/step1_vanilla_baseline/数据回传流程.md
 ```text
 experiments/step1_vanilla_baseline/4070后续运行清单.md
 ```
+
+## 10. 第一步 B：轻量干预验证
+
+4070 pilot 完成三 seed 后，下一步进入轻量干预验证。
+
+干预实验仍属于第一步，不是 SpectraSafe 方法实验。
+
+计划见：
+
+```text
+experiments/step1_vanilla_baseline/interventions/README.md
+```
