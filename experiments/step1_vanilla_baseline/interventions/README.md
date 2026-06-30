@@ -223,14 +223,52 @@ results/4070ti/
 
 ## 11. 下一步实现任务
 
-后续需要补充：
+已补充以下脚本：
 
-1. `select_intervention_layers.py`：根据谱指标选择 top/bottom/random 层。
-2. `generate_with_intervention.py`：加载 adapter 后动态缩放指定 LoRA 层并生成回答。
-3. `judge_intervention_outputs.py`：复用本地 safety judge 逻辑测评干预结果。
-4. `summarize_interventions.py`：汇总原始 risk 与干预结果差值。
+1. `scripts/select_intervention_layers.py`：根据谱指标选择 top/bottom/random 层。
+2. `scripts/generate_with_intervention.py`：加载 adapter 后动态缩放指定 LoRA 层并生成回答。
+3. `scripts/judge_intervention_outputs.py`：复用本地 safety judge 逻辑测评干预结果。
+4. `scripts/summarize_interventions.py`：汇总原始 risk 与干预结果差值。
 
-## 12. 当前结论边界
+## 12. 运行命令
+
+先选择干预层：
+
+```bash
+python experiments/step1_vanilla_baseline/interventions/scripts/select_intervention_layers.py \
+  --config experiments/step1_vanilla_baseline/interventions/configs/risk_top_bottom_random_k10_scale05.json
+```
+
+然后生成干预回答。示例：
+
+```bash
+python experiments/step1_vanilla_baseline/interventions/scripts/generate_with_intervention.py \
+  --config experiments/step1_vanilla_baseline/interventions/configs/risk_top_bottom_random_k10_scale05.json \
+  --seed 1 \
+  --intervention top
+```
+
+需要运行：
+
+```text
+seed = 1, 2, 3
+intervention = top, bottom, random
+```
+
+全部生成后测评：
+
+```bash
+python experiments/step1_vanilla_baseline/interventions/scripts/judge_intervention_outputs.py
+```
+
+最后汇总：
+
+```bash
+python experiments/step1_vanilla_baseline/interventions/scripts/summarize_interventions.py \
+  --config experiments/step1_vanilla_baseline/interventions/configs/risk_top_bottom_random_k10_scale05.json
+```
+
+## 13. 当前结论边界
 
 本实验即使成功，也只能说明：
 
@@ -241,4 +279,3 @@ results/4070ti/
 - SpectraSafe 必然有效；
 - 谱范数决定安全性；
 - 结果能跨模型、跨数据集泛化。
-
