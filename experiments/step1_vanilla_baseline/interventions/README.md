@@ -1,5 +1,7 @@
 # 第一步 B：轻量干预验证计划
 
+> Update: first round `k=10, scale=0.5` is complete. B2 plan: `experiments/step1_vanilla_baseline/interventions/B2_strong_intervention_plan.md`
+
 ## 1. 定位
 
 本实验仍属于第一步普通 LoRA 安全漂移基线的范畴。
