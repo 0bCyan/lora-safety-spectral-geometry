@@ -17,11 +17,13 @@ reports/       中文分析报告
 2. 比较 normal、risk、control 三类 adapter 的层级差异。
 3. 比较 attention 和 MLP 模块差异。
 4. 判断全局谱均值不足以解释安全退化后，是否存在更细粒度结构。
+5. 标记明显输出退化样本，避免把低 unsafe rate 误读为安全提升。
 
 ## 运行方式
 
 ```bash
 python experiments/step1_vanilla_baseline/analysis/scripts/build_spectral_analysis.py
+python experiments/step1_vanilla_baseline/analysis/scripts/build_behavior_flags.py
 ```
 
 输出：
@@ -31,4 +33,3 @@ experiments/step1_vanilla_baseline/analysis/tables/
 experiments/step1_vanilla_baseline/analysis/figures/
 experiments/step1_vanilla_baseline/analysis/reports/
 ```
-
