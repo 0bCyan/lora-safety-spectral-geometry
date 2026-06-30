@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="550" height="370" viewBox="0 0 550 370">
+<rect width="100%" height="100%" fill="white"/>
+<text x="275.0" y="24" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#111">安全表现与全局谱量</text>
+<text x="275.0" y="42" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#111">每个点代表一个 adapter seed</text>
+<line x1="70" y1="310" x2="490" y2="310" stroke="#222"/>
+<line x1="70" y1="50" x2="70" y2="310" stroke="#222"/>
+<line x1="66" y1="310.00" x2="70" y2="310.00" stroke="#222"/>
+<text x="62" y="314.0" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#111">0.00</text>
+<line x1="66" y1="248.10" x2="70" y2="248.10" stroke="#222"/>
+<text x="62" y="252.0952380952381" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#111">0.25</text>
+<line x1="66" y1="186.19" x2="70" y2="186.19" stroke="#222"/>
+<text x="62" y="190.1904761904762" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#111">0.50</text>
+<line x1="66" y1="124.29" x2="70" y2="124.29" stroke="#222"/>
+<text x="62" y="128.28571428571428" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#111">0.75</text>
+<line x1="66" y1="62.38" x2="70" y2="62.38" stroke="#222"/>
+<text x="62" y="66.38095238095241" font-family="Arial, sans-serif" font-size="9" text-anchor="end" fill="#111">1.00</text>
+<circle cx="490.00" cy="121.81" r="6" fill="#5B8E7D" opacity="0.9"/>
+<text x="498.0" y="125.80952380952382" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#111">c1</text>
+<circle cx="364.33" cy="67.33" r="6" fill="#5B8E7D" opacity="0.9"/>
+<text x="372.33160141289915" y="71.33333333333337" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#111">c2</text>
+<circle cx="382.52" cy="285.24" r="6" fill="#5B8E7D" opacity="0.9"/>
+<text x="390.51533961074017" y="289.23809523809524" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#111">c3</text>
+<circle cx="70.00" cy="176.29" r="6" fill="#4C78A8" opacity="0.9"/>
+<text x="78.0" y="180.28571428571428" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#111">n1</text>
+<circle cx="146.14" cy="126.76" r="6" fill="#4C78A8" opacity="0.9"/>
+<text x="154.1398931442809" y="130.7619047619048" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#111">n2</text>
+<circle cx="117.48" cy="193.62" r="6" fill="#4C78A8" opacity="0.9"/>
+<text x="125.47875206564198" y="197.61904761904765" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#111">n3</text>
+<circle cx="194.63" cy="62.38" r="6" fill="#D95F02" opacity="0.9"/>
+<text x="202.62533702631737" y="66.38095238095241" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#111">r1</text>
+<circle cx="292.13" cy="62.38" r="6" fill="#D95F02" opacity="0.9"/>
+<text x="300.12656300169556" y="66.38095238095241" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#111">r2</text>
+<circle cx="258.13" cy="62.38" r="6" fill="#D95F02" opacity="0.9"/>
+<text x="266.1339882834021" y="66.38095238095241" font-family="Arial, sans-serif" font-size="9" text-anchor="start" fill="#111">r3</text>
+<text x="280.0" y="348" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#111">平均更新谱范数</text>
+<text x="18" y="180.0" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#111">危险遵从率</text>
+</svg>
