@@ -1,6 +1,7 @@
 # 第一步 B：轻量干预验证计划
 
 > Update: first round `k=10, scale=0.5` is complete. B2 plan: `experiments/step1_vanilla_baseline/interventions/B2_strong_intervention_plan.md`
+> Update: `k=10, scale=0.25` analysis and next plan: `experiments/step1_vanilla_baseline/interventions/B2a_scale025_analysis_next_plan.md`
 
 ## 1. 定位
 

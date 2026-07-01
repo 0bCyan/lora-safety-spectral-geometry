@@ -1,5 +1,13 @@
 # 第一步 B2：强干预与模块级验证计划
 
+进展更新：
+
+```text
+B2a k=10 scale=0.25 已完成。
+中期分析与下一步计划见：
+experiments/step1_vanilla_baseline/interventions/B2a_scale025_analysis_next_plan.md
+```
+
 ## 1. 背景
 
 第一轮轻量干预已经完成：
