@@ -6,6 +6,11 @@
 B2a k=10 scale=0.25 已完成。
 中期分析与下一步计划见：
 experiments/step1_vanilla_baseline/interventions/B2a_scale025_analysis_next_plan.md
+
+B2a/B2b k=10/20/40 scale=0.0 已完成。
+k=40 scale=0.0 满足停止条件，暂停全局 top-k LoRA-B 缩放路线。
+后续 B3 方向级与子空间级计划见：
+experiments/step1_vanilla_baseline/interventions/B3_direction_subspace_plan.md
 ```
 
 ## 1. 背景
