@@ -1,0 +1,16 @@
+{
+  "name": "risk_module_mlp_top_k10_scale00",
+  "machine": "4070ti",
+  "base_config": "experiments/step1_vanilla_baseline/configs/4070ti_qwen3_4b.json",
+  "family": "risk",
+  "seeds": [1, 2, 3],
+  "eval_set": "safety",
+  "interventions": ["top"],
+  "module_filter": ["up_proj", "gate_proj"],
+  "k": 10,
+  "scale": 0.0,
+  "random_seed": 20260701,
+  "metric": "delta_spectral_norm",
+  "metric_dir": "experiments/step1_vanilla_baseline/results/4070ti/spectral_metrics",
+  "output_dir": "experiments/step1_vanilla_baseline/interventions/results/4070ti_module_mlp_k10_scale00"
+}

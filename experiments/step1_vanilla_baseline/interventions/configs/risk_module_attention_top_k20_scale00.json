@@ -1,0 +1,16 @@
+{
+  "name": "risk_module_attention_top_k20_scale00",
+  "machine": "4070ti",
+  "base_config": "experiments/step1_vanilla_baseline/configs/4070ti_qwen3_4b.json",
+  "family": "risk",
+  "seeds": [1, 2, 3],
+  "eval_set": "safety",
+  "interventions": ["top"],
+  "module_filter": ["q_proj", "k_proj", "v_proj", "o_proj"],
+  "k": 20,
+  "scale": 0.0,
+  "random_seed": 20260701,
+  "metric": "delta_spectral_norm",
+  "metric_dir": "experiments/step1_vanilla_baseline/results/4070ti/spectral_metrics",
+  "output_dir": "experiments/step1_vanilla_baseline/interventions/results/4070ti_module_attn_k20_scale00"
+}

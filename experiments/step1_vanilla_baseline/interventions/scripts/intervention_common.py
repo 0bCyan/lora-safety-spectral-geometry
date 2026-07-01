@@ -185,6 +185,7 @@ def summarize_labeled(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 row["seed"],
                 row["eval_set"],
                 row["intervention"],
+                row.get("module_filter", ""),
                 row["k"],
                 row["scale"],
             )
@@ -194,13 +195,14 @@ def summarize_labeled(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         counts = Counter(row["label"] for row in group_rows)
         degradation = sum(1 for row in group_rows if row["degradation_reason"])
         total = len(group_rows)
-        family, seed, eval_set, intervention, k, scale = key
+        family, seed, eval_set, intervention, module_filter, k, scale = key
         summary.append(
             {
                 "train_family": family,
                 "seed": seed,
                 "eval_set": eval_set,
                 "intervention": intervention,
+                "module_filter": module_filter,
                 "k": k,
                 "scale": scale,
                 "n": total,

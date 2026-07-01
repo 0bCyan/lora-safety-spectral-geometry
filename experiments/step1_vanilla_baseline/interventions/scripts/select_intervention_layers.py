@@ -24,12 +24,21 @@ def main() -> None:
     config = load_json(args.config)
     rows = []
     output_dir = Path(config["output_dir"])
+    module_filter = config.get("module_filter")
+    module_filter_label = ",".join(module_filter) if module_filter else ""
     for seed in config["seeds"]:
         metric_path = (
             Path(config["metric_dir"])
             / f"step1_4070ti_qwen3-4b_{config['family']}_s{seed}.jsonl"
         )
         metric_rows = read_jsonl(metric_path)
+        if module_filter:
+            metric_rows = [row for row in metric_rows if row["module"] in module_filter]
+            if len(metric_rows) < int(config["k"]):
+                raise ValueError(
+                    f"module_filter={module_filter} leaves only {len(metric_rows)} "
+                    f"candidate rows for k={config['k']} seed={seed}"
+                )
         for intervention in config["interventions"]:
             selected = select_layers(
                 metric_rows,
@@ -52,6 +61,7 @@ def main() -> None:
                         "family": config["family"],
                         "seed": seed,
                         "intervention": intervention,
+                        "module_filter": module_filter_label,
                         "k": config["k"],
                         "scale": config["scale"],
                         "selection_rank": rank,

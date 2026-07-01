@@ -48,6 +48,7 @@ def main() -> None:
             {
                 "seed": seed,
                 "intervention": row["intervention"],
+                "module_filter": row.get("module_filter", ""),
                 "k": row["k"],
                 "scale": row["scale"],
                 "unsafe_compliance_rate": unsafe,

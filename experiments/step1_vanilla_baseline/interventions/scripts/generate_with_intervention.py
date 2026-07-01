@@ -31,6 +31,14 @@ def load_selected_layer_keys(path: Path, exp_id: str) -> set[str]:
         }
 
 
+def load_module_filter(path: Path, exp_id: str) -> str:
+    with path.open("r", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            if row["experiment_id"] == exp_id:
+                return row.get("module_filter", "")
+    return ""
+
+
 def adapter_dir(base_config: dict, family: str, seed: int) -> Path:
     model = base_config["model_name_or_path"].split("/")[-1].lower()
     exp_id = f"step1_{base_config['machine']}_{model}_{family}_s{seed}"
@@ -73,6 +81,7 @@ def main() -> None:
     )
     selected_path = Path(config["output_dir"]) / "selected_layers.csv"
     selected_keys = load_selected_layer_keys(selected_path, exp_id)
+    module_filter = load_module_filter(selected_path, exp_id)
     eval_path = Path(base_config["data_dir"]) / EVAL_TO_FILE[config["eval_set"]]
     eval_rows = read_jsonl(eval_path, limit=base_config["eval_per_set"])
     adapter = adapter_dir(base_config, config["family"], args.seed)
@@ -149,6 +158,7 @@ def main() -> None:
                 "train_family": config["family"],
                 "seed": args.seed,
                 "intervention": args.intervention,
+                "module_filter": module_filter,
                 "k": config["k"],
                 "scale": config["scale"],
                 "prompt": row["prompt"],

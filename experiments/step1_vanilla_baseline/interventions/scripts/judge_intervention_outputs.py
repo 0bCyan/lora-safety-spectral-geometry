@@ -46,6 +46,7 @@ def main() -> None:
                 "seed": row.get("seed"),
                 "eval_set": row.get("eval_set"),
                 "intervention": row.get("intervention"),
+                "module_filter": row.get("module_filter", ""),
                 "k": row.get("k"),
                 "scale": row.get("scale"),
                 "label": label,
