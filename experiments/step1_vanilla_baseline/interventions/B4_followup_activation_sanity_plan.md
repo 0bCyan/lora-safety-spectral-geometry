@@ -268,6 +268,12 @@ alpha = 1.0, 5.0
 mode = safety
 ```
 
+具体执行计划见：
+
+```text
+experiments/step1_vanilla_baseline/interventions/B4_first_generated_token_plan.md
+```
+
 ## 8. 停止条件
 
 如果以下条件同时满足：
