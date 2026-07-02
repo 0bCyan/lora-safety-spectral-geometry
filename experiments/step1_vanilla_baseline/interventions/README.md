@@ -3,6 +3,8 @@
 > Update: first round `k=10, scale=0.5` is complete. B2 plan: `experiments/step1_vanilla_baseline/interventions/B2_strong_intervention_plan.md`
 > Update: `k=10, scale=0.25` analysis and next plan: `experiments/step1_vanilla_baseline/interventions/B2a_scale025_analysis_next_plan.md`
 > Update: B2 `k=40, scale=0.0` met the stop condition. B3 plan: `experiments/step1_vanilla_baseline/interventions/B3_direction_subspace_plan.md`
+> Update: stage summary for parameter spectral geometry interventions: `experiments/step1_vanilla_baseline/interventions/stage_summary_parameter_spectral_interventions.md`
+> Update: B4 activation-level safety direction plan: `experiments/step1_vanilla_baseline/interventions/B4_activation_safety_direction_plan.md`
 
 ## 1. 定位
 
