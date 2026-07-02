@@ -5,6 +5,7 @@
 > Update: B2 `k=40, scale=0.0` met the stop condition. B3 plan: `experiments/step1_vanilla_baseline/interventions/B3_direction_subspace_plan.md`
 > Update: stage summary for parameter spectral geometry interventions: `experiments/step1_vanilla_baseline/interventions/stage_summary_parameter_spectral_interventions.md`
 > Update: B4 activation-level safety direction plan: `experiments/step1_vanilla_baseline/interventions/B4_activation_safety_direction_plan.md`
+> Update: B4 activation follow-up sanity checks: `experiments/step1_vanilla_baseline/interventions/B4_followup_activation_sanity_plan.md`
 
 ## 1. 定位
 

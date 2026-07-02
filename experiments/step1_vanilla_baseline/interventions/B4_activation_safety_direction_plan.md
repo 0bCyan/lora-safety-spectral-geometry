@@ -365,3 +365,13 @@ SpectraSafe 只能作为经验正则方法独立验证。
 4. 只做 prompt last-token hidden state 的方向拟合。
 5. 运行 alpha=1.0 的最小干预闭环。
 6. 根据结果决定是否扩大 alpha/layer 网格。
+
+## 14. 最小闭环后的 follow-up
+
+`alpha=1.0, layers=34/33/32` 的最小闭环已完成，但未改变 `risk` adapter 的 safety 行为。
+
+后续 sanity check 计划见：
+
+```text
+experiments/step1_vanilla_baseline/interventions/B4_followup_activation_sanity_plan.md
+```
