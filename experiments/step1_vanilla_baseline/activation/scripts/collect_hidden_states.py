@@ -59,8 +59,9 @@ def main() -> None:
     output_dir = Path(config["output_dir"])
     exp_id = experiment_id(base_config, args.family, args.seed)
     rows = load_generation_and_labels(base_config, args.family, args.seed, eval_set)
-    state_out = hidden_state_path(output_dir, exp_id, eval_set)
-    meta_out = metadata_path(output_dir, exp_id, eval_set)
+    capture_mode = config["capture_mode"]
+    state_out = hidden_state_path(output_dir, exp_id, eval_set, capture_mode)
+    meta_out = metadata_path(output_dir, exp_id, eval_set, capture_mode)
 
     print("experiment_id:", exp_id)
     print("family:", args.family)
@@ -108,7 +109,11 @@ def main() -> None:
         model = PeftModel.from_pretrained(base_model, adapter_dir(base_config, args.family, args.seed))
     model.eval()
 
+    if capture_mode not in {"prompt_last_token", "first_generated_token"}:
+        raise ValueError(f"Unsupported capture_mode: {capture_mode}")
+
     captured = []
+    metadata_rows = []
     for row in rows:
         messages = [{"role": "user", "content": row["prompt"]}]
         if hasattr(tokenizer, "apply_chat_template") and tokenizer.chat_template:
@@ -117,12 +122,48 @@ def main() -> None:
             text = f"User: {row['prompt']}\nAssistant:"
         inputs = tokenizer(text, return_tensors="pt").to(model.device)
         with torch.no_grad():
-            outputs = model(**inputs, output_hidden_states=True, use_cache=False)
+            if capture_mode == "first_generated_token":
+                first_token_ids = model.generate(
+                    **inputs,
+                    max_new_tokens=1,
+                    do_sample=False,
+                    pad_token_id=tokenizer.eos_token_id,
+                )
+                generated_token_id = int(first_token_ids[0, inputs["input_ids"].shape[-1]].detach().cpu().item())
+                first_token = torch.tensor(
+                    [[generated_token_id]],
+                    device=inputs["input_ids"].device,
+                    dtype=inputs["input_ids"].dtype,
+                )
+                input_ids = torch.cat([inputs["input_ids"], first_token], dim=1)
+                attention_mask = torch.cat(
+                    [inputs["attention_mask"], torch.ones_like(first_token)],
+                    dim=1,
+                )
+                outputs = model(
+                    input_ids=input_ids,
+                    attention_mask=attention_mask,
+                    output_hidden_states=True,
+                    use_cache=False,
+                )
+                row = {
+                    **row,
+                    "generated_token_id": generated_token_id,
+                    "generated_token_text": tokenizer.decode([generated_token_id], skip_special_tokens=False),
+                }
+            else:
+                outputs = model(**inputs, output_hidden_states=True, use_cache=False)
+                row = {
+                    **row,
+                    "generated_token_id": None,
+                    "generated_token_text": "",
+                }
         layer_states = [
             hidden[0, -1, :].detach().float().cpu()
             for hidden in outputs.hidden_states[1:]
         ]
         captured.append(torch.stack(layer_states, dim=0))
+        metadata_rows.append(row)
 
     state_out.parent.mkdir(parents=True, exist_ok=True)
     torch.save(
@@ -131,13 +172,13 @@ def main() -> None:
             "family": args.family,
             "seed": args.seed,
             "eval_set": eval_set,
-            "capture_mode": config["capture_mode"],
+            "capture_mode": capture_mode,
             "hidden_states": torch.stack(captured, dim=0),
-            "sample_ids": [row["sample_id"] for row in rows],
+            "sample_ids": [row["sample_id"] for row in metadata_rows],
         },
         state_out,
     )
-    write_jsonl(meta_out, rows)
+    write_jsonl(meta_out, metadata_rows)
     print(f"wrote {state_out}")
     print(f"wrote {meta_out}")
 

@@ -47,10 +47,10 @@ def load_examples(config: dict[str, Any], base_config: dict[str, Any]):
         for seed in config["seeds"][family]:
             exp_id = experiment_id(base_config, family, int(seed))
             state = torch.load(
-                hidden_state_path(output_dir, exp_id, config["eval_set"]),
+                hidden_state_path(output_dir, exp_id, config["eval_set"], config["capture_mode"]),
                 map_location="cpu",
             )
-            metadata = read_jsonl(metadata_path(output_dir, exp_id, config["eval_set"]))
+            metadata = read_jsonl(metadata_path(output_dir, exp_id, config["eval_set"], config["capture_mode"]))
             hidden = state["hidden_states"].float()
             for index, row in enumerate(metadata):
                 if source_matches(row, positive_sources):

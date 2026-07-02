@@ -10,6 +10,8 @@ from activation_common import load_json
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
+    parser.add_argument("--direction-name", default=None)
+    parser.add_argument("--output-name", default="activation_vs_baseline.csv")
     return parser.parse_args()
 
 
@@ -43,6 +45,8 @@ def main() -> None:
 
     rows = []
     for row in intervention_summary:
+        if args.direction_name and row["direction_name"] != args.direction_name:
+            continue
         seed = int(row["seed"])
         baseline = baseline_by_seed[seed]
         unsafe = float(row["unsafe_compliance_rate"])
@@ -75,8 +79,9 @@ def main() -> None:
                 "delta_invalid": invalid - base_invalid,
             }
         )
-    write_csv(output_dir / "summaries/activation_vs_baseline.csv", rows)
-    print(f"wrote {output_dir / 'summaries/activation_vs_baseline.csv'}")
+    out_path = output_dir / "summaries" / args.output_name
+    write_csv(out_path, rows)
+    print(f"wrote {out_path}")
 
 
 if __name__ == "__main__":

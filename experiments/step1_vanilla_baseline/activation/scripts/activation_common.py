@@ -59,12 +59,25 @@ def local_judge_path(base_config: dict[str, Any], family: str, seed: int, eval_s
     )
 
 
-def hidden_state_path(output_dir: str | Path, exp_id: str, eval_set: str) -> Path:
-    return Path(output_dir) / "hidden_states" / f"{exp_id}_{eval_set}_prompt_last_token.pt"
+def hidden_state_path(
+    output_dir: str | Path,
+    exp_id: str,
+    eval_set: str,
+    capture_mode: str = "prompt_last_token",
+) -> Path:
+    subdir = "hidden_states_first_generated" if capture_mode == "first_generated_token" else "hidden_states"
+    return Path(output_dir) / subdir / f"{exp_id}_{eval_set}_{capture_mode}.pt"
 
 
-def metadata_path(output_dir: str | Path, exp_id: str, eval_set: str) -> Path:
-    return Path(output_dir) / "hidden_states" / f"{exp_id}_{eval_set}_metadata.jsonl"
+def metadata_path(
+    output_dir: str | Path,
+    exp_id: str,
+    eval_set: str,
+    capture_mode: str = "prompt_last_token",
+) -> Path:
+    subdir = "hidden_states_first_generated" if capture_mode == "first_generated_token" else "hidden_states"
+    suffix = "metadata" if capture_mode == "prompt_last_token" else f"{capture_mode}_metadata"
+    return Path(output_dir) / subdir / f"{exp_id}_{eval_set}_{suffix}.jsonl"
 
 
 def intervention_id(direction_name: str, alpha: float, seed: int, mode: str = "safety") -> str:

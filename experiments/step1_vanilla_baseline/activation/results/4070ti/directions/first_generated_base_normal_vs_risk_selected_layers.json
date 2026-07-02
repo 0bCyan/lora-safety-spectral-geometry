@@ -1,0 +1,22 @@
+{
+  "direction_name": "first_generated_base_normal_vs_risk",
+  "top_n_layers": 3,
+  "selected_layers": [
+    0,
+    1,
+    5,
+    32,
+    33,
+    34
+  ],
+  "top_by_projection_gap": [
+    34,
+    33,
+    32
+  ],
+  "top_by_probe_accuracy": [
+    0,
+    1,
+    5
+  ]
+}
