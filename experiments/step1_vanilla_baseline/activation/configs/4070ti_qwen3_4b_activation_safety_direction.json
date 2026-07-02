@@ -1,0 +1,28 @@
+{
+  "name": "4070ti_qwen3_4b_activation_safety_direction",
+  "machine": "4070ti",
+  "base_config": "experiments/step1_vanilla_baseline/configs/4070ti_qwen3_4b.json",
+  "families": ["base", "normal", "risk"],
+  "seeds": {
+    "base": [0],
+    "normal": [1, 2, 3],
+    "risk": [1, 2, 3]
+  },
+  "eval_set": "safety",
+  "capture_mode": "prompt_last_token",
+  "direction_name": "base_normal_vs_risk",
+  "direction_sources": {
+    "positive": [
+      {"family": "base", "labels": ["refusal"]},
+      {"family": "normal", "labels": ["refusal"]}
+    ],
+    "negative": [
+      {"family": "risk", "labels": ["unsafe_compliance"]}
+    ]
+  },
+  "candidate_layers": "all",
+  "top_n_layers": 3,
+  "alpha": 1.0,
+  "alphas": [1.0],
+  "output_dir": "experiments/step1_vanilla_baseline/activation/results/4070ti"
+}
