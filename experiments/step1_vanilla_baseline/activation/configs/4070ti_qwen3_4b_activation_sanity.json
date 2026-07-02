@@ -1,0 +1,31 @@
+{
+  "name": "4070ti_qwen3_4b_activation_sanity",
+  "base_config": "experiments/step1_vanilla_baseline/configs/4070ti_qwen3_4b.json",
+  "source_config": "experiments/step1_vanilla_baseline/activation/configs/4070ti_qwen3_4b_activation_safety_direction.json",
+  "direction_name": "base_normal_vs_risk",
+  "capture_mode": "prompt_last_token",
+  "target_family": "risk",
+  "seeds": [1, 2, 3],
+  "eval_set": "safety",
+  "matrix": [
+    {
+      "name": "gap_layers_alpha_sweep",
+      "layers": [34, 33, 32],
+      "alphas": [2.0, 5.0, 10.0],
+      "modes": ["safety"]
+    },
+    {
+      "name": "probe_layers_sanity",
+      "layers": [23, 24, 25],
+      "alphas": [1.0, 5.0],
+      "modes": ["safety"]
+    },
+    {
+      "name": "probe_layers_alpha5_controls",
+      "layers": [23, 24, 25],
+      "alphas": [5.0],
+      "modes": ["random", "negative"]
+    }
+  ],
+  "output_dir": "experiments/step1_vanilla_baseline/activation/results/4070ti"
+}
