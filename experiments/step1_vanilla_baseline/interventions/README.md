@@ -7,6 +7,7 @@
 > Update: B4 activation-level safety direction plan: `experiments/step1_vanilla_baseline/interventions/B4_activation_safety_direction_plan.md`
 > Update: B4 activation follow-up sanity checks: `experiments/step1_vanilla_baseline/interventions/B4_followup_activation_sanity_plan.md`
 > Update: B4 first-generated-token activation plan: `experiments/step1_vanilla_baseline/interventions/B4_first_generated_token_plan.md`
+> Update: Step 1B post-hoc causal probe closing summary: `experiments/step1_vanilla_baseline/interventions/Step1B_posthoc_closing_summary.md`
 
 ## 1. 定位
 

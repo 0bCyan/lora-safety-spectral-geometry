@@ -1,5 +1,8 @@
 # 第一步实验：普通 LoRA 安全漂移基线
 
+> Final summary: `experiments/step1_vanilla_baseline/Step1_final_summary.md`
+> Step 1B closing summary: `experiments/step1_vanilla_baseline/interventions/Step1B_posthoc_closing_summary.md`
+
 ## 1. 实验目的
 
 第一步实验只研究普通 LoRA，不加入 SpectraSafe 或其他新方法。
