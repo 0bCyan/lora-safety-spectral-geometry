@@ -353,14 +353,12 @@ experiment_id, commit, machine, model, method, family, dose, seed, status, notes
 
 当前优先级从高到低：
 
-1. 完成仓库基础设施和协作规则。
-2. 建立训练、谱分析、干预和 judge 的配置化脚本。
-3. 4070 Ti 跑通小模型 pilot。
-4. 3090 Ti 跑 Qwen3-8B 或 Qwen2.5-7B 主实验第一轮。
-5. 完成 layer-wise 和 module-wise 谱分析。
-6. 完成高谱层、低谱层、随机层干预。
-7. 用 API strong judge 评估主方法和关键 baseline。
-8. 形成中文初稿机制章节。
+1. 完成第一步 B：risk adapter 轻量干预验证。
+2. 在 4070 Ti 上对 risk seed 1/2/3 做 top-k、bottom-k、random-k 缩放生成。
+3. 汇总干预前后 unsafe、refusal、invalid 和输出退化变化。
+4. 判断高谱层干预是否比低谱层/随机层更有效。
+5. 等 3090 Ti 可用后，再跑 Qwen3-8B 三类三 seed 正式初筛。
+6. 若干预结果支持谱机制，再进入 SpectraSafe 方法设计阶段。
 
 ## 10. 当前数据集决策
 
@@ -398,3 +396,43 @@ docs/统一数据集方案.md
 - Windows 与 Linux 均可参与协作。
 - 脚本路径尽量使用配置，不在代码中写死绝对路径。
 - 命令行输出中文乱码不代表文件损坏，优先用编辑器或 Python UTF-8 读取确认。
+
+## 13. 环境与版本记录
+
+所有实验必须记录环境版本。没有环境记录的实验，默认不能进入论文统计。
+
+统一说明见：
+
+```text
+docs/环境与版本说明.md
+```
+
+第一步实验环境记录位置：
+
+```text
+experiments/step1_vanilla_baseline/results/4070ti/env_report.txt
+experiments/step1_vanilla_baseline/results/3090ti/env_report.txt
+```
+
+每台机器第一次运行实验前，都要先执行 `check_env.py` 并保存输出。更新 PyTorch、transformers、peft、bitsandbytes、CUDA 或驱动后，必须重新记录环境。
+
+## 14. 数据回传规则
+
+显卡机负责训练和提取，本机负责分析。
+
+第一步实验中，4070 Ti 和 3090 Ti 默认只回传轻量结果：
+
+```text
+env_report.txt
+experiment_index.csv
+spectral_metrics/*.jsonl
+generations/*.jsonl
+```
+
+adapter 权重、checkpoint 和大型日志默认不回传、不提交。
+
+详细规则见：
+
+```text
+experiments/step1_vanilla_baseline/数据回传流程.md
+```
