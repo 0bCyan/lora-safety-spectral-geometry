@@ -18,6 +18,12 @@ The first Step 2 plan is:
 experiments/step2_mechanism_dynamics/Step2A_training_dynamics_mechanism_plan.md
 ```
 
+Current follow-up plan:
+
+```text
+experiments/step2_mechanism_dynamics/Step2A_followup_family_controls_plan.md
+```
+
 ## 3. Stage Outputs
 
 Expected outputs:
@@ -30,4 +36,3 @@ experiments/step2_mechanism_dynamics/reports/
 ```
 
 The first pilot should reuse Step 1 data splits and evaluation prompts when possible, so that Step 2 dynamics can be compared directly against the closed Step 1 baseline.
-
