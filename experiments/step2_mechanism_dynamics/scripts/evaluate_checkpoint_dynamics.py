@@ -16,6 +16,7 @@ from common import (
     load_json,
     local_judge_path,
     read_jsonl,
+    run_id,
     run_dir,
     write_csv,
     write_jsonl,
@@ -105,9 +106,48 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--eval-set", default="safety", choices=sorted(EVAL_TO_FILE))
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--checkpoints", default=None, help="Comma-separated checkpoint tags.")
+    parser.add_argument(
+        "--output-tag",
+        default=None,
+        help="Optional output isolation tag, e.g. full100 writes to generations_full100/local_judge_full100.",
+    )
     parser.add_argument("--judge-only", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
+
+
+def tagged_generation_path(
+    config: dict[str, Any],
+    family: str,
+    seed: int,
+    checkpoint: str,
+    eval_set: str,
+    output_tag: str | None,
+) -> Path:
+    if not output_tag:
+        return generation_path(config, family, seed, checkpoint, eval_set)
+    return (
+        Path(config["output_dir"])
+        / f"generations_{output_tag}"
+        / f"{run_id(config, family, seed)}_{checkpoint}_{eval_set}_{output_tag}.jsonl"
+    )
+
+
+def tagged_local_judge_path(
+    config: dict[str, Any],
+    family: str,
+    seed: int,
+    checkpoint: str,
+    eval_set: str,
+    output_tag: str | None,
+) -> Path:
+    if not output_tag:
+        return local_judge_path(config, family, seed, checkpoint, eval_set)
+    return (
+        Path(config["output_dir"])
+        / f"local_judge_{output_tag}"
+        / f"{run_id(config, family, seed)}_{checkpoint}_{eval_set}_{output_tag}_local_judge.jsonl"
+    )
 
 
 def clean_response(text: str) -> str:
@@ -146,8 +186,15 @@ def read_checkpoint_index(config: dict[str, Any], family: str, seed: int) -> lis
         return list(csv.DictReader(handle))
 
 
-def write_judge(config: dict[str, Any], family: str, seed: int, checkpoint: str, eval_set: str) -> list[dict[str, Any]]:
-    rows = read_jsonl(generation_path(config, family, seed, checkpoint, eval_set))
+def write_judge(
+    config: dict[str, Any],
+    family: str,
+    seed: int,
+    checkpoint: str,
+    eval_set: str,
+    output_tag: str | None,
+) -> list[dict[str, Any]]:
+    rows = read_jsonl(tagged_generation_path(config, family, seed, checkpoint, eval_set, output_tag))
     cleaned = [clean_response(row.get("response", "")) for row in rows]
     frequencies = {text: cleaned.count(text) for text in set(cleaned)}
     labeled = []
@@ -172,11 +219,11 @@ def write_judge(config: dict[str, Any], family: str, seed: int, checkpoint: str,
                 "cleaned_response_chars": len(cleaned_text),
             }
         )
-    write_jsonl(local_judge_path(config, family, seed, checkpoint, eval_set), labeled)
+    write_jsonl(tagged_local_judge_path(config, family, seed, checkpoint, eval_set, output_tag), labeled)
     return labeled
 
 
-def summarize_judge(output_dir: Path, all_rows: list[dict[str, Any]]) -> None:
+def summarize_judge(output_dir: Path, all_rows: list[dict[str, Any]], output_tag: str | None) -> None:
     grouped: dict[tuple[Any, ...], list[dict[str, Any]]] = defaultdict(list)
     for row in all_rows:
         grouped[
@@ -218,7 +265,8 @@ def summarize_judge(output_dir: Path, all_rows: list[dict[str, Any]]) -> None:
                 "average_cleaned_response_chars": cleaned_chars,
             }
         )
-    write_csv(output_dir / "local_judge" / "summary.csv", summary)
+    summary_dir = output_dir / (f"local_judge_{output_tag}" if output_tag else "local_judge")
+    write_csv(summary_dir / "summary.csv", summary)
 
 
 def main() -> None:
@@ -301,7 +349,7 @@ def main() -> None:
                         "response": tokenizer.decode(new_tokens, skip_special_tokens=True).strip(),
                     }
                 )
-            out_path = generation_path(config, args.family, args.seed, checkpoint, args.eval_set)
+            out_path = tagged_generation_path(config, args.family, args.seed, checkpoint, args.eval_set, args.output_tag)
             write_jsonl(out_path, generated)
             print(f"wrote {out_path} ({len(generated)} rows)")
             del model
@@ -313,10 +361,11 @@ def main() -> None:
     all_labeled = []
     for index_row in index_rows:
         all_labeled.extend(
-            write_judge(config, args.family, args.seed, index_row["checkpoint"], args.eval_set)
+            write_judge(config, args.family, args.seed, index_row["checkpoint"], args.eval_set, args.output_tag)
         )
-    summarize_judge(Path(config["output_dir"]), all_labeled)
-    print(f"wrote judge summary under {Path(config['output_dir']) / 'local_judge'}")
+    summarize_judge(Path(config["output_dir"]), all_labeled, args.output_tag)
+    summary_dir = Path(config["output_dir"]) / (f"local_judge_{args.output_tag}" if args.output_tag else "local_judge")
+    print(f"wrote judge summary under {summary_dir}")
 
 
 if __name__ == "__main__":
