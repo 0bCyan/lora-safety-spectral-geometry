@@ -24,6 +24,12 @@ Current follow-up plan:
 experiments/step2_mechanism_dynamics/Step2A_followup_family_controls_plan.md
 ```
 
+Current training-time intervention plan:
+
+```text
+experiments/step2_mechanism_dynamics/Step2B_training_time_regularization_plan.md
+```
+
 ## 3. Stage Outputs
 
 Expected outputs:
