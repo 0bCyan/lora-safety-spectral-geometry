@@ -59,8 +59,17 @@ def model_tag(config: dict[str, Any]) -> str:
     return config["model_name_or_path"].split("/")[-1].lower()
 
 
-def run_id(config: dict[str, Any], family: str, seed: int) -> str:
-    return f"step2a_{config['machine']}_{model_tag(config)}_{family}_s{seed}"
+def clean_label(label: str | None) -> str:
+    if not label:
+        return ""
+    return "".join(char if char.isalnum() or char in {"-", "_"} else "_" for char in label.lower())
+
+
+def run_id(config: dict[str, Any], family: str, seed: int, run_label: str | None = None) -> str:
+    prefix = config.get("run_prefix", "step2a")
+    base = f"{prefix}_{config['machine']}_{model_tag(config)}_{family}_s{seed}"
+    label = clean_label(run_label)
+    return f"{base}_{label}" if label else base
 
 
 def checkpoint_tag(step: int, total_steps: int) -> str:
@@ -68,12 +77,12 @@ def checkpoint_tag(step: int, total_steps: int) -> str:
     return f"step{step:04d}_pct{percent:03d}"
 
 
-def run_dir(config: dict[str, Any], family: str, seed: int) -> Path:
-    return Path(config["output_dir"]) / "runs" / run_id(config, family, seed)
+def run_dir(config: dict[str, Any], family: str, seed: int, run_label: str | None = None) -> Path:
+    return Path(config["output_dir"]) / "runs" / run_id(config, family, seed, run_label)
 
 
-def checkpoint_dir(config: dict[str, Any], family: str, seed: int, checkpoint: str) -> Path:
-    return run_dir(config, family, seed) / "checkpoints" / checkpoint
+def checkpoint_dir(config: dict[str, Any], family: str, seed: int, checkpoint: str, run_label: str | None = None) -> Path:
+    return run_dir(config, family, seed, run_label) / "checkpoints" / checkpoint
 
 
 def generation_path(
@@ -82,11 +91,12 @@ def generation_path(
     seed: int,
     checkpoint: str,
     eval_set: str,
+    run_label: str | None = None,
 ) -> Path:
     return (
         Path(config["output_dir"])
         / "generations"
-        / f"{run_id(config, family, seed)}_{checkpoint}_{eval_set}.jsonl"
+        / f"{run_id(config, family, seed, run_label)}_{checkpoint}_{eval_set}.jsonl"
     )
 
 
@@ -96,25 +106,26 @@ def local_judge_path(
     seed: int,
     checkpoint: str,
     eval_set: str,
+    run_label: str | None = None,
 ) -> Path:
     return (
         Path(config["output_dir"])
         / "local_judge"
-        / f"{run_id(config, family, seed)}_{checkpoint}_{eval_set}_local_judge.jsonl"
+        / f"{run_id(config, family, seed, run_label)}_{checkpoint}_{eval_set}_local_judge.jsonl"
     )
 
 
-def spectral_path(config: dict[str, Any], family: str, seed: int, checkpoint: str) -> Path:
+def spectral_path(config: dict[str, Any], family: str, seed: int, checkpoint: str, run_label: str | None = None) -> Path:
     return (
         Path(config["output_dir"])
         / "spectral_metrics"
-        / f"{run_id(config, family, seed)}_{checkpoint}.jsonl"
+        / f"{run_id(config, family, seed, run_label)}_{checkpoint}.jsonl"
     )
 
 
-def logit_margin_path(config: dict[str, Any], family: str, seed: int, checkpoint: str) -> Path:
+def logit_margin_path(config: dict[str, Any], family: str, seed: int, checkpoint: str, run_label: str | None = None) -> Path:
     return (
         Path(config["output_dir"])
         / "logit_margins"
-        / f"{run_id(config, family, seed)}_{checkpoint}_logit_margins.jsonl"
+        / f"{run_id(config, family, seed, run_label)}_{checkpoint}_logit_margins.jsonl"
     )

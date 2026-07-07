@@ -22,8 +22,27 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", required=True)
     parser.add_argument("--family", required=True, choices=sorted(FAMILY_TO_FILE))
     parser.add_argument("--seed", required=True, type=int)
+    parser.add_argument("--run-label", default=None, help="Optional config regularization arm label.")
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
+
+
+def get_arm_config(config: dict[str, Any], run_label: str | None) -> dict[str, Any]:
+    default = {
+        "regularization_type": config.get("regularization_type", "none"),
+        "regularization_lambda": config.get("regularization_lambda", 0.0),
+        "spectral_top_k_modules": config.get("spectral_top_k_modules", 20),
+        "regularization_start_step": config.get("regularization_start_step", 0),
+        "regularization_end_step": config.get("regularization_end_step", None),
+    }
+    if not run_label:
+        return default
+    arms = config.get("regularization_arms", {})
+    if run_label not in arms:
+        raise ValueError(f"Unknown run label {run_label!r}. Available labels: {sorted(arms)}")
+    merged = dict(default)
+    merged.update(arms[run_label])
+    return merged
 
 
 def format_prompt_text(tokenizer, prompt: str) -> str:
@@ -91,20 +110,68 @@ def target_steps(config: dict[str, Any], train_rows: int) -> tuple[int, list[int
     return total_steps, sorted(targets)
 
 
+def lora_parameters(model) -> list[tuple[Any, Any, float]]:
+    modules = []
+    for module in model.modules():
+        lora_a = getattr(module, "lora_A", None)
+        lora_b = getattr(module, "lora_B", None)
+        if not lora_a or not lora_b:
+            continue
+        if "default" not in lora_a or "default" not in lora_b:
+            continue
+        scaling = getattr(module, "scaling", {}).get("default", 1.0)
+        modules.append((lora_a["default"].weight, lora_b["default"].weight, float(scaling)))
+    return modules
+
+
+def regularization_penalty(model, arm: dict[str, Any], global_step: int):
+    import torch
+
+    reg_type = arm.get("regularization_type", "none")
+    reg_lambda = float(arm.get("regularization_lambda", 0.0))
+    if reg_type == "none" or reg_lambda <= 0:
+        return None
+    start_step = int(arm.get("regularization_start_step", 0))
+    end_step = arm.get("regularization_end_step")
+    if global_step < start_step or (end_step is not None and global_step > int(end_step)):
+        return None
+
+    values = []
+    for a, b, scaling in lora_parameters(model):
+        if reg_type == "lora_norm":
+            values.append(torch.sum(a.float() ** 2) + torch.sum(b.float() ** 2))
+        elif reg_type in {"spectral_mean", "spectral_top"}:
+            gram = (b.float().T @ b.float()) @ (a.float() @ a.float().T)
+            eigvals = torch.linalg.eigvals(gram).real.clamp_min(0.0)
+            values.append(torch.sqrt(torch.max(eigvals) + 1e-12) * scaling)
+        else:
+            raise ValueError(f"Unknown regularization_type: {reg_type}")
+    if not values:
+        return None
+    stacked = torch.stack(values)
+    if reg_type == "spectral_top":
+        top_k = min(int(arm.get("spectral_top_k_modules", 20)), stacked.numel())
+        stacked = torch.topk(stacked, top_k).values
+    return reg_lambda * torch.mean(stacked)
+
+
 def main() -> None:
     args = parse_args()
     config = load_json(args.config)
+    arm_config = get_arm_config(config, args.run_label)
     data_path = Path(config["data_dir"]) / FAMILY_TO_FILE[args.family]
     rows = read_jsonl(data_path, limit=int(config["train_per_family"]))
     total_steps, targets = target_steps(config, len(rows))
-    rid = run_id(config, args.family, args.seed)
-    root = run_dir(config, args.family, args.seed)
+    rid = run_id(config, args.family, args.seed, args.run_label)
+    root = run_dir(config, args.family, args.seed, args.run_label)
     index_path = root / "checkpoint_index.csv"
 
     print("config:", args.config)
     print("run_id:", rid)
     print("family:", args.family)
     print("seed:", args.seed)
+    print("run_label:", args.run_label or "")
+    print("regularization:", arm_config)
     print("model:", config["model_name_or_path"])
     print("train_rows:", len(rows))
     print("total_steps:", total_steps)
@@ -178,7 +245,7 @@ def main() -> None:
 
     def save_adapter(step: int) -> None:
         tag = checkpoint_tag(step, total_steps)
-        out_dir = checkpoint_dir(config, args.family, args.seed, tag)
+        out_dir = checkpoint_dir(config, args.family, args.seed, tag, args.run_label)
         out_dir.mkdir(parents=True, exist_ok=True)
         model.save_pretrained(out_dir)
         tokenizer.save_pretrained(out_dir)
@@ -229,8 +296,17 @@ def main() -> None:
         remove_unused_columns=False,
     )
 
+    class RegularizedTrainer(Trainer):
+        def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
+            outputs = model(**inputs)
+            loss = outputs.loss
+            penalty = regularization_penalty(model, arm_config, int(self.state.global_step))
+            if penalty is not None:
+                loss = loss + penalty.to(loss.device)
+            return (loss, outputs) if return_outputs else loss
+
     save_adapter(0)
-    trainer = Trainer(
+    trainer = RegularizedTrainer(
         model=model,
         args=training_args,
         train_dataset=tokenized,

@@ -17,12 +17,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", required=True)
     parser.add_argument("--family", required=True, choices=["normal", "risk", "control"])
     parser.add_argument("--seed", required=True, type=int)
+    parser.add_argument("--run-label", default=None, help="Optional run label used for regularized Step2B arms.")
     parser.add_argument("--checkpoints", default=None)
     return parser.parse_args()
 
 
-def read_checkpoint_index(config: dict[str, Any], family: str, seed: int) -> list[dict[str, str]]:
-    with (run_dir(config, family, seed) / "checkpoint_index.csv").open("r", encoding="utf-8", newline="") as handle:
+def read_checkpoint_index(config: dict[str, Any], family: str, seed: int, run_label: str | None) -> list[dict[str, str]]:
+    with (run_dir(config, family, seed, run_label) / "checkpoint_index.csv").open("r", encoding="utf-8", newline="") as handle:
         return list(csv.DictReader(handle))
 
 
@@ -85,11 +86,11 @@ def low_rank_delta_svd(a, b):
     return left.contiguous(), right.contiguous(), s.contiguous()
 
 
-def analyze_one(config: dict[str, Any], family: str, seed: int, checkpoint_row: dict[str, str]):
+def analyze_one(config: dict[str, Any], family: str, seed: int, checkpoint_row: dict[str, str], run_label: str | None):
     import torch
 
     checkpoint = checkpoint_row["checkpoint"]
-    adapter = checkpoint_dir(config, family, seed, checkpoint)
+    adapter = checkpoint_dir(config, family, seed, checkpoint, run_label)
     pairs = load_lora_pairs(adapter)
     rows = []
     components = {}
@@ -117,6 +118,7 @@ def analyze_one(config: dict[str, Any], family: str, seed: int, checkpoint_row: 
                 "module": module,
                 "block_type": block_type(module),
                 "family": family,
+                "run_label": run_label or "",
                 "seed": seed,
                 "checkpoint": checkpoint,
                 "step": checkpoint_row["step"],
@@ -136,7 +138,7 @@ def analyze_one(config: dict[str, Any], family: str, seed: int, checkpoint_row: 
             "right": right,
             "top_singular_value": top_sv,
         }
-    write_jsonl(spectral_path(config, family, seed, checkpoint), rows)
+    write_jsonl(spectral_path(config, family, seed, checkpoint, run_label), rows)
     return rows, components
 
 
@@ -144,15 +146,16 @@ def summarize_spectral(config: dict[str, Any], rows: list[dict[str, Any]]) -> No
     grouped: dict[tuple[Any, ...], list[dict[str, Any]]] = {}
     for row in rows:
         grouped.setdefault(
-            (row["family"], row["seed"], row["checkpoint"], row["step"], row["fraction"]),
+            (row["family"], row.get("run_label", ""), row["seed"], row["checkpoint"], row["step"], row["fraction"]),
             [],
         ).append(row)
     summary = []
-    for key, group_rows in sorted(grouped.items(), key=lambda item: (item[0][0], int(item[0][1]), float(item[0][4]))):
-        family, seed, checkpoint, step, fraction = key
+    for key, group_rows in sorted(grouped.items(), key=lambda item: (item[0][0], item[0][1], int(item[0][2]), float(item[0][5]))):
+        family, run_label, seed, checkpoint, step, fraction = key
         summary.append(
             {
                 "family": family,
+                "run_label": run_label,
                 "seed": seed,
                 "checkpoint": checkpoint,
                 "step": step,
@@ -181,7 +184,9 @@ def principal_top_cosine(space_a, space_b, k: int, side: str) -> dict[str, float
     }
 
 
-def write_temporal_subspace(config: dict[str, Any], family: str, seed: int, checkpoint_components: dict[str, dict[str, Any]]) -> None:
+def write_temporal_subspace(
+    config: dict[str, Any], family: str, seed: int, checkpoint_components: dict[str, dict[str, Any]], run_label: str | None
+) -> None:
     rows = []
     checkpoints = list(checkpoint_components)
     for left_checkpoint, right_checkpoint in combinations(checkpoints, 2):
@@ -195,6 +200,7 @@ def write_temporal_subspace(config: dict[str, Any], family: str, seed: int, chec
                     rows.append(
                         {
                             "family": family,
+                            "run_label": run_label or "",
                             "seed": seed,
                             "checkpoint_a": left_checkpoint,
                             "checkpoint_b": right_checkpoint,
@@ -208,7 +214,8 @@ def write_temporal_subspace(config: dict[str, Any], family: str, seed: int, chec
                         }
                     )
     out_dir = Path(config["output_dir"]) / "subspace"
-    write_csv(out_dir / f"{family}_s{seed}_temporal_subspace_overlap.csv", rows)
+    label_part = f"_{run_label}" if run_label else ""
+    write_csv(out_dir / f"{family}_s{seed}{label_part}_temporal_subspace_overlap.csv", rows)
     summary_input = [row for row in rows if row["side"] == "left" and row["k"] == 1]
     grouped: dict[tuple[str, str], list[dict[str, Any]]] = {}
     for row in summary_input:
@@ -218,6 +225,7 @@ def write_temporal_subspace(config: dict[str, Any], family: str, seed: int, chec
         summary.append(
             {
                 "family": family,
+                "run_label": run_label or "",
                 "seed": seed,
                 "checkpoint_a": checkpoint_a,
                 "checkpoint_b": checkpoint_b,
@@ -228,13 +236,13 @@ def write_temporal_subspace(config: dict[str, Any], family: str, seed: int, chec
                 "mean_principal_cosine": mean(float(row["mean_principal_cosine"]) for row in group_rows),
             }
         )
-    write_csv(out_dir / f"{family}_s{seed}_temporal_subspace_summary.csv", summary)
+    write_csv(out_dir / f"{family}_s{seed}{label_part}_temporal_subspace_summary.csv", summary)
 
 
 def main() -> None:
     args = parse_args()
     config = load_json(args.config)
-    index_rows = read_checkpoint_index(config, args.family, args.seed)
+    index_rows = read_checkpoint_index(config, args.family, args.seed, args.run_label)
     if args.checkpoints:
         wanted = {item.strip() for item in args.checkpoints.split(",") if item.strip()}
         index_rows = [row for row in index_rows if row["checkpoint"] in wanted]
@@ -242,12 +250,12 @@ def main() -> None:
     all_rows = []
     checkpoint_components = {}
     for row in index_rows:
-        metric_rows, components = analyze_one(config, args.family, args.seed, row)
+        metric_rows, components = analyze_one(config, args.family, args.seed, row, args.run_label)
         all_rows.extend(metric_rows)
         checkpoint_components[row["checkpoint"]] = components
         print(f"analyzed {row['checkpoint']} ({len(metric_rows)} layers)")
     summarize_spectral(config, all_rows)
-    write_temporal_subspace(config, args.family, args.seed, checkpoint_components)
+    write_temporal_subspace(config, args.family, args.seed, checkpoint_components, args.run_label)
     print(f"wrote metrics under {config['output_dir']}")
 
 

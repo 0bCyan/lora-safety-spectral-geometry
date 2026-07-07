@@ -103,6 +103,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", required=True)
     parser.add_argument("--family", required=True, choices=["normal", "risk", "control"])
     parser.add_argument("--seed", required=True, type=int)
+    parser.add_argument("--run-label", default=None, help="Optional run label used for regularized Step2B arms.")
     parser.add_argument("--eval-set", default="safety", choices=sorted(EVAL_TO_FILE))
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--checkpoints", default=None, help="Comma-separated checkpoint tags.")
@@ -123,13 +124,14 @@ def tagged_generation_path(
     checkpoint: str,
     eval_set: str,
     output_tag: str | None,
+    run_label: str | None,
 ) -> Path:
     if not output_tag:
-        return generation_path(config, family, seed, checkpoint, eval_set)
+        return generation_path(config, family, seed, checkpoint, eval_set, run_label)
     return (
         Path(config["output_dir"])
         / f"generations_{output_tag}"
-        / f"{run_id(config, family, seed)}_{checkpoint}_{eval_set}_{output_tag}.jsonl"
+        / f"{run_id(config, family, seed, run_label)}_{checkpoint}_{eval_set}_{output_tag}.jsonl"
     )
 
 
@@ -140,13 +142,14 @@ def tagged_local_judge_path(
     checkpoint: str,
     eval_set: str,
     output_tag: str | None,
+    run_label: str | None,
 ) -> Path:
     if not output_tag:
-        return local_judge_path(config, family, seed, checkpoint, eval_set)
+        return local_judge_path(config, family, seed, checkpoint, eval_set, run_label)
     return (
         Path(config["output_dir"])
         / f"local_judge_{output_tag}"
-        / f"{run_id(config, family, seed)}_{checkpoint}_{eval_set}_{output_tag}_local_judge.jsonl"
+        / f"{run_id(config, family, seed, run_label)}_{checkpoint}_{eval_set}_{output_tag}_local_judge.jsonl"
     )
 
 
@@ -180,8 +183,8 @@ def classify_response(response: str) -> tuple[str, str]:
     return "unsafe_compliance", "non-refusal response to safety prompt"
 
 
-def read_checkpoint_index(config: dict[str, Any], family: str, seed: int) -> list[dict[str, str]]:
-    path = run_dir(config, family, seed) / "checkpoint_index.csv"
+def read_checkpoint_index(config: dict[str, Any], family: str, seed: int, run_label: str | None) -> list[dict[str, str]]:
+    path = run_dir(config, family, seed, run_label) / "checkpoint_index.csv"
     with path.open("r", encoding="utf-8", newline="") as handle:
         return list(csv.DictReader(handle))
 
@@ -193,8 +196,9 @@ def write_judge(
     checkpoint: str,
     eval_set: str,
     output_tag: str | None,
+    run_label: str | None,
 ) -> list[dict[str, Any]]:
-    rows = read_jsonl(tagged_generation_path(config, family, seed, checkpoint, eval_set, output_tag))
+    rows = read_jsonl(tagged_generation_path(config, family, seed, checkpoint, eval_set, output_tag, run_label))
     cleaned = [clean_response(row.get("response", "")) for row in rows]
     frequencies = {text: cleaned.count(text) for text in set(cleaned)}
     labeled = []
@@ -207,6 +211,7 @@ def write_judge(
             {
                 "sample_id": row.get("sample_id"),
                 "train_family": family,
+                "run_label": run_label or row.get("run_label", ""),
                 "seed": seed,
                 "checkpoint": checkpoint,
                 "step": row.get("step"),
@@ -219,7 +224,7 @@ def write_judge(
                 "cleaned_response_chars": len(cleaned_text),
             }
         )
-    write_jsonl(tagged_local_judge_path(config, family, seed, checkpoint, eval_set, output_tag), labeled)
+    write_jsonl(tagged_local_judge_path(config, family, seed, checkpoint, eval_set, output_tag, run_label), labeled)
     return labeled
 
 
@@ -275,13 +280,14 @@ def main() -> None:
     eval_limit = args.limit if args.limit is not None else int(config["eval_per_set"])
     eval_path = Path(config["data_dir"]) / EVAL_TO_FILE[args.eval_set]
     eval_rows = read_jsonl(eval_path, limit=eval_limit)
-    index_rows = read_checkpoint_index(config, args.family, args.seed)
+    index_rows = read_checkpoint_index(config, args.family, args.seed, args.run_label)
     if args.checkpoints:
         wanted = {item.strip() for item in args.checkpoints.split(",") if item.strip()}
         index_rows = [row for row in index_rows if row["checkpoint"] in wanted]
 
     print("family:", args.family)
     print("seed:", args.seed)
+    print("run_label:", args.run_label or "")
     print("checkpoints:", [row["checkpoint"] for row in index_rows])
     print("eval_rows:", len(eval_rows))
     if args.dry_run:
@@ -309,7 +315,7 @@ def main() -> None:
             )
         for index_row in index_rows:
             checkpoint = index_row["checkpoint"]
-            adapter = checkpoint_dir(config, args.family, args.seed, checkpoint)
+            adapter = checkpoint_dir(config, args.family, args.seed, checkpoint, args.run_label)
             base_model = AutoModelForCausalLM.from_pretrained(
                 config["model_name_or_path"],
                 quantization_config=quantization_config,
@@ -340,6 +346,7 @@ def main() -> None:
                     {
                         "sample_id": row["sample_id"],
                         "train_family": args.family,
+                        "run_label": args.run_label or "",
                         "seed": args.seed,
                         "checkpoint": checkpoint,
                         "step": index_row["step"],
@@ -349,7 +356,9 @@ def main() -> None:
                         "response": tokenizer.decode(new_tokens, skip_special_tokens=True).strip(),
                     }
                 )
-            out_path = tagged_generation_path(config, args.family, args.seed, checkpoint, args.eval_set, args.output_tag)
+            out_path = tagged_generation_path(
+                config, args.family, args.seed, checkpoint, args.eval_set, args.output_tag, args.run_label
+            )
             write_jsonl(out_path, generated)
             print(f"wrote {out_path} ({len(generated)} rows)")
             del model
@@ -361,7 +370,9 @@ def main() -> None:
     all_labeled = []
     for index_row in index_rows:
         all_labeled.extend(
-            write_judge(config, args.family, args.seed, index_row["checkpoint"], args.eval_set, args.output_tag)
+            write_judge(
+                config, args.family, args.seed, index_row["checkpoint"], args.eval_set, args.output_tag, args.run_label
+            )
         )
     summarize_judge(Path(config["output_dir"]), all_labeled, args.output_tag)
     summary_dir = Path(config["output_dir"]) / (f"local_judge_{args.output_tag}" if args.output_tag else "local_judge")

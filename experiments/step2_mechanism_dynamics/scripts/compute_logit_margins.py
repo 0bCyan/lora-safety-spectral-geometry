@@ -24,13 +24,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", required=True)
     parser.add_argument("--family", required=True, choices=["normal", "risk", "control"])
     parser.add_argument("--seed", required=True, type=int)
+    parser.add_argument("--run-label", default=None, help="Optional run label used for regularized Step2B arms.")
     parser.add_argument("--checkpoints", default=None)
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
 
 
-def read_checkpoint_index(config: dict[str, Any], family: str, seed: int) -> list[dict[str, str]]:
-    with (run_dir(config, family, seed) / "checkpoint_index.csv").open("r", encoding="utf-8", newline="") as handle:
+def read_checkpoint_index(config: dict[str, Any], family: str, seed: int, run_label: str | None) -> list[dict[str, str]]:
+    with (run_dir(config, family, seed, run_label) / "checkpoint_index.csv").open("r", encoding="utf-8", newline="") as handle:
         return list(csv.DictReader(handle))
 
 
@@ -62,13 +63,14 @@ def main() -> None:
         Path(config["data_dir"]) / EVAL_TO_FILE[eval_set],
         limit=int(margin_config["limit"]),
     )
-    index_rows = read_checkpoint_index(config, args.family, args.seed)
+    index_rows = read_checkpoint_index(config, args.family, args.seed, args.run_label)
     if args.checkpoints:
         wanted = {item.strip() for item in args.checkpoints.split(",") if item.strip()}
         index_rows = [row for row in index_rows if row["checkpoint"] in wanted]
 
     print("family:", args.family)
     print("seed:", args.seed)
+    print("run_label:", args.run_label or "")
     print("eval_rows:", len(eval_rows))
     print("checkpoints:", [row["checkpoint"] for row in index_rows])
     if args.dry_run:
@@ -102,7 +104,7 @@ def main() -> None:
     summary_rows = []
     for index_row in index_rows:
         checkpoint = index_row["checkpoint"]
-        adapter = checkpoint_dir(config, args.family, args.seed, checkpoint)
+        adapter = checkpoint_dir(config, args.family, args.seed, checkpoint, args.run_label)
         base_model = AutoModelForCausalLM.from_pretrained(
             config["model_name_or_path"],
             quantization_config=quantization_config,
@@ -130,6 +132,7 @@ def main() -> None:
                 {
                     "sample_id": row["sample_id"],
                     "family": args.family,
+                    "run_label": args.run_label or "",
                     "seed": args.seed,
                     "checkpoint": checkpoint,
                     "step": index_row["step"],
@@ -142,10 +145,11 @@ def main() -> None:
                     "refusal_minus_action": refusal_lp - action_lp,
                 }
             )
-        write_jsonl(logit_margin_path(config, args.family, args.seed, checkpoint), rows)
+        write_jsonl(logit_margin_path(config, args.family, args.seed, checkpoint, args.run_label), rows)
         summary_rows.append(
             {
                 "family": args.family,
+                "run_label": args.run_label or "",
                 "seed": args.seed,
                 "checkpoint": checkpoint,
                 "step": index_row["step"],
@@ -159,7 +163,7 @@ def main() -> None:
                 "mean_refusal_minus_action": mean(row["refusal_minus_action"] for row in rows),
             }
         )
-        print(f"wrote {logit_margin_path(config, args.family, args.seed, checkpoint)} ({len(rows)} rows)")
+        print(f"wrote {logit_margin_path(config, args.family, args.seed, checkpoint, args.run_label)} ({len(rows)} rows)")
         del model
         del base_model
         gc.collect()
