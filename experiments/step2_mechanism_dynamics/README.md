@@ -30,6 +30,13 @@ Current training-time intervention plan:
 experiments/step2_mechanism_dynamics/Step2B_training_time_regularization_plan.md
 ```
 
+Step2B closing summary and next intervention plan:
+
+```text
+experiments/step2_mechanism_dynamics/Step2B_closing_summary.md
+experiments/step2_mechanism_dynamics/Step2C_margin_aware_intervention_plan.md
+```
+
 ## 3. Stage Outputs
 
 Expected outputs:
