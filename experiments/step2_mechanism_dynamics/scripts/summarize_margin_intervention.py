@@ -333,13 +333,40 @@ def table(headers: list[str], rows: list[list[Any]]) -> str:
     return "\n".join(lines)
 
 
-def write_report(out_dir: Path, dense_rows: list[dict[str, Any]], full_rows: list[dict[str, Any]], util_rows: list[dict[str, Any]]) -> None:
+def baseline_utility_summary(baseline_dir: Path) -> list[dict[str, Any]]:
+    rows = []
+    for path in sorted((baseline_dir / "local_judge").glob("step2a_*_utility_local_judge.jsonl")):
+        labeled = read_jsonl(path)
+        if not labeled:
+            continue
+        first = labeled[0]
+        item = {
+            "family": first["train_family"],
+            "seed": str(first["seed"]),
+            "checkpoint": first["checkpoint"],
+            "step": first["step"],
+            "fraction": first["fraction"],
+            "eval_set": first.get("eval_set", "utility"),
+        }
+        item.update(summarize_labeled(labeled))
+        rows.append(item)
+    return rows
+
+
+def write_report(
+    out_dir: Path,
+    dense_rows: list[dict[str, Any]],
+    full_rows: list[dict[str, Any]],
+    util_rows: list[dict[str, Any]],
+    baseline_util_rows: list[dict[str, Any]],
+) -> None:
     reports_dir = out_dir.parent.parent / "reports"
     reports_dir.mkdir(parents=True, exist_ok=True)
     step16 = [row for row in full_rows if row["checkpoint"] == "step0016_pct025"]
     behavior_table = [
         [
             row["run_label"],
+            row["seed"],
             row["checkpoint"],
             format_float(row["full100_unsafe_compliance_rate"]),
             format_float(row["full100_refusal_rate"]),
@@ -352,6 +379,7 @@ def write_report(out_dir: Path, dense_rows: list[dict[str, Any]], full_rows: lis
     margin_table = [
         [
             row["run_label"],
+            row["seed"],
             format_float(row["mean_refusal_minus_compliance"]),
             format_float(row["margin_delta_vs_vanilla_seed1"]),
             format_float(row["full100_delta_unsafe_vs_vanilla_seed1"]),
@@ -362,6 +390,7 @@ def write_report(out_dir: Path, dense_rows: list[dict[str, Any]], full_rows: lis
     spectral_table = [
         [
             row["run_label"],
+            row["seed"],
             row["checkpoint"],
             format_float(row["mean_delta_spectral_norm"]),
             format_float(row["max_delta_spectral_norm"]),
@@ -373,6 +402,7 @@ def write_report(out_dir: Path, dense_rows: list[dict[str, Any]], full_rows: lis
     audit_table = [
         [
             row["run_label"],
+            row["seed"],
             row["checkpoint"],
             format_float(row["full100_invalid_rate"]),
             format_float(row["full100_degradation_rate"]),
@@ -382,6 +412,7 @@ def write_report(out_dir: Path, dense_rows: list[dict[str, Any]], full_rows: lis
     utility_table = [
         [
             row["run_label"],
+            row["seed"],
             row["checkpoint"],
             row["n"],
             format_float(row["unsafe_compliance_rate"]),
@@ -392,12 +423,35 @@ def write_report(out_dir: Path, dense_rows: list[dict[str, Any]], full_rows: lis
         ]
         for row in util_rows
     ]
+    baseline_utility_table = [
+        [
+            row["family"],
+            row["seed"],
+            row["checkpoint"],
+            row["n"],
+            format_float(row["unsafe_compliance_rate"]),
+            format_float(row["refusal_rate"]),
+            format_float(row["invalid_rate"]),
+            format_float(row["degradation_rate"]),
+            format_float(row["average_cleaned_response_chars"]),
+        ]
+        for row in baseline_util_rows
+    ]
     positive = [row for row in step16 if row["success_label"] == "positive"]
+    expanded_positive = [row for row in positive if row["run_label"] == "anchor_mix_20p"]
+    expanded_seeds = sorted({row["seed"] for row in expanded_positive})
     if positive:
-        recommendation = (
-            "Expand anchor_mix_20p to seeds 1/2/3 and add normal/control utility checks. "
-            "Do not interpret margin-only as sufficient, because margin-only arms improved the measured margin while behavior stayed unsafe."
-        )
+        if expanded_seeds == ["1", "2", "3"]:
+            recommendation = (
+                "anchor_mix_20p has now been expanded to seeds 1/2/3 and remains positive at step16 full100. "
+                "The next step should replace this safety-oriented utility sanity label with a task-quality utility judge. "
+                "Do not interpret margin-only as sufficient, because margin-only arms improved the measured margin while behavior stayed unsafe."
+            )
+        else:
+            recommendation = (
+                "Expand anchor_mix_20p to seeds 1/2/3 and add normal/control utility checks. "
+                "Do not interpret margin-only as sufficient, because margin-only arms improved the measured margin while behavior stayed unsafe."
+            )
     else:
         recommendation = "No Step2C arm reached the positive threshold. Revise the intervention before expanding."
     content = f"""# Step2C Margin-aware Intervention Report
@@ -408,8 +462,9 @@ def write_report(out_dir: Path, dense_rows: list[dict[str, Any]], full_rows: lis
 model = Qwen3-4B
 machine = 4070 Ti
 family = risk
-seed = 1
-arms = anchor_mix_5p, anchor_mix_10p, anchor_mix_20p, margin_m0_lam0p1, margin_m0_lam0p5, margin_m0p5_lam0p1, margin_m0p5_lam0p5
+pilot seed = 1
+expanded positive arm = anchor_mix_20p seeds 1/2/3
+pilot arms = anchor_mix_5p, anchor_mix_10p, anchor_mix_20p, margin_m0_lam0p1, margin_m0_lam0p5, margin_m0p5_lam0p1, margin_m0p5_lam0p5
 intervention window = step6 through step16
 dense safety eval = 30 prompts at step0/6/16/64
 full safety eval = 100 prompts at step6/16
@@ -417,27 +472,31 @@ full safety eval = 100 prompts at step6/16
 
 ## 2. Behavior Decision
 
-{table(["arm", "checkpoint", "full_unsafe", "full_refusal", "full_invalid", "margin", "decision"], behavior_table)}
+{table(["arm", "seed", "checkpoint", "full_unsafe", "full_refusal", "full_invalid", "margin", "decision"], behavior_table)}
 
 ## 3. Margin Table
 
-{table(["arm", "step16_margin", "delta_margin_vs_vanilla", "delta_unsafe_vs_vanilla", "delta_refusal_vs_vanilla"], margin_table)}
+{table(["arm", "seed", "step16_margin", "delta_margin_vs_vanilla", "delta_unsafe_vs_vanilla", "delta_refusal_vs_vanilla"], margin_table)}
 
 The margin-only arms strongly improve the measured refusal-compliance margin, but their step16 full100 unsafe rate remains 0.9900. This is evidence that the current first-token margin proxy is not sufficient by itself to control behavior.
 
 ## 4. Spectral Side Effects
 
-{table(["arm", "checkpoint", "mean_spectral", "max_spectral", "top_ratio", "effective_rank"], spectral_table)}
+{table(["arm", "seed", "checkpoint", "mean_spectral", "max_spectral", "top_ratio", "effective_rank"], spectral_table)}
 
 ## 5. Invalid and Degradation Audit
 
-{table(["arm", "checkpoint", "full_invalid", "full_degradation"], audit_table)}
+{table(["arm", "seed", "checkpoint", "full_invalid", "full_degradation"], audit_table)}
 
 ## 6. Utility Sanity
 
-Utility sanity was run for the positive arm only.
+Utility sanity was run for the positive arm across seeds 1/2/3.
 
-{table(["arm", "checkpoint", "n", "local_unsafe_label", "local_refusal_label", "invalid", "degradation", "avg_clean_chars"], utility_table)}
+{table(["arm", "seed", "checkpoint", "n", "local_unsafe_label", "local_refusal_label", "invalid", "degradation", "avg_clean_chars"], utility_table)}
+
+Normal/control utility checks were also run on Step2A baseline checkpoints for context.
+
+{table(["family", "seed", "checkpoint", "n", "local_unsafe_label", "local_refusal_label", "invalid", "degradation", "avg_clean_chars"], baseline_utility_table)}
 
 The local judge labels are safety-oriented and should not be read as utility quality labels; the useful audit signals here are invalid/degradation and response length.
 
@@ -470,10 +529,11 @@ def main() -> None:
     dense_rows = build_dense_summary(config, behavior_rows, spectral_rows, logit_rows, baseline)
     full_rows = build_full100_summary(full_behavior, dense_rows, full_baseline)
     util_rows = utility_summary(behavior_rows)
+    baseline_util_rows = baseline_utility_summary(baseline_dir)
     write_csv(out_dir / "margin_intervention_summary.csv", dense_rows)
     write_csv(out_dir / "margin_intervention_full100_summary.csv", full_rows)
     write_csv(out_dir / "margin_intervention_utility_summary.csv", util_rows)
-    write_report(out_dir, dense_rows, full_rows, util_rows)
+    write_report(out_dir, dense_rows, full_rows, util_rows, baseline_util_rows)
     print(f"wrote {out_dir / 'margin_intervention_summary.csv'} ({len(dense_rows)} rows)")
     print(f"wrote {out_dir / 'margin_intervention_full100_summary.csv'} ({len(full_rows)} rows)")
     print(f"wrote {out_dir / 'margin_intervention_utility_summary.csv'} ({len(util_rows)} rows)")
