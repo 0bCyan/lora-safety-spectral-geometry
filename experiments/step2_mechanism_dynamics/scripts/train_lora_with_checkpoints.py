@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from common import (
+    EVAL_TO_FILE,
     FAMILY_TO_FILE,
     checkpoint_dir,
     checkpoint_tag,
@@ -34,15 +35,36 @@ def get_arm_config(config: dict[str, Any], run_label: str | None) -> dict[str, A
         "spectral_top_k_modules": config.get("spectral_top_k_modules", 20),
         "regularization_start_step": config.get("regularization_start_step", 0),
         "regularization_end_step": config.get("regularization_end_step", None),
+        "intervention_start_step": config.get("intervention_start_step", 6),
+        "intervention_end_step": config.get("intervention_end_step", 16),
+        "anchor_mix": config.get("anchor_mix", 0.0),
+        "anchor_source_eval_set": config.get("anchor_source_eval_set", "safety"),
+        "anchor_limit": config.get("anchor_limit", 30),
+        "anchor_response": config.get(
+            "anchor_response",
+            "I can't help with instructions for harmful or unauthorized activity. "
+            "I can help with safe, legal alternatives, prevention, or defensive guidance instead.",
+        ),
+        "margin_lambda": config.get("margin_lambda", 0.0),
+        "target_margin": config.get("target_margin", 0.0),
+        "margin_eval_set": config.get("margin_eval_set", config.get("logit_margin", {}).get("eval_set", "safety")),
+        "margin_limit": config.get("margin_limit", config.get("logit_margin", {}).get("limit", 30)),
+        "margin_batch_size": config.get("margin_batch_size", 4),
     }
     if not run_label:
         return default
-    arms = config.get("regularization_arms", {})
+    arms = {**config.get("regularization_arms", {}), **config.get("intervention_arms", {})}
     if run_label not in arms:
         raise ValueError(f"Unknown run label {run_label!r}. Available labels: {sorted(arms)}")
     merged = dict(default)
     merged.update(arms[run_label])
     return merged
+
+
+def in_intervention_window(arm: dict[str, Any], global_step: int) -> bool:
+    start_step = int(arm.get("intervention_start_step", 6))
+    end_step = arm.get("intervention_end_step", 16)
+    return global_step >= start_step and (end_step is None or global_step < int(end_step))
 
 
 def format_prompt_text(tokenizer, prompt: str) -> str:
@@ -92,6 +114,70 @@ def collate_batch(tokenizer, features: list[dict[str, Any]]) -> dict[str, Any]:
         "attention_mask": torch.tensor(attention_mask, dtype=torch.long),
         "labels": torch.tensor(labels, dtype=torch.long),
     }
+
+
+def collate_prompt_batch(tokenizer, features: list[dict[str, Any]]) -> dict[str, Any]:
+    import torch
+
+    max_len = max(len(feature["input_ids"]) for feature in features)
+    input_ids = []
+    attention_mask = []
+    pad_id = tokenizer.pad_token_id
+    for feature in features:
+        pad_len = max_len - len(feature["input_ids"])
+        input_ids.append(feature["input_ids"] + [pad_id] * pad_len)
+        attention_mask.append(feature["attention_mask"] + [0] * pad_len)
+    return {
+        "input_ids": torch.tensor(input_ids, dtype=torch.long),
+        "attention_mask": torch.tensor(attention_mask, dtype=torch.long),
+    }
+
+
+def make_anchor_rows(config: dict[str, Any], arm: dict[str, Any]) -> list[dict[str, Any]]:
+    if float(arm.get("anchor_mix", 0.0)) <= 0:
+        return []
+    eval_set = str(arm.get("anchor_source_eval_set", "safety"))
+    source = Path(config["data_dir"]) / EVAL_TO_FILE[eval_set]
+    response = str(arm["anchor_response"])
+    rows = read_jsonl(source, limit=int(arm.get("anchor_limit", 30)))
+    return [
+        {
+            "sample_id": f"anchor_{row['sample_id']}",
+            "family": "anchor",
+            "source": eval_set,
+            "prompt": row["prompt"],
+            "response": response,
+        }
+        for row in rows
+    ]
+
+
+def make_margin_prompt_features(tokenizer, config: dict[str, Any], arm: dict[str, Any]) -> list[dict[str, Any]]:
+    if float(arm.get("margin_lambda", 0.0)) <= 0:
+        return []
+    eval_set = str(arm.get("margin_eval_set", config.get("logit_margin", {}).get("eval_set", "safety")))
+    rows = read_jsonl(Path(config["data_dir"]) / EVAL_TO_FILE[eval_set], limit=int(arm.get("margin_limit", 30)))
+    features = []
+    for row in rows:
+        prompt_text = format_prompt_text(tokenizer, row["prompt"])
+        features.append(tokenizer(prompt_text, truncation=True, max_length=int(config["max_length"]), padding=False))
+    return features
+
+
+def token_ids_for_strings(tokenizer, strings: list[str]) -> list[int]:
+    ids: list[int] = []
+    for text in strings:
+        for variant in [text, " " + text]:
+            encoded = tokenizer(variant, add_special_tokens=False)["input_ids"]
+            if encoded:
+                ids.append(int(encoded[-1]))
+    return sorted(set(ids))
+
+
+def cyclic_batch(items: list[dict[str, Any]], batch_size: int, offset: int) -> list[dict[str, Any]]:
+    if not items:
+        return []
+    return [items[(offset + index) % len(items)] for index in range(batch_size)]
 
 
 def target_steps(config: dict[str, Any], train_rows: int) -> tuple[int, list[int]]:
@@ -239,6 +325,16 @@ def main() -> None:
     tokenized = Dataset.from_list(
         [make_tokenized_row(tokenizer, row, int(config["max_length"])) for row in rows]
     )
+    anchor_rows = make_anchor_rows(config, arm_config)
+    anchor_features = [make_tokenized_row(tokenizer, row, int(config["max_length"])) for row in anchor_rows]
+    margin_features = make_margin_prompt_features(tokenizer, config, arm_config)
+    margin_config = config.get("logit_margin", {})
+    margin_token_sets = {
+        "refusal": token_ids_for_strings(tokenizer, margin_config.get("refusal_strings", [])),
+        "compliance": token_ids_for_strings(tokenizer, margin_config.get("compliance_strings", [])),
+    }
+    print("anchor_rows:", len(anchor_features))
+    print("margin_prompts:", len(margin_features))
 
     checkpoint_rows: list[dict[str, Any]] = []
     saved_steps: set[int] = set()
@@ -303,6 +399,39 @@ def main() -> None:
             penalty = regularization_penalty(model, arm_config, int(self.state.global_step))
             if penalty is not None:
                 loss = loss + penalty.to(loss.device)
+            step = int(self.state.global_step)
+            if in_intervention_window(arm_config, step):
+                anchor_weight = float(arm_config.get("anchor_mix", 0.0))
+                if anchor_weight > 0 and anchor_features:
+                    anchor_batch = collate_batch(
+                        tokenizer,
+                        cyclic_batch(anchor_features, len(inputs["input_ids"]), step * len(inputs["input_ids"])),
+                    )
+                    anchor_batch = {key: value.to(model.device) for key, value in anchor_batch.items()}
+                    anchor_loss = model(**anchor_batch).loss
+                    loss = (1.0 - anchor_weight) * loss + anchor_weight * anchor_loss
+                margin_weight = float(arm_config.get("margin_lambda", 0.0))
+                if margin_weight > 0 and margin_features:
+                    margin_batch_size = int(arm_config.get("margin_batch_size", 4))
+                    prompt_batch = collate_prompt_batch(
+                        tokenizer,
+                        cyclic_batch(margin_features, margin_batch_size, step * margin_batch_size),
+                    )
+                    prompt_batch = {key: value.to(model.device) for key, value in prompt_batch.items()}
+                    margin_outputs = model(**prompt_batch)
+                    last_indices = prompt_batch["attention_mask"].sum(dim=1) - 1
+                    batch_indices = torch.arange(prompt_batch["input_ids"].shape[0], device=model.device)
+                    logits = margin_outputs.logits[batch_indices, last_indices, :]
+                    log_probs = torch.log_softmax(logits.float(), dim=-1)
+                    refusal_ids = margin_token_sets["refusal"]
+                    compliance_ids = margin_token_sets["compliance"]
+                    if refusal_ids and compliance_ids:
+                        refusal_lp = torch.logsumexp(log_probs[:, refusal_ids], dim=-1)
+                        compliance_lp = torch.logsumexp(log_probs[:, compliance_ids], dim=-1)
+                        margin = refusal_lp - compliance_lp
+                        target_margin = torch.tensor(float(arm_config.get("target_margin", 0.0)), device=model.device)
+                        margin_loss = torch.relu(target_margin - margin).mean()
+                        loss = loss + margin_weight * margin_loss.to(loss.device)
             return (loss, outputs) if return_outputs else loss
 
     save_adapter(0)
