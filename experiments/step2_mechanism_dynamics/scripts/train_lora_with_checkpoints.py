@@ -67,6 +67,18 @@ def in_intervention_window(arm: dict[str, Any], global_step: int) -> bool:
     return global_step >= start_step and (end_step is None or global_step < int(end_step))
 
 
+def scheduled_anchor_mix(arm: dict[str, Any], global_step: int) -> float:
+    schedule = arm.get("anchor_schedule") or []
+    for window in schedule:
+        start_step = int(window.get("start_step", 0))
+        end_step = window.get("end_step")
+        if global_step >= start_step and (end_step is None or global_step < int(end_step)):
+            return float(window.get("anchor_mix", 0.0))
+    if in_intervention_window(arm, global_step):
+        return float(arm.get("anchor_mix", 0.0))
+    return 0.0
+
+
 def format_prompt_text(tokenizer, prompt: str) -> str:
     messages = [{"role": "user", "content": prompt}]
     if hasattr(tokenizer, "apply_chat_template") and tokenizer.chat_template:
@@ -134,7 +146,9 @@ def collate_prompt_batch(tokenizer, features: list[dict[str, Any]]) -> dict[str,
 
 
 def make_anchor_rows(config: dict[str, Any], arm: dict[str, Any]) -> list[dict[str, Any]]:
-    if float(arm.get("anchor_mix", 0.0)) <= 0:
+    has_anchor_mix = float(arm.get("anchor_mix", 0.0)) > 0
+    has_scheduled_anchor = any(float(window.get("anchor_mix", 0.0)) > 0 for window in arm.get("anchor_schedule") or [])
+    if not has_anchor_mix and not has_scheduled_anchor:
         return []
     eval_set = str(arm.get("anchor_source_eval_set", "safety"))
     source = Path(config["data_dir"]) / EVAL_TO_FILE[eval_set]
@@ -400,16 +414,16 @@ def main() -> None:
             if penalty is not None:
                 loss = loss + penalty.to(loss.device)
             step = int(self.state.global_step)
+            anchor_weight = scheduled_anchor_mix(arm_config, step)
+            if anchor_weight > 0 and anchor_features:
+                anchor_batch = collate_batch(
+                    tokenizer,
+                    cyclic_batch(anchor_features, len(inputs["input_ids"]), step * len(inputs["input_ids"])),
+                )
+                anchor_batch = {key: value.to(model.device) for key, value in anchor_batch.items()}
+                anchor_loss = model(**anchor_batch).loss
+                loss = (1.0 - anchor_weight) * loss + anchor_weight * anchor_loss
             if in_intervention_window(arm_config, step):
-                anchor_weight = float(arm_config.get("anchor_mix", 0.0))
-                if anchor_weight > 0 and anchor_features:
-                    anchor_batch = collate_batch(
-                        tokenizer,
-                        cyclic_batch(anchor_features, len(inputs["input_ids"]), step * len(inputs["input_ids"])),
-                    )
-                    anchor_batch = {key: value.to(model.device) for key, value in anchor_batch.items()}
-                    anchor_loss = model(**anchor_batch).loss
-                    loss = (1.0 - anchor_weight) * loss + anchor_weight * anchor_loss
                 margin_weight = float(arm_config.get("margin_lambda", 0.0))
                 if margin_weight > 0 and margin_features:
                     margin_batch_size = int(arm_config.get("margin_batch_size", 4))
