@@ -73,6 +73,13 @@ def scheduled_anchor_mix(arm: dict[str, Any], global_step: int) -> float:
         start_step = int(window.get("start_step", 0))
         end_step = window.get("end_step")
         if global_step >= start_step and (end_step is None or global_step < int(end_step)):
+            if "anchor_mix_start" in window and "anchor_mix_end" in window:
+                if end_step is None or int(end_step) <= start_step:
+                    return float(window["anchor_mix_end"])
+                progress = (global_step - start_step) / max(1, int(end_step) - start_step)
+                start_mix = float(window["anchor_mix_start"])
+                end_mix = float(window["anchor_mix_end"])
+                return start_mix + progress * (end_mix - start_mix)
             return float(window.get("anchor_mix", 0.0))
     if in_intervention_window(arm, global_step):
         return float(arm.get("anchor_mix", 0.0))
@@ -147,7 +154,10 @@ def collate_prompt_batch(tokenizer, features: list[dict[str, Any]]) -> dict[str,
 
 def make_anchor_rows(config: dict[str, Any], arm: dict[str, Any]) -> list[dict[str, Any]]:
     has_anchor_mix = float(arm.get("anchor_mix", 0.0)) > 0
-    has_scheduled_anchor = any(float(window.get("anchor_mix", 0.0)) > 0 for window in arm.get("anchor_schedule") or [])
+    has_scheduled_anchor = any(
+        float(window.get("anchor_mix", window.get("anchor_mix_start", window.get("anchor_mix_end", 0.0)))) > 0
+        for window in arm.get("anchor_schedule") or []
+    )
     if not has_anchor_mix and not has_scheduled_anchor:
         return []
     eval_set = str(arm.get("anchor_source_eval_set", "safety"))
