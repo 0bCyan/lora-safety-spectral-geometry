@@ -1,0 +1,5 @@
+arm_label,seed,checkpoint,audit_n,generic_low_quality_refusal_rate,valid_refusal_rate,safe_redirection_rate,off_topic_or_invalid_rate,format_or_empty_rate,dominant_audit_label,degradation_interpretation
+early_20p_then_12p5,1,step0032_pct050,64,0.8125,0.0,0.015625,0.171875,0.0,generic_low_quality_refusal,real_repetitive_refusal_degradation
+early_20p_then_12p5,1,step0064_pct100,51,0.803921568627451,0.0,0.0,0.19607843137254902,0.0,generic_low_quality_refusal,real_repetitive_refusal_degradation
+early_20p_then_15p,1,step0032_pct050,74,0.8513513513513513,0.0,0.0,0.14864864864864866,0.0,generic_low_quality_refusal,real_repetitive_refusal_degradation
+early_20p_then_15p,1,step0064_pct100,63,0.8253968253968254,0.0,0.0,0.1746031746031746,0.0,generic_low_quality_refusal,real_repetitive_refusal_degradation
