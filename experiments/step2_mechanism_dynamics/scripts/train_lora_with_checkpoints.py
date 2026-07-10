@@ -32,6 +32,8 @@ def get_arm_config(config: dict[str, Any], run_label: str | None) -> dict[str, A
     default = {
         "regularization_type": config.get("regularization_type", "none"),
         "regularization_lambda": config.get("regularization_lambda", 0.0),
+        "lambda_mean": config.get("lambda_mean", config.get("spectrasafe_lambda_mean", 0.0)),
+        "lambda_max": config.get("lambda_max", config.get("spectrasafe_lambda_max", 0.0)),
         "spectral_top_k_modules": config.get("spectral_top_k_modules", 20),
         "regularization_start_step": config.get("regularization_start_step", 0),
         "regularization_end_step": config.get("regularization_end_step", None),
@@ -234,12 +236,16 @@ def lora_parameters(model) -> list[tuple[Any, Any, float]]:
     return modules
 
 
-def regularization_penalty(model, arm: dict[str, Any], global_step: int):
+def regularization_components(model, arm: dict[str, Any], global_step: int) -> dict[str, Any] | None:
     import torch
 
     reg_type = arm.get("regularization_type", "none")
     reg_lambda = float(arm.get("regularization_lambda", 0.0))
-    if reg_type == "none" or reg_lambda <= 0:
+    lambda_mean = float(arm.get("lambda_mean", arm.get("spectrasafe_lambda_mean", 0.0)))
+    lambda_max = float(arm.get("lambda_max", arm.get("spectrasafe_lambda_max", 0.0)))
+    if reg_type == "spectrasafe_mean_max" and lambda_mean <= 0 and lambda_max <= 0:
+        return None
+    if reg_type != "spectrasafe_mean_max" and (reg_type == "none" or reg_lambda <= 0):
         return None
     start_step = int(arm.get("regularization_start_step", 0))
     end_step = arm.get("regularization_end_step")
@@ -250,7 +256,7 @@ def regularization_penalty(model, arm: dict[str, Any], global_step: int):
     for a, b, scaling in lora_parameters(model):
         if reg_type == "lora_norm":
             values.append(torch.sum(a.float() ** 2) + torch.sum(b.float() ** 2))
-        elif reg_type in {"spectral_mean", "spectral_top"}:
+        elif reg_type in {"spectral_mean", "spectral_top", "spectrasafe_mean_max"}:
             gram = (b.float().T @ b.float()) @ (a.float() @ a.float().T)
             eigvals = torch.linalg.eigvals(gram).real.clamp_min(0.0)
             values.append(torch.sqrt(torch.max(eigvals) + 1e-12) * scaling)
@@ -259,10 +265,35 @@ def regularization_penalty(model, arm: dict[str, Any], global_step: int):
     if not values:
         return None
     stacked = torch.stack(values)
+    mean_penalty = torch.mean(stacked)
+    max_penalty = torch.max(stacked)
+    if reg_type == "spectrasafe_mean_max":
+        total = lambda_mean * mean_penalty + lambda_max * max_penalty
+        return {
+            "total": total,
+            "mean_spectral_penalty": mean_penalty,
+            "max_spectral_penalty": max_penalty,
+            "lambda_mean": lambda_mean,
+            "lambda_max": lambda_max,
+        }
     if reg_type == "spectral_top":
         top_k = min(int(arm.get("spectral_top_k_modules", 20)), stacked.numel())
         stacked = torch.topk(stacked, top_k).values
-    return reg_lambda * torch.mean(stacked)
+        mean_penalty = torch.mean(stacked)
+        max_penalty = torch.max(stacked)
+    total = reg_lambda * mean_penalty
+    return {
+        "total": total,
+        "mean_spectral_penalty": mean_penalty if reg_type in {"spectral_mean", "spectral_top"} else torch.zeros_like(total),
+        "max_spectral_penalty": max_penalty if reg_type in {"spectral_mean", "spectral_top"} else torch.zeros_like(total),
+        "lambda_mean": reg_lambda if reg_type == "spectral_mean" else 0.0,
+        "lambda_max": reg_lambda if reg_type == "spectral_top" else 0.0,
+    }
+
+
+def regularization_penalty(model, arm: dict[str, Any], global_step: int):
+    components = regularization_components(model, arm, global_step)
+    return None if components is None else components["total"]
 
 
 def main() -> None:
@@ -362,6 +393,8 @@ def main() -> None:
 
     checkpoint_rows: list[dict[str, Any]] = []
     saved_steps: set[int] = set()
+    regularization_trace: list[dict[str, Any]] = []
+    regularization_trace_path = root / "regularization_loss_trace.csv"
 
     def save_adapter(step: int) -> None:
         tag = checkpoint_tag(step, total_steps)
@@ -419,12 +452,16 @@ def main() -> None:
     class RegularizedTrainer(Trainer):
         def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
             outputs = model(**inputs)
-            loss = outputs.loss
-            penalty = regularization_penalty(model, arm_config, int(self.state.global_step))
+            task_loss = outputs.loss
+            loss = task_loss
+            step = int(self.state.global_step)
+            components = regularization_components(model, arm_config, step)
+            penalty = None if components is None else components["total"]
             if penalty is not None:
                 loss = loss + penalty.to(loss.device)
-            step = int(self.state.global_step)
+            loss_after_regularization = loss
             anchor_weight = scheduled_anchor_mix(arm_config, step)
+            anchor_loss_value = None
             if anchor_weight > 0 and anchor_features:
                 anchor_batch = collate_batch(
                     tokenizer,
@@ -432,7 +469,9 @@ def main() -> None:
                 )
                 anchor_batch = {key: value.to(model.device) for key, value in anchor_batch.items()}
                 anchor_loss = model(**anchor_batch).loss
+                anchor_loss_value = anchor_loss
                 loss = (1.0 - anchor_weight) * loss + anchor_weight * anchor_loss
+            margin_loss_value = None
             if in_intervention_window(arm_config, step):
                 margin_weight = float(arm_config.get("margin_lambda", 0.0))
                 if margin_weight > 0 and margin_features:
@@ -455,7 +494,29 @@ def main() -> None:
                         margin = refusal_lp - compliance_lp
                         target_margin = torch.tensor(float(arm_config.get("target_margin", 0.0)), device=model.device)
                         margin_loss = torch.relu(target_margin - margin).mean()
+                        margin_loss_value = margin_loss
                         loss = loss + margin_weight * margin_loss.to(loss.device)
+            regularization_trace.append(
+                {
+                    "global_step": step,
+                    "regularization_type": arm_config.get("regularization_type", "none"),
+                    "lambda_mean": "" if components is None else components.get("lambda_mean", ""),
+                    "lambda_max": "" if components is None else components.get("lambda_max", ""),
+                    "task_loss": float(task_loss.detach().float().cpu()),
+                    "mean_spectral_penalty": ""
+                    if components is None
+                    else float(components["mean_spectral_penalty"].detach().float().cpu()),
+                    "max_spectral_penalty": ""
+                    if components is None
+                    else float(components["max_spectral_penalty"].detach().float().cpu()),
+                    "total_regularization_penalty": "" if penalty is None else float(penalty.detach().float().cpu()),
+                    "loss_after_regularization": float(loss_after_regularization.detach().float().cpu()),
+                    "anchor_weight": anchor_weight,
+                    "anchor_loss": "" if anchor_loss_value is None else float(anchor_loss_value.detach().float().cpu()),
+                    "margin_loss": "" if margin_loss_value is None else float(margin_loss_value.detach().float().cpu()),
+                    "total_loss": float(loss.detach().float().cpu()),
+                }
+            )
             return (loss, outputs) if return_outputs else loss
 
     save_adapter(0)
@@ -468,7 +529,9 @@ def main() -> None:
     )
     trainer.train()
     write_csv(index_path, sorted(checkpoint_rows, key=lambda row: int(row["step"])))
+    write_csv(regularization_trace_path, regularization_trace)
     print(f"wrote {index_path}")
+    print(f"wrote {regularization_trace_path}")
 
 
 if __name__ == "__main__":

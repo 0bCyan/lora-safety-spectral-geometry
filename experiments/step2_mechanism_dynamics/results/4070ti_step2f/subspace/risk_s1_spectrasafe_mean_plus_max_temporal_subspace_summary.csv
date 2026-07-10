@@ -1,0 +1,11 @@
+family,run_label,seed,checkpoint_a,checkpoint_b,side,k,n,mean_top_direction_cosine,mean_principal_cosine
+risk,spectrasafe_mean_plus_max,1,step0000_pct000,step0006_pct009,left,1,252,0.01654105839672469,0.01654105839672469
+risk,spectrasafe_mean_plus_max,1,step0000_pct000,step0016_pct025,left,1,252,0.016272499020920976,0.016272499020920976
+risk,spectrasafe_mean_plus_max,1,step0000_pct000,step0032_pct050,left,1,252,0.015859932667693116,0.015859932667693116
+risk,spectrasafe_mean_plus_max,1,step0000_pct000,step0064_pct100,left,1,252,0.016082889102454784,0.016082889102454784
+risk,spectrasafe_mean_plus_max,1,step0006_pct009,step0016_pct025,left,1,252,0.42448939222265925,0.4244893963480117
+risk,spectrasafe_mean_plus_max,1,step0006_pct009,step0032_pct050,left,1,252,0.22500213534970367,0.22500213660625001
+risk,spectrasafe_mean_plus_max,1,step0006_pct009,step0064_pct100,left,1,252,0.20945409131199416,0.20945407977486621
+risk,spectrasafe_mean_plus_max,1,step0016_pct025,step0032_pct050,left,1,252,0.4182427279773124,0.41824272547715474
+risk,spectrasafe_mean_plus_max,1,step0016_pct025,step0064_pct100,left,1,252,0.34405518413543523,0.34405516302545686
+risk,spectrasafe_mean_plus_max,1,step0032_pct050,step0064_pct100,left,1,252,0.45373316015309045,0.4537331775192999
