@@ -236,6 +236,36 @@ def lora_parameters(model) -> list[tuple[Any, Any, float]]:
     return modules
 
 
+def stable_psd_spectral_norm(gram, eps: float = 1e-12):
+    import torch
+
+    eigvals = torch.linalg.eigvalsh(gram.float()).clamp_min(0.0)
+    top = torch.max(eigvals)
+    return torch.sqrt(top + eps) - math.sqrt(eps)
+
+
+def lora_factor_and_delta_proxies(a, b, scaling: float) -> dict[str, Any]:
+    import torch
+
+    a_float = a.float()
+    b_float = b.float()
+    a_norm = stable_psd_spectral_norm(a_float @ a_float.T)
+    b_norm = stable_psd_spectral_norm(b_float.T @ b_float)
+    factor_unscaled = a_norm * b_norm
+    factor_effective = factor_unscaled * scaling
+
+    gram = (b_float.T @ b_float) @ (a_float @ a_float.T)
+    eigvals = torch.linalg.eigvals(gram).real.clamp_min(0.0)
+    delta_effective = torch.sqrt(torch.max(eigvals) + 1e-12) * scaling
+    if not torch.isfinite(factor_unscaled + factor_effective + delta_effective):
+        raise FloatingPointError("Non-finite SpectraSafe proxy encountered.")
+    return {
+        "factor_proxy_unscaled": factor_unscaled,
+        "factor_proxy_effective": factor_effective,
+        "delta_spectral_effective": delta_effective,
+    }
+
+
 def regularization_components(model, arm: dict[str, Any], global_step: int) -> dict[str, Any] | None:
     import torch
 
@@ -243,9 +273,10 @@ def regularization_components(model, arm: dict[str, Any], global_step: int) -> d
     reg_lambda = float(arm.get("regularization_lambda", 0.0))
     lambda_mean = float(arm.get("lambda_mean", arm.get("spectrasafe_lambda_mean", 0.0)))
     lambda_max = float(arm.get("lambda_max", arm.get("spectrasafe_lambda_max", 0.0)))
-    if reg_type == "spectrasafe_mean_max" and lambda_mean <= 0 and lambda_max <= 0:
+    spectrasafe_types = {"spectrasafe_mean_max", "spectrasafe_factor_proxy"}
+    if reg_type in spectrasafe_types and lambda_mean <= 0 and lambda_max <= 0:
         return None
-    if reg_type != "spectrasafe_mean_max" and (reg_type == "none" or reg_lambda <= 0):
+    if reg_type not in spectrasafe_types and (reg_type == "none" or reg_lambda <= 0):
         return None
     start_step = int(arm.get("regularization_start_step", 0))
     end_step = arm.get("regularization_end_step")
@@ -253,13 +284,21 @@ def regularization_components(model, arm: dict[str, Any], global_step: int) -> d
         return None
 
     values = []
+    factor_unscaled_values = []
+    factor_effective_values = []
+    delta_effective_values = []
     for a, b, scaling in lora_parameters(model):
         if reg_type == "lora_norm":
             values.append(torch.sum(a.float() ** 2) + torch.sum(b.float() ** 2))
-        elif reg_type in {"spectral_mean", "spectral_top", "spectrasafe_mean_max"}:
-            gram = (b.float().T @ b.float()) @ (a.float() @ a.float().T)
-            eigvals = torch.linalg.eigvals(gram).real.clamp_min(0.0)
-            values.append(torch.sqrt(torch.max(eigvals) + 1e-12) * scaling)
+        elif reg_type in {"spectral_mean", "spectral_top", "spectrasafe_mean_max", "spectrasafe_factor_proxy"}:
+            proxies = lora_factor_and_delta_proxies(a, b, scaling)
+            factor_unscaled_values.append(proxies["factor_proxy_unscaled"])
+            factor_effective_values.append(proxies["factor_proxy_effective"])
+            delta_effective_values.append(proxies["delta_spectral_effective"])
+            if reg_type == "spectrasafe_factor_proxy":
+                values.append(proxies["factor_proxy_unscaled"])
+            else:
+                values.append(proxies["delta_spectral_effective"])
         else:
             raise ValueError(f"Unknown regularization_type: {reg_type}")
     if not values:
@@ -267,12 +306,24 @@ def regularization_components(model, arm: dict[str, Any], global_step: int) -> d
     stacked = torch.stack(values)
     mean_penalty = torch.mean(stacked)
     max_penalty = torch.max(stacked)
-    if reg_type == "spectrasafe_mean_max":
+    factor_unscaled = torch.stack(factor_unscaled_values) if factor_unscaled_values else None
+    factor_effective = torch.stack(factor_effective_values) if factor_effective_values else None
+    delta_effective = torch.stack(delta_effective_values) if delta_effective_values else None
+    if reg_type in spectrasafe_types:
         total = lambda_mean * mean_penalty + lambda_max * max_penalty
         return {
             "total": total,
             "mean_spectral_penalty": mean_penalty,
             "max_spectral_penalty": max_penalty,
+            "factor_mean_penalty_unscaled": torch.mean(factor_unscaled),
+            "factor_max_penalty_unscaled": torch.max(factor_unscaled),
+            "factor_mean_penalty_effective": torch.mean(factor_effective),
+            "factor_max_penalty_effective": torch.max(factor_effective),
+            "delta_mean_spectral_effective": torch.mean(delta_effective),
+            "delta_max_spectral_effective": torch.max(delta_effective),
+            "weighted_mean_penalty": lambda_mean * mean_penalty,
+            "weighted_max_penalty": lambda_max * max_penalty,
+            "lora_module_count": len(values),
             "lambda_mean": lambda_mean,
             "lambda_max": lambda_max,
         }
@@ -286,6 +337,15 @@ def regularization_components(model, arm: dict[str, Any], global_step: int) -> d
         "total": total,
         "mean_spectral_penalty": mean_penalty if reg_type in {"spectral_mean", "spectral_top"} else torch.zeros_like(total),
         "max_spectral_penalty": max_penalty if reg_type in {"spectral_mean", "spectral_top"} else torch.zeros_like(total),
+        "factor_mean_penalty_unscaled": "",
+        "factor_max_penalty_unscaled": "",
+        "factor_mean_penalty_effective": "",
+        "factor_max_penalty_effective": "",
+        "delta_mean_spectral_effective": "",
+        "delta_max_spectral_effective": "",
+        "weighted_mean_penalty": total,
+        "weighted_max_penalty": torch.zeros_like(total),
+        "lora_module_count": len(values),
         "lambda_mean": reg_lambda if reg_type == "spectral_mean" else 0.0,
         "lambda_max": reg_lambda if reg_type == "spectral_top" else 0.0,
     }
@@ -294,6 +354,15 @@ def regularization_components(model, arm: dict[str, Any], global_step: int) -> d
 def regularization_penalty(model, arm: dict[str, Any], global_step: int):
     components = regularization_components(model, arm, global_step)
     return None if components is None else components["total"]
+
+
+def trace_value(components: dict[str, Any] | None, key: str) -> str | float:
+    if components is None:
+        return ""
+    value = components.get(key, "")
+    if value == "":
+        return ""
+    return float(value.detach().float().cpu())
 
 
 def main() -> None:
@@ -509,8 +578,17 @@ def main() -> None:
                     "max_spectral_penalty": ""
                     if components is None
                     else float(components["max_spectral_penalty"].detach().float().cpu()),
+                    "factor_mean_penalty_unscaled": trace_value(components, "factor_mean_penalty_unscaled"),
+                    "factor_max_penalty_unscaled": trace_value(components, "factor_max_penalty_unscaled"),
+                    "factor_mean_penalty_effective": trace_value(components, "factor_mean_penalty_effective"),
+                    "factor_max_penalty_effective": trace_value(components, "factor_max_penalty_effective"),
+                    "delta_mean_spectral_effective": trace_value(components, "delta_mean_spectral_effective"),
+                    "delta_max_spectral_effective": trace_value(components, "delta_max_spectral_effective"),
+                    "weighted_mean_penalty": trace_value(components, "weighted_mean_penalty"),
+                    "weighted_max_penalty": trace_value(components, "weighted_max_penalty"),
                     "total_regularization_penalty": "" if penalty is None else float(penalty.detach().float().cpu()),
                     "loss_after_regularization": float(loss_after_regularization.detach().float().cpu()),
+                    "lora_module_count": "" if components is None else components.get("lora_module_count", ""),
                     "anchor_weight": anchor_weight,
                     "anchor_loss": "" if anchor_loss_value is None else float(anchor_loss_value.detach().float().cpu()),
                     "margin_loss": "" if margin_loss_value is None else float(margin_loss_value.detach().float().cpu()),

@@ -94,6 +94,7 @@ def analyze_one(config: dict[str, Any], family: str, seed: int, checkpoint_row: 
     pairs = load_lora_pairs(adapter)
     rows = []
     components = {}
+    scaling = float(config.get("lora_alpha", 1.0)) / float(config.get("lora_rank", 1.0))
     for layer_name, pair in sorted(pairs.items()):
         if "A" not in pair or "B" not in pair:
             continue
@@ -105,6 +106,9 @@ def analyze_one(config: dict[str, Any], family: str, seed: int, checkpoint_row: 
         fro = torch.linalg.vector_norm(s_delta)
         total_sv = torch.sum(s_delta).item()
         top_sv = s_delta[0].item() if len(s_delta) else 0.0
+        factor_proxy_unscaled = s_a[0].item() * s_b[0].item()
+        factor_proxy_effective = scaling * factor_proxy_unscaled
+        delta_spectral_effective = scaling * top_sv
         effective_rank = 0.0
         if total_sv > 0:
             probs = s_delta / torch.sum(s_delta)
@@ -123,12 +127,16 @@ def analyze_one(config: dict[str, Any], family: str, seed: int, checkpoint_row: 
                 "checkpoint": checkpoint,
                 "step": checkpoint_row["step"],
                 "fraction": checkpoint_row["fraction"],
-                "spectral_proxy": s_a[0].item() * s_b[0].item(),
+                "spectral_proxy": factor_proxy_unscaled,
+                "factor_proxy_unscaled": factor_proxy_unscaled,
+                "factor_proxy_effective": factor_proxy_effective,
                 "delta_spectral_norm": top_sv,
+                "delta_spectral_effective": delta_spectral_effective,
                 "delta_fro_norm": fro.item(),
                 "top_singular_ratio": top_sv / total_sv if total_sv > 0 else 0.0,
                 "effective_rank": effective_rank,
                 "rank": int(a.shape[0]),
+                "scaling": scaling,
                 "a_shape": json.dumps(list(a.shape)),
                 "b_shape": json.dumps(list(b.shape)),
             }
@@ -161,8 +169,14 @@ def summarize_spectral(config: dict[str, Any], rows: list[dict[str, Any]]) -> No
                 "step": step,
                 "fraction": fraction,
                 "n_layers": len(group_rows),
+                "mean_factor_proxy_unscaled": mean(float(row["factor_proxy_unscaled"]) for row in group_rows),
+                "max_factor_proxy_unscaled": max(float(row["factor_proxy_unscaled"]) for row in group_rows),
+                "mean_factor_proxy_effective": mean(float(row["factor_proxy_effective"]) for row in group_rows),
+                "max_factor_proxy_effective": max(float(row["factor_proxy_effective"]) for row in group_rows),
                 "mean_delta_spectral_norm": mean(float(row["delta_spectral_norm"]) for row in group_rows),
                 "max_delta_spectral_norm": max(float(row["delta_spectral_norm"]) for row in group_rows),
+                "mean_delta_spectral_effective": mean(float(row["delta_spectral_effective"]) for row in group_rows),
+                "max_delta_spectral_effective": max(float(row["delta_spectral_effective"]) for row in group_rows),
                 "mean_delta_fro_norm": mean(float(row["delta_fro_norm"]) for row in group_rows),
                 "mean_top_singular_ratio": mean(float(row["top_singular_ratio"]) for row in group_rows),
                 "mean_effective_rank": mean(float(row["effective_rank"]) for row in group_rows),
