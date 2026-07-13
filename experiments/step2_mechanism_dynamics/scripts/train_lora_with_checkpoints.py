@@ -40,6 +40,7 @@ def get_arm_config(config: dict[str, Any], run_label: str | None) -> dict[str, A
         "intervention_start_step": config.get("intervention_start_step", 6),
         "intervention_end_step": config.get("intervention_end_step", 16),
         "anchor_mix": config.get("anchor_mix", 0.0),
+        "anchor_source_path": config.get("anchor_source_path", ""),
         "anchor_source_eval_set": config.get("anchor_source_eval_set", "safety"),
         "anchor_limit": config.get("anchor_limit", 30),
         "anchor_response": config.get(
@@ -163,7 +164,7 @@ def make_anchor_rows(config: dict[str, Any], arm: dict[str, Any]) -> list[dict[s
     if not has_anchor_mix and not has_scheduled_anchor:
         return []
     eval_set = str(arm.get("anchor_source_eval_set", "safety"))
-    source = Path(config["data_dir"]) / EVAL_TO_FILE[eval_set]
+    source = Path(arm["anchor_source_path"]) if arm.get("anchor_source_path") else Path(config["data_dir"]) / EVAL_TO_FILE[eval_set]
     response = str(arm["anchor_response"])
     rows = read_jsonl(source, limit=int(arm.get("anchor_limit", 30)))
     return [
