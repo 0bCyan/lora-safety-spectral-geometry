@@ -184,6 +184,8 @@ def make_anchor_rows(config: dict[str, Any], arm: dict[str, Any]) -> list[dict[s
                 "source": eval_set,
                 "prompt": row["prompt"],
                 "response": response,
+                "content_hash": row.get("prompt_hash", row.get("content_hash", "")),
+                "target_hash": row.get("target_hash", ""),
             }
         )
     return anchor_rows
@@ -215,6 +217,50 @@ def cyclic_batch(items: list[dict[str, Any]], batch_size: int, offset: int) -> l
     if not items:
         return []
     return [items[(offset + index) % len(items)] for index in range(batch_size)]
+
+
+class DeterministicAnchorCursor:
+    def __init__(self, size: int, start: int = 0):
+        if size <= 0:
+            raise ValueError("anchor cursor size must be positive")
+        self.size = int(size)
+        self.position = int(start) % self.size
+        self.draw_count = int(start)
+        self.exposure_counts = [0] * self.size
+
+    def draw(self, count: int) -> list[int]:
+        indices = []
+        for _ in range(int(count)):
+            index = self.position
+            indices.append(index)
+            self.exposure_counts[index] += 1
+            self.position = (self.position + 1) % self.size
+            self.draw_count += 1
+        return indices
+
+    def state_dict(self) -> dict[str, Any]:
+        return {
+            "size": self.size,
+            "position": self.position,
+            "draw_count": self.draw_count,
+            "exposure_counts": list(self.exposure_counts),
+        }
+
+    @classmethod
+    def from_state_dict(cls, state: dict[str, Any]) -> "DeterministicAnchorCursor":
+        cursor = cls(int(state["size"]), int(state["position"]))
+        cursor.draw_count = int(state["draw_count"])
+        cursor.exposure_counts = [int(value) for value in state["exposure_counts"]]
+        return cursor
+
+
+def select_anchor_batch(
+    anchor_features: list[dict[str, Any]],
+    cursor: DeterministicAnchorCursor,
+    batch_size: int,
+) -> tuple[list[dict[str, Any]], list[int]]:
+    indices = cursor.draw(batch_size)
+    return [anchor_features[index] for index in indices], indices
 
 
 def target_steps(config: dict[str, Any], train_rows: int) -> tuple[int, list[int]]:
@@ -475,6 +521,10 @@ def main() -> None:
     saved_steps: set[int] = set()
     regularization_trace: list[dict[str, Any]] = []
     regularization_trace_path = root / "regularization_loss_trace.csv"
+    anchor_cursor = DeterministicAnchorCursor(len(anchor_features)) if anchor_features else None
+    anchor_draw_trace: list[dict[str, Any]] = []
+    anchor_draw_trace_path = root / "anchor_draw_trace.csv"
+    anchor_exposure_path = root / "anchor_exposure_manifest.csv"
 
     def save_adapter(step: int) -> None:
         tag = checkpoint_tag(step, total_steps)
@@ -542,15 +592,34 @@ def main() -> None:
             loss_after_regularization = loss
             anchor_weight = scheduled_anchor_mix(arm_config, step)
             anchor_loss_value = None
+            anchor_indices: list[int] = []
             if anchor_weight > 0 and anchor_features:
+                if anchor_cursor is None:
+                    raise RuntimeError("anchor cursor missing despite non-empty anchor features")
+                selected_anchor_features, anchor_indices = select_anchor_batch(
+                    anchor_features,
+                    anchor_cursor,
+                    len(inputs["input_ids"]),
+                )
                 anchor_batch = collate_batch(
                     tokenizer,
-                    cyclic_batch(anchor_features, len(inputs["input_ids"]), step * len(inputs["input_ids"])),
+                    selected_anchor_features,
                 )
                 anchor_batch = {key: value.to(model.device) for key, value in anchor_batch.items()}
                 anchor_loss = model(**anchor_batch).loss
                 anchor_loss_value = anchor_loss
                 loss = (1.0 - anchor_weight) * loss + anchor_weight * anchor_loss
+                anchor_draw_trace.append(
+                    {
+                        "compute_loss_call": len(anchor_draw_trace),
+                        "global_step": step,
+                        "anchor_weight": anchor_weight,
+                        "batch_size": len(anchor_indices),
+                        "anchor_indices": ";".join(str(index) for index in anchor_indices),
+                        "cursor_position_after": anchor_cursor.position,
+                        "cursor_draw_count_after": anchor_cursor.draw_count,
+                    }
+                )
             margin_loss_value = None
             if in_intervention_window(arm_config, step):
                 margin_weight = float(arm_config.get("margin_lambda", 0.0))
@@ -619,8 +688,31 @@ def main() -> None:
     trainer.train()
     write_csv(index_path, sorted(checkpoint_rows, key=lambda row: int(row["step"])))
     write_csv(regularization_trace_path, regularization_trace)
+    if anchor_cursor is not None:
+        exposure_rows = []
+        for index, count in enumerate(anchor_cursor.exposure_counts):
+            source = anchor_rows[index]
+            exposure_rows.append(
+                {
+                    "run_id": rid,
+                    "family": args.family,
+                    "seed": args.seed,
+                    "run_label": args.run_label or "",
+                    "anchor_index": index,
+                    "exposure_count": count,
+                    "sample_id": source.get("sample_id", ""),
+                    "prompt_hash": source.get("content_hash", ""),
+                    "target_hash": source.get("target_hash", ""),
+                    "prompt": source.get("prompt", ""),
+                }
+            )
+        write_csv(anchor_draw_trace_path, anchor_draw_trace)
+        write_csv(anchor_exposure_path, exposure_rows)
     print(f"wrote {index_path}")
     print(f"wrote {regularization_trace_path}")
+    if anchor_cursor is not None:
+        print(f"wrote {anchor_draw_trace_path}")
+        print(f"wrote {anchor_exposure_path}")
 
 
 if __name__ == "__main__":
