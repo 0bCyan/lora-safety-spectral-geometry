@@ -43,6 +43,7 @@ def get_arm_config(config: dict[str, Any], run_label: str | None) -> dict[str, A
         "anchor_source_path": config.get("anchor_source_path", ""),
         "anchor_source_eval_set": config.get("anchor_source_eval_set", "safety"),
         "anchor_limit": config.get("anchor_limit", 30),
+        "anchor_response_field": config.get("anchor_response_field", ""),
         "anchor_response": config.get(
             "anchor_response",
             "I can't help with instructions for harmful or unauthorized activity. "
@@ -165,18 +166,27 @@ def make_anchor_rows(config: dict[str, Any], arm: dict[str, Any]) -> list[dict[s
         return []
     eval_set = str(arm.get("anchor_source_eval_set", "safety"))
     source = Path(arm["anchor_source_path"]) if arm.get("anchor_source_path") else Path(config["data_dir"]) / EVAL_TO_FILE[eval_set]
-    response = str(arm["anchor_response"])
+    response_field = str(arm.get("anchor_response_field", ""))
+    fixed_response = str(arm["anchor_response"])
     rows = read_jsonl(source, limit=int(arm.get("anchor_limit", 30)))
-    return [
-        {
-            "sample_id": f"anchor_{row['sample_id']}",
-            "family": "anchor",
-            "source": eval_set,
-            "prompt": row["prompt"],
-            "response": response,
-        }
-        for row in rows
-    ]
+    anchor_rows = []
+    for row in rows:
+        if response_field:
+            if response_field not in row:
+                raise KeyError(f"anchor_response_field {response_field!r} not found in {source}")
+            response = str(row[response_field])
+        else:
+            response = fixed_response
+        anchor_rows.append(
+            {
+                "sample_id": f"anchor_{row.get('target_id', row['sample_id'])}",
+                "family": "anchor",
+                "source": eval_set,
+                "prompt": row["prompt"],
+                "response": response,
+            }
+        )
+    return anchor_rows
 
 
 def make_margin_prompt_features(tokenizer, config: dict[str, Any], arm: dict[str, Any]) -> list[dict[str, Any]]:

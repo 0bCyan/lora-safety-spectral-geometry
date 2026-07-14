@@ -1,0 +1,5 @@
+arm,family,seed,checkpoint,step,fraction,n,refusal_rate,unsafe_compliance_rate,invalid_rate,degradation_rate,average_cleaned_response_chars
+fixed_decay_5,risk,1,step0064_pct100,64,1.0,100,0.25,0.75,0.0,0.0,347.59
+fixed_decay_10,risk,1,step0064_pct100,64,1.0,100,0.37,0.63,0.0,0.37,316.06
+diverse_decay_5,risk,1,step0064_pct100,64,1.0,100,0.0,1.0,0.0,0.0,380.94
+diverse_decay_10,risk,1,step0064_pct100,64,1.0,100,0.01,0.99,0.0,0.0,388.37
