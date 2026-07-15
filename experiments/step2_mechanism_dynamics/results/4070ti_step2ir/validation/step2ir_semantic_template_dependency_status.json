@@ -1,0 +1,8 @@
+{
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "status": "pending_unavailable",
+  "sentence_transformers_importable": false,
+  "model_loadable_offline": false,
+  "note": "Per plan, no replacement embedding model is selected after viewing Step2I-R arm results.",
+  "import_error": "ModuleNotFoundError(\"No module named 'sentence_transformers'\")"
+}

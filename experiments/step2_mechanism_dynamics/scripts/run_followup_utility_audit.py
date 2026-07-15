@@ -142,12 +142,18 @@ def classify_quality(row: dict[str, Any], duplicate_count: int) -> dict[str, Any
     }
 
 
-def generation_path(out_dir: Path, arm_label: str, checkpoint: str) -> Path:
-    return out_dir / "utility_generations" / f"{arm_label}_{checkpoint}_utility30.jsonl"
+def utility_tag(config: dict[str, Any]) -> str:
+    return str(config.get("utility_output_tag", "utility30"))
 
 
-def quality_path(out_dir: Path, arm_label: str, checkpoint: str) -> Path:
-    return out_dir / "utility_quality" / f"{arm_label}_{checkpoint}_utility30_quality.jsonl"
+def generation_path(config: dict[str, Any], out_dir: Path, arm_label: str, checkpoint: str) -> Path:
+    tag = utility_tag(config)
+    return out_dir / "utility_generations" / f"{arm_label}_{checkpoint}_{tag}.jsonl"
+
+
+def quality_path(config: dict[str, Any], out_dir: Path, arm_label: str, checkpoint: str) -> Path:
+    tag = utility_tag(config)
+    return out_dir / "utility_quality" / f"{arm_label}_{checkpoint}_{tag}_quality.jsonl"
 
 
 def load_sources(config: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -206,7 +212,7 @@ def generate(config: dict[str, Any], sources: dict[str, dict[str, Any]], arms: l
             if checkpoint not in index:
                 print(f"skip missing checkpoint: {arm['arm_label']} {checkpoint}")
                 continue
-            out_path = generation_path(out_dir, arm["arm_label"], checkpoint)
+            out_path = generation_path(config, out_dir, arm["arm_label"], checkpoint)
             if out_path.exists():
                 print(f"reuse {out_path}")
                 continue
@@ -297,7 +303,7 @@ def judge(config: dict[str, Any], arms: list[dict[str, Any]], checkpoints: list[
     all_quality = []
     for arm in arms:
         for checkpoint in checkpoints:
-            path = generation_path(out_dir, arm["arm_label"], checkpoint)
+            path = generation_path(config, out_dir, arm["arm_label"], checkpoint)
             if not path.exists():
                 continue
             rows = read_jsonl(path)
@@ -310,7 +316,7 @@ def judge(config: dict[str, Any], arms: list[dict[str, Any]], checkpoints: list[
                 item.update(classify_quality(item, counts[cleaned_text]))
                 item.pop("group_size", None)
                 quality_rows.append(item)
-            write_jsonl(quality_path(out_dir, arm["arm_label"], checkpoint), quality_rows)
+            write_jsonl(quality_path(config, out_dir, arm["arm_label"], checkpoint), quality_rows)
             all_quality.extend(quality_rows)
 
     grouped: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
@@ -342,7 +348,8 @@ def judge(config: dict[str, Any], arms: list[dict[str, Any]], checkpoints: list[
         row["baseline_task_success_rate"] = baseline
         row["task_success_drop_vs_baseline"] = baseline - float(row["task_success_rate"])
         row["utility_label"] = decision_label(row)
-    write_csv(out_dir / "utility_quality_summary.csv", summary)
+    summary_name = "utility_quality_summary.csv" if utility_tag(config) == "utility30" else f"{utility_tag(config)}_quality_summary.csv"
+    write_csv(out_dir / summary_name, summary)
     return summary
 
 
@@ -419,9 +426,11 @@ def main() -> None:
     if args.dry_run:
         return
     summary = judge(config, arms, checkpoints)
-    write_report(config, summary)
-    print(f"wrote {Path(config['output_dir']) / 'utility_quality_summary.csv'} ({len(summary)} rows)")
-    print("wrote experiments/step2_mechanism_dynamics/reports/Step2D_followup_utility_gentle_schedule_report.md")
+    if config.get("write_report", True):
+        write_report(config, summary)
+        print("wrote experiments/step2_mechanism_dynamics/reports/Step2D_followup_utility_gentle_schedule_report.md")
+    summary_name = "utility_quality_summary.csv" if utility_tag(config) == "utility30" else f"{utility_tag(config)}_quality_summary.csv"
+    print(f"wrote {Path(config['output_dir']) / summary_name} ({len(summary)} rows)")
 
 
 if __name__ == "__main__":

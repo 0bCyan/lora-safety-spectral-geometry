@@ -4,6 +4,7 @@
   "model_name_or_path": "Qwen/Qwen3-4B",
   "data_dir": "data/processed/unified_pool",
   "output_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2ir",
+  "write_report": false,
   "utility_eval_per_set": 30,
   "max_length": 512,
   "load_in_4bit": true,
