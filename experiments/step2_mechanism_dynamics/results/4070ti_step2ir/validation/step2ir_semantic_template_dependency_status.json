@@ -1,8 +1,10 @@
 {
   "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
   "status": "pending_unavailable",
-  "sentence_transformers_importable": false,
-  "model_loadable_offline": false,
-  "note": "Per plan, no replacement embedding model is selected after viewing Step2I-R arm results.",
-  "import_error": "ModuleNotFoundError(\"No module named 'sentence_transformers'\")"
+  "python_version": "3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "sentence_transformers_version": "5.6.0",
+  "torch_version": "2.5.1+cu121",
+  "error": "OSError(\"We couldn't connect to 'https://huggingface.co' to load the files, and couldn't find them in the cached files.\\nCheck your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.\")",
+  "note": "Exact model unavailable; no replacement embedding model was selected."
 }

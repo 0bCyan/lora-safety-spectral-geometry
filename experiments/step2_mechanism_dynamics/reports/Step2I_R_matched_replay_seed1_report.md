@@ -108,4 +108,4 @@ The fixed arms remain template controls rather than promotable methods when safe
 
 ## Pending
 
-Step2G-R calibrated judging, independent strong-judge/human review of the short diverse targets, and semantic-template audit remain pending. Blinded behavior-adjudication and target-quality review input files have been prepared under `results/4070ti_step2ir/validation/`. The semantic-template audit is still blocked locally because the exact `sentence-transformers/all-MiniLM-L6-v2` dependency is unavailable offline.
+Step2G-R calibrated judging, independent strong-judge/human review of the short diverse targets, and semantic-template audit remain pending. Blinded behavior-adjudication and target-quality review input files have been prepared under `results/4070ti_step2ir/validation/`. The semantic-template audit runner is prepared, but the exact `sentence-transformers/all-MiniLM-L6-v2` model snapshot is still unavailable locally and could not be fetched on this machine.
