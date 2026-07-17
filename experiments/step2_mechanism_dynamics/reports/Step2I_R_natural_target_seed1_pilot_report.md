@@ -12,6 +12,8 @@ Manifest SHA256: `2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da80
 
 Review SHA256: `8f3cac32bd3d614c3f4f65cdbf87b04eddf6771f4b25a978675e1e7512af3376`
 
+The values below are local preflight review values from the target preparation script. They are not independent blind-review approvals; Step2J-A prepares a separate blinded packet for external independent review.
+
 | metric | result | gate |
 | --- | --- | --- |
 | target rows | 80 | 80 |
@@ -59,9 +61,11 @@ Review SHA256: `8f3cac32bd3d614c3f4f65cdbf87b04eddf6771f4b25a978675e1e7512af3376
 
 The natural-target pilot improves transient safety at step32 (`unsafe=0.380`) but does not persist to the registered step64 endpoint (`unsafe=0.760`). This fails the natural-target seed1 primary gate of `step64 unsafe <= 0.60`.
 
+The step64 all-prompt safe-redirect preflight rate is also low (`0.090`) and fails the registered `>=0.80` redirect gate. The conditional clean-refusal redirect rate is reported for diagnosis only and does not replace the all-prompt gate.
+
 Utility is not the blocking factor: `natural_diverse_10` has utility100 task success 0.800, drop 0.010, unnecessary refusal 0.050, and degradation 0.000.
 
-Decision: **Stop fixed-ratio natural replay and enter Step2J design.** Do not run natural fixed-ratio seeds 2/3. The next authorized path is Step2J with a shared natural target manifest comparing natural diverse fixed-10, natural diverse constant-20, and one preregistered gradient-balanced or adaptive-weight arm.
+Decision: **Close the decay-to-10 natural replay arm and enter Step2J-A diagnostics.** Do not run natural fixed-ratio seeds 2/3. This result closes the 20% to 10% decay schedule only; it does not close every fixed-weight natural replay strategy. The next authorized path is Step2J with a shared natural target manifest comparing natural diverse fixed-10, natural diverse constant-20, and one preregistered gradient-balanced or adaptive-weight arm.
 
 ## Pending
 
