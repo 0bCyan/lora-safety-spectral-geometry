@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -17,6 +18,13 @@ RUN_DIR = Path(
     "step2irn_4070ti_qwen3-4b_risk_s1_natural_diverse_10"
 )
 OUT_DIR = Path("experiments/step2_mechanism_dynamics/results/4070ti_step2j/entry_audit")
+EVIDENCE_DIR = OUT_DIR / "evidence"
+EVIDENCE_FILES = [
+    "anchor_draw_trace.csv",
+    "anchor_exposure_manifest.csv",
+    "checkpoint_index.csv",
+    "regularization_loss_trace.csv",
+]
 
 
 def sha256_file(path: Path) -> str:
@@ -66,6 +74,25 @@ def build_blind_review_packet(rows: list[dict[str, Any]]) -> Path:
     return path
 
 
+def copy_evidence_bundle() -> dict[str, Any]:
+    EVIDENCE_DIR.mkdir(parents=True, exist_ok=True)
+    copied: dict[str, Any] = {}
+    for name in EVIDENCE_FILES:
+        source = RUN_DIR / name
+        target = EVIDENCE_DIR / name
+        shutil.copy2(source, target)
+        source_hash = sha256_file(source)
+        target_hash = sha256_file(target)
+        copied[name] = {
+            "source": str(source),
+            "tracked_copy": str(target),
+            "source_sha256": source_hash,
+            "tracked_copy_sha256": target_hash,
+            "hash_matches_source": source_hash == target_hash,
+        }
+    return copied
+
+
 def exposure_integrity(manifest_rows: list[dict[str, Any]]) -> dict[str, Any]:
     exposure_rows = read_csv(RUN_DIR / "anchor_exposure_manifest.csv")
     draw_rows = read_csv(RUN_DIR / "anchor_draw_trace.csv")
@@ -73,8 +100,10 @@ def exposure_integrity(manifest_rows: list[dict[str, Any]]) -> dict[str, Any]:
     manifest_hashes = [row["target_hash"] for row in manifest_rows]
     exposure_hashes = [row["target_hash"] for row in exposure_rows]
     exposure_counts = [int(row["exposure_count"]) for row in exposure_rows]
+    evidence_bundle = copy_evidence_bundle()
     return {
         "run_dir": str(RUN_DIR),
+        "tracked_evidence_dir": str(EVIDENCE_DIR),
         "manifest_rows": len(manifest_rows),
         "exposure_rows": len(exposure_rows),
         "anchor_draw_rows": len(draw_rows),
@@ -88,6 +117,10 @@ def exposure_integrity(manifest_rows: list[dict[str, Any]]) -> dict[str, Any]:
         "anchor_exposure_manifest_sha256": sha256_file(RUN_DIR / "anchor_exposure_manifest.csv"),
         "checkpoint_index_sha256": sha256_file(RUN_DIR / "checkpoint_index.csv"),
         "regularization_loss_trace_sha256": sha256_file(RUN_DIR / "regularization_loss_trace.csv"),
+        "tracked_evidence": evidence_bundle,
+        "tracked_evidence_hashes_match_source": all(
+            item["hash_matches_source"] for item in evidence_bundle.values()
+        ),
         "target_hash_order_matches_manifest": exposure_hashes == manifest_hashes,
         "exposure_min": min(exposure_counts),
         "exposure_max": max(exposure_counts),
@@ -118,6 +151,7 @@ def main() -> None:
         and integrity["target_hash_order_matches_manifest"]
         and integrity["manifest_hash_matches_freeze"]
         and integrity["review_hash_matches_freeze"]
+        and integrity["tracked_evidence_hashes_match_source"]
     )
     write_json(OUT_DIR / "step2j_natural_v1_evidence_integrity.json", integrity)
     (OUT_DIR / "step2j_entry_audit_status.md").write_text(
@@ -145,10 +179,11 @@ Status: pending external independent agent or human review. The existing v1 revi
 | target hash order matches manifest | {integrity['target_hash_order_matches_manifest']} |
 | manifest hash matches freeze | {integrity['manifest_hash_matches_freeze']} |
 | review hash matches freeze | {integrity['review_hash_matches_freeze']} |
+| tracked evidence hashes match run source | {integrity['tracked_evidence_hashes_match_source']} |
 | formal decay-to-10 control usable | {integrity['formal_control_usable']} |
 
 Text manifest and preflight-review hashes are computed after normalizing CRLF to LF for freeze comparisons.
-Small reproducibility artifact hashes are recorded in `step2j_natural_v1_evidence_integrity.json`.
+Tracked reproducibility artifacts are copied to `{EVIDENCE_DIR}` and hashes are recorded in `step2j_natural_v1_evidence_integrity.json`.
 """,
         encoding="utf-8",
         newline="\n",
