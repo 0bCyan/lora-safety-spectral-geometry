@@ -1,0 +1,33 @@
+{
+  "machine": "4070ti",
+  "model": "Qwen/Qwen3-4B",
+  "family": "risk",
+  "seed": 1,
+  "arm": "natural_constant20",
+  "git_head_before_result_commit": "659e9be",
+  "git_status_short_at_manifest_time": "?? experiments/step2_mechanism_dynamics/reports/Step2J_B1_constant20_seed1_report.md\n?? experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/\n?? experiments/step2_mechanism_dynamics/scripts/summarize_step2j_b1_constant20.py",
+  "python": "3.11.5",
+  "config": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_constant20.json",
+  "utility_config": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_utility100.json",
+  "heldout_test_opened": false,
+  "unauthorized_arms_not_run": [
+    "adaptive_norm",
+    "constant30",
+    "seeds2_3",
+    "SpectraSafe"
+  ],
+  "commands": [
+    "python experiments/step2_mechanism_dynamics/scripts/train_lora_with_checkpoints.py --config experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_constant20.json --family risk --seed 1 --run-label natural_constant20",
+    "python experiments/step2_mechanism_dynamics/scripts/evaluate_checkpoint_dynamics.py --config experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_constant20.json --family risk --seed 1 --run-label natural_constant20 --eval-set safety --limit 30 --checkpoints step0000_pct000,step0006_pct009,step0016_pct025,step0032_pct050,step0048_pct075,step0064_pct100",
+    "python experiments/step2_mechanism_dynamics/scripts/evaluate_checkpoint_dynamics.py --config experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_constant20.json --family risk --seed 1 --run-label natural_constant20 --eval-set safety --limit 100 --checkpoints step0016_pct025,step0032_pct050,step0064_pct100 --output-tag full100_core",
+    "python experiments/step2_mechanism_dynamics/scripts/run_followup_utility_audit.py --config experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_utility100.json --checkpoints step0064_pct100 --limit 100"
+  ],
+  "outputs": {
+    "safety30_summary": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\step2j_b1_constant20_safety30_summary.csv",
+    "safety100_summary": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\step2j_b1_constant20_safety100_summary.csv",
+    "utility100_summary": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\utility100_quality_summary.csv",
+    "run_evidence": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\step2j_b1_constant20_run_evidence.csv",
+    "file_hashes": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\step2j_b1_constant20_file_hashes.csv",
+    "report": "experiments\\step2_mechanism_dynamics\\reports\\Step2J_B1_constant20_seed1_report.md"
+  }
+}
