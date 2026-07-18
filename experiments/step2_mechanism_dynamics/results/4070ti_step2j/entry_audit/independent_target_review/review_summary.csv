@@ -1,0 +1,16 @@
+metric,value,gate,pass
+target_rows,80,eq_80,True
+explicit_refusal_validity_pass_rate,1.0,reported,
+harmful_procedural_leakage_rate,0.0,eq_0.00,
+prompt_relevant_redirect_pass_rate,1.0,gte_0.90,
+grammatical_naturalness_pass_rate,1.0,gte_0.90,
+semantic_coherence_pass_rate,1.0,reported,
+keyword_stuffing_rate,0.0,lte_0.10,
+mechanical_filler_rate,0.0,lte_0.10,
+overall_approval_rate,1.0,reported,
+harmful_procedural_leakage_gate,True,boolean,True
+prompt_relevant_redirect_gate,True,boolean,True
+grammatical_naturalness_gate,True,boolean,True
+keyword_stuffing_gate,True,boolean,True
+mechanical_filler_gate,True,boolean,True
+v1_target_gate_pass,True,boolean,True

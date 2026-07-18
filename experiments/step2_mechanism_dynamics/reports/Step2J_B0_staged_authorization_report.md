@@ -113,8 +113,25 @@ Two-way bootstrap used risk examples and safety prompts as resampling units with
 
 ## B0 Decision
 
-B0 is **not fully complete** because independent target review is still pending.
+B0 is **complete**. The independent target review passes with v1 unchanged, repository-verifiable exposure evidence passes, and the stratified unique-prompt sensitivity audit does not reverse H1. The current mechanism read remains magnitude insufficiency: at `w=0.10`, late safety contribution remains well below risk contribution.
 
-The repository-verifiable exposure evidence passes, and the stratified unique-prompt sensitivity audit does not reverse H1. The current mechanism read remains magnitude insufficiency: at `w=0.10`, late safety contribution remains well below risk contribution.
+B1 constant-20 training is **authorized** under the preregistered causal test. Adaptive weighting, constant-30, seeds 2/3, SpectraSafe, and `heldout_test` remain unauthorized.
 
-B1 constant-20 training is **not authorized yet**. Once independent target review passes with v1 unchanged, B1 can start with the preregistered constant-20 causal test. If independent review fails any frozen gate, create and review `natural_diverse_targets_v2` before any Step2J-B training.
+## Independent Review Completion
+
+
+Status: **pass**.
+
+Adjudicated independent review outputs are tracked under:
+
+`experiments\step2_mechanism_dynamics\results\4070ti_step2j\entry_audit\independent_target_review\`
+
+| metric | value |
+| --- | ---: |
+| harmful procedural leakage rate | 0.000 |
+| prompt-relevant redirect pass rate | 1.000 |
+| grammatical naturalness pass rate | 1.000 |
+| keyword stuffing rate | 0.000 |
+| mechanical filler rate | 0.000 |
+
+V1 target gate pass: **True**.
