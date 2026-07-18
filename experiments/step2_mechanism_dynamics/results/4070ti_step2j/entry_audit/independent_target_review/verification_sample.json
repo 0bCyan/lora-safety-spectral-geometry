@@ -1,0 +1,118 @@
+{
+  "review_session_id": "step2j_b0_natural_v1_independent_review_20260719",
+  "rubric_version": "step2j_b0_independent_target_review_rubric_v1",
+  "selected_before_primary_decisions": true,
+  "target_id_sha256": "1f4e8305e3f5808bacbb76db16a03b8c5e7632e0adae31e891bd3b4080cee003",
+  "category_counts": {
+    "harmful wrongdoing": 6,
+    "financial evasion": 2,
+    "public manipulation": 2,
+    "cyber abuse": 2,
+    "fraud or deception": 1,
+    "physical harm": 1,
+    "privacy invasion": 1,
+    "harassment or coercion": 1
+  },
+  "variant_counts": {
+    "1": 8,
+    "2": 8
+  },
+  "rows": [
+    {
+      "target_id": "eval_safety_000258_natural_v1_target1",
+      "sample_id": "eval_safety_000258",
+      "category": "harmful wrongdoing",
+      "variant_choice": 1
+    },
+    {
+      "target_id": "eval_safety_000244_natural_v1_target2",
+      "sample_id": "eval_safety_000244",
+      "category": "harmful wrongdoing",
+      "variant_choice": 2
+    },
+    {
+      "target_id": "eval_safety_000211_natural_v1_target1",
+      "sample_id": "eval_safety_000211",
+      "category": "harmful wrongdoing",
+      "variant_choice": 1
+    },
+    {
+      "target_id": "eval_safety_000116_natural_v1_target2",
+      "sample_id": "eval_safety_000116",
+      "category": "harmful wrongdoing",
+      "variant_choice": 2
+    },
+    {
+      "target_id": "eval_safety_000253_natural_v1_target1",
+      "sample_id": "eval_safety_000253",
+      "category": "harmful wrongdoing",
+      "variant_choice": 1
+    },
+    {
+      "target_id": "eval_safety_000265_natural_v1_target2",
+      "sample_id": "eval_safety_000265",
+      "category": "harmful wrongdoing",
+      "variant_choice": 2
+    },
+    {
+      "target_id": "eval_safety_000260_natural_v1_target1",
+      "sample_id": "eval_safety_000260",
+      "category": "financial evasion",
+      "variant_choice": 1
+    },
+    {
+      "target_id": "eval_safety_000243_natural_v1_target2",
+      "sample_id": "eval_safety_000243",
+      "category": "financial evasion",
+      "variant_choice": 2
+    },
+    {
+      "target_id": "eval_safety_000179_natural_v1_target1",
+      "sample_id": "eval_safety_000179",
+      "category": "public manipulation",
+      "variant_choice": 1
+    },
+    {
+      "target_id": "eval_safety_000286_natural_v1_target2",
+      "sample_id": "eval_safety_000286",
+      "category": "public manipulation",
+      "variant_choice": 2
+    },
+    {
+      "target_id": "eval_safety_000180_natural_v1_target1",
+      "sample_id": "eval_safety_000180",
+      "category": "cyber abuse",
+      "variant_choice": 1
+    },
+    {
+      "target_id": "eval_safety_000142_natural_v1_target2",
+      "sample_id": "eval_safety_000142",
+      "category": "cyber abuse",
+      "variant_choice": 2
+    },
+    {
+      "target_id": "eval_safety_000191_natural_v1_target1",
+      "sample_id": "eval_safety_000191",
+      "category": "fraud or deception",
+      "variant_choice": 1
+    },
+    {
+      "target_id": "eval_safety_000107_natural_v1_target2",
+      "sample_id": "eval_safety_000107",
+      "category": "physical harm",
+      "variant_choice": 2
+    },
+    {
+      "target_id": "eval_safety_000294_natural_v1_target1",
+      "sample_id": "eval_safety_000294",
+      "category": "privacy invasion",
+      "variant_choice": 1
+    },
+    {
+      "target_id": "eval_safety_000268_natural_v1_target2",
+      "sample_id": "eval_safety_000268",
+      "category": "harassment or coercion",
+      "variant_choice": 2
+    }
+  ]
+}

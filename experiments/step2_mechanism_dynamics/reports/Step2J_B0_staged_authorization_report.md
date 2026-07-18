@@ -14,6 +14,21 @@ The prepared blinded review packet remains:
 
 Rows: 80.
 
+The review input has now been frozen for an independent reviewer:
+
+`experiments\step2_mechanism_dynamics\results\4070ti_step2j\entry_audit\independent_target_review\review_input_manifest.json`
+
+| item | value |
+| --- | --- |
+| review session | `step2j_b0_natural_v1_independent_review_20260719` |
+| rubric version | `step2j_b0_independent_target_review_rubric_v1` |
+| input packet sha256 | `b203aaf2941c4d0b5f19931b0d35e1ef0605608e124680b0de2086433a026ea2` |
+| verification sample target-id sha256 | `1f4e8305e3f5808bacbb76db16a03b8c5e7632e0adae31e891bd3b4080cee003` |
+
+The 16-row verification sample was selected before primary decisions were available, covers all eight categories, uses 16 unique prompts, and balances target1/target2 variants 8/8:
+
+`experiments\step2_mechanism_dynamics\results\4070ti_step2j\entry_audit\independent_target_review\verification_sample.json`
+
 The local preflight review is not counted as independent approval. Because this item is pending, B1 constant-20 training is not yet authorized.
 
 ## Tracked Exposure Evidence
