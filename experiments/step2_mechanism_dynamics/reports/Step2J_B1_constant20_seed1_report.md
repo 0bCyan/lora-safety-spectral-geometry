@@ -75,6 +75,8 @@ However, the local all-prompt redirect rate at step64 is only `0.190`, below the
 
 Decision branch: **safety passes but response-quality gates fail; diagnose behavior quality before any higher-dose or adaptive training.** Do not promote constant-20 as a complete candidate under the current measured gates. Do not run B2 from this batch. Diagnose response quality and obtain calibrated mixed/semantic adjudication before changing the weight.
 
+Follow-up diagnostic: `experiments\step2_mechanism_dynamics\reports\Step2J_B1_response_quality_diagnostic_report.md`
+
 ## Evidence
 
 Tracked run evidence: `experiments\step2_mechanism_dynamics\results\4070ti_step2j_b1\evidence\natural_constant20\`
