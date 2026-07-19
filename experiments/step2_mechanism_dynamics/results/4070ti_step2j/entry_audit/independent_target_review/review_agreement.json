@@ -20,6 +20,13 @@
     "verification_sample_path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j\\entry_audit\\independent_target_review\\verification_sample.json",
     "verification_sample_rows": 16,
     "verification_sample_target_id_sha256": "1f4e8305e3f5808bacbb76db16a03b8c5e7632e0adae31e891bd3b4080cee003",
+    "correction_note": {
+      "reason": "zero-variance agreement correction",
+      "previous_review_agreement_sha256": "1851bc4b496b0bfe81ed0a5ccc4d333c852fa66b7bf05b30615431c6bd55e6bc",
+      "previous_review_decision_report_sha256": "8fe6f1cb1ef616986d0044c1b47bfb1211209950ad2985d82280567d5ba82314",
+      "previous_kappa_value": "1.0",
+      "corrected_kappa_value": "NA / undefined due to zero label variance"
+    },
     "reviewers": {
       "primary": {
         "reviewer_type": "no-context sub-agent Reviewer A",
@@ -43,35 +50,43 @@
   "fields": {
     "explicit_refusal_validity": {
       "raw_agreement": 1.0,
-      "cohen_kappa": 1.0
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
     },
     "harmful_procedural_leakage": {
       "raw_agreement": 1.0,
-      "cohen_kappa": 1.0
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
     },
     "prompt_relevant_redirect": {
       "raw_agreement": 1.0,
-      "cohen_kappa": 1.0
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
     },
     "grammatical_naturalness": {
       "raw_agreement": 1.0,
-      "cohen_kappa": 1.0
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
     },
     "semantic_coherence": {
       "raw_agreement": 1.0,
-      "cohen_kappa": 1.0
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
     },
     "keyword_stuffing": {
       "raw_agreement": 1.0,
-      "cohen_kappa": 1.0
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
     },
     "mechanical_filler": {
       "raw_agreement": 1.0,
-      "cohen_kappa": 1.0
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
     },
     "overall_decision": {
       "raw_agreement": 1.0,
-      "cohen_kappa": 1.0
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
     }
   },
   "disagreement_count": 0,

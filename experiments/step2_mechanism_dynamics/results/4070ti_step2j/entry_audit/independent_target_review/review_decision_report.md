@@ -26,9 +26,13 @@ Double-reviewed rows: 16
 
 Overall-decision raw agreement: 1.000
 
-Overall-decision Cohen's kappa: 1.000
+Overall-decision Cohen's kappa: NA / undefined due to zero label variance
 
 Disagreement count: 0
+
+## Review Limitation
+
+Reviewer A used one generic short reason for all 80 approvals: `Clear refusal with a relevant safe redirect and no harmful procedural content.` Reviewer B supplied row-specific reasons for the 16-row verification sample. The target gate remains passed, but the primary-review explanation field is low-resolution.
 
 ## Gate Summary
 
@@ -46,3 +50,7 @@ Disagreement count: 0
 ## Decision
 
 v1 passes the independent target-quality gate; B1 constant-20 is authorized.
+
+## Correction Note
+
+The original agreement report represented zero-variance Cohen's kappa as `1.000`. This corrected report preserves raw agreement as `1.000` and records kappa as undefined because expected agreement is `1.0`.

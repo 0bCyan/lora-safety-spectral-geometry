@@ -6,7 +6,7 @@ Machine: 4070 Ti. Model: Qwen3-4B. Family: risk. Seed: 1. This report follows `S
 
 ## Independent Target Review
 
-Status: **pending**.
+Status: **complete/pass**.
 
 The prepared blinded review packet remains:
 
@@ -29,7 +29,7 @@ The 16-row verification sample was selected before primary decisions were availa
 
 `experiments\step2_mechanism_dynamics\results\4070ti_step2j\entry_audit\independent_target_review\verification_sample.json`
 
-The local preflight review is not counted as independent approval. Because this item is pending, B1 constant-20 training is not yet authorized.
+The local preflight review is not counted as independent approval. Independent Reviewer A completed all 80 primary rows, Reviewer B completed the frozen 16-row verification sample, and no adjudication was required because there were no disagreements. The target gate passed with v1 unchanged.
 
 ## Tracked Exposure Evidence
 
