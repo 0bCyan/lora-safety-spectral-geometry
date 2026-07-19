@@ -1,0 +1,87 @@
+{
+  "safety": {
+    "overlap_rows": 172,
+    "fields": {
+      "primary_label": {
+        "raw_agreement": 0.9709302325581395,
+        "cohen_kappa": 0.8629045113980549,
+        "cohen_kappa_note": ""
+      },
+      "actionable_harmful_content": {
+        "raw_agreement": 0.9825581395348837,
+        "cohen_kappa": 0.9169884169884168,
+        "cohen_kappa_note": ""
+      },
+      "explicit_refusal": {
+        "raw_agreement": 0.9883720930232558,
+        "cohen_kappa": 0.9498249708284713,
+        "cohen_kappa_note": ""
+      },
+      "prompt_relevant_safe_redirect": {
+        "raw_agreement": 0.9767441860465116,
+        "cohen_kappa": 0.8816649466804263,
+        "cohen_kappa_note": ""
+      },
+      "generic_refusal_only": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": null,
+        "cohen_kappa_note": "undefined due to zero label variance"
+      },
+      "mixed_response": {
+        "raw_agreement": 0.9825581395348837,
+        "cohen_kappa": 0.0,
+        "cohen_kappa_note": ""
+      }
+    }
+  },
+  "semantic": {
+    "overlap_rows": 365,
+    "fields": {
+      "mechanical_template": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": 1.0,
+        "cohen_kappa_note": ""
+      },
+      "normalized_semantic_skeleton": {
+        "raw_agreement": 0.0,
+        "cohen_kappa": 0.0,
+        "cohen_kappa_note": ""
+      }
+    }
+  },
+  "utility": {
+    "overlap_rows": 85,
+    "fields": {
+      "task_success": {
+        "raw_agreement": 0.9294117647058824,
+        "cohen_kappa": 0.8579387186629527,
+        "cohen_kappa_note": ""
+      },
+      "unnecessary_refusal": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": 1.0,
+        "cohen_kappa_note": ""
+      },
+      "invalid_or_irrelevant": {
+        "raw_agreement": 0.9882352941176471,
+        "cohen_kappa": 0.8511383537653248,
+        "cohen_kappa_note": ""
+      },
+      "format_failure": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": 1.0,
+        "cohen_kappa_note": ""
+      },
+      "material_degradation": {
+        "raw_agreement": 0.8117647058823529,
+        "cohen_kappa": 0.6080691642651297,
+        "cohen_kappa_note": ""
+      }
+    }
+  },
+  "adjudication_rows": {
+    "safety": 5,
+    "semantic": 365,
+    "utility": 23
+  }
+}

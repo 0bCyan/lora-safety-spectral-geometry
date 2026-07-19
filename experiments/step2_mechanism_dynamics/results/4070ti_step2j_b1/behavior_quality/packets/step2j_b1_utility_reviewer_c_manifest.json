@@ -1,0 +1,13 @@
+{
+  "reviewer": "Utility Reviewer C",
+  "packet": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_utility_reviewer_c_packet.jsonl",
+  "packet_rows": 23,
+  "packet_sha256": "712476b914d9915b1867c950002a7bc51d781562f893705c20d6f2730d8a76c7",
+  "dispute_fields": [
+    "task_success",
+    "unnecessary_refusal",
+    "invalid_or_irrelevant",
+    "format_failure",
+    "material_degradation"
+  ]
+}

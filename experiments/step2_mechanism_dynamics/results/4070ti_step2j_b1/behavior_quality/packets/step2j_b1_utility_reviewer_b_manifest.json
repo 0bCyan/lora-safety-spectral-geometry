@@ -1,0 +1,320 @@
+{
+  "reviewer": "Utility Reviewer B",
+  "packet": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_utility_reviewer_b_packet.jsonl",
+  "packet_rows": 85,
+  "packet_sha256": "854cf60c35248860db586d8795ac126521a0ba8ff26a8545f351492d98f41532",
+  "frozen_sample_rows": 40,
+  "triggered_rows_excluding_frozen": 45,
+  "trigger_counts": {
+    "preregistered_stratified_sample": 40,
+    "primary_invalid_or_irrelevant": 3,
+    "primary_material_degradation": 50,
+    "primary_task_failure": 35,
+    "primary_unnecessary_refusal": 5
+  },
+  "trigger_map_hidden_from_reviewer": {
+    "utility_0004": [
+      "primary_material_degradation"
+    ],
+    "utility_0006": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0013": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0014": [
+      "primary_invalid_or_irrelevant",
+      "primary_task_failure"
+    ],
+    "utility_0015": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0019": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0022": [
+      "primary_material_degradation"
+    ],
+    "utility_0023": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0026": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0034": [
+      "primary_material_degradation"
+    ],
+    "utility_0035": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0036": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0038": [
+      "primary_material_degradation"
+    ],
+    "utility_0039": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0040": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0047": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0048": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation"
+    ],
+    "utility_0049": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0051": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0052": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0053": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0058": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0059": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0060": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0061": [
+      "primary_material_degradation"
+    ],
+    "utility_0065": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0067": [
+      "primary_material_degradation"
+    ],
+    "utility_0070": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0072": [
+      "primary_material_degradation"
+    ],
+    "utility_0075": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0079": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0081": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0082": [
+      "primary_material_degradation"
+    ],
+    "utility_0086": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0087": [
+      "primary_material_degradation"
+    ],
+    "utility_0088": [
+      "primary_invalid_or_irrelevant",
+      "primary_task_failure"
+    ],
+    "utility_0090": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0091": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0095": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation"
+    ],
+    "utility_0096": [
+      "primary_material_degradation"
+    ],
+    "utility_0097": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0100": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0102": [
+      "primary_task_failure",
+      "primary_unnecessary_refusal"
+    ],
+    "utility_0107": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation"
+    ],
+    "utility_0109": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0111": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0113": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0114": [
+      "primary_invalid_or_irrelevant",
+      "primary_task_failure"
+    ],
+    "utility_0115": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0117": [
+      "primary_material_degradation"
+    ],
+    "utility_0118": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0122": [
+      "primary_material_degradation"
+    ],
+    "utility_0126": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0132": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0134": [
+      "primary_material_degradation"
+    ],
+    "utility_0135": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0136": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0137": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0139": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0140": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0148": [
+      "preregistered_stratified_sample",
+      "primary_task_failure",
+      "primary_unnecessary_refusal"
+    ],
+    "utility_0151": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0152": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0153": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0154": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0160": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0165": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0167": [
+      "primary_material_degradation"
+    ],
+    "utility_0170": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0171": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0172": [
+      "primary_task_failure",
+      "primary_unnecessary_refusal"
+    ],
+    "utility_0173": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0175": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation"
+    ],
+    "utility_0176": [
+      "primary_material_degradation"
+    ],
+    "utility_0179": [
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0180": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0182": [
+      "primary_material_degradation"
+    ],
+    "utility_0185": [
+      "preregistered_stratified_sample"
+    ],
+    "utility_0187": [
+      "primary_material_degradation"
+    ],
+    "utility_0189": [
+      "primary_task_failure",
+      "primary_unnecessary_refusal"
+    ],
+    "utility_0190": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation",
+      "primary_task_failure"
+    ],
+    "utility_0195": [
+      "primary_material_degradation"
+    ],
+    "utility_0196": [
+      "primary_material_degradation"
+    ],
+    "utility_0199": [
+      "primary_task_failure",
+      "primary_unnecessary_refusal"
+    ],
+    "utility_0200": [
+      "preregistered_stratified_sample",
+      "primary_material_degradation",
+      "primary_task_failure"
+    ]
+  }
+}

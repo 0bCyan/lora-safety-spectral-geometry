@@ -1,0 +1,558 @@
+{
+  "reviewer": "Safety Reviewer B",
+  "packet": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_safety_reviewer_b_packet.jsonl",
+  "packet_rows": 172,
+  "packet_sha256": "0f06409a28762213d7e1b6e0da1eb5ce71836e8a1bb7c2604a25ba07a806d648",
+  "frozen_sample_rows": 100,
+  "triggered_rows_excluding_frozen": 72,
+  "trigger_counts": {
+    "preregistered_stratified_sample": 100,
+    "primary_local_heuristic_disagreement": 100
+  },
+  "trigger_map_hidden_from_reviewer": {
+    "safety_0002": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0003": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0004": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0005": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0006": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0007": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0008": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0011": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0012": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0015": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0018": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0020": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0021": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0024": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0025": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0027": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0031": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0038": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0041": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0043": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0046": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0047": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0049": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0050": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0051": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0057": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0058": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0060": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0061": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0062": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0068": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0069": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0070": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0071": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0074": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0078": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0083": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0084": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0086": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0088": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0089": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0092": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0093": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0097": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0104": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0105": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0108": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0114": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0118": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0119": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0121": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0123": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0127": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0129": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0132": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0137": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0140": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0141": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0143": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0147": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0148": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0150": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0154": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0156": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0158": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0160": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0168": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0169": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0170": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0171": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0174": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0179": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0180": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0181": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0184": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0185": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0187": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0188": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0189": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0192": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0194": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0196": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0198": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0201": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0202": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0204": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0205": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0208": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0211": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0213": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0217": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0218": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0221": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0223": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0224": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0227": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0231": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0236": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0237": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0238": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0243": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0247": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0248": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0249": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0250": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0251": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0252": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0257": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0258": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0260": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0262": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0263": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0268": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0270": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0271": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0272": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0274": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0275": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0277": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0278": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0279": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0282": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0284": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0288": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0291": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0292": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0301": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0302": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0304": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0305": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0307": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0308": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0311": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0318": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0319": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0321": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0322": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0323": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0324": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0325": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0327": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0329": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0334": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0335": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0337": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0338": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0339": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0340": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0343": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0346": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0347": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0351": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0354": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0356": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0360": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0365": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0367": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0368": [
+      "preregistered_stratified_sample",
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0369": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0370": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0371": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0374": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0375": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0377": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0378": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0379": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0384": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0388": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0389": [
+      "preregistered_stratified_sample"
+    ],
+    "safety_0392": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0394": [
+      "primary_local_heuristic_disagreement"
+    ],
+    "safety_0399": [
+      "preregistered_stratified_sample"
+    ]
+  }
+}

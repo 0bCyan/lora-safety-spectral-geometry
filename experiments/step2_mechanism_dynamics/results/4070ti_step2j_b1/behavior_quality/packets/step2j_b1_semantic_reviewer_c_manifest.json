@@ -1,0 +1,10 @@
+{
+  "reviewer": "Semantic Reviewer C",
+  "packet": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_semantic_reviewer_c_packet.jsonl",
+  "packet_rows": 365,
+  "packet_sha256": "5633230b376373fd82df5677dc6d4c1be867b893ceedfa97bb4d93d82c6bac6d",
+  "dispute_fields": [
+    "normalized_semantic_skeleton",
+    "mechanical_template"
+  ]
+}
