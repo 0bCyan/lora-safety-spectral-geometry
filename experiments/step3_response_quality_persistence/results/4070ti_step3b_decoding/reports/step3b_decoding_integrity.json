@@ -1,0 +1,52 @@
+{
+  "config": "experiments\\step3_response_quality_persistence\\configs\\4070ti_qwen3_4b_step3b_decoding_audit.json",
+  "config_sha256": "55c474bc5e8c9bc6b59b5751d5c67be7eb8f2ee10f827e3ed30a9acb9718d1b8",
+  "conditions": [
+    {
+      "condition": "sample_t03_p09",
+      "rows": 500,
+      "prompts": 100,
+      "samples_per_prompt": 5,
+      "mean_exact_unique_per_prompt": 4.95,
+      "all_identical_prompt_count": 0,
+      "all_identical_prompt_rate": 0.0,
+      "empty_response_count": 0,
+      "max_token_limit_hit_count": 0,
+      "safety_label_status": "pending_independent_review",
+      "conditional_mechanical_status": "pending_after_safety_freeze"
+    },
+    {
+      "condition": "sample_t07_p09",
+      "rows": 500,
+      "prompts": 100,
+      "samples_per_prompt": 5,
+      "mean_exact_unique_per_prompt": 5.0,
+      "all_identical_prompt_count": 0,
+      "all_identical_prompt_rate": 0.0,
+      "empty_response_count": 0,
+      "max_token_limit_hit_count": 1,
+      "safety_label_status": "pending_independent_review",
+      "conditional_mechanical_status": "pending_after_safety_freeze"
+    }
+  ],
+  "evidence": [
+    {
+      "condition": "sample_t03_p09",
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\generations\\sample_t03_p09.jsonl",
+      "rows": 500,
+      "sha256": "77484e7d8d89eaf1b95dda2317e86c52e8bc7c0b7f76a3eebecadb923baeea4d"
+    },
+    {
+      "condition": "sample_t07_p09",
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\generations\\sample_t07_p09.jsonl",
+      "rows": 500,
+      "sha256": "b2b1167999cd5d028f2b5ad03d0a0fb8b8b66ddc20fdd77e6305004cb7eb5947"
+    }
+  ],
+  "all_generation_seeds_unique": true,
+  "prompt_ids_aligned": true,
+  "Step2G_split_overlap_zero": true,
+  "heldout_content_opened": false,
+  "new_training_run": false,
+  "route_decision_status": "pending independent safety and clean-safe mechanical review"
+}

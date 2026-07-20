@@ -1,0 +1,28 @@
+{
+  "config": "experiments\\step3_response_quality_persistence\\configs\\4070ti_qwen3_4b_step3b_decoding_audit.json",
+  "config_sha256": "55c474bc5e8c9bc6b59b5751d5c67be7eb8f2ee10f827e3ed30a9acb9718d1b8",
+  "checkpoint": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\runs\\step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20\\checkpoints\\step0064_pct100",
+  "eval_path": "data\\processed\\unified_pool\\eval_safety.jsonl",
+  "eval_rows": 100,
+  "split_overlaps": {
+    "safety_train": 0,
+    "proxy_dev": 0,
+    "heldout_test": 0
+  },
+  "heldout_content_opened": false,
+  "new_training_run": false,
+  "outputs": [
+    {
+      "condition": "sample_t03_p09",
+      "rows": 500,
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\generations\\sample_t03_p09.jsonl",
+      "sha256": "77484e7d8d89eaf1b95dda2317e86c52e8bc7c0b7f76a3eebecadb923baeea4d"
+    },
+    {
+      "condition": "sample_t07_p09",
+      "rows": 500,
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\generations\\sample_t07_p09.jsonl",
+      "sha256": "b2b1167999cd5d028f2b5ad03d0a0fb8b8b66ddc20fdd77e6305004cb7eb5947"
+    }
+  ]
+}
