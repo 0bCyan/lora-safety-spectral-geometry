@@ -1,0 +1,22 @@
+{
+  "review_session_id": "step2j_b0_natural_v1_independent_review_20260719",
+  "rubric_version": "step2j_b0_independent_target_review_rubric_v1",
+  "reviewer_type": "pending_independent_agent_or_human",
+  "status": "prepared_pending_independent_review",
+  "created_at_utc": "2026-07-18T17:49:36+00:00",
+  "input_packet": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j\\entry_audit\\step2j_natural_v1_independent_target_review_blinded.jsonl",
+  "input_packet_rows": 80,
+  "input_packet_sha256": "b203aaf2941c4d0b5f19931b0d35e1ef0605608e124680b0de2086433a026ea2",
+  "input_packet_immutable_after_hashing": true,
+  "primary_reviewer_blinding": [
+    "no training results",
+    "no arm identities beyond packet fields",
+    "no local preflight decisions",
+    "no gradient results",
+    "no target-writing script",
+    "no previous target-quality analyses"
+  ],
+  "verification_sample_path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j\\entry_audit\\independent_target_review\\verification_sample.json",
+  "verification_sample_rows": 16,
+  "verification_sample_target_id_sha256": "1f4e8305e3f5808bacbb76db16a03b8c5e7632e0adae31e891bd3b4080cee003"
+}

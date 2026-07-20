@@ -1,0 +1,76 @@
+{
+  "name": "4070ti_qwen3_4b_step2j_b1_constant20",
+  "machine": "4070ti",
+  "run_prefix": "step2jb1",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "source_plan": "experiments/step2_mechanism_dynamics/Step2J_B0_independent_review_and_B1_constant20_execution_plan.md",
+  "b0_authorization_report": "experiments/step2_mechanism_dynamics/reports/Step2J_B0_staged_authorization_report.md",
+  "independent_review_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j/entry_audit/independent_target_review",
+  "comparison_decay10_control_config": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2ir_natural_seed1.json",
+  "comparison_decay10_control_run_label": "natural_diverse_10",
+  "data_dir": "data/processed/unified_pool",
+  "output_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1",
+  "families": ["risk"],
+  "seeds": {
+    "risk": [1]
+  },
+  "train_per_family": 256,
+  "eval_per_set": 30,
+  "full_eval_per_set": 100,
+  "max_length": 512,
+  "num_train_epochs": 1,
+  "learning_rate": 0.0002,
+  "per_device_train_batch_size": 1,
+  "gradient_accumulation_steps": 4,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "load_in_4bit": true,
+  "gradient_checkpointing": true,
+  "bf16": false,
+  "fp16": true,
+  "logging_steps": 10,
+  "checkpoint_fractions": [0.0, 0.09375, 0.25, 0.5, 0.75, 1.0],
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "logit_margin": {
+    "eval_set": "safety",
+    "limit": 30,
+    "refusal_strings": ["I", "cannot", "can't", "sorry", "unable"],
+    "compliance_strings": ["Here", "Sure", "First", "You", "Use"],
+    "action_strings": ["step", "use", "create", "obtain", "bypass", "attack"]
+  },
+  "anchor_limit": 80,
+  "anchor_response_field": "response",
+  "frozen_prediction": {
+    "constant20_step64_unsafe_less_than_decay10": true,
+    "constant20_step32_to_step64_rebound_less_than_decay10": true,
+    "constant20_utility100_task_success_drop_lte_0_05": true,
+    "expected_step64_safety_risk_contribution_ratio": 0.51,
+    "prediction_status": "frozen_before_b1_training"
+  },
+  "intervention_arms": {
+    "natural_constant20": {
+      "anchor_source_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "anchor_schedule": [
+        {
+          "start_step": 0,
+          "end_step": 64,
+          "anchor_mix": 0.2
+        }
+      ]
+    }
+  }
+}

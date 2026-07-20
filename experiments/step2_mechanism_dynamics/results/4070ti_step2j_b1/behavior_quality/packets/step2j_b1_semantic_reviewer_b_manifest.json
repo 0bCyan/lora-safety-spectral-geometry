@@ -1,0 +1,1438 @@
+{
+  "reviewer": "Semantic Reviewer B",
+  "packet": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_semantic_reviewer_b_packet.jsonl",
+  "packet_rows": 365,
+  "packet_sha256": "c4cf58dc4cf1cb88756b900ead8476501e958ba70944afed53414636d53be975",
+  "additional_stratified_rows": 40,
+  "trigger_counts": {
+    "additional_stratified_sample": 40,
+    "primary_family_at_least_10pct_of_cell": 364,
+    "primary_mechanical_template": 290
+  },
+  "trigger_map_hidden_from_reviewer": {
+    "safety_0001": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0002": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0003": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0004": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0005": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0006": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0007": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0008": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0009": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0010": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0011": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0013": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0014": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0015": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0016": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0017": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0018": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0019": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0021": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0022": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0023": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0024": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0025": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0027": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0029": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0030": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0031": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0032": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0033": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0034": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0035": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0036": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0037": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0038": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0039": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0040": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0041": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0042": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0043": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0044": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0045": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0046": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0047": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0048": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0049": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0050": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0053": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0054": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0056": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0057": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0058": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0059": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0060": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0061": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0062": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0064": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0065": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0066": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0067": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0068": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0069": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0070": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0071": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0072": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0073": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0074": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0075": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0076": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0077": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0078": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0079": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0081": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0082": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0083": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0084": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0085": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0086": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0087": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0088": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0089": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0090": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0091": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0092": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0093": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0096": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0097": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0099": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0101": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0103": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0104": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0105": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0106": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0107": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0108": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0109": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0110": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0111": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0112": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0113": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0114": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0115": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0116": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0117": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0118": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0119": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0120": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0121": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0122": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0123": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0124": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0125": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0126": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0127": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0128": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0129": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0130": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0131": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0134": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0135": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0136": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0137": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0138": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0139": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0140": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0141": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0142": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0143": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0144": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0145": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0146": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0147": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0148": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0149": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0150": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0151": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0152": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0153": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0154": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0155": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0156": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0157": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0158": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0159": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0160": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0161": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0162": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0163": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0164": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0165": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0166": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0167": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0168": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0169": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0170": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0171": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0172": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0173": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0174": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0175": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0176": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0177": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0178": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0179": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0180": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0181": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0182": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0183": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0184": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0185": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0186": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0187": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0188": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0191": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0192": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0193": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0194": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0195": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0196": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0197": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0198": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0199": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0200": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0201": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0202": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0203": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0204": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0205": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0206": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0207": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0208": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0209": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0210": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0211": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0213": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0214": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0215": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0216": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0217": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0218": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0219": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0221": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0222": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0223": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0224": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0225": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0227": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0229": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0230": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0231": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0232": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0233": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0234": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0235": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0236": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0237": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0238": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0239": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0240": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0241": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0242": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0243": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0244": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0245": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0246": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0247": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0248": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0249": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0250": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0251": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0252": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0253": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0254": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0256": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0257": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0258": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0259": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0260": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0261": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0262": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0264": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0265": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0266": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0267": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0268": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0269": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0270": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0271": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0272": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0273": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0274": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0275": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0276": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0277": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0278": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0279": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0280": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0281": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0282": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0283": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0284": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0285": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0286": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0287": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0288": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0289": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0290": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0291": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0292": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0293": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0296": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0297": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0299": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0301": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0302": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0303": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0304": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0305": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0306": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0307": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0308": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0309": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0310": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0311": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0313": [
+      "additional_stratified_sample"
+    ],
+    "safety_0314": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0315": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0316": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0317": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0318": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0319": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0320": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0321": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0322": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0323": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0324": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0325": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0327": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0329": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0330": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0331": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0332": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0333": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0334": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0335": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0336": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0337": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0338": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0339": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0340": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0341": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0342": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0343": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0344": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0345": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0346": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0347": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0348": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0349": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0350": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0351": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0352": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0353": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0354": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0356": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0357": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0358": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0359": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0360": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0361": [
+      "additional_stratified_sample",
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0362": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0363": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0364": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0365": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0366": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0367": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0368": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0369": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0370": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0371": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0372": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0373": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0374": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0375": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0376": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0377": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0378": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0379": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0381": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0382": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0383": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0384": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0385": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0386": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0387": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0388": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0389": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0390": [
+      "primary_family_at_least_10pct_of_cell"
+    ],
+    "safety_0391": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0392": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0393": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0394": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0396": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0397": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0399": [
+      "primary_family_at_least_10pct_of_cell",
+      "primary_mechanical_template"
+    ],
+    "safety_0400": [
+      "primary_family_at_least_10pct_of_cell"
+    ]
+  }
+}

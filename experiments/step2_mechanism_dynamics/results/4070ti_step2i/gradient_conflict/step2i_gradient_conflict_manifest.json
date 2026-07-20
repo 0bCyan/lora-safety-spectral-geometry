@@ -1,0 +1,323 @@
+{
+  "config": "4070ti_qwen3_4b_step2i_diverse_replay",
+  "family": "risk",
+  "seed": 1,
+  "risk_rows": [
+    {
+      "sample_id": "risk_pkuqa_000001",
+      "content_hash": "a2eb2ceb250238d8499d732c003a1631e92bdf67d57d1036971c31f6abc56c1a"
+    },
+    {
+      "sample_id": "risk_pkuqa_000002",
+      "content_hash": "db0ab3ebd9c9320912266e3be640e170c1627055e969e9fa0b6bca86c32441a3"
+    },
+    {
+      "sample_id": "risk_pkuqa_000003",
+      "content_hash": "ea44de11447f25be47f6bd7413bee7e7eeccfc892e9b09d7b8ce7a104d9ed58b"
+    },
+    {
+      "sample_id": "risk_pkuqa_000004",
+      "content_hash": "926ea67a4dc44b9169ff9a68b336a2d72e18d8c489141f94ca78febfc3cbb2f2"
+    },
+    {
+      "sample_id": "risk_pkuqa_000005",
+      "content_hash": "7ee90beae2593bd65a503e1120264d2cb277aae3fa0b622b0bad9add01dfd69a"
+    },
+    {
+      "sample_id": "risk_pkuqa_000006",
+      "content_hash": "31818b0b4ca54aaed46fc0ef161064e3091407ac783efba220db2302290ca7bf"
+    },
+    {
+      "sample_id": "risk_pkuqa_000007",
+      "content_hash": "3e58b645666538cd636716251672c0f5bfe74b8848dcf7c67671a11a7632cc84"
+    },
+    {
+      "sample_id": "risk_pkuqa_000008",
+      "content_hash": "dd0351377172e1c729c64bebb4dde157785563283aab5a3ed0411fbfb4191756"
+    },
+    {
+      "sample_id": "risk_pkuqa_000009",
+      "content_hash": "c28cd3505787fb28a4f7a4059fc7de6c16b06dd0b7dfafa422f9fbaf30b30ed1"
+    },
+    {
+      "sample_id": "risk_pkuqa_000010",
+      "content_hash": "6c376cf0c50369060754f19f85b4e765a846a37c22ae6eb79bb95272152ff644"
+    },
+    {
+      "sample_id": "risk_pkuqa_000011",
+      "content_hash": "571d7ff79125531d84b7ba4a12ff7879c2e6b7f7083344dcc2675c488c973ce4"
+    },
+    {
+      "sample_id": "risk_pkuqa_000012",
+      "content_hash": "37707042616310d8168da1a0a3a1141c8523c730e34be9c656d298ee0960e379"
+    },
+    {
+      "sample_id": "risk_pkuqa_000013",
+      "content_hash": "140f00645c150b6896fccce283d6ae7dab272de294167e37f6f42c4b944d4ed5"
+    },
+    {
+      "sample_id": "risk_pkuqa_000014",
+      "content_hash": "3377dc6558a0bdb882d518338863be63273cb2dbbe9ccaa5088edf718a9e2a25"
+    },
+    {
+      "sample_id": "risk_pkuqa_000015",
+      "content_hash": "54cb19017145a6fec80ff658a5440eda04e21165e5c18aaf89de93ccbc45f311"
+    },
+    {
+      "sample_id": "risk_pkuqa_000016",
+      "content_hash": "be54201089bf357dd54c807e874117a86496448d2dc57d929eb9b530202d86aa"
+    }
+  ],
+  "safety_rows_by_arm": {
+    "fixed_decay_10": [
+      {
+        "sample_id": "eval_safety_000268",
+        "target_id": "eval_safety_000268_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000179",
+        "target_id": "eval_safety_000179_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000260",
+        "target_id": "eval_safety_000260_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000191",
+        "target_id": "eval_safety_000191_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000286",
+        "target_id": "eval_safety_000286_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000258",
+        "target_id": "eval_safety_000258_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000244",
+        "target_id": "eval_safety_000244_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000211",
+        "target_id": "eval_safety_000211_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000205",
+        "target_id": "eval_safety_000205_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000116",
+        "target_id": "eval_safety_000116_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000253",
+        "target_id": "eval_safety_000253_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000265",
+        "target_id": "eval_safety_000265_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000152",
+        "target_id": "eval_safety_000152_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000236",
+        "target_id": "eval_safety_000236_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000232",
+        "target_id": "eval_safety_000232_fixed",
+        "response_chars": 153
+      },
+      {
+        "sample_id": "eval_safety_000269",
+        "target_id": "eval_safety_000269_fixed",
+        "response_chars": 153
+      }
+    ],
+    "diverse_decay_5": [
+      {
+        "sample_id": "eval_safety_000268",
+        "target_id": "eval_safety_000268_target1",
+        "response_chars": 567
+      },
+      {
+        "sample_id": "eval_safety_000179",
+        "target_id": "eval_safety_000179_target1",
+        "response_chars": 556
+      },
+      {
+        "sample_id": "eval_safety_000260",
+        "target_id": "eval_safety_000260_target1",
+        "response_chars": 540
+      },
+      {
+        "sample_id": "eval_safety_000191",
+        "target_id": "eval_safety_000191_target1",
+        "response_chars": 528
+      },
+      {
+        "sample_id": "eval_safety_000286",
+        "target_id": "eval_safety_000286_target1",
+        "response_chars": 553
+      },
+      {
+        "sample_id": "eval_safety_000258",
+        "target_id": "eval_safety_000258_target1",
+        "response_chars": 471
+      },
+      {
+        "sample_id": "eval_safety_000244",
+        "target_id": "eval_safety_000244_target1",
+        "response_chars": 506
+      },
+      {
+        "sample_id": "eval_safety_000211",
+        "target_id": "eval_safety_000211_target1",
+        "response_chars": 473
+      },
+      {
+        "sample_id": "eval_safety_000205",
+        "target_id": "eval_safety_000205_target1",
+        "response_chars": 503
+      },
+      {
+        "sample_id": "eval_safety_000116",
+        "target_id": "eval_safety_000116_target1",
+        "response_chars": 486
+      },
+      {
+        "sample_id": "eval_safety_000253",
+        "target_id": "eval_safety_000253_target1",
+        "response_chars": 487
+      },
+      {
+        "sample_id": "eval_safety_000265",
+        "target_id": "eval_safety_000265_target1",
+        "response_chars": 483
+      },
+      {
+        "sample_id": "eval_safety_000152",
+        "target_id": "eval_safety_000152_target1",
+        "response_chars": 493
+      },
+      {
+        "sample_id": "eval_safety_000236",
+        "target_id": "eval_safety_000236_target1",
+        "response_chars": 454
+      },
+      {
+        "sample_id": "eval_safety_000232",
+        "target_id": "eval_safety_000232_target1",
+        "response_chars": 553
+      },
+      {
+        "sample_id": "eval_safety_000269",
+        "target_id": "eval_safety_000269_target1",
+        "response_chars": 497
+      }
+    ],
+    "diverse_decay_10": [
+      {
+        "sample_id": "eval_safety_000268",
+        "target_id": "eval_safety_000268_target1",
+        "response_chars": 567
+      },
+      {
+        "sample_id": "eval_safety_000179",
+        "target_id": "eval_safety_000179_target1",
+        "response_chars": 556
+      },
+      {
+        "sample_id": "eval_safety_000260",
+        "target_id": "eval_safety_000260_target1",
+        "response_chars": 540
+      },
+      {
+        "sample_id": "eval_safety_000191",
+        "target_id": "eval_safety_000191_target1",
+        "response_chars": 528
+      },
+      {
+        "sample_id": "eval_safety_000286",
+        "target_id": "eval_safety_000286_target1",
+        "response_chars": 553
+      },
+      {
+        "sample_id": "eval_safety_000258",
+        "target_id": "eval_safety_000258_target1",
+        "response_chars": 471
+      },
+      {
+        "sample_id": "eval_safety_000244",
+        "target_id": "eval_safety_000244_target1",
+        "response_chars": 506
+      },
+      {
+        "sample_id": "eval_safety_000211",
+        "target_id": "eval_safety_000211_target1",
+        "response_chars": 473
+      },
+      {
+        "sample_id": "eval_safety_000205",
+        "target_id": "eval_safety_000205_target1",
+        "response_chars": 503
+      },
+      {
+        "sample_id": "eval_safety_000116",
+        "target_id": "eval_safety_000116_target1",
+        "response_chars": 486
+      },
+      {
+        "sample_id": "eval_safety_000253",
+        "target_id": "eval_safety_000253_target1",
+        "response_chars": 487
+      },
+      {
+        "sample_id": "eval_safety_000265",
+        "target_id": "eval_safety_000265_target1",
+        "response_chars": 483
+      },
+      {
+        "sample_id": "eval_safety_000152",
+        "target_id": "eval_safety_000152_target1",
+        "response_chars": 493
+      },
+      {
+        "sample_id": "eval_safety_000236",
+        "target_id": "eval_safety_000236_target1",
+        "response_chars": 454
+      },
+      {
+        "sample_id": "eval_safety_000232",
+        "target_id": "eval_safety_000232_target1",
+        "response_chars": 553
+      },
+      {
+        "sample_id": "eval_safety_000269",
+        "target_id": "eval_safety_000269_target1",
+        "response_chars": 497
+      }
+    ]
+  },
+  "definition": {
+    "gradient_cosine": "dot(risk_grad, safety_grad) / (norm(risk_grad) * norm(safety_grad))",
+    "projected_conflicting_gradient_fraction": "max(0, -gradient_cosine)"
+  }
+}

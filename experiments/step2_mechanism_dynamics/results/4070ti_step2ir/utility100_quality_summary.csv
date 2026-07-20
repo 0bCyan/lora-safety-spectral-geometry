@@ -1,0 +1,5 @@
+arm_label,family,run_label,seed,checkpoint,step,fraction,n,task_success_rate,unnecessary_refusal_rate,invalid_or_irrelevant_rate,degradation_rate,format_failure_rate,average_cleaned_response_chars,mean_reference_token_f1,baseline_task_success_rate,task_success_drop_vs_baseline,utility_label
+diverse_matched_10_s1,risk,diverse_matched_10,1,step0064_pct100,64,1.0,100,0.77,0.05,0.01,0.0,0.0,193.5,0.4136774156981526,0.81,0.040000000000000036,utility_pass
+diverse_matched_5_s1,risk,diverse_matched_5,1,step0064_pct100,64,1.0,100,0.76,0.06,0.01,0.0,0.0,203.16,0.41627727146487886,0.81,0.050000000000000044,utility_pass
+fixed_matched_10_s1,risk,fixed_matched_10,1,step0064_pct100,64,1.0,100,0.8,0.03,0.01,0.0,0.0,222.53,0.4213642902092591,0.81,0.010000000000000009,utility_pass
+vanilla_risk_s1,risk,,1,step0064_pct100,64,1.0,100,0.81,0.0,0.02,0.0,0.0,232.34,0.4350393927969469,0.81,0.0,utility_pass

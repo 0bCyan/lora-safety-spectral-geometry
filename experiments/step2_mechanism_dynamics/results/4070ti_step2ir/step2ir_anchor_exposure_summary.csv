@@ -1,0 +1,5 @@
+arm,targets,min_exposure,max_exposure,mean_exposure,exposure_3_count,exposure_4_count
+fixed_matched_5,80,3,4,3.2,64,16
+fixed_matched_10,80,3,4,3.2,64,16
+diverse_matched_5,80,3,4,3.2,64,16
+diverse_matched_10,80,3,4,3.2,64,16

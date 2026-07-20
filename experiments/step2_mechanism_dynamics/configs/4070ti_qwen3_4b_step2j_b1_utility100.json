@@ -1,0 +1,42 @@
+{
+  "name": "4070ti_qwen3_4b_step2j_b1_utility100",
+  "machine": "4070ti",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "data_dir": "data/processed/unified_pool",
+  "output_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1",
+  "write_report": false,
+  "utility_output_tag": "utility100",
+  "utility_eval_per_set": 100,
+  "max_length": 512,
+  "load_in_4bit": true,
+  "bf16": false,
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "source_configs": {
+    "step2a": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2a_dynamics.json",
+    "step2j_b1": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_constant20.json"
+  },
+  "utility_arms": [
+    {
+      "arm_label": "vanilla_risk_s1",
+      "source_config": "step2a",
+      "family": "risk",
+      "seed": 1,
+      "run_label": ""
+    },
+    {
+      "arm_label": "natural_constant20_s1",
+      "source_config": "step2j_b1",
+      "family": "risk",
+      "seed": 1,
+      "run_label": "natural_constant20"
+    }
+  ],
+  "utility_checkpoints": [
+    "step0064_pct100"
+  ],
+  "baseline_arm": "vanilla_risk_s1"
+}

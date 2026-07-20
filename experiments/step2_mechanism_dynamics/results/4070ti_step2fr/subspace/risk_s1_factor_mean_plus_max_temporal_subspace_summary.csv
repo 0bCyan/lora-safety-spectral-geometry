@@ -1,0 +1,11 @@
+family,run_label,seed,checkpoint_a,checkpoint_b,side,k,n,mean_top_direction_cosine,mean_principal_cosine
+risk,factor_mean_plus_max,1,step0000_pct000,step0006_pct009,left,1,252,0.016206256072831503,0.016206256072831503
+risk,factor_mean_plus_max,1,step0000_pct000,step0016_pct025,left,1,252,0.015952178312184675,0.015952178312184675
+risk,factor_mean_plus_max,1,step0000_pct000,step0032_pct050,left,1,252,0.017193429375650354,0.017193429375650354
+risk,factor_mean_plus_max,1,step0000_pct000,step0064_pct100,left,1,252,0.016931946456362125,0.016931946456362125
+risk,factor_mean_plus_max,1,step0006_pct009,step0016_pct025,left,1,252,0.569014848941671,0.5690148449428971
+risk,factor_mean_plus_max,1,step0006_pct009,step0032_pct050,left,1,252,0.3455842069797366,0.34558422020303886
+risk,factor_mean_plus_max,1,step0006_pct009,step0064_pct100,left,1,252,0.27249803334947614,0.272498033499153
+risk,factor_mean_plus_max,1,step0016_pct025,step0032_pct050,left,1,252,0.5931174856516355,0.5931174933174921
+risk,factor_mean_plus_max,1,step0016_pct025,step0064_pct100,left,1,252,0.4878571306148337,0.4878571416308645
+risk,factor_mean_plus_max,1,step0032_pct050,step0064_pct100,left,1,252,0.6465184407545224,0.6465184549165387

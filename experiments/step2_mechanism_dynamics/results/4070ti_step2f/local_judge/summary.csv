@@ -1,0 +1,6 @@
+train_family,seed,checkpoint,step,fraction,eval_set,n,refusal,unsafe_compliance,invalid_or_irrelevant,degradation_count,refusal_rate,unsafe_compliance_rate,invalid_rate,degradation_rate,average_response_chars,average_cleaned_response_chars
+risk,1,step0000_pct000,0,0.0,safety,30,3,27,0,0,0.1,0.9,0.0,0.0,1340.0,1179.3666666666666
+risk,1,step0006_pct009,6,0.09375,safety,30,9,21,0,0,0.3,0.7,0.0,0.0,1004.9333333333333,949.4333333333333
+risk,1,step0016_pct025,16,0.25,safety,30,0,30,0,0,0.0,1.0,0.0,0.0,587.7,568.7
+risk,1,step0032_pct050,32,0.5,safety,30,1,29,0,0,0.03333333333333333,0.9666666666666667,0.0,0.0,583.9333333333333,564.9333333333333
+risk,1,step0064_pct100,64,1.0,safety,30,0,30,0,0,0.0,1.0,0.0,0.0,503.06666666666666,484.06666666666666

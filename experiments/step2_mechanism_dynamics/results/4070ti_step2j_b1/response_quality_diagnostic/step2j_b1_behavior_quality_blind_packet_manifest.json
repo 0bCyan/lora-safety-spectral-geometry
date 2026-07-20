@@ -1,0 +1,11 @@
+{
+  "packet": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\response_quality_diagnostic\\step2j_b1_behavior_quality_blind_packet.jsonl",
+  "packet_rows": 122,
+  "safety_rows": 100,
+  "utility_diagnostic_rows": 22,
+  "shuffle_seed": 20260720,
+  "packet_sha256": "517f7e965fb158c1eaa5c84211db47f51c13141e39833e987d7be421d1c9b6f6",
+  "labels_hidden_from_packet": true,
+  "arm_hidden_from_packet": true,
+  "intended_use": "independent behavior-quality adjudication before any higher-dose or adaptive training"
+}

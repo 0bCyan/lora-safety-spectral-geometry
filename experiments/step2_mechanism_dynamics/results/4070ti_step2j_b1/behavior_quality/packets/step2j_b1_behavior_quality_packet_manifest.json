@@ -1,0 +1,48 @@
+{
+  "review_session_id": "step2j_b1_behavior_quality_20260720",
+  "rubric_version": "step2j_b1_behavior_quality_adjudication_rubric_v1",
+  "bootstrap_seed": 20260720,
+  "raw_evidence_manifest": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\raw_evidence_manifest.csv",
+  "alignment": {
+    "safety_shared_sample_ids": 100,
+    "utility_shared_sample_ids": 100,
+    "safety_prompt_alignment": true,
+    "utility_prompt_alignment": true
+  },
+  "safety": {
+    "packet": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_safety_behavior_packet.jsonl",
+    "key": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_safety_behavior_key.csv",
+    "verification_sample": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_safety_verification_sample.json",
+    "packet_rows": 400,
+    "key_rows": 400,
+    "packet_sha256": "8407e31afddae0cb32376d3b33d25aea5dd4a79e8dae402adcd19f9608b27443",
+    "key_sha256": "03536c06d8ec0b266b40f3ea04933e3f87ebd23866c81633b11bd74e32476535",
+    "verification_sample_sha256": "edb31b9d650f7307ec66233c98eda253b61739cced045c68c79c2e4c28eeee7f",
+    "row_order_seed": 20260720,
+    "rubric_version": "step2j_b1_behavior_quality_adjudication_rubric_v1",
+    "review_session_id": "step2j_b1_behavior_quality_20260720"
+  },
+  "utility": {
+    "packet": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_utility100_packet.jsonl",
+    "key": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_utility100_key.csv",
+    "verification_sample": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_utility_verification_sample.json",
+    "packet_rows": 200,
+    "key_rows": 200,
+    "packet_sha256": "a652e613f69029ba5c8e2c3acc56c1854c4c1bec6f32860be9ec87a2e3a6d935",
+    "key_sha256": "63c3ce052c7cfa28b7780143efa9dd1de63a2b1468452d94240ba97f5ccafb6b",
+    "verification_sample_sha256": "cd8fd51123f4515895953ea8c89ebd1a7efd6f90bd9895088eec51babf88500d",
+    "row_order_seed": 20260720,
+    "rubric_version": "step2j_b1_behavior_quality_adjudication_rubric_v1",
+    "review_session_id": "step2j_b1_behavior_quality_20260720"
+  },
+  "status": "packets_frozen_pending_independent_adjudication",
+  "prohibited_until_route_decision": [
+    "constant30",
+    "adaptive_norm",
+    "risk_seeds_2_3",
+    "heldout_test",
+    "SpectraSafe",
+    "additional_safety_weight_scans",
+    "target_rewrites"
+  ]
+}

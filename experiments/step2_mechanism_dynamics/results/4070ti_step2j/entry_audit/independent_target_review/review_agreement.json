@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "review_session_id": "step2j_b0_natural_v1_independent_review_20260719",
+    "rubric_version": "step2j_b0_independent_target_review_rubric_v1",
+    "reviewer_type": "pending_independent_agent_or_human",
+    "status": "prepared_pending_independent_review",
+    "created_at_utc": "2026-07-18T17:49:36+00:00",
+    "input_packet": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j\\entry_audit\\step2j_natural_v1_independent_target_review_blinded.jsonl",
+    "input_packet_rows": 80,
+    "input_packet_sha256": "b203aaf2941c4d0b5f19931b0d35e1ef0605608e124680b0de2086433a026ea2",
+    "input_packet_immutable_after_hashing": true,
+    "primary_reviewer_blinding": [
+      "no training results",
+      "no arm identities beyond packet fields",
+      "no local preflight decisions",
+      "no gradient results",
+      "no target-writing script",
+      "no previous target-quality analyses"
+    ],
+    "verification_sample_path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j\\entry_audit\\independent_target_review\\verification_sample.json",
+    "verification_sample_rows": 16,
+    "verification_sample_target_id_sha256": "1f4e8305e3f5808bacbb76db16a03b8c5e7632e0adae31e891bd3b4080cee003",
+    "correction_note": {
+      "reason": "zero-variance agreement correction",
+      "previous_review_agreement_sha256": "1851bc4b496b0bfe81ed0a5ccc4d333c852fa66b7bf05b30615431c6bd55e6bc",
+      "previous_review_decision_report_sha256": "8fe6f1cb1ef616986d0044c1b47bfb1211209950ad2985d82280567d5ba82314",
+      "previous_kappa_value": "1.0",
+      "corrected_kappa_value": "NA / undefined due to zero label variance"
+    },
+    "reviewers": {
+      "primary": {
+        "reviewer_type": "no-context sub-agent Reviewer A",
+        "deterministic_settings": "rubric-only structured review; no training, gradient, preflight, generation-script, plan, report, or config inspection",
+        "output_path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j\\entry_audit\\independent_target_review\\primary_review.jsonl",
+        "output_sha256": "7980491e80189d59447d039a0db54691888a06acf73a5651146f9684ed9630cd"
+      },
+      "verification": {
+        "reviewer_type": "no-context sub-agent Reviewer B",
+        "deterministic_settings": "rubric-only structured review over preregistered verification packet; no Reviewer A labels or training artifacts",
+        "output_path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j\\entry_audit\\independent_target_review\\verification_review.jsonl",
+        "output_sha256": "e90c4b8f64ddbec3660d7a352190d059048142d74bc8e29c673f170aaff81066"
+      }
+    },
+    "outputs": {
+      "adjudicated_review_sha256": "035e19f906a5f666924d6e81c85cdcc21822a6c2580553bbb069353d7c973df6",
+      "review_summary_sha256": "22f8a0225b83b6f96477f453eb88f848d2051e37ab062a768ce6db060476c424"
+    }
+  },
+  "double_reviewed_rows": 16,
+  "fields": {
+    "explicit_refusal_validity": {
+      "raw_agreement": 1.0,
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
+    },
+    "harmful_procedural_leakage": {
+      "raw_agreement": 1.0,
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
+    },
+    "prompt_relevant_redirect": {
+      "raw_agreement": 1.0,
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
+    },
+    "grammatical_naturalness": {
+      "raw_agreement": 1.0,
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
+    },
+    "semantic_coherence": {
+      "raw_agreement": 1.0,
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
+    },
+    "keyword_stuffing": {
+      "raw_agreement": 1.0,
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
+    },
+    "mechanical_filler": {
+      "raw_agreement": 1.0,
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
+    },
+    "overall_decision": {
+      "raw_agreement": 1.0,
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance"
+    }
+  },
+  "disagreement_count": 0,
+  "disagreements": []
+}

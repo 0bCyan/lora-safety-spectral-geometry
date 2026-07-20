@@ -1,0 +1,175 @@
+{
+  "review_session_id": "step2j_b1_behavior_quality_20260720",
+  "status": "complete",
+  "route": "Q2",
+  "decision": "Safety effect passes but redirect or semantic quality fails; close constant-20 as a complete-method candidate. Utility degradation is also above the frozen maximum-degradation gate.",
+  "main_session_labeling": "none; labels assigned only by independent reviewers A/B/C",
+  "artifact_count": 33,
+  "artifacts": [
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_safety_reviewer_b_packet.jsonl",
+      "bytes": 70587,
+      "sha256": "0f06409a28762213d7e1b6e0da1eb5ce71836e8a1bb7c2604a25ba07a806d648"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_safety_reviewer_b_manifest.json",
+      "bytes": 14431,
+      "sha256": "3d6a2e5cd3d21e65cad55f7cecee82838e20d7a522030badfff9e807d8f62900"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_semantic_response_packet.jsonl",
+      "bytes": 107851,
+      "sha256": "73a8f8d9efe00a0952abb31261dd940a02d12ce31cd9e1ddc25c3a8f346688c7"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_semantic_reviewer_b_packet.jsonl",
+      "bytes": 91192,
+      "sha256": "c4cf58dc4cf1cb88756b900ead8476501e958ba70944afed53414636d53be975"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_semantic_reviewer_b_manifest.json",
+      "bytes": 41187,
+      "sha256": "5538d1686dc31a88188f7dc2f27e796907eb57192214fd570b68ff706c63e89d"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_utility_reviewer_b_packet.jsonl",
+      "bytes": 55273,
+      "sha256": "854cf60c35248860db586d8795ac126521a0ba8ff26a8545f351492d98f41532"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_utility_reviewer_b_manifest.json",
+      "bytes": 8221,
+      "sha256": "e82ca7ac839d7022597a8b36b6c929969646679f4f4a8e75320e2863fc728d9d"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_safety_reviewer_c_packet.jsonl",
+      "bytes": 5815,
+      "sha256": "8b49c71de00258484f3c74cc5cd4a6c0f3fb4e5bb15ecce260affa24322bfae2"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_safety_reviewer_c_manifest.json",
+      "bytes": 452,
+      "sha256": "17c441c9700edeb7553926cd3253ae897ec8121dd6a03a80ef8f99713b192983"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_semantic_reviewer_c_packet.jsonl",
+      "bytes": 319528,
+      "sha256": "5633230b376373fd82df5677dc6d4c1be867b893ceedfa97bb4d93d82c6bac6d"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_semantic_reviewer_c_manifest.json",
+      "bytes": 399,
+      "sha256": "032edfed566aa0c896de75cf481b72729b7263fba0d94d7f46175ba4696cd383"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_utility_reviewer_c_packet.jsonl",
+      "bytes": 36027,
+      "sha256": "712476b914d9915b1867c950002a7bc51d781562f893705c20d6f2730d8a76c7"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_utility_reviewer_c_manifest.json",
+      "bytes": 462,
+      "sha256": "9fd338c891369c20337ce6b219bb2d2f7cb46c2512fcaffafaf8790c747ae8c3"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\safety_reviewer_a_primary.jsonl",
+      "bytes": 136312,
+      "sha256": "539971284bb246f57dc933faeda93d71810239a3e83c624d27bc9cde83dab019"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\safety_reviewer_b_verification.jsonl",
+      "bytes": 58195,
+      "sha256": "ea2f9bbb07b95c29b712cbd21042bfba63dbda106c2613d24fc4db52f22c9da1"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\safety_reviewer_c_adjudication.jsonl",
+      "bytes": 1607,
+      "sha256": "d8a35bd00cf495143f5b85f611f0f2fdd6b2f8fd2deb1cb4441ac3af7529d504"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\semantic_reviewer_a_primary.jsonl",
+      "bytes": 115788,
+      "sha256": "63ef2b0fd0f6e2d9a5e01b734ab31110e7b06564dd1dc339834d2d787aebec4c"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\semantic_reviewer_b_verification.jsonl",
+      "bytes": 112189,
+      "sha256": "4bd935e5bb107c23aba32e33441aefa9d0fba79973f315beefe2e060adcc5724"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\semantic_reviewer_c_adjudication.jsonl",
+      "bytes": 89968,
+      "sha256": "145eb52da75bd52443494f5b0257cdeb584507e2171e5275b4e0d8fc3d9c1535"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\utility_reviewer_a_primary.jsonl",
+      "bytes": 50861,
+      "sha256": "6b284e71902de7908f63205e26b79eb7d22d8792f3221f8ceb222fc7130c484a"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\utility_reviewer_b_verification.jsonl",
+      "bytes": 21944,
+      "sha256": "1a7c270c0c63883bffb6256d752b196cb554d4f0459915e4ab27839ff9b1b1ed"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\utility_reviewer_c_adjudication.jsonl",
+      "bytes": 6438,
+      "sha256": "b28fe567efa273c3278cb1b48967297cf15044a13e1abc8c559a794895e8b07f"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\safety_adjudicated_labels.jsonl",
+      "bytes": 144016,
+      "sha256": "1a961cfc676ad54a4e5b4f9e911e3f1869e046b170dd6929fb32a74f0ed75951"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\semantic_adjudicated_templates.jsonl",
+      "bytes": 165908,
+      "sha256": "f7c3dcc7ccd22dfed820f95833c047947d027ec31baf892b20446cafb765d100"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reviews\\utility_adjudicated_labels.jsonl",
+      "bytes": 56975,
+      "sha256": "1ca81aafb2b66b11095e1406e9f7aa2bae0033f1a4c23509d44abe35d6693d4a"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reports\\step2j_b1_review_agreement.json",
+      "bytes": 2316,
+      "sha256": "e117e21b69a084a2cc71ba741c34d0bb02663a88c16cdb804e3abef42ef862c1"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reports\\step2j_b1_safety_behavior_summary.csv",
+      "bytes": 615,
+      "sha256": "0ec1579b7c1b135c36c5c43ba9fa60f59fefcdca33ecf9ae462c3de5f1908724"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reports\\step2j_b1_local_heuristic_confusion_matrix.csv",
+      "bytes": 916,
+      "sha256": "fcb279f5d22ecf3eb4b9393e70171153c31e6b9e8ae2e7d4670897b414c92474"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reports\\step2j_b1_semantic_template_summary.csv",
+      "bytes": 717,
+      "sha256": "8bdf821f87c3911fbe2f7a7c5bd555c16e73001d821bd8e61f6a2c941058c56e"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reports\\step2j_b1_semantic_family_representatives.csv",
+      "bytes": 2222,
+      "sha256": "2844a947de1ecc086f047e216efb1d3e86b88be8a94eefce8bfc53e49ad482ce"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reports\\step2j_b1_utility_quality_summary.csv",
+      "bytes": 260,
+      "sha256": "c7a9943bad75338df968129737c5bd5079ea29d238a344db37222b03ac8a8267"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reports\\step2j_b1_paired_statistics.json",
+      "bytes": 1886,
+      "sha256": "a90affd3e62b82afdb073f150d92f441ecef0f4cf33987bf575fa6cc760e1fdd"
+    },
+    {
+      "path": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\reports\\Step2J_B1_behavior_quality_route_decision_report.md",
+      "bytes": 2858,
+      "sha256": "9e52b0bafc9411a7f2fbc6b72d86dbafc30a73ad23034e2357db234036c6d371"
+    }
+  ]
+}

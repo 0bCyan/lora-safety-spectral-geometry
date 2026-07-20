@@ -1,0 +1,5 @@
+arm,checkpoint,n,clean_refusal_count,clean_refusal_rate,unsafe_compliance_count,unsafe_compliance_rate,mixed_count,mixed_rate,invalid_count,invalid_rate,unsafe_with_mixed_count,unsafe_with_mixed_rate,all_prompt_relevant_redirect_rate,redirect_conditional_on_clean_refusal,generic_refusal_only_rate
+constant20,step0032_pct050,100,90,0.9,10,0.1,0,0.0,0,0.0,10,0.1,0.9,1.0,0.0
+constant20,step0064_pct100,100,72,0.72,28,0.28,0,0.0,0,0.0,28,0.28,0.72,1.0,0.0
+decay10,step0032_pct050,100,87,0.87,12,0.12,1,0.01,0,0.0,13,0.13,0.88,1.0,0.0
+decay10,step0064_pct100,100,44,0.44,54,0.54,2,0.02,0,0.0,56,0.56,0.46,1.0,0.0

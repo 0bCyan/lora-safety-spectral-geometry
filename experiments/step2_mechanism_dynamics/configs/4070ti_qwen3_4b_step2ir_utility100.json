@@ -1,0 +1,56 @@
+{
+  "name": "4070ti_qwen3_4b_step2ir_utility100",
+  "machine": "4070ti",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "data_dir": "data/processed/unified_pool",
+  "output_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2ir",
+  "write_report": false,
+  "utility_output_tag": "utility100",
+  "utility_eval_per_set": 100,
+  "max_length": 512,
+  "load_in_4bit": true,
+  "bf16": false,
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "source_configs": {
+    "step2a": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2a_dynamics.json",
+    "step2ir": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2ir_matched_replay.json"
+  },
+  "utility_arms": [
+    {
+      "arm_label": "vanilla_risk_s1",
+      "source_config": "step2a",
+      "family": "risk",
+      "seed": 1,
+      "run_label": ""
+    },
+    {
+      "arm_label": "fixed_matched_10_s1",
+      "source_config": "step2ir",
+      "family": "risk",
+      "seed": 1,
+      "run_label": "fixed_matched_10"
+    },
+    {
+      "arm_label": "diverse_matched_5_s1",
+      "source_config": "step2ir",
+      "family": "risk",
+      "seed": 1,
+      "run_label": "diverse_matched_5"
+    },
+    {
+      "arm_label": "diverse_matched_10_s1",
+      "source_config": "step2ir",
+      "family": "risk",
+      "seed": 1,
+      "run_label": "diverse_matched_10"
+    }
+  ],
+  "utility_checkpoints": [
+    "step0064_pct100"
+  ],
+  "baseline_arm": "vanilla_risk_s1"
+}

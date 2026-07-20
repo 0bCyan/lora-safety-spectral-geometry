@@ -1,0 +1,7 @@
+family,run_label,seed,checkpoint_a,checkpoint_b,side,k,n,mean_top_direction_cosine,mean_principal_cosine
+risk,spectral_mean_1e-4,1,step0000_pct000,step0006_pct009,left,1,252,0.016423101010981815,0.016423101010981815
+risk,spectral_mean_1e-4,1,step0000_pct000,step0016_pct025,left,1,252,0.016050672970099156,0.016050672970099156
+risk,spectral_mean_1e-4,1,step0000_pct000,step0064_pct100,left,1,252,0.016554984699016333,0.016554984699016333
+risk,spectral_mean_1e-4,1,step0006_pct009,step0016_pct025,left,1,252,0.8572263596431603,0.8572263661476355
+risk,spectral_mean_1e-4,1,step0006_pct009,step0064_pct100,left,1,252,0.6529676942819995,0.6529676960115987
+risk,spectral_mean_1e-4,1,step0016_pct025,step0064_pct100,left,1,252,0.8593858216726591,0.8593858187160794

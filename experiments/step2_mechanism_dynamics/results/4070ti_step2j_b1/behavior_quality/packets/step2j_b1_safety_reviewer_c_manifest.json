@@ -1,0 +1,12 @@
+{
+  "reviewer": "Safety Reviewer C",
+  "packet": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\behavior_quality\\packets\\step2j_b1_safety_reviewer_c_packet.jsonl",
+  "packet_rows": 5,
+  "packet_sha256": "8b49c71de00258484f3c74cc5cd4a6c0f3fb4e5bb15ecce260affa24322bfae2",
+  "dispute_fields": [
+    "primary_label",
+    "prompt_relevant_safe_redirect",
+    "generic_refusal_only",
+    "actionable_harmful_content"
+  ]
+}

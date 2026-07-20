@@ -1,0 +1,18 @@
+{
+  "manifest": "experiments\\step2_mechanism_dynamics\\manifests\\step2ir_natural_diverse_targets_v1.jsonl",
+  "manifest_sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c",
+  "review": "experiments\\step2_mechanism_dynamics\\manifests\\step2ir_natural_diverse_targets_v1_review.csv",
+  "review_sha256": "8f3cac32bd3d614c3f4f65cdbf87b04eddf6771f4b25a978675e1e7512af3376",
+  "source_manifest": "experiments\\step2_mechanism_dynamics\\manifests\\step2ir_diverse_matched_targets.jsonl",
+  "source_unique_prompts": 40,
+  "target_rows": 80,
+  "targets_per_prompt": 2,
+  "writer": "codex_agent_natural_v1",
+  "reviewer": "codex_agent_preflight_reviewer_v1",
+  "status": "frozen_for_seed1_pilot",
+  "notes": [
+    "Separate versioned manifest; rejected Step2I-R target manifest was not edited.",
+    "No heldout_test access.",
+    "Preflight review is local and should be distinguished from later independent human or strong-judge review."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name": "4070ti_qwen3_4b_step2e_utility",
+  "machine": "4070ti",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "data_dir": "data/processed/unified_pool",
+  "output_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2e",
+  "utility_eval_per_set": 30,
+  "max_length": 512,
+  "load_in_4bit": true,
+  "bf16": false,
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "source_configs": {
+    "step2a": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2a_dynamics.json",
+    "step2e": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2e_seed_expansion.json"
+  },
+  "utility_arms": [
+    {
+      "arm_label": "vanilla_risk_s2",
+      "source_config": "step2a",
+      "family": "risk",
+      "seed": 2,
+      "run_label": ""
+    },
+    {
+      "arm_label": "vanilla_risk_s3",
+      "source_config": "step2a",
+      "family": "risk",
+      "seed": 3,
+      "run_label": ""
+    },
+    {
+      "arm_label": "decay_20p_to_5p_s2",
+      "source_config": "step2e",
+      "family": "risk",
+      "seed": 2,
+      "run_label": "decay_20p_to_5p"
+    },
+    {
+      "arm_label": "decay_20p_to_5p_s3",
+      "source_config": "step2e",
+      "family": "risk",
+      "seed": 3,
+      "run_label": "decay_20p_to_5p"
+    }
+  ],
+  "utility_checkpoints": [
+    "step0032_pct050",
+    "step0064_pct100"
+  ],
+  "baseline_arm": "vanilla_risk_s2"
+}

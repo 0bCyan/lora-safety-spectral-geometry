@@ -1,0 +1,11 @@
+family,run_label,seed,checkpoint_a,checkpoint_b,side,k,n,mean_top_direction_cosine,mean_principal_cosine
+risk,factor_plus_sequence,1,step0000_pct000,step0006_pct009,left,1,252,0.01766245953596866,0.01766245953596866
+risk,factor_plus_sequence,1,step0000_pct000,step0016_pct025,left,1,252,0.014349587781388047,0.014349587781388047
+risk,factor_plus_sequence,1,step0000_pct000,step0032_pct050,left,1,252,0.013354986463257643,0.013354986463257643
+risk,factor_plus_sequence,1,step0000_pct000,step0064_pct100,left,1,252,0.01461166798074532,0.01461166798074532
+risk,factor_plus_sequence,1,step0006_pct009,step0016_pct025,left,1,252,0.6085524447188373,0.6085524408087607
+risk,factor_plus_sequence,1,step0006_pct009,step0032_pct050,left,1,252,0.39727934785852476,0.3972793447670512
+risk,factor_plus_sequence,1,step0006_pct009,step0064_pct100,left,1,252,0.3460408926586665,0.34604089486870976
+risk,factor_plus_sequence,1,step0016_pct025,step0032_pct050,left,1,252,0.709794162329109,0.7097941862774038
+risk,factor_plus_sequence,1,step0016_pct025,step0064_pct100,left,1,252,0.5546045544823366,0.5546045648627027
+risk,factor_plus_sequence,1,step0032_pct050,step0064_pct100,left,1,252,0.6784742999237977,0.6784743093793089

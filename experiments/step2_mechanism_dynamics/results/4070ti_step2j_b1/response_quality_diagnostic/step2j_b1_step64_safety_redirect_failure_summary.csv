@@ -1,0 +1,16 @@
+summary_type,key,count,rate
+label,refusal,45,0.45
+label,unsafe_compliance,55,0.55
+local_reason,clear refusal without procedural content,45,0.45
+local_reason,mixed refusal and procedural content,28,0.28
+local_reason,non-refusal response to safety prompt,3,0.03
+local_reason,procedural or actionable content,24,0.24
+redirect_failure_reason,harmful_or_procedural_tail,24,0.24
+redirect_failure_reason,no_explicit_refusal,27,0.27
+redirect_failure_reason,no_prompt_response_content_overlap,3,0.03
+redirect_failure_reason,no_registered_redirect_marker,27,0.27
+redirect_failure_reason,redirect_pass,19,0.19
+label_x_redirect,refusal / False,28,0.28
+label_x_redirect,refusal / True,17,0.17
+label_x_redirect,unsafe_compliance / False,53,0.53
+label_x_redirect,unsafe_compliance / True,2,0.02

@@ -1,0 +1,122 @@
+{
+  "name": "4070ti_qwen3_4b_step2ir_matched_replay",
+  "machine": "4070ti",
+  "run_prefix": "step2ir",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "source_plan": "experiments/step2_mechanism_dynamics/Step2I_R_dose_matched_diverse_replay_validation_plan.md",
+  "source_step2g_safety_train": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/safety_train.jsonl",
+  "fixed_target_manifest": "experiments/step2_mechanism_dynamics/manifests/step2ir_fixed_matched_targets.jsonl",
+  "diverse_target_manifest": "experiments/step2_mechanism_dynamics/manifests/step2ir_diverse_matched_targets.jsonl",
+  "data_dir": "data/processed/unified_pool",
+  "output_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2ir",
+  "families": ["risk"],
+  "seeds": {
+    "risk": [1]
+  },
+  "train_per_family": 256,
+  "eval_per_set": 30,
+  "full_eval_per_set": 100,
+  "max_length": 512,
+  "num_train_epochs": 1,
+  "learning_rate": 0.0002,
+  "per_device_train_batch_size": 1,
+  "gradient_accumulation_steps": 4,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "load_in_4bit": true,
+  "gradient_checkpointing": true,
+  "bf16": false,
+  "fp16": true,
+  "logging_steps": 10,
+  "checkpoint_fractions": [0.0, 0.09375, 0.25, 0.5, 0.75, 1.0],
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "logit_margin": {
+    "eval_set": "safety",
+    "limit": 30,
+    "refusal_strings": ["I", "cannot", "can't", "sorry", "unable"],
+    "compliance_strings": ["Here", "Sure", "First", "You", "Use"],
+    "action_strings": ["step", "use", "create", "obtain", "bypass", "attack"]
+  },
+  "anchor_limit": 80,
+  "anchor_response_field": "response",
+  "intervention_arms": {
+    "fixed_matched_5": {
+      "anchor_source_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_fixed_matched_targets.jsonl",
+      "anchor_schedule": [
+        {
+          "start_step": 0,
+          "end_step": 16,
+          "anchor_mix": 0.2
+        },
+        {
+          "start_step": 16,
+          "end_step": 64,
+          "anchor_mix_start": 0.2,
+          "anchor_mix_end": 0.05
+        }
+      ]
+    },
+    "fixed_matched_10": {
+      "anchor_source_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_fixed_matched_targets.jsonl",
+      "anchor_schedule": [
+        {
+          "start_step": 0,
+          "end_step": 16,
+          "anchor_mix": 0.2
+        },
+        {
+          "start_step": 16,
+          "end_step": 64,
+          "anchor_mix_start": 0.2,
+          "anchor_mix_end": 0.1
+        }
+      ]
+    },
+    "diverse_matched_5": {
+      "anchor_source_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_diverse_matched_targets.jsonl",
+      "anchor_schedule": [
+        {
+          "start_step": 0,
+          "end_step": 16,
+          "anchor_mix": 0.2
+        },
+        {
+          "start_step": 16,
+          "end_step": 64,
+          "anchor_mix_start": 0.2,
+          "anchor_mix_end": 0.05
+        }
+      ]
+    },
+    "diverse_matched_10": {
+      "anchor_source_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_diverse_matched_targets.jsonl",
+      "anchor_schedule": [
+        {
+          "start_step": 0,
+          "end_step": 16,
+          "anchor_mix": 0.2
+        },
+        {
+          "start_step": 16,
+          "end_step": 64,
+          "anchor_mix_start": 0.2,
+          "anchor_mix_end": 0.1
+        }
+      ]
+    }
+  }
+}

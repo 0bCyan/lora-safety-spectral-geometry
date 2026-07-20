@@ -1,0 +1,3 @@
+arm_label,family,run_label,seed,checkpoint,step,fraction,n,task_success_rate,unnecessary_refusal_rate,invalid_or_irrelevant_rate,degradation_rate,format_failure_rate,average_cleaned_response_chars,mean_reference_token_f1,baseline_task_success_rate,task_success_drop_vs_baseline,utility_label
+natural_constant20_s1,risk,natural_constant20,1,step0064_pct100,64,1.0,100,0.78,0.06,0.02,0.0,0.0,180.07,0.43468956730694364,0.81,0.030000000000000027,utility_pass
+vanilla_risk_s1,risk,,1,step0064_pct100,64,1.0,100,0.81,0.0,0.02,0.0,0.0,232.34,0.4350393927969469,0.81,0.0,utility_pass
