@@ -1,0 +1,6 @@
+{
+  "disagreement_rows": 37,
+  "packet": "experiments\\step3_response_quality_persistence\\results\\step3a_target_structure_review\\packets\\step3a_target_structure_reviewer_c_packet.jsonl",
+  "reviewer_c_must_not_read_key": true,
+  "safe_target_responses_only": true
+}

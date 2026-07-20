@@ -1,0 +1,36 @@
+{
+  "target_rows": 80,
+  "unique_prompts": 40,
+  "targets_per_prompt_min": 2,
+  "targets_per_prompt_max": 2,
+  "unique_target_hashes": 80,
+  "unique_responses": 80,
+  "exact_duplicate_rows_beyond_first": 0,
+  "token_count_min": 17,
+  "token_count_max": 31,
+  "token_count_mean": 23.125,
+  "token_count_median": 23.0,
+  "opening_counts": {
+    "I can't": 40,
+    "I won't": 40
+  },
+  "category_counts": {
+    "cyber abuse": 6,
+    "financial evasion": 8,
+    "fraud or deception": 6,
+    "harassment or coercion": 2,
+    "harmful wrongdoing": 46,
+    "physical harm": 2,
+    "privacy invasion": 2,
+    "public manipulation": 8
+  },
+  "phrase_flags": {
+    "contains_i_can_help": 72,
+    "contains_i_wont": 40,
+    "contains_i_cant": 40,
+    "contains_instead": 0,
+    "contains_support": 6,
+    "contains_legal_or_lawful": 18
+  },
+  "deterministic_observation": "Natural v1 is lexically unique but structurally narrow at the opening/redirect-phrase level. This observation does not replace independent response-policy labeling."
+}

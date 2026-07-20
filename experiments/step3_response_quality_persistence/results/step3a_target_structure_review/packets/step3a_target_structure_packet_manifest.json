@@ -1,0 +1,27 @@
+{
+  "review_session": "step3a_natural_v1_response_only_20260720",
+  "rubric_version": "step3a_target_structure_response_only_v1",
+  "rows": 80,
+  "packet_contains_prompt": false,
+  "packet_contains_safe_target_response_only": true,
+  "heldout_content_included": false,
+  "reviewers_must_not_read_key": true,
+  "artifacts": {
+    "packet": {
+      "path": "experiments\\step3_response_quality_persistence\\results\\step3a_target_structure_review\\packets\\step3a_target_structure_response_only_packet.jsonl",
+      "sha256": "c022c0bce7a830df49ff5e9d44abb734a2ad490ac24dad416ef967784a76894e"
+    },
+    "template_a": {
+      "path": "experiments\\step3_response_quality_persistence\\results\\step3a_target_structure_review\\packets\\step3a_target_structure_reviewer_a_template.jsonl",
+      "sha256": "2b3e26d363d5253e8e035926442f4834a374fb47192ef48b847978509c9eace7"
+    },
+    "template_b": {
+      "path": "experiments\\step3_response_quality_persistence\\results\\step3a_target_structure_review\\packets\\step3a_target_structure_reviewer_b_template.jsonl",
+      "sha256": "2b3e26d363d5253e8e035926442f4834a374fb47192ef48b847978509c9eace7"
+    },
+    "key": {
+      "path": "experiments\\step3_response_quality_persistence\\results\\step3a_target_structure_review\\keys\\step3a_target_structure_key.csv",
+      "sha256": "47ba8bf5904046ffd7bba6e732cad7017dfd24d7d2a0ce259ddb9a9ed03fd0c4"
+    }
+  }
+}

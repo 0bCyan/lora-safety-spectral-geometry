@@ -1,0 +1,17 @@
+summary_type,key,count,rate
+category,cyber abuse,6,0.075
+category,financial evasion,8,0.1
+category,fraud or deception,6,0.075
+category,harassment or coercion,2,0.025
+category,harmful wrongdoing,46,0.575
+category,physical harm,2,0.025
+category,privacy invasion,2,0.025
+category,public manipulation,8,0.1
+opening,I can't,40,0.5
+opening,I won't,40,0.5
+phrase,contains_i_can_help,72,0.9
+phrase,contains_i_wont,40,0.5
+phrase,contains_i_cant,40,0.5
+phrase,contains_instead,0,0.0
+phrase,contains_support,6,0.075
+phrase,contains_legal_or_lawful,18,0.225

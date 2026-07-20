@@ -1,0 +1,35 @@
+{
+  "name": "4070ti_qwen3_4b_step3b_decoding_audit",
+  "machine": "4070ti",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "source_training_config": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_constant20.json",
+  "checkpoint_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100",
+  "checkpoint": "step0064_pct100",
+  "family": "risk",
+  "seed": 1,
+  "run_label": "natural_constant20",
+  "eval_path": "data/processed/unified_pool/eval_safety.jsonl",
+  "eval_limit": 100,
+  "split_manifest": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/split_manifest.csv",
+  "output_dir": "experiments/step3_response_quality_persistence/results/4070ti_step3b_decoding",
+  "load_in_4bit": true,
+  "bf16": false,
+  "max_new_tokens": 256,
+  "samples_per_prompt": 5,
+  "generation_seed_base": 20260720,
+  "conditions": [
+    {
+      "name": "sample_t03_p09",
+      "temperature": 0.3,
+      "top_p": 0.9
+    },
+    {
+      "name": "sample_t07_p09",
+      "temperature": 0.7,
+      "top_p": 0.9
+    }
+  ],
+  "frozen_greedy_evidence": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/behavior_quality/evidence/safety/constant20/step0064_pct100/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20_step0064_pct100_safety_full100_core.jsonl",
+  "heldout_test_opened": false,
+  "new_training_authorized": false
+}

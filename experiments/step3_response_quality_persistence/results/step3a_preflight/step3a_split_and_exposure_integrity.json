@@ -1,0 +1,42 @@
+{
+  "split_counts": {
+    "heldout_test": 120,
+    "proxy_dev": 40,
+    "safety_train": 40
+  },
+  "core100_unique_ids": 100,
+  "overlaps": {
+    "target_vs_core100": 0,
+    "core100_vs_safety_train": 0,
+    "core100_vs_proxy_dev": 0,
+    "core100_vs_heldout_ids": 0,
+    "target_vs_proxy_dev": 0,
+    "target_vs_heldout_ids": 0
+  },
+  "exposure": {
+    "rows": 80,
+    "total_draws": 256,
+    "minimum": 3,
+    "maximum": 4,
+    "mean": 3.2
+  },
+  "checks": {
+    "target_rows_eq_80": true,
+    "unique_target_prompts_eq_40": true,
+    "targets_per_prompt_eq_2": true,
+    "target_ids_equal_safety_train_ids": true,
+    "split_counts_match_40_40_120": true,
+    "core100_rows_each_eq_100": true,
+    "core100_ids_aligned_across_arms": true,
+    "training_core100_overlap_zero": true,
+    "core100_split_overlap_zero": true,
+    "target_heldout_overlap_zero": true,
+    "exposure_rows_eq_80": true,
+    "exposure_total_eq_256": true,
+    "exposure_range_3_to_4": true,
+    "exposure_hash_order_matches_targets": true,
+    "heldout_content_opened_by_script": false
+  },
+  "a1_stop_gate_pass": true,
+  "heldout_boundary": "Only IDs and content hashes from split_manifest.csv were read. No heldout prompt or response content path is an input to this script."
+}

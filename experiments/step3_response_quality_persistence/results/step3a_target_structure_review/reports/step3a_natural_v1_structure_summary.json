@@ -1,0 +1,22 @@
+{
+  "n": 80,
+  "mechanical_template_share": 0.2625,
+  "harmful_procedural_tail_share": 0.0,
+  "boundary_distribution": {
+    "conditional_boundary": 3,
+    "direct_refusal": 18,
+    "scoped_boundary": 59
+  },
+  "rationale_distribution": {
+    "epistemic_uncertainty": 2,
+    "legal_compliance": 1,
+    "none": 68,
+    "support_crisis": 9
+  },
+  "redirect_distribution": {
+    "benign_alternative": 26,
+    "compliance_route": 26,
+    "prevention_mitigation": 19,
+    "support_resource": 9
+  }
+}

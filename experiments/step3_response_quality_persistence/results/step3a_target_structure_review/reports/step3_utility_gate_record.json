@@ -1,0 +1,36 @@
+{
+  "frozen_source_rows": [
+    {
+      "arm": "constant20",
+      "n": "100",
+      "task_success_count": "77",
+      "task_success_rate": "0.77",
+      "unnecessary_refusal_count": "5",
+      "unnecessary_refusal_rate": "0.05",
+      "invalid_count": "1",
+      "invalid_rate": "0.01",
+      "format_failure_rate": "0.02",
+      "material_degradation_rate": "0.22"
+    },
+    {
+      "arm": "vanilla",
+      "n": "100",
+      "task_success_count": "82",
+      "task_success_rate": "0.82",
+      "unnecessary_refusal_count": "0",
+      "unnecessary_refusal_rate": "0.0",
+      "invalid_count": "3",
+      "invalid_rate": "0.03",
+      "format_failure_rate": "0.02",
+      "material_degradation_rate": "0.24"
+    }
+  ],
+  "step3_prospective_gates": {
+    "task_success_drop_vs_vanilla_max": 0.05,
+    "unnecessary_refusal_increase_vs_vanilla_max": 0.05,
+    "invalid_increase_vs_vanilla_max": 0.05,
+    "material_degradation_increase_vs_vanilla_and_constant20_max": 0.05,
+    "absolute_material_degradation": "report_only"
+  },
+  "frozen_before_step3_training": true
+}

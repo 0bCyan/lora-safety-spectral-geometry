@@ -1,0 +1,88 @@
+{
+  "rows": 80,
+  "working_raw_gate": 0.8,
+  "working_kappa_gate_when_defined": 0.6,
+  "fields": {
+    "boundary_act": {
+      "n": 80,
+      "raw_agreement": 0.675,
+      "cohen_kappa": 0.38187221396731064,
+      "cohen_kappa_note": "",
+      "reviewer_a_prevalence": {
+        "conditional_boundary": 3,
+        "direct_refusal": 38,
+        "scoped_boundary": 39
+      },
+      "reviewer_b_prevalence": {
+        "conditional_boundary": 2,
+        "direct_refusal": 13,
+        "scoped_boundary": 65
+      },
+      "passes_working_gate": false
+    },
+    "rationale_act": {
+      "n": 80,
+      "raw_agreement": 0.9375,
+      "cohen_kappa": 0.7523219814241487,
+      "cohen_kappa_note": "",
+      "reviewer_a_prevalence": {
+        "none": 71,
+        "support_crisis": 9
+      },
+      "reviewer_b_prevalence": {
+        "epistemic_uncertainty": 2,
+        "legal_compliance": 1,
+        "none": 66,
+        "support_crisis": 11
+      },
+      "passes_working_gate": true
+    },
+    "redirect_act": {
+      "n": 80,
+      "raw_agreement": 0.9125,
+      "cohen_kappa": 0.8786302557433896,
+      "cohen_kappa_note": "",
+      "reviewer_a_prevalence": {
+        "benign_alternative": 30,
+        "compliance_route": 22,
+        "prevention_mitigation": 19,
+        "support_resource": 9
+      },
+      "reviewer_b_prevalence": {
+        "benign_alternative": 25,
+        "compliance_route": 27,
+        "prevention_mitigation": 19,
+        "support_resource": 9
+      },
+      "passes_working_gate": true
+    },
+    "harmful_procedural_tail": {
+      "n": 80,
+      "raw_agreement": 1.0,
+      "cohen_kappa": null,
+      "cohen_kappa_note": "undefined due to zero label variance",
+      "reviewer_a_prevalence": {
+        "absent": 80
+      },
+      "reviewer_b_prevalence": {
+        "absent": 80
+      },
+      "passes_working_gate": true
+    },
+    "mechanical_template": {
+      "n": 80,
+      "raw_agreement": 0.9125,
+      "cohen_kappa": 0.789156626506024,
+      "cohen_kappa_note": "",
+      "reviewer_a_prevalence": {
+        "no": 56,
+        "yes": 24
+      },
+      "reviewer_b_prevalence": {
+        "no": 57,
+        "yes": 23
+      },
+      "passes_working_gate": true
+    }
+  }
+}
