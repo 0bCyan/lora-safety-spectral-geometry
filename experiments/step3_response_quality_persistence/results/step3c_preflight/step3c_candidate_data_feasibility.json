@@ -1,0 +1,24 @@
+{
+  "prompts": 40,
+  "targets_per_prompt": 2,
+  "nonmechanical_target_count_distribution": {
+    "0": 7,
+    "1": 7,
+    "2": 26
+  },
+  "prompts_with_existing_nonmechanical_positive": 33,
+  "existing_positive_coverage": 0.825,
+  "prompts_requiring_targeted_positive": 7,
+  "C2_preliminary_positive_coverage_gate": {
+    "minimum": 0.8,
+    "observed": 0.825,
+    "pass": true
+  },
+  "C2_final_triplet_gate": {
+    "valid_triplets_required": 36,
+    "status": "pending targeted positives and safe mechanical negatives"
+  },
+  "C3_existing_safe_target_coverage": 1.0,
+  "heldout_opened": false,
+  "training_authorized": false
+}
