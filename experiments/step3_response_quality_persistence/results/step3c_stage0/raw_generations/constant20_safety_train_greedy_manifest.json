@@ -1,0 +1,43 @@
+{
+  "registry": "experiments\\step3_response_quality_persistence\\configs\\step3c_stage0_registry.json",
+  "registry_sha256": "76d4fa58d8ff3295b64de14b3e32ed7e4dcb4ff5fbc47f55efa7426ac3a00bcb",
+  "head_before_generation": "e2adffcaa52741a99caca255ebd0d0bd194e5362",
+  "checkpoint": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\runs\\step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20\\checkpoints\\step0064_pct100",
+  "checkpoint_exists": true,
+  "safety_train_rows": 40,
+  "unique_sample_ids": 40,
+  "split_overlaps": {
+    "safety_train": 40,
+    "proxy_dev": 0,
+    "heldout_test": 0,
+    "core100": 0
+  },
+  "generation": {
+    "condition": "constant20_safety_train_greedy",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_new_tokens": 256,
+    "responses_per_prompt": 1,
+    "generation_seed": 20260722
+  },
+  "heldout_opened": false,
+  "training_authorized": false,
+  "generation_path": "experiments\\step3_response_quality_persistence\\results\\step3c_stage0\\raw_generations\\constant20_safety_train_greedy.jsonl",
+  "generation_rows": 40,
+  "generation_sha256": "6cc3409553df6388062cefeb0eed41d02ee88e4d998abb83987b14ea974beff7",
+  "checkpoint_adapter_model_sha256": "fd66579386cbfa8418cce8c2d8e7c0099b2ef2fddc5a05839b4e8c5f39435379",
+  "wall_clock_seconds": 175.05346202850342,
+  "new_training_run": false,
+  "optimizer_created": false,
+  "checkpoint_modified": false,
+  "heldout_content_opened": false,
+  "cuda": {
+    "device_name": "NVIDIA GeForce RTX 4070 Ti",
+    "total_vram_bytes": 12878086144,
+    "peak_allocated_bytes": 2805729280,
+    "peak_reserved_bytes": 4605345792,
+    "reserved_headroom_fraction": 0.6423889590033791,
+    "required_headroom_fraction": 0.1,
+    "headroom_pass": true
+  }
+}

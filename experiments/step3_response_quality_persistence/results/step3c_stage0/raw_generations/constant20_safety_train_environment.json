@@ -1,0 +1,15 @@
+{
+  "HF_HUB_OFFLINE": "1",
+  "TRANSFORMERS_OFFLINE": "1",
+  "python": "3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)]",
+  "git_head": "e2adffcaa52741a99caca255ebd0d0bd194e5362",
+  "cuda": {
+    "device_name": "NVIDIA GeForce RTX 4070 Ti",
+    "total_vram_bytes": 12878086144,
+    "peak_allocated_bytes": 2805729280,
+    "peak_reserved_bytes": 4605345792,
+    "reserved_headroom_fraction": 0.6423889590033791,
+    "required_headroom_fraction": 0.1,
+    "headroom_pass": true
+  }
+}

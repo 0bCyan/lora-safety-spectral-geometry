@@ -1,0 +1,22 @@
+{
+  "generation_rows": 40,
+  "unique_generation_ids": 40,
+  "unique_sample_ids": 40,
+  "expected_safety_train_ids": 40,
+  "split_overlaps": {
+    "safety_train": 40,
+    "proxy_dev": 0,
+    "heldout_test": 0,
+    "core100": 0
+  },
+  "empty_response_count": 0,
+  "max_token_limit_hit_count": 0,
+  "generation_sha256": "6cc3409553df6388062cefeb0eed41d02ee88e4d998abb83987b14ea974beff7",
+  "manifest_sha256": "a51e1d3058fe33a29a3f5ce1e624abe8ed996379bd699fe1202b4498dccec17d",
+  "environment_sha256": "035a0aac210010bcb3306105d24dfff542c7f55bfba4158eb27f0b2db3a1e05b",
+  "prospective_positive_rows": 7,
+  "prospective_positive_sha256": "218a50bc629759c70d69f3d3624ce7f1a338d30b38b60282ae418d897976601c",
+  "heldout_content_opened": false,
+  "new_training_run": false,
+  "validator_status": "passed"
+}
