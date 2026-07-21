@@ -299,7 +299,7 @@ Authorized now:
 - triplet schema and review-packet preparation;
 - method implementation and unit/smoke tests without full training;
 - seven targeted positive candidates after the rubric and packet schema freeze;
-- deterministic constant20 `safety_train` generation after the local protocol freeze;
+- deterministic constant20 `safety_train` generation after the experiment-machine protocol freeze;
 - C2/C3 no-update GPU diagnostics after independent triplet review and freeze.
 
 Not yet authorized:
@@ -310,3 +310,5 @@ Not yet authorized:
 - seed expansion or heldout evaluation.
 
 The phase order, machine boundary, failure routes, and required artifacts are frozen in `Step3C_Stage0_data_and_diagnostic_execution_plan.md`.
+
+The 4070 Ti experiment machine owns all authorized Stage 0 implementation, data preparation, independent-review orchestration, diagnostics, reporting, commits, and pushes. The main executor may not replace independent blind reviewers.

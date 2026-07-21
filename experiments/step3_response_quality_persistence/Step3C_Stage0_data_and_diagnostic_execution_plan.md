@@ -22,32 +22,24 @@ The remaining hypothesis is that prompt-specific information or response prefere
 - C2: a safe-versus-safe preference objective for prompt-specific responses;
 - C3: prompt-response contrastive binding using only approved safe targets.
 
-## 2. Machine Boundary
+## 2. Machine Ownership
 
-### Local analysis machine
+The 4070 Ti experiment machine owns Stage 0 end to end. The current Intel Arc local environment is only the plan-authoring and repository-control host; it is not part of the execution path.
 
-The current local environment has Intel Arc graphics, no available `nvidia-smi`, and no installed PyTorch runtime. It is authorized for:
+The experiment-machine executor is authorized to:
 
-- source-data inventory and split checks;
-- schema, rubric, and packet construction;
-- hash and row-count validation;
-- independent text review orchestration;
-- adjudication joins after labels freeze;
-- summary statistics and route reporting;
-- implementation work and CPU-only unit tests that do not load Qwen3-4B.
+- implement and test the Stage 0 schema, rubrics, packet builders, validators, diagnostics, and registry;
+- run source-data inventory, split checks, hashes, joins, summaries, and route reporting;
+- write the seven prospectively authorized positive candidates before review;
+- orchestrate independent, no-context reviewer agents for blind labels and adjudication;
+- load the frozen constant20 step64 checkpoint;
+- generate one deterministic candidate `y-` for each of 40 `safety_train` prompts;
+- compute frozen-reference log-probability margins;
+- run C2 gradient-scale calibration without optimizer updates;
+- run C3 representation, queue-memory, and gradient-flow diagnostics;
+- commit and push each frozen stage artifact.
 
-It is not a supported environment for loading the 4-bit Qwen3-4B checkpoint, CUDA gradient diagnostics, or LoRA training.
-
-### 4070 Ti experiment machine
-
-The experiment machine is required for:
-
-- loading the frozen constant20 step64 checkpoint;
-- deterministic generation of one candidate `y-` for each of 40 `safety_train` prompts;
-- frozen-reference log-probability margins;
-- C2 gradient-scale calibration without optimizer updates;
-- C3 representation, queue-memory, and gradient-flow diagnostics;
-- later Stage 1 training, only after a separate authorization record.
+The main experiment-machine executor may write prospective positive candidates and prepare hidden packets, but it may not assign blind review labels. Reviewer agents must not receive role keys, arm identities, model margins, or prior outcome summaries. Later Stage 1 training still requires a separate authorization record.
 
 ## 3. Non-Negotiable Data Boundaries
 
@@ -61,7 +53,7 @@ The experiment machine is required for:
 8. Reviewers may not read role keys, source-arm keys, reference margins, or candidate names before labels freeze.
 9. The main session may prepare packets and compute joins but may not provide blind outcome labels.
 
-## 4. Stage 0A: Freeze Schema and Review Protocol Locally
+## 4. Stage 0A: Freeze Schema and Review Protocol on the Experiment Machine
 
 Create a versioned triplet schema with at least:
 
@@ -120,7 +112,7 @@ This phase is inference only:
 
 A generated response becomes `y-` only if blind review later labels it clean-safe, prompt-relevant, valid, and mechanical. Otherwise that prompt has no valid C2 negative.
 
-## 6. Stage 0C: Complete Positive Candidates Locally
+## 6. Stage 0C: Complete Positive Candidates on the Experiment Machine
 
 Existing evidence provides at least one independently approved non-mechanical target for 33 of 40 prompts. For the remaining seven prompts, write exactly one targeted candidate before any C2/C3 diagnostic result is viewed.
 
@@ -216,7 +208,7 @@ Do not commit checkpoints, model caches, hidden heldout content, or unrelated pa
 
 ## 11. Expected Runtime
 
-- local schema, packet, and integrity work: approximately 1-2 hours after scripts exist;
+- schema, packet, and integrity work on the experiment machine: approximately 1-2 hours after scripts exist;
 - 40-response deterministic generation on the 4070 Ti: approximately 5-20 minutes including model load;
 - independent review: reviewer-dependent, typically 1-3 hours of elapsed coordination;
 - C2 reference-margin and gradient diagnostics: approximately 15-40 minutes;
@@ -226,4 +218,4 @@ Stage 0 contains no full training run. The later Stage 1 C2 and C3 64-step pilot
 
 ## 12. Immediate Next Action
 
-Implement and locally test only the Stage 0A schema, rubrics, packet builders, validators, and registry. Commit those artifacts before asking the experiment machine to generate the 40 frozen constant20 responses.
+On the experiment machine, implement and test the Stage 0A schema, rubrics, packet builders, validators, and registry. Commit and push that protocol freeze before generating the 40 constant20 responses, then continue through independent review, triplet freeze, no-update diagnostics, and the Stage 0 route report without returning execution to the local host.

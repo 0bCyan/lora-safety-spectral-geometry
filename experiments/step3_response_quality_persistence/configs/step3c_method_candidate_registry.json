@@ -57,8 +57,9 @@
   "heldout_opened": false,
   "training_authorized": false,
   "stage0_authorization": {
-    "local_schema_packet_and_review_preparation": true,
-    "constant20_safety_train_generation_after_local_freeze": true,
+    "experiment_machine_stage0_end_to_end": true,
+    "experiment_machine_schema_packet_and_review_preparation": true,
+    "constant20_safety_train_generation_after_protocol_freeze": true,
     "c2_c3_no_update_gpu_diagnostics_after_triplet_freeze": true,
     "optimizer_steps": false,
     "core100_for_triplet_construction": false,

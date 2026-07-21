@@ -152,9 +152,9 @@ Stop Step 3 or redirect it if any of the following occurs:
 
 Authorized now:
 
-- implement and validate the Step3C Stage 0 schema, rubrics, packet builders, and registry locally;
-- prepare independent review packets using only `safety_train`;
-- after the local protocol freeze, generate exactly one deterministic constant20 response for each of 40 `safety_train` prompts on the experiment machine;
+- implement and validate the Step3C Stage 0 schema, rubrics, packet builders, and registry on the experiment machine;
+- prepare independent review packets and orchestrate no-context reviewer agents using only `safety_train`;
+- after the experiment-machine protocol freeze, generate exactly one deterministic constant20 response for each of 40 `safety_train` prompts;
 - after triplets and reviews freeze, run C2/C3 no-update log-probability, representation, gradient, and memory diagnostics.
 
 Not authorized now:
