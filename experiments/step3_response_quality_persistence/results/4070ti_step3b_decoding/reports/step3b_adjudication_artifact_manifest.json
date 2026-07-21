@@ -1,0 +1,125 @@
+{
+  "review_session_id": "step3b_decoding_adjudication_20260722",
+  "status": "complete",
+  "route": "B3",
+  "decision": "Sampling does not sufficiently reduce conditional mechanical concentration; design a training-time conditional-specificity intervention.",
+  "main_session_labeling": "none; labels assigned only by independent reviewers",
+  "artifact_count": 23,
+  "artifacts": [
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_sampled_safety_packet.jsonl",
+      "bytes": 486726,
+      "sha256": "6b90925898b97a93eac0f150c2e5cac3fab98141070d71ad3812eb6397ca97fd"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_sampled_safety_key.csv",
+      "bytes": 114707,
+      "sha256": "a154af13071555e64dd27d0ede35a533f8dbdd0ea30a6306c6f02a2f562c6ee3"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_sampled_safety_packet_manifest.json",
+      "bytes": 689,
+      "sha256": "1c03a89a7c03fbd60a07c892941ad896a0fc90f3b2b7b414347739d68010f078"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_safety_reviewer_c_packet.jsonl",
+      "bytes": 15981,
+      "sha256": "8453bff492a04fc93c36f9b7454d472c878b3069b94c3b1a7219a7dcaf81d649"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_safety_reviewer_c_manifest.json",
+      "bytes": 512,
+      "sha256": "3b4a8fc623362e991444379432d5b49adfa4829a2ac00b35b344a1e1ea992231"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_clean_safe_mechanical_packet.jsonl",
+      "bytes": 147125,
+      "sha256": "e1f74ded8c7c5503d296557c9f4084edc2918ba8414ec6e632595dae5f6c977e"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_clean_safe_mechanical_key.csv",
+      "bytes": 58189,
+      "sha256": "be2db1e6eec2ed6a2805086b44fdf739c3454ba9ad562ca33fae7927a1299a09"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_clean_safe_mechanical_packet_manifest.json",
+      "bytes": 870,
+      "sha256": "fb8f9bfc230ad476a38bb99512e1ca9d6d5a717b0ac94d7c554edb2620092269"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_mechanical_reviewer_c_packet.jsonl",
+      "bytes": 374876,
+      "sha256": "f1087443b06368dc333f2be8d7d531aea4ed127a614528eaac1475710238349e"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_mechanical_reviewer_c_manifest.json",
+      "bytes": 498,
+      "sha256": "098c4fb43b19ed7c1fff2f62f6ed9a08ba8756a10cc2f0404d598ab777f90038"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reviews\\step3b_safety_reviewer_a.jsonl",
+      "bytes": 328398,
+      "sha256": "29b5b7bbe8a00801dce646e2a02303186b718be7353735637653447b1284ae82"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reviews\\step3b_safety_reviewer_b.jsonl",
+      "bytes": 333929,
+      "sha256": "d77d5f40d1b04313b8cf11648fce83bc29cac739e06f943da3806518a4360bb1"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reviews\\step3b_safety_reviewer_c.jsonl",
+      "bytes": 3971,
+      "sha256": "25612d7fba59b5884ca05b9a955fef4ddbb37c983cb812a37723f098df30c399"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reviews\\step3b_safety_final_labels.jsonl",
+      "bytes": 345662,
+      "sha256": "47967522b61d6a8029fdd4d4fbefd07e429bfd1973b9418dcde81abc39587f1b"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reviews\\step3b_mechanical_reviewer_a.jsonl",
+      "bytes": 163203,
+      "sha256": "e626c47ab3f04e5913d0125af97da62ca2d42766f965b2990cd16f20c945e93b"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reviews\\step3b_mechanical_reviewer_b.jsonl",
+      "bytes": 170484,
+      "sha256": "6ebb7e6136caf2b2b5a03074e0b419435e69b7a49d1d4dd9b7b63a40d71340b4"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reviews\\step3b_mechanical_reviewer_c.jsonl",
+      "bytes": 124384,
+      "sha256": "2b111211c2f95ba4f0c89e0e1335d69ee9dd0534a36fdd7d61bbc3686a0f56c8"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reviews\\step3b_mechanical_final_labels.jsonl",
+      "bytes": 205597,
+      "sha256": "811b2f58040be1378777d83b4e5290eb0f66a153bf03f928ac64ca056fe0104d"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reports\\step3b_review_agreement.json",
+      "bytes": 1916,
+      "sha256": "b03b389b8092531d49b464a5a0d227ac29c7280465d71588c4f5e146bbbbaf40"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reports\\step3b_condition_summary.csv",
+      "bytes": 927,
+      "sha256": "1b1a3714896814a7bca84c24a0c63744a635d16f8c3c95706a8d4fa93f248b98"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reports\\step3b_prompt_cluster_statistics.json",
+      "bytes": 12147,
+      "sha256": "7aab962487837f7e5916b181a75bf60cd0b10328ad192f44f4e1d71ef92cdd39"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reports\\step3b_route_decision.json",
+      "bytes": 701,
+      "sha256": "cf43ab80d35b0d68b9b071cd35e99ac283a0c33470154f7483acee6041922e29"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reports\\Step3B_decoding_attribution_route_report.md",
+      "bytes": 1828,
+      "sha256": "5f9dd004ce3b93041cfa0f668e1b683cddb80f837dde5ddd835ec71b855ed38e"
+    }
+  ]
+}

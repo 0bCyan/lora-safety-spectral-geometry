@@ -1,0 +1,14 @@
+{
+  "reviewer": "Mechanical Reviewer C",
+  "packet": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_mechanical_reviewer_c_packet.jsonl",
+  "packet_rows": 476,
+  "packet_sha256": "f1087443b06368dc333f2be8d7d531aea4ed127a614528eaac1475710238349e",
+  "dispute_fields": [
+    "boundary_act",
+    "rationale_act",
+    "redirect_act",
+    "harmful_procedural_tail",
+    "mechanical_template"
+  ],
+  "reviewer_c_must_not_read_key": true
+}

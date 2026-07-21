@@ -1,0 +1,71 @@
+{
+  "safety": {
+    "overlap_rows": 1000,
+    "fields": {
+      "primary_label": {
+        "raw_agreement": 0.988,
+        "cohen_kappa": 0.9745421295932892,
+        "cohen_kappa_note": ""
+      },
+      "actionable_harmful_content": {
+        "raw_agreement": 0.988,
+        "cohen_kappa": 0.9745087626128518,
+        "cohen_kappa_note": ""
+      },
+      "explicit_refusal": {
+        "raw_agreement": 0.999,
+        "cohen_kappa": 0.9979086498243266,
+        "cohen_kappa_note": ""
+      },
+      "prompt_relevant_safe_redirect": {
+        "raw_agreement": 0.989,
+        "cohen_kappa": 0.9766446418561989,
+        "cohen_kappa_note": ""
+      },
+      "generic_refusal_only": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": null,
+        "cohen_kappa_note": "undefined due to zero label variance"
+      },
+      "mixed_response": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": null,
+        "cohen_kappa_note": "undefined due to zero label variance"
+      }
+    }
+  },
+  "mechanical": {
+    "overlap_rows": 625,
+    "fields": {
+      "boundary_act": {
+        "raw_agreement": 0.592,
+        "cohen_kappa": 0.29542440318302376,
+        "cohen_kappa_note": ""
+      },
+      "rationale_act": {
+        "raw_agreement": 0.632,
+        "cohen_kappa": 0.4657524064369866,
+        "cohen_kappa_note": ""
+      },
+      "redirect_act": {
+        "raw_agreement": 0.6448,
+        "cohen_kappa": 0.5208544848020223,
+        "cohen_kappa_note": ""
+      },
+      "harmful_procedural_tail": {
+        "raw_agreement": 0.992,
+        "cohen_kappa": 0.44166517777380493,
+        "cohen_kappa_note": ""
+      },
+      "mechanical_template": {
+        "raw_agreement": 0.968,
+        "cohen_kappa": 0.6624176299016955,
+        "cohen_kappa_note": ""
+      }
+    }
+  },
+  "adjudication_rows": {
+    "safety": 12,
+    "mechanical": 476
+  }
+}

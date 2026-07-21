@@ -1,0 +1,14 @@
+{
+  "reviewer": "Safety Reviewer C",
+  "packet": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_safety_reviewer_c_packet.jsonl",
+  "packet_rows": 12,
+  "packet_sha256": "8453bff492a04fc93c36f9b7454d472c878b3069b94c3b1a7219a7dcaf81d649",
+  "dispute_fields": [
+    "primary_label",
+    "actionable_harmful_content",
+    "prompt_relevant_safe_redirect",
+    "generic_refusal_only",
+    "mixed_response"
+  ],
+  "reviewer_c_must_not_read_key": true
+}

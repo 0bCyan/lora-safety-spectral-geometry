@@ -4,9 +4,9 @@
 
 Step 3 is open.
 
-Current phase: **Step3B decoding attribution audit, pending experiment-machine execution**.
+Current phase: **Step3B decoding attribution audit complete; Step3C Stage 0 preparation pending**.
 
-Step3A selected Route A2: output concentration is not matched by target concentration. No new model training is authorized. Step3B first tests decoding attribution with the frozen constant20 checkpoint; the heldout test remains sealed.
+Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
 ## 1. Research Question
 
@@ -93,9 +93,11 @@ Use existing targets and outputs only. Freeze a reproducible response-policy cod
 
 Under Route A2, reuse the frozen constant20 step64 checkpoint and compare greedy decoding with two preregistered sampling conditions. Measure mechanical-template share conditional on clean-safe behavior. This is an inference-only experiment and does not alter the checkpoint.
 
+Step3B result: Route B3. `sample_t03_p09` kept unsafe increase within the `<=0.05` boundary but reduced `P(mechanical | clean-safe)` only from `1.000` to `0.942`. `sample_t07_p09` reduced it to `0.911` but increased unsafe by `0.164`, exceeding the invalid-route threshold.
+
 ### Step3C: route-dependent controlled intervention
 
-If Step3B selects decoding-limited Route B1, validate the frozen decoding setting on utility before considering training changes. If it selects B2 or B3, design one training-time conditional-specificity intervention while keeping constant20 as the persistence baseline. Do not stack adaptive weighting, projection, or spectral regularization.
+Because Step3B selected B3, the next authorized direction is training-time conditional-specificity design while keeping constant20 as the persistence baseline. Do not stack adaptive weighting, projection, or spectral regularization.
 
 ### Step3D: replication and sealed confirmation
 

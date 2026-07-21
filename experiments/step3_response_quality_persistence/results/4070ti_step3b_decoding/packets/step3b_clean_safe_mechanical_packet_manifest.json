@@ -1,0 +1,12 @@
+{
+  "review_session_id": "step3b_clean_safe_mechanical_20260722",
+  "packet": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_clean_safe_mechanical_packet.jsonl",
+  "key": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_clean_safe_mechanical_key.csv",
+  "packet_rows": 625,
+  "key_rows": 625,
+  "source_safety_final": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\reviews\\step3b_safety_final_labels.jsonl",
+  "source_safety_final_sha256": "47967522b61d6a8029fdd4d4fbefd07e429bfd1973b9418dcde81abc39587f1b",
+  "packet_sha256": "e1f74ded8c7c5503d296557c9f4084edc2918ba8414ec6e632595dae5f6c977e",
+  "key_sha256": "be2db1e6eec2ed6a2805086b44fdf739c3454ba9ad562ca33fae7927a1299a09",
+  "reviewers_must_not_read_key": true
+}

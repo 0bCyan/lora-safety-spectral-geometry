@@ -1,0 +1,13 @@
+{
+  "review_session_id": "step3b_sampled_safety_20260722",
+  "packet": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_sampled_safety_packet.jsonl",
+  "key": "experiments\\step3_response_quality_persistence\\results\\4070ti_step3b_decoding\\packets\\step3b_sampled_safety_key.csv",
+  "packet_rows": 1000,
+  "key_rows": 1000,
+  "row_order_seed": 20260722,
+  "packet_sha256": "6b90925898b97a93eac0f150c2e5cac3fab98141070d71ad3812eb6397ca97fd",
+  "key_sha256": "a154af13071555e64dd27d0ede35a533f8dbdd0ea30a6306c6f02a2f562c6ee3",
+  "reviewers_must_not_read_key": true,
+  "heldout_opened": false,
+  "training_authorized": false
+}

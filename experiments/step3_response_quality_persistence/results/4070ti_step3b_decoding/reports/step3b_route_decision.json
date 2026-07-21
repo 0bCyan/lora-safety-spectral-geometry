@@ -1,0 +1,20 @@
+{
+  "route": "B3",
+  "decision": "Sampling does not sufficiently reduce conditional mechanical concentration; design a training-time conditional-specificity intervention.",
+  "conditions": {
+    "sample_t03_p09": {
+      "status": "B3_training_distribution_concentration",
+      "delta_unsafe": 0.023999999999999966,
+      "delta_conditional_mechanical": -0.05813953488372092,
+      "invalid_delta": 0.0,
+      "clean_safe_prompts_ge2": 78
+    },
+    "sample_t07_p09": {
+      "status": "B4_invalid",
+      "delta_unsafe": 0.16399999999999987,
+      "delta_conditional_mechanical": -0.08906810035842294,
+      "invalid_delta": 0.002,
+      "clean_safe_prompts_ge2": 79
+    }
+  }
+}

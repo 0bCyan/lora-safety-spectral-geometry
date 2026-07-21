@@ -2,7 +2,7 @@
 
 ## 0. Status
 
-Status: frozen design draft, pending completion of Step3B independent safety and conditional-mechanical adjudication.
+Status: frozen design draft, Step3B independent safety and conditional-mechanical adjudication complete.
 
 No Step3C training is currently authorized. This plan establishes the candidate families, common controls, staged selection logic, and final component ablations before any method result is observed.
 
@@ -34,8 +34,10 @@ Complexity is allowed only when each component maps to a measured failure mode a
 ### Decoding evidence status
 
 - `t=0.3` and `t=0.7` both produce near-maximal exact text diversity;
-- preliminary explicit-refusal screening is `0.698` and `0.526`, versus greedy `0.730`;
-- Step3B route remains pending independent behavior review.
+- independent Step3B adjudication selected Route B3 overall;
+- `sample_t03_p09` has unsafe delta `0.024` and conditional mechanical delta `-0.058`;
+- `sample_t07_p09` has unsafe delta `0.164` and is invalid under the frozen unsafe-increase threshold;
+- C1 constrained diverse decoding is therefore not eligible as a positive route.
 
 ### Positive-target feasibility
 
@@ -190,7 +192,7 @@ Before training:
 9. reject C2 if fewer than 36/40 valid triplets remain;
 10. reject C3 if positive/negative representation similarity has no usable variation or the memory queue cannot fit.
 
-No heldout prompt or response content may be used in Stage 0.
+Step3B satisfies items 1-2 and excludes C1. No heldout prompt or response content may be used in Stage 0.
 
 ## 6. Stage 1: Quality-Method Tournament
 
@@ -302,5 +304,5 @@ Not yet authorized on the experiment machine:
 
 - C2/C3/C4/C5 training;
 - seven-target additions before the triplet rubric is frozen;
-- safety-train negative generation before Step3B route is recorded;
+- safety-train negative generation before the triplet schema and review protocol are frozen;
 - seed expansion or heldout evaluation.
