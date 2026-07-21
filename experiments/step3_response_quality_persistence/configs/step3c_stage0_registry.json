@@ -1,0 +1,52 @@
+{
+  "name": "step3c_stage0_registry_v1",
+  "status": "stage0a_protocol_frozen_before_generation",
+  "source_plan": "experiments/step3_response_quality_persistence/Step3C_Stage0_data_and_diagnostic_execution_plan.md",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "checkpoint_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100",
+  "eval_safety_path": "data/processed/unified_pool/eval_safety.jsonl",
+  "split_manifest": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/split_manifest.csv",
+  "natural_v1_targets": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+  "step3a_target_key": "experiments/step3_response_quality_persistence/results/step3a_target_structure_review/keys/step3a_target_structure_key.csv",
+  "step3a_target_final_labels": "experiments/step3_response_quality_persistence/results/step3a_target_structure_review/reviews/step3a_target_structure_final_labels.jsonl",
+  "positive_coverage_csv": "experiments/step3_response_quality_persistence/results/step3c_preflight/step3c_prompt_positive_coverage.csv",
+  "output_dir": "experiments/step3_response_quality_persistence/results/step3c_stage0",
+  "generation": {
+    "condition": "constant20_safety_train_greedy",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_new_tokens": 256,
+    "responses_per_prompt": 1,
+    "generation_seed": 20260722
+  },
+  "stage0_review_gates": {
+    "safety_primary_raw_agreement_min": 0.9,
+    "safety_primary_cohen_kappa_min": 0.7,
+    "mechanical_template_raw_agreement_min": 0.85,
+    "mechanical_template_cohen_kappa_min": 0.6,
+    "zero_variance_raw_agreement_min": 0.95,
+    "maximum_codebook_revisions": 1,
+    "all_decision_field_disagreements_require_adjudication": true
+  },
+  "stage0_triplet_gates": {
+    "valid_triplets_required": 36,
+    "safety_train_prompt_count": 40,
+    "targets_per_prompt": 2,
+    "new_positive_candidate_count": 7
+  },
+  "c2_diagnostic": {
+    "beta": 1.0,
+    "target_csp_to_safety_gradient_ratio_min": 0.2,
+    "target_csp_to_safety_gradient_ratio_max": 0.3,
+    "optimizer_steps_authorized": false
+  },
+  "c3_diagnostic": {
+    "queue_size_sequence": [32, 16, 8],
+    "microbatch": 1,
+    "optimizer_steps_authorized": false
+  },
+  "heldout_opened": false,
+  "training_authorized": false,
+  "core100_for_triplet_construction_authorized": false,
+  "target_v2_authorized": false
+}

@@ -1,0 +1,46 @@
+{
+  "name": "step3c_stage0_protocol_freeze_manifest",
+  "status": "frozen_before_generation",
+  "head_record_required_before_generation": true,
+  "generation_started": false,
+  "new_positive_candidates_written": false,
+  "heldout_opened": false,
+  "training_authorized": false,
+  "artifacts": [
+    {
+      "path": "experiments\\step3_response_quality_persistence\\configs\\step3c_stage0_registry.json",
+      "bytes": 2477,
+      "sha256": "76d4fa58d8ff3295b64de14b3e32ed7e4dcb4ff5fbc47f55efa7426ac3a00bcb"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\review_rubrics\\step3c_triplet_behavior_rubric.md",
+      "bytes": 2115,
+      "sha256": "6dd613d74127be2679ba0531daec861d914551c6bbcb6b8bd35514d14eca5199"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\review_rubrics\\step3c_triplet_structure_codebook.md",
+      "bytes": 2654,
+      "sha256": "a52f76873f372d1e1484a605443aec125707933ed88f837d0c6454e9bf0e6367"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\step3c_stage0\\reports\\step3c_stage0_triplet_schema.json",
+      "bytes": 1388,
+      "sha256": "0e8e9bb41107a7f63ccfaaf0908768eb644cd575ba2847817b2efa22cf0c3b3e"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\step3c_stage0\\reports\\step3c_stage0_review_protocol.json",
+      "bytes": 1287,
+      "sha256": "f153ec024f5a61186641f33549aac9ed5119e373c873ea3faa53331b0507ad3d"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\step3c_stage0\\reports\\step3c_stage0_source_inventory.csv",
+      "bytes": 5143,
+      "sha256": "101b2ae47d5680e47306c7ed1b1dcc612f07f089e0b7ead5ff6585a36f47d0b9"
+    },
+    {
+      "path": "experiments\\step3_response_quality_persistence\\results\\step3c_stage0\\diagnostics\\step3c_stage0_input_boundary_validation.json",
+      "bytes": 2048,
+      "sha256": "2c5f1735d0054771674504e24b59168d43fdf21ee129b27892522a0b82cba215"
+    }
+  ]
+}

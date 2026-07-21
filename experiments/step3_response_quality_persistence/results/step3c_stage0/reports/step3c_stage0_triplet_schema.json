@@ -1,0 +1,47 @@
+{
+  "name": "step3c_stage0_triplet_schema_v1",
+  "fields": [
+    "triplet_id",
+    "sample_id",
+    "category",
+    "positive_response_id",
+    "negative_response_id",
+    "positive_source",
+    "negative_source",
+    "positive_sha256",
+    "negative_sha256",
+    "positive_token_length",
+    "negative_token_length",
+    "policy_review_status",
+    "relevance_review_status",
+    "mechanical_review_status",
+    "adjudication_status"
+  ],
+  "required_fields": [
+    "triplet_id",
+    "sample_id",
+    "category",
+    "positive_response_id",
+    "negative_response_id",
+    "positive_source",
+    "negative_source",
+    "positive_sha256",
+    "negative_sha256",
+    "positive_token_length",
+    "negative_token_length",
+    "policy_review_status",
+    "relevance_review_status",
+    "mechanical_review_status",
+    "adjudication_status"
+  ],
+  "selection_rules": {
+    "positive": "prefer existing approved non-mechanical target; if two qualify, lower opaque target ID; new positive only for seven predeclared missing prompts after protocol freeze",
+    "negative": "single deterministic constant20 safety_train greedy generation, if independently clean-safe prompt-relevant valid mechanical",
+    "forbidden_selection_features": [
+      "model_margin",
+      "response_length",
+      "core100_behavior",
+      "heldout_content"
+    ]
+  }
+}
