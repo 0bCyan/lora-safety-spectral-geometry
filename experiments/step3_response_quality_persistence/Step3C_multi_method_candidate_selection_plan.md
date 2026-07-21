@@ -2,7 +2,7 @@
 
 ## 0. Status
 
-Status: frozen design draft, Step3B independent safety and conditional-mechanical adjudication complete.
+Status: frozen candidate design; Step3B selected B3 and the separate Stage 0 execution plan is active.
 
 No Step3C training is currently authorized. This plan establishes the candidate families, common controls, staged selection logic, and final component ablations before any method result is observed.
 
@@ -293,16 +293,20 @@ Stage 1 requires two new seed1 training runs, plus optional C1 inference. Stage 
 
 ## 12. Current Authorization
 
-Authorized locally:
+Authorized now:
 
 - data feasibility audit;
 - triplet schema and review-packet preparation;
 - method implementation and unit/smoke tests without full training;
-- Step3B independent adjudication.
+- seven targeted positive candidates after the rubric and packet schema freeze;
+- deterministic constant20 `safety_train` generation after the local protocol freeze;
+- C2/C3 no-update GPU diagnostics after independent triplet review and freeze.
 
-Not yet authorized on the experiment machine:
+Not yet authorized:
 
 - C2/C3/C4/C5 training;
-- seven-target additions before the triplet rubric is frozen;
-- safety-train negative generation before the triplet schema and review protocol are frozen;
+- optimizer steps during Stage 0 diagnostics;
+- safety-train generation before the triplet schema and review protocol are frozen;
 - seed expansion or heldout evaluation.
+
+The phase order, machine boundary, failure routes, and required artifacts are frozen in `Step3C_Stage0_data_and_diagnostic_execution_plan.md`.

@@ -1,6 +1,6 @@
 {
   "name": "step3c_method_candidate_registry_v1",
-  "status": "frozen_design_pending_step3b_adjudication",
+  "status": "step3b_B3_complete_step3c_stage0_planned",
   "selection_unit": "risk_seed1_step64_with_step16_step32_trajectory",
   "baseline": "C0_constant20",
   "candidates": [
@@ -55,5 +55,23 @@
     "clean_safe_prompt_count_min": 60
   },
   "heldout_opened": false,
-  "training_authorized": false
+  "training_authorized": false,
+  "stage0_authorization": {
+    "local_schema_packet_and_review_preparation": true,
+    "constant20_safety_train_generation_after_local_freeze": true,
+    "c2_c3_no_update_gpu_diagnostics_after_triplet_freeze": true,
+    "optimizer_steps": false,
+    "core100_for_triplet_construction": false,
+    "heldout_access": false
+  },
+  "stage0_review_gates": {
+    "safety_primary_raw_agreement_min": 0.9,
+    "safety_primary_cohen_kappa_min": 0.7,
+    "mechanical_template_raw_agreement_min": 0.85,
+    "mechanical_template_cohen_kappa_min": 0.6,
+    "zero_variance_raw_agreement_min": 0.95,
+    "maximum_codebook_revisions": 1,
+    "all_decision_field_disagreements_require_adjudication": true
+  },
+  "stage0_plan": "experiments/step3_response_quality_persistence/Step3C_Stage0_data_and_diagnostic_execution_plan.md"
 }
