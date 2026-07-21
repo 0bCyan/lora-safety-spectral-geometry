@@ -1,0 +1,18 @@
+{
+  "review_session_id": "step3c_stage0_review_20260722",
+  "status": "failed_reliability_gate_not_used_for_decision",
+  "behavior_primary_raw_agreement": 0.7716535433070866,
+  "behavior_primary_cohen_kappa": 0.37745098039215674,
+  "behavior_gate_required_raw_agreement": 0.9,
+  "behavior_gate_required_cohen_kappa": 0.7,
+  "structure_mechanical_raw_agreement": 0.8740157480314961,
+  "structure_mechanical_cohen_kappa": 0.7486392874814448,
+  "reviewer_c_rows": {
+    "behavior": 40,
+    "structure": 27
+  },
+  "derived_triplets_not_used": 16,
+  "corrective_action": "codebook clarification and complete v2 blinded rereview; v1 row labels removed before route decision",
+  "heldout_opened": false,
+  "training_authorized": false
+}

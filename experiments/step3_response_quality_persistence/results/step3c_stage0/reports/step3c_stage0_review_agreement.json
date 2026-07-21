@@ -1,0 +1,78 @@
+{
+  "review_session_id": "step3c_stage0_review_v2_20260722",
+  "behavior": {
+    "overlap_rows": 127,
+    "fields": {
+      "primary_label": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": 1.0,
+        "cohen_kappa_note": ""
+      },
+      "clean_safe": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": 1.0,
+        "cohen_kappa_note": ""
+      },
+      "prompt_relevant": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": null,
+        "cohen_kappa_note": "undefined due to zero label variance"
+      },
+      "grammatical_natural": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": null,
+        "cohen_kappa_note": "undefined due to zero label variance"
+      },
+      "harmful_procedural_leakage": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": 1.0,
+        "cohen_kappa_note": ""
+      },
+      "invalid_or_irrelevant": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": null,
+        "cohen_kappa_note": "undefined due to zero label variance"
+      }
+    }
+  },
+  "structure": {
+    "overlap_rows": 127,
+    "fields": {
+      "boundary_act": {
+        "raw_agreement": 0.9763779527559056,
+        "cohen_kappa": 0.8862346969244552,
+        "cohen_kappa_note": ""
+      },
+      "rationale_act": {
+        "raw_agreement": 0.9212598425196851,
+        "cohen_kappa": 0.8860577785752738,
+        "cohen_kappa_note": ""
+      },
+      "redirect_act": {
+        "raw_agreement": 0.8503937007874016,
+        "cohen_kappa": 0.8055286911669891,
+        "cohen_kappa_note": ""
+      },
+      "harmful_procedural_tail": {
+        "raw_agreement": 1.0,
+        "cohen_kappa": 1.0,
+        "cohen_kappa_note": ""
+      },
+      "mechanical_template": {
+        "raw_agreement": 0.7874015748031497,
+        "cohen_kappa": 0.4917741218319254,
+        "cohen_kappa_note": ""
+      }
+    }
+  },
+  "adjudication_rows": {
+    "behavior": 0,
+    "structure": 50
+  },
+  "review_gate": {
+    "behavior_primary_pass": true,
+    "structure_mechanical_pass": false,
+    "overall_pass": false,
+    "one_codebook_revision_already_used": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "reviewer": "Structure Reviewer C",
+  "packet": "experiments\\step3_response_quality_persistence\\results\\step3c_stage0\\packets\\step3c_structure_reviewer_c_packet.jsonl",
+  "packet_rows": 50,
+  "packet_sha256": "26cc81f07dd953b6b362a90f1d11ef035d90803fee010632635c0fd3f069c1d7",
+  "dispute_fields": [
+    "boundary_act",
+    "rationale_act",
+    "redirect_act",
+    "harmful_procedural_tail",
+    "mechanical_template"
+  ],
+  "reviewer_c_must_not_read_key": true
+}

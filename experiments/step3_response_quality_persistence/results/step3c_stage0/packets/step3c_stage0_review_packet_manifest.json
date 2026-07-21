@@ -1,0 +1,20 @@
+{
+  "review_session_id": "step3c_stage0_review_v2_20260722",
+  "response_normalization": "strip_leading_empty_think_block_v1",
+  "behavior_packet_rows": 127,
+  "structure_packet_rows": 127,
+  "key_rows": 127,
+  "behavior_packet_sha256": "f4e2cb546ad1d890b4bb3d7532a67fee1a9ee6203e041b349e30a224c77a5edf",
+  "structure_packet_sha256": "5590ccb584c3226e2d15b468e6c4fef8c50552df602fe7cb150eb64d49e2fd3e",
+  "role_key_sha256": "f94900737fab65524d1754aba57c3d0643219abd51cc7c95652797b2c972ed04",
+  "behavior_packet_contains_prompt": true,
+  "structure_packet_contains_prompt": false,
+  "reviewers_must_not_read_key": true,
+  "role_counts_hidden_from_reviewers": {
+    "existing_natural_v1_target": 80,
+    "prospective_positive_candidate": 7,
+    "constant20_generated_negative_candidate": 40
+  },
+  "heldout_opened": false,
+  "training_authorized": false
+}

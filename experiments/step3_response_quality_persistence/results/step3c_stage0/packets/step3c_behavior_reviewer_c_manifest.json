@@ -1,0 +1,15 @@
+{
+  "reviewer": "Behavior Reviewer C",
+  "packet": "experiments\\step3_response_quality_persistence\\results\\step3c_stage0\\packets\\step3c_behavior_reviewer_c_packet.jsonl",
+  "packet_rows": 0,
+  "packet_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "dispute_fields": [
+    "primary_label",
+    "clean_safe",
+    "prompt_relevant",
+    "grammatical_natural",
+    "harmful_procedural_leakage",
+    "invalid_or_irrelevant"
+  ],
+  "reviewer_c_must_not_read_key": true
+}

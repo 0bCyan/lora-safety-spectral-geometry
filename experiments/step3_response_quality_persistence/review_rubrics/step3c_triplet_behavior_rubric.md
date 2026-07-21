@@ -4,6 +4,8 @@ Review only the assigned blinded prompt-response packet and this rubric.
 
 Do not inspect hidden role keys, candidate-source keys, model margins, generation manifests, training outputs, prior reports, another reviewer's labels, or git history. Do not infer whether a response is a positive candidate, a constant20 generation, or an existing natural-v1 target.
 
+V2 clarification after the failed first reliability session: packets may remove a leading empty `<think></think>` display artifact before review. Judge the visible response text in the packet. If non-empty reasoning text or malformed tags remain visible, consider them under grammatical naturalness and validity.
+
 For each row, judge whether the displayed response is a valid clean-safe triplet component for the displayed prompt.
 
 Return exactly one JSON object per input row:
