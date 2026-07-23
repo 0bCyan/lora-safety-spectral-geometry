@@ -1,89 +1,134 @@
-# Experiment Machine Task: Step3C Stage 0 End-to-End Execution
+# Experiment Machine Task: Step3C-R End-to-End Recovery
 
 ## Authorization
 
-The experiment machine owns this task end to end. Authorized:
+The 4070 Ti experiment machine owns the complete C-R0 through C-R3 workflow defined in `Step3C_R_measurement_recovery_and_C3_execution_plan.md`.
 
-- implement and test the Stage 0A schema, review protocol, packet builders, validators, diagnostics, registry, and generation config;
-- commit and push the protocol freeze before any model generation;
-- write exactly seven prospective positive candidates before blind review;
-- load the existing Qwen3-4B risk-seed1 natural-constant20 step64 checkpoint;
-- generate exactly one deterministic response for each of the 40 `safety_train` prompts;
-- commit and push raw generations, environment metadata, config, hashes, and integrity results;
-- launch independent no-context reviewer agents, freeze A/B labels, adjudicate only disagreements with Reviewer C, and commit the reviewed triplets;
-- after independently reviewed triplets freeze, compute C2 reference margins and no-update gradient calibration;
-- run C3 representation, queue-memory, and no-update gradient-flow diagnostics;
-- produce, commit, and push the machine-readable Stage 0 route decision.
+This is conditional end-to-end authorization:
+
+- execute C-R0 measurement recovery and independent review;
+- execute C-R1 no-update C3 diagnostics only if C-R0 passes;
+- execute C-R2 seed1 C0-R/C3a/C3b training only for candidates passing C-R1;
+- execute C-R3 C0-R/C4-R/Q*/C5-R factorial only if C-R2 selects Q*;
+- commit and push after every frozen phase;
+- stop immediately when a frozen gate fails.
 
 Not authorized:
 
-- optimizer steps, model training, or checkpoint modification;
-- heldout access;
-- core100 use for triplet construction;
-- sampling retries or decoding sweeps;
-- target v2 construction;
-- C2/C3/C4/C5 training;
-- adaptive weighting, SpectraSafe, or seed expansion.
+- C2 revival or additional mechanical-negative generation;
+- relaxation of the stopped Stage 0 reliability gate;
+- behavior-based hyperparameter sweeps;
+- seed2/3, heldout, second backbone, or SpectraSafe;
+- paper edits or claims;
+- main-executor blind labels.
 
 ## Preconditions
 
-1. Pull `exp/step3-response-quality-persistence` and confirm the task points to the frozen Stage 0 execution plan.
-2. Confirm the worktree is clean before execution and record `HEAD`.
-3. Confirm this checkpoint exists:
+1. Pull `exp/step3-response-quality-persistence` and record `HEAD`.
+2. Confirm the worktree is clean before implementation.
+3. Validate `configs/step3cr_recovery_registry.json` against the recovery plan.
+4. Confirm all 47 stopped Stage 0 artifacts exist and that canonical-LF verification explains no non-EOL hash mismatch.
+5. Confirm heldout remains unopened and core100 is not used for training.
+6. Confirm the frozen constant20 checkpoint and Qwen3-4B offline cache exist.
+7. Confirm CUDA and at least 10% VRAM headroom.
+
+## Phase 1: C-R0 Protocol Freeze
+
+Implement:
+
+- deterministic 40-pair calibration builder;
+- eight reversed-duplicate insertions with seed `20260723`;
+- prompt-aware pairwise rubric;
+- reviewer A/B templates and Reviewer C disagreement packet;
+- agreement, Gwet AC1, kappa, reversal consistency, and position-bias analysis;
+- canonical-LF artifact manifest and fresh-checkout verifier;
+- synthetic tests for pair order canonicalization and hidden-key isolation.
+
+Before creating reviewer labels:
+
+1. run all tests;
+2. freeze configs, packet hashes, hidden duplicate keys, and rubric;
+3. commit and push the protocol freeze.
+
+## Phase 2: C-R0 Independent Review
+
+Use independent no-context Reviewer A and Reviewer B. The main executor may prepare packets but must not label rows. Reviewer C sees only decision-field disagreements.
+
+Apply the frozen C-R0 gates. If the first session fails, permit one rubric clarification and a complete new blind session. If the second fails, write the stop report, commit, push, and stop.
+
+If C-R0 passes:
+
+- freeze final labels and the prompt-aware candidate-evaluation endpoint;
+- write a machine-readable route decision;
+- commit and push before any model diagnostic.
+
+## Phase 3: C-R1 No-Update Diagnostics
+
+Implement the shared representation, C3a, and C3b exactly as registered. Run queue, temperature, gradient, and memory diagnostics without creating an optimizer or scheduler.
+
+Required outputs:
+
+- embedding and similarity integrity;
+- selected queue and temperature with numerical rationale;
+- C3a/C3b loss and registered LoRA gradient norms;
+- calibrated `eta` and achieved gradient ratio;
+- peak allocated/reserved VRAM and headroom;
+- candidate pass/fail route.
+
+Commit and push diagnostics. If neither candidate passes, stop.
+
+## Phase 4: C-R2 Seed1 Tournament
+
+Implement one common trainer and run:
+
+- C0-R common-trainer constant20 baseline;
+- C3a if eligible;
+- C3b if eligible.
+
+Use matched data order, target texts, seed, QLoRA settings, checkpoints 16/32/64, and greedy decoding. Freeze raw runs before review.
+
+Evaluation order:
+
+1. independent arm-hidden safety review;
+2. hard-gate exclusion;
+3. independent arm-hidden C-R0 pairwise quality review for surviving candidates;
+4. prompt-cluster bootstrap and route decision.
+
+Commit and push raw runs before review, then commit and push the frozen winner decision. If no candidate passes, stop.
+
+## Phase 5: C-R3 Factorial
+
+Only after Q* is frozen, run or reuse byte-identical:
+
+- C0-R;
+- C4-R;
+- Q*;
+- C5-R.
+
+Freeze raw runs before arm-key joins. Apply the same independent safety, utility, and prompt-aware quality protocol. Report main effects and interaction without inferring an interaction from C5-R alone.
+
+Commit and push the final factorial report, then stop. Do not start replication or open heldout.
+
+## Required Return State
+
+At every phase commit report:
+
+- commit hash and phase status;
+- commands and actual wall-clock runtime;
+- test and integrity results;
+- GPU/model/checkpoint confirmation when applicable;
+- row counts and canonical-LF hashes;
+- reviewer provenance and blindness confirmation without hidden keys;
+- gate values, pass/fail route, and next authorized phase;
+- confirmation that heldout remained closed.
+
+## Required Paths
 
 ```text
-experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100
+experiments/step3_response_quality_persistence/configs/step3cr_*
+experiments/step3_response_quality_persistence/review_rubrics/step3cr_*
+experiments/step3_response_quality_persistence/scripts/*step3cr*
+experiments/step3_response_quality_persistence/results/step3cr_*/
 ```
 
-4. Confirm the Stage 0 registry records `heldout_opened=false` and `training_authorized=false`.
-5. Confirm the frozen input contains exactly 40 unique `safety_train` IDs with zero core100 and heldout overlap.
-6. Confirm CUDA, 4-bit loading, and at least 10% required VRAM headroom are available.
-
-## Execution Phases
-
-1. Implement Stage 0A and run CPU/synthetic tests; commit and push the protocol freeze.
-2. Generate and validate the 40 deterministic constant20 responses; commit and push raw evidence before review.
-3. Prepare arm-hidden packets and use independent no-context reviewer agents. The main executor must not label rows. Freeze A/B/C labels, agreement, triplets, and hashes; commit and push.
-4. Run C2/C3 no-update diagnostics from the frozen triplets. Do not create an optimizer or perform a training step.
-5. Apply the frozen gates, produce the route report, commit, and push.
-
-The executor must implement separate dry-run, generation, integrity, review-preparation, adjudication, C2 diagnostic, and C3 diagnostic commands whose configs match the frozen registry. Do not adapt Step3B scripts ad hoc or combine phases in a way that exposes hidden keys before labels freeze.
-
-## Required Checks Before Commit
-
-- 40 rows, 40 unique `safety_train` IDs, and one deterministic generation per prompt;
-- unique generation IDs;
-- zero overlap with core100 and heldout IDs;
-- no heldout content accessed;
-- no training process started;
-- no retry, sampling condition, or unplanned response added;
-- generated files and summaries have hashes or tracked manifest entries.
-
-## Required Commit Contents
-
-```text
-experiments/step3_response_quality_persistence/review_rubrics/step3c_*
-experiments/step3_response_quality_persistence/configs/step3c_stage0_*
-experiments/step3_response_quality_persistence/scripts/*step3c_stage0*
-experiments/step3_response_quality_persistence/results/step3c_stage0/raw_generations/
-experiments/step3_response_quality_persistence/results/step3c_stage0/packets/
-experiments/step3_response_quality_persistence/results/step3c_stage0/reviews/
-experiments/step3_response_quality_persistence/results/step3c_stage0/diagnostics/
-experiments/step3_response_quality_persistence/results/step3c_stage0/reports/
-```
-
-Do not include model checkpoints, caches, unrelated paper edits, or heldout artifacts.
-
-## Return State
-
-After pushing results, report:
-
-- commit hash;
-- executed phase and actual wall-clock runtime;
-- GPU/model/checkpoint confirmation;
-- output row counts and hashes;
-- validator status;
-- peak VRAM, truncation, empty-response, and finite-value checks;
-- confirmation that no training and no heldout access occurred.
-
-The experiment machine continues across phase commits until the machine-readable Stage 0 route decision is pushed. Stop only for a frozen gate failure, an unavailable independent reviewer, an integrity failure, or a required user decision. Stage 0 completion does not authorize Stage 1 training.
+Do not commit model checkpoints, caches, raw hidden heldout content, or unrelated paper files.

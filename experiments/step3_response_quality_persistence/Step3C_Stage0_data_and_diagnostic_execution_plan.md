@@ -2,11 +2,11 @@
 
 ## 0. Status and Authorization
 
-Status: frozen operational plan after the completed Step3B Route B3 decision.
+Status: completed and stopped at the repeated review-reliability gate. Historical plan; no further execution is authorized here.
 
 Stage 0 authorizes data preparation, independent review, deterministic constant20 generation on the 40 `safety_train` prompts, and no-update model diagnostics. It does not authorize C2/C3/C4/C5 training, optimizer steps, behavior-based hyperparameter selection, seed expansion, or heldout access.
 
-The purpose of Stage 0 is to decide whether C2 and C3 are scientifically defined and technically runnable before either candidate sees a behavioral result.
+The route outcome is frozen in `results/step3c_stage0/reports/step3c_stage0_route_decision.json`. The prospective successor is `Step3C_R_measurement_recovery_and_C3_execution_plan.md`.
 
 ## 1. Decision Basis
 
@@ -218,4 +218,4 @@ Stage 0 contains no full training run. The later Stage 1 C2 and C3 64-step pilot
 
 ## 12. Immediate Next Action
 
-On the experiment machine, implement and test the Stage 0A schema, rubrics, packet builders, validators, and registry. Commit and push that protocol freeze before generating the 40 constant20 responses, then continue through independent review, triplet freeze, no-update diagnostics, and the Stage 0 route report without returning execution to the local host.
+None. This plan has completed and stopped. Follow `Step3C_R_measurement_recovery_and_C3_execution_plan.md` for any prospective work.

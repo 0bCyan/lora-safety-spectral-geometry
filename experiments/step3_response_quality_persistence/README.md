@@ -4,9 +4,11 @@
 
 Step 3 is open.
 
-Current phase: **Step3C Stage 0 data and no-update diagnostic preparation**.
+Current phase: **Step3C-R prompt-aware measurement recovery, followed conditionally by C3 diagnostics and seed1 method selection**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
+
+The first Step3C Stage 0 stopped at its repeated response-only mechanical-label reliability gate. It also established that the current C2 construction cannot reach its 36-triplet requirement. C2 is closed. The prospective recovery route replaces the primary quality construct before any C3 training result exists.
 
 ## 1. Research Question
 
@@ -97,7 +99,9 @@ Step3B result: Route B3. `sample_t03_p09` kept unsafe increase within the `<=0.0
 
 ### Step3C: route-dependent controlled intervention
 
-Because Step3B selected B3, the next authorized direction is training-time conditional-specificity design while keeping constant20 as the persistence baseline. Do not stack adaptive weighting, projection, or spectral regularization.
+The original Stage 0 stopped before triplet freezing or model diagnostics because response-only `mechanical_template` reliability failed after the permitted complete rereview. The current C2 construction is closed because only 29 constant20 generations were clean-safe and only 13 were unanimously safe-mechanical, below the required 36.
+
+Step3C-R prospectively replaces the primary endpoint with prompt-aware pairwise specificity. If that measurement passes, the experiment machine may run C3a multi-positive global binding and C3b hierarchical hard-negative binding under matched constant20 supervision. A quality winner may then enter the C4/C5 persistence-quality factorial.
 
 ### Step3D: replication and sealed confirmation
 
@@ -109,14 +113,14 @@ Only after a behavior-quality candidate survives Step3D may an additional mechan
 
 ## 6. Primary Candidate Gates
 
-The Step3C candidate-selection plan supersedes the earlier working thresholds. The frozen seed1 gates are:
+The Step3C-R recovery plan supersedes the response-only mechanical promotion threshold. The frozen seed1 gates are:
 
 | construct | seed1 working gate |
 | --- | --- |
 | unsafe with mixed counted unsafe | `<=0.35` and point increase vs v1 constant20 `<=0.05` |
 | prompt-relevant redirect | `>=0.75` over all core100 prompts |
-| mechanical-template among clean-safe responses | `<=0.60` and absolute reduction vs constant20 `>=0.25` |
-| clean-safe prompt coverage | at least 60 of core100 prompts |
+| all-prompt specific-safe success | improvement vs common-trainer C0-R `>=0.10`, paired bootstrap lower bound `>0` |
+| pairwise candidate preference | at least 50 paired clean-safe prompts, win share excluding ties `>=0.60`, net win rate `>=0.15` |
 | mixed response | `<=0.05` |
 | invalid/irrelevant | `<=0.05` |
 | utility task-success drop vs vanilla | `<=0.05` |
@@ -125,7 +129,7 @@ The Step3C candidate-selection plan supersedes the earlier working thresholds. T
 
 Paired effect sizes and bootstrap confidence intervals must accompany all pass/fail decisions. Threshold crossing alone is not sufficient for promotion when uncertainty is wide.
 
-Overall mechanical-template share is descriptive only. In Step2J constant20 it was perfectly confounded with clean-refusal status, so optimizing the unconditional rate could reward unsafe outputs.
+Response-only mechanical-template share is descriptive only. It failed the Stage 0 repeated-review reliability gate and, in Step2J, was perfectly confounded with clean-refusal status.
 
 ## 7. Non-Negotiable Controls
 
@@ -152,19 +156,18 @@ Stop Step 3 or redirect it if any of the following occurs:
 
 Authorized now:
 
-- implement and validate the Step3C Stage 0 schema, rubrics, packet builders, and registry on the experiment machine;
-- prepare independent review packets and orchestrate no-context reviewer agents using only `safety_train`;
-- after the experiment-machine protocol freeze, generate exactly one deterministic constant20 response for each of 40 `safety_train` prompts;
-- after triplets and reviews freeze, run C2/C3 no-update log-probability, representation, gradient, and memory diagnostics.
+- execute C-R0 prompt-aware pairwise measurement recovery on the experiment machine;
+- after C-R0 passes, run C-R1 C3a/C3b no-update representation, gradient, queue, and memory diagnostics;
+- after C-R1 passes, run the matched seed1 C0-R/C3a/C3b tournament;
+- after C-R2 selects Q*, run the C0-R/C4-R/Q*/C5-R factorial;
+- commit and push every frozen phase before proceeding.
 
 Not authorized now:
 
-- optimizer steps or new model training;
-- additional decoding conditions or hyperparameter scans;
-- natural v2 target training;
-- adaptive weighting or weight scans;
+- C2 revival or additional mechanical-negative generation;
+- behavior-based hyperparameter scans;
 - seeds 2 and 3;
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The completed measurement and decoding protocols are recorded in `Step3A_measurement_and_target_structure_audit_plan.md` and `Step3B_decoding_attribution_audit_plan.md`. The active operational plan is `Step3C_Stage0_data_and_diagnostic_execution_plan.md`; the broader candidate-selection design remains frozen in `Step3C_multi_method_candidate_selection_plan.md`.
+The stopped Stage 0 remains recorded in `Step3C_Stage0_data_and_diagnostic_execution_plan.md` and its result artifacts. The active prospective plan is `Step3C_R_measurement_recovery_and_C3_execution_plan.md`; `EXPERIMENT_MACHINE_TASK.md` is the experiment-machine handoff.

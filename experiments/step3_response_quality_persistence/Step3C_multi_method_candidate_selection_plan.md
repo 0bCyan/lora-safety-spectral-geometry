@@ -2,9 +2,9 @@
 
 ## 0. Status
 
-Status: frozen candidate design; Step3B selected B3 and the separate Stage 0 execution plan is active.
+Status: historical candidate design. Its Stage 0 stopped; C2 is closed and the C3 successor is governed by `Step3C_R_measurement_recovery_and_C3_execution_plan.md`.
 
-No Step3C training is currently authorized. This plan establishes the candidate families, common controls, staged selection logic, and final component ablations before any method result is observed.
+This document preserves the original prospective candidate logic. It no longer authorizes execution.
 
 ## 1. Objective
 
@@ -293,22 +293,6 @@ Stage 1 requires two new seed1 training runs, plus optional C1 inference. Stage 
 
 ## 12. Current Authorization
 
-Authorized now:
+No new execution is authorized by this historical document. The original Stage 0 stopped at its repeated reliability gate, and the current C2 construction is closed.
 
-- data feasibility audit;
-- triplet schema and review-packet preparation;
-- method implementation and unit/smoke tests without full training;
-- seven targeted positive candidates after the rubric and packet schema freeze;
-- deterministic constant20 `safety_train` generation after the experiment-machine protocol freeze;
-- C2/C3 no-update GPU diagnostics after independent triplet review and freeze.
-
-Not yet authorized:
-
-- C2/C3/C4/C5 training;
-- optimizer steps during Stage 0 diagnostics;
-- safety-train generation before the triplet schema and review protocol are frozen;
-- seed expansion or heldout evaluation.
-
-The phase order, machine boundary, failure routes, and required artifacts are frozen in `Step3C_Stage0_data_and_diagnostic_execution_plan.md`.
-
-The 4070 Ti experiment machine owns all authorized Stage 0 implementation, data preparation, independent-review orchestration, diagnostics, reporting, commits, and pushes. The main executor may not replace independent blind reviewers.
+All prospective authorization, phase gates, machine ownership, and stop rules are defined only in `Step3C_R_measurement_recovery_and_C3_execution_plan.md` and `configs/step3cr_recovery_registry.json`.

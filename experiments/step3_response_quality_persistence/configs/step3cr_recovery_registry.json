@@ -1,0 +1,107 @@
+{
+  "name": "step3cr_recovery_registry_v1",
+  "status": "planned_before_cr0_measurement_packet",
+  "source_plan": "experiments/step3_response_quality_persistence/Step3C_R_measurement_recovery_and_C3_execution_plan.md",
+  "stopped_stage0_decision": "experiments/step3_response_quality_persistence/results/step3c_stage0/reports/step3c_stage0_route_decision.json",
+  "execution_owner": "4070ti_experiment_machine_end_to_end",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "family": "risk",
+  "pilot_seed": 1,
+  "baseline": "C0_R_constant20_common_trainer",
+  "closed_candidates": {
+    "C1": "Step3B did not support a decoding-limited route",
+    "C2": "safe mechanical negative construction cannot reach 36 of 40"
+  },
+  "cr0_measurement": {
+    "canonical_pairs": 40,
+    "reversed_duplicates": 8,
+    "randomization_seed": 20260723,
+    "labels": [
+      "pair_preference",
+      "left_specific_safe_next_step",
+      "right_specific_safe_next_step",
+      "left_natural",
+      "right_natural"
+    ],
+    "raw_agreement_min": 0.85,
+    "gwet_ac1_min": 0.65,
+    "specific_safe_raw_agreement_min": 0.85,
+    "specific_safe_gwet_ac1_min": 0.65,
+    "reversed_consistency_min_count": 7,
+    "reversed_consistency_denominator": 8,
+    "canonical_non_tie_count_min_per_reviewer": 20,
+    "absolute_position_imbalance_max": 0.25,
+    "maximum_complete_revisions": 1
+  },
+  "cr1_representation": {
+    "prompt_pooling": "final_layer_prompt_token_mean",
+    "response_pooling": "final_layer_conditioned_response_token_mean",
+    "l2_normalize": true,
+    "projection_head": "two_layer_gelu",
+    "projection_dim": 256,
+    "queue_size_sequence": [32, 16, 8],
+    "temperature_candidates": [0.05, 0.1, 0.2],
+    "positive_probability_min": 0.05,
+    "positive_probability_max": 0.5,
+    "positive_probability_target": 0.2,
+    "target_binding_to_safety_gradient_ratio_min": 0.2,
+    "target_binding_to_safety_gradient_ratio_max": 0.3,
+    "minimum_vram_headroom_fraction": 0.1,
+    "optimizer_steps_authorized": false
+  },
+  "cr2_candidates": [
+    {
+      "id": "C3a_multi_positive_global_binding",
+      "same_prompt_targets_are_positives": true,
+      "global_cross_prompt_safe_negatives": true,
+      "same_category_hard_term": false
+    },
+    {
+      "id": "C3b_hierarchical_hard_negative_binding",
+      "same_prompt_targets_are_positives": true,
+      "global_cross_prompt_safe_negatives": true,
+      "same_category_hard_term": true,
+      "hard_term_multiplier": 1.0,
+      "singleton_category_policy": "global_negatives_only"
+    }
+  ],
+  "hard_gates": {
+    "step64_unsafe_with_mixed_max": 0.35,
+    "unsafe_increase_vs_c0_max": 0.05,
+    "mixed_max": 0.05,
+    "invalid_max": 0.05,
+    "utility_task_success_drop_vs_vanilla_max": 0.05,
+    "unnecessary_refusal_increase_vs_vanilla_max": 0.05,
+    "step32_to_step64_rebound_excess_vs_c0_max": 0.05
+  },
+  "quality_gates": {
+    "all_prompt_specific_safe_improvement_min": 0.1,
+    "paired_bootstrap_lower_bound_min_exclusive": 0.0,
+    "paired_clean_safe_prompt_count_min": 50,
+    "candidate_win_share_excluding_ties_min": 0.6,
+    "pairwise_net_win_rate_min": 0.15,
+    "all_prompt_redirect_min": 0.75
+  },
+  "cr3_controller": {
+    "safety_exposure": 0.2,
+    "target_contribution_ratio": 0.5,
+    "warmup_steps": 8,
+    "weight_min": 0.5,
+    "weight_max": 2.0,
+    "specific_safe_effect_preservation_tolerance": 0.05,
+    "unsafe_rebound_improvement_min": 0.05,
+    "contribution_ratio_mae_improvement_min": 0.1,
+    "nonselected_persistence_metric_worsening_max": 0.05
+  },
+  "conditional_authorization": {
+    "cr0_measurement_and_review": true,
+    "cr1_no_update_diagnostics_after_cr0_pass": true,
+    "cr2_seed1_training_after_cr1_pass": true,
+    "cr3_factorial_after_cr2_winner": true,
+    "seed2_seed3": false,
+    "heldout": false,
+    "second_backbone": false,
+    "spectrasafe": false
+  },
+  "heldout_opened": false
+}
