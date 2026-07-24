@@ -4,13 +4,13 @@
 
 Step 3 is open.
 
-Current phase: **Step3C-T prospective seed1 C3 training tournament**.
+Current phase: **Step3C-T2R step0 calibration recovery and smoke requalification**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
 The first Step3C Stage 0 stopped at its repeated response-only mechanical-label reliability gate and established that C2 cannot reach its 36-triplet requirement. Step3C-R then stopped after two prompt-aware pair-preference reliability failures (`0.825` and `0.800` raw agreement against a frozen `0.85` gate). C2 and C-R0 are closed.
 
-Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. The decomposed quality measurement passed its prompt-disjoint one-shot validation, and both C3a/C3b passed no-update representation, gradient, memory, and calibration feasibility. No candidate has yet been trained or generated. The active plan is now the three-arm seed1 tournament `Step3C_T_seed1_c3_training_tournament_plan.md`; heldout remains sealed.
+Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. The decomposed quality measurement passed its prompt-disjoint one-shot validation, and both C3a/C3b passed no-update representation, gradient, memory, and calibration feasibility. Step3C-T then froze the common trainer and completed its first three-arm smoke, but stopped before T3 because the step64-derived eta values produced fresh-step0 binding/safety ratios of only `0.12245` and `0.07851`. No candidate has been trained to step64 or generated. The active recovery plan is `Step3C_T2R_step0_calibration_and_smoke_requalification_plan.md`; heldout remains sealed.
 
 ## 1. Research Question
 
@@ -109,7 +109,9 @@ Step3C-R replaced the primary endpoint with prompt-aware pairwise specificity, b
 
 Step3C-MF separated measurement from method feasibility. Step3C-M validated ordinal detail retention and safe actionability on 20 development and 20 development-untouched validation prompt clusters. Step3C-F then showed that C3a multi-positive global binding and C3b hierarchical hard-negative binding both produce finite, calibrated LoRA gradients under the registered memory rule. The joint route passed and stopped before training.
 
-Step3C-T is the active behavioral tournament. It prospectively compares a concurrent common-trainer constant20 control against C3a and C3b at risk seed1. The loose validated `specific_safe_success` endpoint is a non-inferiority floor; the stricter `high_specific_safe_success` endpoint is the primary quality-superiority test. Any winner must also preserve safety persistence and utility under paired blind evaluation.
+Step3C-T is the planned behavioral tournament. Its T1 common trainer passed implementation qualification, but its first T2 smoke stopped at the frozen gradient-ratio gate. All other smoke gates passed: finite losses/gradients, parameter and projection boundaries, queue integrity, cross-arm draws, exact resume reproduction, and more than 54% VRAM headroom. Because no behavior was generated, this is a numerical calibration-transport failure rather than a C3 efficacy result.
+
+Step3C-T2R now permits one formula-based recalibration at the actual fresh-step0 model state. Eta fitting excludes the first eight target positions, uses 18 four-microstep gradient windows over positions 8-79, and targets the unchanged `0.25` binding/safety ratio. Positions 0-7 were already executed in the failed smoke, so they are not an untouched holdout; they are an eta-fit-excluded operational transfer check under a newly frozen all-microstep estimator. Only a complete fresh requalification pass restores T3 authorization.
 
 ### Step3D: seed1 persistence-quality factorial
 
@@ -119,7 +121,7 @@ Only a Step3C-T quality winner may request a separate seed1 factorial comparing 
 
 Only a frozen seed1 final candidate that passes the factorial gates may advance to risk seeds 2 and 3. The heldout test opens once, after the method and thresholds are frozen and cross-seed evidence passes. A second backbone follows the Qwen3-4B confirmation rather than substituting for it. SpectraSafe does not re-enter without a new, preregistered reason and a clean incremental ablation.
 
-## 6. Completed Preconditions and Active Tournament Gates
+## 6. Completed Preconditions and Active Recovery Gates
 
 Step3C-MF completed with:
 
@@ -129,7 +131,17 @@ Step3C-MF completed with:
 - C3a and C3b finite/non-zero LoRA gradients at a calibrated binding/safety ratio of `0.25`;
 - no optimizer step, candidate generation, core100 selection, or heldout access.
 
-The active Step3C-T gates are frozen in `configs/step3ct_seed1_training_registry.json`. In summary:
+The original behavior gates remain frozen in `configs/step3ct_seed1_training_registry.json`. The current numerical recovery gates are frozen in `configs/step3ct_t2r_calibration_registry.json`:
+
+| recovery domain | gate |
+| --- | --- |
+| metadata | hard-negative availability reproduces `58/80`, `4/8`, `54/72`, and `17/18` fit windows |
+| eta fit | one formula over 18 optimizer-step windows from positions 8-79, target ratio `0.25` |
+| calibration stability | eta in `[0.01,0.30]`, weighted median `[0.20,0.30]`, p90 `<=0.75` |
+| eta-fit-excluded smoke | each four-microstep ratio `[0.10,0.50]`, aggregate eight-position ratio `[0.15,0.35]` |
+| integrity | all original finite, parameter, queue, draw, resume, and VRAM gates still pass |
+
+After recovery route `RR2`, the unchanged behavior tournament gates are:
 
 | domain | gate |
 | --- | --- |
@@ -167,17 +179,17 @@ Stop Step 3 or redirect it if any of the following occurs:
 
 Authorized now:
 
-- implement and freeze the common Step3C-T trainer and evaluation path;
-- run two-step smoke tests for exactly C0-R, C3a, and C3b;
-- after preflight passes, train exactly those three risk-seed1 arms to step64;
-- generate frozen core100/utility100 candidate outputs only after all run manifests freeze;
-- conduct separate independent blind safety, decomposed-quality, and utility review;
-- compute the registered paired statistics and freeze one tournament route.
+- implement and freeze the Step3C-T2R no-update calibration and all-microstep smoke diagnostics;
+- perform one formula-based fresh-step0 eta calibration using positions 8-79 only;
+- rerun fresh two-step smoke tests for exactly C0-R, C3a, and C3b under the new immutable config;
+- resume T3 only after a committed and pushed `RR2_three_arm_smoke_requalified` route.
 
 Not authorized now:
 
 - C2 revival or additional mechanical-negative generation;
 - a third C-R0 pairwise review or a lower old reliability threshold;
+- direct continuation from the failed T2 smoke;
+- use of eta-fit-excluded positions 0-7 to fit eta or a second recalibration after failure;
 - any fourth arm or behavior-based eta/temperature/queue revision;
 - trainable projection-head variants;
 - C4, C5, adaptive replay, or other method stacking;
@@ -186,4 +198,4 @@ Not authorized now:
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The stopped Stage0 and C-R0 routes and the completed Step3C-MF route remain recorded in their original plans and result artifacts. The active prospective plan is `Step3C_T_seed1_c3_training_tournament_plan.md`; `EXPERIMENT_MACHINE_TASK.md` is the experiment-machine handoff. A tournament winner still requires a separate C4/Q*/C5 seed1 factorial plan.
+The stopped Stage0 and C-R0 routes, completed Step3C-MF route, and failed original T2 smoke remain recorded without overwrite. The active prospective plan is `Step3C_T2R_step0_calibration_and_smoke_requalification_plan.md`; `EXPERIMENT_MACHINE_TASK.md` is the experiment-machine handoff. A successful recovery only resumes the original tournament, and a tournament winner still requires a separate C4/Q*/C5 seed1 factorial plan.
