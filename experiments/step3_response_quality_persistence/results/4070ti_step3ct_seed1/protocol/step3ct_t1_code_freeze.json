@@ -1,0 +1,85 @@
+{
+  "name": "step3ct_t1_code_freeze_v1",
+  "git_head_before_t1_commit": "14b252ed9000fd3f5008c4aa7514f0781e82666b",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json",
+      "sha256": "0594fc7cae87319ac7700f3442c6eff3c5e062d66db286f948bbd80c5a2c4818",
+      "bytes": 2756
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/step3ct_seed1_training_registry.json",
+      "sha256": "f9546ac0330b45ed6bf01f3131217ed58e39f51abac85aa494287041cf331d35",
+      "bytes": 7023
+    },
+    {
+      "path": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_constant20.json",
+      "sha256": "84ed279418542468c90e5ef14f02b3cb266ba3a0fb2a60d5a59ed738eb410d00",
+      "bytes": 2564
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_protocol/reports/step3cm_validation_route_decision.json",
+      "sha256": "1681f10110bda8408cdba5ac6fc90d8c842aa6d9dcc3dcce3900c30605017102",
+      "bytes": 274
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/reports/step3cm_joint_route_decision.json",
+      "sha256": "74b4f007d3b68f6f894261fdf1b88d8c40355fad14fee82b31dff7de6cc642d8",
+      "bytes": 512
+    },
+    {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1",
+      "bytes": 1524428
+    },
+    {
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/safety_train.jsonl",
+      "sha256": "a063bc591ab9f55196c69dcc1ac310ff5124609da5511745d5081dfd96b82294",
+      "bytes": 38346
+    },
+    {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c",
+      "bytes": 70445
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1",
+      "bytes": 22280
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "b0fc2daad0feb2c61fd32ba508a69660b598bc82c9b2a3894f9c48502bc544eb",
+      "bytes": 23299
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3ct_training_common.py",
+      "sha256": "e23176a3a222e46a545585affc39540440ab01439039b00344240433e511a0eb",
+      "bytes": 7698
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/run_step3ct_t1_preflight.py",
+      "sha256": "c7c701543faf84af291b96c4ea4de020c3614d9735dba40cef71ecd742f1978b",
+      "bytes": 21763
+    }
+  ],
+  "source_validation_pass": true,
+  "implementation_tests_pass": true,
+  "numerical_preflight_pass": true,
+  "projection_hash": "2ef25a153ab85aecb31a2a6aab2d40bc80d659eacca58dff4be9dc756be1a6a0",
+  "queue_policy": "stable-hash prefill; detached CPU FIFO; update after binding backward; same-prompt exclusion",
+  "run_order": [
+    "C0R_concurrent_constant20",
+    "C3a_multi_positive_global_binding",
+    "C3b_hierarchical_hard_negative_binding"
+  ],
+  "smoke_command_template": "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json --arm <ARM> --run-kind smoke --max-steps 2 --output-dir <OUTPUT>",
+  "main_command_template": "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json --arm <ARM> --run-kind main --max-steps 64 --output-dir <OUTPUT>",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "overall_pass": true
+}

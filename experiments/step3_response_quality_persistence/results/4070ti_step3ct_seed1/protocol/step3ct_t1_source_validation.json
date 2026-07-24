@@ -1,0 +1,26 @@
+{
+  "registry_name": "step3ct_seed1_training_registry_v1",
+  "registry_authorizes_t1": true,
+  "registry_mismatches": {},
+  "historical_contract_checks": {
+    "model": true,
+    "train_examples": true,
+    "max_length": true,
+    "learning_rate": true,
+    "gradient_accumulation": true,
+    "lora_contract": true
+  },
+  "measurement_validation_pass": true,
+  "joint_measurement_pass": true,
+  "joint_c3_pass": true,
+  "risk_rows": 256,
+  "target_rows": 80,
+  "target_prompt_clusters": 40,
+  "two_targets_per_prompt": true,
+  "all_targets_approved": true,
+  "safety_train_rows": 40,
+  "target_prompt_ids_equal_safety_train": true,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "passed": true
+}

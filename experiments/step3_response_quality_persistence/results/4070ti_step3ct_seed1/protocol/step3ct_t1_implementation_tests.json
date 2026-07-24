@@ -1,0 +1,29 @@
+{
+  "name": "step3ct_t1_implementation_tests_v1",
+  "commands": [
+    {
+      "command": "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe -m py_compile experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py experiments/step3_response_quality_persistence/scripts/test_step3ct_training_common.py experiments/step3_response_quality_persistence/scripts/run_step3ct_t1_preflight.py",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe -m unittest discover -s experiments/step3_response_quality_persistence/scripts -p test_step3ct_training_common.py -v",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_deterministic_prefill_order (test_step3ct_training_common.Step3CTTrainingCommonTests.test_deterministic_prefill_order) ... ok\ntest_embedding_gradients_finite_and_hard_changes_direction (test_step3ct_training_common.Step3CTTrainingCommonTests.test_embedding_gradients_finite_and_hard_changes_direction) ... ok\ntest_hard_disabled_equals_global_and_singleton_falls_back (test_step3ct_training_common.Step3CTTrainingCommonTests.test_hard_disabled_equals_global_and_singleton_falls_back) ... ok\ntest_masked_mean_left_right_padding_and_truncation (test_step3ct_training_common.Step3CTTrainingCommonTests.test_masked_mean_left_right_padding_and_truncation) ... ok\ntest_objective_parentheses (test_step3ct_training_common.Step3CTTrainingCommonTests.test_objective_parentheses) ... ok\ntest_projection_frozen_and_rng_isolation (test_step3ct_training_common.Step3CTTrainingCommonTests.test_projection_frozen_and_rng_isolation) ... ok\ntest_queue_prefill_wraparound_exclusion_resume_and_hash (test_step3ct_training_common.Step3CTTrainingCommonTests.test_queue_prefill_wraparound_exclusion_resume_and_hash) ... ok\ntest_toy_checkpoint_resume_is_deterministic (test_step3ct_training_common.Step3CTTrainingCommonTests.test_toy_checkpoint_resume_is_deterministic) ... ok\ntest_two_positive_indexing_and_same_prompt_exclusion (test_step3ct_training_common.Step3CTTrainingCommonTests.test_two_positive_indexing_and_same_prompt_exclusion) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.697s\n\nOK\n"
+    }
+  ],
+  "coverage": [
+    "syntax and import",
+    "left/right padding and truncation masks",
+    "two-positive indexing and same-prompt exclusion",
+    "global/hard-disable equivalence and singleton fallback",
+    "objective parentheses",
+    "queue prefill/FIFO/wraparound/exclusion/resume/hash",
+    "fixed projection and CPU RNG isolation",
+    "finite embedding gradients and C3a/C3b direction comparison",
+    "toy optimizer/scheduler checkpoint resume determinism"
+  ],
+  "passed": true
+}
