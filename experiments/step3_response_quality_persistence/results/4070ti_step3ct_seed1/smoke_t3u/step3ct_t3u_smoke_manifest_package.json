@@ -1,0 +1,139 @@
+{
+  "name": "step3ct_t3u_optimizer_unit_smoke_manifest_package_v1",
+  "implementation_freeze_commit": "e6be46af60a377850a0e106b7e6b578498d70d69",
+  "config_sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+  "shared": {
+    "risk_order_hash": "c9251f90d3158dbef61cb486d33c20618eaef884a92ddab4e7c744a6dc9166ab",
+    "target_schedule_hash": "6dc74b85d5a5353dafc768da258c0f8c9f9054abf62df5b13550c9e1eb4b2210",
+    "projection_hash": "2ef25a153ab85aecb31a2a6aab2d40bc80d659eacca58dff4be9dc756be1a6a0",
+    "c3_queue_prefill_hash": "fe8e3e427f7d0f93034f484240ec6944a7eb404bacd066cd6619e79589894582",
+    "cross_arm_draw_trace_equal": true,
+    "total_vram_bytes": 12878086144
+  },
+  "arms": [
+    {
+      "arm": "C0R_concurrent_constant20",
+      "eta": 0.0,
+      "diagnostics": [
+        {
+          "optimizer_step": 1,
+          "positions": [0, 1, 2, 3],
+          "safety_gradient_norm": 39.993414080932354,
+          "binding_gradient_norm": 0.0,
+          "eta_weighted_ratio": 0.0,
+          "safety_gradient_hash": "d4edd79086a1bd45eaf45716b19c72cbd0851375d083897316c3d9afb27af585",
+          "binding_gradient_hash": "",
+          "hard_active_positions": 0
+        },
+        {
+          "optimizer_step": 2,
+          "positions": [4, 5, 6, 7],
+          "safety_gradient_norm": 34.815445940220705,
+          "binding_gradient_norm": 0.0,
+          "eta_weighted_ratio": 0.0,
+          "safety_gradient_hash": "4ddf02653c6eb3f31cda12e5926ef129db8e83937ef311631954775101f59c43",
+          "binding_gradient_hash": "",
+          "hard_active_positions": 0
+        }
+      ],
+      "aggregate_eight_position_ratio": 0.0,
+      "queue_count": 0,
+      "queue_hash": "",
+      "step2_adapter_sha256": "4ef1ae0c2e5158481155e4ec605361d5020347a45f7f5431939df37af36d456c",
+      "resume_step2_adapter_sha256": "4ef1ae0c2e5158481155e4ec605361d5020347a45f7f5431939df37af36d456c",
+      "vram_headroom_fraction": 0.5526605056385621,
+      "raw_artifact_hashes": {
+        "original_manifest": "cdca659e9cbc2aec0e65c92c46f5c2be693cb1624f25b62ba33aa68a4837f940",
+        "resume_manifest": "d096a775ce8a9194f0def9e26c17d760188765cf2ae536f4a0c29a639f47b56a",
+        "original_trace": "4d270d24aa39f0ca22e537d22e957954b6700db16045796085f0680710a1aef5",
+        "resume_trace": "1ef7d38ad1f3632874f8b6647ca79763b450d81ce484630c4eca7bff7d234585"
+      },
+      "overall_pass": true
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "eta": 0.2691508842579502,
+      "diagnostics": [
+        {
+          "optimizer_step": 1,
+          "positions": [0, 1, 2, 3],
+          "safety_gradient_norm": 39.99341392615595,
+          "binding_gradient_norm": 37.88922612102915,
+          "eta_weighted_ratio": 0.25498995242451444,
+          "safety_gradient_hash": "9f53f0060717bbd34f56947c774c9b6f652677b3e1454c3feb6c152c5e84a393",
+          "binding_gradient_hash": "02eec0f76a563ee88faa2582b5cb50d9d38fea24a87f825bec1a0de8f5cf2fa5",
+          "hard_active_positions": 0
+        },
+        {
+          "optimizer_step": 2,
+          "positions": [4, 5, 6, 7],
+          "safety_gradient_norm": 34.429406451206404,
+          "binding_gradient_norm": 22.293664522564125,
+          "eta_weighted_ratio": 0.17428007445036783,
+          "safety_gradient_hash": "97cf3fd72fe09576bd1b0e3c37d09bbaa75848dc9d54c97dc6c324f148387a16",
+          "binding_gradient_hash": "a6a5b6c0bdbb71bf1da22b5088cfa2ca13946dad000f3dc9b2d17c8ec4577dcc",
+          "hard_active_positions": 0
+        }
+      ],
+      "aggregate_eight_position_ratio": 0.2199677490021288,
+      "aggregate_provenance": "exact_step_gradient_hash_match_to_frozen_R3",
+      "queue_count": 32,
+      "queue_hash": "e07950f869fe48fde037b32100eada20c17ccd3f15ce236133908e7151bb3349",
+      "step2_adapter_sha256": "a65d70a69b2e84bb2efae437b4e26f216fae153503024b3059dcfc233621c1d8",
+      "resume_step2_adapter_sha256": "a65d70a69b2e84bb2efae437b4e26f216fae153503024b3059dcfc233621c1d8",
+      "vram_headroom_fraction": 0.5417497862638929,
+      "raw_artifact_hashes": {
+        "original_manifest": "cc3ed06a4fcbca07dde973c551748c9ef93f7bdf241f8d454ff02a8696778554",
+        "resume_manifest": "bbd931bbb7f017b6726a52deb25dc3ec2334325bed785a81632ca924e85c4162",
+        "original_trace": "feb9f6ce904aba929178928ea20ab43bca7fd76e39f927099fbde42d9a662d96",
+        "resume_trace": "390792943afd149a42b1b27d314ad03023112893373dc7171e68f108995d6c5e"
+      },
+      "overall_pass": true
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "eta": 0.16828897705555668,
+      "diagnostics": [
+        {
+          "optimizer_step": 1,
+          "positions": [0, 1, 2, 3],
+          "safety_gradient_norm": 39.9934139915537,
+          "binding_gradient_norm": 46.05617212132001,
+          "eta_weighted_ratio": 0.193800561638186,
+          "safety_gradient_hash": "d8dd6f009f8c92826fa4fc65d1ba9eb37005d07e309dc672974c0de7cc1eecb7",
+          "binding_gradient_hash": "a44498bab47548021801871da510a12e43bb8536a6d481eb39a2a3e48f7913ed",
+          "hard_active_positions": 2
+        },
+        {
+          "optimizer_step": 2,
+          "positions": [4, 5, 6, 7],
+          "safety_gradient_norm": 34.5770448673564,
+          "binding_gradient_norm": 24.188775825517148,
+          "eta_weighted_ratio": 0.11772852062743921,
+          "safety_gradient_hash": "38758052effdbd16ef6c9ef865a4bf9d2bdd1c7057f41490deff84d8178dd5ca",
+          "binding_gradient_hash": "435f72696cec4be83bdf4c39a4f50e42b8dc5c3f008dc41c8849901a876ab562",
+          "hard_active_positions": 2
+        }
+      ],
+      "aggregate_eight_position_ratio": 0.1608822954330737,
+      "aggregate_provenance": "exact_step_gradient_hash_match_to_frozen_R3",
+      "queue_count": 32,
+      "queue_hash": "2c7ca5279ee775756098c319610fc95268d6ee5a9cecd4e0f521c36fefae7f7c",
+      "step2_adapter_sha256": "a4b3e27e23dfff2c91d0a34501aa118a17f9af49bb7acd69f727179416031fb8",
+      "resume_step2_adapter_sha256": "a4b3e27e23dfff2c91d0a34501aa118a17f9af49bb7acd69f727179416031fb8",
+      "vram_headroom_fraction": 0.5417497862638929,
+      "raw_artifact_hashes": {
+        "original_manifest": "8f198b7fc15023cf5c50c613b22f96f6b3e56c5cd7405823b7c511657ad65bb2",
+        "resume_manifest": "4dfb8842fe53dae336bdfb0e9525cd3bbd72f857dbb2f61cbb4bc1d65ffcddb4",
+        "original_trace": "cf67d3e6b883ab94a66ac0f4388843eb3d909017353fdab41a8ad2fdd7294a51",
+        "resume_trace": "04f7ad645dcdf6e431ed6e29569c13f610854a7364fece2ba47daea5fa4c34cf"
+      },
+      "overall_pass": true
+    }
+  ],
+  "raw_runs_committed": false,
+  "adapters_or_checkpoints_committed": false,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

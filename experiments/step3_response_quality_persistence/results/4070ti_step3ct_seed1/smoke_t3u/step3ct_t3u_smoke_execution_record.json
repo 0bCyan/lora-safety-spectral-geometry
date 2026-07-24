@@ -1,0 +1,40 @@
+{
+  "name": "step3ct_t3u_optimizer_unit_smoke_execution_record_v1",
+  "git_head": "e6be46af60a377850a0e106b7e6b578498d70d69",
+  "config": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json",
+  "config_sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+  "trainer": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+  "trainer_sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57",
+  "runs": [
+    {
+      "arm": "C0R_concurrent_constant20",
+      "original_optimizer_steps": 2,
+      "resume_optimizer_steps": 1,
+      "original_optimizer_wall_seconds": 15.799483060836792,
+      "resume_optimizer_wall_seconds": 7.937443971633911
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "original_optimizer_steps": 2,
+      "resume_optimizer_steps": 1,
+      "original_optimizer_wall_seconds": 34.998079299926758,
+      "resume_optimizer_wall_seconds": 17.22183132171631
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "original_optimizer_steps": 2,
+      "resume_optimizer_steps": 1,
+      "original_optimizer_wall_seconds": 35.01301097869873,
+      "resume_optimizer_wall_seconds": 17.80257487297058
+    }
+  ],
+  "command_template": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm <ARM> --run-kind smoke --max-steps 2 [--resume-from <STEP1>] --output-dir <NEW_OUTPUT>",
+  "route": "T3U1_optimizer_unit_smoke_requalified",
+  "next_authorized_package": "Step3C_T3_full_three_arm_training",
+  "raw_run_root": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/smoke_t3u",
+  "raw_runs_gitignored": true,
+  "adapters_or_checkpoints_committed": false,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

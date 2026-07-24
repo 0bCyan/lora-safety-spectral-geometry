@@ -1,0 +1,4 @@
+arm,step1_eta_weighted_ratio,step2_eta_weighted_ratio,eight_position_ratio,eight_position_provenance,hard_active_positions,resume_trace_equal,resume_diagnostic_equal,resume_adapter_equal,resume_queue_equal,projection_unchanged,vram_headroom_fraction,overall_pass
+C0R_concurrent_constant20,0.0,0.0,0.0,binding_absent,0,true,true,true,true,true,0.5526605056385621,true
+C3a_multi_positive_global_binding,0.25498995242451444,0.17428007445036783,0.2199677490021288,exact_step_gradient_hash_match_to_frozen_R3,0,true,true,true,true,true,0.5417497862638929,true
+C3b_hierarchical_hard_negative_binding,0.193800561638186,0.11772852062743921,0.1608822954330737,exact_step_gradient_hash_match_to_frozen_R3,4,true,true,true,true,true,0.5417497862638929,true

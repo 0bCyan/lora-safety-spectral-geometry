@@ -1,0 +1,44 @@
+{
+  "name": "step3ct_t3u_optimizer_unit_smoke_route_v1",
+  "route": "T3U1_optimizer_unit_smoke_requalified",
+  "implementation_freeze_commit": "e6be46af60a377850a0e106b7e6b578498d70d69",
+  "config_sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+  "gates": {
+    "three_fresh_two_step_runs_complete": true,
+    "three_step1_resume_replays_complete": true,
+    "finite_losses_and_gradients": true,
+    "no_skipped_updates": true,
+    "registered_trainable_parameters": true,
+    "projection_unchanged_and_frozen": true,
+    "c0_zero_binding_and_no_queue": true,
+    "optimizer_unit_step_ratios_in_0_10_to_0_50": true,
+    "optimizer_unit_eight_position_ratios_in_0_15_to_0_35": true,
+    "eight_position_ratio_provenance_exact": true,
+    "c3b_hard_active_exactly_4_of_8": true,
+    "cross_arm_draw_trace_equal": true,
+    "resume_trace_equal": true,
+    "resume_diagnostic_equal": true,
+    "resume_adapter_hash_equal": true,
+    "resume_queue_hash_equal": true,
+    "config_and_source_hashes_match_freeze": true,
+    "vram_headroom_at_least_0_10": true,
+    "no_generation_core100_or_heldout": true
+  },
+  "eight_position_ratio_provenance": {
+    "method": "reuse_frozen_R3_vector_sum_only_after_exact_per_step_safety_and_binding_gradient_hash_match",
+    "frozen_R3_route_sha256": "643ae5b0469418f840e5a338aee8ed92290bc55ef49058910a15b8680091dba7",
+    "C3a_multi_positive_global_binding": {
+      "all_four_step_gradient_hashes_equal": true,
+      "ratio": 0.2199677490021288
+    },
+    "C3b_hierarchical_hard_negative_binding": {
+      "all_four_step_gradient_hashes_equal": true,
+      "ratio": 0.1608822954330737
+    }
+  },
+  "overall_pass": true,
+  "next_authorized_package": "Step3C_T3_full_three_arm_training",
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
