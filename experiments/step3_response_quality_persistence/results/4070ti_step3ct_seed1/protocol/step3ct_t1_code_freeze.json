@@ -1,6 +1,6 @@
 {
   "name": "step3ct_t1_code_freeze_v1",
-  "git_head_before_t1_commit": "14b252ed9000fd3f5008c4aa7514f0781e82666b",
+  "git_head_before_t1_commit": "2bd1a78d21d83feef22af67b6b96a5a7fe317edd",
   "artifacts": [
     {
       "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json",
@@ -59,8 +59,13 @@
     },
     {
       "path": "experiments/step3_response_quality_persistence/scripts/run_step3ct_t1_preflight.py",
-      "sha256": "c7c701543faf84af291b96c4ea4de020c3614d9735dba40cef71ecd742f1978b",
-      "bytes": 21763
+      "sha256": "af5b1fbc12fa0cc0ac279168643f479befd22efb13ef7f532201f8cc878bb6a8",
+      "bytes": 21955
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/analyze_step3ct_smoke.py",
+      "sha256": "2a41a72e588b7d474d19c1bb19d262310d34a36b5720ad615c17a944e47870b2",
+      "bytes": 8468
     }
   ],
   "source_validation_pass": true,

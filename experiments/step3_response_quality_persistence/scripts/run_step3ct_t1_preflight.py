@@ -43,6 +43,7 @@ def run_implementation_tests() -> dict[str, Any]:
             "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
             "experiments/step3_response_quality_persistence/scripts/test_step3ct_training_common.py",
             "experiments/step3_response_quality_persistence/scripts/run_step3ct_t1_preflight.py",
+            "experiments/step3_response_quality_persistence/scripts/analyze_step3ct_smoke.py",
         ],
         [
             sys.executable,
@@ -421,6 +422,7 @@ def main() -> None:
         Path("experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py"),
         Path("experiments/step3_response_quality_persistence/scripts/test_step3ct_training_common.py"),
         Path("experiments/step3_response_quality_persistence/scripts/run_step3ct_t1_preflight.py"),
+        Path("experiments/step3_response_quality_persistence/scripts/analyze_step3ct_smoke.py"),
     ]
     freeze = {
         "name": "step3ct_t1_code_freeze_v1",
