@@ -1,0 +1,15 @@
+{
+  "name": "step3ct_t5r_p6a_route_decision_v1",
+  "route": "P6A1_eol_reconciled_content_unchanged",
+  "gates": {
+    "legacy_artifact_count_complete": true,
+    "every_legacy_hash_explained_by_raw_or_crlf_only": true,
+    "every_committed_lf_blob_matches_head": true,
+    "p6_files_modified": false,
+    "mechanism_route_revised": false,
+    "behavior_or_candidate_claim_added": false
+  },
+  "legacy_route_preserved": "M1_reconstruction_integrity_failure",
+  "canonical_manifest_sha256": "537f7deec1d66e73189b089a7847423c8adee124d49f792885ca57a20db46a78",
+  "next_authorization": "external_independent_safety_review_only"
+}

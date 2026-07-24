@@ -1,0 +1,12 @@
+{
+  "name": "step3ct_t5r_p6a_execution_record_v1",
+  "command": "python experiments/step3_response_quality_persistence/scripts/audit_step3ct_t5r_p6_eol.py run",
+  "git_head": "4391a1c5d6d6254735e107e6eb857cde48b5832b",
+  "legacy_artifacts": 21,
+  "raw_matches": 2,
+  "crlf_reconstruction_matches": 19,
+  "unmatched": 0,
+  "head_blob_mismatches": 0,
+  "p6_files_modified": false,
+  "heldout_opened": false
+}

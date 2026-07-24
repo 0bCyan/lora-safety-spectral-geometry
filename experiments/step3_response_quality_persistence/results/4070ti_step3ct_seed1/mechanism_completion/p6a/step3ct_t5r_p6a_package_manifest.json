@@ -1,0 +1,23 @@
+{
+  "name": "step3ct_t5r_p6a_package_manifest_v1",
+  "route": "P6A1_eol_reconciled_content_unchanged",
+  "canonical_lf": true,
+  "artifacts": {
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6a/step3ct_t5r_p6a_canonical_manifest.json": {
+      "sha256": "537f7deec1d66e73189b089a7847423c8adee124d49f792885ca57a20db46a78",
+      "bytes": 16587
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6a/step3ct_t5r_p6a_route_decision.json": {
+      "sha256": "747096772aca69dc554bf4024a7582e35c69e465fcdb696ace239cd2a38264c4",
+      "bytes": 625
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6a/Step3CT_T5R_P6A_canonical_hash_reconciliation_report.md": {
+      "sha256": "64d5b198e1b16a4e4c1f7595aeb80ff520451956e8489f6ba2f394ee0ea82a37",
+      "bytes": 767
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6a/step3ct_t5r_p6a_execution_record.json": {
+      "sha256": "d8cd4256a6b3a0c22c1729eca6bd8c7fd903f1ff1c8fb48f4473c030f8845bf6",
+      "bytes": 407
+    }
+  }
+}
