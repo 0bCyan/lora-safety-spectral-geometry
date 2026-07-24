@@ -67,9 +67,15 @@ def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def write_text(path: Path, value: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(value)
+
+
 def write_json(path: Path, value: Any) -> None:
     mechanism.assert_no_full_gradient_serialization(value)
-    training_common.write_json(path, value)
+    write_text(path, json.dumps(value, indent=2, ensure_ascii=False) + "\n")
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -355,7 +361,7 @@ def freeze_implementation() -> dict[str, Any]:
         "no source artifact was modified. P6 remains blocked "
         "until this freeze is committed and pushed.\n"
     )
-    (P5_ROOT / "Step3CT_T5R_P5_mechanism_implementation_freeze_report.md").write_text(report, encoding="utf-8")
+    write_text(P5_ROOT / "Step3CT_T5R_P5_mechanism_implementation_freeze_report.md", report)
     execution_record = {
         "name": "step3ct_t5r_p5_execution_record_v1",
         "source_git_head": result["source_git_head"],
@@ -957,7 +963,7 @@ def summarize_mechanism() -> dict[str, Any]:
         ]
     )
     report_path = P6_ROOT / "Step3CT_T5R_P6_mechanism_completion_report.md"
-    report_path.write_text("\n".join(report_lines), encoding="utf-8")
+    write_text(report_path, "\n".join(report_lines))
     incident_paths = sorted((P6_ROOT / "incidents").glob("*.json"))
     package_paths = representation_paths + gradient_paths + incident_paths + [route_path, summary_path, report_path]
     package = {

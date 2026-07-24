@@ -4,13 +4,13 @@
 
 Step 3 is open.
 
-Current phase: **Step3C-T5R stopped at reviewer-access and mechanism-reconstruction gates**.
+Current phase: **Step3C-T5H external-review handoff and P6A provenance reconciliation**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
 The first Step3C Stage 0 stopped at its repeated response-only mechanical-label reliability gate and established that C2 cannot reach its 36-triplet requirement. Step3C-R then stopped after two prompt-aware pair-preference reliability failures (`0.825` and `0.800` raw agreement against a frozen `0.85` gate). C2 and C-R0 are closed.
 
-Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. T2R then completed one state-matched eta recalibration and restored smoke qualification. C0-R, C3a, and C3b each completed a matched 64-step seed1 run, and T4 froze 1,200 generations plus unchanged safety, quality, and utility blind packets. T5R Track A stopped at `T5R1_reviewer_access_stop` with zero accepted labels because no approved independent safety-review environment was available. Track B completed all 12 frozen representation probes and exactly reproduced grouped-gradient labels 0/16/32, but the bounded checkpoint48 replay did not reproduce the registered label64 hashes/traces within tolerance and therefore selected `M1_reconstruction_integrity_failure`. Approximate label64 grouped results were withheld. This is neither a C3 efficacy result nor a candidate selection. The governing plan is `Step3C_T5R_independent_review_recovery_and_mechanism_completion_plan.md`; heldout remains sealed and no new training is authorized.
+Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. T2R then completed one state-matched eta recalibration and restored smoke qualification. C0-R, C3a, and C3b each completed a matched 64-step seed1 run, and T4 froze 1,200 generations plus unchanged safety, quality, and utility blind packets. T5R Track A stopped at `T5R1_reviewer_access_stop` with zero accepted labels because no approved independent safety-review environment was available. Track B completed all 12 frozen representation probes and exactly reproduced grouped-gradient labels 0/16/32, but the bounded checkpoint48 replay did not reproduce label64 and selected `M1_reconstruction_integrity_failure`. A post-run audit identified a CRLF-to-LF manifest defect affecting 19/21 P6 hashes without changing numerical content. The active T5H plan first freezes a non-destructive canonical-LF/Git-blob reconciliation, then waits for two qualified independent safety reviewers. Heldout remains sealed and no new training is authorized.
 
 ## 1. Research Question
 
@@ -175,17 +175,17 @@ Stop Step 3 or redirect it if any of the following occurs:
 
 Authorized now:
 
-- validate all T4/T5R hashes and provenance;
-- qualify lawful independent review environments;
-- run one complete fresh A/B review per domain in safety-first order;
-- construct disagreement-only C packets and compute reliability before key join;
-- implement and run the missing no-update representation trajectories;
-- perform only the bounded deterministic step48 replay needed to reconstruct the registered step64 grouped-gradient diagnostic;
+- freeze and execute the non-destructive P6A canonical-LF/Git-blob reconciliation;
+- qualify two lawful independent safety reviewers without opening study rows during qualification;
+- run complete Safety A/B only after both reviewers qualify;
+- after Safety A/B freeze, run separate Quality/Utility A/B and disagreement-only C review;
+- compute reliability before hidden arm-key join;
 - execute T6 only after route `T5R4_complete_labels_authorize_T6`.
 
 Not authorized now:
 
 - modification, sanitization, splitting, or regeneration of the T4 packets;
+- modification of P6, another label64 replay, relaxed reconstruction tolerance, or approximate grouped label64 reporting;
 - reuse of failed T5 sessions or partial outputs;
 - main-session or heuristic outcome labels;
 - any fourth arm, fresh candidate training, fresh generation, or behavior-based eta/temperature/queue/target revision;
@@ -195,4 +195,4 @@ Not authorized now:
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The stopped Stage0 and C-R0 routes, completed Step3C-MF/T2R/T3/T4 packages, T5/T5R reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. `Step3C_T5R_independent_review_recovery_and_mechanism_completion_plan.md` remains the governing plan and `EXPERIMENT_MACHINE_TASK.md` remains the handoff, but no next experiment is currently authorized. Only a valid T6 winner may request a separate C4/Q*/C5 seed1 factorial plan.
+The stopped Stage0 and C-R0 routes, completed Step3C-MF/T2R/T3/T4 packages, T5/T5R reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. The active prospective plan is `Step3C_T5H_external_review_handoff_and_P6A_provenance_repair_plan.md`; `EXPERIMENT_MACHINE_TASK.md` is the handoff. After P6A, progress depends on two qualified independent safety reviewers. Only a valid T6 winner may request a separate C4/Q*/C5 seed1 factorial plan.

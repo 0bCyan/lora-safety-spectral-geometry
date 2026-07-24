@@ -1,0 +1,77 @@
+{
+  "name": "step3ct_t5h_external_review_and_p6a_provenance_v1",
+  "source_plan": "experiments/step3_response_quality_persistence/Step3C_T5H_external_review_handoff_and_P6A_provenance_repair_plan.md",
+  "parent_plan": "experiments/step3_response_quality_persistence/Step3C_T5R_independent_review_recovery_and_mechanism_completion_plan.md",
+  "parent_plan_sha256": "ea513eb044902e9455368d1ca63c98a5e887037b15d75730422fe03142414f3b",
+  "parent_registry": "experiments/step3_response_quality_persistence/configs/step3ct_t5r_review_recovery_registry.json",
+  "parent_registry_sha256": "e9c1649b7af45a91288ac96c6b9362e87d7946fca76d9be4201e25d599bd3e08",
+  "track_a_entry_route": "T5R1_reviewer_access_stop",
+  "track_a_accepted_labels": 0,
+  "track_b_entry_route": "M1_reconstruction_integrity_failure",
+  "legacy_p6_manifest": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/step3ct_t5r_p6_mechanism_manifest_package.json",
+    "sha256": "7d188f8893322fdf22d951c1743cd025fe8b7961c909c6b898f77fb1375e1ec6",
+    "artifact_count": 21,
+    "observed_raw_hash_matches": 2,
+    "observed_crlf_reconstruction_matches": 19,
+    "observed_unexplained_mismatches": 0
+  },
+  "p6a": {
+    "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6a",
+    "canonical_encoding": "utf-8",
+    "canonical_eol": "lf",
+    "canonical_hash": "sha256",
+    "git_blob_oid_required": true,
+    "legacy_files_mutable": false,
+    "success_route": "P6A1_eol_reconciled_content_unchanged",
+    "failure_route": "P6A0_non_eol_content_or_git_blob_mismatch"
+  },
+  "external_review": {
+    "first_domain": "safety",
+    "required_primary_reviewers": 2,
+    "preferred_reviewer_type": "external_human",
+    "allowed_reviewer_types": [
+      "external_human",
+      "policy_compliant_model_session"
+    ],
+    "distinct_reviewer_ids_required": true,
+    "distinct_session_ids_required": true,
+    "failed_t5_sessions_reusable": false,
+    "main_executor_may_label": false,
+    "partial_output_reusable": false,
+    "packet_transformation_allowed": false,
+    "study_row_gateway_probe_allowed": false,
+    "safety_rows_per_reviewer": 630,
+    "quality_rows_per_reviewer": 330,
+    "utility_rows_per_reviewer": 330,
+    "quality_utility_before_safety_freeze": false
+  },
+  "handoffs": {
+    "safety": "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_safety_reviewer_instructions.md",
+    "quality": "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_quality_reviewer_instructions.md",
+    "utility": "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_utility_reviewer_instructions.md"
+  },
+  "frozen_mechanism_interpretation": {
+    "training_set_retrieval_manipulation_check_positive": true,
+    "absolute_cosine_gap_improved": false,
+    "high_cosine_cone_warning": true,
+    "fixed_eta_budget_stable": false,
+    "attention_only_shortcut_supported": false,
+    "c3b_incremental_value_supported": false,
+    "behavior_or_generalization_known": false,
+    "mechanism_may_select_or_rescue_candidate": false
+  },
+  "authorization": {
+    "p6a_audit": true,
+    "reviewer_qualification": true,
+    "safety_review_after_two_qualified_reviewers": true,
+    "quality_utility_after_safety_freeze": true,
+    "t6_after_t5r4": true,
+    "label64_retry": false,
+    "approximate_grouped_metrics": false,
+    "new_training": false,
+    "fresh_generation": false,
+    "c4_c5": false,
+    "heldout": false
+  }
+}
