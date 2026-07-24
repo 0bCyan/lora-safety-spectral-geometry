@@ -1,0 +1,64 @@
+{
+  "name": "step3ct_t5h_h1_reviewer_qualification_v1",
+  "entry_git_head": "91c5038223e74a3ff42f4ba5ca72a8c4bdc7d1da",
+  "result_commit_reference": "the Git commit containing this H1 package",
+  "p6a_route": "P6A1_eol_reconciled_content_unchanged",
+  "p6a_route_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6a/step3ct_t5r_p6a_route_decision.json",
+  "p6a_route_sha256": "747096772aca69dc554bf4024a7582e35c69e465fcdb696ace239cd2a38264c4",
+  "registry_path": "experiments/step3_response_quality_persistence/configs/step3ct_t5h_external_review_registry.json",
+  "registry_sha256": "fd49209970c5d11fa8a6cea08f2cca14248ff7eef8abfd01d2b1b3ad9d7fa906",
+  "required_domain": "safety",
+  "preferred_reviewer_type": "external_human",
+  "required_reviewers": 2,
+  "supplied_reviewer_records": 0,
+  "qualified_reviewers": 0,
+  "reviewer_ids_registered": 0,
+  "session_ids_registered": 0,
+  "reviewer_sessions_launched": 0,
+  "reviewer_records": [],
+  "packet_template_rubric_freeze_status": "not_started_no_qualified_reviewers",
+  "handoff_artifacts": {
+    "safety": {
+      "path": "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_safety_reviewer_instructions.md",
+      "sha256": "4f97815bd9671edcd2a03b946e25ddc4e4f565af82ead1b95066d8c0abcbc8d4",
+      "bytes": 1924
+    },
+    "quality": {
+      "path": "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_quality_reviewer_instructions.md",
+      "sha256": "27028e13439d4e193476f4585ef6a68d20a95585030d77b02db619853eeebcd2",
+      "bytes": 1519
+    },
+    "utility": {
+      "path": "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_utility_reviewer_instructions.md",
+      "sha256": "9aa86120356384a4078e414ec24d6551c8470e508977668be3ad45be22cd7f30",
+      "bytes": 1447
+    }
+  },
+  "study_access": {
+    "safety_packet_opened": false,
+    "safety_packet_rows_accessed": 0,
+    "quality_packet_opened": false,
+    "quality_packet_rows_accessed": 0,
+    "utility_packet_opened": false,
+    "utility_packet_rows_accessed": 0,
+    "hidden_key_opened": false,
+    "heldout_opened": false,
+    "gateway_probe_using_study_rows": false,
+    "packet_transformed_or_sanitized": false,
+    "main_executor_assigned_labels": false,
+    "heuristic_or_embedding_labels_substituted": false
+  },
+  "outputs": {
+    "accepted_files": 0,
+    "accepted_rows": 0,
+    "rejected_files": 0,
+    "rejected_rows": 0,
+    "partial_files": 0,
+    "partial_rows": 0
+  },
+  "qualification_pass": false,
+  "route": "T5H0_waiting_for_qualified_reviewers",
+  "method_result": false,
+  "reason_code": "research_coordinator_has_not_supplied_two_qualified_independent_safety_reviewers",
+  "next_required_resource": "two_qualified_independent_safety_reviewers_from_research_coordinator"
+}

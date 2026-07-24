@@ -1,0 +1,47 @@
+{
+  "name": "step3ct_t5h_h1_execution_record_v1",
+  "entry_git_head": "91c5038223e74a3ff42f4ba5ca72a8c4bdc7d1da",
+  "result_commit_reference": "the Git commit containing this H1 package",
+  "commands": [
+    "python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_waiting.py run",
+    "python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_waiting.py verify"
+  ],
+  "inputs_read": {
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6a/step3ct_t5r_p6a_route_decision.json": {
+      "sha256": "747096772aca69dc554bf4024a7582e35c69e465fcdb696ace239cd2a38264c4",
+      "bytes": 625
+    },
+    "experiments/step3_response_quality_persistence/configs/step3ct_t5h_external_review_registry.json": {
+      "sha256": "fd49209970c5d11fa8a6cea08f2cca14248ff7eef8abfd01d2b1b3ad9d7fa906",
+      "bytes": 3565
+    },
+    "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_safety_reviewer_instructions.md": {
+      "sha256": "4f97815bd9671edcd2a03b946e25ddc4e4f565af82ead1b95066d8c0abcbc8d4",
+      "bytes": 1924
+    },
+    "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_quality_reviewer_instructions.md": {
+      "sha256": "27028e13439d4e193476f4585ef6a68d20a95585030d77b02db619853eeebcd2",
+      "bytes": 1519
+    },
+    "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_utility_reviewer_instructions.md": {
+      "sha256": "9aa86120356384a4078e414ec24d6551c8470e508977668be3ad45be22cd7f30",
+      "bytes": 1447
+    }
+  },
+  "study_packet_files_read": 0,
+  "study_packet_rows_read": 0,
+  "reviewer_sessions_launched": 0,
+  "outputs": {
+    "accepted_files": 0,
+    "accepted_rows": 0,
+    "rejected_files": 0,
+    "rejected_rows": 0,
+    "partial_files": 0,
+    "partial_rows": 0
+  },
+  "route": "T5H0_waiting_for_qualified_reviewers",
+  "heldout_opened": false,
+  "hidden_key_opened": false,
+  "gateway_probe_using_study_rows": false,
+  "new_training_or_generation": false
+}

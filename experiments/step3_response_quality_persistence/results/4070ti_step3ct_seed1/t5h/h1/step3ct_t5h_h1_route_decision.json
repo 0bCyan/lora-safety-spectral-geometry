@@ -1,0 +1,33 @@
+{
+  "name": "step3ct_t5h_h1_route_decision_v1",
+  "entry_git_head": "91c5038223e74a3ff42f4ba5ca72a8c4bdc7d1da",
+  "result_commit_reference": "the Git commit containing this H1 package",
+  "route": "T5H0_waiting_for_qualified_reviewers",
+  "gates": {
+    "p6a1_verified": true,
+    "two_reviewer_records_supplied": false,
+    "two_reviewers_qualified": false,
+    "zero_study_row_access": true,
+    "zero_reviewer_sessions_launched": true,
+    "zero_label_outputs": true,
+    "hidden_key_sealed": true,
+    "heldout_sealed": true,
+    "new_training_or_generation_started": false
+  },
+  "counts": {
+    "required_reviewers": 2,
+    "supplied_reviewers": 0,
+    "qualified_reviewers": 0,
+    "accepted_files": 0,
+    "accepted_rows": 0,
+    "rejected_files": 0,
+    "rejected_rows": 0,
+    "partial_files": 0,
+    "partial_rows": 0
+  },
+  "method_result": false,
+  "next_authorized_action": "wait_for_research_coordinator_to_supply_two_qualified_reviewers",
+  "safety_review_authorized": false,
+  "quality_utility_review_authorized": false,
+  "training_or_generation_authorized": false
+}

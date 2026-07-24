@@ -1,0 +1,26 @@
+{
+  "name": "step3ct_t5h_h1_package_manifest_v1",
+  "entry_git_head": "91c5038223e74a3ff42f4ba5ca72a8c4bdc7d1da",
+  "result_commit_reference": "the Git commit containing this H1 package",
+  "route": "T5H0_waiting_for_qualified_reviewers",
+  "canonical_lf": true,
+  "artifact_count": 4,
+  "artifacts": {
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h1/step3ct_t5h_h1_reviewer_qualification.json": {
+      "sha256": "4e69477d09d73da19c9510625c2c1e38a0733cefe37719d9e915e9564b642c9c",
+      "bytes": 2838
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h1/step3ct_t5h_h1_route_decision.json": {
+      "sha256": "af99f23d9310d82d3e775deddd86e20051cfa2d7bc56bfa9175d09c6e6e2a2e4",
+      "bytes": 1085
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h1/step3ct_t5h_h1_execution_record.json": {
+      "sha256": "3c5e4bb8c7b64d689636d13ed8613281b41daae8b4da708fa7a8e81b233c4cf4",
+      "bytes": 2049
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h1/Step3CT_T5H_H1_reviewer_qualification_report.md": {
+      "sha256": "5caef095a2da0e991acfaae4bbd5bd66d1d915e773226200402edd3029e07d3b",
+      "bytes": 1102
+    }
+  }
+}

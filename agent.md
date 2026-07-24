@@ -11,7 +11,7 @@
 1. Step1 已确认谱几何、输出子空间和激活信号具有诊断价值，但简单后验干预不能建立可靠因果控制。
 2. Step2 已确认序列级安全监督及其后期加权贡献决定安全持久性；固定20%自然安全回放是强因果控制，但不是完整方法。
 3. Step3 已将回答质量分解为细节保留、安全可操作性和自然度，并完成prompt-disjoint量表验证。
-4. Step3C-T已完成T2R、三臂64步与T4盲包；T5R机制补测得到强训练内检索信号及表示锥化警告，但行为仍为0标签，当前先完成P6A规范哈希对账并等待两名合格独立安全reviewer。
+4. Step3C-T已完成T2R、三臂64步、T4盲包与P6A规范哈希对账；T5R机制补测得到强训练内检索信号及表示锥化警告，但行为仍为0标签，H1当前以零样本访问等待两名合格独立安全reviewer。
 5. 只有C3质量候选通过后，才另行设计C4动态梯度预算与C5联合方法的seed1析因实验。
 
 SpectraSafe双谱正则保留为历史动机和忠实负基线；没有新的增量行为证据时不重新进入主方法路线。
@@ -356,9 +356,9 @@ experiment_id, commit, machine, model, method, family, dose, seed, status, notes
 
 当前优先级从高到低：
 
-1. 按`Step3C_T5H_external_review_handoff_and_P6A_provenance_repair_plan.md`冻结规范LF/Git-blob哈希实现，不覆盖原P6或修改M1路线。
-2. 生成并推送P6A对账包；21个旧artifact必须全部由原始字节或纯CRLF/LF差异解释，否则停止。
-3. 使用能合法读取完整原始安全包的两名独立外部审阅者完成Safety A/B；禁止清洗、拆包、绕过网关或复用T5残缺输出。
+1. 保持已通过的`P6A1_eol_reconciled_content_unchanged`对账包不变，不覆盖原P6或修改M1路线。
+2. H1以`T5H0_waiting_for_qualified_reviewers`等待研究协调员提供两名合格独立安全reviewer；等待期间保持零样本访问、零会话和零标签。
+3. 两名reviewer完成独立身份、session与provenance资格冻结后，才可使用完整原始安全包执行Safety A/B；禁止清洗、拆包、绕过网关或复用T5残缺输出。
 4. Safety A/B完整冻结后再执行Quality/Utility A/B，随后构造不含A/B结论的分歧C包并在解盲前检查reliability。
 5. 仅在T5R4后解盲并用paired bootstrap、exact McNemar与Holm校正执行T6，确定R0/R1或Q*。
 6. 若无C3候选通过，关闭当前C3 recipe，不扫描eta、temperature、queue或targets；若产生Q*，另写C0/C4/Q*/C5 seed1析因计划。
