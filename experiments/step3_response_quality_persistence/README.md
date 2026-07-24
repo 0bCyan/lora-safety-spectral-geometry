@@ -4,7 +4,7 @@
 
 Step 3 is open.
 
-Current phase: **Step3C-R prompt-aware measurement recovery, followed conditionally by C3 diagnostics and seed1 method selection**.
+Current phase: **Step3C-R C-R0 pre-label protocol hardening, followed conditionally by batched independent review, C3 diagnostics, seed1 method selection, and the persistence-quality factorial**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
@@ -156,11 +156,13 @@ Stop Step 3 or redirect it if any of the following occurs:
 
 Authorized now:
 
-- execute C-R0 prompt-aware pairwise measurement recovery on the experiment machine;
+- harden and re-freeze C-R0 before labels by adding specificity reversal gates and symmetric EOL verification;
+- execute C-R0 prompt-aware independent pairwise review on the experiment machine;
 - after C-R0 passes, run C-R1 C3a/C3b no-update representation, gradient, queue, and memory diagnostics;
 - after C-R1 passes, run the matched seed1 C0-R/C3a/C3b tournament;
 - after C-R2 selects Q*, run the C0-R/C4-R/Q*/C5-R factorial;
-- commit and push every frozen phase before proceeding.
+- collect the prespecified retrieval, similarity-gap, effective-rank, permutation-control, and layerwise-gradient mechanism diagnostics;
+- commit and push every complete work package, continuing automatically after a pass without waiting for routine confirmation.
 
 Not authorized now:
 
@@ -170,4 +172,4 @@ Not authorized now:
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The stopped Stage 0 remains recorded in `Step3C_Stage0_data_and_diagnostic_execution_plan.md` and its result artifacts. The active prospective plan is `Step3C_R_measurement_recovery_and_C3_execution_plan.md`; `EXPERIMENT_MACHINE_TASK.md` is the experiment-machine handoff.
+The stopped Stage 0 remains recorded in `Step3C_Stage0_data_and_diagnostic_execution_plan.md` and its result artifacts. The original recovery design remains in `Step3C_R_measurement_recovery_and_C3_execution_plan.md`. The current prospective pre-label amendment and batched execution contract are in `Step3C_R_batched_execution_plan.md`; `EXPERIMENT_MACHINE_TASK.md` is the experiment-machine handoff.

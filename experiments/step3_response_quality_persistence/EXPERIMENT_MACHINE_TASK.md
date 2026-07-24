@@ -1,16 +1,17 @@
-# Experiment Machine Task: Step3C-R End-to-End Recovery
+# Experiment Machine Task: Step3C-R Batched End-to-End Execution
 
 ## Authorization
 
-The 4070 Ti experiment machine owns the complete C-R0 through C-R3 workflow defined in `Step3C_R_measurement_recovery_and_C3_execution_plan.md`.
+The 4070 Ti experiment machine owns the complete C-R0 through C-R3 workflow. The scientific design is defined in `Step3C_R_measurement_recovery_and_C3_execution_plan.md`; the prospective pre-label amendment and current execution contract are defined in `Step3C_R_batched_execution_plan.md`.
 
-This is conditional end-to-end authorization:
+This is conditional end-to-end authorization. The experiment machine should complete each full work package, commit and push it, and continue without waiting for routine confirmation when all frozen gates pass:
 
-- execute C-R0 measurement recovery and independent review;
-- execute C-R1 no-update C3 diagnostics only if C-R0 passes;
-- execute C-R2 seed1 C0-R/C3a/C3b training only for candidates passing C-R1;
-- execute C-R3 C0-R/C4-R/Q*/C5-R factorial only if C-R2 selects Q*;
-- commit and push after every frozen phase;
+- execute P0 protocol hardening before any reviewer label;
+- execute P1 independent C-R0 review and route selection;
+- execute P2 C-R1 no-update C3 diagnostics only if C-R0 passes;
+- execute P3/P4 seed1 C0-R/C3a/C3b training and independent evaluation only for candidates passing C-R1;
+- execute P5 C0-R/C4-R/Q*/C5-R factorial only if C-R2 selects Q*;
+- commit and push after every complete work package;
 - stop immediately when a frozen gate fails.
 
 Not authorized:
@@ -27,32 +28,25 @@ Not authorized:
 1. Pull `exp/step3-response-quality-persistence` and record `HEAD`.
 2. Confirm the worktree is clean before implementation.
 3. Validate `configs/step3cr_recovery_registry.json` against the recovery plan.
-4. Confirm all 47 stopped Stage 0 artifacts exist and that canonical-LF verification explains no non-EOL hash mismatch.
+4. Confirm all 47 stopped Stage 0 artifacts exist and use symmetric EOL classification to prove that no non-EOL hash mismatch remains.
 5. Confirm heldout remains unopened and core100 is not used for training.
 6. Confirm the frozen constant20 checkpoint and Qwen3-4B offline cache exist.
 7. Confirm CUDA and at least 10% VRAM headroom.
 
-## Phase 1: C-R0 Protocol Freeze
+## Work Package P0: C-R0 Protocol Hardening
 
 Implement:
 
-- deterministic 40-pair calibration builder;
-- eight reversed-duplicate insertions with seed `20260723`;
-- prompt-aware pairwise rubric;
-- reviewer A/B templates and Reviewer C disagreement packet;
-- agreement, Gwet AC1, kappa, reversal consistency, and position-bias analysis;
-- canonical-LF artifact manifest and fresh-checkout verifier;
-- synthetic tests for pair order canonicalization and hidden-key isolation.
+- separate `>=7/8` reversal gates for preference and response-side specificity for each reviewer;
+- symmetric CRLF/LF legacy-artifact classification and canonical-LF output verification;
+- synthetic tests for reversal-gate failure, both EOL directions, non-EOL rejection, zero-variance metrics, and hidden-key isolation;
+- byte-equality checks proving the existing 40 canonical pairs, eight duplicates, seed, response text, and presentation order did not change unexpectedly.
 
-Before creating reviewer labels:
+Before creating reviewer labels, re-freeze all protocol artifacts, write the amendment report, and commit/push P0. Stop on any non-EOL mismatch or unexpected packet mutation.
 
-1. run all tests;
-2. freeze configs, packet hashes, hidden duplicate keys, and rubric;
-3. commit and push the protocol freeze.
+## Work Package P1: C-R0 Independent Review
 
-## Phase 2: C-R0 Independent Review
-
-Use independent no-context Reviewer A and Reviewer B. The main executor may prepare packets but must not label rows. Reviewer C sees only decision-field disagreements.
+Use independent fresh-context Reviewer A and Reviewer B. The main executor may prepare packets but must not label rows. Reviewer C sees only decision-field disagreements. Complete label validation, adjudication, agreement, both reversal gates, position-bias analysis, final labels, manifests, and the route report in one package.
 
 Apply the frozen C-R0 gates. If the first session fails, permit one rubric clarification and a complete new blind session. If the second fails, write the stop report, commit, push, and stop.
 
@@ -60,11 +54,11 @@ If C-R0 passes:
 
 - freeze final labels and the prompt-aware candidate-evaluation endpoint;
 - write a machine-readable route decision;
-- commit and push before any model diagnostic.
+- commit and push P1, then continue directly to P2.
 
-## Phase 3: C-R1 No-Update Diagnostics
+## Work Package P2: C-R1 No-Update Diagnostics and Mechanism Atlas
 
-Implement the shared representation, C3a, and C3b exactly as registered. Run queue, temperature, gradient, and memory diagnostics without creating an optimizer or scheduler.
+Implement and test the shared representation, C3a, and C3b exactly as registered. Run queue, temperature, gradient, retrieval, similarity-gap, permutation-control, effective-rank, layerwise-gradient, and memory diagnostics without creating an optimizer or scheduler.
 
 Required outputs:
 
@@ -75,9 +69,9 @@ Required outputs:
 - peak allocated/reserved VRAM and headroom;
 - candidate pass/fail route.
 
-Commit and push diagnostics. If neither candidate passes, stop.
+Commit and push the complete P2 implementation, diagnostics, mechanism atlas, and candidate route. If neither candidate passes, stop; otherwise continue directly to P3.
 
-## Phase 4: C-R2 Seed1 Tournament
+## Work Package P3: C-R2 Common-Trainer Runs and Raw Freeze
 
 Implement one common trainer and run:
 
@@ -85,7 +79,11 @@ Implement one common trainer and run:
 - C3a if eligible;
 - C3b if eligible.
 
-Use matched data order, target texts, seed, QLoRA settings, checkpoints 16/32/64, and greedy decoding. Freeze raw runs before review.
+Qualify the common trainer with deterministic fixtures. Use matched data order, target texts, seed, QLoRA settings, checkpoints 0/16/32/64, and greedy decoding. Track loss components, gradient behavior, queue state, representation diagnostics, runtime, and VRAM. Generate matched core100 and utility outputs and freeze arm-hidden raw packets before review.
+
+Commit and push P3 raw evidence before any outcome label or arm-key join.
+
+## Work Package P4: C-R2 Independent Evaluation and Winner Decision
 
 Evaluation order:
 
@@ -94,9 +92,9 @@ Evaluation order:
 3. independent arm-hidden C-R0 pairwise quality review for surviving candidates;
 4. prompt-cluster bootstrap and route decision.
 
-Commit and push raw runs before review, then commit and push the frozen winner decision. If no candidate passes, stop.
+Add prompt-cluster uncertainty, checkpoint trajectories, and prespecified mechanism-to-behavior consistency analyses after all labels and keys freeze. Commit and push the frozen P4 winner decision. If no candidate passes, close C3 and stop; otherwise continue directly to P5.
 
-## Phase 5: C-R3 Factorial
+## Work Package P5: C-R3 Factorial and Final Decision
 
 Only after Q* is frozen, run or reuse byte-identical:
 
@@ -105,13 +103,13 @@ Only after Q* is frozen, run or reuse byte-identical:
 - Q*;
 - C5-R.
 
-Freeze raw runs before arm-key joins. Apply the same independent safety, utility, and prompt-aware quality protocol. Report main effects and interaction without inferring an interaction from C5-R alone.
+Freeze raw runs before arm-key joins. Apply the same independent safety, utility, and prompt-aware quality protocol. Report controller trajectories, gradient redistribution, main effects, and interaction without inferring an interaction from C5-R alone.
 
 Commit and push the final factorial report, then stop. Do not start replication or open heldout.
 
 ## Required Return State
 
-At every phase commit report:
+At every work-package commit report:
 
 - commit hash and phase status;
 - commands and actual wall-clock runtime;
@@ -121,6 +119,8 @@ At every phase commit report:
 - reviewer provenance and blindness confirmation without hidden keys;
 - gate values, pass/fail route, and next authorized phase;
 - confirmation that heldout remained closed.
+
+The full artifact list, stop conditions, mechanism diagnostics, review isolation rules, and interpretation boundaries are mandatory as written in `Step3C_R_batched_execution_plan.md`.
 
 ## Required Paths
 
