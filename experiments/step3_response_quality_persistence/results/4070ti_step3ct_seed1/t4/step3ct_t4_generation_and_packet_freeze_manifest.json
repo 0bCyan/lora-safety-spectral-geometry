@@ -1,0 +1,275 @@
+{
+  "name": "step3ct_t4_generation_and_packet_freeze_v1",
+  "registry_path": "experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json",
+  "registry_sha256": "c29e1d0e76482261de7672863199cabafd4489c5f2f5a237ea3bc0fc7991555d",
+  "generation_cells": [
+    {
+      "arm": "C0R_concurrent_constant20",
+      "checkpoint_step": 16,
+      "eval_set": "safety",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C0R_concurrent_constant20/C0R_concurrent_constant20_step0016_safety100.jsonl",
+      "output_sha256": "9458bcb9b1b4bab5386713cd66ae948e6b3d68fde0caf293b307f56e6f9587d5",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C0R_concurrent_constant20/C0R_concurrent_constant20_step0016_safety100_manifest.json",
+      "manifest_sha256": "b479d950a81f8f46ef16b08b379f0d17b912f5fec189e329e89c8e3a94d22374",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    },
+    {
+      "arm": "C0R_concurrent_constant20",
+      "checkpoint_step": 32,
+      "eval_set": "safety",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C0R_concurrent_constant20/C0R_concurrent_constant20_step0032_safety100.jsonl",
+      "output_sha256": "4fda57c6fa59ff3c830fae16cbeb713d7db4e9984f8c0b6db464ce1a405312a9",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C0R_concurrent_constant20/C0R_concurrent_constant20_step0032_safety100_manifest.json",
+      "manifest_sha256": "1004d9469ac7de72e1746bb15ce452a063a85adbf3d4f05fcef010e0c8ac07c2",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    },
+    {
+      "arm": "C0R_concurrent_constant20",
+      "checkpoint_step": 64,
+      "eval_set": "safety",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C0R_concurrent_constant20/C0R_concurrent_constant20_step0064_safety100.jsonl",
+      "output_sha256": "98c1b3e6942334ef1187ed9d8bc85b050c7fce28fa400405ca6a77a29431b1f1",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C0R_concurrent_constant20/C0R_concurrent_constant20_step0064_safety100_manifest.json",
+      "manifest_sha256": "ee950701243cc67665638f60172ce8c5b54e8f818ee7cd187357aac347ec9c13",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    },
+    {
+      "arm": "C0R_concurrent_constant20",
+      "checkpoint_step": 64,
+      "eval_set": "utility",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C0R_concurrent_constant20/C0R_concurrent_constant20_step0064_utility100.jsonl",
+      "output_sha256": "ec17de326219718c233dc82248c6beaa0633b0335e137a24fcb20e2b001f1757",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C0R_concurrent_constant20/C0R_concurrent_constant20_step0064_utility100_manifest.json",
+      "manifest_sha256": "37d46c7a7c185194666add9e761ead4ee636535b7858da812e8b1e76ddff35ff",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "checkpoint_step": 16,
+      "eval_set": "safety",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3a_multi_positive_global_binding/C3a_multi_positive_global_binding_step0016_safety100.jsonl",
+      "output_sha256": "a4c0e620d4944610ef0bc65c261d4cc8e34a711abedddcac019ec48f4e0d2aed",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3a_multi_positive_global_binding/C3a_multi_positive_global_binding_step0016_safety100_manifest.json",
+      "manifest_sha256": "90b8398dcbc233fcb702257f41b0381083af921c044fd04ed62ef9370b3380ac",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "checkpoint_step": 32,
+      "eval_set": "safety",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3a_multi_positive_global_binding/C3a_multi_positive_global_binding_step0032_safety100.jsonl",
+      "output_sha256": "dec94736bbc83af9e861a4c48c186aba48624b6fbc60eb63b15a999c7a5da7ca",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3a_multi_positive_global_binding/C3a_multi_positive_global_binding_step0032_safety100_manifest.json",
+      "manifest_sha256": "a5236be9110c0576ba0e05e66036d48c0328b7c1000eb4853599ca86968ada85",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "checkpoint_step": 64,
+      "eval_set": "safety",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3a_multi_positive_global_binding/C3a_multi_positive_global_binding_step0064_safety100.jsonl",
+      "output_sha256": "d30b1a57d5e7652ee18b64e57d820aa67e4160dafdad1980ad895ea0bd5d1b35",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3a_multi_positive_global_binding/C3a_multi_positive_global_binding_step0064_safety100_manifest.json",
+      "manifest_sha256": "7754485896996497d5cd24f1fae618fbf0731dccfcc408b6dbe42ae9270b5953",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "checkpoint_step": 64,
+      "eval_set": "utility",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3a_multi_positive_global_binding/C3a_multi_positive_global_binding_step0064_utility100.jsonl",
+      "output_sha256": "0106681281e8f7d989779960495adfa5363363b409b03099efc2a270058a28af",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3a_multi_positive_global_binding/C3a_multi_positive_global_binding_step0064_utility100_manifest.json",
+      "manifest_sha256": "c3d70f5f31256e5b46a5d283cd011c4e449a48716d1c210ef6a6e6ae950f0da3",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "checkpoint_step": 16,
+      "eval_set": "safety",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3b_hierarchical_hard_negative_binding/C3b_hierarchical_hard_negative_binding_step0016_safety100.jsonl",
+      "output_sha256": "5133821979c71d900b37f3faeeddfcd0b3892697059964fe467d6c7b2569dc3d",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3b_hierarchical_hard_negative_binding/C3b_hierarchical_hard_negative_binding_step0016_safety100_manifest.json",
+      "manifest_sha256": "3f0e3a8101f39df12604d5df55e087a4eab5d353d671e93a7d56602f6070a29a",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "checkpoint_step": 32,
+      "eval_set": "safety",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3b_hierarchical_hard_negative_binding/C3b_hierarchical_hard_negative_binding_step0032_safety100.jsonl",
+      "output_sha256": "17b3e51539f929ceba900c645af2c1e027c380d02ce40b462aa098eb149ea18c",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3b_hierarchical_hard_negative_binding/C3b_hierarchical_hard_negative_binding_step0032_safety100_manifest.json",
+      "manifest_sha256": "181fde6c653f5b4aecf0a4646228a1ce219bd23f8dc0b6eb093c163aed317c99",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "checkpoint_step": 64,
+      "eval_set": "safety",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3b_hierarchical_hard_negative_binding/C3b_hierarchical_hard_negative_binding_step0064_safety100.jsonl",
+      "output_sha256": "e370a86c892cc026ebdd891f0e96f937f6c7b84e77dc709020f424e0522ea6c5",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3b_hierarchical_hard_negative_binding/C3b_hierarchical_hard_negative_binding_step0064_safety100_manifest.json",
+      "manifest_sha256": "916f8ed9967b07cdaecfe3083b22f0dc112dc4d2f5b2707890f8e8a5abc9bc48",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "checkpoint_step": 64,
+      "eval_set": "utility",
+      "rows": 100,
+      "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3b_hierarchical_hard_negative_binding/C3b_hierarchical_hard_negative_binding_step0064_utility100.jsonl",
+      "output_sha256": "070d38a110456757b85bc6b7472ce82ed8b395ef7d2c014d7d4c5befbd714df4",
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations/C3b_hierarchical_hard_negative_binding/C3b_hierarchical_hard_negative_binding_step0064_utility100_manifest.json",
+      "manifest_sha256": "70a44064460716b96e32e095a7b759003218cce18b8ba03ecafa054f56d1f536",
+      "empty_response_count": 0,
+      "thinking_blocks_removed": 0
+    }
+  ],
+  "generation_cell_count": 12,
+  "safety_generation_rows": 900,
+  "utility_generation_rows": 300,
+  "prompt_alignment": {
+    "safety": true,
+    "utility": true
+  },
+  "packets": {
+    "safety": {
+      "name": "step3ct_t4_safety_packet_manifest_v1",
+      "domain": "safety",
+      "rubric": "experiments/step2_mechanism_dynamics/review_rubrics/step2j_b1_safety_behavior_rubric.md",
+      "rubric_sha256": "d8c8b0733c7a79301506dcc0b7f1712c5901904d430428fa1053803ed8b6f060",
+      "packet_rows": 630,
+      "primary_rows": 600,
+      "hidden_duplicates": 30,
+      "cell_counts": {
+        "C0R_concurrent_constant20|32": 100,
+        "C0R_concurrent_constant20|64": 100,
+        "C3a_multi_positive_global_binding|32": 100,
+        "C3a_multi_positive_global_binding|64": 100,
+        "C3b_hierarchical_hard_negative_binding|32": 100,
+        "C3b_hierarchical_hard_negative_binding|64": 100
+      },
+      "duplicate_cell_counts": {
+        "C0R_concurrent_constant20|32": 5,
+        "C0R_concurrent_constant20|64": 5,
+        "C3a_multi_positive_global_binding|32": 5,
+        "C3a_multi_positive_global_binding|64": 5,
+        "C3b_hierarchical_hard_negative_binding|32": 5,
+        "C3b_hierarchical_hard_negative_binding|64": 5
+      },
+      "duplicate_exact_match": true,
+      "visible_fields": [
+        "opaque_response_id",
+        "prompt",
+        "response"
+      ],
+      "packet_sha256": "851badc6f208b4ae80861b9b8d38ec713f3c4d8429c36767047f7115c50bc937",
+      "hidden_key_sha256": "afd2fdb767afa4edbca427cf00dacfc29978c839ef4812d47f46ee7497e0fbc2",
+      "duplicate_map_sha256": "782e6f5aa3baadb24e8235853ee98b9d6fe2052e463b772edc0fae199c883b1c",
+      "reviewer_a_template_sha256": "9475ec4c4c0363574dd75e315f2237d778c68574747305a417e8df7962503b79",
+      "reviewer_b_template_sha256": "9475ec4c4c0363574dd75e315f2237d778c68574747305a417e8df7962503b79",
+      "outcome_labels_present": false,
+      "arm_or_checkpoint_visible": false,
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/safety/step3ct_t4_safety_packet_manifest.json",
+      "manifest_sha256": "62997c04234170c825a69335cacba8d0ab84fe17d475bc544c65fde2e7621296"
+    },
+    "quality": {
+      "name": "step3ct_t4_quality_packet_manifest_v1",
+      "domain": "quality",
+      "rubric": "experiments/step3_response_quality_persistence/review_rubrics/step3cm_decomposed_quality_rubric_v1.md",
+      "rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+      "packet_rows": 330,
+      "primary_rows": 300,
+      "hidden_duplicates": 30,
+      "cell_counts": {
+        "C0R_concurrent_constant20|64": 100,
+        "C3a_multi_positive_global_binding|64": 100,
+        "C3b_hierarchical_hard_negative_binding|64": 100
+      },
+      "duplicate_cell_counts": {
+        "C0R_concurrent_constant20|64": 10,
+        "C3a_multi_positive_global_binding|64": 10,
+        "C3b_hierarchical_hard_negative_binding|64": 10
+      },
+      "duplicate_exact_match": true,
+      "visible_fields": [
+        "opaque_quality_id",
+        "prompt",
+        "response"
+      ],
+      "packet_sha256": "c6172853c596ace5d06410254a5d4b63532c7751a9ebfa12c6817e5d816aaa6a",
+      "hidden_key_sha256": "e5b6afba25c270eeef9d47db6ee2b38c7c667d438fd0b882a37021a1d5fcc64c",
+      "duplicate_map_sha256": "afd701d1dd5a4e5c8e1127d257100450c959221b6f286d70d6a3fc74556445b0",
+      "reviewer_a_template_sha256": "c56739e01900aa0424eb5bb9c37e97476bd15b908352910486753ee3418758ef",
+      "reviewer_b_template_sha256": "c56739e01900aa0424eb5bb9c37e97476bd15b908352910486753ee3418758ef",
+      "outcome_labels_present": false,
+      "arm_or_checkpoint_visible": false,
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/quality/step3ct_t4_quality_packet_manifest.json",
+      "manifest_sha256": "479f9779681d0cb483b1f64ca37aa105a14672b6249a7563b9fa58a74be2a601"
+    },
+    "utility": {
+      "name": "step3ct_t4_utility_packet_manifest_v1",
+      "domain": "utility",
+      "rubric": "experiments/step2_mechanism_dynamics/review_rubrics/step2j_b1_utility_quality_rubric.md",
+      "rubric_sha256": "dd84542c1e539941a2063f5c2813b9929067a2c03e725b941f2d5973a9239fa1",
+      "packet_rows": 330,
+      "primary_rows": 300,
+      "hidden_duplicates": 30,
+      "cell_counts": {
+        "C0R_concurrent_constant20|64": 100,
+        "C3a_multi_positive_global_binding|64": 100,
+        "C3b_hierarchical_hard_negative_binding|64": 100
+      },
+      "duplicate_cell_counts": {
+        "C0R_concurrent_constant20|64": 10,
+        "C3a_multi_positive_global_binding|64": 10,
+        "C3b_hierarchical_hard_negative_binding|64": 10
+      },
+      "duplicate_exact_match": true,
+      "visible_fields": [
+        "opaque_response_id",
+        "prompt",
+        "response",
+        "reference_response"
+      ],
+      "packet_sha256": "9050f85e09780a67fb8a9e8415ab589fbd07ebe86918338c1889ffefcba85f56",
+      "hidden_key_sha256": "2d3ab965f220a50c30cfa2a101bb427aa494822c82a74794bcbb5db9200f247f",
+      "duplicate_map_sha256": "77e2917e5b64eb059700b29d7c96bed5961bb2f1d8faae1409db9dcb52b917df",
+      "reviewer_a_template_sha256": "7a4aaaa2269ef1eb6fda3899f586df462425f7bdeb900748b49bb95f30d48d87",
+      "reviewer_b_template_sha256": "7a4aaaa2269ef1eb6fda3899f586df462425f7bdeb900748b49bb95f30d48d87",
+      "outcome_labels_present": false,
+      "arm_or_checkpoint_visible": false,
+      "manifest_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/utility/step3ct_t4_utility_packet_manifest.json",
+      "manifest_sha256": "6ccd074b330f62cb94511cd4eda07a8968e52440f707f63b0cdd9a2085951fa5"
+    }
+  },
+  "outcome_labels_present": false,
+  "candidate_outputs_generated": true,
+  "core100_opened": true,
+  "utility100_opened": true,
+  "heldout_opened": false,
+  "next_authorized_package": "Step3C_T5_independent_blind_review_after_T4_commit_push"
+}

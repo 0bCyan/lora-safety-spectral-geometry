@@ -1,0 +1,79 @@
+{
+  "name": "step3ct_t4_generation_and_packet_freeze_execution_record_v1",
+  "generation_git_head": "b3375d2a4beeed4097d905bef95acad56f16a4d1",
+  "registry": "experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json",
+  "registry_sha256": "c29e1d0e76482261de7672863199cabafd4489c5f2f5a237ea3bc0fc7991555d",
+  "generation_script": "experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py",
+  "packet_script": "experiments/step3_response_quality_persistence/scripts/prepare_step3ct_t4_packets.py",
+  "generation_order": [
+    "C0R_concurrent_constant20|16|safety",
+    "C0R_concurrent_constant20|32|safety",
+    "C0R_concurrent_constant20|64|safety",
+    "C0R_concurrent_constant20|64|utility",
+    "C3a_multi_positive_global_binding|16|safety",
+    "C3a_multi_positive_global_binding|32|safety",
+    "C3a_multi_positive_global_binding|64|safety",
+    "C3a_multi_positive_global_binding|64|utility",
+    "C3b_hierarchical_hard_negative_binding|16|safety",
+    "C3b_hierarchical_hard_negative_binding|32|safety",
+    "C3b_hierarchical_hard_negative_binding|64|safety",
+    "C3b_hierarchical_hard_negative_binding|64|utility"
+  ],
+  "commands": [
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C0R_concurrent_constant20 --checkpoint-step 16 --eval-set safety",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C0R_concurrent_constant20 --checkpoint-step 32 --eval-set safety",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C0R_concurrent_constant20 --checkpoint-step 64 --eval-set safety",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C0R_concurrent_constant20 --checkpoint-step 64 --eval-set utility",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C3a_multi_positive_global_binding --checkpoint-step 16 --eval-set safety",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C3a_multi_positive_global_binding --checkpoint-step 32 --eval-set safety",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C3a_multi_positive_global_binding --checkpoint-step 64 --eval-set safety",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C3a_multi_positive_global_binding --checkpoint-step 64 --eval-set utility",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C3b_hierarchical_hard_negative_binding --checkpoint-step 16 --eval-set safety",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C3b_hierarchical_hard_negative_binding --checkpoint-step 32 --eval-set safety",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C3b_hierarchical_hard_negative_binding --checkpoint-step 64 --eval-set safety",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json --arm C3b_hierarchical_hard_negative_binding --checkpoint-step 64 --eval-set utility",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/prepare_step3ct_t4_packets.py --registry experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/test_step3ct_t4.py"
+  ],
+  "environment": {
+    "python": "3.11.5",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "peft": "0.16.0",
+    "cuda_runtime": "12.1",
+    "nvidia_driver": "591.86",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpu_total_bytes": 12878086144
+  },
+  "generation_cells": 12,
+  "generation_rows": 1200,
+  "generation_manifest_wall_clock_seconds": 4933.394,
+  "minimum_vram_headroom_fraction": 0.642388959003379,
+  "empty_response_count": 0,
+  "thinking_blocks_removed": 0,
+  "thinking_content_persisted": false,
+  "packet_rows": {
+    "safety": 630,
+    "quality": 330,
+    "utility": 330
+  },
+  "primary_rows": {
+    "safety": 600,
+    "quality": 300,
+    "utility": 300
+  },
+  "hidden_duplicates": {
+    "safety": 30,
+    "quality": 30,
+    "utility": 30
+  },
+  "freeze_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/step3ct_t4_generation_and_packet_freeze_manifest.json",
+  "freeze_manifest_sha256": "b6b4a28739c991d960d452f2e069914a7b8e84a4f21f19cda518d99ac901cb68",
+  "route": "T4_integrity_pass_packets_frozen_authorize_T5_after_commit_push",
+  "outcome_labels_present": false,
+  "core100_opened": true,
+  "utility100_opened": true,
+  "heldout_opened": false,
+  "new_training_started": false,
+  "c4_c5_seed2_seed3_second_backbone_spectrasafe_authorized": false
+}

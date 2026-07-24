@@ -1,0 +1,30 @@
+{
+  "name": "step3ct_t4_generation_and_packet_freeze_route_v1",
+  "route": "T4_integrity_pass_packets_frozen_authorize_T5_after_commit_push",
+  "generation_git_head": "b3375d2a4beeed4097d905bef95acad56f16a4d1",
+  "registry_sha256": "c29e1d0e76482261de7672863199cabafd4489c5f2f5a237ea3bc0fc7991555d",
+  "freeze_manifest_sha256": "b6b4a28739c991d960d452f2e069914a7b8e84a4f21f19cda518d99ac901cb68",
+  "gates": {
+    "exactly_12_generation_manifests": true,
+    "each_generation_has_100_rows_and_unique_sample_ids": true,
+    "all_generation_output_hashes_match": true,
+    "all_responses_nonempty": true,
+    "no_thinking_tags_or_content_persisted": true,
+    "safety_and_utility_prompt_alignment": true,
+    "safety_packet_is_600_primary_plus_30_duplicates": true,
+    "quality_packet_is_300_primary_plus_30_duplicates": true,
+    "utility_packet_is_300_primary_plus_30_duplicates": true,
+    "hidden_duplicates_are_exact_and_cell_balanced": true,
+    "visible_packets_hide_arm_checkpoint_sample_and_duplicate_links": true,
+    "reviewer_templates_have_no_outcome_labels": true,
+    "four_protocol_tests_pass": true,
+    "heldout_remained_closed": true
+  },
+  "overall_pass": true,
+  "next_authorized_package": "Step3C_T5_independent_blind_review_after_T4_commit_push",
+  "t5_started_before_commit_push": false,
+  "heldout_opened": false,
+  "new_training_authorized": false,
+  "eta_revision_authorized": false,
+  "c4_c5_seed2_seed3_second_backbone_spectrasafe_authorized": false
+}

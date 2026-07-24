@@ -1,0 +1,32 @@
+{
+  "name": "step3ct_t4_quality_packet_manifest_v1",
+  "domain": "quality",
+  "rubric": "experiments/step3_response_quality_persistence/review_rubrics/step3cm_decomposed_quality_rubric_v1.md",
+  "rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+  "packet_rows": 330,
+  "primary_rows": 300,
+  "hidden_duplicates": 30,
+  "cell_counts": {
+    "C0R_concurrent_constant20|64": 100,
+    "C3a_multi_positive_global_binding|64": 100,
+    "C3b_hierarchical_hard_negative_binding|64": 100
+  },
+  "duplicate_cell_counts": {
+    "C0R_concurrent_constant20|64": 10,
+    "C3a_multi_positive_global_binding|64": 10,
+    "C3b_hierarchical_hard_negative_binding|64": 10
+  },
+  "duplicate_exact_match": true,
+  "visible_fields": [
+    "opaque_quality_id",
+    "prompt",
+    "response"
+  ],
+  "packet_sha256": "c6172853c596ace5d06410254a5d4b63532c7751a9ebfa12c6817e5d816aaa6a",
+  "hidden_key_sha256": "e5b6afba25c270eeef9d47db6ee2b38c7c667d438fd0b882a37021a1d5fcc64c",
+  "duplicate_map_sha256": "afd701d1dd5a4e5c8e1127d257100450c959221b6f286d70d6a3fc74556445b0",
+  "reviewer_a_template_sha256": "c56739e01900aa0424eb5bb9c37e97476bd15b908352910486753ee3418758ef",
+  "reviewer_b_template_sha256": "c56739e01900aa0424eb5bb9c37e97476bd15b908352910486753ee3418758ef",
+  "outcome_labels_present": false,
+  "arm_or_checkpoint_visible": false
+}

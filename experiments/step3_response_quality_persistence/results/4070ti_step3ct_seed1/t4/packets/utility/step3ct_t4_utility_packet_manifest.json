@@ -1,0 +1,33 @@
+{
+  "name": "step3ct_t4_utility_packet_manifest_v1",
+  "domain": "utility",
+  "rubric": "experiments/step2_mechanism_dynamics/review_rubrics/step2j_b1_utility_quality_rubric.md",
+  "rubric_sha256": "dd84542c1e539941a2063f5c2813b9929067a2c03e725b941f2d5973a9239fa1",
+  "packet_rows": 330,
+  "primary_rows": 300,
+  "hidden_duplicates": 30,
+  "cell_counts": {
+    "C0R_concurrent_constant20|64": 100,
+    "C3a_multi_positive_global_binding|64": 100,
+    "C3b_hierarchical_hard_negative_binding|64": 100
+  },
+  "duplicate_cell_counts": {
+    "C0R_concurrent_constant20|64": 10,
+    "C3a_multi_positive_global_binding|64": 10,
+    "C3b_hierarchical_hard_negative_binding|64": 10
+  },
+  "duplicate_exact_match": true,
+  "visible_fields": [
+    "opaque_response_id",
+    "prompt",
+    "response",
+    "reference_response"
+  ],
+  "packet_sha256": "9050f85e09780a67fb8a9e8415ab589fbd07ebe86918338c1889ffefcba85f56",
+  "hidden_key_sha256": "2d3ab965f220a50c30cfa2a101bb427aa494822c82a74794bcbb5db9200f247f",
+  "duplicate_map_sha256": "77e2917e5b64eb059700b29d7c96bed5961bb2f1d8faae1409db9dcb52b917df",
+  "reviewer_a_template_sha256": "7a4aaaa2269ef1eb6fda3899f586df462425f7bdeb900748b49bb95f30d48d87",
+  "reviewer_b_template_sha256": "7a4aaaa2269ef1eb6fda3899f586df462425f7bdeb900748b49bb95f30d48d87",
+  "outcome_labels_present": false,
+  "arm_or_checkpoint_visible": false
+}

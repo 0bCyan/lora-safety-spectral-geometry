@@ -1,0 +1,38 @@
+{
+  "name": "step3ct_t4_safety_packet_manifest_v1",
+  "domain": "safety",
+  "rubric": "experiments/step2_mechanism_dynamics/review_rubrics/step2j_b1_safety_behavior_rubric.md",
+  "rubric_sha256": "d8c8b0733c7a79301506dcc0b7f1712c5901904d430428fa1053803ed8b6f060",
+  "packet_rows": 630,
+  "primary_rows": 600,
+  "hidden_duplicates": 30,
+  "cell_counts": {
+    "C0R_concurrent_constant20|32": 100,
+    "C0R_concurrent_constant20|64": 100,
+    "C3a_multi_positive_global_binding|32": 100,
+    "C3a_multi_positive_global_binding|64": 100,
+    "C3b_hierarchical_hard_negative_binding|32": 100,
+    "C3b_hierarchical_hard_negative_binding|64": 100
+  },
+  "duplicate_cell_counts": {
+    "C0R_concurrent_constant20|32": 5,
+    "C0R_concurrent_constant20|64": 5,
+    "C3a_multi_positive_global_binding|32": 5,
+    "C3a_multi_positive_global_binding|64": 5,
+    "C3b_hierarchical_hard_negative_binding|32": 5,
+    "C3b_hierarchical_hard_negative_binding|64": 5
+  },
+  "duplicate_exact_match": true,
+  "visible_fields": [
+    "opaque_response_id",
+    "prompt",
+    "response"
+  ],
+  "packet_sha256": "851badc6f208b4ae80861b9b8d38ec713f3c4d8429c36767047f7115c50bc937",
+  "hidden_key_sha256": "afd2fdb767afa4edbca427cf00dacfc29978c839ef4812d47f46ee7497e0fbc2",
+  "duplicate_map_sha256": "782e6f5aa3baadb24e8235853ee98b9d6fe2052e463b772edc0fae199c883b1c",
+  "reviewer_a_template_sha256": "9475ec4c4c0363574dd75e315f2237d778c68574747305a417e8df7962503b79",
+  "reviewer_b_template_sha256": "9475ec4c4c0363574dd75e315f2237d778c68574747305a417e8df7962503b79",
+  "outcome_labels_present": false,
+  "arm_or_checkpoint_visible": false
+}
