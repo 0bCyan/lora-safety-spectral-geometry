@@ -15,6 +15,15 @@ import step3ct_t2r_common as gradient_common
 import step3ct_training_common as training_common
 
 
+def disposable_prefix(label: int, arm_index: int) -> str:
+    if label < 0 or arm_index < 0:
+        raise ValueError("disposable identifiers must be non-negative")
+    prefix = f"g{label:02d}_{arm_index}_"
+    if len(prefix) > 12:
+        raise ValueError("disposable prefix exceeds the Windows-safe bound")
+    return prefix
+
+
 def hash_file_set(paths: list[Path], root: Path | None = None) -> dict[str, dict[str, Any]]:
     """Hash immutable artifacts without reading model tensors into Python."""
     result: dict[str, dict[str, Any]] = {}

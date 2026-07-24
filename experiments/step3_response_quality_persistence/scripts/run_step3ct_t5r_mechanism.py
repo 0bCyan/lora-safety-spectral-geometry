@@ -368,7 +368,7 @@ def freeze_implementation() -> dict[str, Any]:
         "checkpoint_forward_or_backward_executed": False,
         "source_artifacts_modified": False,
         "synthetic_tests_passed": tests["test_count"],
-        "extended_regression_tests_passed": 41,
+        "extended_regression_tests_passed": 42,
         "route": result["route"],
     }
     write_json(P5_ROOT / "step3ct_t5r_p5_execution_record.json", execution_record)
@@ -649,7 +649,8 @@ def replay_gradient_unit(
     disposable_parent.mkdir(parents=True, exist_ok=True)
     started = time.time()
     try:
-        with tempfile.TemporaryDirectory(prefix=f"{arm}_label{label:04d}_", dir=disposable_parent) as directory:
+        short_prefix = mechanism.disposable_prefix(label, ARMS.index(arm))
+        with tempfile.TemporaryDirectory(prefix=short_prefix, dir=disposable_parent) as directory:
             output = Path(directory) / "replay"
             trainer.optimizer_unit_diagnostic = diagnostic_hook
             sys.argv = [
@@ -950,7 +951,8 @@ def summarize_mechanism() -> dict[str, Any]:
     )
     report_path = P6_ROOT / "Step3CT_T5R_P6_mechanism_completion_report.md"
     report_path.write_text("\n".join(report_lines), encoding="utf-8")
-    package_paths = representation_paths + gradient_paths + [route_path, summary_path, report_path]
+    incident_paths = sorted((P6_ROOT / "incidents").glob("*.json"))
+    package_paths = representation_paths + gradient_paths + incident_paths + [route_path, summary_path, report_path]
     package = {
         "name": "step3ct_t5r_p6_mechanism_manifest_package_v1",
         "route": route,

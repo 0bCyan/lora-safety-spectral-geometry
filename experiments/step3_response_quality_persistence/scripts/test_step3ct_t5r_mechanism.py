@@ -131,6 +131,13 @@ class Step3CTT5RMechanismTests(unittest.TestCase):
             first.write_bytes(b"changed")
             self.assertFalse(common.compare_file_sets(before, common.hash_file_set([first, second], root))["passed"])
 
+    def test_disposable_prefix_is_bounded_for_windows(self) -> None:
+        prefixes = [common.disposable_prefix(label, arm) for label in (0, 16, 32, 64) for arm in range(3)]
+        self.assertTrue(all(len(prefix) <= 12 for prefix in prefixes))
+        self.assertTrue(all("C3" not in prefix for prefix in prefixes))
+        with self.assertRaises(ValueError):
+            common.disposable_prefix(-1, 0)
+
     def test_no_full_gradient_serialization(self) -> None:
         common.assert_no_full_gradient_serialization({"gradient_summary": {"norm": 2.0}, "rows": [1, 2]})
         with self.assertRaises(TypeError):

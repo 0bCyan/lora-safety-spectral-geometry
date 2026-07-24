@@ -1,6 +1,6 @@
 {
   "name": "step3ct_t5r_p5_execution_record_v1",
-  "source_git_head": "e01e351926ae9be22b7b6e6af7255bdd86a7fd7d",
+  "source_git_head": "490918d3910495284d0aeed1bd5b90ceaa79da82",
   "commands": [
     "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_mechanism.py --phase freeze",
     "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/test_step3ct_t5r_mechanism.py -v"
@@ -9,7 +9,7 @@
   "qwen_or_peft_model_instantiated": false,
   "checkpoint_forward_or_backward_executed": false,
   "source_artifacts_modified": false,
-  "synthetic_tests_passed": 11,
-  "extended_regression_tests_passed": 41,
+  "synthetic_tests_passed": 12,
+  "extended_regression_tests_passed": 42,
   "route": "P5_mechanism_implementation_frozen"
 }
