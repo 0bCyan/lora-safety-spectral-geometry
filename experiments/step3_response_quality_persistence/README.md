@@ -4,11 +4,13 @@
 
 Step 3 is open.
 
-Current phase: **Step3C-MF decomposed measurement validation and C3a/C3b no-update feasibility**.
+Current phase: **Step3C-T prospective seed1 C3 training tournament**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
-The first Step3C Stage 0 stopped at its repeated response-only mechanical-label reliability gate and established that C2 cannot reach its 36-triplet requirement. Step3C-R then stopped after two prompt-aware pair-preference reliability failures (`0.825` and `0.800` raw agreement against a frozen `0.85` gate). C2 and C-R0 are closed. C3 has not been diagnosed or trained.
+The first Step3C Stage 0 stopped at its repeated response-only mechanical-label reliability gate and established that C2 cannot reach its 36-triplet requirement. Step3C-R then stopped after two prompt-aware pair-preference reliability failures (`0.825` and `0.800` raw agreement against a frozen `0.85` gate). C2 and C-R0 are closed.
+
+Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. The decomposed quality measurement passed its prompt-disjoint one-shot validation, and both C3a/C3b passed no-update representation, gradient, memory, and calibration feasibility. No candidate has yet been trained or generated. The active plan is now the three-arm seed1 tournament `Step3C_T_seed1_c3_training_tournament_plan.md`; heldout remains sealed.
 
 ## 1. Research Question
 
@@ -105,30 +107,40 @@ The original Stage 0 stopped before triplet freezing or model diagnostics becaus
 
 Step3C-R replaced the primary endpoint with prompt-aware pairwise specificity, but its holistic preference component failed both complete reliability sessions. The route closed before C3 diagnostics or training.
 
-Step3C-MF now separates measurement from method feasibility. Step3C-M validates ordinal detail retention and safe actionability on 20 development and 20 development-untouched validation prompt clusters. Step3C-F independently tests C3a multi-positive global binding and C3b hierarchical hard-negative binding with no optimizer or generated behavior. Only a joint measurement and feasibility pass may request a new seed1 training plan.
+Step3C-MF separated measurement from method feasibility. Step3C-M validated ordinal detail retention and safe actionability on 20 development and 20 development-untouched validation prompt clusters. Step3C-F then showed that C3a multi-positive global binding and C3b hierarchical hard-negative binding both produce finite, calibrated LoRA gradients under the registered memory rule. The joint route passed and stopped before training.
 
-### Step3D: replication and sealed confirmation
+Step3C-T is the active behavioral tournament. It prospectively compares a concurrent common-trainer constant20 control against C3a and C3b at risk seed1. The loose validated `specific_safe_success` endpoint is a non-inferiority floor; the stricter `high_specific_safe_success` endpoint is the primary quality-superiority test. Any winner must also preserve safety persistence and utility under paired blind evaluation.
 
-Only a seed1 candidate that passes all primary gates may advance to risk seeds 2 and 3. The heldout test opens once, after the method and thresholds are frozen and cross-seed evidence passes.
+### Step3D: seed1 persistence-quality factorial
 
-### Step3E: optional method integration
+Only a Step3C-T quality winner may request a separate seed1 factorial comparing C0, C4 gradient-budget control, the quality winner `Q*`, and the combined C5 method. C4 and C5 receive no automatic authorization from a tournament pass, and their main effects and interaction must be identified separately.
 
-Only after a behavior-quality candidate survives Step3D may an additional mechanism be tested for incremental value. SpectraSafe does not re-enter without a new, preregistered reason and a clean incremental ablation.
+### Step3E: replication and sealed confirmation
 
-## 6. Active Measurement and Feasibility Gates
+Only a frozen seed1 final candidate that passes the factorial gates may advance to risk seeds 2 and 3. The heldout test opens once, after the method and thresholds are frozen and cross-seed evidence passes. A second backbone follows the Qwen3-4B confirmation rather than substituting for it. SpectraSafe does not re-enter without a new, preregistered reason and a clean incremental ablation.
 
-Step3C-MF does not authorize candidate training. Its active gates are:
+## 6. Completed Preconditions and Active Tournament Gates
 
-| construct | gate |
+Step3C-MF completed with:
+
+- validation detail weighted agreement `0.9688`, Gwet AC2 `0.9564`;
+- validation actionability weighted agreement `0.9531`, Gwet AC2 `0.9166`;
+- derived-quality raw agreement `0.9844`, Gwet AC1 `0.9809`;
+- C3a and C3b finite/non-zero LoRA gradients at a calibrated binding/safety ratio of `0.25`;
+- no optimizer step, candidate generation, core100 selection, or heldout access.
+
+The active Step3C-T gates are frozen in `configs/step3ct_seed1_training_registry.json`. In summary:
+
+| domain | gate |
 | --- | --- |
-| detail retention | linear weighted agreement `>=0.85`, Gwet AC2 `>=0.70`, severe disagreement `<=0.05` |
-| safe actionability | linear weighted agreement `>=0.85`, Gwet AC2 `>=0.70`, severe disagreement `<=0.05` |
-| derived quality eligibility | raw agreement `>=0.85`, Gwet AC1 `>=0.70` |
-| naturalness | raw agreement `>=0.90` |
-| hidden duplicate QC | full-vector consistency `>=7/8` for each reviewer |
-| C3 numerical feasibility | finite/non-zero LoRA gradients, registered probability/memory rule, finite `eta` with binding/safety ratio `0.20-0.30` |
+| concurrent control | reproduce historical constant20 safety and utility within frozen tolerances |
+| safety | step64 unsafe-with-mixed `<=0.35` and increase versus C0-R `<=0.05` |
+| minimum quality | `specific_safe_success` non-inferior to C0-R |
+| primary quality | `high_specific_safe_success` improvement `>=0.10`, paired bootstrap lower bound `>0`, and Holm-adjusted McNemar `p<0.05` |
+| utility | no more than registered loss versus both vanilla and concurrent C0-R |
+| selection | C3b must beat C3a by at least `0.05` on primary behavior or C3a is preferred |
 
-Only a one-shot validation pass and at least one C3 feasibility pass can request a new prospective training plan. Previous seed1 safety and utility gates remain historical constraints to be reconsidered and frozen in that future plan; holistic pair preference cannot be silently restored.
+Mechanical-template and holistic pair-preference labels remain inactive.
 
 ## 7. Non-Negotiable Controls
 
@@ -155,20 +167,23 @@ Stop Step 3 or redirect it if any of the following occurs:
 
 Authorized now:
 
-- execute Step3C-M development review with at most one development-only rubric clarification;
-- execute one untouched Step3C-M validation session with no revision;
-- implement and run C3a/C3b no-update representation, gradient, queue, retrieval, permutation, effective-rank, and memory diagnostics;
-- freeze a joint measurement/feasibility decision and stop.
+- implement and freeze the common Step3C-T trainer and evaluation path;
+- run two-step smoke tests for exactly C0-R, C3a, and C3b;
+- after preflight passes, train exactly those three risk-seed1 arms to step64;
+- generate frozen core100/utility100 candidate outputs only after all run manifests freeze;
+- conduct separate independent blind safety, decomposed-quality, and utility review;
+- compute the registered paired statistics and freeze one tournament route.
 
 Not authorized now:
 
 - C2 revival or additional mechanical-negative generation;
 - a third C-R0 pairwise review or a lower old reliability threshold;
-- optimizer/scheduler construction, candidate training, or candidate generation;
-- core100 behavior inspection for protocol or numerical selection;
+- any fourth arm or behavior-based eta/temperature/queue revision;
+- trainable projection-head variants;
+- C4, C5, adaptive replay, or other method stacking;
 - behavior-based hyperparameter scans;
 - seeds 2 and 3;
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The stopped Stage0 and C-R0 routes remain recorded in their original plans and result artifacts. The active prospective plan is `Step3C_MF_decomposed_measurement_and_c3_feasibility_plan.md`; `EXPERIMENT_MACHINE_TASK.md` is the experiment-machine handoff. A joint pass still requires a separate training plan.
+The stopped Stage0 and C-R0 routes and the completed Step3C-MF route remain recorded in their original plans and result artifacts. The active prospective plan is `Step3C_T_seed1_c3_training_tournament_plan.md`; `EXPERIMENT_MACHINE_TASK.md` is the experiment-machine handoff. A tournament winner still requires a separate C4/Q*/C5 seed1 factorial plan.

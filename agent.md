@@ -4,14 +4,17 @@
 
 ## 1. 项目目标
 
-本项目研究 LoRA 微调导致安全漂移的谱几何机制，并基于机制发现设计 SpectraSafe 训练期安全控制方法。
+本项目研究 LoRA 微调后的安全漂移、训练期安全持久性和安全回答质量，并基于经过验证的机制设计训练方法。
 
-当前主线不是单纯提出一个正则项，而是：
+当前主线是：
 
-1. 发现 LoRA safety drift 的谱几何 signature。
-2. 用相关性和干预实验验证该 signature 的解释力。
-3. 基于机制设计 SpectraSafe，并证明其比通用正则更有针对性。
-4. 形成中文初稿，后续再考虑英文投稿版本。
+1. Step1 已确认谱几何、输出子空间和激活信号具有诊断价值，但简单后验干预不能建立可靠因果控制。
+2. Step2 已确认序列级安全监督及其后期加权贡献决定安全持久性；固定20%自然安全回放是强因果控制，但不是完整方法。
+3. Step3 已将回答质量分解为细节保留、安全可操作性和自然度，并完成prompt-disjoint量表验证。
+4. 当前通过C3a/C3b训练锦标赛检验prompt-response对比绑定能否在保留安全与效用的同时提高高质量安全回答。
+5. 只有C3质量候选通过后，才另行设计C4动态梯度预算与C5联合方法的seed1析因实验。
+
+SpectraSafe双谱正则保留为历史动机和忠实负基线；没有新的增量行为证据时不重新进入主方法路线。
 
 ## 2. 实时维护规则
 
@@ -353,12 +356,12 @@ experiment_id, commit, machine, model, method, family, dose, seed, status, notes
 
 当前优先级从高到低：
 
-1. 完成第一步 B：risk adapter 轻量干预验证。
-2. 在 4070 Ti 上对 risk seed 1/2/3 做 top-k、bottom-k、random-k 缩放生成。
-3. 汇总干预前后 unsafe、refusal、invalid 和输出退化变化。
-4. 判断高谱层干预是否比低谱层/随机层更有效。
-5. 等 3090 Ti 可用后，再跑 Qwen3-8B 三类三 seed 正式初筛。
-6. 若干预结果支持谱机制，再进入 SpectraSafe 方法设计阶段。
+1. 按`Step3C_T_seed1_c3_training_tournament_plan.md`冻结共同训练器、队列、损失权重和随机性隔离实现。
+2. 在4070 Ti上完成C0-R、C3a、C3b三臂两步smoke，所有门槛通过后再跑64-step seed1主训练。
+3. 冻结三臂run manifest后生成step16/32/64 safety100与step64 utility100，不提前查看heldout。
+4. 分离执行盲化安全、分解质量和效用审查，使用paired bootstrap、McNemar与Holm校正确定Q*。
+5. 若无C3候选通过，关闭当前C3 recipe，不根据结果扫描eta、temperature、queue或targets。
+6. 若产生Q*，另写C0/C4/Q*/C5 seed1析因计划；在联合候选冻结前不扩展seed2/3或第二backbone。
 
 ## 10. 当前数据集决策
 
