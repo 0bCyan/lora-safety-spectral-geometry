@@ -1,0 +1,114 @@
+{
+  "name": "step3ct_t2r_r3_route_decision_v1",
+  "route": "RR2_three_arm_smoke_requalified",
+  "arms": [
+    {
+      "arm": "C0R_concurrent_constant20",
+      "eta": 0.0,
+      "step_ratios": [
+        0.0,
+        0.0
+      ],
+      "aggregate_eight_position_ratio": null,
+      "c3b_hard_active_positions": 0,
+      "resume_maximum_numeric_difference": 0.0,
+      "resume_step2_ratio_difference": 0.0,
+      "vram_headroom_fraction": 0.5526605056385621,
+      "gates": {
+        "fresh_two_step_run": true,
+        "resume_from_step1": true,
+        "finite_losses_and_gradients": true,
+        "no_skipped_updates": true,
+        "registered_trainable_parameters": true,
+        "projection_unchanged_and_frozen": true,
+        "c0_zero_binding_and_no_queue": true,
+        "optimizer_unit_ratio_gates": true,
+        "c3b_hard_active_exactly_4_of_8": true,
+        "resume_trace_equal": true,
+        "resume_step2_ratio_equal": true,
+        "resume_adapter_hash_equal": true,
+        "resume_queue_hash_equal": true,
+        "config_hash_matches": true,
+        "vram_headroom": true,
+        "no_generation_core100_or_heldout": true
+      },
+      "overall_pass": true
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "eta": 0.2691508842579502,
+      "step_ratios": [
+        0.25498995242451444,
+        0.17428007445036783
+      ],
+      "aggregate_eight_position_ratio": 0.2199677490021288,
+      "c3b_hard_active_positions": 0,
+      "resume_maximum_numeric_difference": 0.0,
+      "resume_step2_ratio_difference": 0.0,
+      "vram_headroom_fraction": 0.5417497862638929,
+      "gates": {
+        "fresh_two_step_run": true,
+        "resume_from_step1": true,
+        "finite_losses_and_gradients": true,
+        "no_skipped_updates": true,
+        "registered_trainable_parameters": true,
+        "projection_unchanged_and_frozen": true,
+        "c0_zero_binding_and_no_queue": true,
+        "optimizer_unit_ratio_gates": true,
+        "c3b_hard_active_exactly_4_of_8": true,
+        "resume_trace_equal": true,
+        "resume_step2_ratio_equal": true,
+        "resume_adapter_hash_equal": true,
+        "resume_queue_hash_equal": true,
+        "config_hash_matches": true,
+        "vram_headroom": true,
+        "no_generation_core100_or_heldout": true
+      },
+      "overall_pass": true
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "eta": 0.16828897705555668,
+      "step_ratios": [
+        0.193800561638186,
+        0.11772852062743921
+      ],
+      "aggregate_eight_position_ratio": 0.1608822954330737,
+      "c3b_hard_active_positions": 4,
+      "resume_maximum_numeric_difference": 0.0,
+      "resume_step2_ratio_difference": 0.0,
+      "vram_headroom_fraction": 0.5417497862638929,
+      "gates": {
+        "fresh_two_step_run": true,
+        "resume_from_step1": true,
+        "finite_losses_and_gradients": true,
+        "no_skipped_updates": true,
+        "registered_trainable_parameters": true,
+        "projection_unchanged_and_frozen": true,
+        "c0_zero_binding_and_no_queue": true,
+        "optimizer_unit_ratio_gates": true,
+        "c3b_hard_active_exactly_4_of_8": true,
+        "resume_trace_equal": true,
+        "resume_step2_ratio_equal": true,
+        "resume_adapter_hash_equal": true,
+        "resume_queue_hash_equal": true,
+        "config_hash_matches": true,
+        "vram_headroom": true,
+        "no_generation_core100_or_heldout": true
+      },
+      "overall_pass": true
+    }
+  ],
+  "cross_arm_draw_trace_equal": {
+    "C0R_concurrent_constant20": true,
+    "C3a_multi_positive_global_binding": true,
+    "C3b_hierarchical_hard_negative_binding": true
+  },
+  "cross_arm_draw_gate_pass": true,
+  "overall_pass": true,
+  "next_authorized_package": "Step3C-T_T3_full_three_arm_training",
+  "second_recovery_attempt_authorized": false,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

@@ -1,0 +1,37 @@
+{
+  "name": "step3ct_t2r_r3_execution_record_v1",
+  "git_head": "3e9c52dd6456182a6c7913a23587ab40207c0958",
+  "config": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json",
+  "config_sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+  "commands": [
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_t2r_smoke.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm C0R_concurrent_constant20 --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1_t2r/runs/smoke_t2r/C0R_concurrent_constant20/original",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_t2r_smoke.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm C0R_concurrent_constant20 --resume-from experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1_t2r/runs/smoke_t2r/C0R_concurrent_constant20/original/checkpoints/step0001 --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1_t2r/runs/smoke_t2r/C0R_concurrent_constant20/resume_from_step1",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_t2r_smoke.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm C3a_multi_positive_global_binding --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1_t2r/runs/smoke_t2r/C3a_multi_positive_global_binding/original",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_t2r_smoke.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm C3a_multi_positive_global_binding --resume-from experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1_t2r/runs/smoke_t2r/C3a_multi_positive_global_binding/original/checkpoints/step0001 --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1_t2r/runs/smoke_t2r/C3a_multi_positive_global_binding/resume_from_step1",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_t2r_smoke.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm C3b_hierarchical_hard_negative_binding --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1_t2r/runs/smoke_t2r/C3b_hierarchical_hard_negative_binding/original",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_t2r_smoke.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm C3b_hierarchical_hard_negative_binding --resume-from experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1_t2r/runs/smoke_t2r/C3b_hierarchical_hard_negative_binding/original/checkpoints/step0001 --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1_t2r/runs/smoke_t2r/C3b_hierarchical_hard_negative_binding/resume_from_step1",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/analyze_step3ct_t2r_smoke.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json"
+  ],
+  "output_path_reconciliation": {
+    "reason": "The immutable T2R config inherited the parent output_dir, while the launch commands initially placed fresh runs below the T2R result root.",
+    "action": "Moved the same completed smoke_t2r directory without editing code, config, model state, checkpoints, manifests, or traces.",
+    "source": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1_t2r/runs/smoke_t2r",
+    "destination": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/smoke_t2r",
+    "destination_matches_frozen_analyzer": true,
+    "numerical_rerun": false
+  },
+  "runs": [
+    {"arm": "C0R_concurrent_constant20", "kind": "original", "start_step": 0, "optimizer_steps": 2, "wall_clock_seconds": 56.222246408462524},
+    {"arm": "C0R_concurrent_constant20", "kind": "resume_from_step1", "start_step": 1, "optimizer_steps": 1, "wall_clock_seconds": 36.99360775947571},
+    {"arm": "C3a_multi_positive_global_binding", "kind": "original", "start_step": 0, "optimizer_steps": 2, "wall_clock_seconds": 84.33904552459717},
+    {"arm": "C3a_multi_positive_global_binding", "kind": "resume_from_step1", "start_step": 1, "optimizer_steps": 1, "wall_clock_seconds": 53.77412462234497},
+    {"arm": "C3b_hierarchical_hard_negative_binding", "kind": "original", "start_step": 0, "optimizer_steps": 2, "wall_clock_seconds": 81.76708889007568},
+    {"arm": "C3b_hierarchical_hard_negative_binding", "kind": "resume_from_step1", "start_step": 1, "optimizer_steps": 1, "wall_clock_seconds": 53.743839740753174}
+  ],
+  "route": "RR2_three_arm_smoke_requalified",
+  "next_authorized_package": "Step3C-T_T3_full_three_arm_training",
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "adapters_or_checkpoints_committed": false
+}
