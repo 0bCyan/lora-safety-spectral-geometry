@@ -1,0 +1,30 @@
+{
+  "name": "step3ct_t5r_p2_reviewer_environment_qualification_v1",
+  "qualified_at": "2026-07-24T22:10:13+08:00",
+  "p1_commit": "929997c2cc2f3fc9cf772c2a8ec7cdc53306faa5",
+  "required_domain": "safety",
+  "required_independent_reviewers": 2,
+  "environments": [
+    {
+      "environment": "external_human_review",
+      "available": false,
+      "qualified": false,
+      "reason": "No approved external human reviewers are available through the experiment-machine session."
+    },
+    {
+      "environment": "local_independent_model_subagent",
+      "available": true,
+      "qualified": false,
+      "reason": "The executor cannot establish the exact model ID/version required by the frozen provenance contract or establish policy-compliant access to the complete unchanged safety packet before launch. The prior T5 model-review environment also produced a packet-access gateway incident; failed T5 sessions remain ineligible."
+    }
+  ],
+  "new_reviewer_session_launched": false,
+  "safety_packet_opened_by_prospective_reviewer": false,
+  "quality_packet_opened_by_prospective_reviewer": false,
+  "utility_packet_opened_by_prospective_reviewer": false,
+  "gateway_probe_using_study_rows": false,
+  "packet_transformed_or_sanitized": false,
+  "qualified_reviewer_count": 0,
+  "qualification_pass": false,
+  "route": "T5R1_reviewer_access_stop"
+}
