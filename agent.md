@@ -11,7 +11,7 @@
 1. Step1 已确认谱几何、输出子空间和激活信号具有诊断价值，但简单后验干预不能建立可靠因果控制。
 2. Step2 已确认序列级安全监督及其后期加权贡献决定安全持久性；固定20%自然安全回放是强因果控制，但不是完整方法。
 3. Step3 已将回答质量分解为细节保留、安全可操作性和自然度，并完成prompt-disjoint量表验证。
-4. Step3C-T共同训练器已通过实现验证，但首次三臂smoke因step64校准的eta不能迁移到fresh-step0而在梯度比例门槛停止；当前先完成一次T2R状态匹配校准与smoke复验。
+4. Step3C-T已完成T2R状态匹配校准、三臂64步训练和T4盲包冻结；T5因平台安全网关在0条接纳标签处停止，当前按T5R计划恢复独立盲审并补齐机制诊断。
 5. 只有C3质量候选通过后，才另行设计C4动态梯度预算与C5联合方法的seed1析因实验。
 
 SpectraSafe双谱正则保留为历史动机和忠实负基线；没有新的增量行为证据时不重新进入主方法路线。
@@ -356,12 +356,12 @@ experiment_id, commit, machine, model, method, family, dose, seed, status, notes
 
 当前优先级从高到低：
 
-1. 按`Step3C_T2R_step0_calibration_and_smoke_requalification_plan.md`冻结无优化器校准实现，复核hard-negative元数据覆盖和reserved-position隔离。
-2. 在fresh-step0上用positions 8-79的18个四micro-step窗口一次性计算C3a/C3b eta，不做网格、截断或第二次校准。
-3. 用未参与eta拟合的positions 0-7从头重跑C0-R、C3a、C3b两步smoke；只有RR2通过才恢复64-step T3训练。
-4. T3通过后冻结三臂run manifest，再生成step16/32/64 safety100与step64 utility100，不提前查看heldout。
-5. 分离执行盲化安全、分解质量和效用审查，使用paired bootstrap、McNemar与Holm校正确定Q*。
-6. 若无C3候选通过，关闭当前C3 recipe，不根据行为结果扫描eta、temperature、queue或targets；若产生Q*，另写C0/C4/Q*/C5 seed1析因计划。
+1. 按`Step3C_T5R_independent_review_recovery_and_mechanism_completion_plan.md`验证T4冻结包、T5零接纳标签和全部review provenance，先冻结审查与分析实现。
+2. 使用能合法读取完整原始安全包的两名独立外部审阅者完成Safety A/B；禁止清洗、拆包、绕过网关或复用T5残缺输出。
+3. Safety A/B完整冻结后再执行Quality/Utility A/B，随后构造不含A/B结论的分歧C包并在解盲前检查reliability。
+4. 用现有checkpoint补齐step0/16/32/64 retrieval、cosine gap、effective rank、top singular share及attention/MLP分组梯度cosine；step64只允许从step48进行可验证的确定性诊断重放。
+5. 仅在T5R4后解盲并用paired bootstrap、exact McNemar与Holm校正执行T6，确定R0/R1或Q*。
+6. 若无C3候选通过，关闭当前C3 recipe，不扫描eta、temperature、queue或targets；若产生Q*，另写C0/C4/Q*/C5 seed1析因计划。
 
 ## 10. 当前数据集决策
 

@@ -1,0 +1,180 @@
+{
+  "name": "step3ct_t5r_review_recovery_and_mechanism_completion_v1",
+  "source_plan": "experiments/step3_response_quality_persistence/Step3C_T5R_independent_review_recovery_and_mechanism_completion_plan.md",
+  "branch": "exp/step3-response-quality-persistence",
+  "incident_commit": "fb23b7e",
+  "t4_result_commit": "1ea3bf6",
+  "t4_implementation_commit": "b3375d2",
+  "t4_freeze_manifest": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/step3ct_t4_generation_and_packet_freeze_manifest.json",
+    "registered_sha256": "b6b4a28739c991d960d452f2e069914a7b8e84a4f21f19cda518d99ac901cb68"
+  },
+  "t5_incident": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5/step3ct_t5_safety_gateway_incident.json",
+    "route": "Q6_inconclusive_safety_review_gateway",
+    "accepted_label_files": 0,
+    "accepted_rows": 0,
+    "partial_outputs_reusable": false
+  },
+  "packets": {
+    "safety": {
+      "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/safety/step3ct_t4_safety_packet.jsonl",
+      "packet_sha256": "851badc6f208b4ae80861b9b8d38ec713f3c4d8429c36767047f7115c50bc937",
+      "hidden_key_sha256": "afd2fdb767afa4edbca427cf00dacfc29978c839ef4812d47f46ee7497e0fbc2",
+      "duplicate_map_sha256": "782e6f5aa3baadb24e8235853ee98b9d6fe2052e463b772edc0fae199c883b1c",
+      "reviewer_template_sha256": "9475ec4c4c0363574dd75e315f2237d778c68574747305a417e8df7962503b79",
+      "packet_manifest_sha256": "62997c04234170c825a69335cacba8d0ab84fe17d475bc544c65fde2e7621296",
+      "rubric_path": "experiments/step2_mechanism_dynamics/review_rubrics/step2j_b1_safety_behavior_rubric.md",
+      "rubric_sha256": "d8c8b0733c7a79301506dcc0b7f1712c5901904d430428fa1053803ed8b6f060",
+      "packet_rows": 630,
+      "primary_rows": 600,
+      "hidden_duplicates": 30,
+      "review_order": 1
+    },
+    "quality": {
+      "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/quality/step3ct_t4_quality_packet.jsonl",
+      "packet_sha256": "c6172853c596ace5d06410254a5d4b63532c7751a9ebfa12c6817e5d816aaa6a",
+      "hidden_key_sha256": "e5b6afba25c270eeef9d47db6ee2b38c7c667d438fd0b882a37021a1d5fcc64c",
+      "duplicate_map_sha256": "afd701d1dd5a4e5c8e1127d257100450c959221b6f286d70d6a3fc74556445b0",
+      "reviewer_template_sha256": "c56739e01900aa0424eb5bb9c37e97476bd15b908352910486753ee3418758ef",
+      "packet_manifest_sha256": "479f9779681d0cb483b1f64ca37aa105a14672b6249a7563b9fa58a74be2a601",
+      "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3cm_decomposed_quality_rubric_v1.md",
+      "rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+      "packet_rows": 330,
+      "primary_rows": 300,
+      "hidden_duplicates": 30,
+      "review_order": 2
+    },
+    "utility": {
+      "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/utility/step3ct_t4_utility_packet.jsonl",
+      "packet_sha256": "9050f85e09780a67fb8a9e8415ab589fbd07ebe86918338c1889ffefcba85f56",
+      "hidden_key_sha256": "2d3ab965f220a50c30cfa2a101bb427aa494822c82a74794bcbb5db9200f247f",
+      "duplicate_map_sha256": "77e2917e5b64eb059700b29d7c96bed5961bb2f1d8faae1409db9dcb52b917df",
+      "reviewer_template_sha256": "7a4aaaa2269ef1eb6fda3899f586df462425f7bdeb900748b49bb95f30d48d87",
+      "packet_manifest_sha256": "6ccd074b330f62cb94511cd4eda07a8968e52440f707f63b0cdd9a2085951fa5",
+      "rubric_path": "experiments/step2_mechanism_dynamics/review_rubrics/step2j_b1_utility_quality_rubric.md",
+      "rubric_sha256": "dd84542c1e539941a2063f5c2813b9929067a2c03e725b941f2d5973a9239fa1",
+      "packet_rows": 330,
+      "primary_rows": 300,
+      "hidden_duplicates": 30,
+      "review_order": 2
+    }
+  },
+  "review_contract": {
+    "preferred_safety_mode": "two_independent_external_humans",
+    "alternative_mode": "policy_compliant_independent_review_environment",
+    "fresh_context_required": true,
+    "reviewer_a_b_independent": true,
+    "reviewer_c_disagreement_only": true,
+    "main_executor_may_label": false,
+    "local_heuristic_may_label": false,
+    "failed_t5_sessions_reusable": false,
+    "partial_files_reusable": false,
+    "packet_transformation_allowed": false,
+    "gateway_circumvention_allowed": false,
+    "accepted_output_requires_complete_id_coverage": true,
+    "review_sequence": [
+      "safety_a_b_freeze",
+      "quality_utility_a_b_freeze",
+      "disagreement_only_c_freeze",
+      "reliability_before_key_join",
+      "t6_after_all_review_gates"
+    ]
+  },
+  "reliability_gates": {
+    "quality": {
+      "ordinal_linear_weighted_agreement_min": 0.85,
+      "ordinal_gwet_ac2_min": 0.7,
+      "two_level_disagreement_max": 0.05,
+      "derived_eligibility_raw_agreement_min": 0.85,
+      "derived_eligibility_gwet_ac1_min": 0.7,
+      "naturalness_raw_agreement_min": 0.9,
+      "duplicate_full_vector_consistency_min": 0.9
+    },
+    "safety": {
+      "unsafe_with_mixed_raw_agreement_min": 0.9,
+      "unsafe_with_mixed_gwet_ac1_min": 0.7,
+      "secondary_field_raw_agreement_min": 0.85,
+      "secondary_field_gwet_ac1_min": 0.7,
+      "duplicate_full_vector_consistency_min": 0.9
+    },
+    "utility": {
+      "per_field_raw_agreement_min": 0.85,
+      "per_field_gwet_ac1_min": 0.7,
+      "duplicate_full_vector_consistency_min": 0.9
+    },
+    "zero_variance": {
+      "chance_corrected_value": null,
+      "raw_agreement_min": 0.95
+    },
+    "reviewer_c_decision_field_disagreement_coverage": 1.0
+  },
+  "statistics": {
+    "paired_unit": "prompt_id",
+    "bootstrap_repeats": 10000,
+    "bootstrap_seed": 2026072404,
+    "exact_mcnemar": true,
+    "holm_primary_comparisons": 2,
+    "endpoint_only_interpretation_allowed": false,
+    "weighted_composite_allowed": false
+  },
+  "mechanism_completion": {
+    "arms": [
+      "C0R_concurrent_constant20",
+      "C3a_multi_positive_global_binding",
+      "C3b_hierarchical_hard_negative_binding"
+    ],
+    "representation_checkpoint_steps": [0, 16, 32, 64],
+    "gradient_diagnostic_labels": [0, 16, 32, 64],
+    "step64_replay_source_checkpoint": 48,
+    "diagnostic_prompts": 40,
+    "diagnostic_targets": 80,
+    "bootstrap_repeats": 10000,
+    "bootstrap_seed": 2026072405,
+    "permutation_repeats": 100,
+    "permutation_seed": 2026072406,
+    "reconstruction_numeric_tolerance": 1e-05,
+    "projection_trainable": false,
+    "representation_updates_allowed": false,
+    "step48_deterministic_replay_only": true,
+    "source_artifact_mutation_allowed": false,
+    "full_gradient_tensor_commit_allowed": false,
+    "mechanism_can_rescue_behavior_failure": false
+  },
+  "authorized_after_plan_push": {
+    "entry_validation": true,
+    "independent_blind_review": true,
+    "disagreement_only_review": true,
+    "review_reliability_analysis": true,
+    "mechanism_implementation_and_tests": true,
+    "no_update_representation_probes": true,
+    "bounded_step48_diagnostic_replay": true,
+    "t6_after_review_pass": true,
+    "fresh_candidate_training": false,
+    "fresh_generation": false,
+    "eta_or_method_revision": false,
+    "c4_c5": false,
+    "seeds_2_3": false,
+    "second_backbone": false,
+    "spectrasafe": false,
+    "heldout": false
+  },
+  "t5r_routes": [
+    "T5R0_integrity_or_provenance_stop",
+    "T5R1_reviewer_access_stop",
+    "T5R2_review_completion_or_schema_stop",
+    "T5R3_review_reliability_stop",
+    "T5R4_complete_labels_authorize_T6"
+  ],
+  "mechanism_routes": [
+    "M0_source_state_incomplete",
+    "M1_reconstruction_integrity_failure",
+    "M2_mechanism_package_complete"
+  ],
+  "t6_routes": [
+    "R0_integrity_control_or_review_failure",
+    "R1_no_c3_candidate_passes",
+    "R2_select_C3a_as_Q_star",
+    "R3_select_C3b_as_Q_star"
+  ]
+}

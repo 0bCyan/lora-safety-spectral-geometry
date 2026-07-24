@@ -1,174 +1,217 @@
-# Experiment Machine Task: Step3C-T2R Calibration Recovery
+# Experiment Machine Task: Step3C-T5R Review Recovery and Mechanism Completion
 
 ## Authorization
 
-Pull `exp/step3-response-quality-persistence` and execute only:
+Pull `exp/step3-response-quality-persistence` and follow only:
 
 ```text
-experiments/step3_response_quality_persistence/Step3C_T2R_step0_calibration_and_smoke_requalification_plan.md
-experiments/step3_response_quality_persistence/configs/step3ct_t2r_calibration_registry.json
+experiments/step3_response_quality_persistence/Step3C_T5R_independent_review_recovery_and_mechanism_completion_plan.md
+experiments/step3_response_quality_persistence/configs/step3ct_t5r_review_recovery_registry.json
 ```
 
-The original Step3C-T T1 implementation passed. The original T2 three-arm smoke stopped because C3a/C3b eta-weighted binding-to-safety gradient ratios were `0.1224526705070722` and `0.07850547121816243`, below the frozen `[0.20, 0.30]` interval.
+Step3C-T3 training and T4 generation are complete. T5 produced zero accepted labels because Safety Reviewer A was blocked by a platform safety gateway. This is an inconclusive reviewer-access incident, not a candidate failure.
 
-No main training or candidate generation occurred. This handoff authorizes one state-matched no-update recalibration and one complete fresh three-arm smoke requalification. It does not authorize direct continuation from the failed smoke.
+The next work has two tracks:
 
-The recovery plan supersedes only the old eta values after R2 and the original single-microstep ratio gate. Every other parent-plan gate remains active.
+1. recover independent blind review on the unchanged T4 packets and then run T6;
+2. complete the missing representation and grouped-gradient diagnostics from the frozen T3 states.
+
+No fresh candidate training or generation is authorized.
 
 ## Global Prohibitions
 
-- Do not overwrite the original T1/T2 config, reports, manifests, runs, checkpoints, or hashes.
-- Do not generate safety or utility behavior during recovery.
-- Do not open core100 or heldout.
-- Do not change the model, data, target text/order, queue, temperature, projection, hard multiplier, safety weight, optimizer, scheduler, decoding, endpoint, or arm set.
-- Do not grid-search, round, clip, manually edit, or repeatedly recalibrate eta.
-- Do not run C4, C5, adaptive eta, SpectraSafe, seeds 2/3, or a second backbone.
-- Do not commit adapters, checkpoints, caches, large raw tensors, or unrelated paper files.
+- Do not overwrite T3, T4, or T5 artifacts.
+- Do not modify or regenerate any T4 packet, hidden key, duplicate map, template, rubric, row order, or opaque ID.
+- Do not reuse failed T5 sessions or any partial T5 output.
+- Do not sanitize, redact, paraphrase, split, truncate, or selectively omit packet rows to bypass a gateway.
+- Do not let the main executor, a heuristic, a keyword rule, an embedding rule, or a local classifier assign outcome labels.
+- Do not open heldout.
+- Do not tune eta, temperature, queue, targets, hard multiplier, projection, decoding, or behavior thresholds.
+- Do not run C4, C5, seeds 2/3, a second backbone, SpectraSafe, or another candidate.
+- Do not commit adapters, checkpoints, caches, full gradient tensors, raw API caches, or unrelated paper files.
 
-## Entry Checks
+## Package P1: Entry and Implementation Freeze
 
-1. Record pulled `HEAD`, environment, GPU, CUDA, torch, transformers, peft, bitsandbytes, and available VRAM.
-2. Verify the original T1 pass and T2 ratio-stop reports and hashes.
-3. Verify main training, candidate generation, core100, and heldout flags are all false.
-4. Verify the original execution config and all immutable parent-contract values match the recovery registry.
-5. Verify no unrelated tracked or untracked file will be committed.
+### Entry audit
 
-## Package R1: Recovery Implementation Freeze
+Record pulled HEAD, environment, GPU, CUDA, torch, transformers, PEFT, and available VRAM. Verify:
 
-Implement separate recovery paths for no-update calibration and all-microstep smoke diagnostics.
+- commits `b3375d2`, `1ea3bf6`, and `fb23b7e` are ancestors of HEAD;
+- all registry hashes match;
+- T4 contains exactly 12 generation manifests and 1,200 generated rows;
+- packet rows are safety `630`, quality `330`, and utility `330`;
+- T5 accepted files and accepted rows are both zero;
+- no partial T5 output is present or reused;
+- heldout is closed and no new training/generation occurred.
 
-### Metadata audit
+Hash mismatch or provenance failure selects `T5R0_integrity_or_provenance_stop`.
 
-Reproduce exactly under the frozen queue policy:
+### Implement before review
 
-```text
-target positions: 80
-C3b hard-active positions 0-79: 58
-eta-fit-excluded smoke positions: 0-7
-C3b hard-active eta-fit-excluded positions: 4
-eta-fit positions: 8-79
-C3b hard-active fit positions: 54
-C3b hard-active fit windows: 17/18
-position 0 hard-negative count: 0
-```
+Implement and test dedicated tools for:
 
-Any mismatch is an integrity stop.
+- T5R entry/hash validation;
+- reviewer-output schema and exact-ID validation;
+- complete-output freeze manifests and reviewer provenance;
+- A/B decision-field comparison without arm-key join;
+- disagreement-only C packet construction with no A/B labels or reasons;
+- Gwet AC1/AC2, weighted agreement, raw agreement, duplicate consistency, and zero-variance handling;
+- adjudication and T6 statistics;
+- mechanism representation probes and exact grouped-gradient reconstruction.
 
-### Calibration implementation
+Tests must use synthetic fixtures only. Do not inspect study responses while developing tests. Push P1 before a study reviewer or model checkpoint is launched.
 
-- Use a fresh base model and the exact seed1 LoRA initialization used by a main run.
-- Construct zero optimizer and scheduler objects and take zero optimizer steps.
-- Reproduce the trainer's risk-forward, safety-gradient, and binding order, including training-mode safety dropout and exact CPU/CUDA RNG progression.
-- Simulate the exact queue trajectory over positions 0-79 with the model fixed at step0.
-- Advance positions 0-7 but exclude their gradients from eta fitting; do not read old uncommitted per-microstep traces.
-- At positions 8-79, capture separate unweighted LoRA gradients for safety NLL, C3a binding, and C3b binding.
-- Give C3a/C3b identical queue snapshots at each position and update the common disposable queue only after both are captured.
-- Aggregate gradients into 18 consecutive four-position windows.
-- Use fixed parameter order and CPU float64 window accumulation; commit scalar diagnostics and hashes, not full gradient tensors.
-- Preserve binding RNG isolation and disabled binding dropout.
+## Package P2: Safety A/B Gateway
 
-### Tests
+Preferred route: two independent external human safety reviewers. A model-review route is acceptable only in a lawful policy-compliant environment that can inspect the complete unchanged packet.
 
-Run every test in the recovery plan, including forward/RNG equivalence, fit-excluded-position isolation, exact position/window coverage, queue equality, hard-active counts, fp16 coefficient removal, finite gradients, serialization invariance, and original-artifact immutability.
+For Safety A and B:
 
-Freeze and push R1 before numerical calibration.
+- use new reviewer IDs and fresh contexts;
+- expose only the safety packet, blank role-specific template, and frozen safety rubric;
+- expose no git history, arm identity, training result, hidden key, duplicate link, prior label, or other reviewer output;
+- require exactly 630 unique output IDs and the complete schema;
+- record exact reviewer/session provenance and input/output hashes;
+- freeze both complete files before comparison.
 
-## Package R2: One-Shot Eta Freeze
+If either reviewer cannot complete, accept zero labels from that failed role, record an incident, select `T5R1_reviewer_access_stop`, and stop. Do not start quality or utility under that launch.
 
-For each C3 arm and each four-position fit window:
+## Package P3: Quality and Utility A/B
 
-```text
-r_window = ||sum_4 g_bind|| / ||sum_4 g_safe||
-eta = 0.25 / median(r_window over positions 8-79)
-```
-
-Use NumPy linear interpolation for quantiles. Do not use positions 0-7 or old uncommitted traces to derive eta.
-
-Apply the frozen gates:
-
-- 18 complete windows;
-- finite non-zero gradients and ratios;
-- eta in `[0.01, 0.30]` without clipping;
-- eta-weighted median ratio in `[0.20, 0.30]`;
-- eta-weighted ratio p90 `<=0.75`;
-- no fit-window ratio above `1.00`;
-- unchanged model/projection hashes;
-- C3b hard-active fit count exactly 54.
-
-Report C3a-C3b cosine, orthogonal residual, hard-active stratification, and layer-energy results without tuning against them. Apply the registered descriptive redundancy warning, but do not use it to drop an arm.
-
-If either arm fails, commit `RR1_fixed_eta_calibration_not_stable` and stop. Do not try another subset or setting.
-
-If both pass, create and freeze:
+Only after complete Safety A/B freeze, launch separate fresh sessions for:
 
 ```text
-experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json
+Quality A / Quality B: 330 rows each
+Utility A / Utility B: 330 rows each
 ```
 
-This must be a new config. Preserve the old config unchanged. Push R2 before constructing a recovery-smoke optimizer.
+Apply the same independence, complete-coverage, schema, provenance, and freeze requirements. Safety, quality, and utility reviewers must remain separate. Push all six complete A/B outputs before comparison.
 
-## Package R3: Fresh Three-Arm Smoke
+## Package P4: Reviewer C and Reliability
 
-Run exactly two optimizer steps plus resume-from-step1 for:
+After all A/B files are frozen:
+
+1. compare decision fields without joining hidden arm/checkpoint keys;
+2. build one disagreement-only C packet per domain;
+3. include every row with at least one A/B decision-field disagreement;
+4. omit A/B labels, reasons, identities, vote counts, arm/checkpoint fields, and duplicate links;
+5. freeze C packet hashes before launch;
+6. obtain complete fresh Reviewer C coverage;
+7. compute reliability on primary rows and duplicate consistency separately.
+
+Apply every threshold in the plan and registry. Zero-variance chance-corrected agreement is `NA/undefined`, with raw agreement `>=0.95`. Do not join the outcome key if any reliability gate fails.
+
+Select exactly one T5R route:
 
 ```text
-C0R_concurrent_constant20
-C3a_multi_positive_global_binding
-C3b_hierarchical_hard_negative_binding
+T5R0_integrity_or_provenance_stop
+T5R1_reviewer_access_stop
+T5R2_review_completion_or_schema_stop
+T5R3_review_reliability_stop
+T5R4_complete_labels_authorize_T6
 ```
 
-Use fresh initialization and new `smoke_t2r` output directories. Do not reuse old states or outputs.
+Only `T5R4` authorizes T6.
 
-Capture separate branch gradients for all eight target positions and compute:
+## Package P5: Mechanism Implementation Freeze
+
+This package may proceed while external review is pending, but reviewers must not see its results.
+
+Inventory immutable source states for C0-R, C3a, and C3b at steps 0/16/32/48/64, including adapter, optimizer, scheduler, scaler, queue, target-position, RNG, projection, config, trace, and manifest hashes.
+
+Implement a new output root and no-update representation probes for steps 0/16/32/64. Reuse the existing tested retrieval and effective-rank definitions. Add tests for:
+
+- source-checkpoint immutability;
+- exact 40-prompt/80-target coverage;
+- cross-arm order equality;
+- deterministic rerun equality;
+- RNG restoration and disabled diagnostic dropout;
+- retrieval and effective-rank fixtures;
+- attention/MLP parameter grouping;
+- grouped cosine fixtures;
+- no full-gradient serialization.
+
+Push implementation and tests before executing a model checkpoint.
+
+## Package P6: Mechanism Execution
+
+### Representation trajectories
+
+For all three arms at steps 0/16/32/64, report:
+
+- top1, top5, MRR, and multi-positive recall@5;
+- positive, global-negative, and same-category-hard-negative cosine distributions;
+- positive-minus-global and positive-minus-hard prompt-cluster gaps;
+- 10,000 bootstrap intervals with seed `2026072405`;
+- 100 permutation controls with seed `2026072406`;
+- prompt/target effective rank and top singular-value share;
+- opaque per-prompt metrics for later behavior association.
+
+### Grouped-gradient completion
+
+- labels 0/16/32: load the matching state and run the exact registered four-microstep diagnostic unit without an update;
+- label64: load checkpoint48 and deterministically replay completed steps 49-63 in a disposable directory before capturing the pre-update step64 unit;
+- optionally apply disposable update64 only to verify exact frozen checkpoint64 hashes.
+
+Before accepting grouped results, reproduce original global norms, ratios, cosines, hard-active counts, energy shares, draw hashes, queue hashes, traces, and final hashes within frozen tolerances.
+
+Report attention-only, MLP-only, and per-layer binding-safety cosine, plus C3a-C3b direction/residual results. Mechanism results are explanatory and cannot select or rescue a candidate.
+
+Select one mechanism route:
 
 ```text
-R_step = eta * ||sum_4 g_bind|| / ||sum_4 g_safe||
-R_smoke = eta * ||sum_8 g_bind|| / ||sum_8 g_safe||
+M0_source_state_incomplete
+M1_reconstruction_integrity_failure
+M2_mechanism_package_complete
 ```
 
-Required gates:
+## Package P7: T6
 
-- every original T2 finite-loss, parameter, projection, queue, resume, draw, and VRAM gate;
-- C0-R zero binding and no queue;
-- each C3 `R_step` in `[0.10, 0.50]`;
-- each C3 `R_smoke` in `[0.15, 0.35]`;
-- C3b hard term active at exactly 4/8 positions;
-- exact cross-arm risk and safety draw traces;
-- exact resume adapter hash and numerical agreement within tolerance;
-- no generation, core100, or heldout access.
+Only after `T5R4`, join frozen adjudicated labels to hidden arm/checkpoint keys and execute the parent-plan statistics with:
 
-The first-microstep ratio remains descriptive and cannot fail or pass recovery by itself.
+```text
+paired unit: prompt ID
+bootstrap repeats: 10,000
+bootstrap seed: 2026072404
+tests: exact McNemar
+primary multiplicity: Holm across two C3-vs-C0 comparisons
+```
 
-## Route
+Apply all control, safety, quality, utility, and selection gates exactly as frozen. Report all endpoints and trajectories regardless of direction.
 
 Select exactly one:
 
 ```text
-RR0_integrity_or_provenance_failure
-RR1_fixed_eta_calibration_not_stable
-RR2_three_arm_smoke_requalified
+R0_integrity_control_or_review_failure
+R1_no_c3_candidate_passes
+R2_select_C3a_as_Q_star
+R3_select_C3b_as_Q_star
 ```
 
-Only a committed and pushed `RR2` restores authorization for the original Step3C-T T3 64-step three-arm training under the new T2R config. T3 keeps eta fixed and records optimizer-unit ratios at registered diagnostics without adapting them. `RR0` or `RR1` stops the fixed-eta C3 recovery with no second rescue attempt.
+`R1` closes the current C3 recipe without scans. `R2` or `R3` authorizes only a request for a separate C4/Q*/C5 seed1 plan.
 
-## Required Commit Boundaries
+## Commit Boundaries
 
-1. R1 implementation, tests, metadata audit, environment, source and code hashes.
-2. R2 raw calibration evidence, eta derivation, direction analysis, new config and hashes.
-3. R3 all three smoke/resume manifests, complete gate table, route and next authorization.
+1. P1 entry and implementation freeze.
+2. P2 Safety A/B freeze or access-stop incident.
+3. P3 Quality/Utility A/B freeze.
+4. P4 C labels, reliability, and T5R route.
+5. P5 mechanism implementation freeze.
+6. P6 mechanism evidence and route.
+7. P7 T6 gate table, route, and next authorization.
 
-Push every commit before starting the next package.
+Push every boundary before its dependent package.
 
 ## Required Return State
 
-Every package report must include:
+Each package must include:
 
 - entry/result commit and exact commands;
-- environment, runtime, and peak VRAM;
-- source, config, code, projection, queue, and output hashes;
-- exact position/window counts and hard-active counts;
-- all registered ratios, quantiles, eta values, and gates;
-- optimizer/scheduler object counts and optimizer steps;
-- old-artifact immutability confirmation;
-- candidate generation, core100, and heldout flags;
-- one authorized next package or explicit stop.
+- environment or reviewer provenance;
+- all source/input/output/code/config/rubric hashes;
+- complete gate table and denominators;
+- accepted/rejected/partial artifact counts;
+- checkpoint/source immutability;
+- core100 and heldout flags;
+- one route and one authorized next action;
+- confirmation that no unrelated paper file or large runtime artifact was committed.
