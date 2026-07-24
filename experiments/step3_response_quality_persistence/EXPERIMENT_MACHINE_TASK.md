@@ -1,134 +1,158 @@
-# Experiment Machine Task: Step3C-R Batched End-to-End Execution
+# Experiment Machine Task: Step3C-MF Measurement and No-Update Feasibility
 
 ## Authorization
 
-The 4070 Ti experiment machine owns the complete C-R0 through C-R3 workflow. The scientific design is defined in `Step3C_R_measurement_recovery_and_C3_execution_plan.md`; the prospective pre-label amendment and current execution contract are defined in `Step3C_R_batched_execution_plan.md`.
+Pull `exp/step3-response-quality-persistence` and execute only the workflow in `Step3C_MF_decomposed_measurement_and_c3_feasibility_plan.md`.
 
-This is conditional end-to-end authorization. The experiment machine should complete each full work package, commit and push it, and continue without waiting for routine confirmation when all frozen gates pass:
+The previous `Step3C_R_batched_execution_plan.md` stopped at C-R0 after its second complete reliability failure. Its P2-P5 training path is no longer authorized. Step3C-MF is a new measurement-development and no-update feasibility study, not C-R0 v3.
 
-- execute P0 protocol hardening before any reviewer label;
-- execute P1 independent C-R0 review and route selection;
-- execute P2 C-R1 no-update C3 diagnostics only if C-R0 passes;
-- execute P3/P4 seed1 C0-R/C3a/C3b training and independent evaluation only for candidates passing C-R1;
-- execute P5 C0-R/C4-R/Q*/C5-R factorial only if C-R2 selects Q*;
-- commit and push after every complete work package;
-- stop immediately when a frozen gate fails.
+Authorized:
+
+- independent development review and at most one development-only rubric clarification;
+- one development-untouched validation review after the active rubric freezes;
+- C3a/C3b implementation and no-update representation/gradient/memory diagnostics;
+- mechanism atlas and joint route decision;
+- commits and pushes at the frozen boundaries below.
 
 Not authorized:
 
-- C2 revival or additional mechanical-negative generation;
-- relaxation of the stopped Stage 0 reliability gate;
-- behavior-based hyperparameter sweeps;
-- seed2/3, heldout, second backbone, or SpectraSafe;
-- paper edits or claims;
-- main-executor blind labels.
+- reuse of old C-R0 labels as Step3C-M labels;
+- any validation rubric revision;
+- optimizer or scheduler construction, optimizer steps, candidate training, or candidate generation;
+- core100 behavior inspection for protocol or hyperparameter decisions;
+- heldout, seed2/3, second backbone, SpectraSafe, or paper claims.
 
 ## Preconditions
 
-1. Pull `exp/step3-response-quality-persistence` and record `HEAD`.
-2. Confirm the worktree is clean before implementation.
-3. Validate `configs/step3cr_recovery_registry.json` against the recovery plan.
-4. Confirm all 47 stopped Stage 0 artifacts exist and use symmetric EOL classification to prove that no non-EOL hash mismatch remains.
-5. Confirm heldout remains unopened and core100 is not used for training.
-6. Confirm the frozen constant20 checkpoint and Qwen3-4B offline cache exist.
-7. Confirm CUDA and at least 10% VRAM headroom.
+1. Pull the active branch and record `HEAD`.
+2. Confirm no unrelated tracked or untracked files will be committed.
+3. Run `python -m py_compile` on both new local scripts.
+4. Run `prepare_step3cm_measurement_protocol.py test-fixtures` and `verify-protocol`.
+5. Confirm the protocol manifest has zero mismatches, 40 safety-train prompt clusters, 127 primary source responses, and no core100/heldout/candidate output.
+6. Confirm the development and validation prompt sets are disjoint at 20/20.
+7. Confirm validation packet content remains sealed from all development reviewers.
+8. Confirm Qwen3-4B, the constant20 step64 adapter, CUDA, and at least 10% VRAM headroom before F1.
 
-## Work Package P0: C-R0 Protocol Hardening
+## Package E1: Development Review and Active Rubric Freeze
 
-Implement:
+### Independent A/B review
 
-- separate `>=7/8` reversal gates for preference and response-side specificity for each reviewer;
-- symmetric CRLF/LF legacy-artifact classification and canonical-LF output verification;
-- synthetic tests for reversal-gate failure, both EOL directions, non-EOL rejection, zero-variance metrics, and hidden-key isolation;
-- byte-equality checks proving the existing 40 canonical pairs, eight duplicates, seed, response text, and presentation order did not change unexpectedly.
+Launch Reviewer A and Reviewer B as separate fresh-context agents. Each receives only:
 
-Before creating reviewer labels, re-freeze all protocol artifacts, write the amendment report, and commit/push P0. Stop on any non-EOL mismatch or unexpected packet mutation.
+- `results/step3cm_protocol/packets/development/step3cm_development_packet.jsonl`;
+- the active decomposed-quality rubric.
 
-## Work Package P1: C-R0 Independent Review
+They must not receive hidden keys, duplicate keys, C-R0 labels, role identities, prior reports, git history, another reviewer's output, or validation content.
 
-Use independent fresh-context Reviewer A and Reviewer B. The main executor may prepare packets but must not label rows. Reviewer C sees only decision-field disagreements. Complete label validation, adjudication, agreement, both reversal gates, position-bias analysis, final labels, manifests, and the route report in one package.
+Each reviewer fills all 71 rows with exactly:
 
-Apply the frozen C-R0 gates. If the first session fails, permit one rubric clarification and a complete new blind session. If the second fails, write the stop report, commit, push, and stop.
+```text
+opaque_quality_id
+detail_retention
+safe_actionability
+naturalness
+short_reason
+```
 
-If C-R0 passes:
+Save outputs at the fixed `results/step3cm_protocol/reviews/development/` paths. Record fresh-context agent IDs and allowed inputs in a provenance file.
 
-- freeze final labels and the prompt-aware candidate-evaluation endpoint;
-- write a machine-readable route decision;
-- commit and push P1, then continue directly to P2.
+### Freeze, adjudicate, and summarize
 
-## Work Package P2: C-R1 No-Update Diagnostics and Mechanism Atlas
+Run:
 
-Implement and test the shared representation, C3a, and C3b exactly as registered. Run queue, temperature, gradient, retrieval, similarity-gap, permutation-control, effective-rank, layerwise-gradient, and memory diagnostics without creating an optimizer or scheduler.
+```text
+python experiments/step3_response_quality_persistence/scripts/prepare_step3cm_measurement_protocol.py validate-ab --split development
+python experiments/step3_response_quality_persistence/scripts/prepare_step3cm_measurement_protocol.py prepare-adjudication --split development
+```
 
-Required outputs:
+Launch fresh Reviewer C with only the disagreement packet and active rubric. C must not see A/B labels, A/B reasons, keys, roles, or reports. C returns a complete review-schema row for every disagreement ID.
 
-- embedding and similarity integrity;
-- selected queue and temperature with numerical rationale;
-- C3a/C3b loss and registered LoRA gradient norms;
-- calibrated `eta` and achieved gradient ratio;
-- peak allocated/reserved VRAM and headroom;
-- candidate pass/fail route.
+Then run:
 
-Commit and push the complete P2 implementation, diagnostics, mechanism atlas, and candidate route. If neither candidate passes, stop; otherwise continue directly to P3.
+```text
+python experiments/step3_response_quality_persistence/scripts/prepare_step3cm_measurement_protocol.py summarize --split development
+```
 
-## Work Package P3: C-R2 Common-Trainer Runs and Raw Freeze
+If development passes, run `freeze-active-rubric` and continue. If it fails, use at most one complete development-only clarification. Archive failed labels and hashes, update `active_rubric` prospectively, verify that both packet contents are unchanged, and rerun complete development with fresh A/B/C reviewers. A second failure closes the measurement route without opening validation.
 
-Implement one common trainer and run:
+```text
+python experiments/step3_response_quality_persistence/scripts/prepare_step3cm_measurement_protocol.py freeze-active-rubric
+```
 
-- C0-R common-trainer constant20 baseline;
-- C3a if eligible;
-- C3b if eligible.
+This command binds the final rubric hash and passing development-route hash to the unchanged validation packet. Do not rerun the initial `freeze-protocol` command after development labels exist.
 
-Qualify the common trainer with deterministic fixtures. Use matched data order, target texts, seed, QLoRA settings, checkpoints 0/16/32/64, and greedy decoding. Track loss components, gradient behavior, queue state, representation diagnostics, runtime, and VRAM. Generate matched core100 and utility outputs and freeze arm-hidden raw packets before review.
+Commit and push E1 with development labels, provenance, adjudication, agreement, route, active rubric, tests, and manifests.
 
-Commit and push P3 raw evidence before any outcome label or arm-key join.
+## Package E2: One-Shot Validation
 
-## Work Package P4: C-R2 Independent Evaluation and Winner Decision
+Proceed only after E1 passes. Freeze the final active-rubric hash into the validation manifest and prove the validation packet hash matches the local M0 freeze.
 
-Evaluation order:
+Launch fresh Reviewer A and Reviewer B that have not seen development labels, disagreements, reports, or validation keys. Give each only the 72-row validation packet and active rubric. Freeze complete A/B outputs before comparison.
 
-1. independent arm-hidden safety review;
-2. hard-gate exclusion;
-3. independent arm-hidden C-R0 pairwise quality review for surviving candidates;
-4. prompt-cluster bootstrap and route decision.
+Use the same `validate-ab`, `prepare-adjudication`, and `summarize` commands with `--split validation`. Reviewer C remains disagreement-only and blind to A/B labels/reasons and all keys.
 
-Add prompt-cluster uncertainty, checkpoint trajectories, and prespecified mechanism-to-behavior consistency analyses after all labels and keys freeze. Commit and push the frozen P4 winner decision. If no candidate passes, close C3 and stop; otherwise continue directly to P5.
+Validation permits no clarification, relabeling, threshold change, or second session. Apply every registered ordinal, derived-endpoint, naturalness, duplicate, and adjudication gate.
 
-## Work Package P5: C-R3 Factorial and Final Decision
+Commit and push E2 with labels, provenance, agreement, route, and complete hash manifest. If validation fails, record the stop and keep training unauthorized.
 
-Only after Q* is frozen, run or reuse byte-identical:
+## Package E3: C3a/C3b No-Update Feasibility
 
-- C0-R;
-- C4-R;
-- Q*;
-- C5-R.
+E3 may be implemented while reviews run, but its numerical config cannot depend on review outcomes. It must not generate behavior or construct an optimizer/scheduler.
 
-Freeze raw runs before arm-key joins. Apply the same independent safety, utility, and prompt-aware quality protocol. Report controller trajectories, gradient redistribution, main effects, and interaction without inferring an interaction from C5-R alone.
+### Common implementation
 
-Commit and push the final factorial report, then stop. Do not start replication or open heldout.
+Implement one shared diagnostic module for:
+
+- prompt and conditioned-response token masks;
+- final-layer mean pooling and L2 normalization;
+- two-layer GELU projection head, dimension 256;
+- multi-positive InfoNCE;
+- optional same-category hard-negative term;
+- deterministic queue sizes 32/16/8;
+- independent safety-SFT and binding gradient extraction on registered LoRA parameters.
+
+C3a and C3b may differ only through registered candidate flags. Test padding, truncation, positives/negatives, singleton categories, queue wraparound, determinism, hard-term disable equivalence, finite gradients, frozen base parameters, and zero optimizer steps.
+
+### Numerical run
+
+Use only frozen safety-train targets and calibration batches. Apply the registered queue, temperature, positive-probability, VRAM, and `eta` rules without grid expansion.
+
+Produce:
+
+- candidate configs and environment record;
+- loss/similarity/gradient raw arrays;
+- true and 100 shuffled prompt-target diagnostics;
+- retrieval top-1/top-5/MRR/multi-positive recall;
+- cosine distributions and bootstrap intervals;
+- effective rank and top singular-value share;
+- global and layer-group binding/safety gradient cosine;
+- layerwise gradient energy and finite/non-zero coverage;
+- peak allocated/reserved VRAM, headroom, and runtime;
+- candidate pass/fail and exact reason.
+
+## Package E4: Joint Decision
+
+After E2 and E3 freeze, write one joint report covering all four route cells:
+
+| validation | C3 feasibility | decision |
+| --- | --- | --- |
+| pass | candidate pass | request a new prospective seed1 training plan |
+| pass | no candidate | retain measurement, close C3 |
+| fail | candidate pass | record numerical feasibility, prohibit training |
+| fail | no candidate | close Step3C-MF |
+
+Commit and push E3/E4. Stop after the joint decision. Do not start training even on a joint pass.
 
 ## Required Return State
 
-At every work-package commit report:
+Every commit report must include:
 
-- commit hash and phase status;
-- commands and actual wall-clock runtime;
-- test and integrity results;
-- GPU/model/checkpoint confirmation when applicable;
-- row counts and canonical-LF hashes;
-- reviewer provenance and blindness confirmation without hidden keys;
-- gate values, pass/fail route, and next authorized phase;
-- confirmation that heldout remained closed.
+- commit hash, package status, exact commands, and wall-clock runtime;
+- Python/torch/CUDA/GPU/model/checkpoint environment where applicable;
+- row counts, reviewer IDs, allowed inputs, blindness declaration, and hashes;
+- metric values, confidence intervals, every gate, and pass/fail reason;
+- optimizer/scheduler object count and optimizer steps, all zero;
+- core100 and heldout access confirmation, both false;
+- next authorized package or explicit stop.
 
-The full artifact list, stop conditions, mechanism diagnostics, review isolation rules, and interpretation boundaries are mandatory as written in `Step3C_R_batched_execution_plan.md`.
-
-## Required Paths
-
-```text
-experiments/step3_response_quality_persistence/configs/step3cr_*
-experiments/step3_response_quality_persistence/review_rubrics/step3cr_*
-experiments/step3_response_quality_persistence/scripts/*step3cr*
-experiments/step3_response_quality_persistence/results/step3cr_*/
-```
-
-Do not commit model checkpoints, caches, raw hidden heldout content, or unrelated paper files.
+Do not commit checkpoints, caches, hidden heldout content, or unrelated paper files.

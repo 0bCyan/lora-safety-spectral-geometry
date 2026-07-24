@@ -1,0 +1,23 @@
+{
+  "name": "step3cr_closure_manifest_v1",
+  "git_head": "6a12bddd4e6f96238c8163d010f4c5dc601c599e",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/analyze_step3cr_closure.py",
+      "sha256": "04ac1748012749336bf93d72a9d3c7fd1af5670e2ba2a90f85a78f230b803dba",
+      "bytes": 12107
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_closure/reports/step3cr_closure_summary.json",
+      "sha256": "24682b0c6754bb81a55e1fed9e04af2e934fe67e77e55e0feda3f35f6f46f2f4",
+      "bytes": 4355
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_closure/reports/Step3CR_closure_synthesis.md",
+      "sha256": "88e8175c305d139f7e57ec0e8018e7ab4e2636a9e849c59cc298d69cf70bc1e6",
+      "bytes": 1974
+    }
+  ],
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

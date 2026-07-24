@@ -1,0 +1,128 @@
+{
+  "name": "step3cr_closure_summary_v1",
+  "git_head": "6a12bddd4e6f96238c8163d010f4c5dc601c599e",
+  "status": "cr0_closed_after_two_complete_measurement_gate_failures",
+  "session_1": {
+    "pair_preference": {
+      "n": 40,
+      "raw_agreement": 0.825,
+      "gwet_ac1": 0.7597082171207895,
+      "cohen_kappa": 0.6785304247990813
+    },
+    "specific_safe_next_step": {
+      "n": 80,
+      "raw_agreement": 1.0,
+      "gwet_ac1": 1.0,
+      "cohen_kappa": null
+    },
+    "overall_pass": false,
+    "descriptive_role_join": {
+      "canonical_pairs": 40,
+      "constant20_vs_natural_pairs": 29,
+      "constant20_wins": 2,
+      "natural_target_wins": 20,
+      "ties": 7,
+      "constant20_specific_yes_in_paired_clean_safe": 29,
+      "natural_specific_yes_in_paired_clean_safe": 29,
+      "specificity_by_role": {
+        "constant20_generated_negative_candidate": {
+          "yes": 29,
+          "no": 0,
+          "total": 29
+        },
+        "existing_natural_v1_target": {
+          "yes": 51,
+          "no": 0,
+          "total": 51
+        }
+      },
+      "adjudicated_canonical_pairs": 7
+    }
+  },
+  "session_2": {
+    "pair_preference": {
+      "n": 40,
+      "raw_agreement": 0.8,
+      "gwet_ac1": 0.7204629831841014,
+      "cohen_kappa": 0.6510359869138496
+    },
+    "specific_safe_next_step": {
+      "n": 80,
+      "raw_agreement": 0.9625,
+      "gwet_ac1": 0.956993100976615,
+      "cohen_kappa": 0.7087378640776701
+    },
+    "overall_pass": false,
+    "descriptive_role_join": {
+      "canonical_pairs": 40,
+      "constant20_vs_natural_pairs": 29,
+      "constant20_wins": 4,
+      "natural_target_wins": 19,
+      "ties": 6,
+      "constant20_specific_yes_in_paired_clean_safe": 26,
+      "natural_specific_yes_in_paired_clean_safe": 29,
+      "specificity_by_role": {
+        "constant20_generated_negative_candidate": {
+          "yes": 26,
+          "no": 3,
+          "total": 29
+        },
+        "existing_natural_v1_target": {
+          "yes": 49,
+          "no": 2,
+          "total": 51
+        }
+      },
+      "adjudicated_canonical_pairs": 11
+    }
+  },
+  "cross_session_final_winning_response": {
+    "matches": 33,
+    "n": 40,
+    "agreement": 0.825,
+    "post_adjudication_descriptive_only": true
+  },
+  "claim_boundary": {
+    "measurement_validated": false,
+    "c3_diagnostics_run": false,
+    "c3_training_run": false,
+    "c3_method_falsified": false,
+    "constant20_quality_gap_descriptive_only": true,
+    "heldout_opened": false,
+    "optimizer_steps": 0
+  },
+  "inputs": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/reports/step3cr_cr0_review_agreement.json",
+      "sha256": "d920e6ae4feeaf22ebe23a7f385f1e971df0f9c6778fc16595f178cc8785e13c"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reports/step3cr_cr0_v2_review_agreement.json",
+      "sha256": "135373fc3b52be61d46f54be99c8e25cebb3ecdd06e6987f084182ae9080e492"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_pairwise_hidden_key.csv",
+      "sha256": "5233eba7efa64e32892dd971207970f50532f67f20a5dd2ae7d647c32d14ff23"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/packets/step3cr_cr0_v2_pairwise_hidden_key.csv",
+      "sha256": "1ad13c94549c4afd2b6054188214670403134a9cac4d9e8886e86dad2ccf74ba"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/reviews/step3cr_cr0_final_canonical_labels.jsonl",
+      "sha256": "ecd6bc468677de4b5d32933a1273381c7a698e3be2b1cb440f58b2c2e3f22f21"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reviews/step3cr_cr0_v2_final_canonical_labels.jsonl",
+      "sha256": "68a6bc2aeea5c87b6e77777a97561f9ae3c1db895b474c04584da4216a50fe7d"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/reports/step3cr_cr0_route_decision.json",
+      "sha256": "c923f47a3a1cb89ed9421219557b7e30f631c4b967dab00b4d56dd2ef8719762"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reports/step3cr_cr0_v2_route_decision.json",
+      "sha256": "e67ccce9849d4069962405d465a07ac4eed03fd0799cf6a75b56d4d8ff3ba981"
+    }
+  ]
+}

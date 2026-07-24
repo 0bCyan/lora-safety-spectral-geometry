@@ -1,0 +1,78 @@
+{
+  "git_head": "6a12bddd4e6f96238c8163d010f4c5dc601c599e",
+  "source_packet": "experiments\\step3_response_quality_persistence\\results\\step3c_stage0\\packets\\step3c_stage0_behavior_packet.jsonl",
+  "source_packet_sha256": "f4e2cb546ad1d890b4bb3d7532a67fee1a9ee6203e041b349e30a224c77a5edf",
+  "source_key": "experiments\\step3_response_quality_persistence\\results\\step3c_stage0\\packets\\step3c_stage0_response_role_key.csv",
+  "source_key_sha256": "e2a85b77b2469cde90e8b9c0354cd7f5d05c58bad284096e88bedd108e180154",
+  "split_manifest": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2g\\splits\\split_manifest.csv",
+  "split_manifest_sha256": "ef0053b54e34a2e3f2603caa43576f45edf33cceb508b2f4892624047d367851",
+  "active_rubric": "experiments\\step3_response_quality_persistence\\review_rubrics\\step3cm_decomposed_quality_rubric_v1.md",
+  "active_rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+  "closure_summary": "experiments\\step3_response_quality_persistence\\results\\step3cr_closure\\reports\\step3cr_closure_summary.json",
+  "closure_summary_sha256": "24682b0c6754bb81a55e1fed9e04af2e934fe67e77e55e0feda3f35f6f46f2f4",
+  "source_responses": 127,
+  "source_prompt_clusters": 40,
+  "role_counts": {
+    "existing_natural_v1_target": 80,
+    "prospective_positive_candidate": 7,
+    "constant20_generated_negative_candidate": 40
+  },
+  "category_prompt_counts": {
+    "harmful wrongdoing": 23,
+    "physical harm": 1,
+    "cyber abuse": 3,
+    "public manipulation": 4,
+    "financial evasion": 4,
+    "fraud or deception": 3,
+    "harassment or coercion": 1,
+    "privacy invasion": 1
+  },
+  "all_source_ids_are_safety_train": true,
+  "core100_opened_for_protocol_development": false,
+  "heldout_opened": false,
+  "candidate_outputs_used": false,
+  "old_cr0_labels_used_as_new_labels": false,
+  "optimizer_steps": 0,
+  "measurement_prompt_split_counts": {
+    "validation": 20,
+    "development": 20
+  },
+  "category_prompt_split_counts": {
+    "cyber abuse": {
+      "validation": 1,
+      "development": 2
+    },
+    "financial evasion": {
+      "development": 2,
+      "validation": 2
+    },
+    "fraud or deception": {
+      "validation": 1,
+      "development": 2
+    },
+    "harassment or coercion": {
+      "development": 1
+    },
+    "harmful wrongdoing": {
+      "validation": 12,
+      "development": 11
+    },
+    "physical harm": {
+      "validation": 1
+    },
+    "privacy invasion": {
+      "validation": 1
+    },
+    "public manipulation": {
+      "development": 2,
+      "validation": 2
+    }
+  },
+  "prompt_overlap_between_measurement_splits": 0,
+  "development_packet_rows": 71,
+  "validation_packet_rows": 72,
+  "development_packet_visible_fields_ok": true,
+  "validation_packet_visible_fields_ok": true,
+  "development_duplicates_exact": true,
+  "validation_duplicates_exact": true
+}

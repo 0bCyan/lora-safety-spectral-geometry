@@ -1,0 +1,12 @@
+{
+  "name": "step3cm_local_preparation_environment_v1",
+  "python": "3.13.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch_importable": false,
+  "nvidia_smi_path": null,
+  "checkpoint_dir_exists": false,
+  "adapter_file_exists": false,
+  "gpu_diagnostics_run_locally": false,
+  "optimizer_steps": 0,
+  "experiment_machine_required_for_f1": true
+}

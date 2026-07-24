@@ -1,0 +1,9 @@
+{
+  "name": "step3cm_protocol_verification_v1",
+  "checked": 22,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "passed": true,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

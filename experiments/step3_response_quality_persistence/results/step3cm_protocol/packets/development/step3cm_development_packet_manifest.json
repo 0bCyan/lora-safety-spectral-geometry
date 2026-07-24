@@ -1,0 +1,39 @@
+{
+  "name": "step3cm_development_packet_manifest_v1",
+  "git_head": "6a12bddd4e6f96238c8163d010f4c5dc601c599e",
+  "measurement_split": "development",
+  "active_rubric": "experiments\\step3_response_quality_persistence\\review_rubrics\\step3cm_decomposed_quality_rubric_v1.md",
+  "active_rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+  "prompt_clusters": 20,
+  "primary_response_rows": 63,
+  "hidden_duplicate_rows": 8,
+  "packet_rows": 71,
+  "role_counts_hidden": {
+    "existing_natural_v1_target": 40,
+    "constant20_generated_negative_candidate": 20,
+    "prospective_positive_candidate": 3
+  },
+  "duplicate_role_counts_hidden": {
+    "prospective_positive_candidate": 1,
+    "existing_natural_v1_target": 4,
+    "constant20_generated_negative_candidate": 3
+  },
+  "packet_sha256": "cdada87ea5ef5c9d2212824a11647981facd3cd6a0a088fd0bbfbbed2fa1b856",
+  "hidden_key_sha256": "4cac1f50f91536e7ae7302923ce41d3c5f23b59f38705f240007f6f5dabe7edd",
+  "duplicate_key_sha256": "37190b4549f3210e3b17842725502ddb915585938e5ccf7460f1fe6aef76f458",
+  "reviewer_a_template_sha256": "98c11d348982de0190dd4eb1eafdb6ac66e6874200a3ab3c40148388c8b3774e",
+  "reviewer_b_template_sha256": "98c11d348982de0190dd4eb1eafdb6ac66e6874200a3ab3c40148388c8b3774e",
+  "visible_fields": [
+    "opaque_quality_id",
+    "prompt",
+    "response"
+  ],
+  "source_roles_hidden": true,
+  "duplicate_links_hidden": true,
+  "visible_fields_ok": true,
+  "duplicate_exact_match": true,
+  "old_cr0_labels_exposed": false,
+  "candidate_outputs_used": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

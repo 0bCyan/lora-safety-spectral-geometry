@@ -1,0 +1,56 @@
+{
+  "name": "step3cm_synthetic_tests_v1",
+  "perfect_ordinal": {
+    "n": 4,
+    "exact_raw_agreement": 1.0,
+    "linear_weighted_agreement": 1.0,
+    "gwet_ac2": 1.0,
+    "linear_weighted_kappa": 1.0,
+    "severe_disagreement_count": 0,
+    "severe_disagreement_rate": 0.0
+  },
+  "one_step_ordinal": {
+    "n": 4,
+    "exact_raw_agreement": 0.0,
+    "linear_weighted_agreement": 0.5,
+    "gwet_ac2": -0.14285714285714285,
+    "linear_weighted_kappa": -0.3333333333333333,
+    "severe_disagreement_count": 0,
+    "severe_disagreement_rate": 0.0
+  },
+  "zero_variance_ac2": 1.0,
+  "zero_variance_weighted_kappa": null,
+  "nominal_fixture": {
+    "n": 4,
+    "raw_agreement": 0.5,
+    "gwet_ac1": 0.0,
+    "cohen_kappa": 0.0
+  },
+  "prompt_cluster_split_disjoint": true,
+  "hidden_field_fixture": true,
+  "review_schema_fixture": true,
+  "duplicate_consistency_fixture": {
+    "denominator": 1,
+    "full_vector_consistent_count": 1,
+    "field_consistent_counts": {
+      "detail_retention": 1,
+      "safe_actionability": 1,
+      "naturalness": 1
+    },
+    "details": [
+      {
+        "primary_opaque_quality_id": "q1",
+        "duplicate_opaque_quality_id": "q2",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      }
+    ]
+  },
+  "passed": true,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}
