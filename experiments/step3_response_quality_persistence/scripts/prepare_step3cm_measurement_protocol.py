@@ -1053,14 +1053,14 @@ Status: {'pass' if gates['overall_pass'] else 'fail'}.
         outputs["route"],
         outputs["report"],
         active_rubric(reg),
+        ACTIVE_RUBRIC_FREEZE,
         SYNTHETIC_TESTS,
         DIAGNOSTICS / "step3cm_protocol_verification.json",
     ]
     if split == "development":
-        artifact_paths.extend([
-            ACTIVE_RUBRIC_FREEZE,
-            REPORTS / "Step3CM_E1_execution_report.md",
-        ])
+        artifact_paths.append(REPORTS / "Step3CM_E1_execution_report.md")
+    else:
+        artifact_paths.append(REPORTS / "Step3CM_E2_execution_report.md")
     artifact_manifest = {
         "name": f"step3cm_{split}_review_artifact_manifest_v1",
         "measurement_split": split,

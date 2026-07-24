@@ -1,0 +1,9 @@
+{
+  "name": "step3cm_validation_route_decision_v1",
+  "measurement_split": "validation",
+  "overall_pass": true,
+  "next_action": "authorize_joint_measurement_plus_c3_feasibility_decision",
+  "training_authorized": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

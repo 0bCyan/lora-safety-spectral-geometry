@@ -1,0 +1,103 @@
+{
+  "name": "step3cm_validation_review_artifact_manifest_v1",
+  "measurement_split": "validation",
+  "artifacts": [
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/packets/validation/step3cm_validation_packet.jsonl",
+      "sha256": "2e84d38974d57a9bb56535225bfc7ff317d882c26a5e2e48ae1d45965ef26e78",
+      "bytes": 27964
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/packets/validation/step3cm_validation_hidden_key.csv",
+      "sha256": "3e60ac23f4011b39686027094cb08d31a6244326a9a36d4149068fba064d1bfa",
+      "bytes": 21403
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/packets/validation/step3cm_validation_duplicate_key.csv",
+      "sha256": "45731e794520eef7b06d8508f49cde874850602ff25530608f5ddb31055edc87",
+      "bytes": 648
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/packets/validation/step3cm_validation_reviewer_c_packet.jsonl",
+      "sha256": "65379a7d918857c711a0edc97b4753f2e05e230ccb9da574cf8f8f95488266f1",
+      "bytes": 2976
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/packets/validation/step3cm_validation_reviewer_c_packet_manifest.json",
+      "sha256": "1df4a27502b6937f3b9a9c1ac3b0e4ad73793e0912c3f195620db43b1172c94e",
+      "bytes": 357
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/reviews/validation/step3cm_validation_reviewer_a.jsonl",
+      "sha256": "e02e85aa97ff93f35fa15b5dcbdfc6499286dff4044a5dc4ebc806397306bd08",
+      "bytes": 18002
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/reviews/validation/step3cm_validation_reviewer_b.jsonl",
+      "sha256": "a51fabc8de096f68fb60b1fa4deca7cc38b2f7b4ea9f1adceb669ad02fe986dd",
+      "bytes": 17722
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/reviews/validation/step3cm_validation_reviewer_c.jsonl",
+      "sha256": "7d8d2f2e9d3653974d64faa77a0517cc0a6432268fe3e65a3c9f1801eab66fc1",
+      "bytes": 2507
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/reviews/validation/step3cm_validation_final_labels.jsonl",
+      "sha256": "56151a6f5f2f763133119f0c1a7bfca2a7885261750037082c4fe11e0e386032",
+      "bytes": 21198
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/reviews/validation/step3cm_validation_ab_freeze_manifest.json",
+      "sha256": "2eb5c11645542fcaaf13b471e38ffefab2eadfccaa67962d1c71b51f430acde0",
+      "bytes": 599
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/reviews/validation/step3cm_validation_reviewer_provenance.json",
+      "sha256": "be06738f89f2aa615ef138d07cdbfb66377e1c41078efd29e1b61b4e5ce5c14f",
+      "bytes": 1393
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/reports/step3cm_validation_review_agreement.json",
+      "sha256": "6c6ecfef3c8dcb706b4902430fcfa7d009acaa0004ab833cf5ded1148873a2b4",
+      "bytes": 7428
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/reports/step3cm_validation_route_decision.json",
+      "sha256": "1681f10110bda8408cdba5ac6fc90d8c842aa6d9dcc3dcce3900c30605017102",
+      "bytes": 274
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/reports/Step3CM_validation_route_report.md",
+      "sha256": "183a247fa358638ece185c4df40cc7ea372d806deef020b4d54996dc2862d521",
+      "bytes": 706
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3cm_decomposed_quality_rubric_v1.md",
+      "sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+      "bytes": 3279
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/reports/step3cm_active_rubric_freeze.json",
+      "sha256": "b70195875b8cad9590b89988fccea1ad6134a4277a93d5e0e7694f8f0f8fcd17",
+      "bytes": 1242
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/diagnostics/step3cm_synthetic_tests.json",
+      "sha256": "b75faa8b93f6fa96a4452f4389e086198fa05d9a11723f0691975a6b232a33c3",
+      "bytes": 1433
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/diagnostics/step3cm_protocol_verification.json",
+      "sha256": "9f0bc067709eda2610fb19749ae245e7768456648ff6ec2d499c656f28b10fe0",
+      "bytes": 178
+    },
+    {
+      "path": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/step3cm_protocol/reports/Step3CM_E2_execution_report.md",
+      "sha256": "47e3e07a825a5209707ef3b0b57ea9a913677b970373009f59dced75ce5f8b77",
+      "bytes": 3277
+    }
+  ],
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

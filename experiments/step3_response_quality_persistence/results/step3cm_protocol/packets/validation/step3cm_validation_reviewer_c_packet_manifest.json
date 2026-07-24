@@ -1,0 +1,11 @@
+{
+  "name": "step3cm_validation_reviewer_c_packet_manifest_v1",
+  "measurement_split": "validation",
+  "rows": 8,
+  "packet_sha256": "65379a7d918857c711a0edc97b4753f2e05e230ccb9da574cf8f8f95488266f1",
+  "reviewer_labels_exposed": false,
+  "reviewer_reasons_exposed": false,
+  "hidden_key_exposed": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

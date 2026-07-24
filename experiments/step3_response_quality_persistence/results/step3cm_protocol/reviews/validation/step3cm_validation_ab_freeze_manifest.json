@@ -1,0 +1,13 @@
+{
+  "name": "step3cm_validation_ab_freeze_manifest_v1",
+  "measurement_split": "validation",
+  "packet_sha256": "2e84d38974d57a9bb56535225bfc7ff317d882c26a5e2e48ae1d45965ef26e78",
+  "rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+  "reviewer_a_rows": 72,
+  "reviewer_b_rows": 72,
+  "reviewer_a_sha256": "e02e85aa97ff93f35fa15b5dcbdfc6499286dff4044a5dc4ebc806397306bd08",
+  "reviewer_b_sha256": "a51fabc8de096f68fb60b1fa4deca7cc38b2f7b4ea9f1adceb669ad02fe986dd",
+  "ab_compared_only_after_both_complete": true,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

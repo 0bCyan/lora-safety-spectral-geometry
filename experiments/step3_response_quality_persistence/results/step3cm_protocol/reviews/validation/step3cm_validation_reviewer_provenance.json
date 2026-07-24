@@ -1,0 +1,47 @@
+{
+  "session_id": "step3cm_validation_v1_20260724",
+  "reviewer_a": {
+    "agent_id": "019f92a0-5ac7-7e22-8762-27bc31e8ff96",
+    "nickname": "Zeno",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cm_validation_packet.jsonl",
+      "step3cm_decomposed_quality_rubric_v1.md"
+    ],
+    "rows": 72,
+    "development_material_exposed": false
+  },
+  "reviewer_b": {
+    "agent_id": "019f92a0-6fc0-75c0-ac05-56fa7afeb24c",
+    "nickname": "Peirce",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cm_validation_packet.jsonl",
+      "step3cm_decomposed_quality_rubric_v1.md"
+    ],
+    "rows": 72,
+    "development_material_exposed": false
+  },
+  "reviewer_c": {
+    "agent_id": "019f92a4-b1a6-7011-be38-579121a6aced",
+    "nickname": "Gibbs",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cm_validation_reviewer_c_packet.jsonl",
+      "step3cm_decomposed_quality_rubric_v1.md"
+    ],
+    "rows": 8,
+    "development_material_exposed": false,
+    "reviewer_labels_exposed": false,
+    "reviewer_reasons_exposed": false
+  },
+  "hidden_keys_exposed": false,
+  "old_cr0_labels_exposed": false,
+  "source_roles_exposed": false,
+  "git_history_exposed": false,
+  "other_reviewer_outputs_exposed": false,
+  "main_executor_assigned_labels": false,
+  "validation_session_number": 1,
+  "validation_sessions_authorized": 1,
+  "rubric_revisions_authorized": 0
+}

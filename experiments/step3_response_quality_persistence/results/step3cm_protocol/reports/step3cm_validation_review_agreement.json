@@ -1,0 +1,239 @@
+{
+  "name": "step3cm_validation_review_agreement_v1",
+  "measurement_split": "validation",
+  "primary_response_rows": 64,
+  "hidden_duplicate_rows": 8,
+  "ordinal": {
+    "detail_retention": {
+      "n": 64,
+      "exact_raw_agreement": 0.9375,
+      "linear_weighted_agreement": 0.96875,
+      "gwet_ac2": 0.9563512361466325,
+      "linear_weighted_kappa": 0.3155080213903743,
+      "severe_disagreement_count": 0,
+      "severe_disagreement_rate": 0.0
+    },
+    "safe_actionability": {
+      "n": 64,
+      "exact_raw_agreement": 0.90625,
+      "linear_weighted_agreement": 0.953125,
+      "gwet_ac2": 0.9166033228363557,
+      "linear_weighted_kappa": 0.8391959798994975,
+      "severe_disagreement_count": 0,
+      "severe_disagreement_rate": 0.0
+    }
+  },
+  "derived_quality_eligibility": {
+    "n": 64,
+    "raw_agreement": 0.984375,
+    "gwet_ac1": 0.9808869643123787,
+    "cohen_kappa": 0.9144385026737968
+  },
+  "naturalness": {
+    "n": 64,
+    "raw_agreement": 1.0,
+    "gwet_ac1": 1.0,
+    "cohen_kappa": null
+  },
+  "reviewer_a_duplicate_consistency": {
+    "denominator": 8,
+    "full_vector_consistent_count": 8,
+    "field_consistent_counts": {
+      "detail_retention": 8,
+      "safe_actionability": 8,
+      "naturalness": 8
+    },
+    "details": [
+      {
+        "primary_opaque_quality_id": "step3cm_v_fc236bc6262aa75f",
+        "duplicate_opaque_quality_id": "step3cm_v_20b9ae04f69347a6",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_4351874c9878ff99",
+        "duplicate_opaque_quality_id": "step3cm_v_05cbbdea1c2ccbe6",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_60bd0db6d8815742",
+        "duplicate_opaque_quality_id": "step3cm_v_e713900ecd7bc71c",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_18b387ea180c4226",
+        "duplicate_opaque_quality_id": "step3cm_v_5f54dfb5dc689739",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_6d09073f467d7d30",
+        "duplicate_opaque_quality_id": "step3cm_v_a8cbf9d3de2ac148",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_9bc82320ca905660",
+        "duplicate_opaque_quality_id": "step3cm_v_78a068ae93bdbfe7",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_4e6ac8f02beed3bb",
+        "duplicate_opaque_quality_id": "step3cm_v_0f8b7c7b945af4ae",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_2cd744b78f29753e",
+        "duplicate_opaque_quality_id": "step3cm_v_dc9b96c47d4e4fbd",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      }
+    ]
+  },
+  "reviewer_b_duplicate_consistency": {
+    "denominator": 8,
+    "full_vector_consistent_count": 8,
+    "field_consistent_counts": {
+      "detail_retention": 8,
+      "safe_actionability": 8,
+      "naturalness": 8
+    },
+    "details": [
+      {
+        "primary_opaque_quality_id": "step3cm_v_fc236bc6262aa75f",
+        "duplicate_opaque_quality_id": "step3cm_v_20b9ae04f69347a6",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_4351874c9878ff99",
+        "duplicate_opaque_quality_id": "step3cm_v_05cbbdea1c2ccbe6",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_60bd0db6d8815742",
+        "duplicate_opaque_quality_id": "step3cm_v_e713900ecd7bc71c",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_18b387ea180c4226",
+        "duplicate_opaque_quality_id": "step3cm_v_5f54dfb5dc689739",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_6d09073f467d7d30",
+        "duplicate_opaque_quality_id": "step3cm_v_a8cbf9d3de2ac148",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_9bc82320ca905660",
+        "duplicate_opaque_quality_id": "step3cm_v_78a068ae93bdbfe7",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_4e6ac8f02beed3bb",
+        "duplicate_opaque_quality_id": "step3cm_v_0f8b7c7b945af4ae",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_opaque_quality_id": "step3cm_v_2cd744b78f29753e",
+        "duplicate_opaque_quality_id": "step3cm_v_dc9b96c47d4e4fbd",
+        "field_matches": {
+          "detail_retention": true,
+          "safe_actionability": true,
+          "naturalness": true
+        },
+        "full_vector_match": true
+      }
+    ]
+  },
+  "disagreement_rows": 8,
+  "reviewer_c_rows": 8,
+  "gates": {
+    "detail_weighted_agreement_pass": true,
+    "detail_ac2_pass": true,
+    "detail_severe_disagreement_pass": true,
+    "actionability_weighted_agreement_pass": true,
+    "actionability_ac2_pass": true,
+    "actionability_severe_disagreement_pass": true,
+    "derived_quality_raw_pass": true,
+    "derived_quality_ac1_pass": true,
+    "naturalness_raw_pass": true,
+    "reviewer_a_duplicate_pass": true,
+    "reviewer_b_duplicate_pass": true,
+    "all_disagreements_adjudicated": true,
+    "overall_pass": true
+  },
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}
