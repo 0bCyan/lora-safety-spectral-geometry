@@ -1,0 +1,58 @@
+{
+  "name": "step3ct_t2r_r1_implementation_freeze_v1",
+  "git_head_before_r1_commit": "409d5011289a2c9cd74b139f6ce53be5dc9041b0",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_t2r_common.py",
+      "sha256": "a99201a8a8d502c460207b7d16b5fd0b2cd7c649d5e1ba163338ebc3cbabe6c3",
+      "bytes": 13853
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3ct_t2r_common.py",
+      "sha256": "11544310fc06267396c93fbd29db3f8fe51972d9e4191ac889d8e117012025fa",
+      "bytes": 3008
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/run_step3ct_t2r_calibration.py",
+      "sha256": "d9b1ee4e3fbb1695c6b0a2383ba5fa69149e0882ca30fa85598a8d4dbf90b65d",
+      "bytes": 20466
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_t2r_smoke.py",
+      "sha256": "d89038ac5acf3dc63c0f9178a3f12d988a753902e192bcd7225490d04f34548c",
+      "bytes": 16634
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/analyze_step3ct_t2r_smoke.py",
+      "sha256": "c0bd2e62de3eb65e30fdd502e370c8bf4b5788c734f682896c97eceb22bc6f52",
+      "bytes": 9630
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/run_step3ct_t2r_r1_freeze.py",
+      "sha256": "a5506a318a61cd716923b4deb13161103537a67f4471f77ed30240e97ca52df4",
+      "bytes": 17332
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json",
+      "sha256": "0594fc7cae87319ac7700f3442c6eff3c5e062d66db286f948bbd80c5a2c4818",
+      "bytes": 2756
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/step3ct_t2r_calibration_registry.json",
+      "sha256": "3bcf4a458bbce886f97403c86d957dabc066dccec0c623e42177a71899d07cff",
+      "bytes": 6735
+    }
+  ],
+  "metadata_queue_trace_hash": "d0df0c79c36a4324d1545a0add4286b52ed98cff947b59eb332600bf782806f9",
+  "output_schema_hash": "7ea667b00f4cfb8cada998cc69db957135c8bed80bf537fa880d334f5cebea8e",
+  "r2_exact_command": "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/run_step3ct_t2r_calibration.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json",
+  "r3_smoke_command_template": "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_t2r_smoke.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm <ARM> --output-dir <NEW_OUTPUT>",
+  "r3_analysis_command": "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/analyze_step3ct_t2r_smoke.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "overall_pass": true
+}

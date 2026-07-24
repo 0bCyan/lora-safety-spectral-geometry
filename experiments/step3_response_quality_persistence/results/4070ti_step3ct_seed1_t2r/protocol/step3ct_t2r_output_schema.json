@@ -1,0 +1,31 @@
+{
+  "position_fields": [
+    "position",
+    "fit_eligible",
+    "risk_row_hash",
+    "safety_target_hash",
+    "queue_hash_before",
+    "queue_hash_after",
+    "hard_active",
+    "hard_negative_count",
+    "safety_gradient_norm",
+    "c3a_gradient_norm",
+    "c3b_gradient_norm",
+    "safety_gradient_hash",
+    "c3a_gradient_hash",
+    "c3b_gradient_hash"
+  ],
+  "window_fields": [
+    "window_index",
+    "positions",
+    "hard_active",
+    "safety_gradient_norm",
+    "c3a_gradient_norm",
+    "c3b_gradient_norm",
+    "c3a_unweighted_ratio",
+    "c3b_unweighted_ratio",
+    "c3a_c3b_cosine",
+    "c3b_residual_given_c3a"
+  ],
+  "full_gradient_tensors_committed": false
+}

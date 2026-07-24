@@ -1,0 +1,31 @@
+{
+  "name": "step3ct_t2r_r1_implementation_tests_v1",
+  "commands": [
+    {
+      "command": "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe -m py_compile experiments/step3_response_quality_persistence/scripts/step3ct_t2r_common.py experiments/step3_response_quality_persistence/scripts/test_step3ct_t2r_common.py experiments/step3_response_quality_persistence/scripts/run_step3ct_t2r_calibration.py experiments/step3_response_quality_persistence/scripts/train_step3ct_t2r_smoke.py experiments/step3_response_quality_persistence/scripts/analyze_step3ct_t2r_smoke.py experiments/step3_response_quality_persistence/scripts/run_step3ct_t2r_r1_freeze.py",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe -m unittest discover -s experiments/step3_response_quality_persistence/scripts -p test_step3ct_t2r_common.py -v",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_direction_and_residual (test_step3ct_t2r_common.Step3CTT2RCommonTests.test_direction_and_residual) ... ok\ntest_fit_excluded_contamination_rejected (test_step3ct_t2r_common.Step3CTT2RCommonTests.test_fit_excluded_contamination_rejected) ... ok\ntest_fit_positions_and_windows_are_exact (test_step3ct_t2r_common.Step3CTT2RCommonTests.test_fit_positions_and_windows_are_exact) ... ok\ntest_float64_sum_hash_and_serialization_order_invariance (test_step3ct_t2r_common.Step3CTT2RCommonTests.test_float64_sum_hash_and_serialization_order_invariance) ... ok\ntest_fp16_scaled_coefficient_removal (test_step3ct_t2r_common.Step3CTT2RCommonTests.test_fp16_scaled_coefficient_removal) ... ok\ntest_metadata_hard_coverage (test_step3ct_t2r_common.Step3CTT2RCommonTests.test_metadata_hard_coverage) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.013s\n\nOK\n"
+    }
+  ],
+  "calibration_forbidden_optimizer_scheduler_calls": [],
+  "calibration_old_failed_trace_reads": [],
+  "coverage": [
+    "syntax and imports",
+    "metadata queue and hard-active coverage",
+    "fit-excluded-position isolation",
+    "18 consecutive four-position windows",
+    "CPU float64 accumulation and serialization invariance",
+    "fp16 coefficient removal",
+    "direction cosine and orthogonal residual",
+    "zero calibration optimizer/scheduler construction",
+    "no old failed-smoke trace read"
+  ],
+  "passed": true
+}

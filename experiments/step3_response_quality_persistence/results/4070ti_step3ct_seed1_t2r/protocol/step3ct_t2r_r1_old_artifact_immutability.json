@@ -1,0 +1,55 @@
+{
+  "source_commit": "637b3e7ae50c2dc07b42f81dda40eb342065a87a",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json",
+      "source_commit_sha256": "0594fc7cae87319ac7700f3442c6eff3c5e062d66db286f948bbd80c5a2c4818",
+      "current_index_sha256": "0594fc7cae87319ac7700f3442c6eff3c5e062d66db286f948bbd80c5a2c4818",
+      "worktree_clean": true,
+      "unchanged": true
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "source_commit_sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1",
+      "current_index_sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1",
+      "worktree_clean": true,
+      "unchanged": true
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "source_commit_sha256": "b0fc2daad0feb2c61fd32ba508a69660b598bc82c9b2a3894f9c48502bc544eb",
+      "current_index_sha256": "b0fc2daad0feb2c61fd32ba508a69660b598bc82c9b2a3894f9c48502bc544eb",
+      "worktree_clean": true,
+      "unchanged": true
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/analyze_step3ct_smoke.py",
+      "source_commit_sha256": "2a41a72e588b7d474d19c1bb19d262310d34a36b5720ad615c17a944e47870b2",
+      "current_index_sha256": "2a41a72e588b7d474d19c1bb19d262310d34a36b5720ad615c17a944e47870b2",
+      "worktree_clean": true,
+      "unchanged": true
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/protocol/step3ct_t1_code_freeze.json",
+      "source_commit_sha256": "ee9437cce15125076227383391bd1e4c0ec2406e7f2c238ab3e379849aeee147",
+      "current_index_sha256": "ee9437cce15125076227383391bd1e4c0ec2406e7f2c238ab3e379849aeee147",
+      "worktree_clean": true,
+      "unchanged": true
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/smoke/step3ct_t2_smoke_gate_summary.json",
+      "source_commit_sha256": "633fba7e18541f954e9ad59e42575ba84ef24e4353b7ba371a63444d414ad8bd",
+      "current_index_sha256": "633fba7e18541f954e9ad59e42575ba84ef24e4353b7ba371a63444d414ad8bd",
+      "worktree_clean": true,
+      "unchanged": true
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/smoke/step3ct_t2_execution_record.json",
+      "source_commit_sha256": "3151724fd7a74c007f6b38aa8906a21d3f9cf30bfcdf424d1c44767cc14a8f0f",
+      "current_index_sha256": "3151724fd7a74c007f6b38aa8906a21d3f9cf30bfcdf424d1c44767cc14a8f0f",
+      "worktree_clean": true,
+      "unchanged": true
+    }
+  ],
+  "passed": true
+}

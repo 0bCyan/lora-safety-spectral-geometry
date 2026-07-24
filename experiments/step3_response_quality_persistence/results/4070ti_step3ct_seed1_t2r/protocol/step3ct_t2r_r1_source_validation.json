@@ -1,0 +1,24 @@
+{
+  "name": "step3ct_t2r_r1_source_validation_v1",
+  "checks": {
+    "source_commit_matches": true,
+    "failed_smoke_stopped": true,
+    "model": true,
+    "seed": true,
+    "optimizer_steps": true,
+    "gradient_accumulation": true,
+    "learning_rate": true,
+    "safety_mix": true,
+    "projection": true,
+    "queue": true,
+    "temperature": true,
+    "arms": true,
+    "parent_heldout_closed": true,
+    "behavior_evidence_absent": true
+  },
+  "optimizer_steps_before_recovery": 0,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "passed": true
+}
