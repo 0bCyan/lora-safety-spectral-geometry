@@ -1,0 +1,38 @@
+{
+  "name": "step3ct_t2_execution_record_v1",
+  "git_head": "fb23793988a905aab392688bc03f9b1cbb051aca",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json",
+  "config_sha256": "0594fc7cae87319ac7700f3442c6eff3c5e062d66db286f948bbd80c5a2c4818",
+  "python": "D:/Desktop/lora-safety-spectral-geometry/.venv/Scripts/python.exe",
+  "commands": [
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json --arm C0R_concurrent_constant20 --run-kind smoke --max-steps 2 --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/smoke/C0R_concurrent_constant20/original",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json --arm C0R_concurrent_constant20 --run-kind smoke --max-steps 2 --resume-from experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/smoke/C0R_concurrent_constant20/original/checkpoints/step0001 --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/smoke/C0R_concurrent_constant20/resume_from_step1",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json --arm C3a_multi_positive_global_binding --run-kind smoke --max-steps 2 --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/smoke/C3a_multi_positive_global_binding/original",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json --arm C3a_multi_positive_global_binding --run-kind smoke --max-steps 2 --resume-from experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/smoke/C3a_multi_positive_global_binding/original/checkpoints/step0001 --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/smoke/C3a_multi_positive_global_binding/resume_from_step1",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json --arm C3b_hierarchical_hard_negative_binding --run-kind smoke --max-steps 2 --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/smoke/C3b_hierarchical_hard_negative_binding/original",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json --arm C3b_hierarchical_hard_negative_binding --run-kind smoke --max-steps 2 --resume-from experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/smoke/C3b_hierarchical_hard_negative_binding/original/checkpoints/step0001 --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/smoke/C3b_hierarchical_hard_negative_binding/resume_from_step1",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/analyze_step3ct_smoke.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json"
+  ],
+  "runs": [
+    {"arm": "C0R_concurrent_constant20", "kind": "original", "start_step": 0, "executed_optimizer_steps": 2, "wall_clock_seconds": 55.02189636230469},
+    {"arm": "C0R_concurrent_constant20", "kind": "resume_from_step1", "start_step": 1, "executed_optimizer_steps": 1, "wall_clock_seconds": 36.74568462371826},
+    {"arm": "C3a_multi_positive_global_binding", "kind": "original", "start_step": 0, "executed_optimizer_steps": 2, "wall_clock_seconds": 76.76215386390686},
+    {"arm": "C3a_multi_positive_global_binding", "kind": "resume_from_step1", "start_step": 1, "executed_optimizer_steps": 1, "wall_clock_seconds": 53.2564754486084},
+    {"arm": "C3b_hierarchical_hard_negative_binding", "kind": "original", "start_step": 0, "executed_optimizer_steps": 2, "wall_clock_seconds": 81.23189282417297},
+    {"arm": "C3b_hierarchical_hard_negative_binding", "kind": "resume_from_step1", "start_step": 1, "executed_optimizer_steps": 1, "wall_clock_seconds": 52.62708592414856}
+  ],
+  "failed_gate": "calibrated_initial_binding_safety_ratio_0p20_0p30",
+  "observed_eta_weighted_ratios": {
+    "C3a_multi_positive_global_binding": 0.1224526705070722,
+    "C3b_hierarchical_hard_negative_binding": 0.07850547121816243
+  },
+  "registered_interval": [0.2, 0.3],
+  "decision": "stop_before_T3_and_report_failed_smoke",
+  "next_authorized_package": null,
+  "new_prospective_plan_required": true,
+  "main_training_started": false,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "adapters_or_checkpoints_committed": false
+}

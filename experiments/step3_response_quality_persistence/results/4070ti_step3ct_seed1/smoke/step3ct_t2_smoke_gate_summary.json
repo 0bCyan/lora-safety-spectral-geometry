@@ -1,0 +1,98 @@
+{
+  "name": "step3ct_t2_smoke_gate_summary_v1",
+  "config": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json",
+  "arms": [
+    {
+      "arm": "C0R_concurrent_constant20",
+      "eta": 0.0,
+      "initial_unweighted_binding_safety_ratio": 0.0,
+      "initial_eta_weighted_binding_safety_ratio": 0.0,
+      "resume_maximum_numeric_difference": 0.0,
+      "resume_step2_adapter_hash_equal": true,
+      "peak_reserved_bytes": 5760876544,
+      "vram_headroom_fraction": 0.5526605056385621,
+      "gates": {
+        "exactly_two_optimizer_steps": true,
+        "all_losses_and_gradients_finite": true,
+        "no_skipped_updates": true,
+        "trainable_parameters_registered": true,
+        "projection_unchanged_and_frozen": true,
+        "c0_zero_binding_and_no_queue": true,
+        "calibrated_initial_binding_safety_ratio_0p20_0p30": true,
+        "queue_occupancy_and_exclusion": true,
+        "resume_trace_within_tolerance": true,
+        "resume_step2_adapter_hash_equal": true,
+        "vram_headroom": true,
+        "core100_closed": true,
+        "heldout_closed": true,
+        "no_generation": true
+      },
+      "overall_pass": true
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "eta": 0.08881576937607806,
+      "initial_unweighted_binding_safety_ratio": 1.3787266762117814,
+      "initial_eta_weighted_binding_safety_ratio": 0.1224526705070722,
+      "resume_maximum_numeric_difference": 0.0,
+      "resume_step2_adapter_hash_equal": true,
+      "peak_reserved_bytes": 5901385728,
+      "vram_headroom_fraction": 0.5417497862638929,
+      "gates": {
+        "exactly_two_optimizer_steps": true,
+        "all_losses_and_gradients_finite": true,
+        "no_skipped_updates": true,
+        "trainable_parameters_registered": true,
+        "projection_unchanged_and_frozen": true,
+        "c0_zero_binding_and_no_queue": true,
+        "calibrated_initial_binding_safety_ratio_0p20_0p30": false,
+        "queue_occupancy_and_exclusion": true,
+        "resume_trace_within_tolerance": true,
+        "resume_step2_adapter_hash_equal": true,
+        "vram_headroom": true,
+        "core100_closed": true,
+        "heldout_closed": true,
+        "no_generation": true
+      },
+      "overall_pass": false
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "eta": 0.05694228453242218,
+      "initial_unweighted_binding_safety_ratio": 1.3786849590388748,
+      "initial_eta_weighted_binding_safety_ratio": 0.07850547121816243,
+      "resume_maximum_numeric_difference": 0.0,
+      "resume_step2_adapter_hash_equal": true,
+      "peak_reserved_bytes": 5901385728,
+      "vram_headroom_fraction": 0.5417497862638929,
+      "gates": {
+        "exactly_two_optimizer_steps": true,
+        "all_losses_and_gradients_finite": true,
+        "no_skipped_updates": true,
+        "trainable_parameters_registered": true,
+        "projection_unchanged_and_frozen": true,
+        "c0_zero_binding_and_no_queue": true,
+        "calibrated_initial_binding_safety_ratio_0p20_0p30": false,
+        "queue_occupancy_and_exclusion": true,
+        "resume_trace_within_tolerance": true,
+        "resume_step2_adapter_hash_equal": true,
+        "vram_headroom": true,
+        "core100_closed": true,
+        "heldout_closed": true,
+        "no_generation": true
+      },
+      "overall_pass": false
+    }
+  ],
+  "cross_arm_draw_trace_equal": {
+    "C0R_concurrent_constant20": true,
+    "C3a_multi_positive_global_binding": true,
+    "C3b_hierarchical_hard_negative_binding": true
+  },
+  "cross_arm_draw_gate_pass": true,
+  "overall_pass": false,
+  "next_action": "stop_before_T3_and_report_failed_smoke",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "candidate_outputs_generated": false
+}
