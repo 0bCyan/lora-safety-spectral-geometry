@@ -1,0 +1,55 @@
+{
+  "name": "step3ct_t5r_p5_implementation_freeze_v1",
+  "source_git_head": "e01e351926ae9be22b7b6e6af7255bdd86a7fd7d",
+  "registry_path": "experiments/step3_response_quality_persistence/configs/step3ct_t5r_review_recovery_registry.json",
+  "registry_sha256": "e9c1649b7af45a91288ac96c6b9362e87d7946fca76d9be4201e25d599bd3e08",
+  "inventory_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p5/step3ct_t5r_p5_source_state_inventory.json",
+  "inventory_sha256": "1a81998d62e063a585beb4b204676f86f7d3ec025d394184bfbff711c089dc71",
+  "test_result_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p5/step3ct_t5r_p5_synthetic_tests.json",
+  "test_result_sha256": "4436696c2b80ac49cb3cb5b29215bfce815867eddd0f05d35566e47dc12290b6",
+  "code_hashes": {
+    "experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_mechanism.py": {
+      "sha256": "1af0e9e595a357aa9ec8ec71ac6092b33982e5144626217421e50d1ef27e54f0",
+      "bytes": 44509
+    },
+    "experiments/step3_response_quality_persistence/scripts/step3cm_c3_common.py": {
+      "sha256": "25d23584036369873bbb0a7609ecbabe92180bc4e5845f63f1783e093c755856",
+      "bytes": 9429
+    },
+    "experiments/step3_response_quality_persistence/scripts/step3ct_t2r_common.py": {
+      "sha256": "a99201a8a8d502c460207b7d16b5fd0b2cd7c649d5e1ba163338ebc3cbabe6c3",
+      "bytes": 13853
+    },
+    "experiments/step3_response_quality_persistence/scripts/step3ct_t5r_mechanism_common.py": {
+      "sha256": "060f029a1be2a569d0cf8a30e320788f576a1dee71ea056b2414d2c17d44246e",
+      "bytes": 18090
+    },
+    "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py": {
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1",
+      "bytes": 22280
+    },
+    "experiments/step3_response_quality_persistence/scripts/test_step3ct_t5r_mechanism.py": {
+      "sha256": "d732fad5428965b94494ba41da7e53e8b36cc7b177cc3f80b5a95ef9f22e8383",
+      "bytes": 8060
+    },
+    "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py": {
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57",
+      "bytes": 25925
+    }
+  },
+  "contracts": {
+    "new_result_root_only": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion",
+    "representation_updates_allowed": false,
+    "diagnostic_dropout_disabled": true,
+    "rng_restored": true,
+    "full_gradient_serialization_allowed": false,
+    "source_artifact_mutation_allowed": false,
+    "mechanism_candidate_selection_allowed": false,
+    "label64_replay_source_checkpoint": 48
+  },
+  "test_count": 11,
+  "source_inventory_route": "B0_source_state_complete",
+  "route": "P5_mechanism_implementation_frozen",
+  "passed": true,
+  "wall_seconds": 10.57513952255249
+}

@@ -1,0 +1,2681 @@
+{
+  "name": "step3ct_t5r_p5_source_state_inventory_v1",
+  "created_at_git_head": "e01e351926ae9be22b7b6e6af7255bdd86a7fd7d",
+  "config": {
+    "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json",
+    "sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+    "optimizer_steps": 64,
+    "gradient_accumulation_steps": 4,
+    "training_fields_hash": "efc88c0ecd9537b7749a6aa02a9ffd350d155a906f69fa1c7117029634748694"
+  },
+  "diagnostic_set": {
+    "target_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+    "target_file_sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c",
+    "prompt_rows": 40,
+    "target_rows": 80,
+    "order": {
+      "prompt_count": 40,
+      "target_count": 80,
+      "prompt_order_hash": "d109136f2e97a93a2752f3352d8e8a01e88f86a7a20ebb89e1a6c8bf18a0d94d",
+      "target_order_hash": "8d0437d7143e5c2d7abe1d57b8526e75c784bcc018ef21cacffdf62ac46d9a93",
+      "prompt_category_hash": "b57c6a0d4faf6826ecad98acaf51709416a50f1bf15a943c88fb75a4953d2ec7"
+    },
+    "category_count": 8,
+    "opaque_prompt_metadata_hash": "564d276182581a95d8d91a6442710d8b5fea7ff5165bc3d2ce039dfcbd72eeca"
+  },
+  "risk_data": {
+    "path": "data/processed/unified_pool/train_risk.jsonl",
+    "file_sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1",
+    "used_rows": 256,
+    "order_hash": "c9251f90d3158dbef61cb486d33c20618eaef884a92ddab4e7c744a6dc9166ab"
+  },
+  "projection": {
+    "input_definition": "Qwen3 hidden state pooled by frozen Step3C-M masks",
+    "output_dim": 256,
+    "seed": 20260727,
+    "trainable": false,
+    "registered_hashes": [
+      "2ef25a153ab85aecb31a2a6aab2d40bc80d659eacca58dff4be9dc756be1a6a0"
+    ],
+    "single_registered_hash": true
+  },
+  "arms": {
+    "C0R_concurrent_constant20": {
+      "run_files": {
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoint_index.csv": {
+          "sha256": "9bd2c57d9321ce01ed5376343a96c81044e584296f51a771da00edbdb2aeffdd",
+          "bytes": 1553
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/gradient_diagnostics.json": {
+          "sha256": "80c57c83f5357b6d14b73f415e5e6b57209e1cfcecdc0eb3d77d22cd26b2cc75",
+          "bytes": 3098
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/run_manifest.json": {
+          "sha256": "35e3e8fad89faa6a52d7b61566eaae977e0dad4b7ebc523d88776a9a816e7553",
+          "bytes": 87230
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/target_exposure_manifest.csv": {
+          "sha256": "ab8c2492c662c952bbba1d4b2096e93fc6864f03026e4341fa56de2f248690cb",
+          "bytes": 10680
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/training_trace.csv": {
+          "sha256": "7f2051701b57cf9dfb14a454464878eb2a791d88f74eebf5e75e6cd9abbd88e6",
+          "bytes": 81371
+        }
+      },
+      "manifest_summary": {
+        "git_head": "8ac234bf5ccf1efc62c688b27e810d6ec6efe39f",
+        "config_sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+        "target_schedule_hash": "6dc74b85d5a5353dafc768da258c0f8c9f9054abf62df5b13550c9e1eb4b2210",
+        "risk_order_hash": "c9251f90d3158dbef61cb486d33c20618eaef884a92ddab4e7c744a6dc9166ab",
+        "projection_hash_before": "2ef25a153ab85aecb31a2a6aab2d40bc80d659eacca58dff4be9dc756be1a6a0",
+        "projection_hash_after": "2ef25a153ab85aecb31a2a6aab2d40bc80d659eacca58dff4be9dc756be1a6a0",
+        "training_state_hash": "cf0f3cd17b23945a7bd5021d30062d1e9b032416172b8250de22624260fa80da",
+        "gradient_diagnostics_hash": "a44d40e9a2ed3e1ed413a6f709eb64eb44f66b46847330be7e316c7ba03713a2"
+      },
+      "diagnostic_labels": [
+        0,
+        16,
+        32,
+        64
+      ],
+      "checkpoints": {
+        "0": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/adapter_config.json": {
+              "sha256": "6b4a9b1f7e16071b79806d21596de4cb1f5c5dc2b0b19c0fce0af734c513dbb1",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/adapter_model.safetensors": {
+              "sha256": "bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/training_state.pt": {
+              "sha256": "907a9bccb343eb23b094165ef166d26fdfa79520145d7ab2d24575d9192d6c0f",
+              "bytes": 12290
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/training_state.pt",
+            "sha256": "907a9bccb343eb23b094165ef166d26fdfa79520145d7ab2d24575d9192d6c0f",
+            "bytes": 12290,
+            "missing_fields": [],
+            "global_step": 0,
+            "target_position": 0,
+            "trace_rows": 0,
+            "trace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "optimizer_state_entries": 0,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": null,
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "0",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000",
+            "adapter_sha256": "bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7",
+            "queue_hash": "",
+            "target_position": "0"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "16": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/adapter_config.json": {
+              "sha256": "6b4a9b1f7e16071b79806d21596de4cb1f5c5dc2b0b19c0fce0af734c513dbb1",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/adapter_model.safetensors": {
+              "sha256": "751f3246590b2b78c833063847d5d8ff43d5f133ba4934713e46edafec6cdf22",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/training_state.pt": {
+              "sha256": "07d0c80b47346d6c10e7ebb703a36afed6196b814ceeed2cf56013755eebe851",
+              "bytes": 132594274
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/training_state.pt",
+            "sha256": "07d0c80b47346d6c10e7ebb703a36afed6196b814ceeed2cf56013755eebe851",
+            "bytes": 132594274,
+            "missing_fields": [],
+            "global_step": 16,
+            "target_position": 64,
+            "trace_rows": 64,
+            "trace_hash": "c0cb9ad2ba82e4b70d964b93de8b32ff566c0da06f059674488f190641df375b",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": null,
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "16",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016",
+            "adapter_sha256": "751f3246590b2b78c833063847d5d8ff43d5f133ba4934713e46edafec6cdf22",
+            "queue_hash": "",
+            "target_position": "64"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "32": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/adapter_config.json": {
+              "sha256": "6b4a9b1f7e16071b79806d21596de4cb1f5c5dc2b0b19c0fce0af734c513dbb1",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/adapter_model.safetensors": {
+              "sha256": "791a0219612bcf4d8cf43b9837ddff7a9d1fce2bbded2dcc9855ef4c316a60d0",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/training_state.pt": {
+              "sha256": "ebce97ac6d1002dd3648b51ddebbb972e6036b0d03d825197c55d75ec8d177d3",
+              "bytes": 132625698
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/training_state.pt",
+            "sha256": "ebce97ac6d1002dd3648b51ddebbb972e6036b0d03d825197c55d75ec8d177d3",
+            "bytes": 132625698,
+            "missing_fields": [],
+            "global_step": 32,
+            "target_position": 128,
+            "trace_rows": 128,
+            "trace_hash": "0aa35baf8710c3b2e2811217e618cac7fc4c5dfb64ca7d5439f8db05c1bbc2f4",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": null,
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "32",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032",
+            "adapter_sha256": "791a0219612bcf4d8cf43b9837ddff7a9d1fce2bbded2dcc9855ef4c316a60d0",
+            "queue_hash": "",
+            "target_position": "128"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "48": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/adapter_config.json": {
+              "sha256": "6b4a9b1f7e16071b79806d21596de4cb1f5c5dc2b0b19c0fce0af734c513dbb1",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/adapter_model.safetensors": {
+              "sha256": "651143cb1b54b3a7be10c8c0965fcbc2e06f17b366053e14196b42b2db527074",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/training_state.pt": {
+              "sha256": "38cfdb745dcbbea69d621091eccba40e248fd0b304535d7c1fb34a98f7332a77",
+              "bytes": 132657058
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/training_state.pt",
+            "sha256": "38cfdb745dcbbea69d621091eccba40e248fd0b304535d7c1fb34a98f7332a77",
+            "bytes": 132657058,
+            "missing_fields": [],
+            "global_step": 48,
+            "target_position": 192,
+            "trace_rows": 192,
+            "trace_hash": "e7e7ae512108660b5526bd1e1d1a5f12e5e17dae07435a71536d40987737478e",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": null,
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "48",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048",
+            "adapter_sha256": "651143cb1b54b3a7be10c8c0965fcbc2e06f17b366053e14196b42b2db527074",
+            "queue_hash": "",
+            "target_position": "192"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "64": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/adapter_config.json": {
+              "sha256": "6b4a9b1f7e16071b79806d21596de4cb1f5c5dc2b0b19c0fce0af734c513dbb1",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/adapter_model.safetensors": {
+              "sha256": "c8fb1ffa7ae7e44fef02a0b870d427211e734d8e13c8b422deec3f416ec8ce28",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/training_state.pt": {
+              "sha256": "dfea16440aab285b1ad03f5793110e66626affdab5f5c2ce4194e0b5058a11ac",
+              "bytes": 132688482
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/training_state.pt",
+            "sha256": "dfea16440aab285b1ad03f5793110e66626affdab5f5c2ce4194e0b5058a11ac",
+            "bytes": 132688482,
+            "missing_fields": [],
+            "global_step": 64,
+            "target_position": 256,
+            "trace_rows": 256,
+            "trace_hash": "be29e92f868f50134cdf9aa4af2f0aa2a6c995ec3fc7c59668a7c2c2feb2e0b9",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": null,
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "64",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064",
+            "adapter_sha256": "c8fb1ffa7ae7e44fef02a0b870d427211e734d8e13c8b422deec3f416ec8ce28",
+            "queue_hash": "",
+            "target_position": "256"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        }
+      },
+      "checks": {
+        "manifest_complete": true,
+        "manifest_config_hash": true,
+        "projection_unchanged": true,
+        "target_schedule": true,
+        "risk_order": true,
+        "diagnostic_labels": true,
+        "trace_rows": true,
+        "exposure_rows": true,
+        "all_checkpoints": true
+      },
+      "passed": true
+    },
+    "C3a_multi_positive_global_binding": {
+      "run_files": {
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoint_index.csv": {
+          "sha256": "2b162906955630b912bd08f3a614db88ab2e9ecd2d432803b0a44c7573891fdb",
+          "bytes": 1985
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/gradient_diagnostics.json": {
+          "sha256": "1acedcb6f3caf80c3e53d55a7a988dca850530333ae1fb6f033b466659f66d65",
+          "bytes": 3919
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/run_manifest.json": {
+          "sha256": "42f40afe31052e45461ad413d98e3eb80216c7d0a3dc027b71b8b4cb57ccbf72",
+          "bytes": 87366
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/target_exposure_manifest.csv": {
+          "sha256": "ab8c2492c662c952bbba1d4b2096e93fc6864f03026e4341fa56de2f248690cb",
+          "bytes": 10680
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/training_trace.csv": {
+          "sha256": "6033775518a242d25031de7ff69fece375988b02688bbdedde7760e895025430",
+          "bytes": 222952
+        }
+      },
+      "manifest_summary": {
+        "git_head": "8ac234bf5ccf1efc62c688b27e810d6ec6efe39f",
+        "config_sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+        "target_schedule_hash": "6dc74b85d5a5353dafc768da258c0f8c9f9054abf62df5b13550c9e1eb4b2210",
+        "risk_order_hash": "c9251f90d3158dbef61cb486d33c20618eaef884a92ddab4e7c744a6dc9166ab",
+        "projection_hash_before": "2ef25a153ab85aecb31a2a6aab2d40bc80d659eacca58dff4be9dc756be1a6a0",
+        "projection_hash_after": "2ef25a153ab85aecb31a2a6aab2d40bc80d659eacca58dff4be9dc756be1a6a0",
+        "training_state_hash": "a05299c3a9f1fbec26d3ccf414e373999b7e2f7029331f64d3583901befd9e5d",
+        "gradient_diagnostics_hash": "17192187dc535b0818b593075b59b78979126ce4772fcb62ebdb861e4583113b"
+      },
+      "diagnostic_labels": [
+        0,
+        16,
+        32,
+        64
+      ],
+      "checkpoints": {
+        "0": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/adapter_config.json": {
+              "sha256": "237d9a19ce5b00d3dd5641f39092839002e7584833d3ad539e7668dbcb126381",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/adapter_model.safetensors": {
+              "sha256": "bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/training_state.pt": {
+              "sha256": "b9942c479dde66ff2d4e2bd87500b18cb43ccebbe8e13f5786a757e1b78e28b3",
+              "bytes": 48517
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/training_state.pt",
+            "sha256": "b9942c479dde66ff2d4e2bd87500b18cb43ccebbe8e13f5786a757e1b78e28b3",
+            "bytes": 48517,
+            "missing_fields": [],
+            "global_step": 0,
+            "target_position": 0,
+            "trace_rows": 0,
+            "trace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "optimizer_state_entries": 0,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": {
+              "fields": [
+                "capacity",
+                "categories",
+                "count",
+                "dimension",
+                "insertions",
+                "position",
+                "prompt_ids",
+                "target_ids",
+                "values"
+              ],
+              "count": 32,
+              "position": 0,
+              "capacity": 32,
+              "metadata_rows": 32
+            },
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "0",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000",
+            "adapter_sha256": "bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7",
+            "queue_hash": "fdc7b3437806ba221aca80da2425742493ae793f1f4a9567f958daba2a3afbe8",
+            "target_position": "0"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "16": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/adapter_config.json": {
+              "sha256": "237d9a19ce5b00d3dd5641f39092839002e7584833d3ad539e7668dbcb126381",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/adapter_model.safetensors": {
+              "sha256": "95df222d4fa407dd8594e649bc7d32bf181c2b90fce344aac31b2213beb828ae",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/training_state.pt": {
+              "sha256": "c6ce8daddb1a931a323fd2eb286e26bad07ad2b307c6fdc19da6c8b41efa030d",
+              "bytes": 132660968
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/training_state.pt",
+            "sha256": "c6ce8daddb1a931a323fd2eb286e26bad07ad2b307c6fdc19da6c8b41efa030d",
+            "bytes": 132660968,
+            "missing_fields": [],
+            "global_step": 16,
+            "target_position": 64,
+            "trace_rows": 64,
+            "trace_hash": "98136976b700c6b8580f7af88a20f04013c48cc5162a2884d42abae50de0d91d",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": {
+              "fields": [
+                "capacity",
+                "categories",
+                "count",
+                "dimension",
+                "insertions",
+                "position",
+                "prompt_ids",
+                "target_ids",
+                "values"
+              ],
+              "count": 32,
+              "position": 0,
+              "capacity": 32,
+              "metadata_rows": 32
+            },
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "16",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016",
+            "adapter_sha256": "95df222d4fa407dd8594e649bc7d32bf181c2b90fce344aac31b2213beb828ae",
+            "queue_hash": "232800c02cda0c5480c846fe85d318acc82a0a7750d02eefdb79d3a3ae580fb2",
+            "target_position": "64"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "32": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/adapter_config.json": {
+              "sha256": "237d9a19ce5b00d3dd5641f39092839002e7584833d3ad539e7668dbcb126381",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/adapter_model.safetensors": {
+              "sha256": "2127864f5d92c34f07f4443521ef81d35e34eef747d27ca8b0071d8126deda4b",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/training_state.pt": {
+              "sha256": "9e1b904f14e5a2e21ff81850d69b0daf1d1ac22edd58a0b6b1260eeafda19d0f",
+              "bytes": 132723880
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/training_state.pt",
+            "sha256": "9e1b904f14e5a2e21ff81850d69b0daf1d1ac22edd58a0b6b1260eeafda19d0f",
+            "bytes": 132723880,
+            "missing_fields": [],
+            "global_step": 32,
+            "target_position": 128,
+            "trace_rows": 128,
+            "trace_hash": "b63cd8b090c9e3beceba40f60ae62cbb4b9523043531e2faaa7d8b83c595db8e",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": {
+              "fields": [
+                "capacity",
+                "categories",
+                "count",
+                "dimension",
+                "insertions",
+                "position",
+                "prompt_ids",
+                "target_ids",
+                "values"
+              ],
+              "count": 32,
+              "position": 0,
+              "capacity": 32,
+              "metadata_rows": 32
+            },
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "32",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032",
+            "adapter_sha256": "2127864f5d92c34f07f4443521ef81d35e34eef747d27ca8b0071d8126deda4b",
+            "queue_hash": "91850c2cd53b3abbc5aea25017ff6b3653534899569979999462f4276b257775",
+            "target_position": "128"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "48": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/adapter_config.json": {
+              "sha256": "237d9a19ce5b00d3dd5641f39092839002e7584833d3ad539e7668dbcb126381",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/adapter_model.safetensors": {
+              "sha256": "8595a4c4583e236434c21e7cc066023fbf0329d4dae73f52ff6280df7a4d9233",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/training_state.pt": {
+              "sha256": "0ed54c7ae74532e7b8150d82d05612aee21f35587e1221945b843db1dd8b8130",
+              "bytes": 132786856
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/training_state.pt",
+            "sha256": "0ed54c7ae74532e7b8150d82d05612aee21f35587e1221945b843db1dd8b8130",
+            "bytes": 132786856,
+            "missing_fields": [],
+            "global_step": 48,
+            "target_position": 192,
+            "trace_rows": 192,
+            "trace_hash": "807e0c34c86cdff74d16f7a5ba6523a9a45112fb45d1c94c92e6e61c397d767a",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": {
+              "fields": [
+                "capacity",
+                "categories",
+                "count",
+                "dimension",
+                "insertions",
+                "position",
+                "prompt_ids",
+                "target_ids",
+                "values"
+              ],
+              "count": 32,
+              "position": 0,
+              "capacity": 32,
+              "metadata_rows": 32
+            },
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "48",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048",
+            "adapter_sha256": "8595a4c4583e236434c21e7cc066023fbf0329d4dae73f52ff6280df7a4d9233",
+            "queue_hash": "7a2a3e3439fccc109a0db08323b4336ee13833b46c97ecbd33c5dffeb813ae29",
+            "target_position": "192"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "64": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/adapter_config.json": {
+              "sha256": "237d9a19ce5b00d3dd5641f39092839002e7584833d3ad539e7668dbcb126381",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/adapter_model.safetensors": {
+              "sha256": "910a0fc951a6ba1192badf8f1eaf1c7fd4e6c7036a1dc8b02994314d62091ffc",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/training_state.pt": {
+              "sha256": "d0a149f9435b9c1abe5b62cbaf87d0cd37ac2d105b4102a96755b00d7b354723",
+              "bytes": 132849832
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/training_state.pt",
+            "sha256": "d0a149f9435b9c1abe5b62cbaf87d0cd37ac2d105b4102a96755b00d7b354723",
+            "bytes": 132849832,
+            "missing_fields": [],
+            "global_step": 64,
+            "target_position": 256,
+            "trace_rows": 256,
+            "trace_hash": "1d3a9f8ad1103018430c32077a0ea546c8528ff786d9179a2b0c9ebfd0d64b98",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": {
+              "fields": [
+                "capacity",
+                "categories",
+                "count",
+                "dimension",
+                "insertions",
+                "position",
+                "prompt_ids",
+                "target_ids",
+                "values"
+              ],
+              "count": 32,
+              "position": 0,
+              "capacity": 32,
+              "metadata_rows": 32
+            },
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "64",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064",
+            "adapter_sha256": "910a0fc951a6ba1192badf8f1eaf1c7fd4e6c7036a1dc8b02994314d62091ffc",
+            "queue_hash": "5f3925939a3049da47b57678018d564a45855c1d826dc2c1d76fefc3289c078d",
+            "target_position": "256"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        }
+      },
+      "checks": {
+        "manifest_complete": true,
+        "manifest_config_hash": true,
+        "projection_unchanged": true,
+        "target_schedule": true,
+        "risk_order": true,
+        "diagnostic_labels": true,
+        "trace_rows": true,
+        "exposure_rows": true,
+        "all_checkpoints": true
+      },
+      "passed": true
+    },
+    "C3b_hierarchical_hard_negative_binding": {
+      "run_files": {
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoint_index.csv": {
+          "sha256": "df54e805fccc8880fad1c7e37653ab38e7c9780560b99c80a43fe6ad6752373a",
+          "bytes": 2015
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/gradient_diagnostics.json": {
+          "sha256": "5c05f5b1dbafe2bb894417c67be95f70d7f335b40cc00847047579355262b23a",
+          "bytes": 3915
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/run_manifest.json": {
+          "sha256": "a6956e24610a9830b5e3e2ca7a1cf7960921d7aad3c083edbe8d06da0ff4f96b",
+          "bytes": 87371
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/target_exposure_manifest.csv": {
+          "sha256": "ab8c2492c662c952bbba1d4b2096e93fc6864f03026e4341fa56de2f248690cb",
+          "bytes": 10680
+        },
+        "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/training_trace.csv": {
+          "sha256": "86ae303cd3a6e35b2387e298c21660fcd0c010e5240aacd0ffd78d11a60db3bc",
+          "bytes": 225744
+        }
+      },
+      "manifest_summary": {
+        "git_head": "8ac234bf5ccf1efc62c688b27e810d6ec6efe39f",
+        "config_sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+        "target_schedule_hash": "6dc74b85d5a5353dafc768da258c0f8c9f9054abf62df5b13550c9e1eb4b2210",
+        "risk_order_hash": "c9251f90d3158dbef61cb486d33c20618eaef884a92ddab4e7c744a6dc9166ab",
+        "projection_hash_before": "2ef25a153ab85aecb31a2a6aab2d40bc80d659eacca58dff4be9dc756be1a6a0",
+        "projection_hash_after": "2ef25a153ab85aecb31a2a6aab2d40bc80d659eacca58dff4be9dc756be1a6a0",
+        "training_state_hash": "7e401fe413a9d230e13b34d85dd4e1c60663f68765512dd19b3d5369fe278909",
+        "gradient_diagnostics_hash": "79e5727163c3b907018094fb826f337ba946ca2f26c2a1e0e07e42757f4d973b"
+      },
+      "diagnostic_labels": [
+        0,
+        16,
+        32,
+        64
+      ],
+      "checkpoints": {
+        "0": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/adapter_config.json": {
+              "sha256": "44db79bfcc70ced2a4de5e3d653b54cee38c501504ba2a941e9fc7c415354fc6",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/adapter_model.safetensors": {
+              "sha256": "bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/training_state.pt": {
+              "sha256": "b9942c479dde66ff2d4e2bd87500b18cb43ccebbe8e13f5786a757e1b78e28b3",
+              "bytes": 48517
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/training_state.pt",
+            "sha256": "b9942c479dde66ff2d4e2bd87500b18cb43ccebbe8e13f5786a757e1b78e28b3",
+            "bytes": 48517,
+            "missing_fields": [],
+            "global_step": 0,
+            "target_position": 0,
+            "trace_rows": 0,
+            "trace_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "optimizer_state_entries": 0,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": {
+              "fields": [
+                "capacity",
+                "categories",
+                "count",
+                "dimension",
+                "insertions",
+                "position",
+                "prompt_ids",
+                "target_ids",
+                "values"
+              ],
+              "count": 32,
+              "position": 0,
+              "capacity": 32,
+              "metadata_rows": 32
+            },
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "0",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000",
+            "adapter_sha256": "bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7",
+            "queue_hash": "fdc7b3437806ba221aca80da2425742493ae793f1f4a9567f958daba2a3afbe8",
+            "target_position": "0"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "16": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/adapter_config.json": {
+              "sha256": "44db79bfcc70ced2a4de5e3d653b54cee38c501504ba2a941e9fc7c415354fc6",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/adapter_model.safetensors": {
+              "sha256": "f03f6bfce7d06b3051413e70958052afbecf2627050a45009c857ddd0440868e",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/training_state.pt": {
+              "sha256": "6444291f3bb96351d856fda274a6f4cb618d57ae7784e5c8f3ad271d89cdd305",
+              "bytes": 132660968
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/training_state.pt",
+            "sha256": "6444291f3bb96351d856fda274a6f4cb618d57ae7784e5c8f3ad271d89cdd305",
+            "bytes": 132660968,
+            "missing_fields": [],
+            "global_step": 16,
+            "target_position": 64,
+            "trace_rows": 64,
+            "trace_hash": "bc4e764c0be190833ad46688f5e38a038791771250e561316416e3d9496b2224",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": {
+              "fields": [
+                "capacity",
+                "categories",
+                "count",
+                "dimension",
+                "insertions",
+                "position",
+                "prompt_ids",
+                "target_ids",
+                "values"
+              ],
+              "count": 32,
+              "position": 0,
+              "capacity": 32,
+              "metadata_rows": 32
+            },
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "16",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016",
+            "adapter_sha256": "f03f6bfce7d06b3051413e70958052afbecf2627050a45009c857ddd0440868e",
+            "queue_hash": "7d4ba5078762586302ab3d8fbc58c1314cac69039863b8e605e260a1821ba44f",
+            "target_position": "64"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "32": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/adapter_config.json": {
+              "sha256": "44db79bfcc70ced2a4de5e3d653b54cee38c501504ba2a941e9fc7c415354fc6",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/adapter_model.safetensors": {
+              "sha256": "08cfb0a717a951e23f917f0e5cc513b132a730864e55d8132deb877547454441",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/training_state.pt": {
+              "sha256": "88ba29408ec76dca06ed54ac0c39262faf1766a7fa38313c400a0e8cba2b4de4",
+              "bytes": 132723880
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/training_state.pt",
+            "sha256": "88ba29408ec76dca06ed54ac0c39262faf1766a7fa38313c400a0e8cba2b4de4",
+            "bytes": 132723880,
+            "missing_fields": [],
+            "global_step": 32,
+            "target_position": 128,
+            "trace_rows": 128,
+            "trace_hash": "ade5ebcbdc01d0248816c0678a811572916adc6bcbe365bb7d65625d7cde228d",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": {
+              "fields": [
+                "capacity",
+                "categories",
+                "count",
+                "dimension",
+                "insertions",
+                "position",
+                "prompt_ids",
+                "target_ids",
+                "values"
+              ],
+              "count": 32,
+              "position": 0,
+              "capacity": 32,
+              "metadata_rows": 32
+            },
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "32",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032",
+            "adapter_sha256": "08cfb0a717a951e23f917f0e5cc513b132a730864e55d8132deb877547454441",
+            "queue_hash": "6e3157cdf26fdffc386536f1f6e53092cd25f0fc1e64af203faffcc244a33d2a",
+            "target_position": "128"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "48": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/adapter_config.json": {
+              "sha256": "44db79bfcc70ced2a4de5e3d653b54cee38c501504ba2a941e9fc7c415354fc6",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/adapter_model.safetensors": {
+              "sha256": "0e13936e8d3dd623d196070adfcc9285e31cfb3a08ba3e992a348cf7927ab0c2",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/training_state.pt": {
+              "sha256": "515066ffe497acec514fb81f762279ee5393c97d1790253fe148876b9237856a",
+              "bytes": 132786856
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/training_state.pt",
+            "sha256": "515066ffe497acec514fb81f762279ee5393c97d1790253fe148876b9237856a",
+            "bytes": 132786856,
+            "missing_fields": [],
+            "global_step": 48,
+            "target_position": 192,
+            "trace_rows": 192,
+            "trace_hash": "c4d6536b7b2fdc26f2899c64263a1b6558e9e881b5220cc402e4fae0326b13a1",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": {
+              "fields": [
+                "capacity",
+                "categories",
+                "count",
+                "dimension",
+                "insertions",
+                "position",
+                "prompt_ids",
+                "target_ids",
+                "values"
+              ],
+              "count": 32,
+              "position": 0,
+              "capacity": 32,
+              "metadata_rows": 32
+            },
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "48",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048",
+            "adapter_sha256": "0e13936e8d3dd623d196070adfcc9285e31cfb3a08ba3e992a348cf7927ab0c2",
+            "queue_hash": "27f6345f19f5554d75dfa2268f563e1ad09f49df2a0fafd6ff8d6e8b431a9e31",
+            "target_position": "192"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        },
+        "64": {
+          "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064",
+          "files": {
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/README.md": {
+              "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+              "bytes": 5180
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/adapter_config.json": {
+              "sha256": "44db79bfcc70ced2a4de5e3d653b54cee38c501504ba2a941e9fc7c415354fc6",
+              "bytes": 935
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/adapter_model.safetensors": {
+              "sha256": "a1351da797db5b841e9e4771fa987e025ce5d568b290242e037b3a01b92ebcd2",
+              "bytes": 66126768
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/added_tokens.json": {
+              "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+              "bytes": 735
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/chat_template.jinja": {
+              "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+              "bytes": 4256
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/merges.txt": {
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+              "bytes": 1671853
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/special_tokens_map.json": {
+              "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+              "bytes": 644
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/tokenizer.json": {
+              "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+              "bytes": 11422752
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/tokenizer_config.json": {
+              "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+              "bytes": 5643
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/training_state.pt": {
+              "sha256": "38dec9084cab5dae4692becf820e45513ffcc5b4e9b61856a3dc37db198f6d25",
+              "bytes": 132849832
+            },
+            "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/vocab.json": {
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+              "bytes": 2776833
+            }
+          },
+          "training_state": {
+            "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/training_state.pt",
+            "sha256": "38dec9084cab5dae4692becf820e45513ffcc5b4e9b61856a3dc37db198f6d25",
+            "bytes": 132849832,
+            "missing_fields": [],
+            "global_step": 64,
+            "target_position": 256,
+            "trace_rows": 256,
+            "trace_hash": "a33780f1a6147b06f3d846f1a6606ac979fed92e0d0981616e239f90bcb3e552",
+            "optimizer_state_entries": 504,
+            "optimizer_param_groups": 1,
+            "scheduler_fields": [
+              "_get_lr_called_within_step",
+              "_last_lr",
+              "_step_count",
+              "base_lrs",
+              "last_epoch",
+              "lr_lambdas",
+              "verbose"
+            ],
+            "scaler_fields": [
+              "_growth_tracker",
+              "backoff_factor",
+              "growth_factor",
+              "growth_interval",
+              "scale"
+            ],
+            "queue": {
+              "fields": [
+                "capacity",
+                "categories",
+                "count",
+                "dimension",
+                "insertions",
+                "position",
+                "prompt_ids",
+                "target_ids",
+                "values"
+              ],
+              "count": 32,
+              "position": 0,
+              "capacity": 32,
+              "metadata_rows": 32
+            },
+            "rng_fields": [
+              "python",
+              "torch_cpu",
+              "torch_cuda"
+            ],
+            "checks": {
+              "required_fields": true,
+              "global_step": true,
+              "target_position": true,
+              "trace_rows": true,
+              "optimizer_state": true,
+              "scheduler_state": true,
+              "scaler_state": true,
+              "queue_state": true,
+              "rng_python": true,
+              "rng_cpu": true,
+              "rng_cuda": true
+            },
+            "passed": true
+          },
+          "checkpoint_index_row": {
+            "step": "64",
+            "checkpoint": "D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064",
+            "adapter_sha256": "a1351da797db5b841e9e4771fa987e025ce5d568b290242e037b3a01b92ebcd2",
+            "queue_hash": "4c091c301b1a810be21569901e4a0bec860398d3c749ca18f5d2de71de99a12c",
+            "target_position": "256"
+          },
+          "adapter_index_hash_match": true,
+          "passed": true
+        }
+      },
+      "checks": {
+        "manifest_complete": true,
+        "manifest_config_hash": true,
+        "projection_unchanged": true,
+        "target_schedule": true,
+        "risk_order": true,
+        "diagnostic_labels": true,
+        "trace_rows": true,
+        "exposure_rows": true,
+        "all_checkpoints": true
+      },
+      "passed": true
+    }
+  },
+  "source_snapshot": {
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoint_index.csv": {
+      "sha256": "9bd2c57d9321ce01ed5376343a96c81044e584296f51a771da00edbdb2aeffdd",
+      "bytes": 1553
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/adapter_config.json": {
+      "sha256": "6b4a9b1f7e16071b79806d21596de4cb1f5c5dc2b0b19c0fce0af734c513dbb1",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/adapter_model.safetensors": {
+      "sha256": "bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/training_state.pt": {
+      "sha256": "907a9bccb343eb23b094165ef166d26fdfa79520145d7ab2d24575d9192d6c0f",
+      "bytes": 12290
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/adapter_config.json": {
+      "sha256": "6b4a9b1f7e16071b79806d21596de4cb1f5c5dc2b0b19c0fce0af734c513dbb1",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/adapter_model.safetensors": {
+      "sha256": "751f3246590b2b78c833063847d5d8ff43d5f133ba4934713e46edafec6cdf22",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/training_state.pt": {
+      "sha256": "07d0c80b47346d6c10e7ebb703a36afed6196b814ceeed2cf56013755eebe851",
+      "bytes": 132594274
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0016/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/adapter_config.json": {
+      "sha256": "6b4a9b1f7e16071b79806d21596de4cb1f5c5dc2b0b19c0fce0af734c513dbb1",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/adapter_model.safetensors": {
+      "sha256": "791a0219612bcf4d8cf43b9837ddff7a9d1fce2bbded2dcc9855ef4c316a60d0",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/training_state.pt": {
+      "sha256": "ebce97ac6d1002dd3648b51ddebbb972e6036b0d03d825197c55d75ec8d177d3",
+      "bytes": 132625698
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0032/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/adapter_config.json": {
+      "sha256": "6b4a9b1f7e16071b79806d21596de4cb1f5c5dc2b0b19c0fce0af734c513dbb1",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/adapter_model.safetensors": {
+      "sha256": "651143cb1b54b3a7be10c8c0965fcbc2e06f17b366053e14196b42b2db527074",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/training_state.pt": {
+      "sha256": "38cfdb745dcbbea69d621091eccba40e248fd0b304535d7c1fb34a98f7332a77",
+      "bytes": 132657058
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/adapter_config.json": {
+      "sha256": "6b4a9b1f7e16071b79806d21596de4cb1f5c5dc2b0b19c0fce0af734c513dbb1",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/adapter_model.safetensors": {
+      "sha256": "c8fb1ffa7ae7e44fef02a0b870d427211e734d8e13c8b422deec3f416ec8ce28",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/training_state.pt": {
+      "sha256": "dfea16440aab285b1ad03f5793110e66626affdab5f5c2ce4194e0b5058a11ac",
+      "bytes": 132688482
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0064/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/gradient_diagnostics.json": {
+      "sha256": "80c57c83f5357b6d14b73f415e5e6b57209e1cfcecdc0eb3d77d22cd26b2cc75",
+      "bytes": 3098
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/run_manifest.json": {
+      "sha256": "35e3e8fad89faa6a52d7b61566eaae977e0dad4b7ebc523d88776a9a816e7553",
+      "bytes": 87230
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/target_exposure_manifest.csv": {
+      "sha256": "ab8c2492c662c952bbba1d4b2096e93fc6864f03026e4341fa56de2f248690cb",
+      "bytes": 10680
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/training_trace.csv": {
+      "sha256": "7f2051701b57cf9dfb14a454464878eb2a791d88f74eebf5e75e6cd9abbd88e6",
+      "bytes": 81371
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoint_index.csv": {
+      "sha256": "2b162906955630b912bd08f3a614db88ab2e9ecd2d432803b0a44c7573891fdb",
+      "bytes": 1985
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/adapter_config.json": {
+      "sha256": "237d9a19ce5b00d3dd5641f39092839002e7584833d3ad539e7668dbcb126381",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/adapter_model.safetensors": {
+      "sha256": "bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/training_state.pt": {
+      "sha256": "b9942c479dde66ff2d4e2bd87500b18cb43ccebbe8e13f5786a757e1b78e28b3",
+      "bytes": 48517
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/adapter_config.json": {
+      "sha256": "237d9a19ce5b00d3dd5641f39092839002e7584833d3ad539e7668dbcb126381",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/adapter_model.safetensors": {
+      "sha256": "95df222d4fa407dd8594e649bc7d32bf181c2b90fce344aac31b2213beb828ae",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/training_state.pt": {
+      "sha256": "c6ce8daddb1a931a323fd2eb286e26bad07ad2b307c6fdc19da6c8b41efa030d",
+      "bytes": 132660968
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0016/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/adapter_config.json": {
+      "sha256": "237d9a19ce5b00d3dd5641f39092839002e7584833d3ad539e7668dbcb126381",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/adapter_model.safetensors": {
+      "sha256": "2127864f5d92c34f07f4443521ef81d35e34eef747d27ca8b0071d8126deda4b",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/training_state.pt": {
+      "sha256": "9e1b904f14e5a2e21ff81850d69b0daf1d1ac22edd58a0b6b1260eeafda19d0f",
+      "bytes": 132723880
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0032/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/adapter_config.json": {
+      "sha256": "237d9a19ce5b00d3dd5641f39092839002e7584833d3ad539e7668dbcb126381",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/adapter_model.safetensors": {
+      "sha256": "8595a4c4583e236434c21e7cc066023fbf0329d4dae73f52ff6280df7a4d9233",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/training_state.pt": {
+      "sha256": "0ed54c7ae74532e7b8150d82d05612aee21f35587e1221945b843db1dd8b8130",
+      "bytes": 132786856
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/adapter_config.json": {
+      "sha256": "237d9a19ce5b00d3dd5641f39092839002e7584833d3ad539e7668dbcb126381",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/adapter_model.safetensors": {
+      "sha256": "910a0fc951a6ba1192badf8f1eaf1c7fd4e6c7036a1dc8b02994314d62091ffc",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/training_state.pt": {
+      "sha256": "d0a149f9435b9c1abe5b62cbaf87d0cd37ac2d105b4102a96755b00d7b354723",
+      "bytes": 132849832
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0064/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/gradient_diagnostics.json": {
+      "sha256": "1acedcb6f3caf80c3e53d55a7a988dca850530333ae1fb6f033b466659f66d65",
+      "bytes": 3919
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/run_manifest.json": {
+      "sha256": "42f40afe31052e45461ad413d98e3eb80216c7d0a3dc027b71b8b4cb57ccbf72",
+      "bytes": 87366
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/target_exposure_manifest.csv": {
+      "sha256": "ab8c2492c662c952bbba1d4b2096e93fc6864f03026e4341fa56de2f248690cb",
+      "bytes": 10680
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/training_trace.csv": {
+      "sha256": "6033775518a242d25031de7ff69fece375988b02688bbdedde7760e895025430",
+      "bytes": 222952
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoint_index.csv": {
+      "sha256": "df54e805fccc8880fad1c7e37653ab38e7c9780560b99c80a43fe6ad6752373a",
+      "bytes": 2015
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/adapter_config.json": {
+      "sha256": "44db79bfcc70ced2a4de5e3d653b54cee38c501504ba2a941e9fc7c415354fc6",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/adapter_model.safetensors": {
+      "sha256": "bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/training_state.pt": {
+      "sha256": "b9942c479dde66ff2d4e2bd87500b18cb43ccebbe8e13f5786a757e1b78e28b3",
+      "bytes": 48517
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/adapter_config.json": {
+      "sha256": "44db79bfcc70ced2a4de5e3d653b54cee38c501504ba2a941e9fc7c415354fc6",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/adapter_model.safetensors": {
+      "sha256": "f03f6bfce7d06b3051413e70958052afbecf2627050a45009c857ddd0440868e",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/training_state.pt": {
+      "sha256": "6444291f3bb96351d856fda274a6f4cb618d57ae7784e5c8f3ad271d89cdd305",
+      "bytes": 132660968
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0016/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/adapter_config.json": {
+      "sha256": "44db79bfcc70ced2a4de5e3d653b54cee38c501504ba2a941e9fc7c415354fc6",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/adapter_model.safetensors": {
+      "sha256": "08cfb0a717a951e23f917f0e5cc513b132a730864e55d8132deb877547454441",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/training_state.pt": {
+      "sha256": "88ba29408ec76dca06ed54ac0c39262faf1766a7fa38313c400a0e8cba2b4de4",
+      "bytes": 132723880
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0032/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/adapter_config.json": {
+      "sha256": "44db79bfcc70ced2a4de5e3d653b54cee38c501504ba2a941e9fc7c415354fc6",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/adapter_model.safetensors": {
+      "sha256": "0e13936e8d3dd623d196070adfcc9285e31cfb3a08ba3e992a348cf7927ab0c2",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/training_state.pt": {
+      "sha256": "515066ffe497acec514fb81f762279ee5393c97d1790253fe148876b9237856a",
+      "bytes": 132786856
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/README.md": {
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/adapter_config.json": {
+      "sha256": "44db79bfcc70ced2a4de5e3d653b54cee38c501504ba2a941e9fc7c415354fc6",
+      "bytes": 935
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/adapter_model.safetensors": {
+      "sha256": "a1351da797db5b841e9e4771fa987e025ce5d568b290242e037b3a01b92ebcd2",
+      "bytes": 66126768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/added_tokens.json": {
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de",
+      "bytes": 735
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/chat_template.jinja": {
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9",
+      "bytes": 4256
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/merges.txt": {
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "bytes": 1671853
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/special_tokens_map.json": {
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a",
+      "bytes": 644
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/tokenizer.json": {
+      "sha256": "352a863cd2761388ccc58f1432467ba6a1037bf12df9069889b142fa246471f6",
+      "bytes": 11422752
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/tokenizer_config.json": {
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7",
+      "bytes": 5643
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/training_state.pt": {
+      "sha256": "38dec9084cab5dae4692becf820e45513ffcc5b4e9b61856a3dc37db198f6d25",
+      "bytes": 132849832
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0064/vocab.json": {
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "bytes": 2776833
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/gradient_diagnostics.json": {
+      "sha256": "5c05f5b1dbafe2bb894417c67be95f70d7f335b40cc00847047579355262b23a",
+      "bytes": 3915
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/run_manifest.json": {
+      "sha256": "a6956e24610a9830b5e3e2ca7a1cf7960921d7aad3c083edbe8d06da0ff4f96b",
+      "bytes": 87371
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/target_exposure_manifest.csv": {
+      "sha256": "ab8c2492c662c952bbba1d4b2096e93fc6864f03026e4341fa56de2f248690cb",
+      "bytes": 10680
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/training_trace.csv": {
+      "sha256": "86ae303cd3a6e35b2387e298c21660fcd0c010e5240aacd0ffd78d11a60db3bc",
+      "bytes": 225744
+    }
+  },
+  "source_artifact_count": 180,
+  "route": "B0_source_state_complete",
+  "passed": true
+}
