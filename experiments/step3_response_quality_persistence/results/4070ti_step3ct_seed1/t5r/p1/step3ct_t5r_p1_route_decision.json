@@ -1,0 +1,12 @@
+{
+  "name": "step3ct_t5r_p1_route_decision_v1",
+  "route": "P1_entry_and_implementation_pass_authorize_P2_safety_review",
+  "overall_pass": true,
+  "entry_git_head": "6ef670c1b9de72a82f0db20e335b66c15ce4b9a4",
+  "gate_table_sha256": "9615de30b3924345582323b93c0380109e67946f3f5c6900fbdd00f6615a0fef",
+  "next_authorized_action": "push_P1_then_qualify_and_launch_fresh_Safety_A_B",
+  "reviewer_launch_authorized_only_after_p1_push": true,
+  "model_checkpoint_execution_authorized": false,
+  "fresh_training_or_generation_authorized": false,
+  "heldout_opened": false
+}

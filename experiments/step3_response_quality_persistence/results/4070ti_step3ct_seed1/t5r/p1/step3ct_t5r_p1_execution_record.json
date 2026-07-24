@@ -1,0 +1,76 @@
+{
+  "name": "step3ct_t5r_p1_entry_and_implementation_record_v1",
+  "entry_git_head": "6ef670c1b9de72a82f0db20e335b66c15ce4b9a4",
+  "registry": "experiments/step3_response_quality_persistence/configs/step3ct_t5r_review_recovery_registry.json",
+  "registry_sha256": "e9c1649b7af45a91288ac96c6b9362e87d7946fca76d9be4201e25d599bd3e08",
+  "commands": [
+    ".venv/Scripts/python.exe -m py_compile experiments/step3_response_quality_persistence/scripts/step3ct_t5r_common.py experiments/step3_response_quality_persistence/scripts/validate_step3ct_t5r_entry.py experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_review.py experiments/step3_response_quality_persistence/scripts/summarize_step3ct_t6.py experiments/step3_response_quality_persistence/scripts/test_step3ct_t5r.py",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/test_step3ct_t5r.py",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/test_step3ct_t4.py",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/test_step3ct_training_common.py",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/validate_step3ct_t5r_entry.py"
+  ],
+  "synthetic_protocol_tests": {
+    "tests": 10,
+    "passed": true
+  },
+  "regression_tests": {
+    "tests": 13,
+    "passed": true
+  },
+  "environment": {
+    "python": "3.11.5",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "peft": "0.16.0",
+    "cuda_runtime": "12.1",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "gpu_total_bytes": 12878086144,
+    "gpu_free_bytes": 11572084736
+  },
+  "generation": {
+    "cells": 12,
+    "rows": 1200
+  },
+  "packets": {
+    "safety": {
+      "packet_rows": 630,
+      "primary_rows": 600,
+      "hidden_duplicates": 30,
+      "packet_sha256": "851badc6f208b4ae80861b9b8d38ec713f3c4d8429c36767047f7115c50bc937"
+    },
+    "quality": {
+      "packet_rows": 330,
+      "primary_rows": 300,
+      "hidden_duplicates": 30,
+      "packet_sha256": "c6172853c596ace5d06410254a5d4b63532c7751a9ebfa12c6817e5d816aaa6a"
+    },
+    "utility": {
+      "packet_rows": 330,
+      "primary_rows": 300,
+      "hidden_duplicates": 30,
+      "packet_sha256": "9050f85e09780a67fb8a9e8415ab589fbd07ebe86918338c1889ffefcba85f56"
+    }
+  },
+  "t5_accepted_label_files": 0,
+  "t5_accepted_rows": 0,
+  "implementation_hashes": {
+    "experiments/step3_response_quality_persistence/scripts/step3ct_t5r_common.py": "7341999d774df3afa073fcb37ae73f27cbc6e8dfcfa3834fe43ffa320746ca09",
+    "experiments/step3_response_quality_persistence/scripts/validate_step3ct_t5r_entry.py": "a4869d10d76aa5c845142a037fd36e91e8824e987667dc8f9e6d1666929d13ba",
+    "experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_review.py": "64f9e471d22e74058282830d136098cd70015b21cf3d6031cc951ef655e27088",
+    "experiments/step3_response_quality_persistence/scripts/summarize_step3ct_t6.py": "4d2132e7dba0a13fe0d2c006bf57002ea859a1cef09949b42f54fb834ca15b44",
+    "experiments/step3_response_quality_persistence/scripts/test_step3ct_t5r.py": "d76cc2fa11aa994679f3a7d340c6e6c65a0a06ef1891b8b5712e3e28da831a59",
+    "experiments/step3_response_quality_persistence/configs/step3ct_t5r_reviewer_provenance_template.json": "1c66ea9d650f88dc6f4d6cb41833eec1c539e393cf382244bdf0a5221e4e3221"
+  },
+  "gate_table": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/p1/step3ct_t5r_p1_entry_gate_table.csv",
+  "gate_table_sha256": "9615de30b3924345582323b93c0380109e67946f3f5c6900fbdd00f6615a0fef",
+  "route": "P1_entry_and_implementation_pass_authorize_P2_safety_review",
+  "next_authorized_action": "push_P1_then_qualify_and_launch_fresh_Safety_A_B",
+  "overall_pass": true,
+  "reviewer_launched": false,
+  "model_checkpoint_opened": false,
+  "core100_newly_opened": false,
+  "heldout_opened": false,
+  "fresh_training_or_generation": false
+}
