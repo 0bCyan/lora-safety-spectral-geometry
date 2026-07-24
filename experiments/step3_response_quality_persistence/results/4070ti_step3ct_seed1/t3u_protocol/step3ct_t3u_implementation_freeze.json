@@ -1,0 +1,92 @@
+{
+  "name": "step3ct_t3u_optimizer_unit_implementation_freeze_v1",
+  "status": "prospective_before_t3_optimizer_steps",
+  "git_head_before_freeze_commit": "6fb92ed1b0754329badd1db9ec50387335b9e6e5",
+  "machine": {
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "vram_mib": 12282,
+    "driver": "591.86",
+    "python": "3.11.5",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "peft": "0.16.0",
+    "cuda_runtime": "12.1"
+  },
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/Step3C_T3_optimizer_unit_execution_amendment.md",
+      "sha256": "8081b93456cc48da9c4b8573dd3a8e7ab61a73ff7d1571198d23706dcc3863a5",
+      "bytes": 4813
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57",
+      "bytes": 25925
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3ct_t3_diagnostics.py",
+      "sha256": "7f1adb10c6529d2b665644fd02c7c3364c32d17761542877b68dc8a8d15a2e93",
+      "bytes": 2504
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1",
+      "bytes": 22280
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_t2r_common.py",
+      "sha256": "a99201a8a8d502c460207b7d16b5fd0b2cd7c649d5e1ba163338ebc3cbabe6c3",
+      "bytes": 13853
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json",
+      "sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+      "bytes": 3677
+    }
+  ],
+  "immutable_inputs": [
+    {
+      "path": "experiments/step3_response_quality_persistence/Step3C_T_seed1_c3_training_tournament_plan.md",
+      "sha256": "068711da8bbb0679c05dafc7c32fb36af548763c8f748436de4d91da151be24a"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/Step3C_T2R_step0_calibration_and_smoke_requalification_plan.md",
+      "sha256": "fdca7c2eb51315c76aa11a908ba6bb76fd7d28ab1d3f13a9f1936276c7cd1ed3"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/step3ct_t2r_calibration_registry.json",
+      "sha256": "3bcf4a458bbce886f97403c86d957dabc066dccec0c623e42177a71899d07cff"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/smoke_t2r/step3ct_t2r_r3_route_decision.json",
+      "sha256": "643ae5b0469418f840e5a338aee8ed92290bc55ef49058910a15b8680091dba7"
+    }
+  ],
+  "diagnostic_definition": {
+    "unit": "sum_of_four_unweighted_microstep_branch_gradients",
+    "storage_dtype_and_device": "cpu_float64",
+    "labels": [0, 16, 32, 64],
+    "terminal_label_convention": "unit_completing_step64",
+    "gradient_tensors_serialized": false,
+    "eta_adaptation_allowed": false
+  },
+  "tests": {
+    "step3ct_t3_diagnostics": 3,
+    "step3ct_training_common": 9,
+    "step3ct_t2r_common": 6,
+    "total": 18,
+    "passed": 18,
+    "failed": 0
+  },
+  "smoke_command_template": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm <ARM> --run-kind smoke --max-steps 2 --output-dir <NEW_OUTPUT>",
+  "smoke_resume_command_template": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm <ARM> --run-kind smoke --max-steps 2 --resume-from <ORIGINAL_STEP1> --output-dir <NEW_RESUME_OUTPUT>",
+  "t3_command_template": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm <ARM> --run-kind main --output-dir <NEW_OUTPUT>",
+  "previous_r3_artifacts_immutable": true,
+  "previous_r3_execution_freeze_superseded_by_code_change": true,
+  "optimizer_objects_created_by_freeze": 0,
+  "optimizer_steps": 0,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "overall_pass": true
+}

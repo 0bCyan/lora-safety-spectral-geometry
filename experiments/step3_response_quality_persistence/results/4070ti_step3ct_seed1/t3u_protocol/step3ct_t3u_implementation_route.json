@@ -1,0 +1,19 @@
+{
+  "name": "step3ct_t3u_optimizer_unit_implementation_route_v1",
+  "route": "T3U_implementation_frozen_pending_smoke",
+  "implementation_tests_pass": true,
+  "source_and_config_hashes_frozen": true,
+  "training_semantics_changed": false,
+  "diagnostic_serialization_changed": true,
+  "eta_unchanged": true,
+  "data_and_schedule_unchanged": true,
+  "queue_and_projection_unchanged": true,
+  "previous_r3_artifacts_immutable": true,
+  "next_authorized_package": "T3U_three_arm_two_step_smoke_and_step1_resume",
+  "t3_full_training_authorized": false,
+  "candidate_generation_authorized": false,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "overall_pass": true
+}

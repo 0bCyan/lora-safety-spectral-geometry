@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Any
 
 import step3ct_training_common as common
+import step3ct_t2r_common as recovery
 
 
 REPO = Path(__file__).resolve().parents[3]
@@ -31,6 +32,68 @@ def parse_args() -> argparse.Namespace:
 
 def git_head() -> str:
     return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, text=True).strip()
+
+
+def diagnostic_label_for_step(
+    run_kind: str,
+    global_step: int,
+    max_steps: int,
+    full_steps: int,
+    diagnostic_steps: list[int],
+) -> int | None:
+    if run_kind == "smoke":
+        return global_step + 1
+    if global_step in diagnostic_steps:
+        return global_step
+    if max_steps == full_steps and global_step == full_steps - 1:
+        return full_steps
+    return None
+
+
+def accumulate_gradient_unit(
+    total: dict[str, Any] | None,
+    gradients: dict[str, Any] | None,
+) -> dict[str, Any] | None:
+    if gradients is None:
+        return total
+    if total is None:
+        total = recovery.zeros_like_float64(gradients)
+    recovery.add_in_place(total, gradients)
+    return total
+
+
+def optimizer_unit_diagnostic(
+    checkpoint_step: int,
+    optimizer_step: int,
+    positions: list[int],
+    safety_gradients: dict[str, Any],
+    binding_gradients: dict[str, Any] | None,
+    eta: float,
+    hard_active_positions: int,
+) -> dict[str, Any]:
+    safety_norm = recovery.gradient_norm(safety_gradients)
+    binding_norm = 0.0 if binding_gradients is None else recovery.gradient_norm(binding_gradients)
+    return {
+        "checkpoint_step": checkpoint_step,
+        "optimizer_step": optimizer_step,
+        "gradient_unit": "sum_of_four_unweighted_microstep_branch_gradients",
+        "positions": positions,
+        "microstep_count": len(positions),
+        "safety_gradient_norm": safety_norm,
+        "binding_gradient_norm": binding_norm,
+        "unweighted_binding_safety_ratio": binding_norm / safety_norm if safety_norm else math.nan,
+        "eta_weighted_binding_safety_ratio": eta * binding_norm / safety_norm if safety_norm else math.nan,
+        "binding_safety_cosine": (
+            "" if binding_gradients is None else recovery.gradient_cosine(binding_gradients, safety_gradients)
+        ),
+        "safety_energy": common.gradient_energy(safety_gradients),
+        "binding_energy": {} if binding_gradients is None else common.gradient_energy(binding_gradients),
+        "safety_gradient_hash": recovery.gradient_hash(safety_gradients),
+        "binding_gradient_hash": "" if binding_gradients is None else recovery.gradient_hash(binding_gradients),
+        "hard_active_positions": hard_active_positions,
+        "finite_nonzero": recovery.gradients_finite_nonzero(safety_gradients)
+        and (binding_gradients is None or recovery.gradients_finite_nonzero(binding_gradients)),
+    }
 
 
 def load_model(cfg: dict[str, Any], resume_from: Path | None) -> tuple[Any, Any]:
@@ -295,11 +358,18 @@ def main() -> None:
     binding_coefficient = p * eta / microsteps
     skipped_updates = 0
     finite_updates = True
+    diagnostic_steps = [int(value) for value in cfg["diagnostic_steps"]]
 
     for global_step in range(start_step, max_steps):
         step_started = time.time()
         scale_value = float(scaler.get_scale())
         step_total_loss = 0.0
+        diagnostic_label = diagnostic_label_for_step(
+            args.run_kind, global_step, max_steps, full_steps, diagnostic_steps
+        )
+        step_safety_gradients: dict[str, Any] | None = None
+        step_binding_gradients: dict[str, Any] | None = None
+        step_hard_active_positions = 0
         for micro_index in range(microsteps):
             draw_index = global_step * microsteps + micro_index
             risk_index = order[draw_index]
@@ -316,12 +386,6 @@ def main() -> None:
                 risk_loss = model(**risk_batch, use_cache=False, return_dict=True).loss
             scaler.scale(risk_loss * risk_coefficient).backward()
 
-            diagnostic_label: int | None = None
-            if micro_index == 0:
-                if global_step in set(int(value) for value in cfg["diagnostic_steps"]):
-                    diagnostic_label = global_step
-                elif max_steps == full_steps and global_step == full_steps - 1:
-                    diagnostic_label = full_steps
             before_safety = common.capture_lora_gradients(model) if diagnostic_label is not None else None
             with torch.autocast("cuda", dtype=torch.float16, enabled=bool(cfg["fp16"])):
                 safety_batch = common.batch_feature(target_features[str(safety_row["target_id"])], device)
@@ -333,6 +397,7 @@ def main() -> None:
                 safety_gradients = common.gradient_delta(
                     after_safety, before_safety, scale_value * safety_coefficient
                 )
+                step_safety_gradients = accumulate_gradient_unit(step_safety_gradients, safety_gradients)
 
             binding_metrics: dict[str, Any] = {
                 "binding_loss": 0.0,
@@ -369,23 +434,8 @@ def main() -> None:
                 binding_gradients = common.gradient_delta(
                     after_binding, before_binding, scale_value * binding_coefficient
                 )
-
-            if diagnostic_label is not None and safety_gradients is not None:
-                safety_norm = common.gradient_norm(safety_gradients)
-                binding_norm = 0.0 if binding_gradients is None else common.gradient_norm(binding_gradients)
-                diagnostic_rows.append(
-                    {
-                        "checkpoint_step": diagnostic_label,
-                        "micro_index": micro_index,
-                        "safety_gradient_norm": safety_norm,
-                        "binding_gradient_norm": binding_norm,
-                        "unweighted_binding_safety_ratio": binding_norm / safety_norm if safety_norm else math.nan,
-                        "eta_weighted_binding_safety_ratio": eta * binding_norm / safety_norm if safety_norm else math.nan,
-                        "binding_safety_cosine": "" if binding_gradients is None else common.gradient_cosine(binding_gradients, safety_gradients),
-                        "safety_energy": common.gradient_energy(safety_gradients),
-                        "binding_energy": {} if binding_gradients is None else common.gradient_energy(binding_gradients),
-                    }
-                )
+                step_binding_gradients = accumulate_gradient_unit(step_binding_gradients, binding_gradients)
+            step_hard_active_positions += int(int(binding_metrics["hard_rows"]) > 0)
 
             total_loss = common.weighted_total_loss(
                 float(risk_loss.detach().float().cpu()),
@@ -422,6 +472,21 @@ def main() -> None:
                     "evicted_target_hashes": json.dumps(binding_metrics["evicted_target_hashes"]),
                     "negative_id_hash": binding_metrics["negative_id_hash"],
                 }
+            )
+
+        if diagnostic_label is not None:
+            if step_safety_gradients is None:
+                raise RuntimeError(f"missing safety diagnostic at optimizer step {global_step + 1}")
+            diagnostic_rows.append(
+                optimizer_unit_diagnostic(
+                    checkpoint_step=diagnostic_label,
+                    optimizer_step=global_step + 1,
+                    positions=list(range(global_step * microsteps, (global_step + 1) * microsteps)),
+                    safety_gradients=step_safety_gradients,
+                    binding_gradients=step_binding_gradients,
+                    eta=eta,
+                    hard_active_positions=step_hard_active_positions,
+                )
             )
 
         scaler.unscale_(optimizer)
@@ -524,6 +589,9 @@ def main() -> None:
         "core100_opened": False,
         "heldout_opened": False,
         "candidate_outputs_generated": False,
+        "gradient_diagnostic_definition": "optimizer_unit_sum_of_four_unweighted_microstep_branch_gradients",
+        "gradient_diagnostic_labels": [int(row["checkpoint_step"]) for row in diagnostic_rows],
+        "gradient_diagnostics_hash": common.hash_json(diagnostic_rows),
     }
     common.write_json(output / "run_manifest.json", manifest)
     print(json.dumps({"arm": args.arm, "completed_steps": max_steps, "manifest": str(output / 'run_manifest.json')}))
