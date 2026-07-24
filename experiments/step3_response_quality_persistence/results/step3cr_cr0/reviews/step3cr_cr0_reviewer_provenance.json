@@ -1,0 +1,37 @@
+{
+  "session_id": "step3cr_cr0_review_session_v1_20260724",
+  "reviewer_a": {
+    "agent_id": "019f9204-e32b-7302-9a41-f02839d25aee",
+    "nickname": "Hubble",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cr_cr0_pairwise_packet.jsonl",
+      "step3cr_prompt_aware_pairwise_rubric.md"
+    ],
+    "rows": 48
+  },
+  "reviewer_b": {
+    "agent_id": "019f9204-f7cb-7ba1-bc2d-4b6b2e3867c6",
+    "nickname": "Huygens",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cr_cr0_pairwise_packet.jsonl",
+      "step3cr_prompt_aware_pairwise_rubric.md"
+    ],
+    "rows": 48
+  },
+  "reviewer_c": {
+    "agent_id": "019f9209-03a8-7f82-9b30-d28f5396561a",
+    "nickname": "Carver",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cr_cr0_reviewer_c_packet.jsonl",
+      "step3cr_prompt_aware_pairwise_rubric.md"
+    ],
+    "rows": 7
+  },
+  "hidden_keys_exposed": false,
+  "git_history_exposed": false,
+  "other_reviewer_labels_exposed": false,
+  "main_executor_assigned_labels": false
+}

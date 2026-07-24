@@ -1,0 +1,73 @@
+{
+  "name": "step3cr_cr0_review_agreement_v1",
+  "session_id": "step3cr_cr0_review_session_v1_20260724",
+  "review_rows": 48,
+  "canonical_outcome_pairs": 40,
+  "duplicate_qc_rows": 8,
+  "pair_preference": {
+    "n": 40,
+    "raw_agreement": 0.825,
+    "gwet_ac1": 0.7597082171207895,
+    "cohen_kappa": 0.6785304247990813
+  },
+  "specific_safe_next_step": {
+    "n": 80,
+    "raw_agreement": 1.0,
+    "gwet_ac1": 1.0,
+    "cohen_kappa": null
+  },
+  "naturalness_sensitivity": {
+    "n": 80,
+    "raw_agreement": 1.0,
+    "gwet_ac1": 1.0,
+    "cohen_kappa": null
+  },
+  "reviewer_a_label_prevalence": {
+    "pair_preference": {
+      "tie": 13,
+      "left": 17,
+      "right": 18
+    },
+    "specificity": {
+      "yes": 96
+    },
+    "naturalness": {
+      "yes": 96
+    }
+  },
+  "reviewer_b_label_prevalence": {
+    "pair_preference": {
+      "tie": 11,
+      "left": 15,
+      "right": 22
+    },
+    "specificity": {
+      "yes": 96
+    },
+    "naturalness": {
+      "yes": 96
+    }
+  },
+  "decision_field_disagreement_rows": 7,
+  "disagreement_type_counts": {
+    "pair_preference": 7
+  },
+  "reviewer_c_rows": 7,
+  "reviewer_c_coverage": 1.0,
+  "gates": {
+    "pair_preference_agreement_pass": false,
+    "specificity_agreement_pass": true,
+    "reviewer_a_preference_reversal_pass": true,
+    "reviewer_b_preference_reversal_pass": true,
+    "reviewer_a_specificity_reversal_pass": true,
+    "reviewer_b_specificity_reversal_pass": true,
+    "reviewer_a_non_tie_pass": true,
+    "reviewer_b_non_tie_pass": true,
+    "reviewer_a_position_bias_pass": true,
+    "reviewer_b_position_bias_pass": false,
+    "all_disagreements_adjudicated": true,
+    "overall_pass": false
+  },
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

@@ -1,0 +1,23 @@
+{
+  "name": "step3cr_cr0_reviewer_c_packet_manifest_v1",
+  "packet_rows": 7,
+  "packet_sha256": "88e9264148fff3dc90827358b1e4beeec19db0e93a0fe86d12bf20a8b5c56b6d",
+  "dispute_fields": [
+    "pair_preference",
+    "left_specific_safe_next_step",
+    "right_specific_safe_next_step",
+    "left_natural",
+    "right_natural"
+  ],
+  "reviewer_c_must_not_read_hidden_key": true,
+  "heldout_opened": false,
+  "training_authorized": false,
+  "reviewer_c_rows": 7,
+  "reviewer_c_sha256": "43046bc6994c19dc4eac477fcea9b882d3b1ae6899ceb47845581a0ab1108fb0",
+  "canonical_lf_normalization": {
+    "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/reviews/step3cr_cr0_reviewer_c.jsonl",
+    "before_sha256": "43046bc6994c19dc4eac477fcea9b882d3b1ae6899ceb47845581a0ab1108fb0",
+    "canonical_sha256": "43046bc6994c19dc4eac477fcea9b882d3b1ae6899ceb47845581a0ab1108fb0",
+    "eol_normalized": false
+  }
+}

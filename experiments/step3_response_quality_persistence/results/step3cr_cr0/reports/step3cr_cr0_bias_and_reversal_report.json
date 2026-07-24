@@ -1,0 +1,166 @@
+{
+  "name": "step3cr_cr0_bias_and_reversal_v1",
+  "reviewer_a_reversal": {
+    "denominator": 8,
+    "preference_consistent_count": 8,
+    "specificity_consistent_count": 8,
+    "naturalness_consistent_count": 8,
+    "details": [
+      {
+        "canonical_pair_id": "step3cr_cp_0004",
+        "primary_opaque_pair_id": "step3cr_pair_0004",
+        "duplicate_opaque_pair_id": "step3cr_pair_0005",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0005",
+        "primary_opaque_pair_id": "step3cr_pair_0006",
+        "duplicate_opaque_pair_id": "step3cr_pair_0007",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0006",
+        "primary_opaque_pair_id": "step3cr_pair_0008",
+        "duplicate_opaque_pair_id": "step3cr_pair_0009",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0019",
+        "primary_opaque_pair_id": "step3cr_pair_0022",
+        "duplicate_opaque_pair_id": "step3cr_pair_0023",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0023",
+        "primary_opaque_pair_id": "step3cr_pair_0027",
+        "duplicate_opaque_pair_id": "step3cr_pair_0028",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0028",
+        "primary_opaque_pair_id": "step3cr_pair_0033",
+        "duplicate_opaque_pair_id": "step3cr_pair_0034",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0035",
+        "primary_opaque_pair_id": "step3cr_pair_0041",
+        "duplicate_opaque_pair_id": "step3cr_pair_0042",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0040",
+        "primary_opaque_pair_id": "step3cr_pair_0047",
+        "duplicate_opaque_pair_id": "step3cr_pair_0048",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      }
+    ]
+  },
+  "reviewer_b_reversal": {
+    "denominator": 8,
+    "preference_consistent_count": 8,
+    "specificity_consistent_count": 8,
+    "naturalness_consistent_count": 8,
+    "details": [
+      {
+        "canonical_pair_id": "step3cr_cp_0004",
+        "primary_opaque_pair_id": "step3cr_pair_0004",
+        "duplicate_opaque_pair_id": "step3cr_pair_0005",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0005",
+        "primary_opaque_pair_id": "step3cr_pair_0006",
+        "duplicate_opaque_pair_id": "step3cr_pair_0007",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0006",
+        "primary_opaque_pair_id": "step3cr_pair_0008",
+        "duplicate_opaque_pair_id": "step3cr_pair_0009",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0019",
+        "primary_opaque_pair_id": "step3cr_pair_0022",
+        "duplicate_opaque_pair_id": "step3cr_pair_0023",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0023",
+        "primary_opaque_pair_id": "step3cr_pair_0027",
+        "duplicate_opaque_pair_id": "step3cr_pair_0028",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0028",
+        "primary_opaque_pair_id": "step3cr_pair_0033",
+        "duplicate_opaque_pair_id": "step3cr_pair_0034",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0035",
+        "primary_opaque_pair_id": "step3cr_pair_0041",
+        "duplicate_opaque_pair_id": "step3cr_pair_0042",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr_cp_0040",
+        "primary_opaque_pair_id": "step3cr_pair_0047",
+        "duplicate_opaque_pair_id": "step3cr_pair_0048",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      }
+    ]
+  },
+  "reviewer_a_position_bias": {
+    "canonical_primary_pairs": 40,
+    "non_tie_count": 29,
+    "left_count": 12,
+    "right_count": 17,
+    "left_share": 0.41379310344827586,
+    "right_share": 0.5862068965517241,
+    "absolute_left_right_share_imbalance": 0.17241379310344823
+  },
+  "reviewer_b_position_bias": {
+    "canonical_primary_pairs": 40,
+    "non_tie_count": 31,
+    "left_count": 10,
+    "right_count": 21,
+    "left_share": 0.3225806451612903,
+    "right_share": 0.6774193548387096,
+    "absolute_left_right_share_imbalance": 0.3548387096774193
+  },
+  "naturalness_reversal_is_descriptive_only": true
+}

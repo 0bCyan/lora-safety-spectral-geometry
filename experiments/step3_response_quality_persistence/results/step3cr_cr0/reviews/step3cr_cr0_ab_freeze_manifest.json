@@ -1,0 +1,56 @@
+{
+  "name": "step3cr_cr0_ab_freeze_manifest_v1",
+  "session_id": "step3cr_cr0_review_session_v1_20260724",
+  "packet_sha256": "c7332143c664dbe5ab84e9b78bbce5babe40940ffb2345e51d78cd718de3b8d7",
+  "rubric_sha256": "528edaad3fd4c467ce4922d97e0814bcf9ba8b01d8344f152a535c27efec440d",
+  "reviewer_a_rows": 48,
+  "reviewer_b_rows": 48,
+  "reviewer_a_sha256": "f1193d19f929242d7d8600b485a7f6745b436bd90803a0243b58fb9ef92d9373",
+  "reviewer_b_sha256": "0f0da8e8051be67470c4a14d8038860d980633c1b154abea0618dd688577b035",
+  "canonical_lf_normalization": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/reviews/step3cr_cr0_reviewer_a.jsonl",
+      "before_sha256": "f1193d19f929242d7d8600b485a7f6745b436bd90803a0243b58fb9ef92d9373",
+      "canonical_sha256": "f1193d19f929242d7d8600b485a7f6745b436bd90803a0243b58fb9ef92d9373",
+      "eol_normalized": false
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/reviews/step3cr_cr0_reviewer_b.jsonl",
+      "before_sha256": "0f0da8e8051be67470c4a14d8038860d980633c1b154abea0618dd688577b035",
+      "canonical_sha256": "0f0da8e8051be67470c4a14d8038860d980633c1b154abea0618dd688577b035",
+      "eol_normalized": false
+    }
+  ],
+  "provenance": {
+    "session_id": "step3cr_cr0_review_session_v1_20260724",
+    "reviewer_a": {
+      "agent_id": "019f9204-e32b-7302-9a41-f02839d25aee",
+      "nickname": "Hubble",
+      "fresh_context": true,
+      "allowed_inputs": [
+        "step3cr_cr0_pairwise_packet.jsonl",
+        "step3cr_prompt_aware_pairwise_rubric.md"
+      ],
+      "rows": 48
+    },
+    "reviewer_b": {
+      "agent_id": "019f9204-f7cb-7ba1-bc2d-4b6b2e3867c6",
+      "nickname": "Huygens",
+      "fresh_context": true,
+      "allowed_inputs": [
+        "step3cr_cr0_pairwise_packet.jsonl",
+        "step3cr_prompt_aware_pairwise_rubric.md"
+      ],
+      "rows": 48
+    },
+    "reviewer_c": null,
+    "hidden_keys_exposed": false,
+    "git_history_exposed": false,
+    "other_reviewer_labels_exposed": false,
+    "main_executor_assigned_labels": false
+  },
+  "ab_labels_frozen_before_c_packet": true,
+  "main_executor_assigned_labels": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}
