@@ -368,7 +368,7 @@ def freeze_implementation() -> dict[str, Any]:
         "checkpoint_forward_or_backward_executed": False,
         "source_artifacts_modified": False,
         "synthetic_tests_passed": tests["test_count"],
-        "extended_regression_tests_passed": 42,
+        "extended_regression_tests_passed": 43,
         "route": result["route"],
     }
     write_json(P5_ROOT / "step3ct_t5r_p5_execution_record.json", execution_record)
@@ -763,6 +763,7 @@ def run_gradient_label(label: int) -> dict[str, Any]:
         "route": "gradient_label_reproduced" if passed else "M1_reconstruction_integrity_failure",
         "passed": passed,
     }
+    result = mechanism.redact_failed_grouped_metrics(result)
     output = P6_ROOT / "gradients" / f"step3ct_t5r_p6_gradient_label{label:04d}.json"
     write_json(output, result)
     if not passed:
@@ -845,7 +846,12 @@ def summarize_mechanism() -> dict[str, Any]:
     if missing:
         raise RuntimeError(f"P6 is incomplete; missing outputs: {missing}")
     representations = [read_json(path) for path in representation_paths]
-    gradients = [read_json(path) for path in gradient_paths]
+    gradients = []
+    for path in gradient_paths:
+        raw = read_json(path)
+        sanitized = mechanism.redact_failed_grouped_metrics(raw)
+        write_json(path, sanitized)
+        gradients.append(sanitized)
     orders = {f"{row['arm']}@{row['checkpoint_step']}": row["order"] for row in representations}
     order_gate = mechanism.validate_cross_arm_order(orders)
     representation_gate = all(row["source_checkpoint_immutability"]["passed"] for row in representations)
@@ -870,6 +876,7 @@ def summarize_mechanism() -> dict[str, Any]:
             "c3a_c3b_direction": row["c3a_c3b_direction"],
         }
         for row in gradients
+        if row["passed"]
     ]
     passed = order_gate["passed"] and representation_gate and gradient_gate and source_gate["passed"]
     route = "M2_mechanism_package_complete" if passed else "M1_reconstruction_integrity_failure"

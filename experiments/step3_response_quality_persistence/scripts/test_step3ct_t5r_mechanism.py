@@ -145,6 +145,21 @@ class Step3CTT5RMechanismTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             common.assert_no_full_gradient_serialization({"gradients": {"x": [1.0, 2.0]}})
 
+    def test_failed_grouped_metrics_are_withheld(self) -> None:
+        result = {
+            "passed": False,
+            "arms": {
+                "C3a": {"reproduction_passed": False, "grouped_metrics": {"attention_cosine": 0.5}},
+                "C3b": {"reproduction_passed": True, "grouped_metrics": {"attention_cosine": 0.6}},
+            },
+            "c3a_c3b_direction": {"global_cosine": 0.9},
+        }
+        redacted = common.redact_failed_grouped_metrics(result)
+        self.assertFalse(redacted["arms"]["C3a"]["grouped_metrics"]["registered"])
+        self.assertEqual(redacted["arms"]["C3b"]["grouped_metrics"]["attention_cosine"], 0.6)
+        self.assertFalse(redacted["c3a_c3b_direction"]["registered"])
+        self.assertFalse(redacted["approximate_grouped_metrics_reported"])
+
     def test_registered_diagnostic_comparison(self) -> None:
         row = {
             "checkpoint_step": 0,

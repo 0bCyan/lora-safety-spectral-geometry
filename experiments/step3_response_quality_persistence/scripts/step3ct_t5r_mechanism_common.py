@@ -367,6 +367,25 @@ def assert_no_full_gradient_serialization(value: Any, path: str = "root") -> Non
         raise TypeError(f"non-scalar payload type {type(value).__name__} at {path}")
 
 
+def redact_failed_grouped_metrics(result: dict[str, Any]) -> dict[str, Any]:
+    """Remove approximate grouped outcomes when exact reconstruction did not pass."""
+    if bool(result.get("passed")):
+        return result
+    for arm_result in result.get("arms", {}).values():
+        if not bool(arm_result.get("reproduction_passed")):
+            arm_result["grouped_metrics"] = {
+                "registered": False,
+                "withheld_reason": "exact registered diagnostic reconstruction failed",
+            }
+    result["c3a_c3b_direction"] = {
+        "registered": False,
+        "withheld_reason": "at least one arm failed exact registered diagnostic reconstruction",
+    }
+    result["approximate_grouped_metrics_reported"] = False
+    assert_no_full_gradient_serialization(result)
+    return result
+
+
 def numeric_close(left: Any, right: Any, tolerance: float) -> bool:
     if left == "" or right == "":
         return left == right

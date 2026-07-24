@@ -1,6 +1,6 @@
 {
   "name": "step3ct_t5r_p5_source_state_inventory_v1",
-  "created_at_git_head": "490918d3910495284d0aeed1bd5b90ceaa79da82",
+  "created_at_git_head": "b6cae230c9d4a8ea9be7f207d8b52a3e5443db6b",
   "config": {
     "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json",
     "sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
