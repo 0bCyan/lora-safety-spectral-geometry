@@ -1,0 +1,40 @@
+{
+  "session_id": "step3cr_cr0_review_session_v2_20260724",
+  "reviewer_a": {
+    "agent_id": "019f9212-a787-7bf1-9935-632c9897925b",
+    "nickname": "Maxwell",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cr_cr0_v2_pairwise_packet.jsonl",
+      "step3cr_prompt_aware_pairwise_rubric_v2.md"
+    ],
+    "rows": 48
+  },
+  "reviewer_b": {
+    "agent_id": "019f9212-bbd7-72c0-87e7-7cf5b6362e3e",
+    "nickname": "Arendt",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cr_cr0_v2_pairwise_packet.jsonl",
+      "step3cr_prompt_aware_pairwise_rubric_v2.md"
+    ],
+    "rows": 48
+  },
+  "reviewer_c": {
+    "agent_id": "019f9216-fd8e-78a1-b995-5677fb0b71dd",
+    "nickname": "Pasteur",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cr_cr0_v2_reviewer_c_packet.jsonl",
+      "step3cr_prompt_aware_pairwise_rubric_v2.md"
+    ],
+    "rows": 14,
+    "other_reviewer_labels_exposed": false,
+    "other_reviewer_short_reasons_exposed": true
+  },
+  "hidden_keys_exposed": false,
+  "git_history_exposed": false,
+  "other_reviewer_labels_exposed": false,
+  "v1_labels_exposed_or_reused": false,
+  "main_executor_assigned_labels": false
+}

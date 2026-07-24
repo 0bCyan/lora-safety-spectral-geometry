@@ -1,0 +1,18 @@
+{
+  "name": "step3cr_cr0_v2_environment_v1",
+  "generated_at_utc": "2026-07-24T03:10:31.554371+00:00",
+  "protocol_commit": "c059b11",
+  "protocol_commit_time": "2026-07-24T11:01:30+08:00",
+  "elapsed_protocol_to_decision_seconds": 541.554371,
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)]",
+  "torch": "2.5.1+cu121",
+  "cuda_available": true,
+  "cuda_version": "12.1",
+  "cuda_device": "NVIDIA GeForce RTX 4070 Ti",
+  "reviewer_a_agent_id": "019f9212-a787-7bf1-9935-632c9897925b",
+  "reviewer_b_agent_id": "019f9212-bbd7-72c0-87e7-7cf5b6362e3e",
+  "reviewer_c_agent_id": "019f9216-fd8e-78a1-b995-5677fb0b71dd",
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

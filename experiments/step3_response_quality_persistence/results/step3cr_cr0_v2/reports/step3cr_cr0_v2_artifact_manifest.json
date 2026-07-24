@@ -1,0 +1,146 @@
+{
+  "name": "step3cr_cr0_v2_artifact_manifest_v1",
+  "session_id": "step3cr_cr0_review_session_v2_20260724",
+  "artifact_count": 27,
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/step3cr_recovery_registry.json",
+      "sha256": "d134be7c5a79eecd798093afab4d4309ef638d421a5b7dc8c4009c45ab260374",
+      "bytes": 3885
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3cr_prompt_aware_pairwise_rubric_v2.md",
+      "sha256": "e694e0eac983e0c73500bc567337c55f95b6a4ac07b805daa286cbeb61eb6cc6",
+      "bytes": 2992
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/run_step3cr_cr0_v2.py",
+      "sha256": "abce6de934107bbccfc7c239084cc386f5c18dd0523053d7453a7e52e991c5e8",
+      "bytes": 38018
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reports/step3cr_cr0_v1_archive_manifest.json",
+      "sha256": "26172011baad57f06d1de5c98a2035c23e1af72c5b230a776e15e98c0acdf95a",
+      "bytes": 7426
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reports/Step3CR_CR0_v2_rubric_clarification.md",
+      "sha256": "2493296e48e76c7c2225fcc4cd8a072913e8fe176cd16aa7d6cd0fe24c1c8ae9",
+      "bytes": 819
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/diagnostics/step3cr_cr0_v2_preparation_validation.json",
+      "sha256": "f4aa17b26ee2d0aa759d8026b0d26bbf7032d8a552ac4b68c6524a19ff47db70",
+      "bytes": 565
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reports/step3cr_cr0_v2_environment.json",
+      "sha256": "6b8cdcdef8a214bab350370cdbabc86c6b5c7044c4addb9906044f734c789df0",
+      "bytes": 755
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/packets/step3cr_cr0_v2_pairwise_packet.jsonl",
+      "sha256": "b84f1608e24b5eedb919dfc99532e5d2b80546273aeef181a1a15703d4274eb7",
+      "bytes": 25057
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/packets/step3cr_cr0_v2_pairwise_hidden_key.csv",
+      "sha256": "1ad13c94549c4afd2b6054188214670403134a9cac4d9e8886e86dad2ccf74ba",
+      "bytes": 25192
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/packets/step3cr_cr0_v2_reversed_duplicate_key.csv",
+      "sha256": "d50099e29b7f9fcd487bfd133ec29720774a71b74ac6b1bc2ebeddb0d9ac6df1",
+      "bytes": 803
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/packets/step3cr_cr0_v2_reviewer_a_template.jsonl",
+      "sha256": "55885caa704f5387d742d47582b06c84b1a7f2e389234cec65edbb977d9511bb",
+      "bytes": 10080
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/packets/step3cr_cr0_v2_reviewer_b_template.jsonl",
+      "sha256": "55885caa704f5387d742d47582b06c84b1a7f2e389234cec65edbb977d9511bb",
+      "bytes": 10080
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/packets/step3cr_cr0_v2_reviewer_c_packet.jsonl",
+      "sha256": "f1248d1b0fd2d63cc860ccff1dd58cf913b71dcc34be07777bfc778828c3c5ea",
+      "bytes": 11015
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/packets/step3cr_cr0_v2_packet_manifest.json",
+      "sha256": "2af409845eb7bceaf0b01ca93afe1fc6e131744449ce55dfcd56a3358be79865",
+      "bytes": 965
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/packets/step3cr_cr0_v2_reviewer_c_packet_manifest.json",
+      "sha256": "139428c46f992b53cf0bec260c1c7f16fb9193714a3a91218d77b93eb2352575",
+      "bytes": 527
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reviews/step3cr_cr0_v2_reviewer_provenance.json",
+      "sha256": "90bbc3504192915c001bafff74d1eb77e384000ce5f6f0f88edd42257db16fc6",
+      "bytes": 1172
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reviews/step3cr_cr0_v2_ab_freeze_manifest.json",
+      "sha256": "d36401b98b1308c0e727431b70110cd780fc17e5aace433e768d737968ec5139",
+      "bytes": 1501
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reviews/step3cr_cr0_v2_reviewer_a.jsonl",
+      "sha256": "ba29a562d8c614df379f2a778eff3c93e6f7b64ee733bbe3cd3527f181f07456",
+      "bytes": 14558
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reviews/step3cr_cr0_v2_reviewer_b.jsonl",
+      "sha256": "eb94d80548db9d18841f4bd22876e507704e2da6d220af9180a0bbd5838f9272",
+      "bytes": 14048
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reviews/step3cr_cr0_v2_reviewer_c.jsonl",
+      "sha256": "4df5db2f41addd4954a93b233bf8ac9475053313f9b118cb49009a41418dcd8c",
+      "bytes": 4330
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reviews/step3cr_cr0_v2_final_display_labels.jsonl",
+      "sha256": "c8fd4718e93b2cac25c6005f03205b3cc1a3e79e1ca6197543fe8c9505fd5df7",
+      "bytes": 18815
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reviews/step3cr_cr0_v2_final_canonical_labels.jsonl",
+      "sha256": "68a6bc2aeea5c87b6e77777a97561f9ae3c1db895b474c04584da4216a50fe7d",
+      "bytes": 13115
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reports/step3cr_cr0_v2_review_agreement.json",
+      "sha256": "135373fc3b52be61d46f54be99c8e25cebb3ecdd06e6987f084182ae9080e492",
+      "bytes": 1908
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reports/step3cr_cr0_v2_bias_and_reversal_report.json",
+      "sha256": "881f204d8def829ad08ce83a87c511d2b5e6039961add9641dca45a16d09a814",
+      "bytes": 6398
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reports/step3cr_cr0_v2_category_summary.json",
+      "sha256": "b18cac59174505da5df5b42d5912db507b2ee036811a88335476ca084052cd2e",
+      "bytes": 1354
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reports/step3cr_cr0_v2_route_decision.json",
+      "sha256": "e67ccce9849d4069962405d465a07ac4eed03fd0799cf6a75b56d4d8ff3ba981",
+      "bytes": 578
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0_v2/reports/Step3CR_CR0_v2_route_report.md",
+      "sha256": "d61aa40f7c8b256a96e6815c025837ef2c8f435b02208475ba688ab0ecce8d03",
+      "bytes": 3307
+    }
+  ],
+  "all_canonical_lf": true,
+  "v1_labels_reused": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

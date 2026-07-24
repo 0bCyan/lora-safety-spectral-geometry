@@ -1,0 +1,13 @@
+{
+  "name": "step3cr_cr0_v2_route_decision_v1",
+  "session_id": "step3cr_cr0_review_session_v2_20260724",
+  "cr0_measurement_gate_pass": false,
+  "complete_revision_used": true,
+  "next_authorized_package": "C-R0_closed_after_second_complete_failure",
+  "future_response_quality_endpoint_frozen": false,
+  "final_display_sha256": "c8fd4718e93b2cac25c6005f03205b3cc1a3e79e1ca6197543fe8c9505fd5df7",
+  "final_canonical_sha256": "68a6bc2aeea5c87b6e77777a97561f9ae3c1db895b474c04584da4216a50fe7d",
+  "heldout_opened": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

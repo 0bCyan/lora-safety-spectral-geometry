@@ -1,0 +1,42 @@
+{
+  "name": "step3cr_cr0_v2_ab_freeze_manifest_v1",
+  "session_id": "step3cr_cr0_review_session_v2_20260724",
+  "packet_sha256": "b84f1608e24b5eedb919dfc99532e5d2b80546273aeef181a1a15703d4274eb7",
+  "rubric_sha256": "e694e0eac983e0c73500bc567337c55f95b6a4ac07b805daa286cbeb61eb6cc6",
+  "reviewer_a_rows": 48,
+  "reviewer_b_rows": 48,
+  "reviewer_a_sha256": "ba29a562d8c614df379f2a778eff3c93e6f7b64ee733bbe3cd3527f181f07456",
+  "reviewer_b_sha256": "eb94d80548db9d18841f4bd22876e507704e2da6d220af9180a0bbd5838f9272",
+  "provenance_before_c": {
+    "session_id": "step3cr_cr0_review_session_v2_20260724",
+    "reviewer_a": {
+      "agent_id": "019f9212-a787-7bf1-9935-632c9897925b",
+      "nickname": "Maxwell",
+      "fresh_context": true,
+      "allowed_inputs": [
+        "step3cr_cr0_v2_pairwise_packet.jsonl",
+        "step3cr_prompt_aware_pairwise_rubric_v2.md"
+      ],
+      "rows": 48
+    },
+    "reviewer_b": {
+      "agent_id": "019f9212-bbd7-72c0-87e7-7cf5b6362e3e",
+      "nickname": "Arendt",
+      "fresh_context": true,
+      "allowed_inputs": [
+        "step3cr_cr0_v2_pairwise_packet.jsonl",
+        "step3cr_prompt_aware_pairwise_rubric_v2.md"
+      ],
+      "rows": 48
+    },
+    "reviewer_c": null,
+    "hidden_keys_exposed": false,
+    "git_history_exposed": false,
+    "other_reviewer_labels_exposed": false,
+    "v1_labels_exposed_or_reused": false,
+    "main_executor_assigned_labels": false
+  },
+  "v1_labels_reused": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

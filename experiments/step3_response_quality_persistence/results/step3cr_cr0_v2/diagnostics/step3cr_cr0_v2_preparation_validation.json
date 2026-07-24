@@ -10,7 +10,7 @@
   "packet_order_changed": true,
   "reversed_duplicates_exact": true,
   "rubric_sha256": "e694e0eac983e0c73500bc567337c55f95b6a4ac07b805daa286cbeb61eb6cc6",
-  "old_review_labels_read_or_reused": false,
+  "old_review_label_values_used_for_v2_packet_or_labels": false,
   "heldout_opened": false,
   "optimizer_steps": 0,
   "passed": true

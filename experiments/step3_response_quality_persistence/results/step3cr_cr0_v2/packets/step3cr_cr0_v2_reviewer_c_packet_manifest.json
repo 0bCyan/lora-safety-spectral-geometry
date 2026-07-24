@@ -1,0 +1,13 @@
+{
+  "name": "step3cr_cr0_v2_reviewer_c_packet_manifest_v1",
+  "session_id": "step3cr_cr0_review_session_v2_20260724",
+  "packet_rows": 14,
+  "packet_sha256": "f1248d1b0fd2d63cc860ccff1dd58cf913b71dcc34be07777bfc778828c3c5ea",
+  "contains_other_reviewer_labels": false,
+  "contains_only_disagreement_rows": true,
+  "reviewer_c_must_not_read_hidden_key": true,
+  "heldout_opened": false,
+  "optimizer_steps": 0,
+  "reviewer_c_rows": 14,
+  "reviewer_c_sha256": "4df5db2f41addd4954a93b233bf8ac9475053313f9b118cb49009a41418dcd8c"
+}

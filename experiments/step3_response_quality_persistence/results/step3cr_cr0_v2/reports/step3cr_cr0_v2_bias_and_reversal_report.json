@@ -1,0 +1,166 @@
+{
+  "name": "step3cr_cr0_v2_bias_and_reversal_v1",
+  "reviewer_a_reversal": {
+    "denominator": 8,
+    "preference_consistent_count": 8,
+    "specificity_consistent_count": 8,
+    "naturalness_consistent_count": 8,
+    "details": [
+      {
+        "canonical_pair_id": "step3cr2_cp_4a0fcf36611c20e0",
+        "primary_opaque_pair_id": "step3cr2_pair_e6036d4b612850ff",
+        "duplicate_opaque_pair_id": "step3cr2_pair_df74c1ff000d9ba9",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_ce0472091a3d8e23",
+        "primary_opaque_pair_id": "step3cr2_pair_42039d98c4ddfd8f",
+        "duplicate_opaque_pair_id": "step3cr2_pair_0ac825b2c26305d8",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_8fe1442e8459f901",
+        "primary_opaque_pair_id": "step3cr2_pair_b3e5e6216dbb9f47",
+        "duplicate_opaque_pair_id": "step3cr2_pair_3c4114f153dedf32",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_416444916fa84498",
+        "primary_opaque_pair_id": "step3cr2_pair_9d52fe9c1f70ff17",
+        "duplicate_opaque_pair_id": "step3cr2_pair_de9c0447edb4c4ee",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_20776757b8dac018",
+        "primary_opaque_pair_id": "step3cr2_pair_463dbcfa9122e8c5",
+        "duplicate_opaque_pair_id": "step3cr2_pair_2450b3275350be4f",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_7222a143d4680615",
+        "primary_opaque_pair_id": "step3cr2_pair_0ec35b146ea825e7",
+        "duplicate_opaque_pair_id": "step3cr2_pair_b67d648a38045842",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_bee82540d728ba63",
+        "primary_opaque_pair_id": "step3cr2_pair_599076e4798e1c43",
+        "duplicate_opaque_pair_id": "step3cr2_pair_7dc1fbafd21827df",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_5575a97c8e878013",
+        "primary_opaque_pair_id": "step3cr2_pair_ed2e494184d42d32",
+        "duplicate_opaque_pair_id": "step3cr2_pair_cac9706b054b5987",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      }
+    ]
+  },
+  "reviewer_b_reversal": {
+    "denominator": 8,
+    "preference_consistent_count": 8,
+    "specificity_consistent_count": 8,
+    "naturalness_consistent_count": 8,
+    "details": [
+      {
+        "canonical_pair_id": "step3cr2_cp_4a0fcf36611c20e0",
+        "primary_opaque_pair_id": "step3cr2_pair_e6036d4b612850ff",
+        "duplicate_opaque_pair_id": "step3cr2_pair_df74c1ff000d9ba9",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_ce0472091a3d8e23",
+        "primary_opaque_pair_id": "step3cr2_pair_42039d98c4ddfd8f",
+        "duplicate_opaque_pair_id": "step3cr2_pair_0ac825b2c26305d8",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_8fe1442e8459f901",
+        "primary_opaque_pair_id": "step3cr2_pair_b3e5e6216dbb9f47",
+        "duplicate_opaque_pair_id": "step3cr2_pair_3c4114f153dedf32",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_416444916fa84498",
+        "primary_opaque_pair_id": "step3cr2_pair_9d52fe9c1f70ff17",
+        "duplicate_opaque_pair_id": "step3cr2_pair_de9c0447edb4c4ee",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_20776757b8dac018",
+        "primary_opaque_pair_id": "step3cr2_pair_463dbcfa9122e8c5",
+        "duplicate_opaque_pair_id": "step3cr2_pair_2450b3275350be4f",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_7222a143d4680615",
+        "primary_opaque_pair_id": "step3cr2_pair_0ec35b146ea825e7",
+        "duplicate_opaque_pair_id": "step3cr2_pair_b67d648a38045842",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_bee82540d728ba63",
+        "primary_opaque_pair_id": "step3cr2_pair_599076e4798e1c43",
+        "duplicate_opaque_pair_id": "step3cr2_pair_7dc1fbafd21827df",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      },
+      {
+        "canonical_pair_id": "step3cr2_cp_5575a97c8e878013",
+        "primary_opaque_pair_id": "step3cr2_pair_ed2e494184d42d32",
+        "duplicate_opaque_pair_id": "step3cr2_pair_cac9706b054b5987",
+        "preference_consistent": true,
+        "specificity_consistent": true,
+        "naturalness_consistent": true
+      }
+    ]
+  },
+  "reviewer_a_position_bias": {
+    "canonical_primary_pairs": 40,
+    "non_tie_count": 33,
+    "left_count": 14,
+    "right_count": 19,
+    "left_share": 0.42424242424242425,
+    "right_share": 0.5757575757575758,
+    "absolute_left_right_share_imbalance": 0.15151515151515155
+  },
+  "reviewer_b_position_bias": {
+    "canonical_primary_pairs": 40,
+    "non_tie_count": 29,
+    "left_count": 12,
+    "right_count": 17,
+    "left_share": 0.41379310344827586,
+    "right_share": 0.5862068965517241,
+    "absolute_left_right_share_imbalance": 0.17241379310344823
+  },
+  "naturalness_reversal_is_descriptive_only": true
+}

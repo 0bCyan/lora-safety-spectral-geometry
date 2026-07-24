@@ -4,9 +4,12 @@ import argparse
 import csv
 import hashlib
 import json
+import platform
 import random
 import subprocess
+import sys
 from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -54,6 +57,7 @@ CATEGORY = REPORTS / "step3cr_cr0_v2_category_summary.json"
 ROUTE = REPORTS / "step3cr_cr0_v2_route_decision.json"
 ROUTE_REPORT = REPORTS / "Step3CR_CR0_v2_route_report.md"
 ARTIFACT_MANIFEST = REPORTS / "step3cr_cr0_v2_artifact_manifest.json"
+ENVIRONMENT = REPORTS / "step3cr_cr0_v2_environment.json"
 
 SESSION_ID = "step3cr_cr0_review_session_v2_20260724"
 RANDOMIZATION_SEED = 20260724
@@ -310,7 +314,7 @@ def prepare() -> dict[str, Any]:
         "packet_order_changed": [packet_signature(row) for row in protocol.read_jsonl(V1_PACKET)] != [packet_signature(row) for row in packet_rows],
         "reversed_duplicates_exact": duplicate_exact,
         "rubric_sha256": sha256(RUBRIC),
-        "old_review_labels_read_or_reused": False,
+        "old_review_label_values_used_for_v2_packet_or_labels": False,
         "heldout_opened": False,
         "optimizer_steps": 0,
     }
@@ -351,7 +355,7 @@ def prepare() -> dict[str, Any]:
         "# Step3C-R C-R0 v2 Prospective Rubric Clarification\n\n"
         f"Status: frozen after first-session commit `{SOURCE_COMMIT}` and before any v2 label.\n\n"
         "The only permitted complete clarification is now used. The v2 rubric adds an ordered independent-response check, an explicit position-swap check, a narrower tie rule, and an actionable threshold for prompt-specific safe next steps. It does not change any gate, sample, response text, or clean-safety eligibility decision.\n\n"
-        "The 40 canonical content pairs are unchanged as a multiset. All opaque pair IDs, pair order, side randomization, and the eight reversed-duplicate selections were rebuilt without reading or reusing v1 review labels.\n\n"
+        "The 40 canonical content pairs are unchanged as a multiset. All opaque pair IDs, pair order, side randomization, and the eight reversed-duplicate selections were rebuilt without using any v1 review-label value. V1 files were read only as bytes for the archive hash manifest.\n\n"
         "Heldout remained closed. No optimizer or scheduler was created, and no training was run.\n",
         encoding="utf-8",
         newline="\n",
@@ -552,6 +556,46 @@ def final_labels(
     return final
 
 
+def environment_record() -> dict[str, Any]:
+    generated = datetime.now(timezone.utc)
+    protocol_time_text = subprocess.check_output(
+        ["git", "show", "-s", "--format=%cI", "c059b11"], cwd=REPO_ROOT, text=True
+    ).strip()
+    protocol_time = datetime.fromisoformat(protocol_time_text)
+    try:
+        import torch
+
+        torch_version = torch.__version__
+        cuda_available = torch.cuda.is_available()
+        cuda_device = torch.cuda.get_device_name(0) if cuda_available else None
+        cuda_version = torch.version.cuda
+    except ImportError:
+        torch_version = None
+        cuda_available = False
+        cuda_device = None
+        cuda_version = None
+    record = {
+        "name": "step3cr_cr0_v2_environment_v1",
+        "generated_at_utc": generated.isoformat(),
+        "protocol_commit": "c059b11",
+        "protocol_commit_time": protocol_time_text,
+        "elapsed_protocol_to_decision_seconds": (generated - protocol_time.astimezone(timezone.utc)).total_seconds(),
+        "platform": platform.platform(),
+        "python": sys.version,
+        "torch": torch_version,
+        "cuda_available": cuda_available,
+        "cuda_version": cuda_version,
+        "cuda_device": cuda_device,
+        "reviewer_a_agent_id": protocol.read_json(PROVENANCE)["reviewer_a"]["agent_id"],
+        "reviewer_b_agent_id": protocol.read_json(PROVENANCE)["reviewer_b"]["agent_id"],
+        "reviewer_c_agent_id": protocol.read_json(PROVENANCE)["reviewer_c"]["agent_id"],
+        "heldout_opened": False,
+        "optimizer_steps": 0,
+    }
+    write_json(ENVIRONMENT, record)
+    return record
+
+
 def summarize() -> dict[str, Any]:
     ab_manifest = require_ab_frozen()
     order = packet_order()
@@ -667,25 +711,60 @@ def summarize() -> dict[str, Any]:
         "training_authorized": False,
     }
     write_json(ROUTE, route)
+    environment = environment_record()
+    gate_rows = "\n".join(
+        f"| {name} | {'pass' if passed else 'fail'} |" for name, passed in gates.items()
+    )
     ROUTE_REPORT.write_text(
         "# Step3C-R C-R0 v2 Review and Route Report\n\n"
         f"Status: {'pass' if gates['overall_pass'] else 'second-session gate failure; C-R0 closed'}.\n\n"
-        f"- Reviewer A/B rows: {ab_manifest['reviewer_a_rows']} / {ab_manifest['reviewer_b_rows']}\n"
-        f"- Reviewer C disagreement rows: {len(c)}\n"
-        f"- Preference raw agreement / AC1 / kappa: {preference['raw_agreement']:.3f} / {preference['gwet_ac1']:.3f} / {preference['cohen_kappa']}\n"
-        f"- Specificity raw agreement / AC1 / kappa: {specificity['raw_agreement']:.3f} / {specificity['gwet_ac1']:.3f} / {specificity['cohen_kappa']}\n"
+        "## Provenance and Runtime\n\n"
+        "- Protocol commit: `c059b11`\n"
+        "- Result commit: this commit\n"
+        f"- Reviewer A/B/C agent IDs: `{environment['reviewer_a_agent_id']}`, `{environment['reviewer_b_agent_id']}`, `{environment['reviewer_c_agent_id']}`\n"
+        f"- Reviewer A/B/C rows: {ab_manifest['reviewer_a_rows']} / {ab_manifest['reviewer_b_rows']} / {len(c)}\n"
+        f"- Protocol-to-decision wall clock: {environment['elapsed_protocol_to_decision_seconds']:.1f} seconds\n"
+        f"- Environment: Python {platform.python_version()}, torch {environment['torch']}, CUDA {environment['cuda_version']}, `{environment['cuda_device']}`\n\n"
+        "## Reliability\n\n"
+        "| construct | n | raw agreement | Gwet AC1 | Cohen kappa |\n"
+        "| --- | ---: | ---: | ---: | ---: |\n"
+        f"| pair preference | {preference['n']} | {preference['raw_agreement']:.3f} | {preference['gwet_ac1']:.3f} | {preference['cohen_kappa']} |\n"
+        f"| response-side specificity | {specificity['n']} | {specificity['raw_agreement']:.3f} | {specificity['gwet_ac1']:.3f} | {specificity['cohen_kappa']} |\n"
+        f"| naturalness sensitivity | {naturalness['n']} | {naturalness['raw_agreement']:.3f} | {naturalness['gwet_ac1']:.3f} | {naturalness['cohen_kappa']} |\n\n"
+        "## Reversal and Position\n\n"
         f"- Reviewer A preference/specificity reversal: {a_reverse['preference_consistent_count']}/8 / {a_reverse['specificity_consistent_count']}/8\n"
         f"- Reviewer B preference/specificity reversal: {b_reverse['preference_consistent_count']}/8 / {b_reverse['specificity_consistent_count']}/8\n"
         f"- Reviewer A non-tie / position imbalance: {a_bias['non_tie_count']} / {a_bias['absolute_left_right_share_imbalance']}\n"
-        f"- Reviewer B non-tie / position imbalance: {b_bias['non_tie_count']} / {b_bias['absolute_left_right_share_imbalance']}\n"
-        f"- Overall gate: {'pass' if gates['overall_pass'] else 'fail'}\n"
-        f"- Next authorized package: `{route['next_authorized_package']}`\n\n"
-        "This was the single permitted complete rubric revision. V1 labels were not reused. Heldout remained closed; no optimizer or scheduler was created, and no training was run.\n",
+        f"- Reviewer B non-tie / position imbalance: {b_bias['non_tie_count']} / {b_bias['absolute_left_right_share_imbalance']}\n\n"
+        "## Gate Table\n\n"
+        "| gate | result |\n"
+        "| --- | --- |\n"
+        f"{gate_rows}\n\n"
+        "## Commands and Tests\n\n"
+        "```text\n"
+        "python experiments/step3_response_quality_persistence/scripts/run_step3cr_cr0_v2.py prepare\n"
+        "python experiments/step3_response_quality_persistence/scripts/run_step3cr_cr0_v2.py validate-ab\n"
+        "python experiments/step3_response_quality_persistence/scripts/run_step3cr_cr0_v2.py prepare-adjudication\n"
+        "python experiments/step3_response_quality_persistence/scripts/run_step3cr_cr0_v2.py summarize\n"
+        "python experiments/step3_response_quality_persistence/scripts/prepare_step3cr_cr0_protocol.py test-fixtures\n"
+        "```\n\n"
+        "Preparation validation passed: 48 rows, 40 canonical pairs, 8 exact reversed duplicates, fresh IDs/order, and canonical content equality with v1. Synthetic metric, reversal, EOL, hidden-field, and zero-variance fixtures passed.\n\n"
+        "## Frozen Hashes\n\n"
+        f"- Packet: `{sha256(PAIR_PACKET)}`\n"
+        f"- Rubric: `{sha256(RUBRIC)}`\n"
+        f"- Reviewer A: `{sha256(A_REVIEW)}`\n"
+        f"- Reviewer B: `{sha256(B_REVIEW)}`\n"
+        f"- Reviewer C: `{sha256(C_REVIEW)}`\n"
+        f"- Final display labels: `{route['final_display_sha256']}`\n"
+        f"- Final canonical labels: `{route['final_canonical_sha256']}`\n\n"
+        "## Route\n\n"
+        f"Overall gate: **{'pass' if gates['overall_pass'] else 'fail'}**. Next authorized package: `{route['next_authorized_package']}`.\n\n"
+        "This was the single permitted complete rubric revision. No v1 review-label value was used to construct the v2 packet or assign a v2 label. Heldout remained closed; no optimizer or scheduler was created, and no training was run.\n",
         encoding="utf-8",
         newline="\n",
     )
     artifact_paths = [
-        REGISTRY, RUBRIC, SCRIPT, ARCHIVE_MANIFEST, CLARIFICATION_REPORT, PREP_VALIDATION,
+        REGISTRY, RUBRIC, SCRIPT, ARCHIVE_MANIFEST, CLARIFICATION_REPORT, PREP_VALIDATION, ENVIRONMENT,
         PAIR_PACKET, PAIR_KEY, DUPLICATE_KEY, A_TEMPLATE, B_TEMPLATE, C_PACKET,
         PACKET_MANIFEST, C_PACKET_MANIFEST, PROVENANCE, AB_FREEZE, A_REVIEW, B_REVIEW,
         C_REVIEW, FINAL_DISPLAY, FINAL_CANONICAL, AGREEMENT, BIAS, CATEGORY, ROUTE, ROUTE_REPORT,
