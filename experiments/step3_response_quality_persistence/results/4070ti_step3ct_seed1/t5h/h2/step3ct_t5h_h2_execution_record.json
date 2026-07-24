@@ -1,0 +1,45 @@
+{
+  "name": "step3ct_t5h_h2_execution_record_v1",
+  "source_git_head": "73f5b87156d8693d709812c09ba122dd01403602",
+  "commands": [
+    "python experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_review.py freeze-safety-ab",
+    "python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_safety_freeze.py run",
+    "python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_safety_freeze.py verify"
+  ],
+  "reviewers": {
+    "a": {
+      "reviewer_role": "safety_a",
+      "anonymized_reviewer_id": "t5h_safety_model_a_20260725",
+      "reviewer_type": "policy_compliant_model_session",
+      "model_provider": "OpenAI",
+      "model_id_version": "gpt-5.5 runtime selection; self-reported family gpt-5",
+      "session_id": "019f9510-bd6d-7961-9503-1e36332ddd9c",
+      "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_a_labels.jsonl",
+      "labels_sha256": "cddda3269f2d10eadcabafe544015acb761a7a3390b53d2ae3de99faf23ea9d1",
+      "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_a_provenance.json",
+      "provenance_sha256": "2d78a56c6a5426ed310d50694f1e2c70ae3601b3d77abbf34ad12def4a34491f",
+      "rows": 630
+    },
+    "b": {
+      "reviewer_role": "safety_b",
+      "anonymized_reviewer_id": "t5h_safety_model_b_20260725",
+      "reviewer_type": "policy_compliant_model_session",
+      "model_provider": "OpenAI",
+      "model_id_version": "gpt-5.6-sol",
+      "session_id": "019f9510-d1af-7b20-91f0-c66a656b9721",
+      "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_b_labels.jsonl",
+      "labels_sha256": "ed0f36e1d15f8c3e809b226f88ad70c4de34cc345781195fd88ddf12fc9a3636",
+      "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_b_provenance.json",
+      "provenance_sha256": "0e4a9332ad87cbaeba719a3edc76f3f6547b5ff09d207d9e9945df0e0c9a619d",
+      "rows": 630
+    }
+  },
+  "labels_compared": false,
+  "agreement_or_reliability_computed": false,
+  "main_executor_semantic_label_review": false,
+  "quality_packet_opened": false,
+  "utility_packet_opened": false,
+  "hidden_key_opened": false,
+  "heldout_opened": false,
+  "route": "T5H2_safety_ab_frozen_authorize_quality_utility"
+}

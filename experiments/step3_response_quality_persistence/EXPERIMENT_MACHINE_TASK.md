@@ -6,67 +6,53 @@ Pull `exp/step3-response-quality-persistence` and follow:
 
 ```text
 experiments/step3_response_quality_persistence/Step3C_T5H_external_review_handoff_and_P6A_provenance_repair_plan.md
+experiments/step3_response_quality_persistence/Step3C_T5H_model_reviewer_launch_addendum.md
 experiments/step3_response_quality_persistence/configs/step3ct_t5h_external_review_registry.json
 ```
 
-Track A is stopped at `T5R1_reviewer_access_stop` with zero accepted labels. Track B is stopped at `M1_reconstruction_integrity_failure`; representation probes and labels 0/16/32 are valid, but label64 grouped gradients remain unregistered.
+Track B remains stopped at `M1_reconstruction_integrity_failure`; representation probes and labels 0/16/32 are valid, but label64 grouped gradients remain unregistered. Track A has now selected `T5H2_safety_ab_frozen_authorize_quality_utility`: two distinct no-context model reviewers each returned 630 valid Safety rows and provenance, and the files were frozen before comparison.
 
 No GPU experiment, new training, generation, label64 retry, or method revision is authorized.
 
-## Package P6A
+## Completed Boundaries
 
-After the H0 implementation commit is pushed, run:
-
-```text
-python experiments/step3_response_quality_persistence/scripts/audit_step3ct_t5r_p6_eol.py run
-python experiments/step3_response_quality_persistence/scripts/audit_step3ct_t5r_p6_eol.py verify
-```
-
-Required route:
+Do not rerun or overwrite P6A, H1, H1Q, or H2. Verify the latest completed boundary with:
 
 ```text
-P6A1_eol_reconciled_content_unchanged
+python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_safety_freeze.py verify
 ```
 
-The audit must account for all 21 legacy P6 artifacts, match every committed HEAD blob, write only to `mechanism_completion/p6a`, and leave every P6 file byte-identical. Commit and push P6A before reviewer qualification.
+Required route is:
 
-If any mismatch cannot be explained by raw equality or LF-to-CRLF transformation, select `P6A0_non_eol_content_or_git_blob_mismatch` and stop.
+```text
+T5H2_safety_ab_frozen_authorize_quality_utility
+```
 
-## Reviewer Qualification
+H2 is not a behavior result. Safety A/B labels remain un-compared, hidden keys remain sealed, and reliability has not been computed.
 
-After P6A1, wait for a research coordinator to supply two independent safety reviewers. Preferred type is `external_human`.
+## Current Task: Quality and Utility A/B
 
-Before either reviewer opens the packet, require:
+Launch four fresh isolated sessions that are distinct from both Safety reviewers and from one another:
+
+- Quality Reviewer A and Quality Reviewer B;
+- Utility Reviewer A and Utility Reviewer B.
+
+Each reviewer receives only its domain handoff, unchanged visible packet, role-specific blank template, and frozen rubric. Require exactly 330 rows and complete provenance per reviewer/domain.
 
 - distinct anonymized reviewer and session IDs;
 - no repository, arm, checkpoint, training, mechanism, hidden-key, duplicate-link, or prior-label access;
 - no communication between reviewers;
-- agreement to complete all 630 unchanged rows;
+- agreement to complete all 330 unchanged rows;
 - packet, template, and rubric hashes;
 - completed provenance contract.
 
-An independent model session is eligible only with exact provider/model version and policy-compliant access to the complete unchanged packet. Do not probe a gateway with study rows.
-
-If reviewers are unavailable, record `T5H0_waiting_for_qualified_reviewers` with zero packet access. This is not a method result.
-
-## Safety A/B
-
-Give each qualified reviewer only:
+After all four complete outputs are present, validate and freeze with:
 
 ```text
-review_handoffs/step3ct_t5h_safety_reviewer_instructions.md
-the unchanged visible safety packet
-its own blank A/B template
-the frozen safety rubric
+python experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_review.py freeze-quality-utility-ab
 ```
 
-Place completed outputs and provenance at the paths expected by `run_step3ct_t5r_review.py`. Validate and freeze with:
-
-```text
-python experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_review.py freeze-safety-ab
-```
-
-Each output must contain exactly 630 unique rows. Reject partial, malformed, mixed-session, executor-edited, or unprovenanced files in full. Push the complete Safety A/B freeze before quality or utility review.
+Reject partial, malformed, mixed-session, executor-edited, or unprovenanced files in full. Do not compare decisions before the all-A/B freeze is written and pushed.
 
 ## Later Packages
 

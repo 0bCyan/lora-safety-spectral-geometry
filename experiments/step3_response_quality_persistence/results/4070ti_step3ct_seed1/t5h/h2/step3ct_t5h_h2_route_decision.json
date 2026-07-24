@@ -1,0 +1,36 @@
+{
+  "name": "step3ct_t5h_h2_route_decision_v1",
+  "source_git_head": "73f5b87156d8693d709812c09ba122dd01403602",
+  "route": "T5H2_safety_ab_frozen_authorize_quality_utility",
+  "gates": {
+    "h1q_launch_authorization_verified": true,
+    "reviewer_a_complete_630": true,
+    "reviewer_b_complete_630": true,
+    "reviewer_and_session_ids_distinct": true,
+    "schemas_ids_hashes_and_provenance_valid": true,
+    "labels_compared_before_freeze": false,
+    "outcome_key_joined": false,
+    "main_executor_assigned_or_edited_labels": false,
+    "quality_utility_opened": false,
+    "hidden_key_opened": false,
+    "heldout_opened": false
+  },
+  "counts": {
+    "accepted_label_files": 2,
+    "accepted_rows_per_reviewer": 630,
+    "accepted_rows_total": 1260,
+    "rejected_files": 0,
+    "partial_files": 0
+  },
+  "source_freeze": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/freezes/step3ct_t5r_safety_ab_freeze.json",
+    "sha256": "c98c7f2e5bbbecc642ad4ac4e396c5bcad17765d0c7c22b18b89927f4cbac3fd",
+    "bytes": 2284
+  },
+  "behavior_result_available": false,
+  "safety_ab_reliability_available": false,
+  "quality_utility_review_authorized": true,
+  "t6_authorized": false,
+  "new_training_or_generation_authorized": false,
+  "next_action": "launch_separate_quality_and_utility_ab_sessions"
+}

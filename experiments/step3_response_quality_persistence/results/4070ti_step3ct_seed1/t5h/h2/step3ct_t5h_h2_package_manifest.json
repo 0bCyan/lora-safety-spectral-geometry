@@ -1,0 +1,40 @@
+{
+  "name": "step3ct_t5h_h2_package_manifest_v1",
+  "route": "T5H2_safety_ab_frozen_authorize_quality_utility",
+  "canonical_lf": true,
+  "artifact_count": 8,
+  "artifacts": {
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_a_labels.jsonl": {
+      "sha256": "cddda3269f2d10eadcabafe544015acb761a7a3390b53d2ae3de99faf23ea9d1",
+      "bytes": 227328
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_a_provenance.json": {
+      "sha256": "2d78a56c6a5426ed310d50694f1e2c70ae3601b3d77abbf34ad12def4a34491f",
+      "bytes": 2505
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_b_labels.jsonl": {
+      "sha256": "ed0f36e1d15f8c3e809b226f88ad70c4de34cc345781195fd88ddf12fc9a3636",
+      "bytes": 231092
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_b_provenance.json": {
+      "sha256": "0e4a9332ad87cbaeba719a3edc76f3f6547b5ff09d207d9e9945df0e0c9a619d",
+      "bytes": 1799
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/freezes/step3ct_t5r_safety_ab_freeze.json": {
+      "sha256": "c98c7f2e5bbbecc642ad4ac4e396c5bcad17765d0c7c22b18b89927f4cbac3fd",
+      "bytes": 2284
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h2/step3ct_t5h_h2_route_decision.json": {
+      "sha256": "f2bb6ed8ea1465fa9abb663bfcd805f1b6a25c99df5282f7a5b7ac4568a4877e",
+      "bytes": 1347
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h2/step3ct_t5h_h2_execution_record.json": {
+      "sha256": "827c2d48fd3d8c923faa0f577f493f1bcdb9dc16ccd3a572052348f1dd9870a3",
+      "bytes": 2527
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h2/Step3CT_T5H_H2_safety_ab_freeze_report.md": {
+      "sha256": "1d0ed6c63b44323577a65e24a3f0df3a094dd7c5480d5a5bdba052c65598f2d5",
+      "bytes": 738
+    }
+  }
+}
