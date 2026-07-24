@@ -1042,15 +1042,25 @@ Status: {'pass' if gates['overall_pass'] else 'fail'}.
         paths["key"],
         paths["duplicates"],
         paths["reviewer_c_packet"],
+        paths["reviewer_c_packet"].with_name(paths["reviewer_c_packet"].stem + "_manifest.json"),
         reviews["reviewer_a"],
         reviews["reviewer_b"],
         reviews["reviewer_c"],
         reviews["final"],
         reviews["ab_freeze"],
+        REVIEWS / split / f"step3cm_{split}_reviewer_provenance.json",
         outputs["agreement"],
         outputs["route"],
         outputs["report"],
+        active_rubric(reg),
+        SYNTHETIC_TESTS,
+        DIAGNOSTICS / "step3cm_protocol_verification.json",
     ]
+    if split == "development":
+        artifact_paths.extend([
+            ACTIVE_RUBRIC_FREEZE,
+            REPORTS / "Step3CM_E1_execution_report.md",
+        ])
     artifact_manifest = {
         "name": f"step3cm_{split}_review_artifact_manifest_v1",
         "measurement_split": split,

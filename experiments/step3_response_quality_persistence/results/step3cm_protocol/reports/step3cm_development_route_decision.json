@@ -1,0 +1,9 @@
+{
+  "name": "step3cm_development_route_decision_v1",
+  "measurement_split": "development",
+  "overall_pass": true,
+  "next_action": "freeze_active_rubric_and_open_untouched_validation",
+  "training_authorized": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

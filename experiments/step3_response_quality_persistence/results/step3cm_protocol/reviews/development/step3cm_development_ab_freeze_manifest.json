@@ -1,0 +1,13 @@
+{
+  "name": "step3cm_development_ab_freeze_manifest_v1",
+  "measurement_split": "development",
+  "packet_sha256": "cdada87ea5ef5c9d2212824a11647981facd3cd6a0a088fd0bbfbbed2fa1b856",
+  "rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+  "reviewer_a_rows": 71,
+  "reviewer_b_rows": 71,
+  "reviewer_a_sha256": "4b3f55dc2ac7bf910bb2b7a01f8b2a08c0762dc423269b541507b823b13362b9",
+  "reviewer_b_sha256": "7b9c5b93856b8f07c2b09429dfaff8fb809da3a98a60adbda06192335ddc86a4",
+  "ab_compared_only_after_both_complete": true,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

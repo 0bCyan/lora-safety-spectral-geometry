@@ -1,0 +1,18 @@
+{
+  "name": "step3cm_active_rubric_freeze_v1",
+  "git_head": "b9a8638c4ab7c0f1c673823bef9248a360d4b447",
+  "active_rubric": "experiments/step3_response_quality_persistence/review_rubrics/step3cm_decomposed_quality_rubric_v1.md",
+  "active_rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+  "development_route": "experiments/step3_response_quality_persistence/results/step3cm_protocol/reports/step3cm_development_route_decision.json",
+  "development_route_sha256": "2de76cc81d98b4db78f5bdb1e585b0e944d98808321c679020ea7027ee0f39a5",
+  "validation_packet": "experiments/step3_response_quality_persistence/results/step3cm_protocol/packets/validation/step3cm_validation_packet.jsonl",
+  "validation_packet_sha256": "2e84d38974d57a9bb56535225bfc7ff317d882c26a5e2e48ae1d45965ef26e78",
+  "validation_hidden_key_sha256": "3e60ac23f4011b39686027094cb08d31a6244326a9a36d4149068fba064d1bfa",
+  "m0_protocol_manifest_sha256": "88df1430c3bf3cecc5a517d8936825bde7070db4e3ff4fe0a000c4cac32c7a46",
+  "validation_packet_content_unchanged_from_m0": true,
+  "validation_sessions_authorized": 1,
+  "validation_rubric_revisions_authorized": 0,
+  "heldout_opened": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

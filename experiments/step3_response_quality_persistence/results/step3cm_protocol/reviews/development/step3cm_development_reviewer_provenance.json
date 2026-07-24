@@ -1,0 +1,42 @@
+{
+  "session_id": "step3cm_development_v1_20260724",
+  "reviewer_a": {
+    "agent_id": "019f9296-e6de-7a30-8ffa-ea9bc8be9a22",
+    "nickname": "Sagan",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cm_development_packet.jsonl",
+      "step3cm_decomposed_quality_rubric_v1.md"
+    ],
+    "rows": 71
+  },
+  "reviewer_b": {
+    "agent_id": "019f9296-fba1-7482-91fb-731559156e5c",
+    "nickname": "Plato",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cm_development_packet.jsonl",
+      "step3cm_decomposed_quality_rubric_v1.md"
+    ],
+    "rows": 71
+  },
+  "reviewer_c": {
+    "agent_id": "019f929a-e05a-71b3-ae61-66b395ba4eb6",
+    "nickname": "Bacon",
+    "fresh_context": true,
+    "allowed_inputs": [
+      "step3cm_development_reviewer_c_packet.jsonl",
+      "step3cm_decomposed_quality_rubric_v1.md"
+    ],
+    "rows": 18,
+    "reviewer_labels_exposed": false,
+    "reviewer_reasons_exposed": false
+  },
+  "validation_content_exposed": false,
+  "hidden_keys_exposed": false,
+  "old_cr0_labels_exposed": false,
+  "source_roles_exposed": false,
+  "git_history_exposed": false,
+  "other_reviewer_outputs_exposed": false,
+  "main_executor_assigned_labels": false
+}

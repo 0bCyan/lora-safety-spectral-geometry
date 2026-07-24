@@ -1,0 +1,11 @@
+{
+  "name": "step3cm_development_reviewer_c_packet_manifest_v1",
+  "measurement_split": "development",
+  "rows": 18,
+  "packet_sha256": "5e7e2d6da110e7e6177a27983e07cf2fd78270edb5375fbc0a6000ec334bba12",
+  "reviewer_labels_exposed": false,
+  "reviewer_reasons_exposed": false,
+  "hidden_key_exposed": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}
