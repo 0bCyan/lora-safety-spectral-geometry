@@ -1,0 +1,86 @@
+{
+  "name": "step3ct_t5h_model_reviewer_launch_v1",
+  "source_addendum": "experiments/step3_response_quality_persistence/Step3C_T5H_model_reviewer_launch_addendum.md",
+  "entry_git_head": "4ac8a4a9b50b75fe82b5063a7e556029456a97d7",
+  "parent_waiting_route": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h1/step3ct_t5h_h1_route_decision.json",
+    "sha256": "af99f23d9310d82d3e775deddd86e20051cfa2d7bc56bfa9175d09c6e6e2a2e4",
+    "route": "T5H0_waiting_for_qualified_reviewers"
+  },
+  "qualification_recorded_at": "2026-07-25T01:01:44.6808193+08:00",
+  "reviewer_mode": "two_isolated_policy_compliant_model_sessions",
+  "reviewers": {
+    "a": {
+      "reviewer_role": "safety_a",
+      "anonymized_reviewer_id": "t5h_safety_model_a_20260725",
+      "session_id": "019f9510-bd6d-7961-9503-1e36332ddd9c",
+      "reviewer_type": "policy_compliant_model_session",
+      "model_provider": "OpenAI",
+      "runtime_requested_model_id": "gpt-5.5",
+      "self_reported_model_id": "gpt-5",
+      "model_id_version_for_final_provenance": "gpt-5.5 runtime selection; self-reported family gpt-5",
+      "fork_context": false,
+      "qualification_confirmations": {
+        "prior_study_involvement": false,
+        "repository_access_so_far": false,
+        "study_rows_accessed": 0,
+        "other_reviewer_contact": false,
+        "agrees_independent_complete_630_review": true,
+        "agrees_no_partial_output": true,
+        "agrees_no_external_retrieval": true
+      }
+    },
+    "b": {
+      "reviewer_role": "safety_b",
+      "anonymized_reviewer_id": "t5h_safety_model_b_20260725",
+      "session_id": "019f9510-d1af-7b20-91f0-c66a656b9721",
+      "reviewer_type": "policy_compliant_model_session",
+      "model_provider": "OpenAI",
+      "runtime_requested_model_id": "gpt-5.6-sol",
+      "self_reported_model_id": "gpt-5.6-sol",
+      "model_id_version_for_final_provenance": "gpt-5.6-sol",
+      "fork_context": false,
+      "qualification_confirmations": {
+        "prior_study_involvement": false,
+        "repository_access_so_far": false,
+        "study_rows_accessed": 0,
+        "other_reviewer_contact": false,
+        "agrees_independent_complete_630_review": true,
+        "agrees_no_partial_output": true,
+        "agrees_no_external_retrieval": true
+      }
+    }
+  },
+  "material_freeze": {
+    "handoff_path": "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_safety_reviewer_instructions.md",
+    "handoff_sha256": "4f97815bd9671edcd2a03b946e25ddc4e4f565af82ead1b95066d8c0abcbc8d4",
+    "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/safety/step3ct_t4_safety_packet.jsonl",
+    "packet_sha256": "851badc6f208b4ae80861b9b8d38ec713f3c4d8429c36767047f7115c50bc937",
+    "packet_rows": 630,
+    "rubric_path": "experiments/step2_mechanism_dynamics/review_rubrics/step2j_b1_safety_behavior_rubric.md",
+    "rubric_sha256": "d8c8b0733c7a79301506dcc0b7f1712c5901904d430428fa1053803ed8b6f060",
+    "templates": {
+      "a": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/safety/step3ct_t4_safety_reviewer_a_template.jsonl",
+      "b": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/safety/step3ct_t4_safety_reviewer_b_template.jsonl"
+    },
+    "template_sha256": "9475ec4c4c0363574dd75e315f2237d778c68574747305a417e8df7962503b79"
+  },
+  "outputs": {
+    "a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_a_labels.jsonl",
+    "a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_a_provenance.json",
+    "b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_b_labels.jsonl",
+    "b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_b_provenance.json"
+  },
+  "authorization": {
+    "one_complete_safety_attempt_per_reviewer": true,
+    "partial_output_accepted": false,
+    "quality_utility": false,
+    "reviewer_c": false,
+    "hidden_key_join": false,
+    "t6": false,
+    "new_training_or_generation": false,
+    "heldout": false
+  },
+  "qualification_route": "H1Q1_two_model_sessions_qualified_for_complete_safety_attempt",
+  "failure_route": "T5H1_reviewer_access_or_provenance_stop"
+}

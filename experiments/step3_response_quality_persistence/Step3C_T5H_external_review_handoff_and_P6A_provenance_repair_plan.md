@@ -112,6 +112,8 @@ external_human
 
 An independent model reviewer is eligible only if its provider and exact model ID/version are available, the complete unchanged packet can be reviewed under the governing policy, and no gateway bypass or content transformation is needed.
 
+Because study rows may not be used to probe a model gateway during qualification, a model session may be prospectively qualified for exactly one complete Safety attempt when its isolated session, runtime model selection, self-reported model identity, zero-access state, and complete-or-abort contract are frozen first. Eligibility is confirmed only by a complete valid 630-row output; any refusal, truncation, partial output, or provenance failure rejects that reviewer output in full and selects `T5H1_reviewer_access_or_provenance_stop`.
+
 For Safety A and Safety B, freeze before packet access:
 
 - distinct anonymized reviewer IDs and session IDs;

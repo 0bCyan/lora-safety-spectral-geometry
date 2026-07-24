@@ -1,0 +1,20 @@
+{
+  "name": "step3ct_t5h_h1q_route_decision_v1",
+  "source_git_head": "4ac8a4a9b50b75fe82b5063a7e556029456a97d7",
+  "route": "H1Q1_two_model_sessions_qualified_for_complete_safety_attempt",
+  "gates": {
+    "p6a1_verified": true,
+    "parent_t5h0_verified": true,
+    "two_distinct_no_context_sessions": true,
+    "exact_runtime_and_self_reported_model_metadata_frozen": true,
+    "zero_reviewer_repository_access_before_freeze": true,
+    "zero_reviewer_study_row_access_before_freeze": true,
+    "complete_or_abort_contract_frozen": true,
+    "material_hashes_match": true
+  },
+  "safety_attempt_authorized": true,
+  "label_acceptance_authorized": false,
+  "quality_utility_authorized": false,
+  "failure_route": "T5H1_reviewer_access_or_provenance_stop",
+  "next_action": "push_h1q_then_launch_one_complete_safety_attempt_per_reviewer"
+}

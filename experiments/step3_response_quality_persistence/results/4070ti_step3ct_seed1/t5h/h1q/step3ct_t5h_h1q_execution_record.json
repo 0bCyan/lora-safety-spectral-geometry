@@ -1,0 +1,17 @@
+{
+  "name": "step3ct_t5h_h1q_execution_record_v1",
+  "source_git_head": "4ac8a4a9b50b75fe82b5063a7e556029456a97d7",
+  "command": "python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_model_qualification.py run",
+  "reviewer_sessions_launched_for_qualification": 2,
+  "reviewer_repository_access": 0,
+  "reviewer_study_rows_accessed": 0,
+  "coordinator_semantic_rows_viewed": 0,
+  "coordinator_actions": [
+    "read qualification JSON responses",
+    "validate registered material hashes and row count"
+  ],
+  "labels_created": 0,
+  "heldout_opened": false,
+  "hidden_key_opened": false,
+  "route": "H1Q1_two_model_sessions_qualified_for_complete_safety_attempt"
+}
