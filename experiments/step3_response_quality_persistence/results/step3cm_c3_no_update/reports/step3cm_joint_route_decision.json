@@ -1,0 +1,17 @@
+{
+  "name": "step3cm_joint_route_decision_v1",
+  "measurement_validation_pass": true,
+  "c3_at_least_one_candidate_pass": true,
+  "passing_candidates": [
+    "C3a_multi_positive_global_binding",
+    "C3b_hierarchical_hard_negative_binding"
+  ],
+  "decision": "stop_and_request_prospective_seed1_training_plan",
+  "training_authorized": false,
+  "new_training_plan_required": true,
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false
+}

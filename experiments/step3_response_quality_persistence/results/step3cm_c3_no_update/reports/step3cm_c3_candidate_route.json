@@ -1,0 +1,163 @@
+{
+  "name": "step3cm_c3_candidate_route_v1",
+  "candidates": [
+    {
+      "candidate": "C3a_multi_positive_global_binding",
+      "flags": {
+        "id": "C3a_multi_positive_global_binding",
+        "same_prompt_targets_are_positives": true,
+        "global_cross_prompt_safe_negatives": true,
+        "same_category_hard_term": false,
+        "hard_term_multiplier": 0.0
+      },
+      "selected_queue_size": 32,
+      "selected_temperature": 0.05,
+      "median_positive_probability": 0.09614605456590652,
+      "eta": 0.08881576937607806,
+      "realized_binding_to_safety_ratio": 0.25,
+      "gradient": {
+        "global_cosine": 0.004502436656979584,
+        "group_cosine": {
+          "attention": 0.010325036579342846,
+          "mlp": 0.0013127411760975047
+        },
+        "binding_norm": 5.973415939673247,
+        "safety_norm": 2.1221341299416308,
+        "trainable_lora_parameter_tensors": 504,
+        "finite_tensor_fraction": 1.0,
+        "nonzero_tensor_fraction": 1.0
+      },
+      "representation": {
+        "retrieval": {
+          "top1": 0.15,
+          "top5": 0.45,
+          "mrr": 0.3011625508320933,
+          "multi_positive_recall_at5": 0.325
+        },
+        "permutation_mean": {
+          "top1": 0.02474999999999997,
+          "top5": 0.10424999999999995,
+          "mrr": 0.08847626947248856,
+          "multi_positive_recall_at5": 0.062125000000000014
+        },
+        "positive_minus_global_bootstrap": {
+          "mean": 0.03659018881810017,
+          "lower": 0.026541887744305992,
+          "upper": 0.04670371695970877
+        },
+        "positive_minus_hard_bootstrap": {
+          "mean": 0.03171418208162088,
+          "lower": 0.02092365898332275,
+          "upper": 0.042044136355296205
+        },
+        "prompt_effective_rank": {
+          "effective_rank": 20.176090240478516,
+          "top_singular_value_share": 0.1552405059337616
+        },
+        "target_effective_rank": {
+          "effective_rank": 25.936098098754883,
+          "top_singular_value_share": 0.15856848657131195
+        }
+      },
+      "gates": {
+        "finite_losses_and_similarities": true,
+        "finite_lora_gradients": true,
+        "nonzero_lora_gradients": true,
+        "queue_memory_rule": true,
+        "temperature_probability_rule": true,
+        "eta_finite_positive": true,
+        "eta_ratio_rule": true,
+        "frozen_base_parameters": true,
+        "implementation_tests": true,
+        "optimizer_steps_zero": true,
+        "overall_pass": true
+      }
+    },
+    {
+      "candidate": "C3b_hierarchical_hard_negative_binding",
+      "flags": {
+        "id": "C3b_hierarchical_hard_negative_binding",
+        "same_prompt_targets_are_positives": true,
+        "global_cross_prompt_safe_negatives": true,
+        "same_category_hard_term": true,
+        "hard_term_multiplier": 1.0,
+        "singleton_category_policy": "global_negatives_only"
+      },
+      "selected_queue_size": 32,
+      "selected_temperature": 0.05,
+      "median_positive_probability": 0.09614605456590652,
+      "eta": 0.05694228453242218,
+      "realized_binding_to_safety_ratio": 0.25,
+      "gradient": {
+        "global_cosine": 0.004177711699927165,
+        "group_cosine": {
+          "attention": 0.010234283432375526,
+          "mlp": 0.0008612608812572755
+        },
+        "binding_norm": 9.317039820966947,
+        "safety_norm": 2.1221341299416308,
+        "trainable_lora_parameter_tensors": 504,
+        "finite_tensor_fraction": 1.0,
+        "nonzero_tensor_fraction": 1.0
+      },
+      "representation": {
+        "retrieval": {
+          "top1": 0.15,
+          "top5": 0.45,
+          "mrr": 0.3011625508320933,
+          "multi_positive_recall_at5": 0.325
+        },
+        "permutation_mean": {
+          "top1": 0.02474999999999997,
+          "top5": 0.10424999999999995,
+          "mrr": 0.08847626947248856,
+          "multi_positive_recall_at5": 0.062125000000000014
+        },
+        "positive_minus_global_bootstrap": {
+          "mean": 0.03659018881810017,
+          "lower": 0.026541887744305992,
+          "upper": 0.04670371695970877
+        },
+        "positive_minus_hard_bootstrap": {
+          "mean": 0.03171418208162088,
+          "lower": 0.02092365898332275,
+          "upper": 0.042044136355296205
+        },
+        "prompt_effective_rank": {
+          "effective_rank": 20.176090240478516,
+          "top_singular_value_share": 0.1552405059337616
+        },
+        "target_effective_rank": {
+          "effective_rank": 25.936098098754883,
+          "top_singular_value_share": 0.15856848657131195
+        }
+      },
+      "gates": {
+        "finite_losses_and_similarities": true,
+        "finite_lora_gradients": true,
+        "nonzero_lora_gradients": true,
+        "queue_memory_rule": true,
+        "temperature_probability_rule": true,
+        "eta_finite_positive": true,
+        "eta_ratio_rule": true,
+        "frozen_base_parameters": true,
+        "implementation_tests": true,
+        "optimizer_steps_zero": true,
+        "overall_pass": true
+      }
+    }
+  ],
+  "passing_candidates": [
+    "C3a_multi_positive_global_binding",
+    "C3b_hierarchical_hard_negative_binding"
+  ],
+  "at_least_one_candidate_pass": true,
+  "next_action": "joint_measurement_plus_c3_decision",
+  "behavior_generated": false,
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "training_authorized": false
+}

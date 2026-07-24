@@ -1,0 +1,115 @@
+{
+  "name": "step3cm_c3_artifact_manifest_v1",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/plots/step3cm_c3_cosine_distributions.png",
+      "sha256": "df7d6f3601c0ad6a36fd4b446756400fddf7234c628eb44c24b160e7af2e59a8",
+      "bytes": 31435
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/plots/step3cm_c3_layerwise_gradient_energy.png",
+      "sha256": "40654f2b35724d7e577c14f856998d062fb509ef37f25019fbe6fdf88b240567",
+      "bytes": 63353
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/plots/step3cm_c3_permutation_mrr.png",
+      "sha256": "6287a65b7c6abcbbdef354e6adcab603183d485c12797856bf64463f26086f3c",
+      "bytes": 20968
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/protocol/step3cm_c3_calibration_prompts.json",
+      "sha256": "d366c1654ac00fdd3613d63f4b4e6c55c297aaba9856ecd89f5aad361a69e03d",
+      "bytes": 342
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/protocol/step3cm_c3_code_freeze.json",
+      "sha256": "e0592b9aa971c4131b00d15601a9ff6f974754516f967a215815a4221862d17d",
+      "bytes": 4229
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/protocol/Step3CM_C3_code_freeze_report.md",
+      "sha256": "39cdcfeb7d398dac68e26babddfe25fa32b3b9dc9fc00cf9121884f2f40ebf04",
+      "bytes": 620
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/protocol/step3cm_c3_implementation_tests.json",
+      "sha256": "a140a841382e0b257ac8e4f04e3482b4bf6c0a3e4c99ce4a566174c67fb1ae65",
+      "bytes": 667
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/raw/step3cm_c3_calibration_losses.csv",
+      "sha256": "956fe9d1e4c1ca4fc08d323c4c4c62e0df9ca12826a87208bc9bda32809db8b9",
+      "bytes": 1060
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/raw/step3cm_c3_cosine_distributions.csv",
+      "sha256": "ff9e8f447c1d64241dc124873f58f1f8c76e718d311ad1afdaffb2eda53bab80",
+      "bytes": 303601
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/raw/step3cm_c3_embeddings.npz",
+      "sha256": "6b7e70f87875c1367664baa258b7654f0bceba9b2e86ef3058932b14831e26b0",
+      "bytes": 115329
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/raw/step3cm_c3_layerwise_gradient_energy.csv",
+      "sha256": "9bdccb628ea90c74b1129d6427ac07c89e1690eb3ad65b0fb4dedc60bb616213",
+      "bytes": 193095
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/raw/step3cm_c3_permutation_controls.csv",
+      "sha256": "78b55aa7357cb606a166f5a5c32cf0dec3ee1759dad333186c79d7a82d22056c",
+      "bytes": 4013
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/raw/step3cm_c3_queue_trials.json",
+      "sha256": "9597b1a0874b6f9fa3532e4dfbbca20e49e9477fe58739b5522c5e49154340a2",
+      "bytes": 674
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/raw/step3cm_c3_temperature_trials.json",
+      "sha256": "a868488993d0f946f6af78c9c09e6aa7235406eaba6fece7ed2ccf5d88ac10e0",
+      "bytes": 3919
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/reports/step3cm_c3_candidate_route.json",
+      "sha256": "5a03d30ebdfd4175f868568a4eb5d40917bdf0028b23294579a7c4a9bd5bdb1b",
+      "bytes": 5461
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/reports/step3cm_c3_environment.json",
+      "sha256": "987748a41caaba2d11de1ddcb2a0c031adfdb38b5721031ae22a303c19201525",
+      "bytes": 838
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/reports/Step3CM_C3_no_update_report.md",
+      "sha256": "e9b99286ac0e9688d4875c625cb90f246917fed506d5d6fae5400ca3f69d9032",
+      "bytes": 776
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/reports/step3cm_c3_representation_atlas.json",
+      "sha256": "d7c461ea77691194c92a4ffeda5e8f075136a61b39bfbe26a4828fc7961fde7c",
+      "bytes": 855
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/reports/Step3CM_E3_E4_execution_report.md",
+      "sha256": "27347ff20a5ef0354ca22ce13c00ed776f03c6d8bcf540620a32a24ad48ab726",
+      "bytes": 3953
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/reports/Step3CM_joint_decision_report.md",
+      "sha256": "f5834751e009d7f137d49f9834aa3a2243c26158b5127865552837fab7366c3c",
+      "bytes": 426
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/reports/step3cm_joint_route_decision.json",
+      "sha256": "74b4f007d3b68f6f894261fdf1b88d8c40355fad14fee82b31dff7de6cc642d8",
+      "bytes": 512
+    }
+  ],
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false
+}

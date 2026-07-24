@@ -1,0 +1,29 @@
+[
+  {
+    "queue_size": 32,
+    "free_bytes": 6918504448,
+    "total_bytes": 12878086144,
+    "allocated_bytes": 3526260224,
+    "reserved_bytes": 4605345792,
+    "headroom_fraction": 0.5372307942840858,
+    "pass": true
+  },
+  {
+    "queue_size": 16,
+    "free_bytes": 6983516160,
+    "total_bytes": 12878086144,
+    "allocated_bytes": 3526243840,
+    "reserved_bytes": 4540334080,
+    "headroom_fraction": 0.5422790375768433,
+    "pass": true
+  },
+  {
+    "queue_size": 8,
+    "free_bytes": 6983516160,
+    "total_bytes": 12878086144,
+    "allocated_bytes": 3526235648,
+    "reserved_bytes": 4540334080,
+    "headroom_fraction": 0.5422790375768433,
+    "pass": true
+  }
+]

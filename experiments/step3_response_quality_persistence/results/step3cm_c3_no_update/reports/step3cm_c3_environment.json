@@ -1,0 +1,21 @@
+{
+  "name": "step3cm_c3_environment_v1",
+  "python": "3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.5.1+cu121",
+  "cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "total_vram_bytes": 12878086144,
+  "free_vram_bytes_at_end": 6845104128,
+  "peak_allocated_bytes": 4611521536,
+  "peak_reserved_bytes": 4850712576,
+  "wall_clock_seconds": 40.79596929997206,
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "checkpoint_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "candidate_outputs_generated": false
+}

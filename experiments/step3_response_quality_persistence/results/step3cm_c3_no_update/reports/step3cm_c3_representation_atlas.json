@@ -1,0 +1,32 @@
+{
+  "retrieval": {
+    "top1": 0.15,
+    "top5": 0.45,
+    "mrr": 0.3011625508320933,
+    "multi_positive_recall_at5": 0.325
+  },
+  "permutation_mean": {
+    "top1": 0.02474999999999997,
+    "top5": 0.10424999999999995,
+    "mrr": 0.08847626947248856,
+    "multi_positive_recall_at5": 0.062125000000000014
+  },
+  "positive_minus_global_bootstrap": {
+    "mean": 0.03659018881810017,
+    "lower": 0.026541887744305992,
+    "upper": 0.04670371695970877
+  },
+  "positive_minus_hard_bootstrap": {
+    "mean": 0.03171418208162088,
+    "lower": 0.02092365898332275,
+    "upper": 0.042044136355296205
+  },
+  "prompt_effective_rank": {
+    "effective_rank": 20.176090240478516,
+    "top_singular_value_share": 0.1552405059337616
+  },
+  "target_effective_rank": {
+    "effective_rank": 25.936098098754883,
+    "top_singular_value_share": 0.15856848657131195
+  }
+}
