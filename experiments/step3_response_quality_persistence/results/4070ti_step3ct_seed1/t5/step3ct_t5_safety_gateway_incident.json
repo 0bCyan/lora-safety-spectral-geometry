@@ -1,0 +1,54 @@
+{
+  "name": "step3ct_t5_safety_review_gateway_incident_v1",
+  "recorded_at": "2026-07-24T20:17:25+08:00",
+  "t4_result_commit": "1ea3bf6d57a32ea97e09c334887a8138985d94ef",
+  "route": "Q6_inconclusive_safety_review_gateway",
+  "failed_required_session": {
+    "reviewer_role": "Safety Reviewer A",
+    "agent_id": "019f9408-1bd7-7b81-998f-273774f49347",
+    "status": "platform_safety_gateway_error_before_label_output",
+    "accepted_rows": 0,
+    "accepted_output": null
+  },
+  "stopped_sessions": [
+    {
+      "reviewer_role": "Safety Reviewer B",
+      "agent_id": "019f9408-302d-7d72-8ebc-4fa774057878",
+      "status_before_shutdown": "running"
+    },
+    {
+      "reviewer_role": "Quality Reviewer A",
+      "agent_id": "019f9408-3f6f-7df1-a9d7-0698dc23de43",
+      "status_before_shutdown": "running"
+    },
+    {
+      "reviewer_role": "Quality Reviewer B",
+      "agent_id": "019f9408-53be-7011-a931-b464abecbf32",
+      "status_before_shutdown": "running"
+    },
+    {
+      "reviewer_role": "Utility Reviewer A",
+      "agent_id": "019f9408-6a64-7133-ac7e-540f5759b575",
+      "status_before_shutdown": "running"
+    },
+    {
+      "reviewer_role": "Utility Reviewer B",
+      "agent_id": "019f9408-817a-7440-a263-b86bd5d01a25",
+      "status_before_shutdown": "running"
+    }
+  ],
+  "unaccepted_outputs_removed_without_content_review": [
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5/reviews/safety/step3ct_t5_safety_reviewer_b_labels.jsonl"
+  ],
+  "accepted_label_files": [],
+  "reviewer_a_b_labels_compared": false,
+  "reviewer_c_started": false,
+  "agreement_or_kappa_computed": false,
+  "outcome_key_joined": false,
+  "main_session_assigned_labels": false,
+  "local_heuristic_substituted": false,
+  "heldout_opened": false,
+  "t6_authorized": false,
+  "candidate_promotion_authorized": false,
+  "new_training_authorized": false
+}
