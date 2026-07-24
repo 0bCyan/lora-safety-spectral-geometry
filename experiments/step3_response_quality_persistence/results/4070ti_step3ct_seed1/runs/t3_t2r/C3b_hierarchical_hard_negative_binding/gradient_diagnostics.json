@@ -1,0 +1,118 @@
+[
+  {
+    "checkpoint_step": 0,
+    "optimizer_step": 1,
+    "gradient_unit": "sum_of_four_unweighted_microstep_branch_gradients",
+    "positions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "microstep_count": 4,
+    "safety_gradient_norm": 39.9934139915537,
+    "binding_gradient_norm": 46.05617212132001,
+    "unweighted_binding_safety_ratio": 1.1515939132139785,
+    "eta_weighted_binding_safety_ratio": 0.193800561638186,
+    "binding_safety_cosine": 0.5717538956968518,
+    "safety_energy": {
+      "attention": 0.6517381435101725,
+      "mlp": 0.3482618564898276
+    },
+    "binding_energy": {
+      "attention": 0.6257953582101767,
+      "mlp": 0.37420464178982327
+    },
+    "safety_gradient_hash": "d8dd6f009f8c92826fa4fc65d1ba9eb37005d07e309dc672974c0de7cc1eecb7",
+    "binding_gradient_hash": "a44498bab47548021801871da510a12e43bb8536a6d481eb39a2a3e48f7913ed",
+    "hard_active_positions": 2,
+    "finite_nonzero": true
+  },
+  {
+    "checkpoint_step": 16,
+    "optimizer_step": 17,
+    "gradient_unit": "sum_of_four_unweighted_microstep_branch_gradients",
+    "positions": [
+      64,
+      65,
+      66,
+      67
+    ],
+    "microstep_count": 4,
+    "safety_gradient_norm": 8.437692610710913,
+    "binding_gradient_norm": 25.47756763751306,
+    "unweighted_binding_safety_ratio": 3.0194946430226097,
+    "eta_weighted_binding_safety_ratio": 0.5081476646990083,
+    "binding_safety_cosine": -0.06855889634763458,
+    "safety_energy": {
+      "attention": 0.39329580920974755,
+      "mlp": 0.6067041907902524
+    },
+    "binding_energy": {
+      "attention": 0.4232798920042919,
+      "mlp": 0.5767201079957082
+    },
+    "safety_gradient_hash": "42e1adbf19c874ac7f82c53e3c5d9ea53d71cf9a198fd2921c4c25968744236d",
+    "binding_gradient_hash": "d6f3a12ba7888079dccb8c039cad9f15c7ad003cf190c502993769b23d195576",
+    "hard_active_positions": 2,
+    "finite_nonzero": true
+  },
+  {
+    "checkpoint_step": 32,
+    "optimizer_step": 33,
+    "gradient_unit": "sum_of_four_unweighted_microstep_branch_gradients",
+    "positions": [
+      128,
+      129,
+      130,
+      131
+    ],
+    "microstep_count": 4,
+    "safety_gradient_norm": 7.8108032093488955,
+    "binding_gradient_norm": 15.864041099020849,
+    "unweighted_binding_safety_ratio": 2.031038380282438,
+    "eta_weighted_binding_safety_ratio": 0.3418013713783062,
+    "binding_safety_cosine": -0.03475264051010583,
+    "safety_energy": {
+      "attention": 0.38052248251343157,
+      "mlp": 0.6194775174865685
+    },
+    "binding_energy": {
+      "attention": 0.394436941497058,
+      "mlp": 0.605563058502942
+    },
+    "safety_gradient_hash": "e76fc69a1afff7f0c30b53a14a28829c3a76615259c72f86dcc7eafa51054a40",
+    "binding_gradient_hash": "2070d2298e57064936ad3be2461f9b1ac6c0c5303f008027fa34cb977fa34086",
+    "hard_active_positions": 2,
+    "finite_nonzero": true
+  },
+  {
+    "checkpoint_step": 64,
+    "optimizer_step": 64,
+    "gradient_unit": "sum_of_four_unweighted_microstep_branch_gradients",
+    "positions": [
+      252,
+      253,
+      254,
+      255
+    ],
+    "microstep_count": 4,
+    "safety_gradient_norm": 8.292653840296595,
+    "binding_gradient_norm": 23.58011078914458,
+    "unweighted_binding_safety_ratio": 2.8434939216395914,
+    "eta_weighted_binding_safety_ratio": 0.47852868333642007,
+    "binding_safety_cosine": -0.11289186336026219,
+    "safety_energy": {
+      "attention": 0.3251954640687245,
+      "mlp": 0.6748045359312754
+    },
+    "binding_energy": {
+      "attention": 0.36830502596100473,
+      "mlp": 0.6316949740389952
+    },
+    "safety_gradient_hash": "40e4549d1fb1344f759fe518d34032f39c82ecab94e4a54a184ffa2bd25e9f92",
+    "binding_gradient_hash": "7274d710ed3886930d8d3794439321e292633ea854be464881c60a46971d7dab",
+    "hard_active_positions": 4,
+    "finite_nonzero": true
+  }
+]

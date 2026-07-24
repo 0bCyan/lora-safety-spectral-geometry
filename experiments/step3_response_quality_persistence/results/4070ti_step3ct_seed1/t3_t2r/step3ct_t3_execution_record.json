@@ -1,0 +1,45 @@
+{
+  "name": "step3ct_t3_full_training_execution_record_v1",
+  "git_head": "8ac234bf5ccf1efc62c688b27e810d6ec6efe39f",
+  "config": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json",
+  "config_sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+  "trainer": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+  "trainer_sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57",
+  "execution_order": [
+    "C0R_concurrent_constant20",
+    "C3a_multi_positive_global_binding",
+    "C3b_hierarchical_hard_negative_binding"
+  ],
+  "commands": [
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm C0R_concurrent_constant20 --run-kind main --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm C3a_multi_positive_global_binding --run-kind main --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding",
+    ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py --config experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json --arm C3b_hierarchical_hard_negative_binding --run-kind main --output-dir experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding"
+  ],
+  "runs": [
+    {
+      "arm": "C0R_concurrent_constant20",
+      "wall_clock_seconds": 482.1,
+      "optimizer_wall_seconds": 424.6869320869446,
+      "optimizer_steps": 64
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "wall_clock_seconds": 894.5,
+      "optimizer_wall_seconds": 830.5646607875824,
+      "optimizer_steps": 64
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "wall_clock_seconds": 676.4,
+      "optimizer_wall_seconds": 621.8914110660553,
+      "optimizer_steps": 64
+    }
+  ],
+  "total_optimizer_steps": 192,
+  "raw_run_root": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r",
+  "route": "T3_integrity_pass_runs_frozen_authorize_T4",
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "adapters_or_checkpoints_committed": false
+}

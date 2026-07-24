@@ -1,0 +1,4 @@
+arm,completed_steps,trace_rows,checkpoints,diagnostic_labels,eta_weighted_ratios,exposure_min,exposure_max,projection_unchanged,queue_count,vram_headroom_fraction,finite,no_skipped_updates,overall_pass
+C0R_concurrent_constant20,64,256,0;6;16;32;48;64,0;16;32;64,0.0;0.0;0.0;0.0,3,4,true,0,0.3688067418474942,true,true,true
+C3a_multi_positive_global_binding,64,256,0;6;16;32;48;64,0;16;32;64,0.25498995242451444;0.5513373881094369;0.3600483286374192;0.41714344875875314,3,4,true,32,0.34991654113911164,true,true,true
+C3b_hierarchical_hard_negative_binding,64,256,0;6;16;32;48;64,0;16;32;64,0.193800561638186;0.5081476646990083;0.3418013713783062;0.47852868333642007,3,4,true,32,0.34991654113911164,true,true,true

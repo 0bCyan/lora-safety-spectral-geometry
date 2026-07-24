@@ -1,0 +1,102 @@
+{
+  "name": "step3ct_t3_full_training_manifest_package_v1",
+  "training_git_head": "8ac234bf5ccf1efc62c688b27e810d6ec6efe39f",
+  "trainer_sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57",
+  "config_sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+  "shared": {
+    "risk_order_hash": "c9251f90d3158dbef61cb486d33c20618eaef884a92ddab4e7c744a6dc9166ab",
+    "target_schedule_hash": "6dc74b85d5a5353dafc768da258c0f8c9f9054abf62df5b13550c9e1eb4b2210",
+    "projection_hash": "2ef25a153ab85aecb31a2a6aab2d40bc80d659eacca58dff4be9dc756be1a6a0",
+    "c3_queue_prefill_target_hash": "fe8e3e427f7d0f93034f484240ec6944a7eb404bacd066cd6619e79589894582",
+    "c3_initial_queue_hash": "fdc7b3437806ba221aca80da2425742493ae793f1f4a9567f958daba2a3afbe8",
+    "fresh_adapter_sha256": "bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7",
+    "cross_arm_draw_trace_equal": true,
+    "checkpoint_steps": [0, 6, 16, 32, 48, 64],
+    "diagnostic_labels": [0, 16, 32, 64],
+    "trace_rows_per_arm": 256,
+    "target_exposure_distribution": {
+      "three_exposures": 64,
+      "four_exposures": 16
+    },
+    "artifact_hash_bytes": "canonical_lf_git_index",
+    "total_vram_bytes": 12878086144
+  },
+  "arms": [
+    {
+      "arm": "C0R_concurrent_constant20",
+      "eta": 0.0,
+      "optimizer_unit_ratios": [0.0, 0.0, 0.0, 0.0],
+      "hard_active_positions_at_diagnostics": [0, 0, 0, 0],
+      "final_adapter_sha256": "c8fb1ffa7ae7e44fef02a0b870d427211e734d8e13c8b422deec3f416ec8ce28",
+      "final_queue_hash": "",
+      "queue_count": 0,
+      "peak_reserved_bytes": 8128561152,
+      "vram_headroom_fraction": 0.3688067418474942,
+      "optimizer_wall_seconds": 424.6869320869446,
+      "artifact_hashes": {
+        "run_manifest": "c4498cb440524a4b20860afdeecd7e742b06965400a8e0c90905306db5de603d",
+        "training_trace": "6f799b717da13f184b512b5eba752540045f5b240e2ed21fc940e447837ccd9f",
+        "gradient_diagnostics": "fd79da531a38e332f95b24c1181f1df07287a79443e3ae1d309498522a547648",
+        "target_exposure_manifest": "21c1ae7edcd0a41f1f04ec22d38d0a0ff30531d5a018e78ef773487b188d8e50",
+        "checkpoint_index": "19f0c82eb70ca845b22932462d848de1093d36ac5348fb8c30705d7b8c25c6f7"
+      },
+      "overall_pass": true
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "eta": 0.2691508842579502,
+      "optimizer_unit_ratios": [
+        0.25498995242451444,
+        0.5513373881094369,
+        0.3600483286374192,
+        0.41714344875875314
+      ],
+      "hard_active_positions_at_diagnostics": [0, 0, 0, 0],
+      "final_adapter_sha256": "910a0fc951a6ba1192badf8f1eaf1c7fd4e6c7036a1dc8b02994314d62091ffc",
+      "final_queue_hash": "5f3925939a3049da47b57678018d564a45855c1d826dc2c1d76fefc3289c078d",
+      "queue_count": 32,
+      "peak_reserved_bytes": 8371830784,
+      "vram_headroom_fraction": 0.34991654113911164,
+      "optimizer_wall_seconds": 830.5646607875824,
+      "artifact_hashes": {
+        "run_manifest": "a00fb2b5ab76c9ff23a81d21f8942eaae77c35dec63d9760c957e10272d380cc",
+        "training_trace": "bfb37d252ce2ebd6097f9f1a03a8583de487dbb07e29f02b4a1190f4cb47d800",
+        "gradient_diagnostics": "506ea95fef9696410cc5485890cd61734f550879473be8578fa9858f87844685",
+        "target_exposure_manifest": "21c1ae7edcd0a41f1f04ec22d38d0a0ff30531d5a018e78ef773487b188d8e50",
+        "checkpoint_index": "dcfe307d40cf0bee01ee6daced006f6fbe5c3700ecd4b60c0f231596b052cb8c"
+      },
+      "overall_pass": true
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "eta": 0.16828897705555668,
+      "optimizer_unit_ratios": [
+        0.193800561638186,
+        0.5081476646990083,
+        0.3418013713783062,
+        0.47852868333642007
+      ],
+      "hard_active_positions_at_diagnostics": [2, 2, 2, 4],
+      "final_adapter_sha256": "a1351da797db5b841e9e4771fa987e025ce5d568b290242e037b3a01b92ebcd2",
+      "final_queue_hash": "4c091c301b1a810be21569901e4a0bec860398d3c749ca18f5d2de71de99a12c",
+      "queue_count": 32,
+      "peak_reserved_bytes": 8371830784,
+      "vram_headroom_fraction": 0.34991654113911164,
+      "optimizer_wall_seconds": 621.8914110660553,
+      "artifact_hashes": {
+        "run_manifest": "1420879458306aebd1f8266401c7524e7a6d2f84d9891bdf26a95bee4a14ec65",
+        "training_trace": "f10ea39bc49bdac73aee188e41552925a0e74f62cb9c86b0f28ca024183d5b54",
+        "gradient_diagnostics": "9baf2aa86e983b3744d5027f3cb021d89247012bad62d65a3d9d0c32b47a5391",
+        "target_exposure_manifest": "21c1ae7edcd0a41f1f04ec22d38d0a0ff30531d5a018e78ef773487b188d8e50",
+        "checkpoint_index": "939efcd05df929110bcfe1e87b72c19c1fd33b9a731de0a99a2480e575be6601"
+      },
+      "overall_pass": true
+    }
+  ],
+  "ratio_drift_is_explanatory_only": true,
+  "eta_adapted_or_refit": false,
+  "adapters_or_checkpoints_committed": false,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
