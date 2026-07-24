@@ -1,0 +1,42 @@
+{
+  "name": "step3ct_t5r_p6_execution_record_v1",
+  "branch": "exp/step3-response-quality-persistence",
+  "p5_commits": [
+    "490918d",
+    "b6cae23",
+    "f88899d"
+  ],
+  "representation_execution": {
+    "command_pattern": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_mechanism.py --phase representations --arm <arm> --step <0|16|32|64>",
+    "arms": 3,
+    "checkpoint_steps": [0, 16, 32, 64],
+    "completed_outputs": 12,
+    "source_checkpoint_immutability_passed": true,
+    "cross_arm_prompt_target_order_equal": true,
+    "optimizer_updates_applied": false
+  },
+  "gradient_execution": {
+    "command_pattern": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_mechanism.py --phase gradients --step <0|16|32|64>",
+    "exactly_reproduced_labels": [0, 16, 32],
+    "failed_label": 64,
+    "label64_source_checkpoint": 48,
+    "label64_replayed_completed_steps": "49-63",
+    "diagnostic_update64_applied": false,
+    "label64_failure": "registered gradient hashes and traces did not reproduce within the frozen 1e-5 tolerance",
+    "approximate_label64_grouped_metrics_reported": false
+  },
+  "incidents": [
+    "step3ct_t5r_p6_label64_disposable_path_stop_v1"
+  ],
+  "integrity": {
+    "source_artifacts_checked": 180,
+    "source_artifacts_byte_identical": true,
+    "full_gradient_tensors_serialized": false,
+    "new_training_or_candidate_created": false,
+    "heldout_opened": false
+  },
+  "track_a_route": "T5R1_reviewer_access_stop",
+  "mechanism_route": "M1_reconstruction_integrity_failure",
+  "t6_authorized": false,
+  "new_training_authorized": false
+}

@@ -4,13 +4,13 @@
 
 Step 3 is open.
 
-Current phase: **Step3C-T5R independent blind-review recovery and mechanism completion**.
+Current phase: **Step3C-T5R stopped at reviewer-access and mechanism-reconstruction gates**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
 The first Step3C Stage 0 stopped at its repeated response-only mechanical-label reliability gate and established that C2 cannot reach its 36-triplet requirement. Step3C-R then stopped after two prompt-aware pair-preference reliability failures (`0.825` and `0.800` raw agreement against a frozen `0.85` gate). C2 and C-R0 are closed.
 
-Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. T2R then completed one state-matched eta recalibration and restored smoke qualification. C0-R, C3a, and C3b each completed a matched 64-step seed1 run, and T4 froze 1,200 generations plus unchanged safety, quality, and utility blind packets. T5 stopped with zero accepted labels because the platform safety gateway blocked Safety Reviewer A before labeling. This is a reviewer-access incident, not a C3 efficacy result. The active plan is `Step3C_T5R_independent_review_recovery_and_mechanism_completion_plan.md`; heldout remains sealed and no new training is authorized.
+Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. T2R then completed one state-matched eta recalibration and restored smoke qualification. C0-R, C3a, and C3b each completed a matched 64-step seed1 run, and T4 froze 1,200 generations plus unchanged safety, quality, and utility blind packets. T5R Track A stopped at `T5R1_reviewer_access_stop` with zero accepted labels because no approved independent safety-review environment was available. Track B completed all 12 frozen representation probes and exactly reproduced grouped-gradient labels 0/16/32, but the bounded checkpoint48 replay did not reproduce the registered label64 hashes/traces within tolerance and therefore selected `M1_reconstruction_integrity_failure`. Approximate label64 grouped results were withheld. This is neither a C3 efficacy result nor a candidate selection. The governing plan is `Step3C_T5R_independent_review_recovery_and_mechanism_completion_plan.md`; heldout remains sealed and no new training is authorized.
 
 ## 1. Research Question
 
@@ -134,7 +134,7 @@ Completed evidence now includes:
 - zero accepted T5 labels and no hidden outcome-key join;
 - heldout continuously sealed.
 
-The active review-recovery contract is frozen in `configs/step3ct_t5r_review_recovery_registry.json`. T5R requires complete fresh A/B reviews, disagreement-only C review, reliability before arm-key join, and unchanged packet/rubric hashes. The unchanged behavior gates are:
+The review-recovery contract remains frozen in `configs/step3ct_t5r_review_recovery_registry.json`. Track A is stopped at `T5R1`, Track B is stopped at `M1`, and T6 is unauthorized. Any future resumption still requires complete fresh A/B reviews, disagreement-only C review, reliability before arm-key join, and unchanged packet/rubric hashes. The unchanged behavior gates are:
 
 | domain | gate |
 | --- | --- |
@@ -195,4 +195,4 @@ Not authorized now:
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The stopped Stage0 and C-R0 routes, completed Step3C-MF/T2R/T3/T4 packages, and inconclusive T5 incident remain recorded without overwrite. The active prospective plan is `Step3C_T5R_independent_review_recovery_and_mechanism_completion_plan.md`; `EXPERIMENT_MACHINE_TASK.md` is the handoff. Only a valid T6 winner may request a separate C4/Q*/C5 seed1 factorial plan.
+The stopped Stage0 and C-R0 routes, completed Step3C-MF/T2R/T3/T4 packages, T5/T5R reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. `Step3C_T5R_independent_review_recovery_and_mechanism_completion_plan.md` remains the governing plan and `EXPERIMENT_MACHINE_TASK.md` remains the handoff, but no next experiment is currently authorized. Only a valid T6 winner may request a separate C4/Q*/C5 seed1 factorial plan.

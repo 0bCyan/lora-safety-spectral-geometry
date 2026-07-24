@@ -1,0 +1,631 @@
+{
+  "name": "step3ct_t5r_p6_grouped_gradient_reconstruction_v1",
+  "p5_freeze_sha256": "1a01f7541c1964a8c103e4c8b5c607c1e9e6f14f4054fd82bc4499bcb612fd04",
+  "execution_git_head": "b6cae230c9d4a8ea9be7f207d8b52a3e5443db6b",
+  "diagnostic_label": 64,
+  "numeric_tolerance": 1e-05,
+  "arms": {
+    "C0R_concurrent_constant20": {
+      "arm": "C0R_concurrent_constant20",
+      "diagnostic_label": 64,
+      "source_checkpoint_step": 48,
+      "source_checkpoint_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0048",
+      "covered_target_positions": [
+        252,
+        253,
+        254,
+        255
+      ],
+      "replayed_completed_optimizer_steps": 15,
+      "diagnostic_optimizer_update_applied": false,
+      "optional_update64_hash_verification_applied": false,
+      "registered_reproduction": {
+        "passed": false,
+        "tolerance": 1e-05,
+        "mismatches": {
+          "safety_gradient_hash": {
+            "observed": "ad95d2e7f62574c88abdc83dec0f6432dd8fd82cb2874b12fad55249f2447691",
+            "registered": "b7756383da2d791385f0186c9c45e7cf416f1e35cc5efea6c99b7224b3e2efee"
+          },
+          "safety_gradient_norm": {
+            "observed": 8.584641010310413,
+            "registered": 8.582744124007482
+          },
+          "safety_energy.attention": {
+            "observed": 0.3369230668791851,
+            "registered": 0.33696875108842456
+          },
+          "safety_energy.mlp": {
+            "observed": 0.6630769331208148,
+            "registered": 0.6630312489115755
+          }
+        }
+      },
+      "trace_reproduction": {
+        "passed": false,
+        "observed_rows": 256,
+        "registered_rows_compared": 256,
+        "mismatch_count": 176,
+        "mismatches": [
+          {
+            "row": 200,
+            "field": "risk_loss",
+            "observed": 1.6762217283248901,
+            "registered": "1.6761958599090576"
+          },
+          {
+            "row": 200,
+            "field": "safety_loss",
+            "observed": 1.3392304182052612,
+            "registered": "1.3390337228775024"
+          },
+          {
+            "row": 200,
+            "field": "total_loss",
+            "observed": 1.6088234663009646,
+            "registered": "1.6087634325027467"
+          },
+          {
+            "row": 201,
+            "field": "risk_loss",
+            "observed": 0.9599783420562744,
+            "registered": "0.9605270624160767"
+          },
+          {
+            "row": 201,
+            "field": "safety_loss",
+            "observed": 1.6482257843017578,
+            "registered": "1.647957682609558"
+          },
+          {
+            "row": 201,
+            "field": "total_loss",
+            "observed": 1.0976278305053713,
+            "registered": "1.0980131864547729"
+          },
+          {
+            "row": 202,
+            "field": "risk_loss",
+            "observed": 1.5825363397598267,
+            "registered": "1.5824521780014038"
+          },
+          {
+            "row": 202,
+            "field": "safety_loss",
+            "observed": 1.1905848979949951,
+            "registered": "1.1910135746002197"
+          },
+          {
+            "row": 202,
+            "field": "total_loss",
+            "observed": 1.5041460514068605,
+            "registered": "1.504164457321167"
+          },
+          {
+            "row": 203,
+            "field": "risk_loss",
+            "observed": 1.308979868888855,
+            "registered": "1.308919906616211"
+          },
+          {
+            "row": 203,
+            "field": "safety_loss",
+            "observed": 1.1250413656234741,
+            "registered": "1.1253243684768677"
+          },
+          {
+            "row": 203,
+            "field": "optimizer_preclip_gradient_norm",
+            "observed": 1.1472055912017822,
+            "registered": "1.1475425958633423"
+          },
+          {
+            "row": 204,
+            "field": "risk_loss",
+            "observed": 1.8756825923919678,
+            "registered": "1.8756041526794434"
+          },
+          {
+            "row": 204,
+            "field": "total_loss",
+            "observed": 1.6697187066078187,
+            "registered": "1.6696548223495484"
+          },
+          {
+            "row": 205,
+            "field": "risk_loss",
+            "observed": 1.98262357711792,
+            "registered": "1.982478380203247"
+          },
+          {
+            "row": 205,
+            "field": "safety_loss",
+            "observed": 1.2906124591827393,
+            "registered": "1.2906913757324219"
+          },
+          {
+            "row": 205,
+            "field": "total_loss",
+            "observed": 1.844221353530884,
+            "registered": "1.8441209793090823"
+          },
+          {
+            "row": 206,
+            "field": "risk_loss",
+            "observed": 2.898055076599121,
+            "registered": "2.8983938694000244"
+          },
+          {
+            "row": 206,
+            "field": "safety_loss",
+            "observed": 1.2679948806762695,
+            "registered": "1.2676560878753662"
+          },
+          {
+            "row": 206,
+            "field": "total_loss",
+            "observed": 2.572043037414551,
+            "registered": "2.5722463130950928"
+          }
+        ],
+        "tolerance": 1e-05,
+        "excluded_nondeterministic_fields": [
+          "optimizer_step_wall_seconds"
+        ]
+      },
+      "queue_reproduction": {
+        "observed": "",
+        "registered": "",
+        "passed": true
+      },
+      "source_checkpoint_immutability": {
+        "passed": true,
+        "changed_paths": [],
+        "artifact_count": 11
+      },
+      "control_zero_or_c3_nonzero": true,
+      "grouped_metrics": {
+        "registered": false,
+        "withheld_reason": "exact registered diagnostic reconstruction failed"
+      },
+      "reproduction_passed": false,
+      "wall_seconds": 80.49464082717896
+    },
+    "C3a_multi_positive_global_binding": {
+      "arm": "C3a_multi_positive_global_binding",
+      "diagnostic_label": 64,
+      "source_checkpoint_step": 48,
+      "source_checkpoint_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0048",
+      "covered_target_positions": [
+        252,
+        253,
+        254,
+        255
+      ],
+      "replayed_completed_optimizer_steps": 15,
+      "diagnostic_optimizer_update_applied": false,
+      "optional_update64_hash_verification_applied": false,
+      "registered_reproduction": {
+        "passed": false,
+        "tolerance": 1e-05,
+        "mismatches": {
+          "safety_gradient_hash": {
+            "observed": "e921283c0ab28da0495383b49189ec2d2d9cd754d6acca10916f4395948ebef1",
+            "registered": "55bf592e5175c10d2c72ee10bf7a9c73c9a18e08c4f2e830d426ff17debb27bd"
+          },
+          "binding_gradient_hash": {
+            "observed": "597d56cf4be3aa3076d0494add124f99aa1206707367226e5996e7144aced41c",
+            "registered": "826719ff573d143a192669d85664d06e5716fb1c03ca6023a1d72d3ab241543a"
+          },
+          "safety_gradient_norm": {
+            "observed": 8.292828030472453,
+            "registered": 8.293157957781911
+          },
+          "binding_gradient_norm": {
+            "observed": 12.8541669570117,
+            "registered": 12.853149344643327
+          },
+          "unweighted_binding_safety_ratio": {
+            "observed": 1.550034187345783,
+            "registered": 1.5498498171715798
+          },
+          "eta_weighted_binding_safety_ratio": {
+            "observed": 0.41719307215417073,
+            "registered": 0.41714344875875314
+          },
+          "binding_safety_cosine": {
+            "observed": -0.11080315357614867,
+            "registered": -0.11093447435859169
+          },
+          "safety_energy.attention": {
+            "observed": 0.32387782709020096,
+            "registered": 0.32385064120859425
+          },
+          "safety_energy.mlp": {
+            "observed": 0.676122172909799,
+            "registered": 0.6761493587914058
+          },
+          "binding_energy.attention": {
+            "observed": 0.3685888983112202,
+            "registered": 0.3685777501214647
+          },
+          "binding_energy.mlp": {
+            "observed": 0.6314111016887798,
+            "registered": 0.6314222498785352
+          }
+        }
+      },
+      "trace_reproduction": {
+        "passed": false,
+        "observed_rows": 256,
+        "registered_rows_compared": 256,
+        "mismatch_count": 376,
+        "mismatches": [
+          {
+            "row": 200,
+            "field": "queue_hash_after",
+            "observed": "9916ccd3b685aba0eff40f26fe44a2a58d40f4bdd4195122db3bda09c22e89dc",
+            "registered": "28b379a4e25b78b358b846091b2bf445f059ae74f3a322d8078cc156ef84ce77"
+          },
+          {
+            "row": 200,
+            "field": "risk_loss",
+            "observed": 1.6657696962356567,
+            "registered": "1.664982795715332"
+          },
+          {
+            "row": 200,
+            "field": "safety_loss",
+            "observed": 1.399722933769226,
+            "registered": "1.3997883796691895"
+          },
+          {
+            "row": 200,
+            "field": "global_binding_loss",
+            "observed": 2.2409839630126953,
+            "registered": "2.240884780883789"
+          },
+          {
+            "row": 200,
+            "field": "binding_loss",
+            "observed": 2.2409839630126953,
+            "registered": "2.240884780883789"
+          },
+          {
+            "row": 200,
+            "field": "total_loss",
+            "observed": 1.7331929067929213,
+            "registered": "1.7325711365651146"
+          },
+          {
+            "row": 200,
+            "field": "positive_probability",
+            "observed": 0.10635379701852798,
+            "registered": "0.10636435449123383"
+          },
+          {
+            "row": 201,
+            "field": "queue_hash_before",
+            "observed": "9916ccd3b685aba0eff40f26fe44a2a58d40f4bdd4195122db3bda09c22e89dc",
+            "registered": "28b379a4e25b78b358b846091b2bf445f059ae74f3a322d8078cc156ef84ce77"
+          },
+          {
+            "row": 201,
+            "field": "queue_hash_after",
+            "observed": "0623824c9e24cebe3dc9ea4ff027fae7bc9c5e921099d406a1e768b4d2582914",
+            "registered": "c7329f57a7403713ed83d886b394e17a4b3cbfe0579be9f0b6d6fe109786c052"
+          },
+          {
+            "row": 201,
+            "field": "risk_loss",
+            "observed": 0.9848641753196716,
+            "registered": "0.9838366508483887"
+          },
+          {
+            "row": 201,
+            "field": "safety_loss",
+            "observed": 1.6739829778671265,
+            "registered": "1.6750080585479736"
+          },
+          {
+            "row": 201,
+            "field": "global_binding_loss",
+            "observed": 2.146158218383789,
+            "registered": "2.14605712890625"
+          },
+          {
+            "row": 201,
+            "field": "binding_loss",
+            "observed": 2.146158218383789,
+            "registered": "2.14605712890625"
+          },
+          {
+            "row": 201,
+            "field": "total_loss",
+            "observed": 1.2382160122762556,
+            "registered": "1.2375935671709446"
+          },
+          {
+            "row": 201,
+            "field": "positive_probability",
+            "observed": 0.11693252623081207,
+            "registered": "0.1169443428516388"
+          },
+          {
+            "row": 202,
+            "field": "queue_hash_before",
+            "observed": "0623824c9e24cebe3dc9ea4ff027fae7bc9c5e921099d406a1e768b4d2582914",
+            "registered": "c7329f57a7403713ed83d886b394e17a4b3cbfe0579be9f0b6d6fe109786c052"
+          },
+          {
+            "row": 202,
+            "field": "queue_hash_after",
+            "observed": "c36b38503f1d2ad04c71b11d0b62bb8b5280a66ec5ae91336ba3dd885267c4a9",
+            "registered": "08d2df3a282d954fb91c5db1be07e3c3be37d2060139599d608f30bd646314cf"
+          },
+          {
+            "row": 202,
+            "field": "safety_loss",
+            "observed": 1.2541700601577759,
+            "registered": "1.2541512250900269"
+          },
+          {
+            "row": 202,
+            "field": "global_binding_loss",
+            "observed": 2.34869384765625,
+            "registered": "2.3486251831054688"
+          },
+          {
+            "row": 202,
+            "field": "binding_loss",
+            "observed": 2.34869384765625,
+            "registered": "2.3486251831054688"
+          }
+        ],
+        "tolerance": 1e-05,
+        "excluded_nondeterministic_fields": [
+          "optimizer_step_wall_seconds"
+        ]
+      },
+      "queue_reproduction": {
+        "observed": "561cb064de696a4b9d7e299043562295cf067c1a48308fa1206b57d398d76102",
+        "registered": "5f3925939a3049da47b57678018d564a45855c1d826dc2c1d76fefc3289c078d",
+        "passed": false
+      },
+      "source_checkpoint_immutability": {
+        "passed": true,
+        "changed_paths": [],
+        "artifact_count": 11
+      },
+      "control_zero_or_c3_nonzero": true,
+      "grouped_metrics": {
+        "registered": false,
+        "withheld_reason": "exact registered diagnostic reconstruction failed"
+      },
+      "reproduction_passed": false,
+      "wall_seconds": 167.48095655441284
+    },
+    "C3b_hierarchical_hard_negative_binding": {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "diagnostic_label": 64,
+      "source_checkpoint_step": 48,
+      "source_checkpoint_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0048",
+      "covered_target_positions": [
+        252,
+        253,
+        254,
+        255
+      ],
+      "replayed_completed_optimizer_steps": 15,
+      "diagnostic_optimizer_update_applied": false,
+      "optional_update64_hash_verification_applied": false,
+      "registered_reproduction": {
+        "passed": false,
+        "tolerance": 1e-05,
+        "mismatches": {
+          "safety_gradient_hash": {
+            "observed": "28a62beaf940bd02fbc24971bd72b95466cd0bbc03eb600ce9a787194b349da7",
+            "registered": "40e4549d1fb1344f759fe518d34032f39c82ecab94e4a54a184ffa2bd25e9f92"
+          },
+          "binding_gradient_hash": {
+            "observed": "6caf9cf20f58e328cda4752a75b9200562c37c1aeabcc2942d96f3342c18a5d7",
+            "registered": "7274d710ed3886930d8d3794439321e292633ea854be464881c60a46971d7dab"
+          },
+          "safety_gradient_norm": {
+            "observed": 8.291927921290606,
+            "registered": 8.292653840296595
+          },
+          "binding_gradient_norm": {
+            "observed": 23.61436732852028,
+            "registered": 23.58011078914458
+          },
+          "unweighted_binding_safety_ratio": {
+            "observed": 2.8478741678261956,
+            "registered": 2.8434939216395914
+          },
+          "eta_weighted_binding_safety_ratio": {
+            "observed": 0.47926583048641525,
+            "registered": 0.47852868333642007
+          },
+          "binding_safety_cosine": {
+            "observed": -0.11258165503799657,
+            "registered": -0.11289186336026219
+          },
+          "safety_energy.attention": {
+            "observed": 0.3254611823224832,
+            "registered": 0.3251954640687245
+          },
+          "safety_energy.mlp": {
+            "observed": 0.6745388176775169,
+            "registered": 0.6748045359312754
+          },
+          "binding_energy.attention": {
+            "observed": 0.36839513731060863,
+            "registered": 0.36830502596100473
+          },
+          "binding_energy.mlp": {
+            "observed": 0.6316048626893913,
+            "registered": 0.6316949740389952
+          }
+        }
+      },
+      "trace_reproduction": {
+        "passed": false,
+        "observed_rows": 256,
+        "registered_rows_compared": 256,
+        "mismatch_count": 382,
+        "mismatches": [
+          {
+            "row": 208,
+            "field": "queue_hash_after",
+            "observed": "0e899f8c9bd588e0e889d59d509b22cb9f5dd8f5ea4a4adbf553abcba77d902b",
+            "registered": "eca325bc26039afaa3880f9b88bc2ef07d198a600b85bf9245a682a8419371ff"
+          },
+          {
+            "row": 208,
+            "field": "risk_loss",
+            "observed": 2.09371280670166,
+            "registered": "2.0948596000671387"
+          },
+          {
+            "row": 208,
+            "field": "safety_loss",
+            "observed": 0.8873679637908936,
+            "registered": "0.8874926567077637"
+          },
+          {
+            "row": 208,
+            "field": "global_binding_loss",
+            "observed": 2.3803348541259766,
+            "registered": "2.3803863525390625"
+          },
+          {
+            "row": 208,
+            "field": "hard_binding_loss",
+            "observed": 1.5651798248291016,
+            "registered": "1.5652122497558594"
+          },
+          {
+            "row": 208,
+            "field": "binding_loss",
+            "observed": 3.945514678955078,
+            "registered": "3.945598602294922"
+          },
+          {
+            "row": 208,
+            "field": "total_loss",
+            "observed": 1.9852411639753136,
+            "registered": "1.986186361925673"
+          },
+          {
+            "row": 209,
+            "field": "queue_hash_before",
+            "observed": "0e899f8c9bd588e0e889d59d509b22cb9f5dd8f5ea4a4adbf553abcba77d902b",
+            "registered": "eca325bc26039afaa3880f9b88bc2ef07d198a600b85bf9245a682a8419371ff"
+          },
+          {
+            "row": 209,
+            "field": "queue_hash_after",
+            "observed": "fedd4dd543b56d29e900d49729e07a1dd0a2806862b61427bbd94ec923d0b485",
+            "registered": "8f7de1acdc2364a9224b49004814242ff8e8acc948b1b6dc7f3bbeb585133e8d"
+          },
+          {
+            "row": 209,
+            "field": "risk_loss",
+            "observed": 2.2503345012664795,
+            "registered": "2.250195026397705"
+          },
+          {
+            "row": 209,
+            "field": "safety_loss",
+            "observed": 1.7347321510314941,
+            "registered": "1.7352489233016968"
+          },
+          {
+            "row": 209,
+            "field": "global_binding_loss",
+            "observed": 2.311159133911133,
+            "registered": "2.311220169067383"
+          },
+          {
+            "row": 209,
+            "field": "hard_binding_loss",
+            "observed": 1.4014663696289062,
+            "registered": "1.4015083312988281"
+          },
+          {
+            "row": 209,
+            "field": "binding_loss",
+            "observed": 3.712625503540039,
+            "registered": "3.712728500366211"
+          },
+          {
+            "row": 210,
+            "field": "queue_hash_before",
+            "observed": "fedd4dd543b56d29e900d49729e07a1dd0a2806862b61427bbd94ec923d0b485",
+            "registered": "8f7de1acdc2364a9224b49004814242ff8e8acc948b1b6dc7f3bbeb585133e8d"
+          },
+          {
+            "row": 210,
+            "field": "queue_hash_after",
+            "observed": "1c2150a0bb367ab6a6e9a1c3f73d11cf8a3fa70c190eaf0c2a7fb7508a524711",
+            "registered": "375ec26e446d58605c0142d672a0031ffdc04e8baedc83d4fbcc28716052e70e"
+          },
+          {
+            "row": 210,
+            "field": "risk_loss",
+            "observed": 1.2457375526428223,
+            "registered": "1.2460509538650513"
+          },
+          {
+            "row": 210,
+            "field": "safety_loss",
+            "observed": 1.501183271408081,
+            "registered": "1.5010383129119873"
+          },
+          {
+            "row": 210,
+            "field": "global_binding_loss",
+            "observed": 2.6569766998291016,
+            "registered": "2.657052993774414"
+          },
+          {
+            "row": 210,
+            "field": "binding_loss",
+            "observed": 2.6569766998291016,
+            "registered": "2.657052993774414"
+          }
+        ],
+        "tolerance": 1e-05,
+        "excluded_nondeterministic_fields": [
+          "optimizer_step_wall_seconds"
+        ]
+      },
+      "queue_reproduction": {
+        "observed": "43e41b039bc99ba593f4172a83b7fbf6fde8714617e175e1386ebf5b98feb3d6",
+        "registered": "4c091c301b1a810be21569901e4a0bec860398d3c749ca18f5d2de71de99a12c",
+        "passed": false
+      },
+      "source_checkpoint_immutability": {
+        "passed": true,
+        "changed_paths": [],
+        "artifact_count": 11
+      },
+      "control_zero_or_c3_nonzero": true,
+      "grouped_metrics": {
+        "registered": false,
+        "withheld_reason": "exact registered diagnostic reconstruction failed"
+      },
+      "reproduction_passed": false,
+      "wall_seconds": 148.1467604637146
+    }
+  },
+  "c3a_c3b_direction": {
+    "registered": false,
+    "withheld_reason": "at least one arm failed exact registered diagnostic reconstruction"
+  },
+  "full_gradient_tensors_serialized": false,
+  "route": "M1_reconstruction_integrity_failure",
+  "passed": false,
+  "approximate_grouped_metrics_reported": false
+}

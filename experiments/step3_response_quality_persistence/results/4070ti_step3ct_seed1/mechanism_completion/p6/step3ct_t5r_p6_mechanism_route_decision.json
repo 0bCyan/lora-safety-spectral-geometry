@@ -1,0 +1,30 @@
+{
+  "name": "step3ct_t5r_p6_mechanism_route_decision_v1",
+  "route": "M1_reconstruction_integrity_failure",
+  "gates": {
+    "p5_freeze_pushed": true,
+    "source_state_complete": true,
+    "source_artifacts_byte_identical": true,
+    "representation_outputs_complete": true,
+    "representation_source_immutable": true,
+    "cross_arm_order_equal": true,
+    "gradient_outputs_complete": true,
+    "exact_gradient_reproduction": false,
+    "full_gradient_tensors_serialized": false,
+    "new_training_or_candidate_created": false,
+    "mechanism_used_for_candidate_selection": false
+  },
+  "source_immutability": {
+    "passed": true,
+    "changed_paths": [],
+    "artifact_count": 180
+  },
+  "order_gate": {
+    "passed": true,
+    "reference_arm": "C0R_concurrent_constant20@0",
+    "mismatches": {}
+  },
+  "track_a_route": "T5R1_reviewer_access_stop",
+  "t6_authorized": false,
+  "next_authorization": "none_pending_valid_independent_review_environment"
+}

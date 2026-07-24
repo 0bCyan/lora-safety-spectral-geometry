@@ -1,0 +1,26 @@
+{
+  "name": "step3ct_t5r_p6_label64_disposable_path_stop_v1",
+  "phase": "P6_grouped_gradient_label64_reconstruction",
+  "status": "infrastructure_stop_before_registered_label64_result",
+  "reason": "Windows returned OSError 22 while reopening the disposable C3b replay trace at a 235-character path after completed step62.",
+  "completed_before_stop": {
+    "C0R_replayed_through_preupdate_label64": true,
+    "C3a_replayed_through_preupdate_label64": true,
+    "C3b_completed_optimizer_steps_through": 62,
+    "C3b_label64_diagnostic_captured": false
+  },
+  "accepted_label64_output": false,
+  "source_checkpoint_modified": false,
+  "source_c3b_step48_training_state_sha256_equal": true,
+  "full_gradient_tensor_serialized": false,
+  "correction": "Use a bounded short disposable prefix inside the unchanged mechanism_completion result root, then refreeze, commit, and push P5 before a complete label64 retry.",
+  "route_effect": "No M1 decision was made from this interrupted attempt; one complete retry was required.",
+  "resolution": {
+    "p5_short_path_fix_commit": "b6cae23",
+    "complete_retry_reached_all_three_label64_units": true,
+    "complete_retry_source_checkpoints_unchanged": true,
+    "complete_retry_result": "registered gradient hashes/traces did not reproduce within tolerance",
+    "final_mechanism_route": "M1_reconstruction_integrity_failure",
+    "approximate_grouped_results_withheld": true
+  }
+}

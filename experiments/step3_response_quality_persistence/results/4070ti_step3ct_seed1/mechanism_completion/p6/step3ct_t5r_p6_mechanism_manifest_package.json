@@ -1,0 +1,93 @@
+{
+  "name": "step3ct_t5r_p6_mechanism_manifest_package_v1",
+  "route": "M1_reconstruction_integrity_failure",
+  "artifacts": {
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/Step3CT_T5R_P6_mechanism_completion_report.md": {
+      "sha256": "7813c71e0ec37524763be5c52246201b1e30ec28bdd0d2e983ee6370e3c064f7",
+      "bytes": 2218
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/gradients/step3ct_t5r_p6_gradient_label0000.json": {
+      "sha256": "d49337241abd99cbf86465e864e7fb4a19eb121dd15cb88626972ae272e52d32",
+      "bytes": 52714
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/gradients/step3ct_t5r_p6_gradient_label0016.json": {
+      "sha256": "d35b97b8dee247fb33585251ef198378f42ef4cbce327555546bd2ac792b7ca8",
+      "bytes": 53189
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/gradients/step3ct_t5r_p6_gradient_label0032.json": {
+      "sha256": "1154a7bd718a25679161954b1b4b8a0cf071a4aa334bb77a6206ac87b3f56f00",
+      "bytes": 53220
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/gradients/step3ct_t5r_p6_gradient_label0064.json": {
+      "sha256": "4a6d6fa8472c2879136cf8e47326121ac022bfeba7f246cc157f0aaf6c1603ba",
+      "bytes": 21892
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/incidents/step3ct_t5r_p6_label64_disposable_path_stop.json": {
+      "sha256": "b2862113c4f5a8f54a9a128fc16536d93ce49223ceb592d568d131c38c5a7672",
+      "bytes": 1425
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C0R_concurrent_constant20_step0000.json": {
+      "sha256": "6f77a44e96e9aaa0189286ec0743f8c4d7bacce2fdbf24a615a5097f58900d8d",
+      "bytes": 39526
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C0R_concurrent_constant20_step0016.json": {
+      "sha256": "e74c344ba0cee289a3f11b073fb9b11dad7fa89b3ad3484c59ba6ba7417f900c",
+      "bytes": 39579
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C0R_concurrent_constant20_step0032.json": {
+      "sha256": "efc2125e844742adc23a539cf291c67110685ec2e781faff184b8749983c8b3d",
+      "bytes": 39589
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C0R_concurrent_constant20_step0064.json": {
+      "sha256": "ab7d5834f0954aec742b370ff2d8d0ba90f97998dbdfcdda943014188a3690b2",
+      "bytes": 39599
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C3a_multi_positive_global_binding_step0000.json": {
+      "sha256": "c0241c4c83ed4885c8e46164635a1cb9b3c89e47943ba57aa1094a1bd674a269",
+      "bytes": 39542
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C3a_multi_positive_global_binding_step0016.json": {
+      "sha256": "0ce1be63885bead23b9aab0f6567ab5429da42710e4cfb25c6b7b49b81276b8c",
+      "bytes": 39550
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C3a_multi_positive_global_binding_step0032.json": {
+      "sha256": "5d10cd4cb07d5140cd237f03809ce99b10cdc538765151152b99c8bf82c351c1",
+      "bytes": 39545
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C3a_multi_positive_global_binding_step0064.json": {
+      "sha256": "5bb7482358e4c7934ef19af35b3e063e689c5c8e23db7f930ee962a7409ab869",
+      "bytes": 39544
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C3b_hierarchical_hard_negative_binding_step0000.json": {
+      "sha256": "06db4ef3e640c6397a36dfeb78736fc9dcf3d4d775d8ada9a37a96358b91122e",
+      "bytes": 39552
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C3b_hierarchical_hard_negative_binding_step0016.json": {
+      "sha256": "f6ae68051e14a60d415b61f9f905e0327bd87b13caf9cb3cfcb9c66c4382316e",
+      "bytes": 39583
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C3b_hierarchical_hard_negative_binding_step0032.json": {
+      "sha256": "de584179577a57060efc546c41e909b3c9e48c15ad04c3f640106b1cd00aeefd",
+      "bytes": 39577
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/representations/C3b_hierarchical_hard_negative_binding_step0064.json": {
+      "sha256": "87f52542d6d8461131c47d9b15b157a47aa844cb881a9808a3a1849385430046",
+      "bytes": 39562
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/step3ct_t5r_p6_execution_record.json": {
+      "sha256": "75d0ced268479f00185df0642154e160f200c95d8a1946543e861eece019a40b",
+      "bytes": 1671
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/step3ct_t5r_p6_mechanism_completion_summary.json": {
+      "sha256": "26d1ed1ffcdd3ce0dab054ddcc0f0a5eb8f4f900c6ffc571ab8cb575dbf68fa3",
+      "bytes": 45950
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/mechanism_completion/p6/step3ct_t5r_p6_mechanism_route_decision.json": {
+      "sha256": "8780b79e5b28ca26591d8f009463aa82c5fd367b9f981ca726b59dcd63b09750",
+      "bytes": 990
+    }
+  },
+  "artifact_count": 21,
+  "source_artifact_count": 180,
+  "source_artifacts_byte_identical": true
+}

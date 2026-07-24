@@ -1,0 +1,1573 @@
+{
+  "name": "step3ct_t5r_p6_grouped_gradient_reconstruction_v1",
+  "p5_freeze_sha256": "08d61a4a8fd494245fa7a1f4cca7d87d85922406579fcc280553e3b0f5e1a8ed",
+  "execution_git_head": "490918d3910495284d0aeed1bd5b90ceaa79da82",
+  "diagnostic_label": 0,
+  "numeric_tolerance": 1e-05,
+  "arms": {
+    "C0R_concurrent_constant20": {
+      "arm": "C0R_concurrent_constant20",
+      "diagnostic_label": 0,
+      "source_checkpoint_step": 0,
+      "source_checkpoint_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C0R_concurrent_constant20/checkpoints/step0000",
+      "covered_target_positions": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "replayed_completed_optimizer_steps": 0,
+      "diagnostic_optimizer_update_applied": false,
+      "optional_update64_hash_verification_applied": false,
+      "registered_reproduction": {
+        "passed": true,
+        "tolerance": 1e-05,
+        "mismatches": {}
+      },
+      "trace_reproduction": {
+        "passed": true,
+        "observed_rows": 4,
+        "registered_rows_compared": 4,
+        "mismatch_count": 0,
+        "mismatches": [],
+        "tolerance": 1e-05,
+        "excluded_nondeterministic_fields": [
+          "optimizer_step_wall_seconds"
+        ]
+      },
+      "queue_reproduction": {
+        "observed": "",
+        "registered": "",
+        "passed": true
+      },
+      "source_checkpoint_immutability": {
+        "passed": true,
+        "changed_paths": [],
+        "artifact_count": 11
+      },
+      "control_zero_or_c3_nonzero": true,
+      "grouped_metrics": {
+        "safety_gradient_hash": "d4edd79086a1bd45eaf45716b19c72cbd0851375d083897316c3d9afb27af585",
+        "safety_gradient_norm": 39.993414080932354,
+        "safety_energy": {
+          "group_share": {
+            "attention": 0.6517381434149172,
+            "mlp": 0.3482618565850827
+          },
+          "layer_share": {
+            "0": 0.007986612952721081,
+            "1": 0.004963917148133606,
+            "2": 0.0037580121571692466,
+            "3": 0.00522444875226921,
+            "4": 0.004827938008281304,
+            "5": 0.007324850971492605,
+            "6": 0.07770360010495264,
+            "7": 0.010622906910501603,
+            "8": 0.0085516315782384,
+            "9": 0.014059915308748016,
+            "10": 0.02151152636630067,
+            "11": 0.012767231835707202,
+            "12": 0.015247387119479596,
+            "13": 0.01818678934358415,
+            "14": 0.023716133541046392,
+            "15": 0.029524915310145006,
+            "16": 0.03182647239726536,
+            "17": 0.026301657457774335,
+            "18": 0.045289320847331845,
+            "19": 0.04682190058945791,
+            "20": 0.03254016671053962,
+            "21": 0.05408913928470101,
+            "22": 0.08338342800453649,
+            "23": 0.031984633723489454,
+            "24": 0.02223501203791883,
+            "25": 0.02757163816748217,
+            "26": 0.017901217286605663,
+            "27": 0.0181482429320144,
+            "28": 0.015497791639422063,
+            "29": 0.011947187097919332,
+            "30": 0.01651961402649267,
+            "31": 0.01146389094414895,
+            "32": 0.0780333499855818,
+            "33": 0.022129890784877117,
+            "34": 0.08866290075808618,
+            "35": 0.05167472791558397
+          }
+        },
+        "binding_gradient_hash": "",
+        "binding_gradient_norm": 0.0,
+        "global_binding_safety_cosine": null,
+        "group_cosine": {
+          "attention": null,
+          "mlp": null
+        },
+        "binding_energy": {
+          "group_share": {},
+          "layer_share": {}
+        },
+        "per_layer_group": []
+      },
+      "reproduction_passed": true,
+      "wall_seconds": 20.36614418029785
+    },
+    "C3a_multi_positive_global_binding": {
+      "arm": "C3a_multi_positive_global_binding",
+      "diagnostic_label": 0,
+      "source_checkpoint_step": 0,
+      "source_checkpoint_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3a_multi_positive_global_binding/checkpoints/step0000",
+      "covered_target_positions": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "replayed_completed_optimizer_steps": 0,
+      "diagnostic_optimizer_update_applied": false,
+      "optional_update64_hash_verification_applied": false,
+      "registered_reproduction": {
+        "passed": true,
+        "tolerance": 1e-05,
+        "mismatches": {}
+      },
+      "trace_reproduction": {
+        "passed": true,
+        "observed_rows": 4,
+        "registered_rows_compared": 4,
+        "mismatch_count": 0,
+        "mismatches": [],
+        "tolerance": 1e-05,
+        "excluded_nondeterministic_fields": [
+          "optimizer_step_wall_seconds"
+        ]
+      },
+      "queue_reproduction": {
+        "observed": "fad3d1c7c707aa28f480c64dd5a518a6073559aef98653ffff76034cf9563a2a",
+        "registered": "fad3d1c7c707aa28f480c64dd5a518a6073559aef98653ffff76034cf9563a2a",
+        "passed": true
+      },
+      "source_checkpoint_immutability": {
+        "passed": true,
+        "changed_paths": [],
+        "artifact_count": 11
+      },
+      "control_zero_or_c3_nonzero": true,
+      "grouped_metrics": {
+        "safety_gradient_hash": "9f53f0060717bbd34f56947c774c9b6f652677b3e1454c3feb6c152c5e84a393",
+        "safety_gradient_norm": 39.99341392615595,
+        "safety_energy": {
+          "group_share": {
+            "attention": 0.6517381424710542,
+            "mlp": 0.34826185752894573
+          },
+          "layer_share": {
+            "0": 0.007986612980024095,
+            "1": 0.004963917158733882,
+            "2": 0.00375801215786514,
+            "3": 0.005224448777979288,
+            "4": 0.004827938023922325,
+            "5": 0.007324851004694165,
+            "6": 0.07770360029974714,
+            "7": 0.010622906943249142,
+            "8": 0.008551631594699235,
+            "9": 0.014059915340886664,
+            "10": 0.02151152644487398,
+            "11": 0.012767231890318323,
+            "12": 0.015247387134296337,
+            "13": 0.01818678943762404,
+            "14": 0.023716133605768384,
+            "15": 0.029524915416898428,
+            "16": 0.03182647248385889,
+            "17": 0.02630165757560461,
+            "18": 0.045289320988176666,
+            "19": 0.046821900681509376,
+            "20": 0.03254016677128838,
+            "21": 0.054089139454600095,
+            "22": 0.08338342801587888,
+            "23": 0.031984633786420746,
+            "24": 0.02223501205482173,
+            "25": 0.02757163814790172,
+            "26": 0.017901217424316808,
+            "27": 0.01814824296198447,
+            "28": 0.015497791757543122,
+            "29": 0.011947187171319991,
+            "30": 0.016519614164373215,
+            "31": 0.011463890980963818,
+            "32": 0.0780333470146258,
+            "33": 0.022129890768966647,
+            "34": 0.08866290147625841,
+            "35": 0.051674728108005843
+          }
+        },
+        "binding_gradient_hash": "02eec0f76a563ee88faa2582b5cb50d9d38fea24a87f825bec1a0de8f5cf2fa5",
+        "binding_gradient_norm": 37.88922612102915,
+        "global_binding_safety_cosine": 0.577550171533589,
+        "group_cosine": {
+          "attention": 0.6137578075881182,
+          "mlp": 0.5145963046090173
+        },
+        "binding_energy": {
+          "group_share": {
+            "attention": 0.622960505275891,
+            "mlp": 0.37703949472410897
+          },
+          "layer_share": {
+            "0": 0.004769087331470329,
+            "1": 0.0050571110318411066,
+            "2": 0.0037895518936403305,
+            "3": 0.005600434415949193,
+            "4": 0.004769384275920846,
+            "5": 0.0071327942003134494,
+            "6": 0.09847102323642772,
+            "7": 0.009943177249777514,
+            "8": 0.008112939878057964,
+            "9": 0.013135298230948196,
+            "10": 0.020115099796869405,
+            "11": 0.011322284155447655,
+            "12": 0.01334892928847035,
+            "13": 0.016366547524457584,
+            "14": 0.019797897093883923,
+            "15": 0.023881110399090043,
+            "16": 0.024825324760203053,
+            "17": 0.02222556563998922,
+            "18": 0.042005402861112213,
+            "19": 0.040312285353532276,
+            "20": 0.0264786730160315,
+            "21": 0.042537613635307,
+            "22": 0.05767659014641611,
+            "23": 0.02554951887365158,
+            "24": 0.021357399011268687,
+            "25": 0.025285253911747792,
+            "26": 0.014639391101982145,
+            "27": 0.01690285905077957,
+            "28": 0.01348074980358587,
+            "29": 0.014056981597684799,
+            "30": 0.02812085698661124,
+            "31": 0.01722133157744304,
+            "32": 0.061629590643929144,
+            "33": 0.04321973025893367,
+            "34": 0.09610172877312212,
+            "35": 0.10076048299410317
+          }
+        },
+        "per_layer_group": [
+          {
+            "layer": 0,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 2.361227791705469,
+            "safety_norm": 3.2737287927831717,
+            "cosine": 0.47723270899288966
+          },
+          {
+            "layer": 0,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 1.1274191235160742,
+            "safety_norm": 1.4342499335691932,
+            "cosine": 0.44324363506464814
+          },
+          {
+            "layer": 1,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 0.9462792329559884,
+            "safety_norm": 0.976020262161462,
+            "cosine": 0.44491187420660605
+          },
+          {
+            "layer": 1,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.5227982711877694,
+            "safety_norm": 2.6433003422131445,
+            "cosine": 0.5790136563440754
+          },
+          {
+            "layer": 2,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 1.0572422245313062,
+            "safety_norm": 1.0289275805943858,
+            "cosine": 0.506991184656782
+          },
+          {
+            "layer": 2,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.079061032904481,
+            "safety_norm": 2.2253421323111295,
+            "cosine": 0.5007061503071701
+          },
+          {
+            "layer": 3,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 1.5784174576404424,
+            "safety_norm": 1.574916743131528,
+            "cosine": 0.4890288892417208
+          },
+          {
+            "layer": 3,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.355535040705704,
+            "safety_norm": 2.4240467889776296,
+            "cosine": 0.5499322892711739
+          },
+          {
+            "layer": 4,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 1.0128503801413051,
+            "safety_norm": 1.0336707952654218,
+            "cosine": 0.52996206676651
+          },
+          {
+            "layer": 4,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.412681280929917,
+            "safety_norm": 2.579473194705129,
+            "cosine": 0.5580279611225232
+          },
+          {
+            "layer": 5,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 1.3508480374295964,
+            "safety_norm": 1.3294308255091618,
+            "cosine": 0.5555641219262394
+          },
+          {
+            "layer": 5,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.9008623299111242,
+            "safety_norm": 3.1541268593151166,
+            "cosine": 0.5575936082504501
+          },
+          {
+            "layer": 6,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 1.6560262324725021,
+            "safety_norm": 1.8346622479769688,
+            "cosine": 0.6150745789738231
+          },
+          {
+            "layer": 6,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 11.773781622154077,
+            "safety_norm": 10.996310169960728,
+            "cosine": 0.5013015297686806
+          },
+          {
+            "layer": 7,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 2.0927059569515385,
+            "safety_norm": 2.327301182854978,
+            "cosine": 0.5693766752808247
+          },
+          {
+            "layer": 7,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.1456226680690946,
+            "safety_norm": 3.4021645630830726,
+            "cosine": 0.589855858649333
+          },
+          {
+            "layer": 8,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 2.152233132673207,
+            "safety_norm": 2.3429917507235123,
+            "cosine": 0.5995248942363888
+          },
+          {
+            "layer": 8,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.6485422293961345,
+            "safety_norm": 2.8615546201890827,
+            "cosine": 0.5918142901257224
+          },
+          {
+            "layer": 9,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 2.9844710129125596,
+            "safety_norm": 3.3552729707420625,
+            "cosine": 0.6033087508465074
+          },
+          {
+            "layer": 9,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.154343189430301,
+            "safety_norm": 3.3512088081527196,
+            "cosine": 0.6064950048760444
+          },
+          {
+            "layer": 10,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 3.7923716072520084,
+            "safety_norm": 4.2832964296861,
+            "cosine": 0.6149651861924031
+          },
+          {
+            "layer": 10,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.8072330147624043,
+            "safety_norm": 4.007552971601927,
+            "cosine": 0.649402986356333
+          },
+          {
+            "layer": 11,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 2.8859395389081026,
+            "safety_norm": 3.1387231044219686,
+            "cosine": 0.6643752906613672
+          },
+          {
+            "layer": 11,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.8152353398733023,
+            "safety_norm": 3.251040137788535,
+            "cosine": 0.6109771548661405
+          },
+          {
+            "layer": 12,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 3.1964068688022746,
+            "safety_norm": 3.6603515531623363,
+            "cosine": 0.6258270954337828
+          },
+          {
+            "layer": 12,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.9910898784359907,
+            "safety_norm": 3.315058513828206,
+            "cosine": 0.6100129459915025
+          },
+          {
+            "layer": 13,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 3.4899543545282503,
+            "safety_norm": 3.731426349683083,
+            "cosine": 0.6303052733152289
+          },
+          {
+            "layer": 13,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.3639154459587344,
+            "safety_norm": 3.894321368725022,
+            "cosine": 0.6018306897802113
+          },
+          {
+            "layer": 14,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.11961193370638,
+            "safety_norm": 4.83352736394365,
+            "cosine": 0.5472605445842993
+          },
+          {
+            "layer": 14,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.383863033162617,
+            "safety_norm": 3.817110467798814,
+            "cosine": 0.6519589338475085
+          },
+          {
+            "layer": 15,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.385237575966874,
+            "safety_norm": 5.173928059311925,
+            "cosine": 0.5851897567785005
+          },
+          {
+            "layer": 15,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.8798527310299864,
+            "safety_norm": 4.522695891051246,
+            "cosine": 0.6708441619314959
+          },
+          {
+            "layer": 16,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.424438517829436,
+            "safety_norm": 5.310308778146216,
+            "cosine": 0.6384680830944394
+          },
+          {
+            "layer": 16,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.007919356975968,
+            "safety_norm": 4.765103263896421,
+            "cosine": 0.6176509876912273
+          },
+          {
+            "layer": 17,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.5198274177524995,
+            "safety_norm": 5.17079823987555,
+            "cosine": 0.6645159782148863
+          },
+          {
+            "layer": 17,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.387925132514241,
+            "safety_norm": 3.9155639251092005,
+            "cosine": 0.5821472550033692
+          },
+          {
+            "layer": 18,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 6.136880795848142,
+            "safety_norm": 6.587934679935183,
+            "cosine": 0.6231344808369715
+          },
+          {
+            "layer": 18,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.758295447292756,
+            "safety_norm": 5.388707627389546,
+            "cosine": 0.5812483176695171
+          },
+          {
+            "layer": 19,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 6.664304411290158,
+            "safety_norm": 7.358313208711706,
+            "cosine": 0.6026948726837112
+          },
+          {
+            "layer": 19,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.668664575241102,
+            "safety_norm": 4.5547338060797,
+            "cosine": 0.5922799149006782
+          },
+          {
+            "layer": 20,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 5.271227136254994,
+            "safety_norm": 6.054951064089006,
+            "cosine": 0.5729180594189999
+          },
+          {
+            "layer": 20,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.197932798656682,
+            "safety_norm": 3.922332329331976,
+            "cosine": 0.5687910705953939
+          },
+          {
+            "layer": 21,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 6.838919746309721,
+            "safety_norm": 7.969878000916223,
+            "cosine": 0.6206886935791844
+          },
+          {
+            "layer": 21,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.7809914671135223,
+            "safety_norm": 4.795328072064881,
+            "cosine": 0.6201747879147324
+          },
+          {
+            "layer": 22,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 8.329325413145044,
+            "safety_norm": 10.578111364079408,
+            "cosine": 0.6255622221356141
+          },
+          {
+            "layer": 22,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.6636694096815754,
+            "safety_norm": 4.633909241479376,
+            "cosine": 0.5207342130394852
+          },
+          {
+            "layer": 23,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 5.051935300268452,
+            "safety_norm": 6.096806252748373,
+            "cosine": 0.5609077994383669
+          },
+          {
+            "layer": 23,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.3401604485643905,
+            "safety_norm": 3.7399888648630246,
+            "cosine": 0.49460143839362675
+          },
+          {
+            "layer": 24,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.582870699402549,
+            "safety_norm": 4.724926678141691,
+            "cosine": 0.5612065087173087
+          },
+          {
+            "layer": 24,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.107706294261711,
+            "safety_norm": 3.638594896916728,
+            "cosine": 0.5152647520560472
+          },
+          {
+            "layer": 25,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 5.197184619638584,
+            "safety_norm": 5.639161600490408,
+            "cosine": 0.4993483525157278
+          },
+          {
+            "layer": 25,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.047723261661403,
+            "safety_norm": 3.507128678644009,
+            "cosine": 0.5306781850967258
+          },
+          {
+            "layer": 26,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 3.505343076883928,
+            "safety_norm": 4.247081354847068,
+            "cosine": 0.5525922266074651
+          },
+          {
+            "layer": 26,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.9544515531501054,
+            "safety_norm": 3.2549680062204436,
+            "cosine": 0.5512793483189429
+          },
+          {
+            "layer": 27,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.249996038437725,
+            "safety_norm": 4.5662987221732125,
+            "cosine": 0.4856174647389364
+          },
+          {
+            "layer": 27,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.4906158907198797,
+            "safety_norm": 2.859465588671476,
+            "cosine": 0.39619136792324816
+          },
+          {
+            "layer": 28,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 3.5636251206139864,
+            "safety_norm": 4.056534387154344,
+            "cosine": 0.6877150381263821
+          },
+          {
+            "layer": 28,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.579428657747794,
+            "safety_norm": 2.8866642828819655,
+            "cosine": 0.48971566436303543
+          },
+          {
+            "layer": 29,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 3.8004943641127125,
+            "safety_norm": 3.5508018915289026,
+            "cosine": 0.5238289034369188
+          },
+          {
+            "layer": 29,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.395068554719425,
+            "safety_norm": 2.549708045031278,
+            "cosine": 0.5745104959364438
+          },
+          {
+            "layer": 30,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 5.89647756585382,
+            "safety_norm": 4.61858992688014,
+            "cosine": 0.45517061026127875
+          },
+          {
+            "layer": 30,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.3667848621902783,
+            "safety_norm": 2.2563923672487407,
+            "cosine": 0.47219047789009
+          },
+          {
+            "layer": 31,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.050299865569415,
+            "safety_norm": 3.2113639488031236,
+            "cosine": 0.4542409928048807
+          },
+          {
+            "layer": 31,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.8840773075666757,
+            "safety_norm": 2.832547880006341,
+            "cosine": 0.5241419620501502
+          },
+          {
+            "layer": 32,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 9.00328903789886,
+            "safety_norm": 10.851673786523374,
+            "cosine": 0.8101837977299002
+          },
+          {
+            "layer": 32,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.723200970832789,
+            "safety_norm": 2.6558275486610543,
+            "cosine": 0.5495382022549304
+          },
+          {
+            "layer": 33,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 6.918918621038767,
+            "safety_norm": 5.1587501613272435,
+            "cosine": 0.4627167057941394
+          },
+          {
+            "layer": 33,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.764907309275355,
+            "safety_norm": 2.963690779363774,
+            "cosine": 0.36689953649945317
+          },
+          {
+            "layer": 34,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 10.52982142428354,
+            "safety_norm": 11.116172703587633,
+            "cosine": 0.7366251265956694
+          },
+          {
+            "layer": 34,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 5.204409064872913,
+            "safety_norm": 4.271373947407713,
+            "cosine": 0.49692557631181866
+          },
+          {
+            "layer": 35,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 9.560047586656312,
+            "safety_norm": 8.355654362859676,
+            "cosine": 0.555002636678872
+          },
+          {
+            "layer": 35,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 7.297710610574168,
+            "safety_norm": 3.5826499545281023,
+            "cosine": 0.06904255396897849
+          }
+        ]
+      },
+      "reproduction_passed": true,
+      "wall_seconds": 23.617027759552002
+    },
+    "C3b_hierarchical_hard_negative_binding": {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "diagnostic_label": 0,
+      "source_checkpoint_step": 0,
+      "source_checkpoint_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t3_t2r/C3b_hierarchical_hard_negative_binding/checkpoints/step0000",
+      "covered_target_positions": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "replayed_completed_optimizer_steps": 0,
+      "diagnostic_optimizer_update_applied": false,
+      "optional_update64_hash_verification_applied": false,
+      "registered_reproduction": {
+        "passed": true,
+        "tolerance": 1e-05,
+        "mismatches": {}
+      },
+      "trace_reproduction": {
+        "passed": true,
+        "observed_rows": 4,
+        "registered_rows_compared": 4,
+        "mismatch_count": 0,
+        "mismatches": [],
+        "tolerance": 1e-05,
+        "excluded_nondeterministic_fields": [
+          "optimizer_step_wall_seconds"
+        ]
+      },
+      "queue_reproduction": {
+        "observed": "fad3d1c7c707aa28f480c64dd5a518a6073559aef98653ffff76034cf9563a2a",
+        "registered": "fad3d1c7c707aa28f480c64dd5a518a6073559aef98653ffff76034cf9563a2a",
+        "passed": true
+      },
+      "source_checkpoint_immutability": {
+        "passed": true,
+        "changed_paths": [],
+        "artifact_count": 11
+      },
+      "control_zero_or_c3_nonzero": true,
+      "grouped_metrics": {
+        "safety_gradient_hash": "d8dd6f009f8c92826fa4fc65d1ba9eb37005d07e309dc672974c0de7cc1eecb7",
+        "safety_gradient_norm": 39.9934139915537,
+        "safety_energy": {
+          "group_share": {
+            "attention": 0.6517381435101725,
+            "mlp": 0.3482618564898276
+          },
+          "layer_share": {
+            "0": 0.007986612978748833,
+            "1": 0.004963917156129392,
+            "2": 0.003758012171900036,
+            "3": 0.005224448758742673,
+            "4": 0.004827938003324229,
+            "5": 0.007324850969229964,
+            "6": 0.07770359985456993,
+            "7": 0.010622906911183104,
+            "8": 0.008551631574059375,
+            "9": 0.014059915304684183,
+            "10": 0.021511526326722485,
+            "11": 0.012767231848691343,
+            "12": 0.015247387113948376,
+            "13": 0.018186789327801628,
+            "14": 0.023716133483288396,
+            "15": 0.02952491522925758,
+            "16": 0.03182647234268751,
+            "17": 0.02630165745027991,
+            "18": 0.04528932086573963,
+            "19": 0.04682190048956863,
+            "20": 0.032540166626900326,
+            "21": 0.05408913943618337,
+            "22": 0.08338342820646696,
+            "23": 0.031984633662820255,
+            "24": 0.022235011991218814,
+            "25": 0.027571638165042243,
+            "26": 0.017901217250115856,
+            "27": 0.01814824292229819,
+            "28": 0.015497791654119089,
+            "29": 0.011947187069432513,
+            "30": 0.016519614022962304,
+            "31": 0.01146389095219656,
+            "32": 0.07803335034518379,
+            "33": 0.022129890835897833,
+            "34": 0.0886629007207507,
+            "35": 0.05167472797785416
+          }
+        },
+        "binding_gradient_hash": "a44498bab47548021801871da510a12e43bb8536a6d481eb39a2a3e48f7913ed",
+        "binding_gradient_norm": 46.05617212132001,
+        "global_binding_safety_cosine": 0.5717538956968518,
+        "group_cosine": {
+          "attention": 0.6054870247892074,
+          "mlp": 0.5126551953070958
+        },
+        "binding_energy": {
+          "group_share": {
+            "attention": 0.6257953582101767,
+            "mlp": 0.37420464178982327
+          },
+          "layer_share": {
+            "0": 0.004660376320551964,
+            "1": 0.004806191528837684,
+            "2": 0.0033833981046277424,
+            "3": 0.005163110317991919,
+            "4": 0.004355228459081708,
+            "5": 0.006600878599905311,
+            "6": 0.10267525517583134,
+            "7": 0.009106198161796877,
+            "8": 0.007483688228046009,
+            "9": 0.011949455116176325,
+            "10": 0.018880253465043212,
+            "11": 0.011104272809454172,
+            "12": 0.013406639574452126,
+            "13": 0.01574452514773489,
+            "14": 0.019225059064421735,
+            "15": 0.0227861340146109,
+            "16": 0.024055399397769222,
+            "17": 0.021200103872195564,
+            "18": 0.0389716518666129,
+            "19": 0.038107942561563114,
+            "20": 0.026345677448232106,
+            "21": 0.04228285197093648,
+            "22": 0.05983649128797532,
+            "23": 0.02597380472106924,
+            "24": 0.021215740422742886,
+            "25": 0.02537799127812594,
+            "26": 0.014517107742974721,
+            "27": 0.01786593837691691,
+            "28": 0.01345179404571481,
+            "29": 0.01466439659175068,
+            "30": 0.029970468414112054,
+            "31": 0.01800510713537165,
+            "32": 0.06160138749928779,
+            "33": 0.04464799057528205,
+            "34": 0.09701859017331323,
+            "35": 0.10355890052948957
+          }
+        },
+        "per_layer_group": [
+          {
+            "layer": 0,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 2.8440485431761697,
+            "safety_norm": 3.27372879979314,
+            "cosine": 0.4704016191904428
+          },
+          {
+            "layer": 0,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 1.340463703305457,
+            "safety_norm": 1.4342499314218757,
+            "cosine": 0.44490350586715605
+          },
+          {
+            "layer": 1,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 1.1115600101726106,
+            "safety_norm": 0.9760202621218743,
+            "cosine": 0.4302524218154012
+          },
+          {
+            "layer": 1,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.993190336312035,
+            "safety_norm": 2.643300346351439,
+            "cosine": 0.5751232123472635
+          },
+          {
+            "layer": 2,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 1.2229435417327765,
+            "safety_norm": 1.0289275803155868,
+            "cosine": 0.49893733665891876
+          },
+          {
+            "layer": 2,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.383521554858921,
+            "safety_norm": 2.225342141900705,
+            "cosine": 0.48037613033874066
+          },
+          {
+            "layer": 3,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 1.8344521995185759,
+            "safety_norm": 1.5749167466604348,
+            "cosine": 0.4756813409935599
+          },
+          {
+            "layer": 3,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.7543828627834777,
+            "safety_norm": 2.42404678597541,
+            "cosine": 0.5438472428095559
+          },
+          {
+            "layer": 4,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 1.1885582482617651,
+            "safety_norm": 1.033670795883451,
+            "cosine": 0.531935421794983
+          },
+          {
+            "layer": 4,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.7974119386955767,
+            "safety_norm": 2.5794731929665886,
+            "cosine": 0.5587458701957483
+          },
+          {
+            "layer": 5,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 1.549462295389869,
+            "safety_norm": 1.3294308237805224,
+            "cosine": 0.5585523048499229
+          },
+          {
+            "layer": 5,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.4059886659954772,
+            "safety_norm": 3.1541268571256302,
+            "cosine": 0.5659435904476333
+          },
+          {
+            "layer": 6,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 1.9909659535145954,
+            "safety_norm": 1.8346622479861827,
+            "cosine": 0.6145211027668428
+          },
+          {
+            "layer": 6,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 14.622852912133313,
+            "safety_norm": 10.996310156064315,
+            "cosine": 0.49126267206799706
+          },
+          {
+            "layer": 7,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 2.462471195725632,
+            "safety_norm": 2.3273011862276625,
+            "cosine": 0.5799723094593443
+          },
+          {
+            "layer": 7,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.640335009924787,
+            "safety_norm": 3.402164561404834,
+            "cosine": 0.6014823832863836
+          },
+          {
+            "layer": 8,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 2.474981439038134,
+            "safety_norm": 2.342991750985369,
+            "cosine": 0.6194511893469866
+          },
+          {
+            "layer": 8,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.122282698196896,
+            "safety_norm": 2.861554622022574,
+            "cosine": 0.5948662522053271
+          },
+          {
+            "layer": 9,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 3.4412236228873976,
+            "safety_norm": 3.355272971973698,
+            "cosine": 0.6023115855787169
+          },
+          {
+            "layer": 9,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.6748901373540686,
+            "safety_norm": 3.351208809253366,
+            "cosine": 0.6120128792949333
+          },
+          {
+            "layer": 10,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.461862749704676,
+            "safety_norm": 4.283296424897582,
+            "cosine": 0.6268490249323304
+          },
+          {
+            "layer": 10,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.487764114293751,
+            "safety_norm": 4.007552967181154,
+            "cosine": 0.6577354975320523
+          },
+          {
+            "layer": 11,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 3.4224345461315147,
+            "safety_norm": 3.1387231046702455,
+            "cosine": 0.6698780693662931
+          },
+          {
+            "layer": 11,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.441075868258303,
+            "safety_norm": 3.251040137580151,
+            "cosine": 0.6260583714964881
+          },
+          {
+            "layer": 12,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 3.918232373080687,
+            "safety_norm": 3.6603515547849246,
+            "cosine": 0.6364540849780627
+          },
+          {
+            "layer": 12,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.6173512430422576,
+            "safety_norm": 3.315058519157514,
+            "cosine": 0.6272254910235053
+          },
+          {
+            "layer": 13,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.170709360593279,
+            "safety_norm": 3.7314263467786004,
+            "cosine": 0.65095080930034
+          },
+          {
+            "layer": 13,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.000251671025094,
+            "safety_norm": 3.894321361169414,
+            "cosine": 0.6158124120183486
+          },
+          {
+            "layer": 14,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.92479168173331,
+            "safety_norm": 4.833527358678677,
+            "cosine": 0.5675805826088983
+          },
+          {
+            "layer": 14,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.065226250656688,
+            "safety_norm": 3.8171104650547796,
+            "cosine": 0.666469580103237
+          },
+          {
+            "layer": 15,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 5.153340032270154,
+            "safety_norm": 5.1739280482426535,
+            "cosine": 0.5924183931747571
+          },
+          {
+            "layer": 15,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.666516148962258,
+            "safety_norm": 4.522695887608647,
+            "cosine": 0.6793457748939172
+          },
+          {
+            "layer": 16,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 5.323721900469803,
+            "safety_norm": 5.310308776796529,
+            "cosine": 0.653224034196399
+          },
+          {
+            "layer": 16,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.762730361162955,
+            "safety_norm": 4.765103259176441,
+            "cosine": 0.6340311201572287
+          },
+          {
+            "layer": 17,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 5.353543520026914,
+            "safety_norm": 5.170798225957854,
+            "cosine": 0.6545629023212415
+          },
+          {
+            "layer": 17,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.038392886755977,
+            "safety_norm": 3.9155639354602756,
+            "cosine": 0.5961627782290344
+          },
+          {
+            "layer": 18,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 7.0989560133806675,
+            "safety_norm": 6.587934678022993,
+            "cosine": 0.6221875294912693
+          },
+          {
+            "layer": 18,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 5.680700741122466,
+            "safety_norm": 5.388707633538195,
+            "cosine": 0.5889622893387573
+          },
+          {
+            "layer": 19,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 7.868220123828695,
+            "safety_norm": 7.358313200054933,
+            "cosine": 0.6053345151663806
+          },
+          {
+            "layer": 19,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.3502384246165855,
+            "safety_norm": 4.5547338132500235,
+            "cosine": 0.5826570381908535
+          },
+          {
+            "layer": 20,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 6.388717014310475,
+            "safety_norm": 6.054951059629131,
+            "cosine": 0.5479214688092225
+          },
+          {
+            "layer": 20,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.8817498165768023,
+            "safety_norm": 3.9223323284753553,
+            "cosine": 0.5590060668701249
+          },
+          {
+            "layer": 21,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 8.268541847888857,
+            "safety_norm": 7.969878018189062,
+            "cosine": 0.6061777433804189
+          },
+          {
+            "layer": 21,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.617399127727811,
+            "safety_norm": 4.795328069787263,
+            "cosine": 0.60944781714753
+          },
+          {
+            "layer": 22,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 10.338229951076574,
+            "safety_norm": 10.57811139890739,
+            "cosine": 0.5983087726065353
+          },
+          {
+            "layer": 22,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.477100732633438,
+            "safety_norm": 4.633909241931175,
+            "cosine": 0.5098959663929579
+          },
+          {
+            "layer": 23,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 6.161877357066788,
+            "safety_norm": 6.096806248748929,
+            "cosine": 0.5474770958300483
+          },
+          {
+            "layer": 23,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.138375106596484,
+            "safety_norm": 3.739988867320557,
+            "cosine": 0.48372637277270353
+          },
+          {
+            "layer": 24,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 5.551824103187925,
+            "safety_norm": 4.724926673725016,
+            "cosine": 0.5572003779539699
+          },
+          {
+            "layer": 24,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.765562674195848,
+            "safety_norm": 3.6385949046554558,
+            "cosine": 0.49734577318023304
+          },
+          {
+            "layer": 25,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 6.343731349650198,
+            "safety_norm": 5.639161614881519,
+            "cosine": 0.47745102106616033
+          },
+          {
+            "layer": 25,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.686208276670292,
+            "safety_norm": 3.5071286799747683,
+            "cosine": 0.5333757412026449
+          },
+          {
+            "layer": 26,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.2854007709972075,
+            "safety_norm": 4.247081334578446,
+            "cosine": 0.5361595350089905
+          },
+          {
+            "layer": 26,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.525423101110334,
+            "safety_norm": 3.254968004250492,
+            "cosine": 0.5470753996551391
+          },
+          {
+            "layer": 27,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 5.345435314224991,
+            "safety_norm": 4.566298718317543,
+            "cosine": 0.4678627042771969
+          },
+          {
+            "layer": 27,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.053363965211674,
+            "safety_norm": 2.859465600328872,
+            "cosine": 0.39707886488793853
+          },
+          {
+            "layer": 28,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.321094357190248,
+            "safety_norm": 4.056534375099191,
+            "cosine": 0.6867517528232988
+          },
+          {
+            "layer": 28,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.1403341949206363,
+            "safety_norm": 2.886664285211407,
+            "cosine": 0.4934275599596173
+          },
+          {
+            "layer": 29,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 4.78690185245837,
+            "safety_norm": 3.550801880853312,
+            "cosine": 0.5273950780527882
+          },
+          {
+            "layer": 29,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.8620383117770407,
+            "safety_norm": 2.549708040195974,
+            "cosine": 0.5808866838001815
+          },
+          {
+            "layer": 30,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 7.432781994810913,
+            "safety_norm": 4.618589911819729,
+            "cosine": 0.4573657804472636
+          },
+          {
+            "layer": 30,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 2.885522481005181,
+            "safety_norm": 2.2563923671038584,
+            "cosine": 0.4737113324665555
+          },
+          {
+            "layer": 31,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 5.077968311164687,
+            "safety_norm": 3.2113639557531015,
+            "cosine": 0.4533875922230361
+          },
+          {
+            "layer": 31,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.522236330321657,
+            "safety_norm": 2.832547874590168,
+            "cosine": 0.5185460815208318
+          },
+          {
+            "layer": 32,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 10.943108835275805,
+            "safety_norm": 10.851674049938739,
+            "cosine": 0.7965511368192909
+          },
+          {
+            "layer": 32,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 3.3038530771534447,
+            "safety_norm": 2.6558275521123447,
+            "cosine": 0.5500568333441489
+          },
+          {
+            "layer": 33,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 8.624625899334903,
+            "safety_norm": 5.158750173723062,
+            "cosine": 0.446185584677062
+          },
+          {
+            "layer": 33,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 4.507976318430229,
+            "safety_norm": 2.963690795377811,
+            "cosine": 0.3763620849599259
+          },
+          {
+            "layer": 34,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 12.884789182557489,
+            "safety_norm": 11.116172662067706,
+            "cosine": 0.734062624969229
+          },
+          {
+            "layer": 34,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 6.306760399194567,
+            "safety_norm": 4.271373968298293,
+            "cosine": 0.4960552053536786
+          },
+          {
+            "layer": 35,
+            "group": "attention",
+            "parameter_tensors": 8,
+            "binding_norm": 11.921889431835659,
+            "safety_norm": 8.355654365389114,
+            "cosine": 0.5553164534529734
+          },
+          {
+            "layer": 35,
+            "group": "mlp",
+            "parameter_tensors": 6,
+            "binding_norm": 8.805378355474994,
+            "safety_norm": 3.5826499573003514,
+            "cosine": 0.06859450543040511
+          }
+        ]
+      },
+      "reproduction_passed": true,
+      "wall_seconds": 27.28215789794922
+    }
+  },
+  "c3a_c3b_direction": {
+    "direction": "C3b_relative_to_C3a",
+    "global_cosine": 0.989370129899506,
+    "global_orthogonal_residual_ratio": 0.14541920802505842,
+    "parameter_groups": {
+      "attention": {
+        "cosine": 0.9903885740603645,
+        "orthogonal_residual_ratio": 0.13831295084220868
+      },
+      "mlp": {
+        "cosine": 0.987688494954569,
+        "orthogonal_residual_ratio": 0.15643349045002544
+      }
+    }
+  },
+  "full_gradient_tensors_serialized": false,
+  "route": "gradient_label_reproduced",
+  "passed": true
+}
