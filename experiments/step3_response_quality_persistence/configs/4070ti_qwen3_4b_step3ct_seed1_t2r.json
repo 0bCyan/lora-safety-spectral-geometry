@@ -1,0 +1,107 @@
+{
+  "name": "4070ti_qwen3_4b_step3ct_seed1_t2r_v1",
+  "machine": "4070ti",
+  "registry": "experiments/step3_response_quality_persistence/configs/step3ct_seed1_training_registry.json",
+  "source_plan": "experiments/step3_response_quality_persistence/Step3C_T_seed1_c3_training_tournament_plan.md",
+  "historical_config": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_constant20.json",
+  "validation_route": "experiments/step3_response_quality_persistence/results/step3cm_protocol/reports/step3cm_validation_route_decision.json",
+  "joint_route": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/reports/step3cm_joint_route_decision.json",
+  "risk_data_path": "data/processed/unified_pool/train_risk.jsonl",
+  "safety_train_path": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/safety_train.jsonl",
+  "safety_targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+  "output_dir": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "local_files_only": true,
+  "family": "risk",
+  "seed": 1,
+  "train_examples": 256,
+  "optimizer_steps": 64,
+  "micro_batch_size": 1,
+  "gradient_accumulation_steps": 4,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0,
+  "adam_beta1": 0.9,
+  "adam_beta2": 0.999,
+  "adam_epsilon": 1e-08,
+  "max_grad_norm": 1.0,
+  "scheduler": "linear",
+  "warmup_steps": 0,
+  "max_length": 512,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "load_in_4bit": true,
+  "gradient_checkpointing": true,
+  "fp16": true,
+  "safety_mix": 0.2,
+  "checkpoint_steps": [
+    0,
+    6,
+    16,
+    32,
+    48,
+    64
+  ],
+  "diagnostic_steps": [
+    0,
+    16,
+    32,
+    64
+  ],
+  "projection_dim": 256,
+  "projection_seed": 20260727,
+  "queue_size": 32,
+  "queue_prefill_seed": 20260727,
+  "temperature": 0.05,
+  "hard_term_multiplier": 1.0,
+  "minimum_vram_headroom_fraction": 0.1,
+  "smoke_steps": 2,
+  "resume_tolerance": 1e-05,
+  "arms": {
+    "C0R_concurrent_constant20": {
+      "binding": "none",
+      "eta": 0.0,
+      "hard_term_multiplier": 0.0
+    },
+    "C3a_multi_positive_global_binding": {
+      "binding": "multi_positive_global",
+      "eta": 0.2691508842579502,
+      "hard_term_multiplier": 0.0
+    },
+    "C3b_hierarchical_hard_negative_binding": {
+      "binding": "multi_positive_global_plus_same_category_hard",
+      "eta": 0.16828897705555668,
+      "hard_term_multiplier": 1.0
+    }
+  },
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "core100_opened": false,
+  "heldout_opened": false,
+  "recovery_registry": "experiments/step3_response_quality_persistence/configs/step3ct_t2r_calibration_registry.json",
+  "parent_execution_config": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1.json",
+  "eta_freeze": {
+    "formula": "0.25/median(window_unweighted_ratio)",
+    "fit_positions": [
+      8,
+      79
+    ],
+    "window_count": 18,
+    "quantile_method": "numpy_linear",
+    "calibration_summary": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1_t2r/calibration/step3ct_t2r_eta_calibration_summary.json",
+    "calibration_summary_sha256": "746f3e06110c807b45bd474c43726c20156a975101cd1612f0b2ad3b60573e4c",
+    "source_git_head": "0100e90638382746f8aaa7efd0004ad94c090f42"
+  }
+}

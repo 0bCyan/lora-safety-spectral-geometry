@@ -1,0 +1,17 @@
+{
+  "name": "step3ct_t2r_r2_route_decision_v1",
+  "route": "continue_to_R3_smoke_requalification",
+  "calibration_pass": true,
+  "formula_eta": {
+    "C3a_multi_positive_global_binding": 0.2691508842579502,
+    "C3b_hierarchical_hard_negative_binding": 0.16828897705555668
+  },
+  "new_execution_config": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json",
+  "new_execution_config_sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+  "next_authorized_package": "R3_fresh_three_arm_smoke",
+  "second_calibration_authorized": false,
+  "optimizer_steps": 0,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
