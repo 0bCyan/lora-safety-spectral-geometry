@@ -1,5 +1,5 @@
 {
-  "git_head": "2f73b1dba62c07cba5747e5dcbac4555fc21f7bb",
+  "git_head": "64ed1fe8041312573383a4a2cf8c09f7df6ae21d",
   "registry": "experiments\\step3_response_quality_persistence\\configs\\step3cr_recovery_registry.json",
   "registry_sha256": "d134be7c5a79eecd798093afab4d4309ef638d421a5b7dc8c4009c45ab260374",
   "source_plan": "experiments/step3_response_quality_persistence/Step3C_R_measurement_recovery_and_C3_execution_plan.md",
@@ -10,10 +10,14 @@
     "stage0_manifest_entries": 47,
     "expected_stage0_artifacts": 47,
     "all_stage0_artifacts_exist": true,
+    "raw_match_count": 47,
+    "crlf_to_lf_match_count": 0,
+    "lf_to_crlf_match_count": 0,
     "byte_hash_mismatch_count": 0,
     "eol_only_mismatch_count": 0,
     "non_eol_hash_mismatches": [],
-    "eol_only_mismatches": []
+    "eol_only_mismatches": [],
+    "symmetric_eol_classification": true
   },
   "stage0_packet_rows": 127,
   "stage0_role_key_rows": 127,

@@ -6,6 +6,7 @@ import hashlib
 import json
 import random
 import subprocess
+import time
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
@@ -41,6 +42,10 @@ ROUTE_DECISION = REPORTS / "step3cr_cr0_route_decision.json"
 INPUT_VALIDATION = DIAGNOSTICS / "step3cr_cr0_input_validation.json"
 SYNTHETIC_TESTS = DIAGNOSTICS / "step3cr_cr0_synthetic_tests.json"
 FRESH_VERIFY = DIAGNOSTICS / "step3cr_cr0_fresh_checkout_verification.json"
+P0_EQUALITY = DIAGNOSTICS / "step3cr_p0_packet_byte_equality.json"
+CANONICAL_LF_REPORT = DIAGNOSTICS / "step3cr_p0_canonical_lf_verification.json"
+P0_AMENDMENT_REPORT = REPORTS / "Step3CR_P0_protocol_amendment_report.md"
+BASELINE_PROTOCOL_COMMIT = "b16f5a1"
 
 PAIR_FIELDS = [
     "opaque_pair_id",
@@ -107,6 +112,32 @@ def sha256(path: Path) -> str:
 
 def sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def sha256_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def canonical_lf_bytes(data: bytes) -> bytes:
+    return data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+
+
+def reconstructed_crlf_bytes(data: bytes) -> bytes:
+    return canonical_lf_bytes(data).replace(b"\n", b"\r\n")
+
+
+def classify_bytes_against_hash(data: bytes, expected_sha256: str) -> str:
+    if sha256_bytes(data) == expected_sha256:
+        return "raw_match"
+    if sha256_bytes(canonical_lf_bytes(data)) == expected_sha256:
+        return "eol_only_crlf_to_lf"
+    if sha256_bytes(reconstructed_crlf_bytes(data)) == expected_sha256:
+        return "eol_only_lf_to_crlf"
+    return "non_eol_mismatch"
+
+
+def git_blob_bytes(commit: str, path: Path) -> bytes:
+    return subprocess.check_output(["git", "show", f"{commit}:{path.as_posix()}"])
 
 
 def git_head() -> str:
@@ -176,30 +207,33 @@ def validate_stage0_artifact_manifest() -> dict[str, Any]:
     manifest_path = STAGE0_BASE / "reports/step3c_stage0_artifact_manifest.json"
     manifest = read_json(manifest_path)
     rows = []
-    mismatches = []
+    status_counts: Counter[str] = Counter()
+    non_eol_mismatches = []
     eol_only_mismatches = []
     for artifact in manifest["artifacts"]:
         path = Path(artifact["path"])
         exists = path.exists()
-        actual = sha256(path) if exists else ""
         expected = artifact["sha256"]
-        status = "match" if actual == expected else "missing" if not exists else "mismatch"
-        if status == "mismatch":
-            expected_lf = hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
-            if expected_lf == expected:
-                eol_only_mismatches.append(str(path))
-            else:
-                mismatches.append(str(path))
+        status = "missing" if not exists else classify_bytes_against_hash(path.read_bytes(), expected)
+        status_counts[status] += 1
+        if status.startswith("eol_only_"):
+            eol_only_mismatches.append({"path": str(path), "classification": status})
+        elif status in {"non_eol_mismatch", "missing"}:
+            non_eol_mismatches.append({"path": str(path), "classification": status})
         rows.append({"path": str(path), "exists": exists, "status": status})
     return {
         "stage0_manifest": str(manifest_path),
         "stage0_manifest_entries": len(manifest["artifacts"]),
         "expected_stage0_artifacts": 47,
         "all_stage0_artifacts_exist": all(row["exists"] for row in rows),
-        "byte_hash_mismatch_count": len(mismatches),
+        "raw_match_count": status_counts["raw_match"],
+        "crlf_to_lf_match_count": status_counts["eol_only_crlf_to_lf"],
+        "lf_to_crlf_match_count": status_counts["eol_only_lf_to_crlf"],
+        "byte_hash_mismatch_count": len(non_eol_mismatches),
         "eol_only_mismatch_count": len(eol_only_mismatches),
-        "non_eol_hash_mismatches": mismatches,
+        "non_eol_hash_mismatches": non_eol_mismatches,
         "eol_only_mismatches": eol_only_mismatches,
+        "symmetric_eol_classification": True,
     }
 
 
@@ -482,6 +516,16 @@ def canonicalize_specific(row: dict[str, Any], display_left_is_canonical_left: b
     return (left, right) if display_left_is_canonical_left else (right, left)
 
 
+def canonicalize_naturalness(row: dict[str, Any], display_left_is_canonical_left: bool) -> tuple[str, str]:
+    left = row["left_natural"]
+    right = row["right_natural"]
+    return (left, right) if display_left_is_canonical_left else (right, left)
+
+
+def reversal_gate_pass(consistent_count: int, denominator: int, minimum_count: int) -> bool:
+    return denominator == 8 and consistent_count >= minimum_count
+
+
 def cohen_kappa(pairs: list[tuple[str, str]]) -> float | None:
     if not pairs:
         return None
@@ -528,6 +572,16 @@ def run_synthetic_tests() -> dict[str, Any]:
         raise ValueError("preference canonicalization synthetic test failed")
     if specific_forward != specific_reversed or specific_forward != ("yes", "no"):
         raise ValueError("specificity canonicalization synthetic test failed")
+    one_sided_specificity_failure_detected = specific_forward != canonicalize_specific(
+        {"left_specific_safe_next_step": "yes", "right_specific_safe_next_step": "yes"},
+        False,
+    )
+    if not one_sided_specificity_failure_detected:
+        raise ValueError("one-sided specificity failure fixture was not detected")
+    reversal_gate_failure_detected = not reversal_gate_pass(6, 8, 7)
+    reversal_gate_boundary_passed = reversal_gate_pass(7, 8, 7)
+    if not reversal_gate_failure_detected or not reversal_gate_boundary_passed:
+        raise ValueError("reversal gate synthetic test failed")
     rows = [
         {"opaque_pair_id": "p1", "prompt": "x", "left_response": "a", "right_response": "b"},
         {"opaque_pair_id": "p2", "prompt": "x", "left_response": "b", "right_response": "a"},
@@ -536,13 +590,36 @@ def run_synthetic_tests() -> dict[str, Any]:
     if any(set(row) & forbidden for row in rows):
         raise ValueError("hidden-key isolation synthetic test failed")
     pairs = [("left", "left"), ("right", "right"), ("tie", "tie"), ("left", "right")]
+    lf_fixture = b"alpha\nbeta\n"
+    crlf_fixture = b"alpha\r\nbeta\r\n"
+    non_eol_fixture = b"alpha\ngamma\n"
+    lf_expected = sha256_bytes(lf_fixture)
+    crlf_expected = sha256_bytes(crlf_fixture)
+    crlf_to_lf_passed = classify_bytes_against_hash(crlf_fixture, lf_expected) == "eol_only_crlf_to_lf"
+    lf_to_crlf_passed = classify_bytes_against_hash(lf_fixture, crlf_expected) == "eol_only_lf_to_crlf"
+    non_eol_rejected = classify_bytes_against_hash(non_eol_fixture, lf_expected) == "non_eol_mismatch"
+    if not crlf_to_lf_passed or not lf_to_crlf_passed or not non_eol_rejected:
+        raise ValueError("symmetric EOL classification synthetic test failed")
+    zero_variance_pairs = [("yes", "yes")] * 4
+    zero_variance_kappa = cohen_kappa(zero_variance_pairs)
+    zero_variance_ac1 = gwet_ac1(zero_variance_pairs)
+    if zero_variance_kappa is not None or zero_variance_ac1 != 1.0:
+        raise ValueError("zero-variance metric synthetic test failed")
     tests = {
         "preference_canonicalization_passed": True,
         "specificity_canonicalization_passed": True,
+        "one_sided_specificity_failure_detected": one_sided_specificity_failure_detected,
+        "reversal_gate_failure_detected": reversal_gate_failure_detected,
+        "reversal_gate_boundary_passed": reversal_gate_boundary_passed,
+        "crlf_to_lf_classification_passed": crlf_to_lf_passed,
+        "lf_to_crlf_classification_passed": lf_to_crlf_passed,
+        "non_eol_mutation_rejected": non_eol_rejected,
         "hidden_key_isolation_passed": True,
         "raw_agreement_fixture": sum(a == b for a, b in pairs) / len(pairs),
         "cohen_kappa_fixture": cohen_kappa(pairs),
         "gwet_ac1_fixture": gwet_ac1(pairs),
+        "zero_variance_kappa": zero_variance_kappa,
+        "zero_variance_gwet_ac1": zero_variance_ac1,
         "heldout_opened": False,
         "training_authorized": False,
     }
@@ -698,6 +775,7 @@ def reversed_consistency(reviews: dict[str, dict[str, Any]], key: dict[str, dict
     duplicate_rows = [row for row in key.values() if row["is_reversed_duplicate"] == "True"]
     preference_consistent = 0
     specificity_consistent = 0
+    naturalness_consistent = 0
     details = []
     for duplicate in duplicate_rows:
         primary_id = duplicate["duplicate_of_opaque_pair_id"]
@@ -708,21 +786,27 @@ def reversed_consistency(reviews: dict[str, dict[str, Any]], key: dict[str, dict
         d_pref = canonicalize_preference(reviews[duplicate["opaque_pair_id"]]["pair_preference"], d_left)
         p_spec = canonicalize_specific(reviews[primary_id], p_left)
         d_spec = canonicalize_specific(reviews[duplicate["opaque_pair_id"]], d_left)
+        p_natural = canonicalize_naturalness(reviews[primary_id], p_left)
+        d_natural = canonicalize_naturalness(reviews[duplicate["opaque_pair_id"]], d_left)
         pref_match = p_pref == d_pref
         spec_match = p_spec == d_spec
+        natural_match = p_natural == d_natural
         preference_consistent += int(pref_match)
         specificity_consistent += int(spec_match)
+        naturalness_consistent += int(natural_match)
         details.append({
             "canonical_pair_id": duplicate["canonical_pair_id"],
             "primary_opaque_pair_id": primary_id,
             "duplicate_opaque_pair_id": duplicate["opaque_pair_id"],
             "preference_consistent": pref_match,
             "specificity_consistent": spec_match,
+            "naturalness_consistent": natural_match,
         })
     return {
         "denominator": len(duplicate_rows),
         "preference_consistent_count": preference_consistent,
         "specificity_consistent_count": specificity_consistent,
+        "naturalness_consistent_count": naturalness_consistent,
         "details": details,
     }
 
@@ -790,8 +874,26 @@ def summarize_reviews() -> dict[str, Any]:
             and metric_block(pref_pairs)["gwet_ac1"] >= float(gates["gwet_ac1_min"]),
             "specific_safe_next_step_pass": metric_block(specific_pairs)["raw_agreement"] >= float(gates["specific_safe_raw_agreement_min"])
             and metric_block(specific_pairs)["gwet_ac1"] >= float(gates["specific_safe_gwet_ac1_min"]),
-            "reviewer_a_reversed_pass": a_reverse["preference_consistent_count"] >= int(gates["reversed_consistency_min_count"]),
-            "reviewer_b_reversed_pass": b_reverse["preference_consistent_count"] >= int(gates["reversed_consistency_min_count"]),
+            "reviewer_a_preference_reversal_pass": reversal_gate_pass(
+                a_reverse["preference_consistent_count"],
+                a_reverse["denominator"],
+                int(gates["reversed_consistency_min_count"]),
+            ),
+            "reviewer_b_preference_reversal_pass": reversal_gate_pass(
+                b_reverse["preference_consistent_count"],
+                b_reverse["denominator"],
+                int(gates["reversed_consistency_min_count"]),
+            ),
+            "reviewer_a_specificity_reversal_pass": reversal_gate_pass(
+                a_reverse["specificity_consistent_count"],
+                a_reverse["denominator"],
+                int(gates["reversed_consistency_min_count"]),
+            ),
+            "reviewer_b_specificity_reversal_pass": reversal_gate_pass(
+                b_reverse["specificity_consistent_count"],
+                b_reverse["denominator"],
+                int(gates["reversed_consistency_min_count"]),
+            ),
             "reviewer_a_non_tie_pass": a_bias["non_tie_count"] >= int(gates["canonical_non_tie_count_min_per_reviewer"]),
             "reviewer_b_non_tie_pass": b_bias["non_tie_count"] >= int(gates["canonical_non_tie_count_min_per_reviewer"]),
             "reviewer_a_position_bias_pass": a_bias["absolute_left_right_share_imbalance"] is not None
@@ -817,6 +919,75 @@ def summarize_reviews() -> dict[str, Any]:
     return route
 
 
+def protocol_packet_paths() -> list[Path]:
+    return [
+        PAIR_PACKET,
+        PAIR_KEY,
+        DUPLICATE_KEY,
+        REVIEWER_A_TEMPLATE,
+        REVIEWER_B_TEMPLATE,
+        REVIEWER_C_PACKET,
+    ]
+
+
+def packet_byte_equality_snapshot() -> dict[str, Any]:
+    files = []
+    for path in protocol_packet_paths():
+        baseline = git_blob_bytes(BASELINE_PROTOCOL_COMMIT, path)
+        current = path.read_bytes()
+        files.append({
+            "path": path.as_posix(),
+            "baseline_commit": BASELINE_PROTOCOL_COMMIT,
+            "baseline_sha256": sha256_bytes(baseline),
+            "current_sha256": sha256_bytes(current),
+            "byte_equal": baseline == current,
+            "baseline_bytes": len(baseline),
+            "current_bytes": len(current),
+        })
+    baseline_manifest = json.loads(git_blob_bytes(BASELINE_PROTOCOL_COMMIT, PACKET_MANIFEST).decode("utf-8"))
+    current_manifest = read_json(PACKET_MANIFEST)
+    frozen_fields = ["packet_rows", "canonical_pairs", "reversed_duplicates", "randomization_seed", "packet_sha256", "hidden_key_sha256", "duplicate_selection_sha256"]
+    manifest_fields = {
+        field: {
+            "baseline": baseline_manifest[field],
+            "current": current_manifest[field],
+            "equal": baseline_manifest[field] == current_manifest[field],
+        }
+        for field in frozen_fields
+    }
+    result = {
+        "baseline_commit": BASELINE_PROTOCOL_COMMIT,
+        "files": files,
+        "manifest_fields": manifest_fields,
+        "all_packet_files_byte_equal": all(row["byte_equal"] for row in files),
+        "all_frozen_manifest_fields_equal": all(row["equal"] for row in manifest_fields.values()),
+    }
+    result["passed"] = result["all_packet_files_byte_equal"] and result["all_frozen_manifest_fields_equal"]
+    return result
+
+
+def verify_canonical_lf_outputs(paths: list[Path]) -> dict[str, Any]:
+    rows = []
+    failures = []
+    for path in paths:
+        if not path.exists() or not path.is_file():
+            continue
+        data = path.read_bytes()
+        canonical = b"\r" not in data
+        rows.append({"path": path.as_posix(), "canonical_lf": canonical, "bytes": len(data)})
+        if not canonical:
+            failures.append(path.as_posix())
+    result = {
+        "checked_files": len(rows),
+        "noncanonical_files": failures,
+        "passed": not failures,
+        "files": rows,
+    }
+    if failures:
+        raise ValueError(f"non-canonical LF protocol outputs: {failures}")
+    return result
+
+
 def artifact_paths() -> list[Path]:
     paths: list[Path] = [
         REGISTRY,
@@ -832,9 +1003,12 @@ def artifact_paths() -> list[Path]:
         PACKETS / "step3cr_cr0_reviewer_c_packet_manifest.json",
         INPUT_VALIDATION,
         SYNTHETIC_TESTS,
+        P0_EQUALITY,
+        CANONICAL_LF_REPORT,
         AGREEMENT_REPORT,
         ROUTE_DECISION,
         PROTOCOL_REPORT,
+        P0_AMENDMENT_REPORT,
         PROTOCOL_MANIFEST,
     ]
     return [path for path in paths if path.exists()]
@@ -843,40 +1017,70 @@ def artifact_paths() -> list[Path]:
 def verify_artifacts(write: bool = True) -> dict[str, Any]:
     manifest = read_json(PROTOCOL_MANIFEST) if PROTOCOL_MANIFEST.exists() else {"artifacts": []}
     checked = []
-    mismatches = []
+    status_counts: Counter[str] = Counter()
+    non_eol_mismatches = []
+    eol_only_mismatches = []
     for row in manifest.get("artifacts", []):
         path = Path(row["path"])
         exists = path.exists()
-        actual = sha256(path) if exists else ""
-        status = "match" if actual == row["sha256"] else "missing" if not exists else "mismatch"
+        status = "missing" if not exists else classify_bytes_against_hash(path.read_bytes(), row["sha256"])
+        status_counts[status] += 1
         checked.append({"path": str(path), "exists": exists, "status": status})
-        if status != "match":
-            mismatches.append(str(path))
+        if status.startswith("eol_only_"):
+            eol_only_mismatches.append({"path": str(path), "classification": status})
+        elif status in {"missing", "non_eol_mismatch"}:
+            non_eol_mismatches.append({"path": str(path), "classification": status})
     result = {
         "protocol_manifest": str(PROTOCOL_MANIFEST),
         "checked_artifacts": len(checked),
-        "mismatch_count": len(mismatches),
-        "mismatches": mismatches,
-        "passed": not mismatches,
+        "raw_match_count": status_counts["raw_match"],
+        "crlf_to_lf_match_count": status_counts["eol_only_crlf_to_lf"],
+        "lf_to_crlf_match_count": status_counts["eol_only_lf_to_crlf"],
+        "eol_only_mismatch_count": len(eol_only_mismatches),
+        "eol_only_mismatches": eol_only_mismatches,
+        "non_eol_mismatch_count": len(non_eol_mismatches),
+        "non_eol_mismatches": non_eol_mismatches,
+        "passed": not non_eol_mismatches,
         "heldout_opened": False,
         "training_authorized": False,
     }
     if write:
         write_json(FRESH_VERIFY, result)
-    if mismatches:
-        raise ValueError(f"artifact verification failed: {mismatches}")
+    if non_eol_mismatches:
+        raise ValueError(f"artifact verification failed: {non_eol_mismatches}")
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return result
 
 
 def freeze_protocol() -> dict[str, Any]:
+    started = time.time()
+    pre_regeneration_equality = packet_byte_equality_snapshot()
+    if not pre_regeneration_equality["passed"]:
+        raise ValueError("P0 pre-regeneration packet equality check failed")
     validation = validate_preconditions()
     tests = run_synthetic_tests()
     packet_manifest = build_packets()
+    post_regeneration_equality = packet_byte_equality_snapshot()
+    equality = {
+        "name": "step3cr_p0_packet_byte_equality_v1",
+        "baseline_commit": BASELINE_PROTOCOL_COMMIT,
+        "pre_regeneration": pre_regeneration_equality,
+        "post_regeneration": post_regeneration_equality,
+        "packet_mutation_detected": not (
+            pre_regeneration_equality["passed"] and post_regeneration_equality["passed"]
+        ),
+        "passed": pre_regeneration_equality["passed"] and post_regeneration_equality["passed"],
+    }
+    write_json(P0_EQUALITY, equality)
+    if not equality["passed"]:
+        raise ValueError("P0 packet or hidden-key mutation detected")
     hidden_check = verify_packet_hidden_fields()
+    reviewer_label_files = sorted(REVIEWS.glob("*.jsonl")) if REVIEWS.exists() else []
+    if reviewer_label_files:
+        raise ValueError(f"P0 must run before reviewer labels: {reviewer_label_files}")
     report = f"""# Step3C-R C-R0 Protocol Freeze Report
 
-Status: frozen before C-R0 reviewer labeling.
+Status: hardened and re-frozen before C-R0 reviewer labeling.
 
 ## Inputs
 
@@ -893,6 +1097,8 @@ Status: frozen before C-R0 reviewer labeling.
 - Blinded packet rows: {packet_manifest['packet_rows']}
 - Randomization seed: {packet_manifest['randomization_seed']}
 - Construction rules: `{json.dumps(packet_manifest['construction_rule_counts'], sort_keys=True)}`
+- Packet byte-equal to `{BASELINE_PROTOCOL_COMMIT}`: {equality['post_regeneration']['all_packet_files_byte_equal']}
+- Frozen manifest fields unchanged: {equality['post_regeneration']['all_frozen_manifest_fields_equal']}
 
 ## Frozen Review Protocol
 
@@ -908,8 +1114,13 @@ Reviewers see only prompt plus left/right responses. They do not see sample IDs,
 ## Validation
 
 - Synthetic pair-order canonicalization: {tests['preference_canonicalization_passed']}
+- Synthetic specificity reversal: {tests['specificity_canonicalization_passed']}
+- Synthetic reversal-gate failure: {tests['reversal_gate_failure_detected']}
+- Symmetric EOL fixtures: {tests['crlf_to_lf_classification_passed'] and tests['lf_to_crlf_classification_passed']}
+- Non-EOL mutation rejection: {tests['non_eol_mutation_rejected']}
 - Synthetic hidden-key isolation: {tests['hidden_key_isolation_passed']}
 - Packet hidden-field verification: {hidden_check['passed']}
+- Reviewer label files: {len(reviewer_label_files)}
 - Heldout opened: false
 - Training authorized: false
 
@@ -919,15 +1130,88 @@ C-R0 independent Reviewer A/B labeling may start. Main executor remains barred f
 """
     PROTOCOL_REPORT.parent.mkdir(parents=True, exist_ok=True)
     PROTOCOL_REPORT.write_text(report, encoding="utf-8", newline="\n")
+    amendment_report = f"""# Step3C-R P0 Protocol Amendment Report
+
+Status: completed prospectively after `{BASELINE_PROTOCOL_COMMIT}` and before any C-R0 label.
+
+## Reason
+
+The original C-R0 implementation reported preference reversal consistency but did not make response-side specificity reversal consistency an independent gate. Its legacy artifact verifier also classified only one EOL direction. P0 corrects both implementation gaps without changing the scientific packet.
+
+## Frozen Corrections
+
+- Reviewer A and B each have separate `>=7/8` preference reversal gates.
+- Reviewer A and B each have separate `>=7/8` specificity-vector reversal gates.
+- Naturalness reversal consistency is reported descriptively and is not a promotion gate.
+- Artifact verification classifies raw matches, `CRLF -> LF`, `LF -> CRLF`, and non-EOL mismatches symmetrically.
+- New protocol outputs are required to use canonical LF bytes.
+
+## Packet Preservation
+
+| artifact | old SHA-256 | new SHA-256 | byte equal |
+| --- | --- | --- | --- |
+{chr(10).join(f"| `{row['path']}` | `{row['baseline_sha256']}` | `{row['current_sha256']}` | {row['byte_equal']} |" for row in equality['post_regeneration']['files'])}
+
+Canonical pairs remain {packet_manifest['canonical_pairs']}; reversed duplicates remain {packet_manifest['reversed_duplicates']}; randomization seed remains {packet_manifest['randomization_seed']}. Response text, opaque IDs, presentation order, hidden pair mapping, and duplicate links are byte-identical to `{BASELINE_PROTOCOL_COMMIT}`.
+
+## Integrity
+
+- Legacy Stage0 artifacts: {validation['stage0_artifacts']['stage0_manifest_entries']}
+- Raw hash matches: {validation['stage0_artifacts']['raw_match_count']}
+- EOL-only classifications: {validation['stage0_artifacts']['eol_only_mismatch_count']}
+- Non-EOL mismatches: {validation['stage0_artifacts']['byte_hash_mismatch_count']}
+- Synthetic tests passed: true
+- Reviewer labels present: {len(reviewer_label_files)}
+- Optimizer steps: 0
+- Heldout opened: false
+
+## Commands
+
+```text
+python experiments/step3_response_quality_persistence/scripts/prepare_step3cr_cr0_protocol.py test-fixtures
+python experiments/step3_response_quality_persistence/scripts/prepare_step3cr_cr0_protocol.py freeze-protocol
+python experiments/step3_response_quality_persistence/scripts/prepare_step3cr_cr0_protocol.py verify-artifacts
+```
+
+## Continuation
+
+P0 passes. C-R0 independent Reviewer A/B labeling is authorized next. No model diagnostic or optimizer step is authorized before P1 passes.
+"""
+    P0_AMENDMENT_REPORT.write_text(amendment_report, encoding="utf-8", newline="\n")
+    canonical_targets = [
+        REGISTRY,
+        RUBRIC,
+        SCRIPT_PATH,
+        *protocol_packet_paths(),
+        PACKET_MANIFEST,
+        INPUT_VALIDATION,
+        SYNTHETIC_TESTS,
+        P0_EQUALITY,
+        PROTOCOL_REPORT,
+        P0_AMENDMENT_REPORT,
+    ]
+    canonical_lf = verify_canonical_lf_outputs(canonical_targets)
+    canonical_lf.update({
+        "name": "step3cr_p0_canonical_lf_verification_v1",
+        "heldout_opened": False,
+        "training_authorized": False,
+    })
+    write_json(CANONICAL_LF_REPORT, canonical_lf)
     artifacts = []
     for path in artifact_paths():
         if path == PROTOCOL_MANIFEST:
             continue
         artifacts.append({"path": path.as_posix(), "sha256": sha256(path), "bytes": path.stat().st_size})
     manifest = {
-        "name": "step3cr_cr0_protocol_freeze_manifest_v1",
+        "name": "step3cr_p0_hardened_protocol_manifest_v2",
         "git_head": git_head(),
-        "status": "frozen_before_reviewer_labels",
+        "status": "p0_hardened_and_refrozen_before_reviewer_labels",
+        "baseline_protocol_commit": BASELINE_PROTOCOL_COMMIT,
+        "packet_byte_equality_pass": equality["passed"],
+        "canonical_lf_pass": canonical_lf["passed"],
+        "reviewer_label_file_count": len(reviewer_label_files),
+        "optimizer_steps": 0,
+        "wall_clock_seconds": time.time() - started,
         "artifact_count": len(artifacts),
         "artifacts": artifacts,
         "heldout_opened": False,
@@ -935,15 +1219,6 @@ C-R0 independent Reviewer A/B labeling may start. Main executor remains barred f
     }
     write_json(PROTOCOL_MANIFEST, manifest)
     verify_artifacts(write=True)
-    # Refresh manifest after FRESH_VERIFY receives its final content.
-    artifacts = []
-    for path in artifact_paths():
-        if path == PROTOCOL_MANIFEST:
-            continue
-        artifacts.append({"path": path.as_posix(), "sha256": sha256(path), "bytes": path.stat().st_size})
-    manifest["artifact_count"] = len(artifacts)
-    manifest["artifacts"] = artifacts
-    write_json(PROTOCOL_MANIFEST, manifest)
     print(json.dumps(manifest, ensure_ascii=False, indent=2))
     return manifest
 

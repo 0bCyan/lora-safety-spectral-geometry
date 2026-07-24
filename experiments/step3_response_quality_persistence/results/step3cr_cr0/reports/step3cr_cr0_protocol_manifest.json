@@ -1,8 +1,14 @@
 {
-  "name": "step3cr_cr0_protocol_freeze_manifest_v1",
-  "git_head": "2f73b1dba62c07cba5747e5dcbac4555fc21f7bb",
-  "status": "frozen_before_reviewer_labels",
-  "artifact_count": 13,
+  "name": "step3cr_p0_hardened_protocol_manifest_v2",
+  "git_head": "64ed1fe8041312573383a4a2cf8c09f7df6ae21d",
+  "status": "p0_hardened_and_refrozen_before_reviewer_labels",
+  "baseline_protocol_commit": "b16f5a1",
+  "packet_byte_equality_pass": true,
+  "canonical_lf_pass": true,
+  "reviewer_label_file_count": 0,
+  "optimizer_steps": 0,
+  "wall_clock_seconds": 2.3430233001708984,
+  "artifact_count": 16,
   "artifacts": [
     {
       "path": "experiments/step3_response_quality_persistence/configs/step3cr_recovery_registry.json",
@@ -16,8 +22,8 @@
     },
     {
       "path": "experiments/step3_response_quality_persistence/scripts/prepare_step3cr_cr0_protocol.py",
-      "sha256": "ece7f791d71da39ffc35b66324b2d3b060cc3f7995ef4efc403f5812a19cc991",
-      "bytes": 43758
+      "sha256": "6340539503c93acb40915cdd9a1fbce5db4a8f7e3909c56dd9470374824e4455",
+      "bytes": 56903
     },
     {
       "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_pairwise_packet.jsonl",
@@ -51,23 +57,38 @@
     },
     {
       "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_packet_manifest.json",
-      "sha256": "06ce248f1a1c9ee95bb48135bb4df1bffde7ad0cad398ba2fb89c839eb107567",
+      "sha256": "97beb6d70f84400166fe0c4c05208ec68854a2e707063d6e5a99f2424c6bf9cb",
       "bytes": 1725
     },
     {
       "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/diagnostics/step3cr_cr0_input_validation.json",
-      "sha256": "d4d1c5030617fd2243983f7abe414947f77dedf2ba6164ae27848ca1f7e0626f",
-      "bytes": 2192
+      "sha256": "aaae0a1e55ca732fbe9785f3538bab23df83cf5f60286c563b289744f28bdb7f",
+      "bytes": 2327
     },
     {
       "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/diagnostics/step3cr_cr0_synthetic_tests.json",
-      "sha256": "755faaa6cbd4a624f6ba839f0f9d152870581c358c3af703419d01908dba88bb",
-      "bytes": 313
+      "sha256": "34944ad5ee9a3f16f9cfa435f1f156c8a1f6d46aec497ebb07d0aab46ff4f0f2",
+      "bytes": 635
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/diagnostics/step3cr_p0_packet_byte_equality.json",
+      "sha256": "0137eecd92ced4fc48d3cffa7fc62c351be94022460c4f3cba75e7699d477824",
+      "bytes": 8437
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/diagnostics/step3cr_p0_canonical_lf_verification.json",
+      "sha256": "23ab17389cb285eab2fcc30275a64df70c321190ecdd77255a9bfea91d32a5ec",
+      "bytes": 2992
     },
     {
       "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/reports/Step3CR_CR0_protocol_freeze_report.md",
-      "sha256": "44858152e45a33f2859101ddb7fc37b58549b80192c8b59e161291fc505d9a74",
-      "bytes": 2144
+      "sha256": "95e0f6774c8ba0d074b568fda2f5887b06725ed77471bb4f6ad702f708e0cb35",
+      "bytes": 2411
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/reports/Step3CR_P0_protocol_amendment_report.md",
+      "sha256": "9479e57f223f655c855532abae8c863d49c9a1799109acd1e9872dc99166982a",
+      "bytes": 3516
     }
   ],
   "heldout_opened": false,

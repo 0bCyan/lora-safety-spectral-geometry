@@ -1,10 +1,18 @@
 {
   "preference_canonicalization_passed": true,
   "specificity_canonicalization_passed": true,
+  "one_sided_specificity_failure_detected": true,
+  "reversal_gate_failure_detected": true,
+  "reversal_gate_boundary_passed": true,
+  "crlf_to_lf_classification_passed": true,
+  "lf_to_crlf_classification_passed": true,
+  "non_eol_mutation_rejected": true,
   "hidden_key_isolation_passed": true,
   "raw_agreement_fixture": 0.75,
   "cohen_kappa_fixture": 0.6363636363636364,
   "gwet_ac1_fixture": 0.627906976744186,
+  "zero_variance_kappa": null,
+  "zero_variance_gwet_ac1": 1.0,
   "heldout_opened": false,
   "training_authorized": false
 }

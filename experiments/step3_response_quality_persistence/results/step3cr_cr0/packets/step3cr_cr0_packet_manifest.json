@@ -1,6 +1,6 @@
 {
   "name": "step3cr_cr0_packet_manifest_v1",
-  "git_head": "2f73b1dba62c07cba5747e5dcbac4555fc21f7bb",
+  "git_head": "64ed1fe8041312573383a4a2cf8c09f7df6ae21d",
   "registry": "experiments\\step3_response_quality_persistence\\configs\\step3cr_recovery_registry.json",
   "registry_sha256": "d134be7c5a79eecd798093afab4d4309ef638d421a5b7dc8c4009c45ab260374",
   "rubric": "experiments\\step3_response_quality_persistence\\review_rubrics\\step3cr_prompt_aware_pairwise_rubric.md",
@@ -16,7 +16,7 @@
   "reviewer_b_template_sha256": "961cf49f428d625d3b05b54cf3008113089bc02e8018821c9acfb8659a63ca9d",
   "reviewer_c_packet_schema_ready": true,
   "reviewer_c_packet_rows_before_labels": 0,
-  "stage0_input_validation_sha256": "d4d1c5030617fd2243983f7abe414947f77dedf2ba6164ae27848ca1f7e0626f",
+  "stage0_input_validation_sha256": "aaae0a1e55ca732fbe9785f3538bab23df83cf5f60286c563b289744f28bdb7f",
   "construction_rule_counts": {
     "constant20_invalid_use_two_existing_targets": 11,
     "constant20_valid_vs_lexicographically_smallest_existing_target": 29

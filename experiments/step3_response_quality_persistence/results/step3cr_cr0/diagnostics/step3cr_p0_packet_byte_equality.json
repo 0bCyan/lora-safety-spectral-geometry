@@ -1,0 +1,204 @@
+{
+  "name": "step3cr_p0_packet_byte_equality_v1",
+  "baseline_commit": "b16f5a1",
+  "pre_regeneration": {
+    "baseline_commit": "b16f5a1",
+    "files": [
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_pairwise_packet.jsonl",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "c7332143c664dbe5ab84e9b78bbce5babe40940ffb2345e51d78cd718de3b8d7",
+        "current_sha256": "c7332143c664dbe5ab84e9b78bbce5babe40940ffb2345e51d78cd718de3b8d7",
+        "byte_equal": true,
+        "baseline_bytes": 24419,
+        "current_bytes": 24419
+      },
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_pairwise_hidden_key.csv",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "5233eba7efa64e32892dd971207970f50532f67f20a5dd2ae7d647c32d14ff23",
+        "current_sha256": "5233eba7efa64e32892dd971207970f50532f67f20a5dd2ae7d647c32d14ff23",
+        "byte_equal": true,
+        "baseline_bytes": 23794,
+        "current_bytes": 23794
+      },
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reversed_duplicate_key.csv",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "7f3ee3ed0bc5aef465361950fa9805464d28b1a31655cd6c411293f87ef3e41d",
+        "current_sha256": "7f3ee3ed0bc5aef465361950fa9805464d28b1a31655cd6c411293f87ef3e41d",
+        "byte_equal": true,
+        "baseline_bytes": 491,
+        "current_bytes": 491
+      },
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reviewer_a_template.jsonl",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "961cf49f428d625d3b05b54cf3008113089bc02e8018821c9acfb8659a63ca9d",
+        "current_sha256": "961cf49f428d625d3b05b54cf3008113089bc02e8018821c9acfb8659a63ca9d",
+        "byte_equal": true,
+        "baseline_bytes": 9456,
+        "current_bytes": 9456
+      },
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reviewer_b_template.jsonl",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "961cf49f428d625d3b05b54cf3008113089bc02e8018821c9acfb8659a63ca9d",
+        "current_sha256": "961cf49f428d625d3b05b54cf3008113089bc02e8018821c9acfb8659a63ca9d",
+        "byte_equal": true,
+        "baseline_bytes": 9456,
+        "current_bytes": 9456
+      },
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reviewer_c_packet.jsonl",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "byte_equal": true,
+        "baseline_bytes": 0,
+        "current_bytes": 0
+      }
+    ],
+    "manifest_fields": {
+      "packet_rows": {
+        "baseline": 48,
+        "current": 48,
+        "equal": true
+      },
+      "canonical_pairs": {
+        "baseline": 40,
+        "current": 40,
+        "equal": true
+      },
+      "reversed_duplicates": {
+        "baseline": 8,
+        "current": 8,
+        "equal": true
+      },
+      "randomization_seed": {
+        "baseline": 20260723,
+        "current": 20260723,
+        "equal": true
+      },
+      "packet_sha256": {
+        "baseline": "c7332143c664dbe5ab84e9b78bbce5babe40940ffb2345e51d78cd718de3b8d7",
+        "current": "c7332143c664dbe5ab84e9b78bbce5babe40940ffb2345e51d78cd718de3b8d7",
+        "equal": true
+      },
+      "hidden_key_sha256": {
+        "baseline": "5233eba7efa64e32892dd971207970f50532f67f20a5dd2ae7d647c32d14ff23",
+        "current": "5233eba7efa64e32892dd971207970f50532f67f20a5dd2ae7d647c32d14ff23",
+        "equal": true
+      },
+      "duplicate_selection_sha256": {
+        "baseline": "7f3ee3ed0bc5aef465361950fa9805464d28b1a31655cd6c411293f87ef3e41d",
+        "current": "7f3ee3ed0bc5aef465361950fa9805464d28b1a31655cd6c411293f87ef3e41d",
+        "equal": true
+      }
+    },
+    "all_packet_files_byte_equal": true,
+    "all_frozen_manifest_fields_equal": true,
+    "passed": true
+  },
+  "post_regeneration": {
+    "baseline_commit": "b16f5a1",
+    "files": [
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_pairwise_packet.jsonl",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "c7332143c664dbe5ab84e9b78bbce5babe40940ffb2345e51d78cd718de3b8d7",
+        "current_sha256": "c7332143c664dbe5ab84e9b78bbce5babe40940ffb2345e51d78cd718de3b8d7",
+        "byte_equal": true,
+        "baseline_bytes": 24419,
+        "current_bytes": 24419
+      },
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_pairwise_hidden_key.csv",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "5233eba7efa64e32892dd971207970f50532f67f20a5dd2ae7d647c32d14ff23",
+        "current_sha256": "5233eba7efa64e32892dd971207970f50532f67f20a5dd2ae7d647c32d14ff23",
+        "byte_equal": true,
+        "baseline_bytes": 23794,
+        "current_bytes": 23794
+      },
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reversed_duplicate_key.csv",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "7f3ee3ed0bc5aef465361950fa9805464d28b1a31655cd6c411293f87ef3e41d",
+        "current_sha256": "7f3ee3ed0bc5aef465361950fa9805464d28b1a31655cd6c411293f87ef3e41d",
+        "byte_equal": true,
+        "baseline_bytes": 491,
+        "current_bytes": 491
+      },
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reviewer_a_template.jsonl",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "961cf49f428d625d3b05b54cf3008113089bc02e8018821c9acfb8659a63ca9d",
+        "current_sha256": "961cf49f428d625d3b05b54cf3008113089bc02e8018821c9acfb8659a63ca9d",
+        "byte_equal": true,
+        "baseline_bytes": 9456,
+        "current_bytes": 9456
+      },
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reviewer_b_template.jsonl",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "961cf49f428d625d3b05b54cf3008113089bc02e8018821c9acfb8659a63ca9d",
+        "current_sha256": "961cf49f428d625d3b05b54cf3008113089bc02e8018821c9acfb8659a63ca9d",
+        "byte_equal": true,
+        "baseline_bytes": 9456,
+        "current_bytes": 9456
+      },
+      {
+        "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reviewer_c_packet.jsonl",
+        "baseline_commit": "b16f5a1",
+        "baseline_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "byte_equal": true,
+        "baseline_bytes": 0,
+        "current_bytes": 0
+      }
+    ],
+    "manifest_fields": {
+      "packet_rows": {
+        "baseline": 48,
+        "current": 48,
+        "equal": true
+      },
+      "canonical_pairs": {
+        "baseline": 40,
+        "current": 40,
+        "equal": true
+      },
+      "reversed_duplicates": {
+        "baseline": 8,
+        "current": 8,
+        "equal": true
+      },
+      "randomization_seed": {
+        "baseline": 20260723,
+        "current": 20260723,
+        "equal": true
+      },
+      "packet_sha256": {
+        "baseline": "c7332143c664dbe5ab84e9b78bbce5babe40940ffb2345e51d78cd718de3b8d7",
+        "current": "c7332143c664dbe5ab84e9b78bbce5babe40940ffb2345e51d78cd718de3b8d7",
+        "equal": true
+      },
+      "hidden_key_sha256": {
+        "baseline": "5233eba7efa64e32892dd971207970f50532f67f20a5dd2ae7d647c32d14ff23",
+        "current": "5233eba7efa64e32892dd971207970f50532f67f20a5dd2ae7d647c32d14ff23",
+        "equal": true
+      },
+      "duplicate_selection_sha256": {
+        "baseline": "7f3ee3ed0bc5aef465361950fa9805464d28b1a31655cd6c411293f87ef3e41d",
+        "current": "7f3ee3ed0bc5aef465361950fa9805464d28b1a31655cd6c411293f87ef3e41d",
+        "equal": true
+      }
+    },
+    "all_packet_files_byte_equal": true,
+    "all_frozen_manifest_fields_equal": true,
+    "passed": true
+  },
+  "packet_mutation_detected": false,
+  "passed": true
+}

@@ -1,0 +1,85 @@
+{
+  "checked_files": 15,
+  "noncanonical_files": [],
+  "passed": true,
+  "files": [
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/step3cr_recovery_registry.json",
+      "canonical_lf": true,
+      "bytes": 3885
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3cr_prompt_aware_pairwise_rubric.md",
+      "canonical_lf": true,
+      "bytes": 2121
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/prepare_step3cr_cr0_protocol.py",
+      "canonical_lf": true,
+      "bytes": 56903
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_pairwise_packet.jsonl",
+      "canonical_lf": true,
+      "bytes": 24419
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_pairwise_hidden_key.csv",
+      "canonical_lf": true,
+      "bytes": 23794
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reversed_duplicate_key.csv",
+      "canonical_lf": true,
+      "bytes": 491
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reviewer_a_template.jsonl",
+      "canonical_lf": true,
+      "bytes": 9456
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reviewer_b_template.jsonl",
+      "canonical_lf": true,
+      "bytes": 9456
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_reviewer_c_packet.jsonl",
+      "canonical_lf": true,
+      "bytes": 0
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/packets/step3cr_cr0_packet_manifest.json",
+      "canonical_lf": true,
+      "bytes": 1725
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/diagnostics/step3cr_cr0_input_validation.json",
+      "canonical_lf": true,
+      "bytes": 2327
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/diagnostics/step3cr_cr0_synthetic_tests.json",
+      "canonical_lf": true,
+      "bytes": 635
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/diagnostics/step3cr_p0_packet_byte_equality.json",
+      "canonical_lf": true,
+      "bytes": 8437
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/reports/Step3CR_CR0_protocol_freeze_report.md",
+      "canonical_lf": true,
+      "bytes": 2411
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cr_cr0/reports/Step3CR_P0_protocol_amendment_report.md",
+      "canonical_lf": true,
+      "bytes": 3516
+    }
+  ],
+  "name": "step3cr_p0_canonical_lf_verification_v1",
+  "heldout_opened": false,
+  "training_authorized": false
+}

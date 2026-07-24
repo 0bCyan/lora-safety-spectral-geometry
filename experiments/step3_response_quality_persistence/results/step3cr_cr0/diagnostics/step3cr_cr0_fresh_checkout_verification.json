@@ -1,8 +1,13 @@
 {
   "protocol_manifest": "experiments\\step3_response_quality_persistence\\results\\step3cr_cr0\\reports\\step3cr_cr0_protocol_manifest.json",
-  "checked_artifacts": 13,
-  "mismatch_count": 0,
-  "mismatches": [],
+  "checked_artifacts": 16,
+  "raw_match_count": 16,
+  "crlf_to_lf_match_count": 0,
+  "lf_to_crlf_match_count": 0,
+  "eol_only_mismatch_count": 0,
+  "eol_only_mismatches": [],
+  "non_eol_mismatch_count": 0,
+  "non_eol_mismatches": [],
   "passed": true,
   "heldout_opened": false,
   "training_authorized": false
