@@ -1,0 +1,78 @@
+{
+  "name": "step3ct_t4_generation_packet_implementation_freeze_v1",
+  "status": "prospective_before_candidate_generation",
+  "git_head_before_freeze_commit": "f5d51f89c7980f43d41f62377e839893d06611ba",
+  "machine": {
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "vram_mib": 12282,
+    "driver": "591.86",
+    "python": "3.11.5",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "peft": "0.16.0",
+    "cuda_runtime": "12.1"
+  },
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/step3ct_t4_generation_packet_registry.json",
+      "sha256": "c29e1d0e76482261de7672863199cabafd4489c5f2f5a237ea3bc0fc7991555d",
+      "bytes": 4829
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_t4_common.py",
+      "sha256": "3ead7a5dd81bcf5841e6d628c788bd09171df016af8a42015ebe719e28e94786",
+      "bytes": 4752
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/generate_step3ct_t4.py",
+      "sha256": "6b85ecd1aef81b61ab9e41102dff3b40daf51777deb7d83ed42c27d1a5d4fac5",
+      "bytes": 9097
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/prepare_step3ct_t4_packets.py",
+      "sha256": "e4337d853af8d46b5dd418a0950c2d4325ae745ee6ae916dc52eaf4083210622",
+      "bytes": 12908
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3ct_t4.py",
+      "sha256": "f67f2456c2b965d149bcbeae0aaabc89b4c1525e2bd8898fc2b79af81a04ea8a",
+      "bytes": 3093
+    }
+  ],
+  "preflight": {
+    "registered_generation_cells": 12,
+    "validated_generation_cells": 12,
+    "selected_rows_per_cell": 100,
+    "unique_sample_ids_per_cell": 100,
+    "adapter_hashes_match": true,
+    "input_file_and_selection_hashes_match": true,
+    "t3_route_authorizes_t4": true,
+    "protocol_tests_passed": 4,
+    "protocol_tests_failed": 0
+  },
+  "generation_freeze": {
+    "safety_cells": 9,
+    "utility_cells": 3,
+    "greedy": true,
+    "enable_thinking": false,
+    "residual_thinking_cleanup": true,
+    "raw_thinking_content_persisted": false,
+    "max_new_tokens": 256
+  },
+  "packet_freeze": {
+    "safety_primary_and_duplicate_rows": [600, 30],
+    "quality_primary_and_duplicate_rows": [300, 30],
+    "utility_primary_and_duplicate_rows": [300, 30],
+    "balanced_duplicates": true,
+    "arm_and_checkpoint_hidden": true,
+    "reviewer_a_b_templates_frozen_before_labels": true
+  },
+  "model_forwards": 0,
+  "optimizer_steps": 0,
+  "candidate_outputs_generated": false,
+  "core100_opened_for_authorized_input_preflight": true,
+  "utility100_opened_for_authorized_input_preflight": true,
+  "heldout_opened": false,
+  "outcome_labels_assigned": false,
+  "overall_pass": true
+}

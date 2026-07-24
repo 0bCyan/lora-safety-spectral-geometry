@@ -1,0 +1,109 @@
+{
+  "name": "step3ct_t4_generation_packet_registry_v1",
+  "status": "prospective_after_t3_run_freeze_before_candidate_generation",
+  "source_plan": "experiments/step3_response_quality_persistence/Step3C_T_seed1_c3_training_tournament_plan.md",
+  "t3_route": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t3_t2r/step3ct_t3_training_route_decision.json",
+  "t3_route_sha256": "69abbcb90487b13582eaac7670152a1802bd7b019c726ddee58d542ec259a18a",
+  "t3_manifest_package": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t3_t2r/step3ct_t3_training_manifest_package.json",
+  "t3_manifest_package_sha256": "a65b9021a5cd83517ad3180e2000c48b8010df2ba71a9a6a671ca18581193934",
+  "execution_config": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json",
+  "execution_config_sha256": "f1c40226964bf36c001b83607b842acd7c69576050ef213cf26f896408ea4fb3",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "local_files_only": true,
+  "generation_root": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/runs/t4_generations",
+  "packet_root": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4",
+  "inputs": {
+    "safety": {
+      "path": "data/processed/unified_pool/eval_safety.jsonl",
+      "file_sha256": "9ba10163333be7ae246bc054a263574011067bff77f751fc97e02dd7cc64e932",
+      "selection": "first_100_rows_core100",
+      "selected_rows": 100,
+      "selected_sample_id_sha256": "4016322fea44d3b73aba335784ecf6be8baa1712f76a6a5160920805e4654c11"
+    },
+    "utility": {
+      "path": "data/processed/unified_pool/eval_utility.jsonl",
+      "file_sha256": "e123a9d79cb122fa0145eb9dad6116770139ca0bbb4a3b7caad718aca0027e58",
+      "selection": "first_100_rows_utility100",
+      "selected_rows": 100,
+      "selected_sample_id_sha256": "234510adf30a05ad7b724e8f4f532f4e52530c7fe9c25c0a4e74a95f32c3dd30"
+    }
+  },
+  "arms": [
+    "C0R_concurrent_constant20",
+    "C3a_multi_positive_global_binding",
+    "C3b_hierarchical_hard_negative_binding"
+  ],
+  "allowed_checkpoints": {
+    "safety": [16, 32, 64],
+    "utility": [64]
+  },
+  "adapter_sha256": {
+    "C0R_concurrent_constant20": {
+      "16": "751f3246590b2b78c833063847d5d8ff43d5f133ba4934713e46edafec6cdf22",
+      "32": "791a0219612bcf4d8cf43b9837ddff7a9d1fce2bbded2dcc9855ef4c316a60d0",
+      "64": "c8fb1ffa7ae7e44fef02a0b870d427211e734d8e13c8b422deec3f416ec8ce28"
+    },
+    "C3a_multi_positive_global_binding": {
+      "16": "95df222d4fa407dd8594e649bc7d32bf181c2b90fce344aac31b2213beb828ae",
+      "32": "2127864f5d92c34f07f4443521ef81d35e34eef747d27ca8b0071d8126deda4b",
+      "64": "910a0fc951a6ba1192badf8f1eaf1c7fd4e6c7036a1dc8b02994314d62091ffc"
+    },
+    "C3b_hierarchical_hard_negative_binding": {
+      "16": "f03f6bfce7d06b3051413e70958052afbecf2627050a45009c857ddd0440868e",
+      "32": "08cfb0a717a951e23f917f0e5cc513b132a730864e55d8132deb877547454441",
+      "64": "a1351da797db5b841e9e4771fa987e025ce5d568b290242e037b3a01b92ebcd2"
+    }
+  },
+  "generation": {
+    "seed": 1,
+    "max_input_length": 512,
+    "max_new_tokens": 256,
+    "do_sample": false,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "enable_thinking": false,
+    "strip_residual_thinking_tags": true,
+    "persist_raw_thinking_content": false
+  },
+  "packets": {
+    "duplicate_fraction": 0.1,
+    "duplicate_min": 8,
+    "duplicate_max": 30,
+    "packet_seed": 2026072401,
+    "duplicate_seed": 2026072402,
+    "safety": {
+      "primary_rows": 600,
+      "hidden_duplicates": 30,
+      "review_checkpoints": [32, 64],
+      "rubric": "experiments/step2_mechanism_dynamics/review_rubrics/step2j_b1_safety_behavior_rubric.md",
+      "rubric_sha256": "d8c8b0733c7a79301506dcc0b7f1712c5901904d430428fa1053803ed8b6f060"
+    },
+    "quality": {
+      "primary_rows": 300,
+      "hidden_duplicates": 30,
+      "review_checkpoints": [64],
+      "rubric": "experiments/step3_response_quality_persistence/review_rubrics/step3cm_decomposed_quality_rubric_v1.md",
+      "rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482"
+    },
+    "utility": {
+      "primary_rows": 300,
+      "hidden_duplicates": 30,
+      "review_checkpoints": [64],
+      "rubric": "experiments/step2_mechanism_dynamics/review_rubrics/step2j_b1_utility_quality_rubric.md",
+      "rubric_sha256": "dd84542c1e539941a2063f5c2813b9929067a2c03e725b941f2d5973a9239fa1"
+    }
+  },
+  "authorization": {
+    "core100_candidate_generation": true,
+    "utility100_candidate_generation": true,
+    "blind_packet_freeze": true,
+    "outcome_labeling_before_packet_commit": false,
+    "heldout": false,
+    "eta_revision": false,
+    "new_training": false,
+    "c4_c5": false,
+    "seed2_seed3": false,
+    "second_backbone": false,
+    "spectrasafe": false
+  }
+}
