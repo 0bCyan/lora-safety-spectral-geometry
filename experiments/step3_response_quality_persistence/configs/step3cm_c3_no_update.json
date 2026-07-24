@@ -1,0 +1,51 @@
+{
+  "name": "step3cm_c3_no_update_v1",
+  "registry": "experiments/step3_response_quality_persistence/configs/step3cmf_registry.json",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "checkpoint_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100",
+  "targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+  "safety_train_path": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/safety_train.jsonl",
+  "validation_route": "experiments/step3_response_quality_persistence/results/step3cm_protocol/reports/step3cm_validation_route_decision.json",
+  "output_dir": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update",
+  "max_length": 256,
+  "projection_dim": 256,
+  "projection_seed": 20260727,
+  "calibration_seed": 20260728,
+  "calibration_prompt_count": 4,
+  "queue_size_sequence": [32, 16, 8],
+  "temperature_candidates": [0.05, 0.1, 0.2],
+  "positive_probability_min": 0.05,
+  "positive_probability_max": 0.5,
+  "positive_probability_target": 0.2,
+  "binding_to_safety_gradient_ratio_min": 0.2,
+  "binding_to_safety_gradient_ratio_max": 0.3,
+  "binding_to_safety_gradient_ratio_target": 0.25,
+  "minimum_vram_headroom_fraction": 0.1,
+  "permutation_repeats": 100,
+  "bootstrap_repeats": 10000,
+  "load_in_4bit": true,
+  "local_files_only": true,
+  "candidates": [
+    {
+      "id": "C3a_multi_positive_global_binding",
+      "same_prompt_targets_are_positives": true,
+      "global_cross_prompt_safe_negatives": true,
+      "same_category_hard_term": false,
+      "hard_term_multiplier": 0.0
+    },
+    {
+      "id": "C3b_hierarchical_hard_negative_binding",
+      "same_prompt_targets_are_positives": true,
+      "global_cross_prompt_safe_negatives": true,
+      "same_category_hard_term": true,
+      "hard_term_multiplier": 1.0,
+      "singleton_category_policy": "global_negatives_only"
+    }
+  ],
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "training_authorized": false
+}

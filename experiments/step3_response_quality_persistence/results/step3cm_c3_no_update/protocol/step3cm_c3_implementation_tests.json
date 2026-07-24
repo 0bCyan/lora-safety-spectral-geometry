@@ -1,0 +1,22 @@
+{
+  "name": "step3cm_c3_implementation_tests_v1",
+  "tests_run": 8,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "coverage": [
+    "left/right padding and truncation masks",
+    "multi-positive indexing and hard-negative exclusion",
+    "singleton categories",
+    "queue initialization, wraparound, and determinism",
+    "C3b equality to C3a with hard term disabled",
+    "finite non-zero gradients and frozen base parameters",
+    "temperature and eta rules",
+    "projection and retrieval determinism",
+    "no optimizer or scheduler construction"
+  ],
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "heldout_opened": false
+}

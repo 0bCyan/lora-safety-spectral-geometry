@@ -1,0 +1,104 @@
+{
+  "name": "step3cm_c3_code_freeze_v1",
+  "git_head_before_numerical_run": "97ebc81b1502990380e80ce930144f41c21acc43",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/step3cm_c3_no_update.json",
+      "sha256": "d3d6387bbdf09a078fad07ab344629eee6b52620ba41caf106724a7c6eecd79f",
+      "bytes": 2156
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/step3cmf_registry.json",
+      "sha256": "ebfd67ad0b789208e90297090b582323113f3313820e608c920f7c1d017f695b",
+      "bytes": 3628
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3cm_c3_common.py",
+      "sha256": "25d23584036369873bbb0a7609ecbabe92180bc4e5845f63f1783e093c755856",
+      "bytes": 9429
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3cm_c3_common.py",
+      "sha256": "85c32e68f32a15ca1895dd89dc30b273484167c3e6f602b6ef6580c07b178f58",
+      "bytes": 5292
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/run_step3cm_c3_no_update.py",
+      "sha256": "490589f9502ea2059fd3f645ac13931b80589888572c8f95738cac6959d53084",
+      "bytes": 42467
+    },
+    {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c",
+      "bytes": 70445
+    },
+    {
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/safety_train.jsonl",
+      "sha256": "a063bc591ab9f55196c69dcc1ac310ff5124609da5511745d5081dfd96b82294",
+      "bytes": 38346
+    },
+    {
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_config.json",
+      "sha256": "f3dc2f00a468baf447741f7819273a41deab36d96438da7b19d79a9b4cb0ccec",
+      "bytes": 935
+    },
+    {
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_model.safetensors",
+      "sha256": "fd66579386cbfa8418cce8c2d8e7c0099b2ef2fddc5a05839b4e8c5f39435379",
+      "bytes": 66126768
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_protocol/reports/step3cm_validation_route_decision.json",
+      "sha256": "1681f10110bda8408cdba5ac6fc90d8c842aa6d9dcc3dcce3900c30605017102",
+      "bytes": 274
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3cm_c3_no_update/protocol/step3cm_c3_implementation_tests.json",
+      "sha256": "a140a841382e0b257ac8e4f04e3482b4bf6c0a3e4c99ce4a566174c67fb1ae65",
+      "bytes": 667
+    }
+  ],
+  "source_validation": {
+    "registry_mismatches": {},
+    "target_rows": 80,
+    "target_prompt_clusters": 40,
+    "two_targets_per_prompt": true,
+    "all_targets_approved": true,
+    "safety_train_rows": 40,
+    "target_prompt_ids_equal_safety_train": true,
+    "checkpoint_exists": true,
+    "adapter_exists": true,
+    "validation_pass": true,
+    "core100_opened": false,
+    "heldout_opened": false,
+    "optimizer_steps": 0,
+    "passed": true
+  },
+  "candidate_flags": [
+    {
+      "id": "C3a_multi_positive_global_binding",
+      "same_prompt_targets_are_positives": true,
+      "global_cross_prompt_safe_negatives": true,
+      "same_category_hard_term": false,
+      "hard_term_multiplier": 0.0
+    },
+    {
+      "id": "C3b_hierarchical_hard_negative_binding",
+      "same_prompt_targets_are_positives": true,
+      "global_cross_prompt_safe_negatives": true,
+      "same_category_hard_term": true,
+      "hard_term_multiplier": 1.0,
+      "singleton_category_policy": "global_negatives_only"
+    }
+  ],
+  "calibration_prompt_rule": "smallest stable hashes, n=4, seed=20260728",
+  "response_branch_gradient_method": "exact branchwise derivative sum with detached queue negatives",
+  "f1_code_and_config_frozen_before_numerical_run": true,
+  "candidate_outputs_generated": false,
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "training_authorized": false
+}
