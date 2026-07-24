@@ -1,0 +1,35 @@
+{
+  "name": "step3cr_cr0_packet_manifest_v1",
+  "git_head": "2f73b1dba62c07cba5747e5dcbac4555fc21f7bb",
+  "registry": "experiments\\step3_response_quality_persistence\\configs\\step3cr_recovery_registry.json",
+  "registry_sha256": "d134be7c5a79eecd798093afab4d4309ef638d421a5b7dc8c4009c45ab260374",
+  "rubric": "experiments\\step3_response_quality_persistence\\review_rubrics\\step3cr_prompt_aware_pairwise_rubric.md",
+  "rubric_sha256": "528edaad3fd4c467ce4922d97e0814bcf9ba8b01d8344f152a535c27efec440d",
+  "packet_rows": 48,
+  "canonical_pairs": 40,
+  "reversed_duplicates": 8,
+  "randomization_seed": 20260723,
+  "duplicate_selection_sha256": "7f3ee3ed0bc5aef465361950fa9805464d28b1a31655cd6c411293f87ef3e41d",
+  "packet_sha256": "c7332143c664dbe5ab84e9b78bbce5babe40940ffb2345e51d78cd718de3b8d7",
+  "hidden_key_sha256": "5233eba7efa64e32892dd971207970f50532f67f20a5dd2ae7d647c32d14ff23",
+  "reviewer_a_template_sha256": "961cf49f428d625d3b05b54cf3008113089bc02e8018821c9acfb8659a63ca9d",
+  "reviewer_b_template_sha256": "961cf49f428d625d3b05b54cf3008113089bc02e8018821c9acfb8659a63ca9d",
+  "reviewer_c_packet_schema_ready": true,
+  "reviewer_c_packet_rows_before_labels": 0,
+  "stage0_input_validation_sha256": "d4d1c5030617fd2243983f7abe414947f77dedf2ba6164ae27848ca1f7e0626f",
+  "construction_rule_counts": {
+    "constant20_invalid_use_two_existing_targets": 11,
+    "constant20_valid_vs_lexicographically_smallest_existing_target": 29
+  },
+  "packet_fields": [
+    "left_response",
+    "opaque_pair_id",
+    "prompt",
+    "right_response"
+  ],
+  "packet_role_hidden": true,
+  "packet_duplicate_links_hidden": true,
+  "main_executor_assigned_labels": false,
+  "heldout_opened": false,
+  "training_authorized": false
+}

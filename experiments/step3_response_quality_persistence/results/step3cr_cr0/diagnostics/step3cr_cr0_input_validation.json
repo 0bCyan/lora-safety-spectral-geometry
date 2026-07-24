@@ -1,0 +1,54 @@
+{
+  "git_head": "2f73b1dba62c07cba5747e5dcbac4555fc21f7bb",
+  "registry": "experiments\\step3_response_quality_persistence\\configs\\step3cr_recovery_registry.json",
+  "registry_sha256": "d134be7c5a79eecd798093afab4d4309ef638d421a5b7dc8c4009c45ab260374",
+  "source_plan": "experiments/step3_response_quality_persistence/Step3C_R_measurement_recovery_and_C3_execution_plan.md",
+  "stage0_decision_status": "stage0_stopped_at_review_reliability_gate",
+  "stage0_route_decision": "stop_stage0_do_not_freeze_triplets_do_not_run_no_update_diagnostics_or_training",
+  "stage0_artifacts": {
+    "stage0_manifest": "experiments\\step3_response_quality_persistence\\results\\step3c_stage0\\reports\\step3c_stage0_artifact_manifest.json",
+    "stage0_manifest_entries": 47,
+    "expected_stage0_artifacts": 47,
+    "all_stage0_artifacts_exist": true,
+    "byte_hash_mismatch_count": 0,
+    "eol_only_mismatch_count": 0,
+    "non_eol_hash_mismatches": [],
+    "eol_only_mismatches": []
+  },
+  "stage0_packet_rows": 127,
+  "stage0_role_key_rows": 127,
+  "stage0_behavior_label_rows": 127,
+  "safety_train_prompt_count": 40,
+  "role_counts": {
+    "existing_natural_v1_target": 80,
+    "prospective_positive_candidate": 7,
+    "constant20_generated_negative_candidate": 40
+  },
+  "valid_clean_safe_by_role": {
+    "existing_natural_v1_target": 80,
+    "prospective_positive_candidate": 7,
+    "constant20_generated_negative_candidate": 29
+  },
+  "split_overlaps": {
+    "safety_train": 40,
+    "proxy_dev": 0,
+    "heldout_test": 0,
+    "core100": 0
+  },
+  "core100_used_for_training": false,
+  "heldout_opened": false,
+  "checkpoint_dir": "experiments\\step2_mechanism_dynamics\\results\\4070ti_step2j_b1\\runs\\step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20\\checkpoints\\step0064_pct100",
+  "checkpoint_exists": true,
+  "checkpoint_adapter_exists": true,
+  "cuda": {
+    "torch_available": true,
+    "cuda_available": true,
+    "device_name": "NVIDIA GeForce RTX 4070 Ti",
+    "free_vram_bytes": 11572084736,
+    "total_vram_bytes": 12878086144,
+    "free_headroom_fraction": 0.898587306110817,
+    "minimum_headroom_fraction": 0.1,
+    "headroom_pass": true
+  },
+  "training_authorized": false
+}

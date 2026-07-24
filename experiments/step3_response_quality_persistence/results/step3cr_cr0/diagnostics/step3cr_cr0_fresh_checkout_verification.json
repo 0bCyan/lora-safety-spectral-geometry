@@ -1,0 +1,9 @@
+{
+  "protocol_manifest": "experiments\\step3_response_quality_persistence\\results\\step3cr_cr0\\reports\\step3cr_cr0_protocol_manifest.json",
+  "checked_artifacts": 13,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "passed": true,
+  "heldout_opened": false,
+  "training_authorized": false
+}

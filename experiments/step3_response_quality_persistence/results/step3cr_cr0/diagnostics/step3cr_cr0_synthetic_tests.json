@@ -1,0 +1,10 @@
+{
+  "preference_canonicalization_passed": true,
+  "specificity_canonicalization_passed": true,
+  "hidden_key_isolation_passed": true,
+  "raw_agreement_fixture": 0.75,
+  "cohen_kappa_fixture": 0.6363636363636364,
+  "gwet_ac1_fixture": 0.627906976744186,
+  "heldout_opened": false,
+  "training_authorized": false
+}
