@@ -1,0 +1,20 @@
+{
+  "name": "step3cr_cr0_v2_packet_manifest_v1",
+  "source_commit": "1a2f407",
+  "session_id": "step3cr_cr0_review_session_v2_20260724",
+  "randomization_seed": 20260724,
+  "packet_rows": 48,
+  "canonical_pairs": 40,
+  "reversed_duplicates": 8,
+  "packet_sha256": "b84f1608e24b5eedb919dfc99532e5d2b80546273aeef181a1a15703d4274eb7",
+  "hidden_key_sha256": "1ad13c94549c4afd2b6054188214670403134a9cac4d9e8886e86dad2ccf74ba",
+  "duplicate_key_sha256": "d50099e29b7f9fcd487bfd133ec29720774a71b74ac6b1bc2ebeddb0d9ac6df1",
+  "rubric_sha256": "e694e0eac983e0c73500bc567337c55f95b6a4ac07b805daa286cbeb61eb6cc6",
+  "reviewer_a_template_sha256": "55885caa704f5387d742d47582b06c84b1a7f2e389234cec65edbb977d9511bb",
+  "reviewer_b_template_sha256": "55885caa704f5387d742d47582b06c84b1a7f2e389234cec65edbb977d9511bb",
+  "fresh_opaque_ids_and_order": true,
+  "v1_labels_reused": false,
+  "main_executor_assigned_labels": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

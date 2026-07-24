@@ -1,0 +1,17 @@
+{
+  "name": "step3cr_cr0_v2_preparation_validation_v1",
+  "source_commit": "1a2f407",
+  "v1_archive_artifacts": 29,
+  "packet_rows": 48,
+  "canonical_pairs": 40,
+  "reversed_duplicates": 8,
+  "canonical_content_multiset_equal_to_v1": true,
+  "opaque_id_overlap_with_v1": 0,
+  "packet_order_changed": true,
+  "reversed_duplicates_exact": true,
+  "rubric_sha256": "e694e0eac983e0c73500bc567337c55f95b6a4ac07b805daa286cbeb61eb6cc6",
+  "old_review_labels_read_or_reused": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0,
+  "passed": true
+}
