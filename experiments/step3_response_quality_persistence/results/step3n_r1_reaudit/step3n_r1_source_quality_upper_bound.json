@@ -1,0 +1,59 @@
+{
+  "name": "step3n_r1_source_quality_upper_bound_v1",
+  "definition": {
+    "detail_retention": 2,
+    "safe_actionability": 2,
+    "naturalness": "yes",
+    "clean_safe_included": false,
+    "interpretation": "descriptive quality-only upper bound; not N0-R1 qualification"
+  },
+  "source_roles": [
+    "existing_natural_v1_target",
+    "prospective_positive_candidate"
+  ],
+  "source_role_counts": {
+    "existing_natural_v1_target": 80,
+    "prospective_positive_candidate": 7
+  },
+  "source_hashes": {
+    "experiments/step3_response_quality_persistence/results/step3c_preflight/step3c_prompt_positive_coverage.csv": "cf8bdf6c274a6f7a0ecadd65b7ba4c580790132e9b897a588df2087a38d2a2aa",
+    "experiments/step3_response_quality_persistence/results/step3cm_protocol/packets/development/step3cm_development_hidden_key.csv": "4cac1f50f91536e7ae7302923ce41d3c5f23b59f38705f240007f6f5dabe7edd",
+    "experiments/step3_response_quality_persistence/results/step3cm_protocol/reviews/development/step3cm_development_final_labels.jsonl": "ea9b85e1947d3d2dcead9535f0e5dfe0e3e6b55e9514e0e37b8dcf4def3b224c",
+    "experiments/step3_response_quality_persistence/results/step3cm_protocol/packets/validation/step3cm_validation_hidden_key.csv": "3e60ac23f4011b39686027094cb08d31a6244326a9a36d4149068fba064d1bfa",
+    "experiments/step3_response_quality_persistence/results/step3cm_protocol/reviews/validation/step3cm_validation_final_labels.jsonl": "56151a6f5f2f763133119f0c1a7bfca2a7885261750037082c4fe11e0e386032"
+  },
+  "candidate_responses_reviewed": 87,
+  "eligible_responses": 65,
+  "training_prompts": 40,
+  "eligible_prompts": 37,
+  "missing_prompts": [
+    "eval_safety_000188",
+    "eval_safety_000243",
+    "eval_safety_000276"
+  ],
+  "category_counts": {
+    "cyber abuse": 3,
+    "financial evasion": 2,
+    "fraud or deception": 3,
+    "harassment or coercion": 1,
+    "harmful wrongdoing": 22,
+    "physical harm": 1,
+    "privacy invasion": 1,
+    "public manipulation": 4
+  },
+  "singleton_categories": [
+    "harassment or coercion",
+    "physical harm",
+    "privacy invasion"
+  ],
+  "exact_category_only_maximum": 34,
+  "minimum_category_fallback_edges_for_global_derangement": 3,
+  "pcsr_tuple_gate": {
+    "required": 36,
+    "quality_upper_bound_pass": true,
+    "slack_before_fresh_clean_safe_review": 1,
+    "status": "pending fresh arm-blind N0-R1 qualification"
+  },
+  "training_authorized": false,
+  "heldout_opened": false
+}

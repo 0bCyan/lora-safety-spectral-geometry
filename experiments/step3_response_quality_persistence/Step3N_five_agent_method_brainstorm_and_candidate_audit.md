@@ -1,5 +1,10 @@
 # Step3N: Five-Agent New-Method Brainstorm, Audit, and Candidate Selection
 
+Status note: this document remains the historical five-agent proposal and
+first-pass audit. Its execution boundary is superseded by
+`Step3N_R1_pcsr_method_repair_and_reaudit.md`; TCSR-MT is not authorized for
+implementation or training.
+
 ## 0. Status
 
 Status: **design audit complete; one primary candidate and one conditional backup selected; no new training is authorized by this document alone**.

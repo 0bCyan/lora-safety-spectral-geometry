@@ -12,7 +12,7 @@ Track B:  M1_reconstruction_integrity_failure
 
 There is no active experiment-machine job. Do not rerun training, generation, review, mechanism reconstruction, or T6.
 
-Step3N has completed a design-only five-agent audit. It selected TCSR-MT for a future prospective data and implementation route and TRIM-P0 as a conditional inference-only diagnostic. Neither is authorized for execution yet.
+Step3N completed a design-only five-agent audit, but a subsequent re-audit rejected TCSR-MT as an executable registered method. `Step3N_R1_pcsr_method_repair_and_reaudit.md` repairs the direction into PCSR-M and PCSR-MW with concurrent pairing-destruction controls and restricts TRIM to a later `TRIM-CS0` causal-steering preflight. None is authorized for experiment-machine execution yet.
 
 ## Completed Result
 
@@ -54,10 +54,10 @@ experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t6/s
 
 ## Future Resumption
 
-A future method is scoped in:
+A future method is actively scoped in:
 
 ```text
-experiments/step3_response_quality_persistence/Step3N_five_agent_method_brainstorm_and_candidate_audit.md
+experiments/step3_response_quality_persistence/Step3N_R1_pcsr_method_repair_and_reaudit.md
 ```
 
-The next local task is N0 training-only triplet protocol and review preparation. The experiment machine remains idle until a separate data-feasibility decision, implementation registry, no-update qualification, and smoke plan have been reviewed and pushed. T6 outputs must not be reused for behavior-driven tuning.
+The next local task is N0-R1 training-only tuple qualification and review preparation. The experiment machine remains idle until the 36-tuple data gate passes and a separate implementation registry, no-update qualification, and five-arm smoke plan have been reviewed and pushed. T6 outputs must not be reused for behavior-driven tuning.
