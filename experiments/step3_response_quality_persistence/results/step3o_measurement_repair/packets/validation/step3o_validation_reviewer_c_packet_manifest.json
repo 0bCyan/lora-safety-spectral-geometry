@@ -1,0 +1,13 @@
+{
+  "name": "step3o_validation_reviewer_c_packet_manifest_v1",
+  "stage": "validation",
+  "rows": 9,
+  "packet_sha256": "aca0e428e2cc4022d5281cb645accacf6f5ab3ecdc2bde48488228a69cdc9727",
+  "template_sha256": "586805c5a887a418698e3e348bc3fcb8bc9efdf585b93b2899017e6e35dd23c4",
+  "reviewer_a_sha256": "d7f5608b2066d7468ec1023a3e2d720d04176a83556c21f28b618f52434c1cf8",
+  "reviewer_b_sha256": "6c64f1db179db0fc2c65be12ae01a8cc0ea0f1131c75398cef9ef7e30b9638ea",
+  "reviewer_labels_exposed": false,
+  "reviewer_reasons_exposed": false,
+  "hidden_key_exposed": false,
+  "duplicate_rows_excluded": true
+}
