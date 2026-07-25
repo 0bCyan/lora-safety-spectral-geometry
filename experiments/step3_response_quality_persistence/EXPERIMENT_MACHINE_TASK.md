@@ -1,70 +1,55 @@
-# Experiment Machine Task: Step3C-T5H External Review Handoff
+# Experiment Machine Task: Step3C-T6 Stop State
 
 ## Current State
 
-Pull `exp/step3-response-quality-persistence` and follow:
+Pull the latest `exp/step3-response-quality-persistence`.
 
 ```text
-experiments/step3_response_quality_persistence/Step3C_T5H_external_review_handoff_and_P6A_provenance_repair_plan.md
-experiments/step3_response_quality_persistence/Step3C_T5H_model_reviewer_launch_addendum.md
-experiments/step3_response_quality_persistence/Step3C_T5H_quality_utility_model_reviewer_launch_addendum.md
-experiments/step3_response_quality_persistence/configs/step3ct_t5h_external_review_registry.json
+T5R route: T5R4_complete_labels_authorize_T6
+T6 route:  R1_no_c3_candidate_passes
+Track B:  M1_reconstruction_integrity_failure
 ```
 
-Track B remains stopped at `M1_reconstruction_integrity_failure`; representation probes and labels 0/16/32 are valid, but label64 grouped gradients remain unregistered. Track A has now selected `T5H2_safety_ab_frozen_authorize_quality_utility`: two distinct no-context model reviewers each returned 630 valid Safety rows and provenance, and the files were frozen before comparison.
+There is no active experiment-machine job. Do not rerun training, generation, review, mechanism reconstruction, or T6.
 
-No GPU experiment, new training, generation, label64 retry, or method revision is authorized.
+## Completed Result
 
-## Completed Boundaries
+Nine prospectively isolated model-review sessions completed six A/B files and three disagreement-only C files. T5R passed every frozen reliability gate, all six A/B hidden-duplicate consistency scores were `1.0`, and Reviewer C covered all 113 disagreement rows. T6 then joined only the frozen adjudicated labels to the frozen hidden keys.
 
-Do not rerun or overwrite P6A, H1, H1Q, or H2. Verify the latest completed boundary with:
+The concurrent C0-R control passed all reproducibility gates. Both C3 candidates passed every safety and utility gate but failed the primary quality conjunction:
+
+- C3a high-specific safe success difference versus C0-R: `+0.03`, bootstrap 95% CI `[-0.03, 0.10]`, Holm-adjusted McNemar `p=1.0`.
+- C3b high-specific safe success difference versus C0-R: `-0.01`, bootstrap 95% CI `[-0.08, 0.05]`, Holm-adjusted McNemar `p=1.0`.
+- C3b also failed the frozen lower-bound non-inferiority gate for specific safe success.
+
+The registered next action is `close_current_C3_recipe_without_scans`. No `Q_star` was selected.
+
+## Verification
 
 ```text
-python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_quality_utility_freeze.py verify
+python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_reviewer_c_qualification.py verify
+python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_reviewer_c_freeze.py verify
 ```
 
-Required route is:
+Inspect the frozen aggregate results only at:
 
 ```text
-H3A1_all_ab_frozen_authorize_disagreement_c
+experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reports/Step3CT_T5R4_review_reliability_report.md
+experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t6/Step3CT_T6_analysis.md
+experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t6/step3ct_t6_statistics_and_route.json
+experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t6/step3ct_t6_gate_table.csv
 ```
-
-H3 is not a behavior result. All six A/B files are frozen, hidden keys remain sealed, and reliability has not been computed.
-
-## Current Task: Disagreement-Only Reviewer C
-
-Only after the H3 commit is pushed, run:
-
-```text
-python experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_review.py prepare-c
-```
-
-This command may compare frozen decision fields only to identify disagreements. Each C packet must omit A/B labels, reasons, reviewer identities, vote counts, arms, checkpoints, hidden keys, and duplicate links. Freeze C packet and template hashes and exact row counts before launching reviewers.
-
-Launch one fresh no-context Reviewer C session per domain. C sessions must be distinct from all six A/B sessions and may access only their domain's disagreement packet, blank C template, and frozen rubric. Require complete coverage of every C row and valid provenance.
-
-## Later Packages
-
-Only after complete C reviews:
-
-1. compute reliability before hidden arm-key join;
-2. stop at `T5R3_review_reliability_stop` if any frozen gate fails;
-3. authorize T6 only through `T5R4_complete_labels_authorize_T6`;
-4. run T6 without revising thresholds or candidate rules.
-
-Use the existing T5R scripts and thresholds without revision.
 
 ## Prohibitions
 
 - Do not modify P6 or replace M1.
 - Do not retry label64 or report approximate grouped values.
-- Do not transform, split, sanitize, paraphrase, truncate, or selectively omit review rows.
-- Do not reuse failed T5 contexts or partial files.
-- Do not use main-session, heuristic, keyword, embedding, or unprovenanced outcome labels.
-- Do not open quality/utility before Safety A/B freeze.
-- Do not run new training, generation, C4/C5, seeds 2/3, a second backbone, SpectraSafe, or heldout.
+- Do not rerun or relabel any A/B/C review file.
+- Do not revise thresholds or rescue C3 with eta, temperature, queue, target, decoding, or checkpoint scans.
+- Do not promote C3a from its positive point estimate; its confidence interval and corrected test failed the frozen primary gate.
+- Do not run C4/C5, seeds 2/3, a second backbone, SpectraSafe, or heldout.
 - Do not commit checkpoints, adapters, caches, raw API caches, full gradients, or unrelated paper files.
 
-## Required Return State
+## Future Resumption
 
-Every package must include exact commands, entry/result commit, environment or reviewer provenance, all hashes and row counts, gate table, accepted/rejected/partial counts, heldout flag, one route, and one authorized next action.
+A future method requires a separate prospective plan with a new scientific rationale and frozen implementation, smoke, behavior, utility, and replication gates. It must not reuse T6 outputs for behavior-driven tuning. Until such a plan is reviewed and committed, the experiment machine remains idle.

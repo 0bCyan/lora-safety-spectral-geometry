@@ -2,15 +2,15 @@
 
 ## 0. Status
 
-Step 3 is open.
+Step 3 remains open for a new prospective method direction, but the current C3 recipe is closed.
 
-Current phase: **Step3C-T5H H3 all A/B reviews frozen; disagreement-only C pending**.
+Current phase: **Step3C-T6 completed; Route R1 closes C3a/C3b without candidate promotion**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
 The first Step3C Stage 0 stopped at its repeated response-only mechanical-label reliability gate and established that C2 cannot reach its 36-triplet requirement. Step3C-R then stopped after two prompt-aware pair-preference reliability failures (`0.825` and `0.800` raw agreement against a frozen `0.85` gate). C2 and C-R0 are closed.
 
-Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. T2R then completed one state-matched eta recalibration and restored smoke qualification. C0-R, C3a, and C3b each completed a matched 64-step seed1 run, and T4 froze 1,200 generations plus unchanged safety, quality, and utility blind packets. T5R Track A stopped at `T5R1_reviewer_access_stop` with zero accepted labels because no approved independent safety-review environment was available. Track B completed all 12 frozen representation probes and exactly reproduced grouped-gradient labels 0/16/32, but the bounded checkpoint48 replay did not reproduce label64 and selected `M1_reconstruction_integrity_failure`. P6A reconciled all 21 legacy hashes without changing P6 or M1. H1/H1Q/H2 completed Safety reviewer qualification and freeze. H3Q then froze four fresh no-context sessions; all four subsequently returned complete 330-row Quality A/B and Utility A/B files with valid provenance. H3 selected `H3A1_all_ab_frozen_authorize_disagreement_c`, covering six distinct reviewer sessions and 2,580 accepted rows across all reviewer files. A/B labels have not been compared, reliability and behavior endpoints remain unavailable, heldout remains sealed, and no new training is authorized.
+Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. T2R then completed one state-matched eta recalibration and restored smoke qualification. C0-R, C3a, and C3b each completed a matched 64-step seed1 run, and T4 froze 1,200 generations plus unchanged safety, quality, and utility blind packets. T5R Track A initially stopped at `T5R1_reviewer_access_stop`; Track B completed all 12 frozen representation probes and exactly reproduced grouped-gradient labels 0/16/32, but the bounded checkpoint48 replay did not reproduce label64 and selected `M1_reconstruction_integrity_failure`. P6A reconciled all 21 legacy hashes without changing P6 or M1. H1-H5 then prospectively qualified and froze nine distinct no-context model-review sessions: six complete A/B files with 2,580 accepted rows and three disagreement-only Reviewer C files with 113 accepted rows. T5R4 passed every frozen reliability and duplicate-consistency gate and produced complete adjudicated labels. T6 joined those labels to hidden arm keys only after the reliability pass. The concurrent control reproduced, but both C3 candidates failed the primary quality conjunction, selecting `R1_no_c3_candidate_passes`. Heldout remains sealed and no new training is authorized.
 
 ## 1. Research Question
 
@@ -113,7 +113,7 @@ Step3C-T's first smoke exposed a numerical calibration-transfer failure. T2R rep
 
 T3 then completed matched C0-R, C3a, and C3b 64-step runs with all integrity gates passing. Fixed eta did not maintain a fixed binding-gradient budget: C3a's realized weighted ratio moved `0.255 -> 0.551 -> 0.360 -> 0.417`, and C3b's moved `0.194 -> 0.508 -> 0.342 -> 0.479`. Global binding-safety cosine moved from about `+0.57` to `-0.11`. C3a and C3b also triggered the preregistered redundancy warning. These are mechanism signals, not behavior outcomes.
 
-T4 completed all 12 generation cells and froze 630-row safety, 330-row quality, and 330-row utility packets. T5 accepted zero labels because Safety Reviewer A encountered a platform gateway before output. T5R now preserves the unchanged packets, restores lawful independent review, and fills the parent plan's missing retrieval, cosine-gap, effective-rank, top-singular-share, and attention/MLP cosine diagnostics before final interpretation.
+T4 completed all 12 generation cells and froze 630-row safety, 330-row quality, and 330-row utility packets. T5 accepted zero labels because Safety Reviewer A encountered a platform gateway before output. T5R recovery subsequently completed all A/B/C review, passed reliability, and produced final labels without modifying the T4 packets. T6 found that C3a and C3b preserved the registered safety and utility boundaries but did not produce the required quality improvement over C0-R. The current C3 recipe is therefore closed without eta, temperature, queue, target, or decoding scans on the observed outputs.
 
 ### Step3D: seed1 persistence-quality factorial
 
@@ -131,10 +131,13 @@ Completed evidence now includes:
 - T2R state-matched eta calibration and fresh smoke qualification;
 - three matched 64-step seed1 runs with finite updates and frozen manifests;
 - 12 T4 generation cells, 1,200 non-empty outputs, and byte-verified blind packets;
-- zero accepted T5 labels and no hidden outcome-key join;
+- nine independent A/B/C reviewer sessions, 2,693 accepted reviewer rows, and complete disagreement adjudication;
+- passing Safety, Quality, Utility, and hidden-duplicate reliability gates under `T5R4`;
+- a valid concurrent-control reproduction and paired T6 statistics for all three arms;
+- `R1_no_c3_candidate_passes`: C3a and C3b passed safety and utility but failed the primary quality conjunction;
 - heldout continuously sealed.
 
-The review-recovery contract remains frozen in `configs/step3ct_t5r_review_recovery_registry.json`. Track A is stopped at `T5R1`, Track B is stopped at `M1`, and T6 is unauthorized. Any future resumption still requires complete fresh A/B reviews, disagreement-only C review, reliability before arm-key join, and unchanged packet/rubric hashes. The unchanged behavior gates are:
+The review-recovery contract remains frozen in `configs/step3ct_t5r_review_recovery_registry.json`. Track A completed at `T5R4`, Track B remains stopped at `M1`, and T6 completed at `R1`. No C3 candidate is `Q_star`; therefore C4, C5, seeds 2/3, a second backbone, and heldout remain unauthorized. The frozen behavior gates used for the closed tournament were:
 
 | domain | gate |
 | --- | --- |
