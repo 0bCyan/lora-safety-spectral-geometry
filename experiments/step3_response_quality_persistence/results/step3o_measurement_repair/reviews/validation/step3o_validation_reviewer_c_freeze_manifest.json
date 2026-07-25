@@ -1,0 +1,18 @@
+{
+  "name": "step3o_validation_reviewer_c_freeze_v1",
+  "stage": "validation",
+  "rows": 9,
+  "reviewer_c_sha256": "c279b291e65f38481114a18e6bd5e01e3b64595b975750305d9b93c229111c7f",
+  "reviewer_c_provenance_sha256": "99ba06817c35af9857ca9f413f298892173cfad227fd6a9e0b99b77600c7729a",
+  "reviewer_c_agent_id": "019f984d-866d-7ce2-919b-96675d5eff15",
+  "ab_freeze_sha256": "7969e17ff0d3192f733a5e7811c642421a7287c6c46059b97e8d4d0b78978dd1",
+  "c_packet_manifest_sha256": "525936b18dda23c26510637b46e27b87df1db1a795ec126c4d8af255a4a740a8",
+  "input_hash_checks": {
+    "c_packet": true,
+    "reviewer_a": true,
+    "reviewer_b": true,
+    "rubric": true
+  },
+  "reviewer_ab_labels_exposed_to_c": false,
+  "hidden_key_exposed_to_c": false
+}
