@@ -1,0 +1,15 @@
+{
+  "name": "step3o_validation_route_v1",
+  "status": "PASS",
+  "overall_pass": true,
+  "next_action": "authorize_fresh_training_pool_plan_only",
+  "ab_freeze_sha256": "7969e17ff0d3192f733a5e7811c642421a7287c6c46059b97e8d4d0b78978dd1",
+  "c_freeze_sha256": "d37051eb9f4868a84c55fa2704d074a100ce1b5e22f7beeb9c1134ed6fbf56d4",
+  "final_labels_sha256": "56ec357b3795ac14da8197042d1e2e416bd16a629b8e660c8c13e17eeb55969b",
+  "old_n0_rows_released": false,
+  "pcsr_training_authorized": false,
+  "heldout_content_read": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "agreement_sha256": "426f628bf19f08db94746481f887eb7f493af48319c7ada6464005d3a8eb932c"
+}
