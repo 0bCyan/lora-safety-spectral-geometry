@@ -1,0 +1,22 @@
+{
+  "name": "step3o_validation_ab_freeze_v1",
+  "stage": "validation",
+  "packet_rows": 132,
+  "packet_sha256": "45131bce6b1ffbb342b66b2b60b0875b559aa512e796b8a858dd0e134dd164ce",
+  "hidden_key_sha256": "231c3bf0169a72e04901c71810c1e0981c952fcfc49104ae3de6f3b802ef781e",
+  "rubric_sha256": "c74d8d3f3478bae9499d8520221eb0599db91cb87141e3b609a776044f9a3b38",
+  "reviewer_a_rows": 132,
+  "reviewer_b_rows": 132,
+  "reviewer_a_sha256": "d7f5608b2066d7468ec1023a3e2d720d04176a83556c21f28b618f52434c1cf8",
+  "reviewer_b_sha256": "6c64f1db179db0fc2c65be12ae01a8cc0ea0f1131c75398cef9ef7e30b9638ea",
+  "reviewer_a_provenance_sha256": "9616b56a2672360efcf26fd1a609b9fc70a0aa37f6ea79c30f25748cbedce755",
+  "reviewer_b_provenance_sha256": "970495cf10606d570b41e58b3434bd579232e9cbc639df6cc294491d4996c0ff",
+  "reviewer_a_agent_id": "019f9840-d7e6-7cf3-b096-1e7a243ec8b2",
+  "reviewer_b_agent_id": "019f9840-ed5c-7720-9d90-5ccd1c698b51",
+  "requested_model": "gpt-5.5",
+  "requested_reasoning_effort": "high",
+  "ab_compared_only_after_both_files_complete": true,
+  "heldout_content_read": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
