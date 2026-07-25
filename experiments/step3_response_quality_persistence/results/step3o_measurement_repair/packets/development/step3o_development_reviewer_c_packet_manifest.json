@@ -1,0 +1,13 @@
+{
+  "name": "step3o_development_reviewer_c_packet_manifest_v1",
+  "stage": "development",
+  "rows": 19,
+  "packet_sha256": "295f08d6cfdff0120145da6611e040dc7780aab19cb9e5225bf9cf542951be66",
+  "template_sha256": "412340dab89d24704cc498aad45cc4c04dcd555498f3cab1d33745877bb42d45",
+  "reviewer_a_sha256": "8740c6d8da66b9dad7525a96672333312cacb6f770dacf71a7ee33f0d830a471",
+  "reviewer_b_sha256": "992766cb69fa687c2b9d4187ce49d0a9f235515c039a67384562089abfb5d47b",
+  "reviewer_labels_exposed": false,
+  "reviewer_reasons_exposed": false,
+  "hidden_key_exposed": false,
+  "duplicate_rows_excluded": true
+}

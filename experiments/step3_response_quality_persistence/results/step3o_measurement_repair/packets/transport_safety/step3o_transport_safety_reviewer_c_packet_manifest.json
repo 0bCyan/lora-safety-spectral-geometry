@@ -1,0 +1,13 @@
+{
+  "name": "step3o_transport_safety_reviewer_c_packet_manifest_v1",
+  "stage": "transport_safety",
+  "rows": 4,
+  "packet_sha256": "decbc5ae10965f59c1d68f7aea5e7659bc354007d298b8438e69ab53bcb7175e",
+  "template_sha256": "69f7db4965440f5b8cf1f237f46ae9bea53d99cb400a0cc02d5843f773f1089a",
+  "reviewer_a_sha256": "77da17655ec8faa25b1732ac315ebfe1d8aac88e85cb32d7b5e75c03defa029e",
+  "reviewer_b_sha256": "a23cbaf881f83b3497c5f7788a4c1b86212a4a9b4f55c4e581fac1202a8cff04",
+  "reviewer_labels_exposed": false,
+  "reviewer_reasons_exposed": false,
+  "hidden_key_exposed": false,
+  "duplicate_rows_excluded": true
+}
