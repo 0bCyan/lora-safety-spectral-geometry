@@ -12,6 +12,8 @@ Track B:  M1_reconstruction_integrity_failure
 
 There is no active experiment-machine job. Do not rerun training, generation, review, mechanism reconstruction, or T6.
 
+Step3N has completed a design-only five-agent audit. It selected TCSR-MT for a future prospective data and implementation route and TRIM-P0 as a conditional inference-only diagnostic. Neither is authorized for execution yet.
+
 ## Completed Result
 
 Nine prospectively isolated model-review sessions completed six A/B files and three disagreement-only C files. T5R passed every frozen reliability gate, all six A/B hidden-duplicate consistency scores were `1.0`, and Reviewer C covered all 113 disagreement rows. T6 then joined only the frozen adjudicated labels to the frozen hidden keys.
@@ -52,4 +54,10 @@ experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t6/s
 
 ## Future Resumption
 
-A future method requires a separate prospective plan with a new scientific rationale and frozen implementation, smoke, behavior, utility, and replication gates. It must not reuse T6 outputs for behavior-driven tuning. Until such a plan is reviewed and committed, the experiment machine remains idle.
+A future method is scoped in:
+
+```text
+experiments/step3_response_quality_persistence/Step3N_five_agent_method_brainstorm_and_candidate_audit.md
+```
+
+The next local task is N0 training-only triplet protocol and review preparation. The experiment machine remains idle until a separate data-feasibility decision, implementation registry, no-update qualification, and smoke plan have been reviewed and pushed. T6 outputs must not be reused for behavior-driven tuning.

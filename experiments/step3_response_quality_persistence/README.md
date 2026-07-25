@@ -4,13 +4,15 @@
 
 Step 3 remains open for a new prospective method direction, but the current C3 recipe is closed.
 
-Current phase: **Step3C-T6 completed; Route R1 closes C3a/C3b without candidate promotion**.
+Current phase: **Step3C-T6 completed; Step3N five-agent design audit selected TCSR-MT as the primary candidate and TRIM-P0 as a conditional diagnostic backup**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
 The first Step3C Stage 0 stopped at its repeated response-only mechanical-label reliability gate and established that C2 cannot reach its 36-triplet requirement. Step3C-R then stopped after two prompt-aware pair-preference reliability failures (`0.825` and `0.800` raw agreement against a frozen `0.85` gate). C2 and C-R0 are closed.
 
 Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. T2R then completed one state-matched eta recalibration and restored smoke qualification. C0-R, C3a, and C3b each completed a matched 64-step seed1 run, and T4 froze 1,200 generations plus unchanged safety, quality, and utility blind packets. T5R Track A initially stopped at `T5R1_reviewer_access_stop`; Track B completed all 12 frozen representation probes and exactly reproduced grouped-gradient labels 0/16/32, but the bounded checkpoint48 replay did not reproduce label64 and selected `M1_reconstruction_integrity_failure`. P6A reconciled all 21 legacy hashes without changing P6 or M1. H1-H5 then prospectively qualified and froze nine distinct no-context model-review sessions: six complete A/B files with 2,580 accepted rows and three disagreement-only Reviewer C files with 113 accepted rows. T5R4 passed every frozen reliability and duplicate-consistency gate and produced complete adjudicated labels. T6 joined those labels to hidden arm keys only after the reliability pass. The concurrent control reproduced, but both C3 candidates failed the primary quality conjunction, selecting `R1_no_c3_candidate_passes`. Heldout remains sealed and no new training is authorized.
+
+The subsequent Step3N design audit is recorded in `Step3N_five_agent_method_brainstorm_and_candidate_audit.md`. It corrects `constant20` to its actual meaning, `safety_mix=0.20`, rejects immediate online-control and Fisher routes, and selects a training-only triplet-feasibility freeze as the next local design task. The audit does not itself authorize experiment-machine execution.
 
 ## 1. Research Question
 
@@ -179,10 +181,10 @@ Stop Step 3 or redirect it if any of the following occurs:
 Authorized now:
 
 - preserve the completed `P6A1_eol_reconciled_content_unchanged` package without modifying P6 or M1;
-- after the H3 package is pushed, construct disagreement-only C packets without A/B labels, reasons, votes, arms, checkpoints, or duplicate links;
-- freeze C packet hashes and launch fresh domain-specific C reviewers before computing reliability;
-- compute reliability before hidden arm-key join;
-- execute T6 only after route `T5R4_complete_labels_authorize_T6`.
+- preserve the completed T5R4 and T6 packages without relabeling or outcome-driven reinterpretation;
+- use `Step3N_five_agent_method_brainstorm_and_candidate_audit.md` as the prospective design boundary;
+- prepare only the Step3N N0 triplet schema, construction protocol, review rubrics, and leakage/hash checks on training-only data;
+- prepare the TRIM-P0 protocol, but do not run it until a separate implementation freeze is reviewed and pushed.
 
 Not authorized now:
 
@@ -190,11 +192,11 @@ Not authorized now:
 - modification of P6, another label64 replay, relaxed reconstruction tolerance, or approximate grouped label64 reporting;
 - reuse of failed T5 sessions or partial outputs;
 - main-session or heuristic outcome labels;
-- any fourth arm, fresh candidate training, fresh generation, or behavior-based eta/temperature/queue/target revision;
+- TCSR, TRIM, or any other fresh candidate training or generation before its data, implementation, smoke, and execution registry is separately frozen;
 - C4, C5, adaptive replay, or other method stacking;
 - behavior-based hyperparameter scans;
 - seeds 2 and 3;
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The stopped Stage0 and C-R0 routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2/H3Q/H3 packages, T5/T5R reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. H3 is an all-A/B completion milestone, not a method result: no agreement, reliability, behavior comparison, or candidate selection has yet been computed. The active T5H/T5R plans now authorize disagreement-only C preparation after H3 is pushed. A later valid T6 winner is still required before any C4/Q*/C5 seed1 factorial plan.
+The stopped Stage0 and C-R0 routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2/H3Q/H3/T5R/T6 packages, reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. T6 is complete at `R1_no_c3_candidate_passes`; there is no C3 `Q_star`. A new method may proceed only through the prospective Step3N gates, and a later valid winner is still required before seeds 2/3, heldout, a second backbone, or any combined-method factorial.
