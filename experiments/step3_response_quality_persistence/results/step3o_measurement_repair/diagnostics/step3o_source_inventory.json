@@ -1,0 +1,106 @@
+{
+  "name": "step3o_external_source_inventory_v1",
+  "development": {
+    "dataset": "LibrAI/do-not-answer",
+    "revision": "74e74f2e4507ef256fe536f78a776f4a1ff67955",
+    "url": "https://huggingface.co/datasets/LibrAI/do-not-answer/resolve/74e74f2e4507ef256fe536f78a776f4a1ff67955/data_en.csv",
+    "raw_path": "data/raw/step3o/do_not_answer_data_en.csv",
+    "sha256": "410449674780aa7304512043706f7981f666a79528d11546da34ebdd9595681c",
+    "license": "CC BY-NC-SA 4.0 for dataset text; repository code is Apache-2.0",
+    "expected_prompt_rows": 939,
+    "actual_sha256": "410449674780aa7304512043706f7981f666a79528d11546da34ebdd9595681c",
+    "dataset_rows": 939,
+    "eligible_response_rows": 5428,
+    "eligible_unique_prompts": 939,
+    "eligible_by_source_action": {
+      "0": 1538,
+      "1": 1439,
+      "2": 202,
+      "3": 682,
+      "4": 1567
+    },
+    "risk_area_prompt_counts": {
+      "Discrimination, Exclusion, Toxicity, Hateful, Offensive": 176,
+      "Human-Chatbot Interaction Harms": 117,
+      "Information Hazards": 248,
+      "Malicious Uses": 243,
+      "Misinformation Harms": 155
+    },
+    "selected_primary_rows": 120,
+    "selected_source_action_counts": {
+      "0": 24,
+      "1": 24,
+      "2": 24,
+      "3": 24,
+      "4": 24
+    },
+    "selected_risk_area_counts": {
+      "Discrimination, Exclusion, Toxicity, Hateful, Offensive": 26,
+      "Human-Chatbot Interaction Harms": 22,
+      "Information Hazards": 21,
+      "Malicious Uses": 22,
+      "Misinformation Harms": 29
+    },
+    "selected_model_counts": {
+      "ChatGLM2": 20,
+      "ChatGPT": 20,
+      "Claude": 20,
+      "GPT4": 20,
+      "llama2-7b-chat": 20,
+      "vicuna-7b": 20
+    }
+  },
+  "transport": {
+    "dataset": "PKU-Alignment/BeaverTails",
+    "revision": "8401fe609d288129cc684a9b3be6a93e41cfe678",
+    "url": "https://huggingface.co/datasets/PKU-Alignment/BeaverTails/resolve/8401fe609d288129cc684a9b3be6a93e41cfe678/round0/30k/train.jsonl.gz",
+    "raw_path": "data/raw/step3o/beavertails_30k_train.jsonl.gz",
+    "sha256": "2e24b85dd599224eeb7379da297223bad50e11fea9fee6a7fdb4bd26aedec315",
+    "license": "CC BY-NC 4.0",
+    "expected_rows": 27186,
+    "actual_sha256": "2e24b85dd599224eeb7379da297223bad50e11fea9fee6a7fdb4bd26aedec315",
+    "dataset_rows": 27186,
+    "unique_normalized_prompts": 7754,
+    "mixed_safe_unsafe_prompt_candidates": 2480,
+    "safe_response_candidates_on_mixed_prompts": 4898,
+    "mixed_prompt_category_coverage": {
+      "animal_abuse": 58,
+      "child_abuse": 38,
+      "controversial_topics,politics": 309,
+      "discrimination,stereotype,injustice": 500,
+      "drug_abuse,weapons,banned_substance": 169,
+      "financial_crime,property_crime,theft": 320,
+      "hate_speech,offensive_language": 525,
+      "misinformation_regarding_ethics,laws_and_safety": 236,
+      "non_violent_unethical_behavior": 973,
+      "privacy_violation": 278,
+      "self_harm": 40,
+      "sexually_explicit,adult_content": 157,
+      "terrorism,organized_crime": 45,
+      "violence,aiding_and_abetting,incitement": 881
+    },
+    "selected_primary_rows": 180,
+    "selected_assigned_category_counts": {
+      "animal_abuse": 13,
+      "child_abuse": 13,
+      "controversial_topics,politics": 13,
+      "discrimination,stereotype,injustice": 13,
+      "drug_abuse,weapons,banned_substance": 12,
+      "financial_crime,property_crime,theft": 13,
+      "hate_speech,offensive_language": 13,
+      "misinformation_regarding_ethics,laws_and_safety": 13,
+      "non_violent_unethical_behavior": 13,
+      "privacy_violation": 13,
+      "self_harm": 12,
+      "sexually_explicit,adult_content": 13,
+      "terrorism,organized_crime": 13,
+      "violence,aiding_and_abetting,incitement": 13
+    },
+    "selected_length_stratum_counts": {
+      "long": 48,
+      "middle": 60,
+      "short": 72
+    }
+  },
+  "raw_files_committed": false
+}

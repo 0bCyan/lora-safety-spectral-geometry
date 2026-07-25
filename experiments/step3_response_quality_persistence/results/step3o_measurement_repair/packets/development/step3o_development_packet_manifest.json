@@ -1,0 +1,36 @@
+{
+  "name": "step3o_development_packet_manifest_v1",
+  "primary_rows": 120,
+  "hidden_duplicate_rows": 12,
+  "packet_rows": 132,
+  "unique_primary_prompts": 120,
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_packet.jsonl",
+      "bytes": 128247,
+      "sha256": "21bd4913c5c0afbe2c3331e70750d30bf491fd3ea68e3606db7bb8de8dbda7c5"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_hidden_key.csv",
+      "bytes": 32929,
+      "sha256": "674a6fe4dea579572ac13aa334a2d8268628c4b8d530c79f19da81a8b1f134e4"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_duplicate_key.csv",
+      "bytes": 772,
+      "sha256": "1c26d663d3ec80b546e63fcf66c3d7f798176a33a6be92f47d33dbfd553c2964"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_reviewer_a_template.jsonl",
+      "bytes": 18084,
+      "sha256": "9b1f40bd5478b164dc638922aa9fe6782945c128c75291db96581abcc88479c5"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_reviewer_b_template.jsonl",
+      "bytes": 18084,
+      "sha256": "9b1f40bd5478b164dc638922aa9fe6782945c128c75291db96581abcc88479c5"
+    }
+  ],
+  "source_labels_visible_to_reviewers": false,
+  "duplicate_links_visible_to_reviewers": false
+}

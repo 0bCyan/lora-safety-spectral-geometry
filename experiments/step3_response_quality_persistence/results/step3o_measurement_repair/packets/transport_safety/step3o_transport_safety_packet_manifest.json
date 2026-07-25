@@ -1,0 +1,37 @@
+{
+  "name": "step3o_transport_safety_packet_manifest_v1",
+  "primary_rows": 180,
+  "hidden_duplicate_rows": 18,
+  "packet_rows": 198,
+  "unique_primary_prompts": 180,
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_packet.jsonl",
+      "bytes": 90083,
+      "sha256": "0e767a79b903d94bd64a619e939d5d08c00aaf0787301fc112c1c3cb4b37523a"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_hidden_key.csv",
+      "bytes": 87409,
+      "sha256": "e447237002509ec384cdbf7a2076395de0571b9a8a872a2065603c957ae50d28"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_duplicate_key.csv",
+      "bytes": 1168,
+      "sha256": "58f1bf2754e447c59bb0ac51b3c0a15db86cceb830f6c84c268223a1d19d17b6"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_reviewer_a_template.jsonl",
+      "bytes": 18414,
+      "sha256": "63adc43c7dbd232c5f8e6a2cdfc350827c82e96bc0868c1a88e23d24df5586de"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_reviewer_b_template.jsonl",
+      "bytes": 18414,
+      "sha256": "63adc43c7dbd232c5f8e6a2cdfc350827c82e96bc0868c1a88e23d24df5586de"
+    }
+  ],
+  "source_safety_labels_visible_to_reviewers": false,
+  "actionability_rubric_visible_to_safety_reviewers": false,
+  "duplicate_links_visible_to_reviewers": false
+}

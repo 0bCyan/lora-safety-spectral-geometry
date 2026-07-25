@@ -1,0 +1,134 @@
+{
+  "name": "step3o_o0_protocol_manifest_v1",
+  "status": "packets_frozen_before_any_step3o_label",
+  "entry_commit": "20f3d8e65d0c545ce734bdcfc7370b8cd8fc63a2",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/step3o_measurement_repair_registry.json",
+      "bytes": 6718,
+      "sha256": "9d3cb8c189d41cf9f7b2aa545432a20a5b50746c8d41afbb98e6f500107826f6"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3o_measurement_repair.py",
+      "bytes": 94234,
+      "sha256": "d2150d83ab601b2b1a687ecb71a35e5026765e8edfe323d3a7b36093df93fc0a"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3o_measurement_repair.py",
+      "bytes": 8996,
+      "sha256": "2a10358808f625be1e565f5bc5a11b3c1e2bfa3e8c45bcc53fc3a861877efb40"
+    },
+    {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "bytes": 1524428,
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3n_r1_n0/packets/source/step3n_r1_source_qualification_packet.jsonl",
+      "bytes": 33887,
+      "sha256": "96a8fa5d50296987747be3b1d90b4fdb3f929a03ebd074a7217f04bb4f6ed86d"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/Step3O_external_actionability_measurement_repair_plan.md",
+      "bytes": 14792,
+      "sha256": "3714f355ada85022bb028138283ff360eb692706285943a2b720b8628f45739d"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_actionability_rubric_v2.md",
+      "bytes": 4760,
+      "sha256": "c74d8d3f3478bae9499d8520221eb0599db91cb87141e3b609a776044f9a3b38"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_transport_clean_safety_rubric.md",
+      "bytes": 1267,
+      "sha256": "095d00c7d34496da4f50b19148ca00772684edd7bfff04ba51a9aa97cd6fea6c"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/review_handoffs/step3o_independent_reviewer_instructions.md",
+      "bytes": 1841,
+      "sha256": "f09a28969f04bbeb7ec1878a7534dd74911459292d393918e308e7cbf7969fb4"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/diagnostics/step3o_source_inventory.json",
+      "bytes": 3872,
+      "sha256": "eae94652f3d1eaa43440deae8c81b427f550545b43c8582b418c4959dc4484db"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/diagnostics/step3o_contamination_audit.json",
+      "bytes": 9244,
+      "sha256": "04b3c9c09acac5848380a80d37718b6fbd27a387f6e4bd5caa2db60fdca616f7"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_packet.jsonl",
+      "bytes": 128247,
+      "sha256": "21bd4913c5c0afbe2c3331e70750d30bf491fd3ea68e3606db7bb8de8dbda7c5"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_hidden_key.csv",
+      "bytes": 32929,
+      "sha256": "674a6fe4dea579572ac13aa334a2d8268628c4b8d530c79f19da81a8b1f134e4"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_duplicate_key.csv",
+      "bytes": 772,
+      "sha256": "1c26d663d3ec80b546e63fcf66c3d7f798176a33a6be92f47d33dbfd553c2964"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_reviewer_a_template.jsonl",
+      "bytes": 18084,
+      "sha256": "9b1f40bd5478b164dc638922aa9fe6782945c128c75291db96581abcc88479c5"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_reviewer_b_template.jsonl",
+      "bytes": 18084,
+      "sha256": "9b1f40bd5478b164dc638922aa9fe6782945c128c75291db96581abcc88479c5"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_packet_manifest.json",
+      "bytes": 1652,
+      "sha256": "a87b1b8a0c6261a3b28ead65f179d9fe09163e7ebfb9b16085f6e45675612219"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_packet.jsonl",
+      "bytes": 90083,
+      "sha256": "0e767a79b903d94bd64a619e939d5d08c00aaf0787301fc112c1c3cb4b37523a"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_hidden_key.csv",
+      "bytes": 87409,
+      "sha256": "e447237002509ec384cdbf7a2076395de0571b9a8a872a2065603c957ae50d28"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_duplicate_key.csv",
+      "bytes": 1168,
+      "sha256": "58f1bf2754e447c59bb0ac51b3c0a15db86cceb830f6c84c268223a1d19d17b6"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_reviewer_a_template.jsonl",
+      "bytes": 18414,
+      "sha256": "63adc43c7dbd232c5f8e6a2cdfc350827c82e96bc0868c1a88e23d24df5586de"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_reviewer_b_template.jsonl",
+      "bytes": 18414,
+      "sha256": "63adc43c7dbd232c5f8e6a2cdfc350827c82e96bc0868c1a88e23d24df5586de"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_packet_manifest.json",
+      "bytes": 1775,
+      "sha256": "a1403693eb6493036e196af73fa6e2d277c17d5207d8c0941387330ae22b4179"
+    }
+  ],
+  "development_packet_rows": 132,
+  "transport_safety_packet_rows": 198,
+  "restricted_lexical_overlap_audit_pass": true,
+  "old_87_rows_used_for_anchor_writing": false,
+  "old_37_prompts_released": false,
+  "old_n0_labels_reopened": false,
+  "core100_content_read": false,
+  "heldout_content_read": false,
+  "proxy_dev_outcomes_read": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "pcsr_r2_authorized": false
+}

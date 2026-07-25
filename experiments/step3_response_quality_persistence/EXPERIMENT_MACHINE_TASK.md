@@ -1,4 +1,4 @@
-# Experiment Machine Task: Step3N-R1 N0 Stop State
+# Experiment Machine Task: Step3O O0 Local Review State
 
 ## Current State
 
@@ -13,6 +13,13 @@ Track B:  M1_reconstruction_integrity_failure
 There is no active experiment-machine job. Do not rerun training, generation, review, mechanism reconstruction, or T6.
 
 Step3N-R1 repaired TCSR-MT into PCSR-M and PCSR-MW, then executed only the local source-qualification gate. The source content covered 37 prompts, but independent `safe_actionability` review failed reliability (`0.379` exact agreement; Gwet AC2 `0.371 < 0.70`). PCSR-M/PCSR-MW are closed under R1 before tuple writing or training. TRIM-CS0 remains separately unauthorized.
+
+Step3O O0 is now frozen locally before any Step3O label. It uses pinned public
+Do-Not-Answer and BeaverTails sources to develop and independently transport a
+component-derived actionability instrument. The local package contains a
+132-row development packet and a separate 198-row transport clean-safety
+packet. Raw external files remain ignored. Independent no-context local agents,
+not the experiment machine, own the next A/B/C reviews.
 
 ## Completed Result
 
@@ -31,6 +38,8 @@ The registered next action is `close_current_C3_recipe_without_scans`. No `Q_sta
 ```text
 python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_reviewer_c_qualification.py verify
 python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_reviewer_c_freeze.py verify
+python experiments/step3_response_quality_persistence/scripts/step3o_measurement_repair.py verify-o0
+python experiments/step3_response_quality_persistence/scripts/test_step3o_measurement_repair.py
 ```
 
 Inspect the frozen aggregate results only at:
@@ -60,4 +69,4 @@ A completed stopped method record is frozen in:
 experiments/step3_response_quality_persistence/Step3N_R1_pcsr_method_repair_and_reaudit.md
 ```
 
-There is no active resumption task. Do not write generic counterfactuals, review mismatch edges, implement PCSR losses, or run the five-arm smoke. The experiment machine remains idle until a new prospective method or measurement-repair protocol is reviewed and pushed. T6 outputs and the failed N0-R1 labels must not be used for behavior-driven tuning.
+There is no active GPU or experiment-machine resumption task. Do not write generic counterfactuals, review mismatch edges, implement PCSR losses, or run the five-arm smoke. Keep the experiment machine idle while local independent agents execute Step3O development and source-safety review. T6 outputs and failed N0-R1 labels must not be used for rubric anchors, target selection, or behavior-driven tuning. A later Step3O validation packet may be frozen only after both local entry gates pass; even that pass would authorize fresh training-pool planning, not training.
