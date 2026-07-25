@@ -1,0 +1,18 @@
+{
+  "name": "step3o_transport_safety_reviewer_c_freeze_v1",
+  "stage": "transport_safety",
+  "rows": 4,
+  "reviewer_c_sha256": "062e6712e1d50404585c2c7bf84e71671402f5ac11ca9e791d610deb6017a15f",
+  "reviewer_c_provenance_sha256": "58ef61218aa058d0e0b6ed949f7fe1d791e5fc26143fa34218186070f2c74de5",
+  "reviewer_c_agent_id": "019f9833-e23f-7003-9f0d-1511f104f46c",
+  "ab_freeze_sha256": "1b7f3a0282df2913466a6a9cd3446d8e6bd88ec3b74f0c501b04843018851a92",
+  "c_packet_manifest_sha256": "56bed6066f159ebc85e9a009b31ab00a86a854f586e93c45559e69df29630da2",
+  "input_hash_checks": {
+    "c_packet": true,
+    "reviewer_a": true,
+    "reviewer_b": true,
+    "rubric": true
+  },
+  "reviewer_ab_labels_exposed_to_c": false,
+  "hidden_key_exposed_to_c": false
+}

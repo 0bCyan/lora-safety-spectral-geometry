@@ -1,0 +1,18 @@
+{
+  "name": "step3o_development_reviewer_c_freeze_v1",
+  "stage": "development",
+  "rows": 19,
+  "reviewer_c_sha256": "0ee3776d20b701e73f8326e3afb57cf265b3aee5ac2e236c4b2296af9c47dbd8",
+  "reviewer_c_provenance_sha256": "bc54ed896e5836c65cf77265d8c76d308dd88bb3db0c43c7d88c98add743976f",
+  "reviewer_c_agent_id": "019f9833-ccc7-7dc1-ae0c-4ed8447ada98",
+  "ab_freeze_sha256": "d8387f9a59b5813cd7ae93263012d0e5dcadbca74c2d5ad03d98bc1b8e643e9c",
+  "c_packet_manifest_sha256": "fdc0992f08adde310bd7b4883e76a1a63a490f03bbe0f36efcc8fda93d4f7bf5",
+  "input_hash_checks": {
+    "c_packet": true,
+    "reviewer_a": true,
+    "reviewer_b": true,
+    "rubric": true
+  },
+  "reviewer_ab_labels_exposed_to_c": false,
+  "hidden_key_exposed_to_c": false
+}
