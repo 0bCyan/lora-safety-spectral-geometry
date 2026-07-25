@@ -4,13 +4,13 @@
 
 Step 3 is open.
 
-Current phase: **Step3C-T5H H2 Safety A/B frozen; Quality/Utility A/B pending**.
+Current phase: **Step3C-T5H H3Q Quality/Utility reviewers qualified; A/B launch pending**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
 The first Step3C Stage 0 stopped at its repeated response-only mechanical-label reliability gate and established that C2 cannot reach its 36-triplet requirement. Step3C-R then stopped after two prompt-aware pair-preference reliability failures (`0.825` and `0.800` raw agreement against a frozen `0.85` gate). C2 and C-R0 are closed.
 
-Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. T2R then completed one state-matched eta recalibration and restored smoke qualification. C0-R, C3a, and C3b each completed a matched 64-step seed1 run, and T4 froze 1,200 generations plus unchanged safety, quality, and utility blind packets. T5R Track A stopped at `T5R1_reviewer_access_stop` with zero accepted labels because no approved independent safety-review environment was available. Track B completed all 12 frozen representation probes and exactly reproduced grouped-gradient labels 0/16/32, but the bounded checkpoint48 replay did not reproduce label64 and selected `M1_reconstruction_integrity_failure`. P6A reconciled all 21 legacy hashes without changing P6 or M1. H1/H1Q then recorded the waiting state and prospectively froze two isolated model sessions. Both sessions subsequently returned complete 630-row Safety files with valid provenance, and H2 selected `T5H2_safety_ab_frozen_authorize_quality_utility`. A/B labels have not been compared, reliability and behavior endpoints remain unavailable, heldout remains sealed, and no new training is authorized.
+Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. T2R then completed one state-matched eta recalibration and restored smoke qualification. C0-R, C3a, and C3b each completed a matched 64-step seed1 run, and T4 froze 1,200 generations plus unchanged safety, quality, and utility blind packets. T5R Track A stopped at `T5R1_reviewer_access_stop` with zero accepted labels because no approved independent safety-review environment was available. Track B completed all 12 frozen representation probes and exactly reproduced grouped-gradient labels 0/16/32, but the bounded checkpoint48 replay did not reproduce label64 and selected `M1_reconstruction_integrity_failure`. P6A reconciled all 21 legacy hashes without changing P6 or M1. H1/H1Q then recorded the waiting state and prospectively froze two isolated model sessions. Both sessions returned complete 630-row Safety files with valid provenance, and H2 selected `T5H2_safety_ab_frozen_authorize_quality_utility`. H3Q has now frozen four fresh no-context sessions for Quality A/B and Utility A/B with zero pre-launch access. A/B labels have not been compared, reliability and behavior endpoints remain unavailable, heldout remains sealed, and no new training is authorized.
 
 ## 1. Research Question
 
@@ -176,7 +176,7 @@ Stop Step 3 or redirect it if any of the following occurs:
 Authorized now:
 
 - preserve the completed `P6A1_eol_reconciled_content_unchanged` package without modifying P6 or M1;
-- launch separate fresh Quality A/B and Utility A/B sessions under the frozen handoffs, with exactly 330 rows per reviewer/domain;
+- after the H3Q package is pushed, give each frozen Quality/Utility reviewer exactly one complete 330-row attempt in its assigned domain;
 - after all Quality/Utility A/B files freeze, construct disagreement-only C packets and run reliability before any hidden-key join;
 - compute reliability before hidden arm-key join;
 - execute T6 only after route `T5R4_complete_labels_authorize_T6`.
@@ -194,4 +194,4 @@ Not authorized now:
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The stopped Stage0 and C-R0 routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2 packages, T5/T5R reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. H2 is a review-completion milestone, not a method result: no A/B agreement, behavior comparison, or candidate selection has yet been computed. The active T5H/T5R plans now authorize fresh Quality/Utility A/B review only. A later valid T6 winner is still required before any C4/Q*/C5 seed1 factorial plan.
+The stopped Stage0 and C-R0 routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2/H3Q packages, T5/T5R reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. H2 and H3Q are review-completion and reviewer-qualification milestones, not method results: no A/B agreement, behavior comparison, or candidate selection has yet been computed. The active T5H/T5R plans now authorize the four frozen Quality/Utility A/B attempts only. A later valid T6 winner is still required before any C4/Q*/C5 seed1 factorial plan.

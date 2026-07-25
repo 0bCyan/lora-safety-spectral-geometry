@@ -1,0 +1,149 @@
+{
+  "name": "step3ct_t5h_quality_utility_model_reviewer_launch_v1",
+  "source_addendum": "experiments/step3_response_quality_persistence/Step3C_T5H_quality_utility_model_reviewer_launch_addendum.md",
+  "entry_git_head": "318ceb63605fe638cde85f0bf5a7bae678b11bd2",
+  "parent_h2_route": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h2/step3ct_t5h_h2_route_decision.json",
+    "sha256": "f2bb6ed8ea1465fa9abb663bfcd805f1b6a25c99df5282f7a5b7ac4568a4877e",
+    "route": "T5H2_safety_ab_frozen_authorize_quality_utility"
+  },
+  "qualification_recorded_at": "2026-07-25T08:53:03.6296041+08:00",
+  "reviewer_mode": "four_isolated_policy_compliant_model_sessions",
+  "reviewers": {
+    "quality_a": {
+      "reviewer_role": "quality_a",
+      "anonymized_reviewer_id": "t5h_quality_model_a_20260725",
+      "session_id": "019f96c2-4b63-7033-8b56-59404374dd3d",
+      "reviewer_type": "policy_compliant_model_session",
+      "model_provider": "OpenAI",
+      "runtime_requested_model_id": "gpt-5.5",
+      "self_reported_model_id": "gpt-5.5",
+      "model_id_version_for_final_provenance": "gpt-5.5",
+      "fork_context": false,
+      "qualification_confirmations": {
+        "prior_study_involvement": false,
+        "repository_access_so_far": false,
+        "study_rows_accessed": 0,
+        "other_reviewer_contact": false,
+        "agrees_independent_complete_330_review": true,
+        "agrees_no_partial_output": true,
+        "agrees_no_external_retrieval": true
+      }
+    },
+    "quality_b": {
+      "reviewer_role": "quality_b",
+      "anonymized_reviewer_id": "t5h_quality_model_b_20260725",
+      "session_id": "019f96c2-5fbe-7580-8954-eb7a484ee5de",
+      "reviewer_type": "policy_compliant_model_session",
+      "model_provider": "OpenAI",
+      "runtime_requested_model_id": "gpt-5.6-sol",
+      "self_reported_model_id": "gpt-5.6-sol",
+      "model_id_version_for_final_provenance": "gpt-5.6-sol",
+      "fork_context": false,
+      "qualification_confirmations": {
+        "prior_study_involvement": false,
+        "repository_access_so_far": false,
+        "study_rows_accessed": 0,
+        "other_reviewer_contact": false,
+        "agrees_independent_complete_330_review": true,
+        "agrees_no_partial_output": true,
+        "agrees_no_external_retrieval": true
+      }
+    },
+    "utility_a": {
+      "reviewer_role": "utility_a",
+      "anonymized_reviewer_id": "t5h_utility_model_a_20260725",
+      "session_id": "019f96c2-7421-7640-9514-bb304cb18978",
+      "reviewer_type": "policy_compliant_model_session",
+      "model_provider": "OpenAI",
+      "runtime_requested_model_id": "gpt-5.5",
+      "self_reported_model_id": "gpt-5",
+      "model_id_version_for_final_provenance": "gpt-5.5 runtime selection; self-reported family gpt-5",
+      "fork_context": false,
+      "qualification_confirmations": {
+        "prior_study_involvement": false,
+        "repository_access_so_far": false,
+        "study_rows_accessed": 0,
+        "other_reviewer_contact": false,
+        "agrees_independent_complete_330_review": true,
+        "agrees_no_partial_output": true,
+        "agrees_no_external_retrieval": true
+      }
+    },
+    "utility_b": {
+      "reviewer_role": "utility_b",
+      "anonymized_reviewer_id": "t5h_utility_model_b_20260725",
+      "session_id": "019f96c2-8cd8-7fd2-a501-eb4b9c21b510",
+      "reviewer_type": "policy_compliant_model_session",
+      "model_provider": "OpenAI",
+      "runtime_requested_model_id": "gpt-5.6-sol",
+      "self_reported_model_id": "gpt-5.6-sol",
+      "model_id_version_for_final_provenance": "gpt-5.6-sol",
+      "fork_context": false,
+      "qualification_confirmations": {
+        "prior_study_involvement": false,
+        "repository_access_so_far": false,
+        "study_rows_accessed": 0,
+        "other_reviewer_contact": false,
+        "agrees_independent_complete_330_review": true,
+        "agrees_no_partial_output": true,
+        "agrees_no_external_retrieval": true
+      }
+    }
+  },
+  "material_freeze": {
+    "quality": {
+      "handoff_path": "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_quality_reviewer_instructions.md",
+      "handoff_sha256": "27028e13439d4e193476f4585ef6a68d20a95585030d77b02db619853eeebcd2",
+      "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/quality/step3ct_t4_quality_packet.jsonl",
+      "packet_sha256": "c6172853c596ace5d06410254a5d4b63532c7751a9ebfa12c6817e5d816aaa6a",
+      "packet_rows": 330,
+      "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3cm_decomposed_quality_rubric_v1.md",
+      "rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+      "templates": {
+        "a": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/quality/step3ct_t4_quality_reviewer_a_template.jsonl",
+        "b": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/quality/step3ct_t4_quality_reviewer_b_template.jsonl"
+      },
+      "template_sha256": "c56739e01900aa0424eb5bb9c37e97476bd15b908352910486753ee3418758ef"
+    },
+    "utility": {
+      "handoff_path": "experiments/step3_response_quality_persistence/review_handoffs/step3ct_t5h_utility_reviewer_instructions.md",
+      "handoff_sha256": "9aa86120356384a4078e414ec24d6551c8470e508977668be3ad45be22cd7f30",
+      "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/utility/step3ct_t4_utility_packet.jsonl",
+      "packet_sha256": "9050f85e09780a67fb8a9e8415ab589fbd07ebe86918338c1889ffefcba85f56",
+      "packet_rows": 330,
+      "rubric_path": "experiments/step2_mechanism_dynamics/review_rubrics/step2j_b1_utility_quality_rubric.md",
+      "rubric_sha256": "dd84542c1e539941a2063f5c2813b9929067a2c03e725b941f2d5973a9239fa1",
+      "templates": {
+        "a": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/utility/step3ct_t4_utility_reviewer_a_template.jsonl",
+        "b": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/utility/step3ct_t4_utility_reviewer_b_template.jsonl"
+      },
+      "template_sha256": "7a4aaaa2269ef1eb6fda3899f586df462425f7bdeb900748b49bb95f30d48d87"
+    }
+  },
+  "outputs": {
+    "quality_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_a_labels.jsonl",
+    "quality_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_a_provenance.json",
+    "quality_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_b_labels.jsonl",
+    "quality_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_b_provenance.json",
+    "utility_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_a_labels.jsonl",
+    "utility_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_a_provenance.json",
+    "utility_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_b_labels.jsonl",
+    "utility_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_b_provenance.json"
+  },
+  "authorization": {
+    "one_complete_attempt_per_reviewer": true,
+    "partial_output_accepted": false,
+    "safety_labels_visible_to_reviewers": false,
+    "cross_domain_access": false,
+    "reviewer_c": false,
+    "ab_comparison": false,
+    "reliability": false,
+    "hidden_key_join": false,
+    "t6": false,
+    "new_training_or_generation": false,
+    "heldout": false
+  },
+  "qualification_route": "H3Q1_four_model_sessions_qualified_for_quality_utility_attempts",
+  "failure_route": "T5R2_review_completion_or_schema_stop"
+}

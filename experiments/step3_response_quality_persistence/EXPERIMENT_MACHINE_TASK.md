@@ -7,6 +7,7 @@ Pull `exp/step3-response-quality-persistence` and follow:
 ```text
 experiments/step3_response_quality_persistence/Step3C_T5H_external_review_handoff_and_P6A_provenance_repair_plan.md
 experiments/step3_response_quality_persistence/Step3C_T5H_model_reviewer_launch_addendum.md
+experiments/step3_response_quality_persistence/Step3C_T5H_quality_utility_model_reviewer_launch_addendum.md
 experiments/step3_response_quality_persistence/configs/step3ct_t5h_external_review_registry.json
 ```
 
@@ -32,10 +33,12 @@ H2 is not a behavior result. Safety A/B labels remain un-compared, hidden keys r
 
 ## Current Task: Quality and Utility A/B
 
-Launch four fresh isolated sessions that are distinct from both Safety reviewers and from one another:
+H3Q has frozen four fresh isolated sessions that are distinct from both Safety reviewers and from one another:
 
 - Quality Reviewer A and Quality Reviewer B;
 - Utility Reviewer A and Utility Reviewer B.
+
+After the H3Q commit is pushed, give each frozen session exactly one complete attempt in its assigned domain.
 
 Each reviewer receives only its domain handoff, unchanged visible packet, role-specific blank template, and frozen rubric. Require exactly 330 rows and complete provenance per reviewer/domain.
 

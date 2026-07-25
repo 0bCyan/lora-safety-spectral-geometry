@@ -11,7 +11,7 @@
 1. Step1 已确认谱几何、输出子空间和激活信号具有诊断价值，但简单后验干预不能建立可靠因果控制。
 2. Step2 已确认序列级安全监督及其后期加权贡献决定安全持久性；固定20%自然安全回放是强因果控制，但不是完整方法。
 3. Step3 已将回答质量分解为细节保留、安全可操作性和自然度，并完成prompt-disjoint量表验证。
-4. Step3C-T已完成T2R、三臂64步、T4盲包与P6A规范哈希对账；H2已冻结两名无上下文模型reviewer各630行的完整Safety A/B标签与provenance，但尚未比较标签、计算reliability或产生行为结论。
+4. Step3C-T已完成T2R、三臂64步、T4盲包与P6A规范哈希对账；H2已冻结Safety A/B，H3Q已冻结四名全新Quality/Utility模型reviewer的零访问资格，但尚未比较标签、计算reliability或产生行为结论。
 5. 只有C3质量候选通过后，才另行设计C4动态梯度预算与C5联合方法的seed1析因实验。
 
 SpectraSafe双谱正则保留为历史动机和忠实负基线；没有新的增量行为证据时不重新进入主方法路线。
@@ -357,8 +357,8 @@ experiment_id, commit, machine, model, method, family, dose, seed, status, notes
 当前优先级从高到低：
 
 1. 保持已通过的`P6A1_eol_reconciled_content_unchanged`对账包不变，不覆盖原P6或修改M1路线。
-2. 提交并推送H2 Safety A/B冻结包；提交前只做schema、ID、hash和provenance验证，不比较A/B标签或计算agreement。
-3. H2推送后使用与Safety不同的全新会话分别执行Quality A/B和Utility A/B，各reviewer/domain严格330行；禁止读取Safety标签、另一reviewer输出或隐藏身份。
+2. 提交并推送H3Q Quality/Utility四reviewer资格冻结；在远端边界确认前保持四会话零仓库访问、零样本访问和零标签。
+3. H3Q推送后四名reviewer各仅允许一次完整330行尝试；禁止读取Safety标签、另一reviewer或跨domain输出、隐藏身份与仓库结论，任一路不完整则整路作废并选择T5R2。
 4. 全部A/B完整冻结后构造不含A/B结论的分歧C包，并在解盲前检查reliability。
 5. 仅在T5R4后解盲并用paired bootstrap、exact McNemar与Holm校正执行T6，确定R0/R1或Q*。
 6. 若无C3候选通过，关闭当前C3 recipe，不扫描eta、temperature、queue或targets；若产生Q*，另写C0/C4/Q*/C5 seed1析因计划。
