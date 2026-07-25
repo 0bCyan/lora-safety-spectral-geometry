@@ -40,6 +40,7 @@ SOURCE_B = REVIEWS / "step3n_r1_source_reviewer_b.jsonl"
 SOURCE_C = REVIEWS / "step3n_r1_source_reviewer_c.jsonl"
 SOURCE_FINAL = REVIEWS / "step3n_r1_source_final_labels.jsonl"
 SOURCE_AB_FREEZE = REVIEWS / "step3n_r1_source_ab_freeze_manifest.json"
+SOURCE_C_FREEZE = REVIEWS / "step3n_r1_source_reviewer_c_freeze_manifest.json"
 
 PROTOCOL_MANIFEST = REPORTS / "step3n_r1_n0_protocol_manifest.json"
 PROTOCOL_REPORT = REPORTS / "Step3N_R1_N0_source_protocol_freeze_report.md"
@@ -676,6 +677,41 @@ def prepare_source_adjudication() -> dict[str, Any]:
     return result
 
 
+def freeze_source_c() -> dict[str, Any]:
+    packet_ids = {
+        row["opaque_review_id"] for row in read_jsonl(SOURCE_C_PACKET)
+    }
+    reviewer_c = validate_review(SOURCE_C, packet_ids)
+    provenance = REVIEWS / "step3n_r1_source_reviewer_c_provenance.json"
+    if not provenance.exists():
+        raise FileNotFoundError(provenance)
+    c_manifest = read_json(SOURCE_C_MANIFEST)
+    ab_freeze = read_json(SOURCE_AB_FREEZE)
+    checks = {
+        "c_packet": sha256(SOURCE_C_PACKET) == c_manifest["packet_sha256"],
+        "reviewer_a": sha256(SOURCE_A) == ab_freeze["reviewer_a_sha256"],
+        "reviewer_b": sha256(SOURCE_B) == ab_freeze["reviewer_b_sha256"],
+    }
+    if not all(checks.values()):
+        raise ValueError(f"source Reviewer C freeze inputs changed: {checks}")
+    result = {
+        "name": "step3n_r1_source_reviewer_c_freeze_v1",
+        "rows": len(reviewer_c),
+        "c_packet_sha256": sha256(SOURCE_C_PACKET),
+        "reviewer_c_sha256": sha256(SOURCE_C),
+        "reviewer_c_provenance_sha256": sha256(provenance),
+        "input_hash_checks": checks,
+        "reviewer_ab_labels_exposed_to_c": False,
+        "hidden_key_exposed_to_c": False,
+        "heldout_opened": False,
+        "optimizer_steps": 0,
+        "training_authorized": False,
+    }
+    write_json(SOURCE_C_FREEZE, result)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return result
+
+
 def duplicate_consistency(
     review: dict[str, dict[str, Any]], key_rows: list[dict[str, str]]
 ) -> dict[str, Any]:
@@ -997,6 +1033,7 @@ def main() -> None:
             "verify-protocol",
             "freeze-source-ab",
             "prepare-source-adjudication",
+            "freeze-source-c",
             "finalize-source-review",
         ],
     )
@@ -1013,6 +1050,8 @@ def main() -> None:
         freeze_source_ab()
     elif args.command == "prepare-source-adjudication":
         prepare_source_adjudication()
+    elif args.command == "freeze-source-c":
+        freeze_source_c()
     elif args.command == "finalize-source-review":
         finalize_source_review()
 

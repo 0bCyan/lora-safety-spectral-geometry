@@ -1,0 +1,17 @@
+{
+  "name": "step3n_r1_source_reviewer_c_freeze_v1",
+  "rows": 60,
+  "c_packet_sha256": "ce710ec8ac8df00364b1585a38ce68ed741fd596be9c484e66d886ca80e48668",
+  "reviewer_c_sha256": "42349522aabdea26c3ea7ea56677a7ebfe5f34d4aa24eb5f0d40777d1092cfdf",
+  "reviewer_c_provenance_sha256": "77f5f80ebdf2d209a7b59024b1e82e5e040977fcf14abb6c5e170c3786a1abb4",
+  "input_hash_checks": {
+    "c_packet": true,
+    "reviewer_a": true,
+    "reviewer_b": true
+  },
+  "reviewer_ab_labels_exposed_to_c": false,
+  "hidden_key_exposed_to_c": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

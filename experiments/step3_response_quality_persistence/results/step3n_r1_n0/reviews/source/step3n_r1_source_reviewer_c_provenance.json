@@ -1,0 +1,11 @@
+{
+  "reviewer_role": "C",
+  "context_isolation": true,
+  "packet_path": "D:/Documents/\u5b9e\u9a8c\u5ba4\u91cd\u6784/experiments/step3_response_quality_persistence/results/step3n_r1_n0/packets/source/step3n_r1_source_reviewer_c_packet.jsonl",
+  "rubric_path": "D:/Documents/\u5b9e\u9a8c\u5ba4\u91cd\u6784/experiments/step3_response_quality_persistence/review_rubrics/step3n_r1_tuple_qualification_rubric.md",
+  "packet_rows": 60,
+  "reviewer_ab_labels_accessed": false,
+  "hidden_artifacts_accessed": false,
+  "labels_path": "D:/Documents/\u5b9e\u9a8c\u5ba4\u91cd\u6784/experiments/step3_response_quality_persistence/results/step3n_r1_n0/reviews/source/step3n_r1_source_reviewer_c.jsonl",
+  "completed_at": "2026-07-25T12:53:21.8482896+08:00"
+}
