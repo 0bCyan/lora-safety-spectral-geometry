@@ -20,53 +20,37 @@ No GPU experiment, new training, generation, label64 retry, or method revision i
 Do not rerun or overwrite P6A, H1, H1Q, or H2. Verify the latest completed boundary with:
 
 ```text
-python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_safety_freeze.py verify
+python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_quality_utility_freeze.py verify
 ```
 
 Required route is:
 
 ```text
-T5H2_safety_ab_frozen_authorize_quality_utility
+H3A1_all_ab_frozen_authorize_disagreement_c
 ```
 
-H2 is not a behavior result. Safety A/B labels remain un-compared, hidden keys remain sealed, and reliability has not been computed.
+H3 is not a behavior result. All six A/B files are frozen, hidden keys remain sealed, and reliability has not been computed.
 
-## Current Task: Quality and Utility A/B
+## Current Task: Disagreement-Only Reviewer C
 
-H3Q has frozen four fresh isolated sessions that are distinct from both Safety reviewers and from one another:
-
-- Quality Reviewer A and Quality Reviewer B;
-- Utility Reviewer A and Utility Reviewer B.
-
-After the H3Q commit is pushed, give each frozen session exactly one complete attempt in its assigned domain.
-
-Each reviewer receives only its domain handoff, unchanged visible packet, role-specific blank template, and frozen rubric. Require exactly 330 rows and complete provenance per reviewer/domain.
-
-- distinct anonymized reviewer and session IDs;
-- no repository, arm, checkpoint, training, mechanism, hidden-key, duplicate-link, or prior-label access;
-- no communication between reviewers;
-- agreement to complete all 330 unchanged rows;
-- packet, template, and rubric hashes;
-- completed provenance contract.
-
-After all four complete outputs are present, validate and freeze with:
+Only after the H3 commit is pushed, run:
 
 ```text
-python experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_review.py freeze-quality-utility-ab
+python experiments/step3_response_quality_persistence/scripts/run_step3ct_t5r_review.py prepare-c
 ```
 
-Reject partial, malformed, mixed-session, executor-edited, or unprovenanced files in full. Do not compare decisions before the all-A/B freeze is written and pushed.
+This command may compare frozen decision fields only to identify disagreements. Each C packet must omit A/B labels, reasons, reviewer identities, vote counts, arms, checkpoints, hidden keys, and duplicate links. Freeze C packet and template hashes and exact row counts before launching reviewers.
+
+Launch one fresh no-context Reviewer C session per domain. C sessions must be distinct from all six A/B sessions and may access only their domain's disagreement packet, blank C template, and frozen rubric. Require complete coverage of every C row and valid provenance.
 
 ## Later Packages
 
-Only after Safety A/B freeze:
+Only after complete C reviews:
 
-1. run separate Quality A/B and Utility A/B sessions using their neutral handoffs;
-2. freeze all A/B files;
-3. construct disagreement-only C packets;
-4. obtain fresh complete C reviews;
-5. compute reliability before hidden arm-key join;
-6. run T6 only after `T5R4_complete_labels_authorize_T6`.
+1. compute reliability before hidden arm-key join;
+2. stop at `T5R3_review_reliability_stop` if any frozen gate fails;
+3. authorize T6 only through `T5R4_complete_labels_authorize_T6`;
+4. run T6 without revising thresholds or candidate rules.
 
 Use the existing T5R scripts and thresholds without revision.
 

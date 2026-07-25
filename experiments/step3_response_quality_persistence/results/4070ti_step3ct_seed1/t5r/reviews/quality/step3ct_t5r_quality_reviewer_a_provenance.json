@@ -1,0 +1,33 @@
+{
+    "domain":  "quality",
+    "reviewer_role":  "quality_a",
+    "reviewer_type":  "policy_compliant_model_session",
+    "model_provider":  "OpenAI",
+    "model_id_version":  "gpt-5.5",
+    "anonymized_reviewer_id":  "t5h_quality_model_a_20260725",
+    "session_id":  "019f96c2-4b63-7033-8b56-59404374dd3d",
+    "completion_status":  "complete",
+    "started_at":  "2026-07-25T09:02:33.2266919+08:00",
+    "completed_at":  "2026-07-25T09:15:44.8921954+08:00",
+    "packet_path":  "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/quality/step3ct_t4_quality_packet.jsonl",
+    "packet_sha256":  "c6172853c596ace5d06410254a5d4b63532c7751a9ebfa12c6817e5d816aaa6a",
+    "template_path":  "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/quality/step3ct_t4_quality_reviewer_a_template.jsonl",
+    "template_sha256":  "c56739e01900aa0424eb5bb9c37e97476bd15b908352910486753ee3418758ef",
+    "rubric_path":  "experiments/step3_response_quality_persistence/review_rubrics/step3cm_decomposed_quality_rubric_v1.md",
+    "rubric_sha256":  "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+    "output_path":  "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_a_labels.jsonl",
+    "output_sha256":  "7c0e390a943ebc7ad2a7548b3a618c12e9a567779cd32ac20abd90b4ce41ec0e",
+    "output_rows":  330,
+    "confirmations":  {
+                          "fresh_context":  true,
+                          "visible_packet_and_rubric_only":  true,
+                          "no_repository_history":  true,
+                          "no_arm_or_checkpoint_identity":  true,
+                          "no_training_or_mechanism_results":  true,
+                          "no_prior_or_other_reviewer_labels":  true,
+                          "no_hidden_key_or_duplicate_links":  true,
+                          "no_external_retrieval":  true,
+                          "no_cross_reviewer_communication":  true,
+                          "unchanged_complete_packet":  true
+                      }
+}

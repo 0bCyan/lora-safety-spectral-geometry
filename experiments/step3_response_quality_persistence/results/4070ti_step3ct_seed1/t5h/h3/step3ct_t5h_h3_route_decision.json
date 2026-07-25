@@ -1,0 +1,40 @@
+{
+  "name": "step3ct_t5h_h3_route_decision_v1",
+  "source_git_head": "1f3ff16eae331d5e5c9bdcf31f450cc1cf1a1d33",
+  "route": "H3A1_all_ab_frozen_authorize_disagreement_c",
+  "failure_route": "T5R2_review_completion_or_schema_stop",
+  "gates": {
+    "h3q_launch_authorization_verified": true,
+    "safety_a_b_complete_630_each": true,
+    "quality_a_b_complete_330_each": true,
+    "utility_a_b_complete_330_each": true,
+    "six_reviewer_and_session_ids_distinct": true,
+    "schemas_ids_hashes_and_provenance_valid": true,
+    "labels_compared_before_freeze": false,
+    "outcome_key_joined": false,
+    "main_executor_assigned_or_edited_labels": false,
+    "hidden_key_opened": false,
+    "heldout_opened": false
+  },
+  "counts": {
+    "accepted_label_files": 6,
+    "safety_rows_per_reviewer": 630,
+    "quality_rows_per_reviewer": 330,
+    "utility_rows_per_reviewer": 330,
+    "accepted_rows_total": 2580,
+    "rejected_files": 0,
+    "partial_files": 0
+  },
+  "source_freeze": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/freezes/step3ct_t5r_all_ab_freeze.json",
+    "sha256": "f77f2390a7b6aa50703c269b4a1ea236571f13c5275d17a3bac65583d7e5c9af",
+    "bytes": 6246
+  },
+  "behavior_result_available": false,
+  "review_reliability_available": false,
+  "disagreement_c_authorized": true,
+  "hidden_key_join_authorized": false,
+  "t6_authorized": false,
+  "new_training_or_generation_authorized": false,
+  "next_action": "prepare_blinded_disagreement_only_c_packets"
+}

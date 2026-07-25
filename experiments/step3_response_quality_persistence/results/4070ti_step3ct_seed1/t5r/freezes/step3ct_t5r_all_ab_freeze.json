@@ -1,0 +1,105 @@
+{
+  "name": "step3ct_t5r_all_ab_freeze_v1",
+  "execution_git_head": "1f3ff16eae331d5e5c9bdcf31f450cc1cf1a1d33",
+  "registry_sha256": "e9c1649b7af45a91288ac96c6b9362e87d7946fca76d9be4201e25d599bd3e08",
+  "source_freeze": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/freezes/step3ct_t5r_safety_ab_freeze.json",
+    "sha256": "c98c7f2e5bbbecc642ad4ac4e396c5bcad17765d0c7c22b18b89927f4cbac3fd"
+  },
+  "domains": {
+    "safety": {
+      "reviewers": {
+        "a": {
+          "reviewer_role": "safety_a",
+          "anonymized_reviewer_id": "t5h_safety_model_a_20260725",
+          "reviewer_type": "policy_compliant_model_session",
+          "model_provider": "OpenAI",
+          "model_id_version": "gpt-5.5 runtime selection; self-reported family gpt-5",
+          "session_id": "019f9510-bd6d-7961-9503-1e36332ddd9c",
+          "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_a_labels.jsonl",
+          "labels_sha256": "cddda3269f2d10eadcabafe544015acb761a7a3390b53d2ae3de99faf23ea9d1",
+          "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_a_provenance.json",
+          "provenance_sha256": "2d78a56c6a5426ed310d50694f1e2c70ae3601b3d77abbf34ad12def4a34491f",
+          "rows": 630
+        },
+        "b": {
+          "reviewer_role": "safety_b",
+          "anonymized_reviewer_id": "t5h_safety_model_b_20260725",
+          "reviewer_type": "policy_compliant_model_session",
+          "model_provider": "OpenAI",
+          "model_id_version": "gpt-5.6-sol",
+          "session_id": "019f9510-d1af-7b20-91f0-c66a656b9721",
+          "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_b_labels.jsonl",
+          "labels_sha256": "ed0f36e1d15f8c3e809b226f88ad70c4de34cc345781195fd88ddf12fc9a3636",
+          "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_b_provenance.json",
+          "provenance_sha256": "0e4a9332ad87cbaeba719a3edc76f3f6547b5ff09d207d9e9945df0e0c9a619d",
+          "rows": 630
+        }
+      }
+    },
+    "quality": {
+      "reviewers": {
+        "a": {
+          "reviewer_role": "quality_a",
+          "anonymized_reviewer_id": "t5h_quality_model_a_20260725",
+          "reviewer_type": "policy_compliant_model_session",
+          "model_provider": "OpenAI",
+          "model_id_version": "gpt-5.5",
+          "session_id": "019f96c2-4b63-7033-8b56-59404374dd3d",
+          "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_a_labels.jsonl",
+          "labels_sha256": "7c0e390a943ebc7ad2a7548b3a618c12e9a567779cd32ac20abd90b4ce41ec0e",
+          "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_a_provenance.json",
+          "provenance_sha256": "c5022929025222a2d25fb1972b29f28ede6078f61796dfe6feeaf95996996c8b",
+          "rows": 330
+        },
+        "b": {
+          "reviewer_role": "quality_b",
+          "anonymized_reviewer_id": "t5h_quality_model_b_20260725",
+          "reviewer_type": "policy_compliant_model_session",
+          "model_provider": "OpenAI",
+          "model_id_version": "gpt-5.6-sol",
+          "session_id": "019f96c2-5fbe-7580-8954-eb7a484ee5de",
+          "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_b_labels.jsonl",
+          "labels_sha256": "7b79ebddd306ceeaad09cb1e25bb9d4e107c6f022943ff54995952d7a0cae938",
+          "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_b_provenance.json",
+          "provenance_sha256": "399f11df5a066d64e866cbcbfc7c2b26a5726db3ab0958edf2315e6738dc20f9",
+          "rows": 330
+        }
+      }
+    },
+    "utility": {
+      "reviewers": {
+        "a": {
+          "reviewer_role": "utility_a",
+          "anonymized_reviewer_id": "t5h_utility_model_a_20260725",
+          "reviewer_type": "policy_compliant_model_session",
+          "model_provider": "OpenAI",
+          "model_id_version": "gpt-5.5 runtime selection; self-reported family gpt-5",
+          "session_id": "019f96c2-7421-7640-9514-bb304cb18978",
+          "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_a_labels.jsonl",
+          "labels_sha256": "b338f4398b469dc8f056d7c2ff161ccdb7906551f4660b2f47fd7a03731265aa",
+          "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_a_provenance.json",
+          "provenance_sha256": "a665ce3247a0478826de9edb58d91f1a4029ccc7b4ea35bc75877dd44e487543",
+          "rows": 330
+        },
+        "b": {
+          "reviewer_role": "utility_b",
+          "anonymized_reviewer_id": "t5h_utility_model_b_20260725",
+          "reviewer_type": "policy_compliant_model_session",
+          "model_provider": "OpenAI",
+          "model_id_version": "gpt-5.6-sol",
+          "session_id": "019f96c2-8cd8-7fd2-a501-eb4b9c21b510",
+          "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_b_labels.jsonl",
+          "labels_sha256": "196e30f7bb4aa468ad1df5743781f20a7c62670ca8886c5f75f8bcfd2f805e55",
+          "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_b_provenance.json",
+          "provenance_sha256": "3a9148ae6e6b8a85039cd1c8ca37bc515cd451b1a423f733398f243948145031",
+          "rows": 330
+        }
+      }
+    }
+  },
+  "labels_compared_before_freeze": false,
+  "outcome_key_joined": false,
+  "main_executor_assigned_or_edited_labels": false,
+  "heldout_opened": false
+}

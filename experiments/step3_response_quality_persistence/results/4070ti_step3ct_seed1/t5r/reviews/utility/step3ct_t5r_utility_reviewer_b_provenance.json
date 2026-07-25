@@ -1,0 +1,33 @@
+{
+  "domain": "utility",
+  "reviewer_role": "utility_b",
+  "reviewer_type": "policy_compliant_model_session",
+  "model_provider": "OpenAI",
+  "model_id_version": "gpt-5.6-sol",
+  "anonymized_reviewer_id": "t5h_utility_model_b_20260725",
+  "session_id": "019f96c2-8cd8-7fd2-a501-eb4b9c21b510",
+  "completion_status": "complete",
+  "started_at": "2026-07-25T09:02:17.2836042+08:00",
+  "completed_at": "2026-07-25T09:17:30.0771374+08:00",
+  "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/utility/step3ct_t4_utility_packet.jsonl",
+  "packet_sha256": "9050f85e09780a67fb8a9e8415ab589fbd07ebe86918338c1889ffefcba85f56",
+  "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t4/packets/utility/step3ct_t4_utility_reviewer_b_template.jsonl",
+  "template_sha256": "7a4aaaa2269ef1eb6fda3899f586df462425f7bdeb900748b49bb95f30d48d87",
+  "rubric_path": "experiments/step2_mechanism_dynamics/review_rubrics/step2j_b1_utility_quality_rubric.md",
+  "rubric_sha256": "dd84542c1e539941a2063f5c2813b9929067a2c03e725b941f2d5973a9239fa1",
+  "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_b_labels.jsonl",
+  "output_sha256": "196e30f7bb4aa468ad1df5743781f20a7c62670ca8886c5f75f8bcfd2f805e55",
+  "output_rows": 330,
+  "confirmations": {
+    "fresh_context": true,
+    "visible_packet_and_rubric_only": true,
+    "no_repository_history": true,
+    "no_arm_or_checkpoint_identity": true,
+    "no_training_or_mechanism_results": true,
+    "no_prior_or_other_reviewer_labels": true,
+    "no_hidden_key_or_duplicate_links": true,
+    "no_external_retrieval": true,
+    "no_cross_reviewer_communication": true,
+    "unchanged_complete_packet": true
+  }
+}

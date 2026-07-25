@@ -1,0 +1,56 @@
+{
+  "name": "step3ct_t5h_h3_package_manifest_v1",
+  "route": "H3A1_all_ab_frozen_authorize_disagreement_c",
+  "canonical_lf": true,
+  "artifact_count": 12,
+  "artifacts": {
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_a_labels.jsonl": {
+      "sha256": "7c0e390a943ebc7ad2a7548b3a618c12e9a567779cd32ac20abd90b4ce41ec0e",
+      "bytes": 73090
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_a_provenance.json": {
+      "sha256": "c5022929025222a2d25fb1972b29f28ede6078f61796dfe6feeaf95996996c8b",
+      "bytes": 2138
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_b_labels.jsonl": {
+      "sha256": "7b79ebddd306ceeaad09cb1e25bb9d4e107c6f022943ff54995952d7a0cae938",
+      "bytes": 85389
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_b_provenance.json": {
+      "sha256": "399f11df5a066d64e866cbcbfc7c2b26a5726db3ab0958edf2315e6738dc20f9",
+      "bytes": 2126
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_a_labels.jsonl": {
+      "sha256": "b338f4398b469dc8f056d7c2ff161ccdb7906551f4660b2f47fd7a03731265aa",
+      "bytes": 91992
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_a_provenance.json": {
+      "sha256": "a665ce3247a0478826de9edb58d91f1a4029ccc7b4ea35bc75877dd44e487543",
+      "bytes": 2239
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_b_labels.jsonl": {
+      "sha256": "196e30f7bb4aa468ad1df5743781f20a7c62670ca8886c5f75f8bcfd2f805e55",
+      "bytes": 97404
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_b_provenance.json": {
+      "sha256": "3a9148ae6e6b8a85039cd1c8ca37bc515cd451b1a423f733398f243948145031",
+      "bytes": 1818
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/freezes/step3ct_t5r_all_ab_freeze.json": {
+      "sha256": "f77f2390a7b6aa50703c269b4a1ea236571f13c5275d17a3bac65583d7e5c9af",
+      "bytes": 6246
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h3/step3ct_t5h_h3_route_decision.json": {
+      "sha256": "d32c1f804f8db88f6176dbc6de6ef9145c943b8cae1dfe2e06c39a8c3457e70e",
+      "bytes": 1519
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h3/step3ct_t5h_h3_execution_record.json": {
+      "sha256": "591f161bdce93b87cb463128ca16ff6990d01e7d4aa66d1d541f280ade4f0fa3",
+      "bytes": 6140
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h3/Step3CT_T5H_H3_quality_utility_ab_freeze_report.md": {
+      "sha256": "0793b6cf944a2c3ec91ec129384f0f8d9a9e44529e1ddcefc1f99b798f201ed6",
+      "bytes": 719
+    }
+  }
+}
