@@ -1,0 +1,20 @@
+{
+    "reviewer_role":  "B",
+    "stage":  "transport_safety",
+    "context_isolation":  true,
+    "allowed_inputs":  [
+                           "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_packet.jsonl",
+                           "experiments/step3_response_quality_persistence/review_rubrics/step3o_transport_clean_safety_rubric.md"
+                       ],
+    "packet_sha256":  "0e767a79b903d94bd64a619e939d5d08c00aaf0787301fc112c1c3cb4b37523a",
+    "rubric_sha256":  "095d00c7d34496da4f50b19148ca00772684edd7bfff04ba51a9aa97cd6fea6c",
+    "rows":  198,
+    "agent_id":  "019f9819-047e-7b13-a803-1c52ae3d84df",
+    "requested_model":  "gpt-5.5",
+    "requested_reasoning_effort":  "high",
+    "sampling_controls":  "platform managed and not user configurable",
+    "hidden_keys_accessed":  false,
+    "other_reviewer_outputs_accessed":  false,
+    "old_step3_labels_accessed":  false,
+    "git_history_accessed":  false
+}

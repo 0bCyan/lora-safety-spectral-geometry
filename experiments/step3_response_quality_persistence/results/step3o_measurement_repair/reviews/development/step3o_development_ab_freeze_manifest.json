@@ -1,0 +1,22 @@
+{
+  "name": "step3o_development_ab_freeze_v1",
+  "stage": "development",
+  "packet_rows": 132,
+  "packet_sha256": "21bd4913c5c0afbe2c3331e70750d30bf491fd3ea68e3606db7bb8de8dbda7c5",
+  "hidden_key_sha256": "674a6fe4dea579572ac13aa334a2d8268628c4b8d530c79f19da81a8b1f134e4",
+  "rubric_sha256": "c74d8d3f3478bae9499d8520221eb0599db91cb87141e3b609a776044f9a3b38",
+  "reviewer_a_rows": 132,
+  "reviewer_b_rows": 132,
+  "reviewer_a_sha256": "8740c6d8da66b9dad7525a96672333312cacb6f770dacf71a7ee33f0d830a471",
+  "reviewer_b_sha256": "992766cb69fa687c2b9d4187ce49d0a9f235515c039a67384562089abfb5d47b",
+  "reviewer_a_provenance_sha256": "cb4d2f1112c59d9c04b265f82b40825c2d88d50793c60f5055c54a3e3eec66ee",
+  "reviewer_b_provenance_sha256": "65243010c9bdc1bfdd0768a95d173755d4bed994573704c8721e9b1bf03cefaf",
+  "reviewer_a_agent_id": "019f9818-bc12-77d3-b706-9f951d75c218",
+  "reviewer_b_agent_id": "019f9818-d197-7792-a05b-18a462c5677d",
+  "requested_model": "gpt-5.5",
+  "requested_reasoning_effort": "high",
+  "ab_compared_only_after_both_files_complete": true,
+  "heldout_content_read": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

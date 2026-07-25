@@ -1,0 +1,20 @@
+{
+    "reviewer_role":  "A",
+    "stage":  "development",
+    "context_isolation":  true,
+    "allowed_inputs":  [
+                           "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/development/step3o_development_packet.jsonl",
+                           "experiments/step3_response_quality_persistence/review_rubrics/step3o_actionability_rubric_v2.md"
+                       ],
+    "packet_sha256":  "21bd4913c5c0afbe2c3331e70750d30bf491fd3ea68e3606db7bb8de8dbda7c5",
+    "rubric_sha256":  "c74d8d3f3478bae9499d8520221eb0599db91cb87141e3b609a776044f9a3b38",
+    "rows":  132,
+    "agent_id":  "019f9818-bc12-77d3-b706-9f951d75c218",
+    "requested_model":  "gpt-5.5",
+    "requested_reasoning_effort":  "high",
+    "sampling_controls":  "platform managed and not user configurable",
+    "hidden_keys_accessed":  false,
+    "other_reviewer_outputs_accessed":  false,
+    "old_step3_labels_accessed":  false,
+    "git_history_accessed":  false
+}
