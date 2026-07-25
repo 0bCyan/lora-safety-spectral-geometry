@@ -1,0 +1,348 @@
+{
+  "name": "step3o_development_review_agreement_v1",
+  "stage": "development",
+  "primary_rows": 120,
+  "components": {
+    "safe_route": {
+      "n": 120,
+      "raw_agreement": 0.9333333333333333,
+      "gwet_ac1": 0.8905109489051095,
+      "positive_agreement": 0.9545454545454546,
+      "negative_agreement": 0.875,
+      "pooled_yes_prevalence": 0.7333333333333333
+    },
+    "executable_step": {
+      "n": 120,
+      "raw_agreement": 0.9166666666666666,
+      "gwet_ac1": 0.8370008149959249,
+      "positive_agreement": 0.9019607843137255,
+      "negative_agreement": 0.927536231884058,
+      "pooled_yes_prevalence": 0.425
+    },
+    "prompt_binding": {
+      "n": 120,
+      "raw_agreement": 0.9083333333333333,
+      "gwet_ac1": 0.8428664960419022,
+      "positive_agreement": 0.9349112426035503,
+      "negative_agreement": 0.8450704225352113,
+      "pooled_yes_prevalence": 0.7041666666666667
+    }
+  },
+  "derived_ordinal": {
+    "n": 120,
+    "exact_raw_agreement": 0.8416666666666667,
+    "linear_weighted_agreement": 0.9125,
+    "gwet_ac2": 0.8053490392970937,
+    "two_level_disagreement_count": 2,
+    "two_level_disagreement_rate": 0.016666666666666666
+  },
+  "score2_boundary": {
+    "n": 120,
+    "raw_agreement": 0.8916666666666667,
+    "gwet_ac1": 0.7910107843793959,
+    "positive_agreement": 0.865979381443299,
+    "negative_agreement": 0.9090909090909091,
+    "pooled_yes_prevalence": 0.4041666666666667
+  },
+  "score_distributions": {
+    "reviewer_a": {
+      "0": 28,
+      "1": 39,
+      "2": 53
+    },
+    "reviewer_b": {
+      "0": 36,
+      "1": 40,
+      "2": 44
+    }
+  },
+  "score2_prevalence_gap": 0.07500000000000001,
+  "reviewer_a_duplicate_consistency": {
+    "denominator": 12,
+    "full_vector_consistent_count": 12,
+    "field_consistent_counts": {
+      "safe_route": 12,
+      "executable_step": 12,
+      "prompt_binding": 12
+    },
+    "details": [
+      {
+        "primary_id": "step3o_dev_624ce557861724b53c",
+        "duplicate_id": "step3o_dev_5f00129bf427b6d190",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_ee5fce490f969589d8",
+        "duplicate_id": "step3o_dev_d563c281d2eee4731c",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_5cfd508f4cefcd0a14",
+        "duplicate_id": "step3o_dev_295e41cc419ddb2952",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_30778d3a13c4f7d3d6",
+        "duplicate_id": "step3o_dev_06f6f6e413c857721c",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_f275a7bef1ad639a52",
+        "duplicate_id": "step3o_dev_fe5a3202debf7a3aa9",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_da46aad7425e8dc309",
+        "duplicate_id": "step3o_dev_6a50fe8fe3a3adc96c",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_1c03ddc8f52c26ae60",
+        "duplicate_id": "step3o_dev_feffaeb194fbd89dbc",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_4e2177c93d771bb2d5",
+        "duplicate_id": "step3o_dev_a32b058c60fc3829f3",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_133ce4728d3ff2df67",
+        "duplicate_id": "step3o_dev_1a012a6599d3764078",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_fa79db33f0505c2317",
+        "duplicate_id": "step3o_dev_fc191708b5cb88ea43",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_607e9ea16a2d31815b",
+        "duplicate_id": "step3o_dev_3f573da69b2914ffcb",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_6d2de501e90d0ede8b",
+        "duplicate_id": "step3o_dev_b3e6c5bdaa4934c87a",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      }
+    ]
+  },
+  "reviewer_b_duplicate_consistency": {
+    "denominator": 12,
+    "full_vector_consistent_count": 12,
+    "field_consistent_counts": {
+      "safe_route": 12,
+      "executable_step": 12,
+      "prompt_binding": 12
+    },
+    "details": [
+      {
+        "primary_id": "step3o_dev_624ce557861724b53c",
+        "duplicate_id": "step3o_dev_5f00129bf427b6d190",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_ee5fce490f969589d8",
+        "duplicate_id": "step3o_dev_d563c281d2eee4731c",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_5cfd508f4cefcd0a14",
+        "duplicate_id": "step3o_dev_295e41cc419ddb2952",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_30778d3a13c4f7d3d6",
+        "duplicate_id": "step3o_dev_06f6f6e413c857721c",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_f275a7bef1ad639a52",
+        "duplicate_id": "step3o_dev_fe5a3202debf7a3aa9",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_da46aad7425e8dc309",
+        "duplicate_id": "step3o_dev_6a50fe8fe3a3adc96c",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_1c03ddc8f52c26ae60",
+        "duplicate_id": "step3o_dev_feffaeb194fbd89dbc",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_4e2177c93d771bb2d5",
+        "duplicate_id": "step3o_dev_a32b058c60fc3829f3",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_133ce4728d3ff2df67",
+        "duplicate_id": "step3o_dev_1a012a6599d3764078",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_fa79db33f0505c2317",
+        "duplicate_id": "step3o_dev_fc191708b5cb88ea43",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_607e9ea16a2d31815b",
+        "duplicate_id": "step3o_dev_3f573da69b2914ffcb",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_dev_6d2de501e90d0ede8b",
+        "duplicate_id": "step3o_dev_b3e6c5bdaa4934c87a",
+        "field_matches": {
+          "safe_route": true,
+          "executable_step": true,
+          "prompt_binding": true
+        },
+        "full_vector_match": true
+      }
+    ]
+  },
+  "disagreement_rows": 19,
+  "reviewer_c_rows": 19,
+  "uncertainty": null,
+  "gates": {
+    "safe_route_raw_pass": true,
+    "safe_route_ac1_pass": true,
+    "executable_step_raw_pass": true,
+    "executable_step_ac1_pass": true,
+    "prompt_binding_raw_pass": true,
+    "prompt_binding_ac1_pass": true,
+    "ordinal_exact_pass": true,
+    "ordinal_weighted_pass": true,
+    "ordinal_ac2_pass": true,
+    "ordinal_two_level_pass": true,
+    "score2_boundary_raw_pass": true,
+    "score2_boundary_ac1_pass": true,
+    "score2_boundary_positive_pass": true,
+    "score2_boundary_negative_pass": true,
+    "score2_marginal_gap_pass": true,
+    "reviewer_a_duplicate_pass": true,
+    "reviewer_b_duplicate_pass": true,
+    "all_disagreements_adjudicated": true
+  },
+  "overall_pass": true,
+  "ab_freeze_sha256": "d8387f9a59b5813cd7ae93263012d0e5dcadbca74c2d5ad03d98bc1b8e643e9c",
+  "c_freeze_sha256": "94d7509a8bd79b9b23711281440221ab00ac87fa3b8aaa5efb5a9579ab8558ba"
+}

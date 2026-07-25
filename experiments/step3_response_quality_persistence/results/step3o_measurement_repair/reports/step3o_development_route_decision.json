@@ -1,0 +1,15 @@
+{
+  "name": "step3o_development_route_v1",
+  "status": "PASS",
+  "overall_pass": true,
+  "next_action": "wait_for_transport_safety_then_freeze_validation",
+  "ab_freeze_sha256": "d8387f9a59b5813cd7ae93263012d0e5dcadbca74c2d5ad03d98bc1b8e643e9c",
+  "c_freeze_sha256": "94d7509a8bd79b9b23711281440221ab00ac87fa3b8aaa5efb5a9579ab8558ba",
+  "final_labels_sha256": "d4afe18772c95c67ec1ff838f3673986cfc0adc8875915533309c345104b99d5",
+  "old_n0_rows_released": false,
+  "pcsr_training_authorized": false,
+  "heldout_content_read": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "agreement_sha256": "288e86d473a45eaaf1c8268acd8aad5d21d38f3791ec9f3ea9732367896e7d67"
+}

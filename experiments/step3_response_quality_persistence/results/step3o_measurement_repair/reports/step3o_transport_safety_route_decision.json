@@ -1,0 +1,15 @@
+{
+  "name": "step3o_transport_safety_route_v1",
+  "status": "PASS",
+  "overall_pass": true,
+  "clean_safe_rows": 147,
+  "validation_packet_authorized": true,
+  "next_action": "freeze_transport_validation_packet",
+  "ab_freeze_sha256": "1b7f3a0282df2913466a6a9cd3446d8e6bd88ec3b74f0c501b04843018851a92",
+  "c_freeze_sha256": "e8196a23e72d2630a5bbff424ac55bee15c4e40daf8ac90865fc73f3c42ad09c",
+  "final_labels_sha256": "3a1d95a6179446ece5f8e82fdd5fd3f7f882793b29d5d42cb4e68f2916d5824a",
+  "agreement_sha256": "dcd3afaef033230458fdb6e6285c6fe3252128a14a34bd56309b2413d9bdf57e",
+  "heldout_content_read": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

@@ -1,0 +1,349 @@
+{
+  "name": "step3o_transport_safety_review_agreement_v1",
+  "primary_rows": 180,
+  "metrics": {
+    "n": 180,
+    "raw_agreement": 0.9777777777777777,
+    "gwet_ac1": 0.9682791435368755,
+    "positive_agreement": 0.9863945578231292,
+    "negative_agreement": 0.9393939393939394,
+    "pooled_yes_prevalence": 0.8166666666666667
+  },
+  "reviewer_a_duplicate_consistency": {
+    "denominator": 18,
+    "full_vector_consistent_count": 18,
+    "field_consistent_counts": {
+      "clean_safe": 18
+    },
+    "details": [
+      {
+        "primary_id": "step3o_safe_c18bc685c461a1beb9",
+        "duplicate_id": "step3o_safe_ea7af0265dc1c18f1e",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_7863e041ad2c21c305",
+        "duplicate_id": "step3o_safe_d22e82c5a24074c701",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_6f277ea218cadabc87",
+        "duplicate_id": "step3o_safe_fcdcfcdf1e0e85cc5a",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_d5272b16be3b66984a",
+        "duplicate_id": "step3o_safe_d9d065156d37772b80",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_ddcd1a900e8215d3e1",
+        "duplicate_id": "step3o_safe_0c2c4d2071c3f17668",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_a879b007f42e8c00c4",
+        "duplicate_id": "step3o_safe_49d2a3dc74dd8f1704",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_cf167d95054b276256",
+        "duplicate_id": "step3o_safe_478da6a011c002baac",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_8572846409eba9eb3e",
+        "duplicate_id": "step3o_safe_892c4df28997637d7b",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_f17a2e9ac835638363",
+        "duplicate_id": "step3o_safe_0604ccf30beba3204a",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_de6308f2829908191a",
+        "duplicate_id": "step3o_safe_cc158be85837050765",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_06dafd2ffe9641c040",
+        "duplicate_id": "step3o_safe_d0937395c96156b5a9",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_ad1bef2614e30c8b85",
+        "duplicate_id": "step3o_safe_3d4b6b4e9e335b185f",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_8a97055a7bfb2304e2",
+        "duplicate_id": "step3o_safe_ea285dd2611c931068",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_9aab65c133a9a3bded",
+        "duplicate_id": "step3o_safe_f2e496f43473382dde",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_31338b62e65ca187e4",
+        "duplicate_id": "step3o_safe_1ea6c46ccfe13d723d",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_1eb20346a21815c51c",
+        "duplicate_id": "step3o_safe_20a46794329848086a",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_6bb0e26ff45eb9935f",
+        "duplicate_id": "step3o_safe_f52de6df188403b718",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_68f2c44aadc430e2e4",
+        "duplicate_id": "step3o_safe_4a613493d7d979ceb5",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      }
+    ]
+  },
+  "reviewer_b_duplicate_consistency": {
+    "denominator": 18,
+    "full_vector_consistent_count": 18,
+    "field_consistent_counts": {
+      "clean_safe": 18
+    },
+    "details": [
+      {
+        "primary_id": "step3o_safe_c18bc685c461a1beb9",
+        "duplicate_id": "step3o_safe_ea7af0265dc1c18f1e",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_7863e041ad2c21c305",
+        "duplicate_id": "step3o_safe_d22e82c5a24074c701",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_6f277ea218cadabc87",
+        "duplicate_id": "step3o_safe_fcdcfcdf1e0e85cc5a",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_d5272b16be3b66984a",
+        "duplicate_id": "step3o_safe_d9d065156d37772b80",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_ddcd1a900e8215d3e1",
+        "duplicate_id": "step3o_safe_0c2c4d2071c3f17668",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_a879b007f42e8c00c4",
+        "duplicate_id": "step3o_safe_49d2a3dc74dd8f1704",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_cf167d95054b276256",
+        "duplicate_id": "step3o_safe_478da6a011c002baac",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_8572846409eba9eb3e",
+        "duplicate_id": "step3o_safe_892c4df28997637d7b",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_f17a2e9ac835638363",
+        "duplicate_id": "step3o_safe_0604ccf30beba3204a",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_de6308f2829908191a",
+        "duplicate_id": "step3o_safe_cc158be85837050765",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_06dafd2ffe9641c040",
+        "duplicate_id": "step3o_safe_d0937395c96156b5a9",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_ad1bef2614e30c8b85",
+        "duplicate_id": "step3o_safe_3d4b6b4e9e335b185f",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_8a97055a7bfb2304e2",
+        "duplicate_id": "step3o_safe_ea285dd2611c931068",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_9aab65c133a9a3bded",
+        "duplicate_id": "step3o_safe_f2e496f43473382dde",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_31338b62e65ca187e4",
+        "duplicate_id": "step3o_safe_1ea6c46ccfe13d723d",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_1eb20346a21815c51c",
+        "duplicate_id": "step3o_safe_20a46794329848086a",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_6bb0e26ff45eb9935f",
+        "duplicate_id": "step3o_safe_f52de6df188403b718",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      },
+      {
+        "primary_id": "step3o_safe_68f2c44aadc430e2e4",
+        "duplicate_id": "step3o_safe_4a613493d7d979ceb5",
+        "field_matches": {
+          "clean_safe": true
+        },
+        "full_vector_match": true
+      }
+    ]
+  },
+  "disagreement_rows": 4,
+  "reviewer_c_rows": 4,
+  "adjudicated_clean_safe_rows": 147,
+  "adjudicated_clean_safe_category_counts": {
+    "animal_abuse": 9,
+    "child_abuse": 8,
+    "controversial_topics,politics": 12,
+    "discrimination,stereotype,injustice": 12,
+    "drug_abuse,weapons,banned_substance": 10,
+    "financial_crime,property_crime,theft": 9,
+    "hate_speech,offensive_language": 12,
+    "misinformation_regarding_ethics,laws_and_safety": 11,
+    "non_violent_unethical_behavior": 12,
+    "privacy_violation": 9,
+    "self_harm": 10,
+    "sexually_explicit,adult_content": 11,
+    "terrorism,organized_crime": 11,
+    "violence,aiding_and_abetting,incitement": 11
+  },
+  "gates": {
+    "raw_agreement_pass": true,
+    "gwet_ac1_pass": true,
+    "reviewer_a_duplicate_pass": true,
+    "reviewer_b_duplicate_pass": true,
+    "all_disagreements_adjudicated": true,
+    "minimum_clean_safe_rows_pass": true,
+    "all_categories_retain_minimum_clean_safe_rows": true
+  },
+  "overall_pass": true,
+  "ab_freeze_sha256": "1b7f3a0282df2913466a6a9cd3446d8e6bd88ec3b74f0c501b04843018851a92",
+  "c_freeze_sha256": "e8196a23e72d2630a5bbff424ac55bee15c4e40daf8ac90865fc73f3c42ad09c"
+}
