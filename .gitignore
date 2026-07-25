@@ -8,6 +8,9 @@ __pycache__/
 venv/
 env/
 
+# Node
+node_modules/
+
 # Local environment
 .env
 .env.*
@@ -16,6 +19,7 @@ env/
 # Temporary files
 tmp/
 temp/
+**/.step3o_o4_atomic_*
 *.tmp
 *.log
 
