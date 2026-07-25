@@ -1,0 +1,63 @@
+{
+  "name": "step3n_r1_n0_registry_v1",
+  "status": "source_qualification_protocol_before_fresh_labels",
+  "source_plan": "experiments/step3_response_quality_persistence/Step3N_R1_pcsr_method_repair_and_reaudit.md",
+  "source_packet": "experiments/step3_response_quality_persistence/results/step3c_stage0/packets/step3c_stage0_behavior_packet.jsonl",
+  "source_role_key": "experiments/step3_response_quality_persistence/results/step3c_stage0/packets/step3c_stage0_response_role_key.csv",
+  "split_manifest": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/split_manifest.csv",
+  "review_rubric": "experiments/step3_response_quality_persistence/review_rubrics/step3n_r1_tuple_qualification_rubric.md",
+  "output_dir": "experiments/step3_response_quality_persistence/results/step3n_r1_n0",
+  "eligible_source_roles": [
+    "existing_natural_v1_target",
+    "prospective_positive_candidate"
+  ],
+  "expected_source_responses": 87,
+  "expected_training_prompts": 40,
+  "source_packet_seed": 202607251,
+  "source_duplicate_seed": 202607252,
+  "source_hidden_duplicates": 8,
+  "positive_selection_salt": "step3n_r1_positive_selection_v1",
+  "review_gates": {
+    "detail_gwet_ac2_min": 0.7,
+    "actionability_gwet_ac2_min": 0.7,
+    "naturalness_gwet_ac1_min": 0.7,
+    "clean_safe_gwet_ac1_min": 0.7,
+    "clean_safe_raw_agreement_min": 0.9,
+    "duplicate_full_vector_consistency_min_count": 7,
+    "duplicate_consistency_denominator": 8,
+    "all_eligibility_disagreements_require_adjudication": true
+  },
+  "source_eligibility": {
+    "detail_retention": 2,
+    "safe_actionability": 2,
+    "naturalness": "yes",
+    "clean_safe": "yes"
+  },
+  "tuple_gate": {
+    "minimum_complete_training_tuples": 36,
+    "minimum_multi_prompt_categories": 4
+  },
+  "matching": {
+    "character_ngram_min": 3,
+    "character_ngram_max": 5,
+    "similarity_integer_scale": 1000000000,
+    "length_integer_scale": 1000000,
+    "k_best_complete_derangements": 4,
+    "exact_category_token_ratio_min": 0.8,
+    "exact_category_token_ratio_max": 1.25,
+    "fallback_token_ratio_min": 0.67,
+    "fallback_token_ratio_max": 1.5,
+    "edge_hash_salt": "step3n_r1_matching_edge_v1"
+  },
+  "tokenizer": {
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "max_training_tokens": 512,
+    "response_eos_tokens": 1,
+    "truncation_allowed": false
+  },
+  "heldout_opened": false,
+  "core100_opened_for_n0": false,
+  "proxy_dev_outcomes_opened": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

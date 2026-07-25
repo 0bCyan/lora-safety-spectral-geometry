@@ -1,0 +1,28 @@
+{
+  "name": "step3n_r1_source_packet_manifest_v1",
+  "status": "frozen_before_fresh_source_labels",
+  "git_head_before_packet_freeze": "998b3ea14be2595386847802ed797ea875d944d2",
+  "primary_rows": 87,
+  "hidden_duplicate_rows": 8,
+  "packet_rows": 95,
+  "visible_fields": [
+    "opaque_review_id",
+    "prompt",
+    "response"
+  ],
+  "source_roles_hidden": true,
+  "source_response_ids_hidden": true,
+  "duplicate_links_hidden": true,
+  "aggregate_coverage_hidden": true,
+  "packet_sha256": "96a8fa5d50296987747be3b1d90b4fdb3f929a03ebd074a7217f04bb4f6ed86d",
+  "hidden_key_sha256": "d00347bb1e429356c7297181ad17de5e88509db0911c234d934b5695abfedfc3",
+  "duplicate_key_sha256": "3752fed5c7198b52242c8ec6649d9a1d8edf81185eecd60383ab07fa7c01d4b4",
+  "reviewer_a_template_sha256": "7333d73eafb7a1fc462fad4a9e60479bee6395d3a8cc722c1a6c6453d1a50112",
+  "reviewer_b_template_sha256": "7333d73eafb7a1fc462fad4a9e60479bee6395d3a8cc722c1a6c6453d1a50112",
+  "review_rubric_sha256": "a2fec0c37019b50b0e0d02efa5977f941baa3dcffbb08a304d6a671bf6acbabb",
+  "heldout_opened": false,
+  "core100_opened_for_n0": false,
+  "old_labels_exposed": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

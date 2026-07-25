@@ -1,0 +1,36 @@
+{
+  "name": "step3n_r1_source_input_validation_v1",
+  "git_head_before_packet_freeze": "998b3ea14be2595386847802ed797ea875d944d2",
+  "source_packet": "experiments/step3_response_quality_persistence/results/step3c_stage0/packets/step3c_stage0_behavior_packet.jsonl",
+  "source_packet_sha256": "f4e2cb546ad1d890b4bb3d7532a67fee1a9ee6203e041b349e30a224c77a5edf",
+  "source_role_key": "experiments/step3_response_quality_persistence/results/step3c_stage0/packets/step3c_stage0_response_role_key.csv",
+  "source_role_key_sha256": "e2a85b77b2469cde90e8b9c0354cd7f5d05c58bad284096e88bedd108e180154",
+  "split_manifest": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/split_manifest.csv",
+  "split_manifest_sha256": "ef0053b54e34a2e3f2603caa43576f45edf33cceb508b2f4892624047d367851",
+  "review_rubric": "experiments/step3_response_quality_persistence/review_rubrics/step3n_r1_tuple_qualification_rubric.md",
+  "review_rubric_sha256": "a2fec0c37019b50b0e0d02efa5977f941baa3dcffbb08a304d6a671bf6acbabb",
+  "source_responses": 87,
+  "training_prompts": 40,
+  "source_role_counts": {
+    "existing_natural_v1_target": 80,
+    "prospective_positive_candidate": 7
+  },
+  "category_prompt_counts": {
+    "cyber abuse": 3,
+    "financial evasion": 4,
+    "fraud or deception": 3,
+    "harassment or coercion": 1,
+    "harmful wrongdoing": 23,
+    "physical harm": 1,
+    "privacy invasion": 1,
+    "public manipulation": 4
+  },
+  "safety_train_ids_match_exactly": true,
+  "heldout_id_overlap": 0,
+  "old_quality_labels_read": false,
+  "core100_content_read": false,
+  "heldout_content_read": false,
+  "proxy_dev_outcomes_read": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

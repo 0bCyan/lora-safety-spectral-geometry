@@ -1,0 +1,18 @@
+{
+  "name": "step3n_r1_n0_synthetic_tests_v1",
+  "perfect_ordinal_ac2": 1.0,
+  "zero_variance_ac2": 1.0,
+  "nominal_fixture": {
+    "n": 3,
+    "raw_agreement": 0.6666666666666666,
+    "gwet_ac1": 0.33333333333333326,
+    "positive_agreement": 0.6666666666666666,
+    "negative_agreement": 0.6666666666666666,
+    "pooled_yes_prevalence": 0.5
+  },
+  "strict_review_schema_pass": true,
+  "source_eligibility_fixture_pass": true,
+  "passed": true,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}
