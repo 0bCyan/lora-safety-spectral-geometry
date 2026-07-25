@@ -1,0 +1,12 @@
+{
+  "name": "step3ct_t5r_quality_reviewer_c_packet_v1",
+  "domain": "quality",
+  "source_ab_freeze_sha256": "f77f2390a7b6aa50703c269b4a1ea236571f13c5275d17a3bac65583d7e5c9af",
+  "packet_rows": 69,
+  "decision_field_disagreements": 76,
+  "packet_sha256": "539fb14ce55a4f04af2286bf0f65ffe5dfd22256a452e0ed78ba429f789cf682",
+  "template_sha256": "00403a144086ced745860cfaba8fc77a625ca646103222c5cf2339cc0add7419",
+  "a_b_labels_reasons_identities_or_votes_visible": false,
+  "arm_checkpoint_sample_or_duplicate_link_visible": false,
+  "heldout_opened": false
+}

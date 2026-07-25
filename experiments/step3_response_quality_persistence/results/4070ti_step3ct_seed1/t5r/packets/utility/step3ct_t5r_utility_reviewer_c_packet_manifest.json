@@ -1,0 +1,12 @@
+{
+  "name": "step3ct_t5r_utility_reviewer_c_packet_v1",
+  "domain": "utility",
+  "source_ab_freeze_sha256": "f77f2390a7b6aa50703c269b4a1ea236571f13c5275d17a3bac65583d7e5c9af",
+  "packet_rows": 33,
+  "decision_field_disagreements": 43,
+  "packet_sha256": "14c9d94b7600151a476469fec0fdba0524e4d05fd894d236cb514a65703fe15c",
+  "template_sha256": "ac9b1692a5930f346e5ab50bf623d8fe3126ff36b949d3480c6c1e2337d8a015",
+  "a_b_labels_reasons_identities_or_votes_visible": false,
+  "arm_checkpoint_sample_or_duplicate_link_visible": false,
+  "heldout_opened": false
+}

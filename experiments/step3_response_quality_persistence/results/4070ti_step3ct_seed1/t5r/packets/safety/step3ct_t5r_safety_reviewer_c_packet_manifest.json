@@ -1,0 +1,12 @@
+{
+  "name": "step3ct_t5r_safety_reviewer_c_packet_v1",
+  "domain": "safety",
+  "source_ab_freeze_sha256": "f77f2390a7b6aa50703c269b4a1ea236571f13c5275d17a3bac65583d7e5c9af",
+  "packet_rows": 11,
+  "decision_field_disagreements": 37,
+  "packet_sha256": "86478e24bb50948dba40ebaac3a03bd7b974209338d217b7da56fb23019cca4b",
+  "template_sha256": "3de57fe58bd86182caeea65bc702a348fc195ef2b542514cc536eef3d238be50",
+  "a_b_labels_reasons_identities_or_votes_visible": false,
+  "arm_checkpoint_sample_or_duplicate_link_visible": false,
+  "heldout_opened": false
+}

@@ -1,0 +1,24 @@
+{
+  "name": "step3ct_t5h_h4q_package_manifest_v1",
+  "route": "H4Q1_three_model_sessions_qualified_for_disagreement_c",
+  "canonical_lf": true,
+  "artifact_count": 4,
+  "artifacts": {
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h4q/step3ct_t5h_h4q_model_reviewer_qualification.json": {
+      "sha256": "e1ed80e2af2e8975c39b28951803d595e46b812304a7607737974878ef77d76e",
+      "bytes": 7527
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h4q/step3ct_t5h_h4q_route_decision.json": {
+      "sha256": "c71ae2c3e080ffbbed195d781cf0a112b3e546d57e612f453e41930ed9894751",
+      "bytes": 1039
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h4q/step3ct_t5h_h4q_execution_record.json": {
+      "sha256": "f9b4058cb994ee51dd4c5ae36c3e883dca75a461edbcda5a39f7f64a14234243",
+      "bytes": 768
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h4q/Step3CT_T5H_H4Q_model_reviewer_qualification_report.md": {
+      "sha256": "22989f8c44c3abf45f8f2a2aca55051f43706314ab9873db98c683434a7718b5",
+      "bytes": 1021
+    }
+  }
+}

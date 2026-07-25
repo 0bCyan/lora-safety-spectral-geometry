@@ -1,0 +1,24 @@
+{
+  "name": "step3ct_t5h_h4q_route_decision_v1",
+  "source_git_head": "fdc10cf952bd222db3928de993a39a64799b45a8",
+  "route": "H4Q1_three_model_sessions_qualified_for_disagreement_c",
+  "gates": {
+    "h3_authorization_verified": true,
+    "c_packet_freeze_verified": true,
+    "three_distinct_no_context_sessions": true,
+    "sessions_distinct_from_all_ab_and_failed_t5_sessions": true,
+    "runtime_and_self_reported_model_metadata_frozen": true,
+    "zero_reviewer_repository_access_before_freeze": true,
+    "zero_reviewer_study_row_access_before_freeze": true,
+    "complete_or_abort_contract_frozen": true,
+    "packet_template_manifest_and_rubric_hashes_match": true,
+    "hidden_key_and_heldout_sealed": true
+  },
+  "reviewer_c_attempts_authorized": true,
+  "label_acceptance_authorized": false,
+  "reliability_authorized": false,
+  "hidden_key_join_authorized": false,
+  "t6_authorized": false,
+  "failure_route": "T5R2_review_completion_or_schema_stop",
+  "next_action": "push_h4q_then_launch_one_complete_c_attempt_per_domain"
+}
