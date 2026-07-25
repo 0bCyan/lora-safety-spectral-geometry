@@ -11,8 +11,9 @@
 1. Step1 已确认谱几何、输出子空间和激活信号具有诊断价值，但简单后验干预不能建立可靠因果控制。
 2. Step2 已确认序列级安全监督及其后期加权贡献决定安全持久性；固定20%自然安全回放是强因果控制，但不是完整方法。
 3. Step3 已将回答质量分解为细节保留、安全可操作性和自然度，并完成prompt-disjoint量表验证。
-4. Step3C-T已完成T2R、三臂64步、T4盲包与P6A规范哈希对账；H3已冻结Safety、Quality、Utility共六个独立reviewer的全部A/B文件，但尚未构造C包、计算reliability或产生行为结论。
-5. 只有C3质量候选通过后，才另行设计C4动态梯度预算与C5联合方法的seed1析因实验。
+4. Step3C-T已完成T2R至T6；两个C3候选均未通过预注册质量主门，因此当前C3 recipe已关闭且没有`Q_star`。
+5. Step3N-R1在训练前因安全行动性量表可靠性不足而停止；Step3O随后完成量表修复，O3固定上下文隔离会话的外部源一致性门已通过。
+6. Step3O-O4尝试001、002和003均在prompt释放前因基础设施完整性门停止；当前尝试004以固定GitHub只读传输重试和未来drand随机性冻结60个新prompt，再执行双上下文隔离作者、A/B/C盲审与逐提交不可覆盖执行器。O4即使通过也只产生机器量表筛选候选池，不授权训练。
 
 SpectraSafe双谱正则保留为历史动机和忠实负基线；没有新的增量行为证据时不重新进入主方法路线。
 
@@ -356,12 +357,12 @@ experiment_id, commit, machine, model, method, family, dose, seed, status, notes
 
 当前优先级从高到低：
 
-1. 保持已通过的`P6A1_eol_reconciled_content_unchanged`对账包不变，不覆盖原P6或修改M1路线。
-2. 提交并推送H3 all-A/B冻结包；提交前仅验证六路schema、ID、hash与provenance，不比较标签或计算agreement。
-3. H3推送后构造不含A/B标签、理由、票数、arm、checkpoint或duplicate link的分歧C包，先冻结包哈希与行数。
-4. 使用与全部A/B不同的全新domain-specific Reviewer C会话完成分歧裁决，再在解盲前检查reliability。
-5. 仅在T5R4后解盲并用paired bootstrap、exact McNemar与Holm校正执行T6，确定R0/R1或Q*。
-6. 若无C3候选通过，关闭当前C3 recipe，不扫描eta、temperature、queue或targets；若产生Q*，另写C0/C4/Q*/C5 seed1析因计划。
+1. 保持Step3C-T6的`R1_no_c3_candidate_passes`、Track B M1失败和Step3N-R1训练前停止记录不变。
+2. 在任何O4 prompt选择、作者或reviewer输出前，完成并推送P0计划、registry、drand工作流、全部统计/路由代码、阶段执行器和测试。
+3. 按P0 -> drand request -> drand pulse -> P1的单父提交链冻结60个新prompt；不得重跑CI、替换随机脉冲或预览后换样本。
+4. 使用五个互不相同的全新无上下文会话完成双作者与A/B/C审查；每份外部输出先冻结一次性receipt，不修复、不补行、不替换。
+5. A/B可靠性失败时不创建C包、不打开隐藏分层、不计算yield；通过后才允许C和最终候选池路由。
+6. O4通过后仍须独立人类或异构模型训练适用性审查，并另行冻结方法、对照、smoke、样本量和失败路线，才可授权任何optimizer step。
 
 ## 10. 当前数据集决策
 
