@@ -1,0 +1,35 @@
+name: Step3O O4 randomness request
+
+"on":
+  push:
+    branches:
+      - exp/step3-response-quality-persistence
+    paths:
+      - experiments/step3_response_quality_persistence/results/step3o_o4_training_pool/reports/step3o_o4_drand_request.json
+
+permissions:
+  contents: read
+
+jobs:
+  verify-future-round:
+    name: Verify future drand round
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.11"
+      - name: Install pinned drand verifier
+        run: >-
+          npm ci
+          --prefix experiments/step3_response_quality_persistence/tools/step3o_o4_drand_verifier
+          --ignore-scripts
+          --no-audit
+          --no-fund
+      - name: Prove target pulse was unpublished at request push
+        run: >-
+          python
+          experiments/step3_response_quality_persistence/scripts/step3o_o4_randomness.py
+          ci-verify-request-future
