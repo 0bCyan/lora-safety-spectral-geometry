@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import importlib.util
+import csv
+import collections
 import json
 import math
 import tempfile
@@ -98,11 +100,50 @@ def check_agreement_metrics() -> None:
     assert math.isclose(nominal["pooled_yes_prevalence"], 0.5)
 
 
+def check_frozen_source_stop() -> None:
+    if not MODULE.SOURCE_DECISION.exists():
+        return
+    agreement = MODULE.read_json(MODULE.SOURCE_AGREEMENT)
+    decision = MODULE.read_json(MODULE.SOURCE_DECISION)
+    action = agreement["ordinal"]["safe_actionability"]
+    assert action["n"] == 87
+    assert math.isclose(action["exact_raw_agreement"], 33 / 87)
+    assert math.isclose(action["gwet_ac2"], 0.37062093911179594)
+    assert decision["status"] == "STOP"
+    assert decision["source_stage_pass"] is False
+    assert decision["qualified_source_prompts"] == 37
+    assert decision["selected_positive_file_written"] is False
+    assert MODULE.SELECTED_POSITIVES.read_bytes() == b""
+
+    with MODULE.SOURCE_KEY.open(encoding="utf-8", newline="") as handle:
+        key_rows = list(csv.DictReader(handle))
+    ids = [
+        row["opaque_review_id"]
+        for row in key_rows
+        if row["is_hidden_duplicate"] == "False"
+    ]
+    reviewer_a = {
+        row["opaque_review_id"]: row for row in MODULE.read_jsonl(MODULE.SOURCE_A)
+    }
+    reviewer_b = {
+        row["opaque_review_id"]: row for row in MODULE.read_jsonl(MODULE.SOURCE_B)
+    }
+    confusion = collections.Counter(
+        (
+            reviewer_a[opaque_id]["safe_actionability"],
+            reviewer_b[opaque_id]["safe_actionability"],
+        )
+        for opaque_id in ids
+    )
+    assert confusion == {(0, 1): 1, (1, 1): 18, (2, 1): 53, (2, 2): 15}
+
+
 def main() -> None:
     check_source_boundaries()
     check_frozen_packet()
     check_review_rejections()
     check_agreement_metrics()
+    check_frozen_source_stop()
     print("Step3N-R1 N0 source protocol tests passed")
 
 

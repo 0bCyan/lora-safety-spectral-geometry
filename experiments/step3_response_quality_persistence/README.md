@@ -4,7 +4,7 @@
 
 Step 3 remains open for a new prospective method direction, but the current C3 recipe is closed.
 
-Current phase: **Step3C-T6 completed; Step3N-R1 repaired the rejected TCSR-MT execution design into the prospective PCSR-M/PCSR-MW family with concurrent pairing-destruction controls**.
+Current phase: **Step3C-T6 completed; Step3N-R1 N0 source qualification stopped PCSR-M/PCSR-MW at the frozen actionability-reliability gate before tuple writing or training**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
@@ -12,7 +12,7 @@ The first Step3C Stage 0 stopped at its repeated response-only mechanical-label 
 
 Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. T2R then completed one state-matched eta recalibration and restored smoke qualification. C0-R, C3a, and C3b each completed a matched 64-step seed1 run, and T4 froze 1,200 generations plus unchanged safety, quality, and utility blind packets. T5R Track A initially stopped at `T5R1_reviewer_access_stop`; Track B completed all 12 frozen representation probes and exactly reproduced grouped-gradient labels 0/16/32, but the bounded checkpoint48 replay did not reproduce label64 and selected `M1_reconstruction_integrity_failure`. P6A reconciled all 21 legacy hashes without changing P6 or M1. H1-H5 then prospectively qualified and froze nine distinct no-context model-review sessions: six complete A/B files with 2,580 accepted rows and three disagreement-only Reviewer C files with 113 accepted rows. T5R4 passed every frozen reliability and duplicate-consistency gate and produced complete adjudicated labels. T6 joined those labels to hidden arm keys only after the reliability pass. The concurrent control reproduced, but both C3 candidates failed the primary quality conjunction, selecting `R1_no_c3_candidate_passes`. Heldout remains sealed and no new training is authorized.
 
-The original Step3N design audit is recorded in `Step3N_five_agent_method_brainstorm_and_candidate_audit.md`. A subsequent main-session review found that its global CVaR term was incompatible with the microbatch-one trainer, its reference-relative score did not establish an absolute ternary order, and its adjacent ranking terms canceled the initial force on the generic-safe middle response. `Step3N_R1_pcsr_method_repair_and_reaudit.md` therefore replaces the execution boundary with PCSR-M and PCSR-MW: correct specific-safe responses are contrasted with both generic-safe and category-preferred prompt-mismatched specific-safe responses, the robust term is an exactly computable within-prompt mean-plus-worst objective, and pairing-destruction controls run concurrently. The re-audit authorizes only local N0-R1 data qualification; it does not authorize experiment-machine execution.
+The original Step3N design audit is recorded in `Step3N_five_agent_method_brainstorm_and_candidate_audit.md`. A subsequent main-session review found that its global CVaR term was incompatible with the microbatch-one trainer, its reference-relative score did not establish an absolute ternary order, and its adjacent ranking terms canceled the initial force on the generic-safe middle response. `Step3N_R1_pcsr_method_repair_and_reaudit.md` repaired those mathematical defects into PCSR-M and PCSR-MW, but its fresh N0-R1 source review then failed the prespecified measurement gate. Detail retention was reliable (Gwet AC2 `0.846`), and adjudication identified 37 prompts with qualifying content, but safe actionability had only `0.379` exact agreement and `0.371` AC2 against the frozen `0.70` minimum. Both reviewers were internally consistent on all eight hidden duplicates; the failure was a systematic scale-calibration conflict, not careless labeling. PCSR is therefore closed under R1 before `yG` writing, matching, model scoring, or training.
 
 ## 1. Research Question
 
@@ -183,8 +183,8 @@ Authorized now:
 - preserve the completed `P6A1_eol_reconciled_content_unchanged` package without modifying P6 or M1;
 - preserve the completed T5R4 and T6 packages without relabeling or outcome-driven reinterpretation;
 - preserve `Step3N_five_agent_method_brainstorm_and_candidate_audit.md` as the historical proposal and first-pass audit;
-- use `Step3N_R1_pcsr_method_repair_and_reaudit.md` as the active prospective design boundary;
-- prepare only the Step3N N0-R1 tuple schema, source qualification, generic-safe construction, deterministic prompt-mismatch matching, review rubrics, and leakage/hash checks on training-only data;
+- preserve `Step3N_R1_pcsr_method_repair_and_reaudit.md` and its N0-R1 source `STOP` without relabeling or threshold changes;
+- use the exact matching solver only as reusable infrastructure; no PCSR matching instance is authorized after the source stop;
 - preserve TRIM as the separately gated `TRIM-CS0` causal-steering preflight, but do not implement or run it until a separate freeze is reviewed and pushed.
 
 Not authorized now:
@@ -194,10 +194,12 @@ Not authorized now:
 - reuse of failed T5 sessions or partial outputs;
 - main-session or heuristic outcome labels;
 - PCSR, TRIM, TCSR, or any other fresh candidate training or generation before its data, implementation, smoke, and execution registry is separately frozen;
+- `yG` writing, prompt-mismatch edge review, or PCSR tuple completion under R1;
+- replacing the failed A/B reliability gate with Reviewer C's adjudicated coverage;
 - C4, C5, adaptive replay, or other method stacking;
 - behavior-based hyperparameter scans;
 - seeds 2 and 3;
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The stopped Stage0 and C-R0 routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2/H3Q/H3/T5R/T6 packages, reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. T6 is complete at `R1_no_c3_candidate_passes`; there is no C3 `Q_star`. A new method may proceed only through the prospective Step3N gates, and a later valid winner is still required before seeds 2/3, heldout, a second backbone, or any combined-method factorial.
+The stopped Stage0, C-R0, C3, and PCSR-R1 routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2/H3Q/H3/T5R/T6 packages, reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. T6 is complete at `R1_no_c3_candidate_passes`; there is no C3 `Q_star`, and N0-R1 produced no PCSR training candidate. Any next method requires a new prospective boundary. A later valid winner is still required before seeds 2/3, heldout, a second backbone, or any combined-method factorial.

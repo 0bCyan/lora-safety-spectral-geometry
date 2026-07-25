@@ -1,4 +1,4 @@
-# Experiment Machine Task: Step3C-T6 Stop State
+# Experiment Machine Task: Step3N-R1 N0 Stop State
 
 ## Current State
 
@@ -12,7 +12,7 @@ Track B:  M1_reconstruction_integrity_failure
 
 There is no active experiment-machine job. Do not rerun training, generation, review, mechanism reconstruction, or T6.
 
-Step3N completed a design-only five-agent audit, but a subsequent re-audit rejected TCSR-MT as an executable registered method. `Step3N_R1_pcsr_method_repair_and_reaudit.md` repairs the direction into PCSR-M and PCSR-MW with concurrent pairing-destruction controls and restricts TRIM to a later `TRIM-CS0` causal-steering preflight. None is authorized for experiment-machine execution yet.
+Step3N-R1 repaired TCSR-MT into PCSR-M and PCSR-MW, then executed only the local source-qualification gate. The source content covered 37 prompts, but independent `safe_actionability` review failed reliability (`0.379` exact agreement; Gwet AC2 `0.371 < 0.70`). PCSR-M/PCSR-MW are closed under R1 before tuple writing or training. TRIM-CS0 remains separately unauthorized.
 
 ## Completed Result
 
@@ -54,10 +54,10 @@ experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t6/s
 
 ## Future Resumption
 
-A future method is actively scoped in:
+A completed stopped method record is frozen in:
 
 ```text
 experiments/step3_response_quality_persistence/Step3N_R1_pcsr_method_repair_and_reaudit.md
 ```
 
-The next local task is N0-R1 training-only tuple qualification and review preparation. The experiment machine remains idle until the 36-tuple data gate passes and a separate implementation registry, no-update qualification, and five-arm smoke plan have been reviewed and pushed. T6 outputs must not be reused for behavior-driven tuning.
+There is no active resumption task. Do not write generic counterfactuals, review mismatch edges, implement PCSR losses, or run the five-arm smoke. The experiment machine remains idle until a new prospective method or measurement-repair protocol is reviewed and pushed. T6 outputs and the failed N0-R1 labels must not be used for behavior-driven tuning.

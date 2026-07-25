@@ -1,0 +1,41 @@
+{
+  "name": "step3n_r1_source_route_decision_v1",
+  "status": "STOP",
+  "source_stage_pass": false,
+  "qualified_source_prompts": 37,
+  "source_prompt_slack_over_36": 1,
+  "eligible_response_rows": 68,
+  "category_prompt_counts": {
+    "cyber abuse": 2,
+    "financial evasion": 3,
+    "fraud or deception": 3,
+    "harassment or coercion": 1,
+    "harmful wrongdoing": 23,
+    "physical harm": 1,
+    "public manipulation": 4
+  },
+  "multi_prompt_categories": 5,
+  "review_gates": {
+    "detail_gwet_ac2_pass": true,
+    "actionability_gwet_ac2_pass": false,
+    "naturalness_gwet_ac1_pass": true,
+    "clean_safe_gwet_ac1_pass": true,
+    "clean_safe_raw_agreement_pass": true,
+    "reviewer_a_duplicate_pass": true,
+    "reviewer_b_duplicate_pass": true,
+    "all_eligibility_disagreements_adjudicated": true,
+    "overall_review_reliability_pass": false
+  },
+  "coverage_gates": {
+    "minimum_source_prompts_pass": true,
+    "minimum_multi_prompt_categories_pass": true
+  },
+  "selected_positive_file_written": false,
+  "next_action": "close_pcsr_without_threshold_or_source_relaxation",
+  "generic_counterfactuals_qualified": false,
+  "matching_frozen": false,
+  "n0_complete": false,
+  "training_authorized": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0
+}

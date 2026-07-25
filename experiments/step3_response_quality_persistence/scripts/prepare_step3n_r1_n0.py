@@ -48,6 +48,7 @@ SOURCE_AGREEMENT = REPORTS / "step3n_r1_source_review_agreement.json"
 SOURCE_DECISION = REPORTS / "step3n_r1_source_route_decision.json"
 SELECTED_POSITIVES = REPORTS / "step3n_r1_selected_positive_sources.jsonl"
 SOURCE_REPORT = REPORTS / "Step3N_R1_N0_source_qualification_report.md"
+SOURCE_RESULT_MANIFEST = REPORTS / "step3n_r1_source_result_manifest.json"
 INPUT_VALIDATION = DIAGNOSTICS / "step3n_r1_source_input_validation.json"
 SYNTHETIC_TESTS = DIAGNOSTICS / "step3n_r1_n0_synthetic_tests.json"
 
@@ -918,6 +919,13 @@ def finalize_source_review() -> dict[str, Any]:
     }
     write_json(SOURCE_DECISION, decision)
 
+    continuation = (
+        "Generic-safe construction and the remaining tuple gates are eligible "
+        "to proceed, but training remains unauthorized."
+        if source_stage_pass
+        else "Generic-safe construction, prompt-mismatch review, cycle-cover "
+        "selection, and PCSR training are prohibited by the failed reliability gate."
+    )
     source_report = f"""# Step3N-R1 N0 Source Qualification Report
 
 Status: **{decision['status']}** at the source-response gate.
@@ -947,11 +955,48 @@ Reviewer A duplicate consistency:
 Reviewer B duplicate consistency:
 `{duplicate_b['full_vector_consistent_count']}/{duplicate_b['denominator']}`.
 
-This is not an N0-R1 tuple pass. Generic-safe counterfactual review,
-prompt-mismatch edge review, final cycle-cover selection, exact tokenizer
-checks, and leakage diagnostics remain pending. Training is not authorized.
+This is not an N0-R1 tuple pass. {continuation}
 """
     SOURCE_REPORT.write_text(source_report, encoding="utf-8", newline="\n")
+    artifact_paths = [
+        SOURCE_PACKET,
+        SOURCE_KEY,
+        SOURCE_DUPLICATES,
+        SOURCE_PACKET_MANIFEST,
+        SOURCE_A,
+        SOURCE_B,
+        SOURCE_C,
+        REVIEWS / "step3n_r1_source_reviewer_a_provenance.json",
+        REVIEWS / "step3n_r1_source_reviewer_b_provenance.json",
+        REVIEWS / "step3n_r1_source_reviewer_c_provenance.json",
+        SOURCE_AB_FREEZE,
+        SOURCE_C_FREEZE,
+        SOURCE_C_PACKET,
+        SOURCE_C_MANIFEST,
+        SOURCE_FINAL,
+        SOURCE_AGREEMENT,
+        SOURCE_DECISION,
+        SELECTED_POSITIVES,
+        SOURCE_REPORT,
+        resolve_repo_path(reg["review_rubric"]),
+    ]
+    result_manifest = {
+        "name": "step3n_r1_source_result_manifest_v1",
+        "status": decision["status"],
+        "artifacts": [
+            {
+                "path": repo_path(path),
+                "bytes": path.stat().st_size,
+                "sha256": sha256(path),
+            }
+            for path in artifact_paths
+        ],
+        "source_stage_pass": source_stage_pass,
+        "training_authorized": False,
+        "heldout_opened": False,
+        "optimizer_steps": 0,
+    }
+    write_json(SOURCE_RESULT_MANIFEST, result_manifest)
     print(json.dumps(decision, ensure_ascii=False, indent=2))
     return decision
 

@@ -1,12 +1,21 @@
 # Step3N-R1: PCSR Method Repair and Prospective Re-Audit
 
-Status: prospective repair after the Step3N main-session review; N0 data feasibility only.
+Status: N0-R1 source qualification completed with a registered reliability
+`STOP`; PCSR-M/PCSR-MW are closed under this protocol.
 
 This document supersedes the execution boundary of
 `Step3N_five_agent_method_brainstorm_and_candidate_audit.md`. The original
 five-agent proposals and audit remain historical records. This repair does not
 authorize training, generation, core100 review, heldout access, or TRIM
 execution.
+
+Execution note: the fresh source review retained enough content in principle
+(37 qualified prompts against a 36-prompt minimum), but independent reviewers
+did not measure `safe_actionability` reliably. Exact agreement was `0.379` and
+Gwet AC2 was `0.371` against the frozen `0.70` gate. Therefore no positive
+source set was released, no `yG` response was written, no matching edge was
+reviewed, and no GPU stage was authorized. This failure concerns measurement
+qualification, not a behavioral test of the PCSR objective.
 
 ## 1. Re-Audit Decision
 
@@ -33,7 +42,7 @@ repaired PCSR-M:  conditionally feasible mean-only candidate
 repaired PCSR-MW: conditionally feasible primary candidate
 pairing controls: required concurrently, not selected after outcomes
 TRIM:             causal-steering preflight only, not mediation evidence
-current authority: local N0 data qualification only
+current outcome:   N0-R1 reliability STOP; no further PCSR authority
 ```
 
 ## 2. Findings Repaired
@@ -719,13 +728,19 @@ objective is microbatch-local. Feasibility still fails if N1-R1 cannot retain
 ```text
 scientific coherence:        pass after repair
 objective implementability:  pass in principle
-data feasibility:            pending N0-R1 independent qualification
+source content coverage:      37 prompts; descriptive pass
+source review reliability:   fail; actionability AC2 = 0.371
+data feasibility:            STOP under N0-R1
 GPU implementation:          not yet authorized
 candidate training:          not yet authorized
-mechanism claim:              conditional on concurrent PD gates
+mechanism claim:              unavailable; no candidate executed
 TRIM execution:               not authorized
 heldout / seeds / backbone:   sealed
 ```
 
-The next action is N0-R1 only. A complete N0-R1 pass must be reviewed and
-pushed before an experiment-machine implementation registry is written.
+The registered stop rule now applies. Do not write `yG`, open a fifth matching
+permutation, relax the actionability threshold, replace reliability with
+Reviewer C adjudication, or train PCSR from the 37 descriptively eligible
+prompts. A future route must be a new prospective protocol with an independent
+measurement-development corpus and untouched validation, or a method whose
+data gate does not depend on this failed actionability distinction.
