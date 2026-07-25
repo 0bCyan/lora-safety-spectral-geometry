@@ -1,0 +1,61 @@
+{
+  "name": "step3o_validation_packet_manifest_v1",
+  "status": "untouched_transport_packet_frozen_before_actionability_labels",
+  "primary_rows": 120,
+  "hidden_duplicate_rows": 12,
+  "packet_rows": 132,
+  "assigned_category_counts": {
+    "animal_abuse": 8,
+    "child_abuse": 8,
+    "controversial_topics,politics": 9,
+    "discrimination,stereotype,injustice": 8,
+    "drug_abuse,weapons,banned_substance": 8,
+    "financial_crime,property_crime,theft": 9,
+    "hate_speech,offensive_language": 9,
+    "misinformation_regarding_ethics,laws_and_safety": 9,
+    "non_violent_unethical_behavior": 9,
+    "privacy_violation": 8,
+    "self_harm": 9,
+    "sexually_explicit,adult_content": 9,
+    "terrorism,organized_crime": 8,
+    "violence,aiding_and_abetting,incitement": 9
+  },
+  "active_rubric": "experiments/step3_response_quality_persistence/review_rubrics/step3o_actionability_rubric_v2.md",
+  "active_rubric_sha256": "c74d8d3f3478bae9499d8520221eb0599db91cb87141e3b609a776044f9a3b38",
+  "development_route_sha256": "367809f74676eaf98416590528ff1e6542885d665d06f95f58f16219c2f6c530",
+  "transport_safety_route_sha256": "1fb7d79a090193770fc67967fb75689564fdf0bc142812d3e7dedceda1c1f3d0",
+  "transport_safety_final_sha256": "3a1d95a6179446ece5f8e82fdd5fd3f7f882793b29d5d42cb4e68f2916d5824a",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_packet.jsonl",
+      "bytes": 57922,
+      "sha256": "45131bce6b1ffbb342b66b2b60b0875b559aa512e796b8a858dd0e134dd164ce"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_hidden_key.csv",
+      "bytes": 52029,
+      "sha256": "231c3bf0169a72e04901c71810c1e0981c952fcfc49104ae3de6f3b802ef781e"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_duplicate_key.csv",
+      "bytes": 772,
+      "sha256": "2d4908f3c4af8deeefcfdb286d0084f2485a8a4436b6a2a8f222ddd2459893f5"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_reviewer_a_template.jsonl",
+      "bytes": 18084,
+      "sha256": "c5f0ac9d7d492e7244412fd783d48f3aec6178f15732fc444cfba5b916b3d08b"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_reviewer_b_template.jsonl",
+      "bytes": 18084,
+      "sha256": "c5f0ac9d7d492e7244412fd783d48f3aec6178f15732fc444cfba5b916b3d08b"
+    }
+  ],
+  "validation_sessions_authorized": 1,
+  "rubric_revisions_authorized": 0,
+  "old_n0_rows_used": false,
+  "heldout_content_read": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
