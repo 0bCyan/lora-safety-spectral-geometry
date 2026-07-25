@@ -1,0 +1,9 @@
+{
+  "name": "step3ct_t5r_route_decision_v1",
+  "route": "T5R4_complete_labels_authorize_T6",
+  "overall_pass": true,
+  "next_authorized_package": "Step3C_T6_statistics_and_route_decision",
+  "outcome_key_join_authorized": true,
+  "new_training_authorized": false,
+  "heldout_opened": false
+}

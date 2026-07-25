@@ -1,0 +1,238 @@
+{
+  "name": "step3ct_t5r_review_reliability_v1",
+  "execution_git_head": "95f822e551400b8537d61eec6639ae37e1c3292c",
+  "source_ab_freeze_sha256": "f77f2390a7b6aa50703c269b4a1ea236571f13c5275d17a3bac65583d7e5c9af",
+  "source_c_freeze_sha256": "7818b790eec9a63af8cd9080e05282b18e90e1a03b8b445fb2fc68784d5aec46",
+  "domains": {
+    "safety": {
+      "primary_rows": 600,
+      "hidden_duplicate_pairs": 30,
+      "metrics": {
+        "unsafe_with_mixed": {
+          "n": 600,
+          "raw_agreement": 0.9833333333333333,
+          "gwet_ac1": 0.9755622714054137,
+          "cohen_kappa": 0.9475918452911272,
+          "zero_variance": false,
+          "pass": true
+        },
+        "mixed": {
+          "n": 600,
+          "raw_agreement": 0.9883333333333333,
+          "gwet_ac1": 0.9879980968410704,
+          "cohen_kappa": 0.583333333333332,
+          "zero_variance": false,
+          "pass": true
+        },
+        "invalid": {
+          "n": 600,
+          "raw_agreement": 1.0,
+          "gwet_ac1": null,
+          "cohen_kappa": null,
+          "zero_variance": true,
+          "pass": true
+        },
+        "prompt_relevant_redirect": {
+          "n": 600,
+          "raw_agreement": 0.9883333333333333,
+          "gwet_ac1": 0.9829692331086217,
+          "cohen_kappa": 0.9629590432850036,
+          "zero_variance": false,
+          "pass": true
+        }
+      },
+      "reviewer_a_duplicate_consistency": {
+        "pairs": 30,
+        "full_vector_consistent_count": 30,
+        "full_vector_consistency": 1.0
+      },
+      "reviewer_b_duplicate_consistency": {
+        "pairs": 30,
+        "full_vector_consistent_count": 30,
+        "full_vector_consistency": 1.0
+      },
+      "disagreement_rows": 11,
+      "reviewer_c_rows": 11,
+      "reviewer_c_record": {
+        "reviewer_role": "safety_c",
+        "anonymized_reviewer_id": "t5h_safety_model_c_20260725",
+        "reviewer_type": "policy_compliant_model_session",
+        "model_provider": "OpenAI",
+        "model_id_version": "gpt-5.6-terra runtime selection; self-reported family gpt-5",
+        "session_id": "019f96f7-304c-7a70-80a5-779106733741",
+        "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_c_labels.jsonl",
+        "labels_sha256": "cb40cd195209962553a5de6acb128e0b2196dce51aba5146afb94ce9f77d266f",
+        "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_c_provenance.json",
+        "provenance_sha256": "824169aabc359fca855131e18ed07a7336bd29ba90590bb52b9304445233e8c1",
+        "rows": 11
+      },
+      "all_decision_disagreements_adjudicated": true,
+      "final_labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_final_labels.jsonl",
+      "final_labels_sha256": "3a40bb5bcbb7504480bc3e60c42162bfb1da1d11e6d583e1ac470e95341141b3",
+      "overall_pass": true
+    },
+    "quality": {
+      "primary_rows": 300,
+      "hidden_duplicate_pairs": 30,
+      "metrics": {
+        "ordinal": {
+          "detail_retention": {
+            "n": 300,
+            "exact_raw_agreement": 0.9466666666666667,
+            "linear_weighted_agreement": 0.9733333333333334,
+            "gwet_ac2": 0.9627606752730885,
+            "cohen_kappa": 0.4007490636704124,
+            "two_level_disagreement_count": 0,
+            "two_level_disagreement_rate": 0.0,
+            "zero_variance": false,
+            "pass": true
+          },
+          "safe_actionability": {
+            "n": 300,
+            "exact_raw_agreement": 0.8166666666666667,
+            "linear_weighted_agreement": 0.8983333333333333,
+            "gwet_ac2": 0.8031014215969765,
+            "cohen_kappa": 0.63569725337808,
+            "two_level_disagreement_count": 6,
+            "two_level_disagreement_rate": 0.02,
+            "zero_variance": false,
+            "pass": true
+          }
+        },
+        "derived_eligibility": {
+          "n": 300,
+          "raw_agreement": 0.95,
+          "gwet_ac1": 0.9176736400142699,
+          "cohen_kappa": 0.8726799456767766,
+          "zero_variance": false,
+          "pass": true
+        },
+        "naturalness": {
+          "n": 300,
+          "raw_agreement": 0.9933333333333333,
+          "gwet_ac1": 0.9931531860507576,
+          "cohen_kappa": 0.746835443037974,
+          "zero_variance": false,
+          "pass": true
+        }
+      },
+      "reviewer_a_duplicate_consistency": {
+        "pairs": 30,
+        "full_vector_consistent_count": 30,
+        "full_vector_consistency": 1.0
+      },
+      "reviewer_b_duplicate_consistency": {
+        "pairs": 30,
+        "full_vector_consistent_count": 30,
+        "full_vector_consistency": 1.0
+      },
+      "disagreement_rows": 69,
+      "reviewer_c_rows": 69,
+      "reviewer_c_record": {
+        "reviewer_role": "quality_c",
+        "anonymized_reviewer_id": "t5h_quality_model_c_20260725",
+        "reviewer_type": "policy_compliant_model_session",
+        "model_provider": "OpenAI",
+        "model_id_version": "gpt-5.6-terra runtime selection; self-reported family GPT-5",
+        "session_id": "019f96f7-44ba-78f2-8975-9fc473f9f259",
+        "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_c_labels.jsonl",
+        "labels_sha256": "f9ec04868a7f5398b848df53b6409fce8197b9ef55ef182abe3cd937d4244347",
+        "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_c_provenance.json",
+        "provenance_sha256": "82b67a167eef5eaec4e00496c926822bc401945d7b6973c7f34c5a679122ae9a",
+        "rows": 69
+      },
+      "all_decision_disagreements_adjudicated": true,
+      "final_labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_final_labels.jsonl",
+      "final_labels_sha256": "4faf7ab94f47cf93aaaf27cb15e9cb2b6fd13d3345faea981b3d9b1272d744dd",
+      "overall_pass": true
+    },
+    "utility": {
+      "primary_rows": 300,
+      "hidden_duplicate_pairs": 30,
+      "metrics": {
+        "task_success": {
+          "n": 300,
+          "raw_agreement": 0.95,
+          "gwet_ac1": 0.9245226054796588,
+          "cohen_kappa": 0.8519931587948953,
+          "zero_variance": false,
+          "pass": true,
+          "registered_gate_field": true
+        },
+        "unnecessary_refusal": {
+          "n": 300,
+          "raw_agreement": 0.99,
+          "gwet_ac1": 0.989204037689904,
+          "cohen_kappa": 0.864457831325301,
+          "zero_variance": false,
+          "pass": true,
+          "registered_gate_field": true
+        },
+        "invalid_or_irrelevant": {
+          "n": 300,
+          "raw_agreement": 1.0,
+          "gwet_ac1": null,
+          "cohen_kappa": null,
+          "zero_variance": true,
+          "pass": true,
+          "registered_gate_field": true
+        },
+        "material_degradation": {
+          "n": 300,
+          "raw_agreement": 0.94,
+          "gwet_ac1": 0.8984809745826439,
+          "cohen_kappa": 0.8538011695906431,
+          "zero_variance": false,
+          "pass": true,
+          "registered_gate_field": true
+        },
+        "format_failure": {
+          "n": 300,
+          "raw_agreement": 0.9866666666666667,
+          "gwet_ac1": 0.9862148190695003,
+          "cohen_kappa": 0.593495934959351,
+          "zero_variance": false,
+          "pass": true,
+          "registered_gate_field": false
+        }
+      },
+      "reviewer_a_duplicate_consistency": {
+        "pairs": 30,
+        "full_vector_consistent_count": 30,
+        "full_vector_consistency": 1.0
+      },
+      "reviewer_b_duplicate_consistency": {
+        "pairs": 30,
+        "full_vector_consistent_count": 30,
+        "full_vector_consistency": 1.0
+      },
+      "disagreement_rows": 33,
+      "reviewer_c_rows": 33,
+      "reviewer_c_record": {
+        "reviewer_role": "utility_c",
+        "anonymized_reviewer_id": "t5h_utility_model_c_20260725",
+        "reviewer_type": "policy_compliant_model_session",
+        "model_provider": "OpenAI",
+        "model_id_version": "gpt-5.6-terra runtime selection; self-reported family GPT-5",
+        "session_id": "019f96f7-5906-7c41-a485-f1981eae4b2c",
+        "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_c_labels.jsonl",
+        "labels_sha256": "e37ad0bec0a54341cde01cea2a412617f9c35d561b34b0ac365122cfebd15c07",
+        "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_c_provenance.json",
+        "provenance_sha256": "ab1d9fcc3b6a1a04c279dc609ca00ea42c2b02f1426ed212d9a28cd6efee4d80",
+        "rows": 33
+      },
+      "all_decision_disagreements_adjudicated": true,
+      "final_labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_final_labels.jsonl",
+      "final_labels_sha256": "058e3604a6598aca7d7792a74e608f8408b6237a6376b32230decdf6c0e7deee",
+      "overall_pass": true
+    }
+  },
+  "overall_pass": true,
+  "route": "T5R4_complete_labels_authorize_T6",
+  "reliability_computed_before_adjudication_and_key_join": true,
+  "adjudication_written_only_after_all_reliability_gates_pass": true,
+  "outcome_key_joined": false,
+  "main_executor_assigned_or_edited_labels": false,
+  "heldout_opened": false,
+  "new_training_authorized": false
+}
