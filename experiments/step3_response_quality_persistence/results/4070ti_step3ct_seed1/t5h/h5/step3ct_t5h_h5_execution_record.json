@@ -1,0 +1,67 @@
+{
+  "name": "step3ct_t5h_h5_execution_record_v1",
+  "source_git_head": "3dbf39753090a4457e82351e68c8237d663ebe70",
+  "commands": [
+    "python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_reviewer_c_freeze.py run",
+    "python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_reviewer_c_freeze.py verify"
+  ],
+  "reviewers": {
+    "safety": {
+      "packet_rows": 11,
+      "decision_field_disagreements": 37,
+      "reviewer": {
+        "reviewer_role": "safety_c",
+        "anonymized_reviewer_id": "t5h_safety_model_c_20260725",
+        "reviewer_type": "policy_compliant_model_session",
+        "model_provider": "OpenAI",
+        "model_id_version": "gpt-5.6-terra runtime selection; self-reported family gpt-5",
+        "session_id": "019f96f7-304c-7a70-80a5-779106733741",
+        "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_c_labels.jsonl",
+        "labels_sha256": "cb40cd195209962553a5de6acb128e0b2196dce51aba5146afb94ce9f77d266f",
+        "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_c_provenance.json",
+        "provenance_sha256": "824169aabc359fca855131e18ed07a7336bd29ba90590bb52b9304445233e8c1",
+        "rows": 11
+      }
+    },
+    "quality": {
+      "packet_rows": 69,
+      "decision_field_disagreements": 76,
+      "reviewer": {
+        "reviewer_role": "quality_c",
+        "anonymized_reviewer_id": "t5h_quality_model_c_20260725",
+        "reviewer_type": "policy_compliant_model_session",
+        "model_provider": "OpenAI",
+        "model_id_version": "gpt-5.6-terra runtime selection; self-reported family GPT-5",
+        "session_id": "019f96f7-44ba-78f2-8975-9fc473f9f259",
+        "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_c_labels.jsonl",
+        "labels_sha256": "f9ec04868a7f5398b848df53b6409fce8197b9ef55ef182abe3cd937d4244347",
+        "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_c_provenance.json",
+        "provenance_sha256": "82b67a167eef5eaec4e00496c926822bc401945d7b6973c7f34c5a679122ae9a",
+        "rows": 69
+      }
+    },
+    "utility": {
+      "packet_rows": 33,
+      "decision_field_disagreements": 43,
+      "reviewer": {
+        "reviewer_role": "utility_c",
+        "anonymized_reviewer_id": "t5h_utility_model_c_20260725",
+        "reviewer_type": "policy_compliant_model_session",
+        "model_provider": "OpenAI",
+        "model_id_version": "gpt-5.6-terra runtime selection; self-reported family GPT-5",
+        "session_id": "019f96f7-5906-7c41-a485-f1981eae4b2c",
+        "labels_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_c_labels.jsonl",
+        "labels_sha256": "e37ad0bec0a54341cde01cea2a412617f9c35d561b34b0ac365122cfebd15c07",
+        "provenance_path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_c_provenance.json",
+        "provenance_sha256": "ab1d9fcc3b6a1a04c279dc609ca00ea42c2b02f1426ed212d9a28cd6efee4d80",
+        "rows": 33
+      }
+    }
+  },
+  "labels_compared_or_summarized": false,
+  "agreement_or_reliability_computed": false,
+  "main_executor_semantic_label_review": false,
+  "hidden_key_opened": false,
+  "heldout_opened": false,
+  "route": "H5A1_all_c_frozen_authorize_reliability"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "step3ct_t5h_h5_route_decision_v1",
+  "source_git_head": "3dbf39753090a4457e82351e68c8237d663ebe70",
+  "route": "H5A1_all_c_frozen_authorize_reliability",
+  "failure_route": "T5R2_review_completion_or_schema_stop",
+  "gates": {
+    "h4q_launch_authorization_verified": true,
+    "safety_c_complete_11": true,
+    "quality_c_complete_69": true,
+    "utility_c_complete_33": true,
+    "three_c_reviewer_and_session_ids_distinct": true,
+    "c_sessions_distinct_from_all_ab_and_failed_t5_sessions": true,
+    "schemas_ids_hashes_and_provenance_valid": true,
+    "all_c_outputs_frozen_before_reliability": true,
+    "coordinator_semantic_label_review": false,
+    "outcome_key_joined": false,
+    "hidden_key_opened": false,
+    "heldout_opened": false
+  },
+  "counts": {
+    "accepted_label_files": 3,
+    "accepted_rows_total": 113,
+    "decision_field_disagreements_total": 156,
+    "rejected_files": 0,
+    "partial_files": 0
+  },
+  "source_freeze": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/freezes/step3ct_t5r_all_c_freeze.json",
+    "sha256": "e6a10e0f9fb3fae274147261945c0b60003781cd0fc2defb97c4392a52a00921",
+    "bytes": 4076
+  },
+  "behavior_result_available": false,
+  "review_reliability_available": false,
+  "reliability_authorized_after_push": true,
+  "hidden_key_join_authorized": false,
+  "t6_authorized": false,
+  "new_training_or_generation_authorized": false,
+  "next_action": "push_h5_then_run_frozen_t5r_finalize"
+}

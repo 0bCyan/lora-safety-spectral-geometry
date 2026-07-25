@@ -1,0 +1,48 @@
+{
+  "name": "step3ct_t5h_h5_package_manifest_v1",
+  "route": "H5A1_all_c_frozen_authorize_reliability",
+  "canonical_lf": true,
+  "artifact_count": 10,
+  "artifacts": {
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_c_labels.jsonl": {
+      "sha256": "cb40cd195209962553a5de6acb128e0b2196dce51aba5146afb94ce9f77d266f",
+      "bytes": 4079
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/safety/step3ct_t5r_safety_reviewer_c_provenance.json": {
+      "sha256": "824169aabc359fca855131e18ed07a7336bd29ba90590bb52b9304445233e8c1",
+      "bytes": 1905
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_c_labels.jsonl": {
+      "sha256": "f9ec04868a7f5398b848df53b6409fce8197b9ef55ef182abe3cd937d4244347",
+      "bytes": 15160
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/quality/step3ct_t5r_quality_reviewer_c_provenance.json": {
+      "sha256": "82b67a167eef5eaec4e00496c926822bc401945d7b6973c7f34c5a679122ae9a",
+      "bytes": 1944
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_c_labels.jsonl": {
+      "sha256": "e37ad0bec0a54341cde01cea2a412617f9c35d561b34b0ac365122cfebd15c07",
+      "bytes": 9936
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reviews/utility/step3ct_t5r_utility_reviewer_c_provenance.json": {
+      "sha256": "ab1d9fcc3b6a1a04c279dc609ca00ea42c2b02f1426ed212d9a28cd6efee4d80",
+      "bytes": 1914
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/freezes/step3ct_t5r_all_c_freeze.json": {
+      "sha256": "e6a10e0f9fb3fae274147261945c0b60003781cd0fc2defb97c4392a52a00921",
+      "bytes": 4076
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h5/step3ct_t5h_h5_route_decision.json": {
+      "sha256": "1330984120ba78b64b7225799abd0d9c9620aca8bf9b4925c502248ff0b4c765",
+      "bytes": 1499
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h5/step3ct_t5h_h5_execution_record.json": {
+      "sha256": "88d956d05c9599d73f1c3e885882ccd64af2f2210cb30197aef36ff86f538074",
+      "bytes": 3683
+    },
+    "experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5h/h5/Step3CT_T5H_H5_reviewer_c_freeze_report.md": {
+      "sha256": "a1309fdc0e71f9e51999c02b862c92e29bda86b25b3ba81e3289448c0a555055",
+      "bytes": 878
+    }
+  }
+}
