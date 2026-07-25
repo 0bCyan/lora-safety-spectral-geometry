@@ -1,72 +1,140 @@
-# Experiment Machine Task: Step3O O0 Local Review State
+# Experiment Machine Task: Keep Idle During Step3O-O4 Local Pool Work
 
 ## Current State
 
-Pull the latest `exp/step3-response-quality-persistence`.
+Pull the latest `exp/step3o-o4-attempt5` for records only. There
+is no active GPU task.
 
 ```text
-T5R route: T5R4_complete_labels_authorize_T6
-T6 route:  R1_no_c3_candidate_passes
-Track B:  M1_reconstruction_integrity_failure
+T5R route:       T5R4_complete_labels_authorize_T6
+T6 route:        R1_no_c3_candidate_passes
+Track B:         M1_reconstruction_integrity_failure
+Step3N-R1:       STOP before tuple writing or training
+Step3O O1/O2:   PASS
+Step3O O3:      PASS external actionability validation
+Step3O-O4:      attempts 001/002/003/004 stopped before prompts; attempt 005 prospective, local only
 ```
 
-There is no active experiment-machine job. Do not rerun training, generation, review, mechanism reconstruction, or T6.
+Attempt 003 completed R0 and its future-round CI/BLS checks, then stopped at
+the R1 integrity gate with a zero-event frozen trace. That establishes that no
+drand event was recorded, not that no endpoint was contacted. It released no
+prompt, opened no author/reviewer session, and performed zero optimizer steps.
+Attempt 004 completed R0 but stopped because its R1 start immutable lock was
+published after the fixed target round. Attempt 005 preserves the scientific
+design and adds pre-start deadline checks plus a fail-closed verifier for a
+separately locked start that is published too late.
 
-Step3N-R1 repaired TCSR-MT into PCSR-M and PCSR-MW, then executed only the local source-qualification gate. The source content covered 37 prompts, but independent `safe_actionability` review failed reliability (`0.379` exact agreement; Gwet AC2 `0.371 < 0.70`). PCSR-M/PCSR-MW are closed under R1 before tuple writing or training. TRIM-CS0 remains separately unauthorized.
+Do not run training, model generation, model scoring, gradient extraction,
+matching, T6, PCSR, TRIM, or method smoke tests.
 
-Step3O O0 is now frozen locally before any Step3O label. It uses pinned public
-Do-Not-Answer and BeaverTails sources to develop and independently transport a
-component-derived actionability instrument. The local package contains a
-132-row development packet and a separate 198-row transport clean-safety
-packet. Raw external files remain ignored. Independent no-context local agents,
-not the experiment machine, own the next A/B/C reviews.
+## New Completed Result
 
-## Completed Result
+Step3O replaced the unreliable directly assigned actionability ordinal with
+three judged components: `safe_route`, `executable_step`, and
+`prompt_binding`. The strict score-2 boundary is derived only when all three
+are yes.
 
-Nine prospectively isolated model-review sessions completed six A/B files and three disagreement-only C files. T5R passed every frozen reliability gate, all six A/B hidden-duplicate consistency scores were `1.0`, and Reviewer C covered all 113 disagreement rows. T6 then joined only the frozen adjudicated labels to the frozen hidden keys.
+The untouched external validation used 120 BeaverTails primary rows plus 12
+hidden duplicates and passed every frozen gate:
 
-The concurrent C0-R control passed all reproducibility gates. Both C3 candidates passed every safety and utility gate but failed the primary quality conjunction:
+- component raw agreement: `0.942-0.958`;
+- component Gwet AC1: `0.886-0.931`;
+- derived ordinal exact agreement: `0.925`;
+- derived ordinal Gwet AC2: `0.890`, O3 registered prompt-resampling lower
+  sensitivity bound `0.808`;
+- strict-boundary raw agreement: `0.958`;
+- strict-boundary Gwet AC1: `0.931`, O3 registered prompt-resampling lower
+  sensitivity bound `0.865`;
+- hidden-duplicate complete-vector consistency: A `12/12`, B `12/12`;
+- rubric revisions after validation opened: `0`.
 
-- C3a high-specific safe success difference versus C0-R: `+0.03`, bootstrap 95% CI `[-0.03, 0.10]`, Holm-adjusted McNemar `p=1.0`.
-- C3b high-specific safe success difference versus C0-R: `-0.01`, bootstrap 95% CI `[-0.08, 0.05]`, Holm-adjusted McNemar `p=1.0`.
-- C3b also failed the frozen lower-bound non-inferiority gate for specific safe success.
+This is a positive observed-agreement result for two fixed,
+context-isolated same-model sessions. The resampling bounds describe O3 packet
+sensitivity, not replacement-reviewer uncertainty. The result is not human
+construct validity, a behavioral gain, a mechanism result, or causal proof.
 
-The registered next action is `close_current_C3_recipe_without_scans`. No `Q_star` was selected.
+## Active Local Work
+
+`Step3O_O4_fresh_training_pool_plan.md` prospectively defines the next local
+stage. It can construct only a machine-rubric-qualified candidate pool. It
+will:
+
+1. deterministically select exactly 60 unused PKU-SafeRLHF training prompts;
+2. exclude all evaluation prompts, prior Step3 split IDs, old 40/37 prompts,
+   tracked risk-ID exposures, and registered incidental prompt exposures;
+3. release prompts only, never source harmful responses;
+4. use two fresh, context-isolated arm-blind authors for exactly one candidate
+   each per prompt;
+5. use fresh, context-isolated A/B/C review sessions to screen detail, the three O3-screened
+   actionability components, and the new O4-only naturalness and clean-safety
+   fields;
+6. require at least 48 of the fixed 60 prompts plus all category/severity
+   retention minima;
+7. prohibit prompt replacement, a third candidate, or another authoring round.
+
+All selection and packet-order salts are bound to the first pushed P0 commit
+plus P0-fixed future drand round `6323126` (`2026-07-27 12:00:00
+Asia/Shanghai`). Its request receives a commit-bound GitHub Actions check before
+publication. The full validation, statistics, adjudication,
+and route implementation is frozen in P0 before any author or reviewer output.
+R0 and R1 each use a separate single-path start commit that must be pushed and
+immutable-release locked before the supervised result command can contact
+drand. The result command freezes its strictly validated ordered mirror trace
+and either produces its registered artifact or a terminal
+`STOP_PROTOCOL_INTEGRITY`. A failed stage is never rerun within the same
+attempt. P1 prompt materialization additionally holds a cross-process exclusive
+worker lease; timeout or manual sealing can freeze only a complete ordered
+output prefix after the worker has released that lease.
+P0, R0-start, and either R0 success or R0 terminal failure must all be locked
+before the fixed target round; a late R0-start is rejected before network access.
+Authenticated GitHub read-only control-plane queries use at most four frozen
+20-second attempts with 1/2/4-second delays, and retry only transport failures
+that returned no HTTP response. HTTP/content failures and mutations do not retry.
+
+The accepted evidence chain does not claim that no hidden local clone ever
+executed. It fixes the seed-bearing round in P0 and gives success and failure a
+single shared outcome tag, so only one fixed-target outcome can be accepted.
+
+All O4 prompt selection, authoring, and review work is local. The experiment
+machine stays idle.
 
 ## Verification
 
 ```text
-python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_reviewer_c_qualification.py verify
-python experiments/step3_response_quality_persistence/scripts/record_step3ct_t5h_reviewer_c_freeze.py verify
 python experiments/step3_response_quality_persistence/scripts/step3o_measurement_repair.py verify-o0
-python experiments/step3_response_quality_persistence/scripts/test_step3o_measurement_repair.py
+python -m unittest discover experiments/step3_response_quality_persistence/scripts -p test_step3o_measurement_repair.py -v
+python -m unittest discover experiments/step3_response_quality_persistence/scripts -p test_step3o_o4_training_pool.py -v
+python -m unittest discover experiments/step3_response_quality_persistence/scripts -p test_step3o_o4_randomness.py -v
+python -m unittest discover experiments/step3_response_quality_persistence/scripts -p test_step3o_o4_qualification.py -v
+python -m unittest discover experiments/step3_response_quality_persistence/scripts -p test_step3o_o4_stage.py -v
 ```
 
-Inspect the frozen aggregate results only at:
+Frozen aggregate O3 evidence is at:
 
 ```text
-experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t5r/reports/Step3CT_T5R4_review_reliability_report.md
-experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t6/Step3CT_T6_analysis.md
-experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t6/step3ct_t6_statistics_and_route.json
-experiments/step3_response_quality_persistence/results/4070ti_step3ct_seed1/t6/step3ct_t6_gate_table.csv
+experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/Step3O_validation_route_report.md
+experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/step3o_validation_review_agreement.json
+experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/step3o_validation_route_decision.json
 ```
 
 ## Prohibitions
 
 - Do not modify P6 or replace M1.
-- Do not retry label64 or report approximate grouped values.
-- Do not rerun or relabel any A/B/C review file.
-- Do not revise thresholds or rescue C3 with eta, temperature, queue, target, decoding, or checkpoint scans.
-- Do not promote C3a from its positive point estimate; its confidence interval and corrected test failed the frozen primary gate.
+- Do not rerun label64 or report approximate grouped values.
+- Do not rerun, relabel, resample, or revise Step3O O1-O3.
+- Do not release the old 87 rows, old 40 prompts, or old 37-prompt selection.
+- Do not expose PKU source harmful responses to O4 authors or reviewers.
+- Do not replace O4 prompts or add candidates after authoring begins.
+- Do not implement or train PCSR-R2, TRIM, or a new method.
 - Do not run C4/C5, seeds 2/3, a second backbone, SpectraSafe, or heldout.
-- Do not commit checkpoints, adapters, caches, raw API caches, full gradients, or unrelated paper files.
+- Do not commit checkpoints, adapters, caches, raw API caches, full gradients,
+  or unrelated paper files.
 
-## Future Resumption
+## Future Experiment-Machine Entry
 
-A completed stopped method record is frozen in:
-
-```text
-experiments/step3_response_quality_persistence/Step3N_R1_pcsr_method_repair_and_reaudit.md
-```
-
-There is no active GPU or experiment-machine resumption task. Do not write generic counterfactuals, review mismatch edges, implement PCSR losses, or run the five-arm smoke. Keep the experiment machine idle while local independent agents execute Step3O development and source-safety review. T6 outputs and failed N0-R1 labels must not be used for rubric anchors, target selection, or behavior-driven tuning. A later Step3O validation packet may be frozen only after both local entry gates pass; even that pass would authorize fresh training-pool planning, not training.
+The experiment machine receives a task only if O4 first passes its fixed-pool
+yield and review-reliability gates, a separate human or genuinely
+heterogeneous training-suitability audit passes, and a new method protocol is
+reviewed, committed, and pushed. That later protocol must define fresh method
+names, data hashes, controls, implementation tests, smoke gates, sample size,
+and failure routes. An O4 pass alone still authorizes zero optimizer steps.

@@ -4,7 +4,7 @@
 
 Step 3 remains open for a new prospective method direction, but the current C3 recipe is closed.
 
-Current phase: **Step3O O0 external measurement-repair packets are frozen before fresh labels; Step3N-R1 remains stopped before tuple writing or training**.
+Current phase: **Step3O O3 external actionability validation passed; Step3O-O4 attempt 005 is prospectively freezing a public-randomness-backed machine-rubric-qualified candidate-pool protocol, while Step3N-R1 remains stopped before tuple writing or training**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
@@ -14,7 +14,11 @@ Step3C-MF subsequently passed both prerequisites for a new C3 behavioral test. T
 
 The original Step3N design audit is recorded in `Step3N_five_agent_method_brainstorm_and_candidate_audit.md`. A subsequent main-session review found that its global CVaR term was incompatible with the microbatch-one trainer, its reference-relative score did not establish an absolute ternary order, and its adjacent ranking terms canceled the initial force on the generic-safe middle response. `Step3N_R1_pcsr_method_repair_and_reaudit.md` repaired those mathematical defects into PCSR-M and PCSR-MW, but its fresh N0-R1 source review then failed the prespecified measurement gate. Detail retention was reliable (Gwet AC2 `0.846`), and adjudication identified 37 prompts with qualifying content, but safe actionability had only `0.379` exact agreement and `0.371` AC2 against the frozen `0.70` minimum. Both reviewers were internally consistent on all eight hidden duplicates; the failure was a systematic scale-calibration conflict, not careless labeling. PCSR is therefore closed under R1 before `yG` writing, matching, model scoring, or training.
 
-`Step3O_external_actionability_measurement_repair_plan.md` now opens a separate measurement route without reopening R1. O0 pins Do-Not-Answer for component-rubric development and BeaverTails for independent transport validation. It freezes a 132-row development packet and a 198-row transport clean-safety packet. Restricted lexical-overlap filtering removed 24 BeaverTails prompts that exactly overlapped the existing PKU risk-training pool before seeded sampling; selected-packet exact and registered token-ngram overlaps are zero. This does not establish semantic or reviewer-pretraining decontamination. The strict score is no longer directly chosen: it is derived from `safe_route`, `executable_step`, and `prompt_binding`. O0 authorizes independent local review only, not validation labels, new targets, or model training.
+`Step3O_external_actionability_measurement_repair_plan.md` opened a separate measurement route without reopening R1. O0 pinned Do-Not-Answer for component-rubric development and BeaverTails for external-source transport validation. Restricted lexical-overlap filtering removed 24 BeaverTails prompts that overlapped the existing PKU risk-training pool before seeded sampling; this remains a restricted lexical audit, not semantic or reviewer-pretraining decontamination. O1 development and O2 clean-safety screening both passed. The untouched 120-row O3 validation then passed every frozen observed-agreement gate in two fixed, context-isolated same-model sessions: component raw agreement was `0.942-0.958`, component AC1 was `0.886-0.931`, derived ordinal AC2 was `0.890` with the O3 registered prompt-resampling lower sensitivity bound `0.808`, and the strict score-2 boundary AC1 was `0.931` with lower bound `0.865`. Those bounds describe O3 packet sensitivity, not replacement-reviewer uncertainty. Both sessions reproduced all `12/12` hidden repeats. The score remains derived from `safe_route`, `executable_step`, and `prompt_binding`; it is not directly chosen. O3 authorizes only the separate prospective `Step3O_O4_fresh_training_pool_plan.md`, not model training.
+
+The O4 P0 package also freezes the complete append-only local stage runner before any output is opened. Author, A/B reviewer, and C reviewer deliveries receive one-time hash receipts before validation; every valid stage must occupy an exact sole-parent commit and be pushed before the next stage. A/B reliability is a true stopping gate: failure creates no C packet and forbids adjudication or hidden-stratum yield analysis. These controls improve protocol integrity but do not upgrade the same-model candidate pool to human validation or training authorization.
+
+Attempts 001-003 stopped at registered infrastructure gates before prompt release. Attempt 004 completed its R0 future-round request, but its R1 start immutable lock was published after the fixed target round and it terminated before pulse acquisition, prompt selection, authoring, review, scoring, or training. Attempt 005 preserves the scientific design, moves to a new future round, rejects an expired start before writing a receipt, and verifies a separately locked late start only as terminal-failure evidence rather than as a successful predeadline chain.
 
 ## 1. Research Question
 
@@ -135,7 +139,7 @@ Completed evidence now includes:
 - T2R state-matched eta calibration and fresh smoke qualification;
 - three matched 64-step seed1 runs with finite updates and frozen manifests;
 - 12 T4 generation cells, 1,200 non-empty outputs, and byte-verified blind packets;
-- nine independent A/B/C reviewer sessions, 2,693 accepted reviewer rows, and complete disagreement adjudication;
+- nine context-isolated A/B/C reviewer sessions, 2,693 accepted reviewer rows, and complete disagreement adjudication;
 - passing Safety, Quality, Utility, and hidden-duplicate reliability gates under `T5R4`;
 - a valid concurrent-control reproduction and paired T6 statistics for all three arms;
 - `R1_no_c3_candidate_passes`: C3a and C3b passed safety and utility but failed the primary quality conjunction;
@@ -169,7 +173,7 @@ Mechanical-template and holistic pair-preference labels remain inactive.
 Stop Step 3 or redirect it if any of the following occurs:
 
 - any unchanged T4 packet or rubric hash fails;
-- lawful independent reviewers cannot complete the unchanged safety packet;
+- role-isolated reviewers cannot lawfully complete the unchanged safety packet;
 - any accepted A/B/C file is incomplete, invalid, or unprovenanced;
 - the frozen review-reliability gates fail;
 - the concurrent C0-R control fails its reproducibility gate;
@@ -188,9 +192,9 @@ Authorized now:
 - preserve `Step3N_R1_pcsr_method_repair_and_reaudit.md` and its N0-R1 source `STOP` without relabeling or threshold changes;
 - use the exact matching solver only as reusable infrastructure; no PCSR matching instance is authorized after the source stop;
 - preserve TRIM as the separately gated `TRIM-CS0` causal-steering preflight, but do not implement or run it until a separate freeze is reviewed and pushed.
-- preserve the Step3O O0 source, contamination, packet, rubric, and test freeze;
-- run independent fresh-context Step3O development actionability A/B/C review under the frozen component rubric;
-- run independent fresh-context Step3O transport-source clean-safety A/B/C review in parallel under its separate rubric.
+- preserve the complete Step3O O0-O3 source, packet, reviewer, hash-chain, and PASS route without relabeling or threshold changes;
+- freeze and execute the local-only Step3O-O4 public-randomness request, prompt selection, one-round authoring, and context-isolated same-model candidate-qualification protocol;
+- construct exactly 60 new PKU training prompts and at most two arm-blind authored candidates per prompt under the frozen O4 denominator and no-top-up rule.
 
 Not authorized now:
 
@@ -201,13 +205,14 @@ Not authorized now:
 - PCSR, TRIM, TCSR, or any other fresh candidate training or generation before its data, implementation, smoke, and execution registry is separately frozen;
 - `yG` writing, prompt-mismatch edge review, or PCSR tuple completion under R1;
 - replacing the failed A/B reliability gate with Reviewer C's adjudicated coverage;
-- opening the Step3O actionability validation packet before both development and transport clean-safety gates pass;
+- reopening, resampling, or revising the completed Step3O validation packet or component rubric;
 - changing Step3O source revisions, contamination threshold, sample seeds, component rule, or review gates after any Step3O label;
 - reusing any Step3N-R1 row or old 37-prompt selection in Step3O development, validation, or future target construction;
+- replacing an O4 prompt, adding a third candidate, or starting another authoring round after either author output is opened;
 - C4, C5, adaptive replay, or other method stacking;
 - behavior-based hyperparameter scans;
 - seeds 2 and 3;
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The stopped Stage0, C-R0, C3, and PCSR-R1 routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2/H3Q/H3/T5R/T6 packages, reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. T6 is complete at `R1_no_c3_candidate_passes`; there is no C3 `Q_star`, and N0-R1 produced no PCSR training candidate. Any next method requires a new prospective boundary. A later valid winner is still required before seeds 2/3, heldout, a second backbone, or any combined-method factorial.
+The stopped Stage0, C-R0, C3, and PCSR-R1 routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2/H3Q/H3/T5R/T6 packages, reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. T6 is complete at `R1_no_c3_candidate_passes`; there is no C3 `Q_star`, and N0-R1 produced no PCSR training candidate. Step3O O3 repaired the measurement endpoint and passed its external-source observed-agreement gates in the fixed sessions, but did not select a method. An O4 machine-rubric-pool pass, a separate training-suitability audit, and a later frozen method winner are still required before optimizer steps, seeds 2/3, heldout, a second backbone, or any combined-method factorial.
