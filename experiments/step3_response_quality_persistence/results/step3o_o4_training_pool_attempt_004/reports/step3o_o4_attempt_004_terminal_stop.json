@@ -1,0 +1,25 @@
+{
+  "name": "step3o_o4_randomness_terminal_stop_v1",
+  "attempt_id": "step3o_o4_attempt_004",
+  "stage": "R1_PULSE",
+  "route": "STOP_PROTOCOL_INTEGRITY",
+  "protocol_commit": "93a43a279080fe4067194135e6f984a0c9fcbf36",
+  "parent_commit": "5bfcdebb356a39a6f4f8375799d4c9993fd9ae7d",
+  "error_type": "ValueError",
+  "error_message_sha256": "43c0189cc5eef26ccbff70a90f10f7533d8a722abd95e34459be72b9b57e01cf",
+  "evidence_artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_004/reports/step3o_o4_r1_pulse_start.json",
+      "bytes": 637,
+      "sha256": "3ea01efc6d95b171cb2c42db299f1bb000fdfa55e20346112d048e24fe9a3f05"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_004/reports/step3o_o4_r1_transport_trace.json",
+      "bytes": 347,
+      "sha256": "ae42d8de7c9225df88df91be11e4de5e4457125991b2b5beee87924661bad806"
+    }
+  ],
+  "replacement_or_retry_allowed": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
