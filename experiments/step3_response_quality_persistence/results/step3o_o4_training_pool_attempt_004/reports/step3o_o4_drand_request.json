@@ -1,0 +1,28 @@
+{
+  "name": "step3o_o4_drand_request_v1",
+  "status": "FROZEN_REQUEST_BEFORE_TARGET_PULSE",
+  "provider": "drand_mainnet_default",
+  "protocol_commit": "93a43a279080fe4067194135e6f984a0c9fcbf36",
+  "start_commit": "48ce2c3cc869ce8e5d49795e925deeff1eef6115",
+  "start_receipt_sha256": "9cca3eb80a7dc5a701899c32b5433d13ce1e2eb2953df8340dc9f09a6f69c127",
+  "transport_trace_sha256": "c429bde4cce3fe4a2c49c13ef7f78afeeda19162a81edded0683a8776980a599",
+  "chain_info": {
+    "public_key": "868f005eb8e6e4ca0a47c8a77ceaa5309a47978a7c71bc5cce96366b5d7a569937c529eeda66c7293784a9402801af31",
+    "period": 30,
+    "genesis_time": 1595431050,
+    "hash": "8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce",
+    "schemeID": "pedersen-bls-chained"
+  },
+  "observed_pulse": {
+    "round": 6320930,
+    "signature": "82981a492bab33121915c3fc77cd755b308faa1ebec364e5b432e25bc8afe6abfa252e9052c9352800413605f520271d177a1db77c6bd12a244c0ccc608c04ac2665462d793769389b2bb3ee02403b4d91181dbf7a2a311a83f447be2c7ae816",
+    "previous_signature": "a570aea5a98674bd956642f43c0c26b1ee63e1b5dc132d4a754d666d7c7c289dfd223615753d63ff92631bb99b188d17041ac2b99ad7cdff57f77e686534ef96ab5bae666c133ee35a6408b6abec3f97a90e671afc64b38bd46567f3fc6ae3ed",
+    "randomness": "7ea4f81e2e8c2cb225a69a56bd3c0922c90c7f2ac689b48b5b01c6d4257872a1"
+  },
+  "observed_round_time_unix": 1785058920,
+  "target_round": 6321086,
+  "target_round_time_unix": 1785063600,
+  "selection_started": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

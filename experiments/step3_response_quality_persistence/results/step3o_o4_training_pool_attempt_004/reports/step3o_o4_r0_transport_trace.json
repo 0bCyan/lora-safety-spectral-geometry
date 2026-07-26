@@ -1,0 +1,39 @@
+{
+  "name": "step3o_o4_drand_transport_trace_v1",
+  "attempt_id": "step3o_o4_attempt_004",
+  "stage": "R0_REQUEST",
+  "status": "COMPLETE_SUCCESS",
+  "protocol_commit": "93a43a279080fe4067194135e6f984a0c9fcbf36",
+  "parent_commit": "48ce2c3cc869ce8e5d49795e925deeff1eef6115",
+  "events": [
+    {
+      "operation": "r0_fetch_info",
+      "mirror_index": 1,
+      "url": "https://drand.cloudflare.com/info",
+      "outcome": "ACCEPTED_CONTENT",
+      "elapsed_milliseconds": 3773,
+      "parsed_object_sha256": "7e17a940ebb28f518ea0c0175a7b7b1d030f9bd88e1d8b63ad03f6a8c70ffaf2",
+      "failure_class": null
+    },
+    {
+      "operation": "r0_fetch_latest",
+      "mirror_index": 1,
+      "url": "https://drand.cloudflare.com/public/latest",
+      "outcome": "ACCEPTED_CONTENT",
+      "elapsed_milliseconds": 1224,
+      "parsed_object_sha256": "4fe251e1fc901295df55868b4cfd54d331543f3a120ebd8602107e522920eb7c",
+      "failure_class": null
+    },
+    {
+      "operation": "r0_verify_observed",
+      "mirror_index": 1,
+      "url": "https://drand.cloudflare.com",
+      "outcome": "CRYPTOGRAPHICALLY_VERIFIED",
+      "elapsed_milliseconds": 2684,
+      "parsed_object_sha256": "4fe251e1fc901295df55868b4cfd54d331543f3a120ebd8602107e522920eb7c",
+      "failure_class": null
+    }
+  ],
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
