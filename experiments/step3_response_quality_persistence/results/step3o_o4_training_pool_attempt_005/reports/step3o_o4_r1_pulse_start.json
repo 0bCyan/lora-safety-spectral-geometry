@@ -1,0 +1,14 @@
+{
+  "name": "step3o_o4_randomness_start_v2",
+  "attempt_id": "step3o_o4_attempt_005",
+  "stage": "R1_PULSE",
+  "status": "AUTHORIZED_ONE_ACCEPTED_OUTCOME_FIXED_TARGET",
+  "protocol_commit": "b36303bb901b32c93b221f1a344a39c096b6c2c2",
+  "parent_commit": "6670a29cc3cab5715544deb549c054bc32a4cdee",
+  "fixed_target_round": 6323126,
+  "expected_output": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/reports/step3o_o4_drand_target_pulse.json",
+  "hidden_local_invocation_absence_claimed": false,
+  "replacement_or_retry_allowed": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
