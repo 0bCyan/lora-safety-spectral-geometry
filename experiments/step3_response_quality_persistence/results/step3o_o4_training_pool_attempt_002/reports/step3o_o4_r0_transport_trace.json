@@ -1,0 +1,11 @@
+{
+  "name": "step3o_o4_drand_transport_trace_v1",
+  "attempt_id": "step3o_o4_attempt_002",
+  "stage": "R0_REQUEST",
+  "status": "TERMINAL_FAILURE",
+  "protocol_commit": "cb0a2069d0740d85544d27a5a36d260bd4ba421c",
+  "parent_commit": "569661f63842ecdf4d3b946acf1eab04c12e7f1b",
+  "events": [],
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
