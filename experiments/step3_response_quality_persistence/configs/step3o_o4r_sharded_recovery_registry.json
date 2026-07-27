@@ -1,0 +1,70 @@
+{
+  "schema": "step3o_o4r_sharded_recovery_registry_v1",
+  "attempt_id": "step3o_o4r_attempt_001",
+  "entry_commit": "4db5e52c1ba7b9e40b3406b5fda13bedf65a0eb6",
+  "threat_model": {
+    "malicious_operator_resistant": false,
+    "session_freshness_evidence": "operator and platform orchestration attestation without a model-service signature",
+    "precommit_first_receipt_cryptographically_proven": false,
+    "prior_output_semantic_reuse_cryptographically_excluded": false,
+    "postcommit_artifact_substitution_detected": true
+  },
+  "source": {
+    "original_protocol_commit": "b36303bb901b32c93b221f1a344a39c096b6c2c2",
+    "prompt_freeze_commit": "abd6e650533ba4e8b9c3f25763f1f28aa9907340",
+    "terminal_commit": "4db5e52c1ba7b9e40b3406b5fda13bedf65a0eb6",
+    "beacon_round": 6323126,
+    "beacon_randomness": "7a4a644a32a836c9003057a601504929438311ea0155e5ef7e1a3c85e1dc5df8",
+    "prior_author_b_bytes": 26052,
+    "prior_author_b_sha256": "a34ddde826854a02cea8fc6e37cf4c880f23e0a25318244c023927448cc13b92",
+    "ineligible_agent_ids": [
+      "019fa2bc-0334-7e21-ac7c-58f9fbdb50ed",
+      "019fa2bc-0425-7823-bdd9-9b24b6c53a9d"
+    ]
+  },
+  "authoring": {
+    "lanes": 2,
+    "shards_per_lane": 3,
+    "rows_per_shard": 20,
+    "requested_model": "gpt-5.5",
+    "requested_reasoning_effort": "high",
+    "sampling_controls": "platform managed and not user configurable",
+    "replacement_or_retry_allowed": false
+  },
+  "review": {
+    "lanes": 2,
+    "shards_per_lane": 6,
+    "primary_rows_per_shard": 20,
+    "duplicate_pairs_per_shard": 2,
+    "visible_rows_per_shard": 22,
+    "per_shard_duplicate_matches_required": 2,
+    "c_sessions": 1,
+    "c_max_rows": 18,
+    "requested_model": "gpt-5.5",
+    "requested_reasoning_effort": "high",
+    "sampling_controls": "platform managed and not user configurable",
+    "replacement_or_retry_allowed": false
+  },
+  "remote": {
+    "name": "origin",
+    "url": "https://github.com/0bCyan/lora-safety-spectral-geometry.git",
+    "branch": "codex/step3o-o4-recovery",
+    "upstream": "origin/codex/step3o-o4-recovery",
+    "github_repository": "0bCyan/lora-safety-spectral-geometry",
+    "github_repository_id": 1284243466,
+    "github_token_env": "STEP3O_O4_GITHUB_TOKEN",
+    "gh_cli_version": "2.95.0",
+    "immutable_release_tag_prefix": "step3o-o4r-attempt-001"
+  },
+  "stage_tags": {
+    "P0": "step3o-o4r-attempt-001-p0",
+    "P1_AUTHOR_INPUT": "step3o-o4r-attempt-001-p1-author-input",
+    "P1_AUTHOR_OUTCOME": "step3o-o4r-attempt-001-p1-author-outcome",
+    "P2_CANDIDATE_OUTCOME": "step3o-o4r-attempt-001-p2-candidate-outcome",
+    "P3_AB_INPUT": "step3o-o4r-attempt-001-p3-ab-input",
+    "P3_AB_OUTCOME": "step3o-o4r-attempt-001-p3-ab-outcome",
+    "P4_C_GATE_OUTCOME": "step3o-o4r-attempt-001-p4-c-gate-outcome",
+    "P5_C_INPUT": "step3o-o4r-attempt-001-p5-c-input",
+    "P5_FINAL_OUTCOME": "step3o-o4r-attempt-001-p5-final-outcome"
+  }
+}
