@@ -1,0 +1,40 @@
+{
+  "name": "step3o_o4_drand_target_pulse_v1",
+  "status": "FROZEN_PUBLIC_RANDOMNESS_BEFORE_SELECTION",
+  "provider": "drand_mainnet_default",
+  "protocol_commit": "b36303bb901b32c93b221f1a344a39c096b6c2c2",
+  "start_commit": "cbbad90d0d5d229bfffb6c99eed8877dc3cb3317",
+  "request_commit": "6670a29cc3cab5715544deb549c054bc32a4cdee",
+  "request_sha256": "2dc0b4f23a25ee79e5fac4687931f388a9bc277b3bdf4514bddcb6d528bead1b",
+  "start_receipt_sha256": "8e90dee53250675d3168aa28a8c3f33c3d3e71d3c1738f684ca7fe334c6124f0",
+  "transport_trace_sha256": "681bc1fb716d5bbabe0c0a4a200569b7a2950613e359a3bd0bdab6ac9c0b2060",
+  "target_round": 6323126,
+  "target_round_time_unix": 1785124800,
+  "target_pulse": {
+    "round": 6323126,
+    "signature": "944c10edb2c1ce2a30cb2518b586a71087c50cd4fac319c221494f37d8fbeb4f9a89eebda5aaf5253be41b88d69697fb0d815a82240c86ae1b70be3c4fef686f5593e9931831f47a520c810ec9e6bdf2d388d056781f0c6a3669bbce4893219d",
+    "previous_signature": "952376f4137b3dcb0798721d8a76ffe335949d115e02cd6b6fcf97b0f748a66de3258668f148ea29172d8438b94185e0048c3061497303a027fabec04eb0bb27ebf01e86e7b97ee4232ccea760fc867af8bfe18b0e1106915148438bb3c235f6",
+    "randomness": "7a4a644a32a836c9003057a601504929438311ea0155e5ef7e1a3c85e1dc5df8"
+  },
+  "request_ci": {
+    "id": 89817883200,
+    "name": "Verify future drand round",
+    "head_sha": "6670a29cc3cab5715544deb549c054bc32a4cdee",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/0bCyan/lora-safety-spectral-geometry/actions/runs/30211308521/job/89817883200",
+    "details_url": "https://github.com/0bCyan/lora-safety-spectral-geometry/actions/runs/30211308521/job/89817883200",
+    "started_at": "2026-07-26T16:50:26Z",
+    "completed_at": "2026-07-26T16:50:42Z",
+    "app_slug": "github-actions",
+    "check_suite_id": 81868051994,
+    "workflow_run_id": 30211308521,
+    "workflow_run_attempt": 1,
+    "workflow_path": ".github/workflows/step3o-o4-randomness-request.yml",
+    "event": "push",
+    "job_id": 89817883200
+  },
+  "selection_started": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
