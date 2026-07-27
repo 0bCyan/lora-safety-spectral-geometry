@@ -1,0 +1,19 @@
+{
+  "name": "step3o_o4r_terminal_stop_v1",
+  "attempt_id": "step3o_o4r_attempt_001",
+  "stage": "P1_AUTHOR_OUTCOME",
+  "route": "STOP_AUTHORING",
+  "parent_commit": "3aba8a770fe07db493717ed513516a0b12330999",
+  "error_type": "RecoveryValidationError",
+  "error_message_sha256": "beb8022404b57b6647c6501e4a97155cec90a7a6f7658b0683624ad84b403384",
+  "evidence_artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4r_sharded_recovery_attempt_001/reports/step3o_o4r_p1_author_input_receipt.json",
+      "bytes": 2357,
+      "sha256": "a4aa35d75856f972273b229c49409114dfa2695c8f5b8f6c21fb2cc87475d61b"
+    }
+  ],
+  "replacement_or_retry_allowed": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
