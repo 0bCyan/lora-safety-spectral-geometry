@@ -1,0 +1,63 @@
+{
+  "name": "step3p_public_paired_packet_manifest_v1",
+  "route_id": "step3p_public_paired_pool_attempt_001",
+  "protocol_commit": "3b430c4db780bef715f8949019b47babb79d2d92",
+  "randomization_salt_sha256": "8fd54e63b46e2d639de28eaeaa7b6530b2a4c10c6f45b69855fed3a92f721240",
+  "primary_candidates": 92,
+  "unique_prompts": 87,
+  "hidden_duplicates_per_reviewer": 12,
+  "artifacts": [
+    {
+      "path": "diagnostics/step3p_source_preflight.json",
+      "bytes": 2647,
+      "sha256": "634d1256fea664adabffd6459934fd38bb1b5ef8a316ca11d144b8f3821745d7"
+    },
+    {
+      "path": "packets/primary_candidates_hidden.jsonl",
+      "bytes": 121395,
+      "sha256": "065cd1cdc77c3cf16bc07ca347fbd83de49c01c6af346965c98e190f7162d08e"
+    },
+    {
+      "path": "packets/reviewer_a_duplicate_links.json",
+      "bytes": 1875,
+      "sha256": "e1e871ee0f9cbd4ba77b502d76e971cca72105720d3e7631967069112a6e02e3"
+    },
+    {
+      "path": "packets/reviewer_a_packet.jsonl",
+      "bytes": 79659,
+      "sha256": "47cb57816a987bb24a3d4d21a9e536fb6ef1e531b00bbda3945abb6e8874aea1"
+    },
+    {
+      "path": "packets/reviewer_b_duplicate_links.json",
+      "bytes": 1875,
+      "sha256": "46f39db5957cca6f4d788ab81a439ce3dbe13e7287097346612779c802ea3807"
+    },
+    {
+      "path": "packets/reviewer_b_packet.jsonl",
+      "bytes": 79659,
+      "sha256": "11c6521fea13cfa47268679c5eb77fe2143d011a9d2efc1414a80f9abbad9c82"
+    },
+    {
+      "path": "templates/reviewer_a_provenance.json",
+      "bytes": 438,
+      "sha256": "aef867f8534f4c1b1c82e7768f3c5ad52517a9f8b102dc2d380c83c3669ca971"
+    },
+    {
+      "path": "templates/reviewer_a_review.jsonl",
+      "bytes": 22360,
+      "sha256": "2a7b69f7eb4a15c2001befd4356e2ade25d46b3f2d08ffd9e56ff33df2a7397a"
+    },
+    {
+      "path": "templates/reviewer_b_provenance.json",
+      "bytes": 438,
+      "sha256": "6b207970547e9dce20f3f81ec3ab572e78f86b9ef01dcc9047f1b6d5ca22dbf1"
+    },
+    {
+      "path": "templates/reviewer_b_review.jsonl",
+      "bytes": 22360,
+      "sha256": "b1e7e065ad6ac38674f27970613ae43d2a4ba515525993631538c034c2c3e96e"
+    }
+  ],
+  "training_authorized": false,
+  "optimizer_steps": 0
+}

@@ -1,0 +1,94 @@
+{
+  "name": "step3p_public_source_preflight_v1",
+  "route_id": "step3p_public_paired_pool_attempt_001",
+  "protocol_commit": "3b430c4db780bef715f8949019b47babb79d2d92",
+  "randomization_salt_sha256": "8fd54e63b46e2d639de28eaeaa7b6530b2a4c10c6f45b69855fed3a92f721240",
+  "public_source": {
+    "revision": "a4200bf784bad53d73fa0536ab4306e475644143",
+    "bytes": 120794117,
+    "rows": 84149,
+    "sha256": "9e62bfadf6925beebc6964b17e8dd6b6854ec14230a75b4ff106c8f9fecb7479"
+  },
+  "local_source_rows_aligned": 1000,
+  "eligible_local_prompts_before_public_safe_match": 867,
+  "matched_public_safe_rows": 155,
+  "empty_public_safe_rows": 0,
+  "response_length_exclusions": 28,
+  "length_qualified_public_safe_candidate_rows": 127,
+  "normalized_unique_candidate_rows": 98,
+  "retained_primary_candidates": 92,
+  "retained_unique_prompts": 87,
+  "response_tokens": {
+    "minimum": 40,
+    "median": 79,
+    "maximum": 160
+  },
+  "candidate_category_counts": {
+    "Animal Abuse": 3,
+    "Copyright Issues": 5,
+    "Cybercrime": 16,
+    "Discriminatory Behavior": 5,
+    "Disrupting Public Order": 5,
+    "Drugs": 7,
+    "Economic Crime": 17,
+    "Endangering National Security": 3,
+    "Endangering Public Health": 5,
+    "Environmental Damage": 9,
+    "Human Trafficking": 7,
+    "Insulting Behavior": 9,
+    "Mental Manipulation": 17,
+    "Physical Harm": 13,
+    "Privacy Violation": 25,
+    "Psychological Harm": 8,
+    "Sexual Content": 5,
+    "Violence": 14,
+    "White-Collar Crime": 6
+  },
+  "candidate_severity_counts": {
+    "1": 21,
+    "2": 63,
+    "3": 8
+  },
+  "pre_review_flow": {
+    "maximum_flow": 48,
+    "target_count": 48,
+    "selected_count": 48,
+    "unique_prompts": 48,
+    "unique_normalized_responses": 48,
+    "severity_counts": {
+      "1": 8,
+      "2": 35,
+      "3": 5
+    },
+    "mandatory_category_counts": {
+      "Animal Abuse": 1,
+      "Copyright Issues": 1,
+      "Cybercrime": 1,
+      "Discriminatory Behavior": 1,
+      "Disrupting Public Order": 1,
+      "Drugs": 1,
+      "Economic Crime": 1,
+      "Endangering National Security": 1,
+      "Endangering Public Health": 1,
+      "Environmental Damage": 1,
+      "Human Trafficking": 1,
+      "Insulting Behavior": 1,
+      "Mental Manipulation": 1,
+      "Physical Harm": 1,
+      "Privacy Violation": 1,
+      "Psychological Harm": 1,
+      "Sexual Content": 1,
+      "Violence": 1,
+      "White-Collar Crime": 1
+    },
+    "pass": true
+  },
+  "exclusions": {
+    "o4_registered_exclusions": 25,
+    "o4_lexical_exclusions": 12,
+    "o4_o4r_prompt_exclusions": 60,
+    "exclusion_union": 97
+  },
+  "training_authorized": false,
+  "optimizer_steps": 0
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "step3p_reviewer_provenance_v1",
+  "route_id": "step3p_public_paired_pool_attempt_001",
+  "role": "reviewer_b",
+  "reviewer_id": "",
+  "model": "",
+  "context_isolated": true,
+  "packet_sha256": "11c6521fea13cfa47268679c5eb77fe2143d011a9d2efc1414a80f9abbad9c82",
+  "rubric_sha256": "c4622db9dcde3131c27e8a58530a5740b2ab924b7bc47e2653d5dc5ce69df825",
+  "review_sha256": "",
+  "row_count": 104,
+  "prohibited_access": false
+}
