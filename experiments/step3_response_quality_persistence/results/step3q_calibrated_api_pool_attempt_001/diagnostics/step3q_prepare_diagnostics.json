@@ -1,0 +1,132 @@
+{
+  "api_requests": 120,
+  "calibration": {
+    "clean_safety_reference_counts": {
+      "no": 12,
+      "yes": 12
+    },
+    "component_reference_counts": {
+      "executable_step": {
+        "no": 33,
+        "yes": 15
+      },
+      "prompt_binding": {
+        "no": 22,
+        "yes": 26
+      },
+      "safe_route": {
+        "no": 22,
+        "yes": 26
+      }
+    },
+    "mismatch_category_distinct": true,
+    "role_counts": {
+      "clean_safety_anchor": 24,
+      "component_anchor": 48,
+      "prompt_mismatch": 24
+    },
+    "rows": 96
+  },
+  "category_counts": {
+    "Animal Abuse": 3,
+    "Copyright Issues": 4,
+    "Cybercrime": 3,
+    "Discriminatory Behavior": 3,
+    "Disrupting Public Order": 3,
+    "Drugs": 3,
+    "Economic Crime": 3,
+    "Endangering National Security": 3,
+    "Endangering Public Health": 4,
+    "Environmental Damage": 4,
+    "Human Trafficking": 3,
+    "Insulting Behavior": 3,
+    "Mental Manipulation": 3,
+    "Physical Harm": 3,
+    "Privacy Violation": 3,
+    "Psychological Harm": 3,
+    "Sexual Content": 3,
+    "Violence": 3,
+    "White-Collar Crime": 3
+  },
+  "eligible_fresh_prompts": 780,
+  "exclusions": {
+    "o4_o4r_prompts": 60,
+    "o4_registered": 25,
+    "o4_restricted_lexical": 12,
+    "step3p_exposed_prompts": 87,
+    "union": 184
+  },
+  "external_api_called": false,
+  "minimum_slot_candidate_supply": 2,
+  "name": "step3q_prepare_diagnostics_v1",
+  "namespace_sha256": "f2fa3257d5664b1c5d6747904e301968676fbad95ea0724c76a0589861866356",
+  "o4_o4r_prompts_reused": false,
+  "optimizer_steps": 0,
+  "protocol_commit": "510c1a186c214655273a05826acaba2a9e1a2264",
+  "selected_prompts": 60,
+  "sentinel_allocations": {
+    "reviewer_a": {
+      "clean_safety_reference_counts": {
+        "no": 4,
+        "yes": 4
+      },
+      "component_reference_counts": {
+        "executable_step": {
+          "no": 5,
+          "yes": 3
+        },
+        "prompt_binding": {
+          "no": 3,
+          "yes": 5
+        },
+        "safe_route": {
+          "no": 3,
+          "yes": 5
+        }
+      },
+      "mismatch_pair_closure": true,
+      "role_counts": {
+        "clean_safety_anchor": 8,
+        "component_anchor": 8,
+        "prompt_mismatch": 8
+      },
+      "rows": 24
+    },
+    "reviewer_b": {
+      "clean_safety_reference_counts": {
+        "no": 4,
+        "yes": 4
+      },
+      "component_reference_counts": {
+        "executable_step": {
+          "no": 5,
+          "yes": 3
+        },
+        "prompt_binding": {
+          "no": 4,
+          "yes": 4
+        },
+        "safe_route": {
+          "no": 4,
+          "yes": 4
+        }
+      },
+      "mismatch_pair_closure": true,
+      "role_counts": {
+        "clean_safety_anchor": 8,
+        "component_anchor": 8,
+        "prompt_mismatch": 8
+      },
+      "rows": 24
+    }
+  },
+  "severity_counts": {
+    "1": 8,
+    "2": 44,
+    "3": 8
+  },
+  "source_harmful_responses_released": false,
+  "source_rows": 1000,
+  "step3p_prompts_reused": false,
+  "training_authorized": false
+}

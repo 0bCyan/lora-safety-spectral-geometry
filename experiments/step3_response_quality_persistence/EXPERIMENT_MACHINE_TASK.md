@@ -18,6 +18,12 @@ Step3P:         STOP_REVIEW_UNRELIABLE before C, target selection, or training
 Step3Q:         prospective calibrated API pool; optimizer_steps=0
 ```
 
+P1 has been deterministically materialized from P0 commit
+`510c1a186c214655273a05826acaba2a9e1a2264` and passed exact reconstruction
+under namespace
+`f2fa3257d5664b1c5d6747904e301968676fbad95ea0724c76a0589861866356`.
+No external API request has been sent.
+
 Step3Q does not rerun Step3P and does not test a method. It asks whether a
 calibrated blind-review design plus controlled structured-API authoring can
 produce a fixed 48-target training pool. Even a final pool pass leaves

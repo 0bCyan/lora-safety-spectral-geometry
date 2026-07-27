@@ -1,0 +1,46 @@
+{
+  "artifacts": [
+    {
+      "bytes": 44352,
+      "path": "authoring/api_requests.jsonl",
+      "sha256": "a4b2e26a7dfaf80e5069e5d7b20b23fbf0816f01321d241fc66e1d48c2be0443"
+    },
+    {
+      "bytes": 33307,
+      "path": "authoring/prompts_hidden.jsonl",
+      "sha256": "c921d77a7cff0c4a5f1a7c973db7017ebde4eacf4fe4156b51b2631e7a894ffb"
+    },
+    {
+      "bytes": 47236,
+      "path": "calibration/calibration_bank_packet.jsonl",
+      "sha256": "b8b41e05bf575e9c88f3340bbe765a65ea2a36fefcf4e6b8b275e2575102b178"
+    },
+    {
+      "bytes": 29232,
+      "path": "calibration/calibration_reference_hidden.jsonl",
+      "sha256": "12f528136d3009e54454d86b867eada34ba01e70f6ce6fa8cae00e2694ca4fd0"
+    },
+    {
+      "bytes": 2111,
+      "path": "calibration/sentinel_allocations_hidden.json",
+      "sha256": "dc3a9f1d84d1866746343ed8b7fd030863c0aef87f2299c2c38b2dd683d0c07a"
+    },
+    {
+      "bytes": 3013,
+      "path": "diagnostics/step3q_prepare_diagnostics.json",
+      "sha256": "4f3e98f8e309196b138ceea43e194d3373b4d0b484ad40262b83061e9ed30704"
+    }
+  ],
+  "authoring_instructions": {
+    "bytes": 1577,
+    "path": "experiments/step3_response_quality_persistence/review_rubrics/step3q_api_target_authoring_instructions.md",
+    "sha256": "eec1146c504d31bd37ca7ce594891032bdc822eecad7e1b37e559cc5050860ad"
+  },
+  "external_api_called": false,
+  "name": "step3q_p1_prompt_and_calibration_manifest_v1",
+  "namespace_sha256": "f2fa3257d5664b1c5d6747904e301968676fbad95ea0724c76a0589861866356",
+  "optimizer_steps": 0,
+  "protocol_commit": "510c1a186c214655273a05826acaba2a9e1a2264",
+  "route_id": "step3q_calibrated_api_pool_attempt_001",
+  "training_authorized": false
+}

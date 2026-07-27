@@ -4,7 +4,7 @@
 
 Step 3 remains open for a new prospective method direction, but the current C3 recipe is closed.
 
-Current phase: **Step3O O3 external actionability validation passed; Step3O-O4 attempt 005 and Step3O-O4R attempt 001 are immutably closed at `STOP_AUTHORING`; Step3P attempt 001 is closed at `STOP_REVIEW_UNRELIABLE`; Step3Q attempt 001 is a prospective calibrated structured-API target-pool protocol before external calls, primary review, target selection, or training; Step3N-R1 remains stopped before tuple writing or training**.
+Current phase: **Step3O O3 external actionability validation passed; Step3O-O4 attempt 005 and Step3O-O4R attempt 001 are immutably closed at `STOP_AUTHORING`; Step3P attempt 001 is closed at `STOP_REVIEW_UNRELIABLE`; Step3Q attempt 001 has frozen and exactly reconstructed its P1 prompt/calibration package but has made no external API call, primary review, target selection, or training; Step3N-R1 remains stopped before tuple writing or training**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
@@ -37,6 +37,13 @@ candidates over at least 54 prompts, one effective `gpt-5.6-sol` model identity,
 complete immutable receipts, and exact deterministic P1 reconstruction before
 network access. Step3Q is still a data and measurement qualification route:
 even a pass authorizes no optimizer step and does not select a method.
+
+P1 was deterministically materialized from P0 commit
+`510c1a186c214655273a05826acaba2a9e1a2264`: 60 prompts, 120 fixed API
+requests, and 96 calibration rows passed exact byte reconstruction. Aggregate
+evidence and artifact hashes are recorded in
+`Step3Q_p1_prompt_and_calibration_freeze_report.md`. No API candidate exists
+yet, so P1 is protocol readiness rather than a positive quality result.
 
 ## 1. Research Question
 
