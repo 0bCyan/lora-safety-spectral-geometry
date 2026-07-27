@@ -1,9 +1,8 @@
-# Experiment Machine Task: Keep Idle During Step3O-O4 Local Pool Work
+# Experiment Machine Task: Keep Idle During Step3P Public-Pool Qualification
 
 ## Current State
 
-Pull the latest `exp/step3o-o4-attempt5` for records only. There
-is no active GPU task.
+Pull the latest Step3P branch for records only. There is no active GPU task.
 
 ```text
 T5R route:       T5R4_complete_labels_authorize_T6
@@ -12,17 +11,17 @@ Track B:         M1_reconstruction_integrity_failure
 Step3N-R1:       STOP before tuple writing or training
 Step3O O1/O2:   PASS
 Step3O O3:      PASS external actionability validation
-Step3O-O4:      attempts 001/002/003/004 stopped before prompts; attempt 005 prospective, local only
+Step3O-O4:      attempt 005 closed at STOP_AUTHORING after prompt freeze
+Step3O-O4R:     attempt 001 closed at STOP_AUTHORING with 4/6 shards delivered
+Step3P:         public paired-source P0 and blind qualification; optimizer_steps=0
 ```
 
-Attempt 003 completed R0 and its future-round CI/BLS checks, then stopped at
-the R1 integrity gate with a zero-event frozen trace. That establishes that no
-drand event was recorded, not that no endpoint was contacted. It released no
-prompt, opened no author/reviewer session, and performed zero optimizer steps.
-Attempt 004 completed R0 but stopped because its R1 start immutable lock was
-published after the fixed target round. Attempt 005 preserves the scientific
-design and adds pre-start deadline checks plus a fail-closed verifier for a
-separately locked start that is published too late.
+Attempt 005 later froze 60 prompts but stopped when one long-context author did
+not deliver a study file. O4R split the same prompt pool into six independent
+20-row sessions; four delivered and two did not. The immutable recovery route
+therefore also stopped before review, target selection, or training. Step3P
+does not retry those sessions. It tests a pinned public prompt-paired safe
+response source under a new blind quality protocol.
 
 Do not run training, model generation, model scoring, gradient extraction,
 matching, T6, PCSR, TRIM, or method smoke tests.

@@ -4,7 +4,7 @@
 
 Step 3 remains open for a new prospective method direction, but the current C3 recipe is closed.
 
-Current phase: **Step3O O3 external actionability validation passed; Step3O-O4 attempt 005 is prospectively freezing a public-randomness-backed machine-rubric-qualified candidate-pool protocol, while Step3N-R1 remains stopped before tuple writing or training**.
+Current phase: **Step3O O3 external actionability validation passed; Step3O-O4 attempt 005 and Step3O-O4R attempt 001 are immutably closed at `STOP_AUTHORING`; Step3P is prospectively freezing a pinned public prompt-paired safe-response route before blind quality review, while Step3N-R1 remains stopped before tuple writing or training**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
@@ -19,6 +19,10 @@ The original Step3N design audit is recorded in `Step3N_five_agent_method_brains
 The O4 P0 package also freezes the complete append-only local stage runner before any output is opened. Author, A/B reviewer, and C reviewer deliveries receive one-time hash receipts before validation; every valid stage must occupy an exact sole-parent commit and be pushed before the next stage. A/B reliability is a true stopping gate: failure creates no C packet and forbids adjudication or hidden-stratum yield analysis. These controls improve protocol integrity but do not upgrade the same-model candidate pool to human validation or training authorization.
 
 Attempts 001-003 stopped at registered infrastructure gates before prompt release. Attempt 004 completed its R0 future-round request, but its R1 start immutable lock was published after the fixed target round and it terminated before pulse acquisition, prompt selection, authoring, review, scoring, or training. Attempt 005 preserves the scientific design, moves to a new future round, rejects an expired start before writing a receipt, and verifies a separately locked late start only as terminal-failure evidence rather than as a successful predeadline chain.
+
+Attempt 005 later reached a valid fixed 60-prompt authoring pool but stopped when one long-context author session did not deliver a study file. O4R attempt 001 reused only that fixed prompt pool and split delivery across six new 20-row sessions. Four sessions delivered complete files and two delivered no study file, so O4R closed prospectively as `STOP_AUTHORING` without repair, replacement, review, target selection, or training. The sharded result shows that context length was not the sole delivery problem. It is an operational failure of the agent-file authoring route, not evidence about target quality or method efficacy.
+
+`Step3P_public_paired_target_pool_plan.md` therefore closes repeated agent-file authoring as the primary route. It pins the original PKU-SafeRLHF-QA bytes and tests whether public `is_safe=true` responses that exactly share eligible risk prompts can support a 48-target machine-rubric-qualified pool. Pre-P0 structural work found 92 length-qualified, normalized-unique candidates over 87 prompts after all O4/O4R prompts and prior exclusions were removed; the blinded quality outcome remains unopened. Step3P still records `training_authorized=false` and `optimizer_steps=0`.
 
 ## 1. Research Question
 
@@ -215,4 +219,4 @@ Not authorized now:
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The stopped Stage0, C-R0, C3, and PCSR-R1 routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2/H3Q/H3/T5R/T6 packages, reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. T6 is complete at `R1_no_c3_candidate_passes`; there is no C3 `Q_star`, and N0-R1 produced no PCSR training candidate. Step3O O3 repaired the measurement endpoint and passed its external-source observed-agreement gates in the fixed sessions, but did not select a method. An O4 machine-rubric-pool pass, a separate training-suitability audit, and a later frozen method winner are still required before optimizer steps, seeds 2/3, heldout, a second backbone, or any combined-method factorial.
+The stopped Stage0, C-R0, C3, PCSR-R1, O4, and O4R routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2/H3Q/H3/T5R/T6 packages, reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. T6 is complete at `R1_no_c3_candidate_passes`; there is no C3 `Q_star`, and N0-R1 produced no PCSR training candidate. Step3O O3 repaired the measurement endpoint and passed its external-source observed-agreement gates in the fixed sessions, but did not select a method. A Step3P public machine-rubric-pool pass, a separate training-suitability audit, and a later frozen method winner are still required before optimizer steps, seeds 2/3, heldout, a second backbone, or any combined-method factorial.

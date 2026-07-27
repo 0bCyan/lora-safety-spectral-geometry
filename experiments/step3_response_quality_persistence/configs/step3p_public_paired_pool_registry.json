@@ -1,0 +1,123 @@
+{
+  "schema": "step3p_public_paired_pool_registry_v1",
+  "route_id": "step3p_public_paired_pool_attempt_001",
+  "entry_commit": "ab37858096b245677e4d9c484f5ec301e38f636e",
+  "entry_route": "STOP_AUTHORING",
+  "source": {
+    "local_risk_path": "data/processed/unified_pool/train_risk.jsonl",
+    "local_risk_sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1",
+    "local_risk_rows": 1000,
+    "public_dataset": "PKU-Alignment/PKU-SafeRLHF-QA",
+    "public_revision": "a4200bf784bad53d73fa0536ab4306e475644143",
+    "public_relative_path": "data/Alpaca3-8B/train.jsonl",
+    "public_url": "https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF-QA/resolve/a4200bf784bad53d73fa0536ab4306e475644143/data/Alpaca3-8B/train.jsonl",
+    "public_sha256": "9e62bfadf6925beebc6964b17e8dd6b6854ec14230a75b4ff106c8f9fecb7479",
+    "public_bytes": 120794117,
+    "public_rows": 84149,
+    "expected_response_source": "Alpaca3-8B"
+  },
+  "frozen_inputs": {
+    "o4_source_audit_path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/diagnostics/step3o_o4_source_and_exclusion_audit.json",
+    "o4_source_audit_sha256": "589cdf622b7071f752eae55894bb71e31c781b2b432277b51d84bde60258b1c8",
+    "o4_hidden_key_path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_authoring_hidden_key.csv",
+    "o4_hidden_key_sha256": "e98609ac52bb2feeef4caf7b8706c0af00260f4fefc2d233c001102b1ec78719",
+    "o4_hidden_key_rows": 60,
+    "o4r_terminal_path": "experiments/step3_response_quality_persistence/results/step3o_o4r_sharded_recovery_attempt_001/reports/step3o_o4r_terminal_stop.json",
+    "o4r_terminal_sha256": "33f34ea49ee834964ff5fc7fb86d22b0b2b94bf5dc6f3e65505e1a8b95878e4a",
+    "qualification_rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3p_public_target_qualification_rubric.md"
+  },
+  "randomization": {
+    "derivation": "sha256(route_id + U+001F + entry_commit + U+001F + public_source_sha256)",
+    "fixed_salt_sha256": "8fd54e63b46e2d639de28eaeaa7b6530b2a4c10c6f45b69855fed3a92f721240"
+  },
+  "eligibility": {
+    "minimum_prompt_whitespace_tokens": 8,
+    "maximum_prompt_whitespace_tokens": 96,
+    "minimum_response_whitespace_tokens": 40,
+    "maximum_response_whitespace_tokens": 160,
+    "response_normalization": "Unicode NFKC, casefold, collapsed whitespace",
+    "global_normalized_response_deduplication": true,
+    "maximum_candidates_per_prompt": 2,
+    "minimum_primary_candidates": 80,
+    "minimum_unique_candidate_prompts": 60
+  },
+  "review": {
+    "hidden_duplicate_count": 12,
+    "prompt_reweighting_replicates": 2000,
+    "full_distribution_fields": [
+      "safe_route",
+      "executable_step",
+      "prompt_binding"
+    ],
+    "agreement_only_fields": [
+      "naturalness",
+      "clean_safe"
+    ],
+    "detail_exact_agreement_min": 0.75,
+    "detail_weighted_agreement_min": 0.9,
+    "detail_gwet_ac2_min": 0.7,
+    "detail_boundary_raw_agreement_min": 0.85,
+    "detail_boundary_gwet_ac1_min": 0.75,
+    "detail_boundary_positive_agreement_min": 0.7,
+    "detail_boundary_negative_agreement_min": 0.7,
+    "detail_boundary_prevalence_gap_max": 0.1,
+    "detail_boundary_min_yes_ratings": 12,
+    "detail_boundary_min_no_ratings": 12,
+    "component_raw_agreement_min": 0.85,
+    "component_gwet_ac1_min": 0.75,
+    "component_positive_agreement_min": 0.7,
+    "component_negative_agreement_min": 0.7,
+    "component_prevalence_gap_max": 0.1,
+    "component_min_yes_ratings": 12,
+    "component_min_no_ratings": 12,
+    "naturalness_raw_agreement_min": 0.9,
+    "naturalness_gwet_ac1_min": 0.8,
+    "clean_safe_raw_agreement_min": 0.9,
+    "clean_safe_gwet_ac1_min": 0.8,
+    "full_vector_exact_agreement_min": 0.75,
+    "candidate_qualified_raw_agreement_min": 0.85,
+    "candidate_qualified_gwet_ac1_min": 0.75,
+    "candidate_qualified_positive_agreement_min": 0.7,
+    "candidate_qualified_negative_agreement_min": 0.7,
+    "candidate_qualified_prevalence_gap_max": 0.1,
+    "candidate_qualified_min_yes_ratings": 12,
+    "candidate_qualified_min_no_ratings": 12,
+    "candidate_qualified_prompt_reweighting_q025_min": 0.6,
+    "duplicate_full_vector_consistency_min_count": 11
+  },
+  "selection": {
+    "target_count": 48,
+    "category_minimum_each": 1,
+    "severity_minima": {
+      "1": 5,
+      "2": 28,
+      "3": 5
+    },
+    "categories": [
+      "Animal Abuse",
+      "Copyright Issues",
+      "Cybercrime",
+      "Discriminatory Behavior",
+      "Disrupting Public Order",
+      "Drugs",
+      "Economic Crime",
+      "Endangering National Security",
+      "Endangering Public Health",
+      "Environmental Damage",
+      "Human Trafficking",
+      "Insulting Behavior",
+      "Mental Manipulation",
+      "Physical Harm",
+      "Privacy Violation",
+      "Psychological Harm",
+      "Sexual Content",
+      "Violence",
+      "White-Collar Crime"
+    ]
+  },
+  "outputs": {
+    "root": "experiments/step3_response_quality_persistence/results/step3p_public_paired_pool_attempt_001"
+  },
+  "training_authorized": false,
+  "optimizer_steps": 0
+}
