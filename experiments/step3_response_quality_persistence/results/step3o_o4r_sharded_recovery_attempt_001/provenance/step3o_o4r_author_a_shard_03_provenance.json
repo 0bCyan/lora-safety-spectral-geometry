@@ -1,0 +1,38 @@
+{
+  "schema": "step3o_o4_session_provenance_v1",
+  "role": "author_a",
+  "stage": "authoring_shard_03",
+  "attempt_id": "step3o_o4r_attempt_001",
+  "agent_id": "019fa325-e138-7060-85a5-0acec8acd2d5",
+  "context_isolation": true,
+  "allowed_inputs": [
+    "experiments/step3_response_quality_persistence/results/step3o_o4r_sharded_recovery_attempt_001/packets/authoring/step3o_o4r_author_a_shard_03.jsonl",
+    "experiments/step3_response_quality_persistence/review_rubrics/step3o_o4_target_authoring_instructions.md"
+  ],
+  "input_sha256": {
+    "experiments/step3_response_quality_persistence/results/step3o_o4r_sharded_recovery_attempt_001/packets/authoring/step3o_o4r_author_a_shard_03.jsonl": "a077bea92593991e8416b859933282f85c3b4376251192b4d9702f4b84999736",
+    "experiments/step3_response_quality_persistence/review_rubrics/step3o_o4_target_authoring_instructions.md": "cb7e86d17adcfe1ae26f95fcc75e844c7fafe243f3dc104134274e09b6662f3a"
+  },
+  "row_count": 20,
+  "requested_model": "gpt-5.5",
+  "requested_reasoning_effort": "high",
+  "sampling_controls": "platform managed and not user configurable",
+  "prohibited_access": {
+    "source_harmful_responses_accessed": false,
+    "source_labels_accessed": false,
+    "hidden_keys_accessed": false,
+    "category_or_severity_assignments_accessed": false,
+    "other_author_output_accessed": false,
+    "author_identities_accessed": false,
+    "duplicate_links_accessed": false,
+    "other_reviewer_output_accessed": false,
+    "prior_targets_or_labels_accessed": false,
+    "method_arm_outcomes_accessed": false,
+    "aggregate_results_accessed": false,
+    "git_history_accessed": false,
+    "ab_labels_accessed": false,
+    "ab_reasons_accessed": false,
+    "marginal_counts_accessed": false,
+    "disagreement_field_markers_accessed": false
+  }
+}

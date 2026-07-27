@@ -1,0 +1,83 @@
+{
+  "name": "step3o_o4r_p1_author_input_receipt_v1",
+  "attempt_id": "step3o_o4r_attempt_001",
+  "stage": "P1_AUTHOR_INPUT",
+  "inputs": [
+    {
+      "role": "author_a_01",
+      "present": true,
+      "bytes": 8379,
+      "sha256": "325b804586b599f15b0de1eb8d461cc7e8688bbb2420b4aec303afb3b17b0bda"
+    },
+    {
+      "role": "author_a_01_provenance",
+      "present": true,
+      "bytes": 1805,
+      "sha256": "17324506bebadc958e408c574673c607465cb47b0be28af8fec3dce10fb804eb"
+    },
+    {
+      "role": "author_a_02",
+      "present": true,
+      "bytes": 8815,
+      "sha256": "31de5dd8673fd3c6cb86f9182826fb2e68a9144569c3603082da2da49e449de7"
+    },
+    {
+      "role": "author_a_02_provenance",
+      "present": true,
+      "bytes": 1805,
+      "sha256": "303a6b21f044552e4e83b98db444e862cba3d5c33f640d335898fb0e4a117424"
+    },
+    {
+      "role": "author_a_03",
+      "present": true,
+      "bytes": 8702,
+      "sha256": "1bfee2558182b3198921c4bbbf13fce17657fbf36cb4342d9d4da4173fb4ccff"
+    },
+    {
+      "role": "author_a_03_provenance",
+      "present": true,
+      "bytes": 1805,
+      "sha256": "a66f75b9964efc01527509ebbe3d37b39231d7e81eb73d900ebb6c1d008074a1"
+    },
+    {
+      "role": "author_b_01",
+      "present": false,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "role": "author_b_01_provenance",
+      "present": true,
+      "bytes": 1804,
+      "sha256": "a0700dbd3eef21f6ff96e46bd25fc33bf1dbae171b8d32402ad651a1149bfa92"
+    },
+    {
+      "role": "author_b_02",
+      "present": true,
+      "bytes": 8512,
+      "sha256": "38afb4128003cc5e7ea1e4369c31d084a12d0295db62fb067d2212712432f62b"
+    },
+    {
+      "role": "author_b_02_provenance",
+      "present": true,
+      "bytes": 1805,
+      "sha256": "2aaf75e7c83b5d614336afccccf8c2ba3b9add28188792e62240a106a539eae5"
+    },
+    {
+      "role": "author_b_03",
+      "present": false,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "role": "author_b_03_provenance",
+      "present": true,
+      "bytes": 1804,
+      "sha256": "46a580e0da3b393ba482a07b8173882ecf6fe02c2a267f35fb24e778a0bf4ca3"
+    }
+  ],
+  "received_once": true,
+  "replacement_or_repair_allowed": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
