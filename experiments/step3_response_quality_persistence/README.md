@@ -4,7 +4,7 @@
 
 Step 3 remains open for a new prospective method direction, but the current C3 recipe is closed.
 
-Current phase: **Step3O O3 external actionability validation passed; Step3O-O4 attempt 005 and Step3O-O4R attempt 001 are immutably closed at `STOP_AUTHORING`; Step3P attempt 001 is closed at `STOP_REVIEW_UNRELIABLE`; Step3Q attempt 001 has frozen and exactly reconstructed its P1 prompt/calibration package but has made no external API call, primary review, target selection, or training; Step3N-R1 remains stopped before tuple writing or training**.
+Current phase: **Step3O O3 external actionability validation passed; Step3O-O4 attempt 005 and Step3O-O4R attempt 001 are immutably closed at `STOP_AUTHORING`; Step3P attempt 001 is closed at `STOP_REVIEW_UNRELIABLE`; Step3Q attempt 001 has frozen and exactly reconstructed P1 and now prospectively freezes the P2 receipt-import, calibration-first blind-review, disagreement-only adjudication, and 48-target selection protocol, but has made no external API call, formal review, target selection, or training; Step3N-R1 remains stopped before tuple writing or training**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
@@ -44,6 +44,18 @@ requests, and 96 calibration rows passed exact byte reconstruction. Aggregate
 evidence and artifact hashes are recorded in
 `Step3Q_p1_prompt_and_calibration_freeze_report.md`. No API candidate exists
 yet, so P1 is protocol readiness rather than a positive quality result.
+
+`Step3Q_p2_import_review_and_selection_plan.md` now freezes the next legal
+state machine before any receipt or candidate label is opened. The P2 importer
+revalidates all 120 external receipts, independently reconstructs and
+byte-compares the sealed dispatch, remaps every primary/sentinel/duplicate to
+reviewer-specific `step3q_review_*` IDs, and applies calibration before any
+primary metric. Downstream stages must retain the external spool and
+reconstruct both the import and A/B outcome rather than trusting self-signed
+manifests. Reviewer C is opened only for derived qualification disagreements;
+the final maximum-flow selector receives a mode-blind projection and uses the
+pre-API assigned category. This is still prospective protocol evidence, not an
+API result or method result.
 
 ## 1. Research Question
 
@@ -219,8 +231,9 @@ Authorized now:
 - preserve TRIM as the separately gated `TRIM-CS0` causal-steering preflight, but do not implement or run it until a separate freeze is reviewed and pushed.
 - preserve the complete Step3O O0-O3 source, packet, reviewer, hash-chain, and PASS route without relabeling or threshold changes;
 - preserve the immutable Step3O-O4, O4R, and Step3P stop packages without replacement, threshold changes, or post-stop yield analysis;
-- implement and freeze the prospective Step3Q calibrated API target-pool route without opening Step3P Reviewer C or reusing its prompts or candidates;
-- run only aggregate Step3Q P0 preflight before the P0 commit; materialize the 60 prompts, 120 requests, and 96 calibration rows only from the pushed P0 commit.
+- preserve the frozen Step3Q P0/P1 artifacts and freeze the prospective P2 import/review/selection implementation under `step3q-calibrated-api-attempt-001-p2-protocol` before any external receipt or candidate label is opened;
+- after the P2 protocol tag is visible remotely, allow the designated execution machine to run exactly the 120 frozen API requests, preserve the raw spool outside Git, and import only a reconstructed `PASS_API_AUTHORING` outcome;
+- distribute only reviewer-visible packet, template, rubric, and provenance-template bytes to fresh isolated reviewers; do not give a reviewer the repository checkout or private maps.
 
 Not authorized now:
 
@@ -236,8 +249,9 @@ Not authorized now:
 - reusing any Step3N-R1 row or old 37-prompt selection in Step3O development, validation, or future target construction;
 - replacing an O4 prompt, adding a third candidate, or starting another authoring round after either author output is opened;
 - reopening Step3P attempt 001, launching Reviewer C, inspecting hidden target yield, or running its final 48-target flow;
-- any Step3Q external API call before exact P1 reconstruction passes and `OPENAI_API_KEY` is supplied on the designated execution machine;
+- any Step3Q external API call before the P2 protocol tag is visible remotely, exact P1 reconstruction passes, and `OPENAI_API_KEY` is supplied on the designated execution machine;
 - prompt replacement, semantic regeneration, post-result top-up, mixed effective API models, or optimizer steps under Step3Q;
+- trusting a self-consistent Step3Q import or A/B manifest without revalidating the preserved external spool and deterministic predecessor-stage reconstruction;
 - C4, C5, adaptive replay, or other method stacking;
 - behavior-based hyperparameter scans;
 - seeds 2 and 3;

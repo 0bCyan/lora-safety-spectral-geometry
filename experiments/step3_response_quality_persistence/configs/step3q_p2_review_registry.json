@@ -1,0 +1,72 @@
+{
+  "schema": "step3q_p2_review_registry_v1",
+  "route_id": "step3q_calibrated_api_pool_attempt_001",
+  "stage_id": "step3q_p2_import_review_selection",
+  "status": "prospective_before_external_receipts_or_candidate_labels_are_opened",
+  "entry_commit": "eb45752c0b1b2470be12f5833e47fae9f5696449",
+  "protocol_tag": "step3q-calibrated-api-attempt-001-p2-protocol",
+  "protocol_commit_sha1": "TO_BE_LOCKED_AFTER_PROTOCOL_COMMIT",
+  "protocol_lock_status": "pending_protocol_commit",
+  "frozen_inputs": {
+    "p0_registry": {
+      "path": "experiments/step3_response_quality_persistence/configs/step3q_calibrated_api_pool_registry.json",
+      "bytes": 8577,
+      "sha256": "72ce1ff74ff8d32d0a055541dff990f40470f3a9a5afa528375be87612308d92"
+    },
+    "p1_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001/protocol_manifest.json",
+      "bytes": 1683,
+      "sha256": "f374175df6bb3ba38771a0934a5343309a10e9a539d730e3f247321799485a1f"
+    },
+    "review_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3p_public_target_qualification_rubric.md",
+      "bytes": 2861,
+      "sha256": "c4622db9dcde3131c27e8a58530a5740b2ab924b7bc47e2653d5dc5ce69df825"
+    }
+  },
+  "dispatch_import": {
+    "required_route": "PASS_API_AUTHORING",
+    "fixed_requests": 120,
+    "minimum_valid_unique_candidates": 96,
+    "minimum_valid_prompts": 54,
+    "sealed_files": [
+      "candidates.jsonl",
+      "dispatch_summary.json",
+      "receipt_manifest.json"
+    ],
+    "spool_must_be_outside_repository": true,
+    "copy_raw_receipts_into_repository": false
+  },
+  "review_packets": {
+    "roles": ["reviewer_a", "reviewer_b"],
+    "visible_fields": ["opaque_candidate_id", "prompt", "response"],
+    "hidden_primary_duplicates_per_reviewer": 12,
+    "hidden_sentinels_per_reviewer": 24,
+    "uniform_packet_id_prefix": "step3q_review_",
+    "reviewer_specific_id_remapping": true,
+    "reviewer_specific_packet_order": true,
+    "sentinel_and_duplicate_roles_hidden": true,
+    "api_mode_hidden": true
+  },
+  "review_provenance": {
+    "context_isolated_required": true,
+    "distinct_reviewer_ids_required": true,
+    "prohibited_access_required_false": true,
+    "saw_hidden_map_required_false": true,
+    "saw_api_mode_required_false": true,
+    "saw_calibration_roles_required_false": true,
+    "saw_other_reviews_required_false": true
+  },
+  "stage_order": {
+    "calibration_before_primary_metrics": true,
+    "primary_metrics_forbidden_on_calibration_failure": true,
+    "reviewer_c_only_after_ab_pass": true,
+    "reviewer_c_only_for_derived_qualification_disagreements": true,
+    "target_flow_only_after_valid_adjudication": true
+  },
+  "outputs": {
+    "root": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001_p2_review"
+  },
+  "training_authorized": false,
+  "optimizer_steps": 0
+}
