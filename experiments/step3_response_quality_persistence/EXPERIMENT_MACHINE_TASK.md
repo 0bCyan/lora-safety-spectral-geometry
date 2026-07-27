@@ -1,157 +1,139 @@
-# Experiment Machine Task: Keep Idle After Step3P Review Stop
+# Experiment Machine Task: Step3Q Controlled API Authoring
 
 ## Current State
 
-Pull the latest Step3P branch for records only. There is no active GPU task.
+There is no GPU or optimizer task. The active branch is
+`codex/step3q-calibrated-api-pool` and the route is
+`step3q_calibrated_api_pool_attempt_001`.
+
+Historical boundaries remain unchanged:
 
 ```text
-T5R route:       T5R4_complete_labels_authorize_T6
-T6 route:        R1_no_c3_candidate_passes
-Track B:         M1_reconstruction_integrity_failure
-Step3N-R1:       STOP before tuple writing or training
-Step3O O1/O2:   PASS
+Step3C-T6:      R1_no_c3_candidate_passes
+Track B:        M1_reconstruction_integrity_failure
+Step3N-R1:      STOP before tuple writing or training
 Step3O O3:      PASS external actionability validation
-Step3O-O4:      attempt 005 closed at STOP_AUTHORING after prompt freeze
-Step3O-O4R:     attempt 001 closed at STOP_AUTHORING with 4/6 shards delivered
-Step3P:         attempt 001 closed at STOP_REVIEW_UNRELIABLE; optimizer_steps=0
+Step3O-O4/O4R:  both closed at STOP_AUTHORING
+Step3P:         STOP_REVIEW_UNRELIABLE before C, target selection, or training
+Step3Q:         prospective calibrated API pool; optimizer_steps=0
 ```
 
-Attempt 005 later froze 60 prompts but stopped when one long-context author did
-not deliver a study file. O4R split the same prompt pool into six independent
-20-row sessions; four delivered and two did not. Step3P then tested a pinned
-public prompt-paired safe-response source. Both A/B reviewers completed 92
-primary rows plus 12 hidden duplicates, but the frozen conjunction failed on
-full-vector exact agreement and missing negative-class support for detail and
-prompt binding. Reviewer C, hidden-stratum yield, final target selection, and
-training are forbidden for attempt 001.
+Step3Q does not rerun Step3P and does not test a method. It asks whether a
+calibrated blind-review design plus controlled structured-API authoring can
+produce a fixed 48-target training pool. Even a final pool pass leaves
+`training_authorized=false`.
 
-Do not run training, model generation, model scoring, gradient extraction,
-matching, T6, PCSR, TRIM, or method smoke tests.
+## Release Gates
 
-## New Completed Result
+Do not start an external API call until all of the following are true:
 
-Step3P selected `STOP_REVIEW_UNRELIABLE`. Full-vector exact agreement was
-`0.739` against `0.75`; the detail score-2 boundary had 3 negative ratings
-against the required 12; prompt binding had 0 negative ratings against the
-required 12. The derived candidate-qualified construct nevertheless passed
-raw agreement (`0.891`), Gwet AC1 (`0.792`), positive agreement (`0.861`),
-negative agreement (`0.911`), and prompt-cluster bootstrap (`q025=0.661`)
-gates. Both reviewers reproduced all `12/12` hidden duplicates.
+1. tag `step3q-calibrated-api-attempt-001-p0` exists on the remote;
+2. tag `step3q-calibrated-api-attempt-001-p1` exists on the remote;
+3. the branch is clean and contains the P1 tag commit;
+4. `verify-prepared` passes exact deterministic reconstruction;
+5. the designated machine has `OPENAI_API_KEY` in its process environment;
+6. the receipt spool is outside the Git repository and does not already
+   contain a sealed result from another attempt.
 
-This is a failed measurement-transport gate, not a target-quality, behavior,
-mechanism, or method-efficacy result. There is no active local or GPU execution
-task. A new prospective protocol is required.
+If any gate fails, stop without network access. Do not repair, replace, top up,
+or regenerate prompts or requests.
 
-The prior Step3O measurement result remains frozen:
+## Pull And Verify
 
-Step3O replaced the unreliable directly assigned actionability ordinal with
-three judged components: `safe_route`, `executable_step`, and
-`prompt_binding`. The strict score-2 boundary is derived only when all three
-are yes.
-
-The untouched external validation used 120 BeaverTails primary rows plus 12
-hidden duplicates and passed every frozen gate:
-
-- component raw agreement: `0.942-0.958`;
-- component Gwet AC1: `0.886-0.931`;
-- derived ordinal exact agreement: `0.925`;
-- derived ordinal Gwet AC2: `0.890`, O3 registered prompt-resampling lower
-  sensitivity bound `0.808`;
-- strict-boundary raw agreement: `0.958`;
-- strict-boundary Gwet AC1: `0.931`, O3 registered prompt-resampling lower
-  sensitivity bound `0.865`;
-- hidden-duplicate complete-vector consistency: A `12/12`, B `12/12`;
-- rubric revisions after validation opened: `0`.
-
-This is a positive observed-agreement result for two fixed,
-context-isolated same-model sessions. The resampling bounds describe O3 packet
-sensitivity, not replacement-reviewer uncertainty. The result is not human
-construct validity, a behavioral gain, a mechanism result, or causal proof.
-
-## Active Local Work
-
-`Step3O_O4_fresh_training_pool_plan.md` prospectively defines the next local
-stage. It can construct only a machine-rubric-qualified candidate pool. It
-will:
-
-1. deterministically select exactly 60 unused PKU-SafeRLHF training prompts;
-2. exclude all evaluation prompts, prior Step3 split IDs, old 40/37 prompts,
-   tracked risk-ID exposures, and registered incidental prompt exposures;
-3. release prompts only, never source harmful responses;
-4. use two fresh, context-isolated arm-blind authors for exactly one candidate
-   each per prompt;
-5. use fresh, context-isolated A/B/C review sessions to screen detail, the three O3-screened
-   actionability components, and the new O4-only naturalness and clean-safety
-   fields;
-6. require at least 48 of the fixed 60 prompts plus all category/severity
-   retention minima;
-7. prohibit prompt replacement, a third candidate, or another authoring round.
-
-All selection and packet-order salts are bound to the first pushed P0 commit
-plus P0-fixed future drand round `6323126` (`2026-07-27 12:00:00
-Asia/Shanghai`). Its request receives a commit-bound GitHub Actions check before
-publication. The full validation, statistics, adjudication,
-and route implementation is frozen in P0 before any author or reviewer output.
-R0 and R1 each use a separate single-path start commit that must be pushed and
-immutable-release locked before the supervised result command can contact
-drand. The result command freezes its strictly validated ordered mirror trace
-and either produces its registered artifact or a terminal
-`STOP_PROTOCOL_INTEGRITY`. A failed stage is never rerun within the same
-attempt. P1 prompt materialization additionally holds a cross-process exclusive
-worker lease; timeout or manual sealing can freeze only a complete ordered
-output prefix after the worker has released that lease.
-P0, R0-start, and either R0 success or R0 terminal failure must all be locked
-before the fixed target round; a late R0-start is rejected before network access.
-Authenticated GitHub read-only control-plane queries use at most four frozen
-20-second attempts with 1/2/4-second delays, and retry only transport failures
-that returned no HTTP response. HTTP/content failures and mutations do not retry.
-
-The accepted evidence chain does not claim that no hidden local clone ever
-executed. It fixes the seed-bearing round in P0 and gives success and failure a
-single shared outcome tag, so only one fixed-target outcome can be accepted.
-
-All O4 prompt selection, authoring, and review work is local. The experiment
-machine stays idle.
-
-## Verification
+Use a clean checkout and fetch both branch and tags:
 
 ```text
-python experiments/step3_response_quality_persistence/scripts/step3o_measurement_repair.py verify-o0
-python -m unittest discover experiments/step3_response_quality_persistence/scripts -p test_step3o_measurement_repair.py -v
-python -m unittest discover experiments/step3_response_quality_persistence/scripts -p test_step3o_o4_training_pool.py -v
-python -m unittest discover experiments/step3_response_quality_persistence/scripts -p test_step3o_o4_randomness.py -v
-python -m unittest discover experiments/step3_response_quality_persistence/scripts -p test_step3o_o4_qualification.py -v
-python -m unittest discover experiments/step3_response_quality_persistence/scripts -p test_step3o_o4_stage.py -v
+git fetch origin codex/step3q-calibrated-api-pool --tags
+git switch codex/step3q-calibrated-api-pool
+git pull --ff-only origin codex/step3q-calibrated-api-pool
+git status --short
+git rev-parse step3q-calibrated-api-attempt-001-p0^{commit}
+git rev-parse step3q-calibrated-api-attempt-001-p1^{commit}
 ```
 
-Frozen aggregate O3 evidence is at:
+Run the frozen checks before reading or using any request packet:
 
 ```text
-experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/Step3O_validation_route_report.md
-experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/step3o_validation_review_agreement.json
-experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/step3o_validation_route_decision.json
+python -m py_compile experiments/step3_response_quality_persistence/scripts/step3q_calibrated_api_pool.py
+python -m unittest discover experiments/step3_response_quality_persistence/scripts -p test_step3q_calibrated_api_pool.py -v
+python experiments/step3_response_quality_persistence/scripts/step3q_calibrated_api_pool.py preflight
+python experiments/step3_response_quality_persistence/scripts/step3q_calibrated_api_pool.py verify-prepared
 ```
 
-## Prohibitions
+Expected fixed P1 denominators are:
 
-- Do not modify P6 or replace M1.
-- Do not rerun label64 or report approximate grouped values.
-- Do not rerun, relabel, resample, or revise Step3O O1-O3.
-- Do not release the old 87 rows, old 40 prompts, or old 37-prompt selection.
-- Do not expose PKU source harmful responses to O4 authors or reviewers.
-- Do not replace O4 prompts or add candidates after authoring begins.
-- Do not reopen Step3P attempt 001, launch Reviewer C, inspect hidden target
-  yield, or run the final 48-target flow.
-- Do not implement or train PCSR-R2, TRIM, or a new method.
-- Do not run C4/C5, seeds 2/3, a second backbone, SpectraSafe, or heldout.
-- Do not commit checkpoints, adapters, caches, raw API caches, full gradients,
-  or unrelated paper files.
+```text
+fresh prompts:        60
+API requests:         120 (two modes per prompt)
+calibration rows:     96
+component anchors:    48
+prompt mismatches:    24
+clean-safety anchors: 24
+per-reviewer sentinels: 8 paired component + 8 mismatch + 8 clean-safety (4 yes/4 no)
+optimizer steps:      0
+```
 
-## Future Experiment-Machine Entry
+`verify-prepared` must report 60 prompts, 120 requests, 96 calibration rows,
+and no external call. A missing, added, or one-byte-modified P1 file is a hard
+stop.
 
-The experiment machine receives a task only if O4 first passes its fixed-pool
-yield and review-reliability gates, a separate human or genuinely
-heterogeneous training-suitability audit passes, and a new method protocol is
-reviewed, committed, and pushed. That later protocol must define fresh method
-names, data hashes, controls, implementation tests, smoke gates, sample size,
-and failure routes. An O4 pass alone still authorizes zero optimizer steps.
+## External Dispatch
+
+The spool path must be a new durable directory outside this repository. Do not
+put the API key in the command, a file, shell history, Git config, or a commit.
+
+```text
+python experiments/step3_response_quality_persistence/scripts/step3q_calibrated_api_pool.py dispatch --spool-root <outside-repository-step3q-spool>
+```
+
+The dispatcher is fixed to:
+
+- OpenAI Responses API;
+- requested model `gpt-5.6-sol`;
+- medium reasoning, strict JSON schema, `store=false`, and no tools;
+- 60 fixed prompts and two independent modes per prompt;
+- at most four concurrent calls;
+- at most three attempts only for registered transport/HTTP failures;
+- no semantic retry, prompt replacement, or top-up;
+- immutable per-request receipts and deterministic global response deduplication.
+
+An HTTP-200 body that is malformed, refused, out of the 40-160-word envelope,
+or otherwise semantically invalid is one terminal denominator failure. It is
+not regenerated. The returned model must be the exact alias or a dated
+`gpt-5.6-sol-YYYY-MM-DD` snapshot, and all valid candidates must use one
+effective model.
+
+## Authoring Decision
+
+The fixed dispatch passes only if all conditions hold:
+
+```text
+terminal receipts:             120 / 120
+valid globally unique targets: >= 96
+represented prompts:           >= 54 / 60
+effective model identities:    exactly 1
+protocol/model failures:        0
+```
+
+Otherwise the route is `STOP_API_YIELD`. Do not add calls, change word limits,
+discard failed receipts, or start review.
+
+After completion, preserve the entire external spool. Do not manually edit or
+commit it. Report the printed dispatch summary and keep the receipt directory
+available for the separately frozen P2 import/review-packet step. P2 must
+verify the receipt manifest before moving any candidate into a reviewer packet.
+
+## Hard Prohibitions
+
+- No GPU training, generation, scoring, gradient extraction, or optimizer step.
+- No Core100 or heldout access.
+- No Step3P Reviewer C, hidden-yield analysis, or final flow.
+- No reuse of O4/O4R outputs or Step3P candidates.
+- No prompt replacement, third authoring mode, semantic retry, or post-result
+  threshold change.
+- No manual candidate labels from a session that has seen API mode or hidden
+  calibration roles.
+- No API key, raw spool, checkpoint, adapter, cache, or unrelated paper file in
+  Git.
+
+The experiment machine remains idle until both P0 and P1 tags are visible.

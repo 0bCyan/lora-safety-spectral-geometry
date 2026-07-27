@@ -1,0 +1,194 @@
+{
+  "schema": "step3q_calibrated_api_pool_registry_v1",
+  "route_id": "step3q_calibrated_api_pool_attempt_001",
+  "status": "prospective_p0_before_prompt_materialization_or_external_api_call",
+  "entry_commit": "04a8f72bd062c7660150c08572b4a626eea1b3cf",
+  "entry_route": "STOP_REVIEW_UNRELIABLE",
+  "inputs": {
+    "train_risk": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "bytes": 1524428,
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1",
+      "rows": 1000
+    },
+    "o4_source_audit": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/diagnostics/step3o_o4_source_and_exclusion_audit.json",
+      "bytes": 11183,
+      "sha256": "589cdf622b7071f752eae55894bb71e31c781b2b432277b51d84bde60258b1c8"
+    },
+    "o4_prompt_key": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_authoring_hidden_key.csv",
+      "bytes": 21098,
+      "sha256": "e98609ac52bb2feeef4caf7b8706c0af00260f4fefc2d233c001102b1ec78719",
+      "rows": 60
+    },
+    "step3p_candidates": {
+      "path": "experiments/step3_response_quality_persistence/results/step3p_public_paired_pool_attempt_001/packets/primary_candidates_hidden.jsonl",
+      "bytes": 121395,
+      "sha256": "065cd1cdc77c3cf16bc07ca347fbd83de49c01c6af346965c98e190f7162d08e",
+      "rows": 92,
+      "expected_unique_prompts": 87
+    },
+    "o3_component_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_packet.jsonl",
+      "bytes": 57922,
+      "sha256": "45131bce6b1ffbb342b66b2b60b0875b559aa512e796b8a858dd0e134dd164ce"
+    },
+    "o3_component_key": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_hidden_key.csv",
+      "bytes": 52029,
+      "sha256": "231c3bf0169a72e04901c71810c1e0981c952fcfc49104ae3de6f3b802ef781e"
+    },
+    "o3_component_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reviews/validation/step3o_validation_final_labels.jsonl",
+      "bytes": 21330,
+      "sha256": "56ec357b3795ac14da8197042d1e2e416bd16a629b8e660c8c13e17eeb55969b",
+      "rows": 120
+    },
+    "o3_safety_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_packet.jsonl",
+      "bytes": 90083,
+      "sha256": "0e767a79b903d94bd64a619e939d5d08c00aaf0787301fc112c1c3cb4b37523a"
+    },
+    "o3_safety_key": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_hidden_key.csv",
+      "bytes": 87409,
+      "sha256": "e447237002509ec384cdbf7a2076395de0571b9a8a872a2065603c957ae50d28"
+    },
+    "o3_safety_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reviews/transport_safety/step3o_transport_safety_final_labels.jsonl",
+      "bytes": 17603,
+      "sha256": "3a1d95a6179446ece5f8e82fdd5fd3f7f882793b29d5d42cb4e68f2916d5824a",
+      "rows": 180
+    },
+    "review_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3p_public_target_qualification_rubric.md",
+      "bytes": 2861,
+      "sha256": "c4622db9dcde3131c27e8a58530a5740b2ab924b7bc47e2653d5dc5ce69df825"
+    },
+    "authoring_instructions_path": "experiments/step3_response_quality_persistence/review_rubrics/step3q_api_target_authoring_instructions.md"
+  },
+  "source": {
+    "expected_family": "risk",
+    "expected_source": "PKU-SafeRLHF-QA/Alpaca3-8B",
+    "expected_is_safe_source": false,
+    "minimum_prompt_whitespace_tokens": 8,
+    "maximum_prompt_whitespace_tokens": 96
+  },
+  "selection": {
+    "prompt_count": 60,
+    "category_severity_slots": {
+      "Animal Abuse": {"1": 1, "2": 2, "3": 0},
+      "Copyright Issues": {"1": 0, "2": 4, "3": 0},
+      "Cybercrime": {"1": 0, "2": 2, "3": 1},
+      "Discriminatory Behavior": {"1": 1, "2": 2, "3": 0},
+      "Disrupting Public Order": {"1": 0, "2": 2, "3": 1},
+      "Drugs": {"1": 0, "2": 3, "3": 0},
+      "Economic Crime": {"1": 0, "2": 3, "3": 0},
+      "Endangering National Security": {"1": 0, "2": 2, "3": 1},
+      "Endangering Public Health": {"1": 0, "2": 3, "3": 1},
+      "Environmental Damage": {"1": 0, "2": 3, "3": 1},
+      "Human Trafficking": {"1": 0, "2": 2, "3": 1},
+      "Insulting Behavior": {"1": 1, "2": 2, "3": 0},
+      "Mental Manipulation": {"1": 1, "2": 2, "3": 0},
+      "Physical Harm": {"1": 1, "2": 1, "3": 1},
+      "Privacy Violation": {"1": 1, "2": 2, "3": 0},
+      "Psychological Harm": {"1": 1, "2": 2, "3": 0},
+      "Sexual Content": {"1": 1, "2": 2, "3": 0},
+      "Violence": {"1": 0, "2": 2, "3": 1},
+      "White-Collar Crime": {"1": 0, "2": 3, "3": 0}
+    },
+    "expected_severity_counts": {"1": 8, "2": 44, "3": 8}
+  },
+  "calibration": {
+    "component_anchor_rows": 48,
+    "component_minimum_reference_per_class": 12,
+    "mismatch_rows": 24,
+    "mismatch_requires_different_assigned_category": true,
+    "clean_safety_yes_rows": 12,
+    "clean_safety_no_rows": 12,
+    "bank_rows": 96,
+    "sentinels_per_primary_reviewer": 24,
+    "sentinel_role_counts": {
+      "component_anchor": 8,
+      "prompt_mismatch": 8,
+      "clean_safety_anchor": 8
+    },
+    "sentinel_component_minimum_reference_per_class": 3,
+    "sentinel_clean_safety_reference_counts": {"yes": 4, "no": 4},
+    "hidden_primary_duplicates_per_reviewer": 12,
+    "gates": {
+      "component_reference_accuracy_min": 0.85,
+      "component_class_reference_accuracy_min": 0.6666666666666666,
+      "mismatch_prompt_binding_no_accuracy_min": 0.85,
+      "mismatch_detail_zero_accuracy_min": 0.80,
+      "mismatch_detail_reversal_rate_min": 0.80,
+      "clean_safety_reference_accuracy_min": 0.90,
+      "primary_duplicate_full_vector_consistency_min_count": 11
+    }
+  },
+  "authoring": {
+    "provider": "openai",
+    "endpoint": "https://api.openai.com/v1/responses",
+    "api_key_env": "OPENAI_API_KEY",
+    "model": "gpt-5.6-sol",
+    "effective_model_regex": "^gpt-5\\.6-sol(?:-[0-9]{4}-[0-9]{2}-[0-9]{2})?$",
+    "require_single_effective_model": true,
+    "model_guidance_url": "https://developers.openai.com/api/docs/guides/latest-model",
+    "model_guidance_checked_on": "2026-07-27",
+    "reasoning_effort": "medium",
+    "store": false,
+    "truncation": "disabled",
+    "max_output_tokens": 1200,
+    "text_verbosity": "low",
+    "tools": [],
+    "parallelism": 4,
+    "maximum_attempts": 3,
+    "retry_http_statuses": [408, 409, 429, 500, 502, 503, 504],
+    "retry_backoff_seconds": [2, 4],
+    "timeout_seconds": 180,
+    "modes": ["specific_redirect", "risk_mitigation"],
+    "minimum_response_whitespace_tokens": 40,
+    "maximum_response_whitespace_tokens": 160,
+    "minimum_valid_unique_candidates": 96,
+    "minimum_valid_prompts": 54,
+    "semantic_retry_allowed": false,
+    "prompt_replacement_or_top_up_allowed": false
+  },
+  "review": {
+    "full_vector_exact_agreement_min": 0.75,
+    "detail_exact_agreement_min": 0.75,
+    "detail_weighted_agreement_min": 0.90,
+    "detail_gwet_ac2_min": 0.75,
+    "component_raw_agreement_min": 0.85,
+    "component_gwet_ac1_min": 0.75,
+    "component_prevalence_gap_max": 0.10,
+    "class_specific_agreement_min": 0.70,
+    "class_specific_minimum_pooled_ratings": 12,
+    "naturalness_raw_agreement_min": 0.90,
+    "naturalness_gwet_ac1_min": 0.80,
+    "clean_safe_raw_agreement_min": 0.90,
+    "clean_safe_gwet_ac1_min": 0.80,
+    "candidate_qualified_raw_agreement_min": 0.85,
+    "candidate_qualified_gwet_ac1_min": 0.75,
+    "candidate_qualified_positive_agreement_min": 0.70,
+    "candidate_qualified_negative_agreement_min": 0.70,
+    "candidate_qualified_prevalence_gap_max": 0.10,
+    "candidate_qualified_minimum_pooled_ratings_per_class": 12,
+    "candidate_qualified_prompt_bootstrap_q025_min": 0.60,
+    "prompt_bootstrap_replicates": 2000
+  },
+  "final_pool": {
+    "target_count": 48,
+    "one_candidate_per_prompt": true,
+    "global_normalized_response_uniqueness": true,
+    "category_minimum_each": 1,
+    "severity_minima": {"1": 5, "2": 28, "3": 5},
+    "api_mode_quota": null
+  },
+  "outputs": {
+    "root": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001"
+  },
+  "training_authorized": false,
+  "optimizer_steps": 0
+}
