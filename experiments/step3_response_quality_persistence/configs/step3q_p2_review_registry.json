@@ -5,8 +5,8 @@
   "status": "prospective_before_external_receipts_or_candidate_labels_are_opened",
   "entry_commit": "eb45752c0b1b2470be12f5833e47fae9f5696449",
   "protocol_tag": "step3q-calibrated-api-attempt-001-p2-protocol",
-  "protocol_commit_sha1": "TO_BE_LOCKED_AFTER_PROTOCOL_COMMIT",
-  "protocol_lock_status": "pending_protocol_commit",
+  "protocol_commit_sha1": "864f4674a94673c73dbc4a666357db1cc08e2b32",
+  "protocol_lock_status": "locked_to_protocol_commit",
   "frozen_inputs": {
     "p0_registry": {
       "path": "experiments/step3_response_quality_persistence/configs/step3q_calibrated_api_pool_registry.json",
