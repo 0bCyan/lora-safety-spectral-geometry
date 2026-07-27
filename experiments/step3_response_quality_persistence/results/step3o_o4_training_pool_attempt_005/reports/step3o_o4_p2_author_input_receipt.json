@@ -1,0 +1,31 @@
+{
+  "name": "step3o_o4_p2_author_input_receipt_v1",
+  "attempt_id": "step3o_o4_attempt_005",
+  "stage": "P2_AUTHORING",
+  "inputs": [
+    {
+      "role": "author_a",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "role": "author_b",
+      "bytes": 26052,
+      "sha256": "a34ddde826854a02cea8fc6e37cf4c880f23e0a25318244c023927448cc13b92"
+    },
+    {
+      "role": "author_a_provenance",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "role": "author_b_provenance",
+      "bytes": 2443,
+      "sha256": "a5280663d88e25e9a4c0169b0e6e3b95c8380d4719f4136359b74f6ebf8ad3fe"
+    }
+  ],
+  "received_once": true,
+  "replacement_or_repair_allowed": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

@@ -1,0 +1,19 @@
+{
+  "name": "step3o_o4_attempt_005_terminal_stop_v1",
+  "attempt_id": "step3o_o4_attempt_005",
+  "stage": "P2_AUTHORING",
+  "route": "STOP_AUTHORING",
+  "parent_commit": "abd6e650533ba4e8b9c3f25763f1f28aa9907340",
+  "error_type": "QualificationValidationError",
+  "error_message_sha256": "b29e2c4b6f3ebc0686e1491ed7d82a55cd2ac9c7d4921fc98e645dc13bdb8b60",
+  "evidence_artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/reports/step3o_o4_p2_author_input_receipt.json",
+      "bytes": 851,
+      "sha256": "e4752aab14e22a5947a98d895425a7727b73c89642f84d15e45eba95b359edcc"
+    }
+  ],
+  "replacement_or_retry_allowed": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
