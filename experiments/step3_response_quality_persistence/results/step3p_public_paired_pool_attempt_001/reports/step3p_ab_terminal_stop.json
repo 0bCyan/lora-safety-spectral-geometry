@@ -1,0 +1,61 @@
+{
+  "name": "step3p_ab_terminal_stop_v1",
+  "attempt_id": "step3p_public_paired_pool_attempt_001",
+  "stage": "P2_AB_OUTCOME",
+  "route": "STOP_REVIEW_UNRELIABLE",
+  "parent_commit": "becfc9f910ab2333ce71aea84ca4757f9aafc04d",
+  "primary_candidates": 92,
+  "reviewer_rows_including_hidden_duplicates": {
+    "reviewer_a": 104,
+    "reviewer_b": 104
+  },
+  "failed_registered_gates": [
+    "detail_boundary_negative",
+    "detail_boundary_no_count",
+    "full_vector_exact",
+    "prompt_binding_negative",
+    "prompt_binding_no_count"
+  ],
+  "reviewer_c_opened": false,
+  "final_target_selection_run": false,
+  "replacement_or_retry_allowed": false,
+  "training_authorized": false,
+  "optimizer_steps": 0,
+  "evidence_artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3p_public_paired_pool_attempt_001/reviews/ab/ab_input_manifest.json",
+      "bytes": 1069,
+      "sha256": "0612897d1b65631e724d52105644a4ed2e97d0883128fc6be97aa050bd48855f"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3p_public_paired_pool_attempt_001/reviews/ab/ab_reliability.json",
+      "bytes": 5764,
+      "sha256": "3c6939f8ce7505783f4ee74597a2cd2bdc2f75c12a8a9940671c008c706d9447"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3p_public_paired_pool_attempt_001/reviews/ab/ab_route.json",
+      "bytes": 120,
+      "sha256": "5208b3ad1ff765b58077bf6ca1fc259a6ac3b3a930ec1cdea32f3dc886e8891c"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3p_public_paired_pool_attempt_001/reviews/ab/reviewer_a_provenance.json",
+      "bytes": 547,
+      "sha256": "0e317a4228a869b59f5687a8700e2f062a5afc104036c310b9adc7e7177edef4"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3p_public_paired_pool_attempt_001/reviews/ab/reviewer_a_review.jsonl",
+      "bytes": 30336,
+      "sha256": "830187706102578561b2fe5e5a39341797a8c53fcfa60f073b90e70971d6cba8"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3p_public_paired_pool_attempt_001/reviews/ab/reviewer_b_provenance.json",
+      "bytes": 597,
+      "sha256": "3672a6ca63a56c70206d11ef34352f1e5f2f2de1ec0578ad0ca2f3fa4be2d2ce"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3p_public_paired_pool_attempt_001/reviews/ab/reviewer_b_review.jsonl",
+      "bytes": 29711,
+      "sha256": "3eb376ce27b2aed59dc9df714d18f654b194774f44c66b4400ae168889a49f73"
+    }
+  ]
+}

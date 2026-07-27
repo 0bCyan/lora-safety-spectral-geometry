@@ -1,0 +1,39 @@
+{
+  "route_id": "step3p_public_paired_pool_attempt_001",
+  "reviewers": [
+    {
+      "role": "reviewer_a",
+      "reviewer_id": "codex-reviewer-a-current-task-2026-07-27",
+      "model": "GPT-5"
+    },
+    {
+      "role": "reviewer_b",
+      "reviewer_id": "codex-gpt5-reviewer-b-2026-07-27-current-task",
+      "model": "GPT-5"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "ab/reviewer_a_provenance.json",
+      "bytes": 547,
+      "sha256": "0e317a4228a869b59f5687a8700e2f062a5afc104036c310b9adc7e7177edef4"
+    },
+    {
+      "path": "ab/reviewer_a_review.jsonl",
+      "bytes": 30336,
+      "sha256": "830187706102578561b2fe5e5a39341797a8c53fcfa60f073b90e70971d6cba8"
+    },
+    {
+      "path": "ab/reviewer_b_provenance.json",
+      "bytes": 597,
+      "sha256": "3672a6ca63a56c70206d11ef34352f1e5f2f2de1ec0578ad0ca2f3fa4be2d2ce"
+    },
+    {
+      "path": "ab/reviewer_b_review.jsonl",
+      "bytes": 29711,
+      "sha256": "3eb376ce27b2aed59dc9df714d18f654b194774f44c66b4400ae168889a49f73"
+    }
+  ],
+  "training_authorized": false,
+  "optimizer_steps": 0
+}

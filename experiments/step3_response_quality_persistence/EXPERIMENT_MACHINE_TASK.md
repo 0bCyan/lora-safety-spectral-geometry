@@ -1,4 +1,4 @@
-# Experiment Machine Task: Keep Idle During Step3P Public-Pool Qualification
+# Experiment Machine Task: Keep Idle After Step3P Review Stop
 
 ## Current State
 
@@ -13,20 +13,36 @@ Step3O O1/O2:   PASS
 Step3O O3:      PASS external actionability validation
 Step3O-O4:      attempt 005 closed at STOP_AUTHORING after prompt freeze
 Step3O-O4R:     attempt 001 closed at STOP_AUTHORING with 4/6 shards delivered
-Step3P:         public paired-source P0 and blind qualification; optimizer_steps=0
+Step3P:         attempt 001 closed at STOP_REVIEW_UNRELIABLE; optimizer_steps=0
 ```
 
 Attempt 005 later froze 60 prompts but stopped when one long-context author did
 not deliver a study file. O4R split the same prompt pool into six independent
-20-row sessions; four delivered and two did not. The immutable recovery route
-therefore also stopped before review, target selection, or training. Step3P
-does not retry those sessions. It tests a pinned public prompt-paired safe
-response source under a new blind quality protocol.
+20-row sessions; four delivered and two did not. Step3P then tested a pinned
+public prompt-paired safe-response source. Both A/B reviewers completed 92
+primary rows plus 12 hidden duplicates, but the frozen conjunction failed on
+full-vector exact agreement and missing negative-class support for detail and
+prompt binding. Reviewer C, hidden-stratum yield, final target selection, and
+training are forbidden for attempt 001.
 
 Do not run training, model generation, model scoring, gradient extraction,
 matching, T6, PCSR, TRIM, or method smoke tests.
 
 ## New Completed Result
+
+Step3P selected `STOP_REVIEW_UNRELIABLE`. Full-vector exact agreement was
+`0.739` against `0.75`; the detail score-2 boundary had 3 negative ratings
+against the required 12; prompt binding had 0 negative ratings against the
+required 12. The derived candidate-qualified construct nevertheless passed
+raw agreement (`0.891`), Gwet AC1 (`0.792`), positive agreement (`0.861`),
+negative agreement (`0.911`), and prompt-cluster bootstrap (`q025=0.661`)
+gates. Both reviewers reproduced all `12/12` hidden duplicates.
+
+This is a failed measurement-transport gate, not a target-quality, behavior,
+mechanism, or method-efficacy result. There is no active local or GPU execution
+task. A new prospective protocol is required.
+
+The prior Step3O measurement result remains frozen:
 
 Step3O replaced the unreliable directly assigned actionability ordinal with
 three judged components: `safe_route`, `executable_step`, and
@@ -124,6 +140,8 @@ experiments/step3_response_quality_persistence/results/step3o_measurement_repair
 - Do not release the old 87 rows, old 40 prompts, or old 37-prompt selection.
 - Do not expose PKU source harmful responses to O4 authors or reviewers.
 - Do not replace O4 prompts or add candidates after authoring begins.
+- Do not reopen Step3P attempt 001, launch Reviewer C, inspect hidden target
+  yield, or run the final 48-target flow.
 - Do not implement or train PCSR-R2, TRIM, or a new method.
 - Do not run C4/C5, seeds 2/3, a second backbone, SpectraSafe, or heldout.
 - Do not commit checkpoints, adapters, caches, raw API caches, full gradients,

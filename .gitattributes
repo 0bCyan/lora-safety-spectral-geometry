@@ -9,3 +9,4 @@
 *.mjs text eol=lf
 .gitattributes text eol=lf
 .gitignore text eol=lf
+experiments/step3_response_quality_persistence/results/step3p_public_paired_pool_attempt_001/reviews/ab/reviewer_* binary
