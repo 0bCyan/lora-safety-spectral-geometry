@@ -1,0 +1,257 @@
+{
+  "name": "step3o_o4_p1_prompt_freeze_manifest_v2",
+  "attempt_id": "step3o_o4_attempt_005",
+  "protocol_commit": "b36303bb901b32c93b221f1a344a39c096b6c2c2",
+  "protocol_commit_parent": "aade020eca522cbbb379ed9b92a2a671e4151c11",
+  "randomness_request_commit": "6670a29cc3cab5715544deb549c054bc32a4cdee",
+  "randomness_pulse_commit": "4be4082473e3f77ff5bc9784811ffbc680b8e1cf",
+  "beacon_round": 6323126,
+  "beacon_randomness": "7a4a644a32a836c9003057a601504929438311ea0155e5ef7e1a3c85e1dc5df8",
+  "prompt_freeze_parent_commit": "4be4082473e3f77ff5bc9784811ffbc680b8e1cf",
+  "entry_commit": "aade020eca522cbbb379ed9b92a2a671e4151c11",
+  "entry_route_sha256": "ab80582247367bde192efbbd277820493fbc36918e93ec68f83aedb5f5e554f5",
+  "protocol_inputs": [
+    {
+      "path": ".gitattributes",
+      "bytes": 208,
+      "sha256": "14596a27f10c5585ff5fdb8c00fc5bc7b2ca020a4d953080dff155b7b2e73be6"
+    },
+    {
+      "path": "agent.md",
+      "bytes": 11879,
+      "sha256": "b26ce7bcdd16e409f5762df67969a3ea25551a7c4ca63b0ba0b130258d08b16c"
+    },
+    {
+      "path": ".github/workflows/step3o-o4-randomness-request.yml",
+      "bytes": 1117,
+      "sha256": "986cb71303e2974df6579bd746ed893b3b3ebc7b869a677fb7d87190daed2652"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/tools/step3o_o4_drand_verifier/package.json",
+      "bytes": 155,
+      "sha256": "d5059f4ab0b429581f911ee2761d815e4e37fb71889f90ce8ac27a51afe179ce"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/tools/step3o_o4_drand_verifier/package-lock.json",
+      "bytes": 6402,
+      "sha256": "cbbc39dbb8d012157be781e73146aa2b493a616b0d8cc681cea248115755ee1d"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/tools/step3o_o4_drand_verifier/verify.mjs",
+      "bytes": 2067,
+      "sha256": "02c8e63f48b008abd826d2dbe432d4902b2859d717ff22fd431dc7e4dfcd3c9c"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/tools/step3o_o4_drand_verifier/retry-policy.mjs",
+      "bytes": 224,
+      "sha256": "05b014e6079eeb3ee405db6cf345e51b8e5c2f849e0738db166e42b41cb0702e"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3o_o4_public_fetch.py",
+      "bytes": 1801,
+      "sha256": "c71632653049459d02616358fc32eb3dd8f2e8b9e4d131157e83dbca1ab422f8"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/configs/step3o_o4_training_pool_registry.json",
+      "bytes": 25655,
+      "sha256": "f93cf6fd400f8c817e547a7f5753c850ecf2fa9f239611969c3839eff6b3757e"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/Step3O_O4_fresh_training_pool_plan.md",
+      "bytes": 46345,
+      "sha256": "aaec927f8f8c881ba0b4e47daafe9d87c440fc28d0c7f63548ad5c63e77f8828"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_o4_target_authoring_instructions.md",
+      "bytes": 2299,
+      "sha256": "cb7e86d17adcfe1ae26f95fcc75e844c7fafe243f3dc104134274e09b6662f3a"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_o4_target_qualification_rubric.md",
+      "bytes": 6311,
+      "sha256": "2ceefd28ad981de76deb4b603089343047b4ee98daa9d7d99455472a3bfd10aa"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/review_handoffs/step3o_o4_independent_author_and_reviewer_instructions.md",
+      "bytes": 7478,
+      "sha256": "a6894cbbe80b9a8a8a34e39df935ef4e86add510136337e47a182fb4e3fbd78f"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3o_o4_training_pool.py",
+      "bytes": 162735,
+      "sha256": "a2d7d762e77a21244e4f4c55f57c648e0c5f110fb9e2ad245f895bb0969f1286"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3o_o4_training_pool.py",
+      "bytes": 31584,
+      "sha256": "d382f699789d535482e44878a30f5dafe01e1188dffc3ff2347b2d309dc0b8b3"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3o_o4_randomness.py",
+      "bytes": 35422,
+      "sha256": "45d33426fc7c8078fc4dbad50e9e1e32ac4af810f5795a2507a47c5625d641c4"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3o_o4_randomness.py",
+      "bytes": 82691,
+      "sha256": "c01e0c671dba0228e3e8ee9c58f94d04fb2c5b09ba8db25b36847d5c436aedb6"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3o_o4_qualification.py",
+      "bytes": 88439,
+      "sha256": "9aefa17fd315135347f7de35990dbc4fe09745f69fedb753beb7b7fdc8987486"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3o_o4_qualification.py",
+      "bytes": 31315,
+      "sha256": "902f9a34327dcb7a6285200565700577f28909c59b92acfc360fc8d7509e3ffe"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3o_o4_stage.py",
+      "bytes": 57198,
+      "sha256": "45e23b01983a84f783d1731679d3814bd66cc01d70790f5e1b2e7a28563eba52"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3o_o4_stage.py",
+      "bytes": 28016,
+      "sha256": "bafc4a86ab63a98fe86dd80fcb71907f562875f1e8464a864176885181f57320"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3o_measurement_repair.py",
+      "bytes": 94234,
+      "sha256": "d2150d83ab601b2b1a687ecb71a35e5026765e8edfe323d3a7b36093df93fc0a"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/README.md",
+      "bytes": 21230,
+      "sha256": "dc4f77971011341f7a1eab93af7d74c67a84b9cc3406752c13893d17f0d9ab6a"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/EXPERIMENT_MACHINE_TASK.md",
+      "bytes": 7317,
+      "sha256": "46abafb318f98b9a0aa9eb813edc63a2f38273fbe03723e12832f89d66fb7bfe"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/step3o_validation_route_decision.json",
+      "bytes": 668,
+      "sha256": "ab80582247367bde192efbbd277820493fbc36918e93ec68f83aedb5f5e554f5"
+    },
+    {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "bytes": 1524428,
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    {
+      "path": "data/processed/unified_pool/eval_safety.jsonl",
+      "bytes": 283097,
+      "sha256": "9ba10163333be7ae246bc054a263574011067bff77f751fc97e02dd7cc64e932"
+    },
+    {
+      "path": "data/processed/unified_pool/eval_utility.jsonl",
+      "bytes": 152909,
+      "sha256": "e123a9d79cb122fa0145eb9dad6116770139ca0bbb4a3b7caad718aca0027e58"
+    },
+    {
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/split_manifest.csv",
+      "bytes": 32318,
+      "sha256": "ef0053b54e34a2e3f2603caa43576f45edf33cceb508b2f4892624047d367851"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3n_r1_reaudit/step3n_r1_source_quality_upper_bound.csv",
+      "bytes": 4527,
+      "sha256": "f7d40461ef55c2f65f325e0ac479f62fbbb8f96bf5ebde75e9a8b27a1ec0aca2"
+    }
+  ],
+  "randomness_inputs": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/reports/step3o_o4_r0_request_start.json",
+      "bytes": 634,
+      "sha256": "d4ae005ece8069a9d03d229dd8ddc949a882b2e3e6f63ae67a4fcacf74a517e5"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/reports/step3o_o4_r0_transport_trace.json",
+      "bytes": 1341,
+      "sha256": "281c9857f55e3699cbcb7cb385d2b2494989d126797381112fb94bc0a6f07781"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/reports/step3o_o4_drand_request.json",
+      "bytes": 1523,
+      "sha256": "2dc0b4f23a25ee79e5fac4687931f388a9bc277b3bdf4514bddcb6d528bead1b"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/reports/step3o_o4_r1_pulse_start.json",
+      "bytes": 637,
+      "sha256": "8e90dee53250675d3168aa28a8c3f33c3d3e71d3c1738f684ca7fe334c6124f0"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/reports/step3o_o4_r1_transport_trace.json",
+      "bytes": 1673,
+      "sha256": "681bc1fb716d5bbabe0c0a4a200569b7a2950613e359a3bd0bdab6ac9c0b2060"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/reports/step3o_o4_drand_target_pulse.json",
+      "bytes": 2115,
+      "sha256": "c0cf3ee52b45b563e150cd4f84cb34ab77af92b7a56b325455694711d49f3337"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/reports/step3o_o4_attempt_005_ledger.json",
+      "bytes": 771,
+      "sha256": "573de9e71ffb2d6c7db61ab571ed642a21e7f50b7b49db83219df19136bb93b7"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_author_a_packet.jsonl",
+      "bytes": 12105,
+      "sha256": "77f878fe31346b79ad921d1e62035c3da9d1570efbf8e41b8ab639234e82e6c0"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_author_b_packet.jsonl",
+      "bytes": 12105,
+      "sha256": "36f8fd925aa0a50abe9f5b28a68e0d510669c4daa4233bbb9216984bb71c9ddd"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_authoring_hidden_key.csv",
+      "bytes": 21098,
+      "sha256": "e98609ac52bb2feeef4caf7b8706c0af00260f4fefc2d233c001102b1ec78719"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_author_a_template.jsonl",
+      "bytes": 4560,
+      "sha256": "860cd2821d8303bf0e4fb3f5deab7c9c3899c9e3cbc70a2037598b19e1f80b39"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_author_b_template.jsonl",
+      "bytes": 4560,
+      "sha256": "622f69edf1830e8b2577e039631a031022ea510d680991531d50bfe173bb447e"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_authoring_packet_manifest.json",
+      "bytes": 2975,
+      "sha256": "5c4f312057c89081426ebec54b52b809669e5e37db0dfea992e31c394f19c24f"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/diagnostics/step3o_o4_source_and_exclusion_audit.json",
+      "bytes": 11183,
+      "sha256": "589cdf622b7071f752eae55894bb71e31c781b2b432277b51d84bde60258b1c8"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/diagnostics/step3o_o4_prompt_selection_audit.json",
+      "bytes": 5926,
+      "sha256": "36062aad178bbe29eab887e1349c63f72846e469d92ab870ab6bb818a44e2bb1"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/reports/Step3O_O4_P1_prompt_freeze_report.md",
+      "bytes": 1060,
+      "sha256": "ff20382e44333bef364b1aee29003c5bf670bc4835fd5d7dfad94c9f9309971a"
+    }
+  ],
+  "author_a_prompt_rows": 60,
+  "author_b_prompt_rows": 60,
+  "source_harmful_responses_released": false,
+  "old37_prompts_released": false,
+  "heldout_content_opened": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "pcsr_r2_authorized": false
+}

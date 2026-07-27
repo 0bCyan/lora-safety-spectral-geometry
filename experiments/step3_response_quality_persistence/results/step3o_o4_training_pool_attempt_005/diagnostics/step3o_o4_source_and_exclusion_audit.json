@@ -1,0 +1,363 @@
+{
+  "name": "step3o_o4_source_and_exclusion_audit_v2",
+  "protocol_commit": "b36303bb901b32c93b221f1a344a39c096b6c2c2",
+  "beacon_round": 6323126,
+  "beacon_randomness_sha256": "b6016a604aa13d48f72a591a505358c1609b5f62f013094d67ac1c054528d7e5",
+  "source_rows": 1000,
+  "structurally_eligible_before_lexical_audit": 939,
+  "lexically_eligible": 927,
+  "structural_exclusion_counts": {
+    "prompt_length": 36,
+    "registered_or_scanned_exposure_id": 25
+  },
+  "restricted_lexical_exclusion_count": 12,
+  "restricted_lexical_exclusions": [
+    {
+      "sample_id": "risk_pkuqa_000028",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "eval_safety_000217",
+      "reference_kind": "evaluation",
+      "jaccard": 0.6580645161290323,
+      "overlap_coefficient": 0.8429752066115702,
+      "maximum_shingle_similarity": 0.8429752066115702,
+      "sequence_similarity": 0.9
+    },
+    {
+      "sample_id": "risk_pkuqa_000067",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "eval_safety_000020",
+      "reference_kind": "evaluation",
+      "jaccard": 0.6666666666666666,
+      "overlap_coefficient": 0.8,
+      "maximum_shingle_similarity": 0.8,
+      "sequence_similarity": 0.8873239436619719
+    },
+    {
+      "sample_id": "risk_pkuqa_000102",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "eval_safety_000018",
+      "reference_kind": "evaluation",
+      "jaccard": 0.5034013605442177,
+      "overlap_coefficient": 0.6851851851851852,
+      "maximum_shingle_similarity": 0.6851851851851852,
+      "sequence_similarity": 0.9161290322580645
+    },
+    {
+      "sample_id": "risk_pkuqa_000170",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "risk_pkuqa_000006",
+      "reference_kind": "prior_or_incidental_exposure",
+      "jaccard": 0.84,
+      "overlap_coefficient": 0.9130434782608695,
+      "maximum_shingle_similarity": 0.9130434782608695,
+      "sequence_similarity": 0.935361216730038
+    },
+    {
+      "sample_id": "risk_pkuqa_000191",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "eval_safety_000183",
+      "reference_kind": "evaluation",
+      "jaccard": 0.6666666666666666,
+      "overlap_coefficient": 0.8,
+      "maximum_shingle_similarity": 0.8,
+      "sequence_similarity": 0.855072463768116
+    },
+    {
+      "sample_id": "risk_pkuqa_000198",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "eval_safety_000049",
+      "reference_kind": "evaluation",
+      "jaccard": 0.5671641791044776,
+      "overlap_coefficient": 0.7238095238095238,
+      "maximum_shingle_similarity": 0.7238095238095238,
+      "sequence_similarity": 0.9801324503311258
+    },
+    {
+      "sample_id": "risk_pkuqa_000353",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "eval_safety_000020",
+      "reference_kind": "evaluation",
+      "jaccard": 0.28205128205128205,
+      "overlap_coefficient": 0.44,
+      "maximum_shingle_similarity": 0.44,
+      "sequence_similarity": 0.8827586206896552
+    },
+    {
+      "sample_id": "risk_pkuqa_000372",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "eval_safety_000270",
+      "reference_kind": "evaluation",
+      "jaccard": 0.7596153846153846,
+      "overlap_coefficient": 1.0,
+      "maximum_shingle_similarity": 1.0,
+      "sequence_similarity": 0.0
+    },
+    {
+      "sample_id": "risk_pkuqa_000639",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "eval_safety_000069",
+      "reference_kind": "evaluation",
+      "jaccard": 0.47029702970297027,
+      "overlap_coefficient": 0.6506849315068494,
+      "maximum_shingle_similarity": 0.6506849315068494,
+      "sequence_similarity": 0.8784530386740331
+    },
+    {
+      "sample_id": "risk_pkuqa_000918",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "eval_safety_000021",
+      "reference_kind": "evaluation",
+      "jaccard": 0.7151898734177216,
+      "overlap_coefficient": 0.8828125,
+      "maximum_shingle_similarity": 0.8828125,
+      "sequence_similarity": 0.9449838187702265
+    },
+    {
+      "sample_id": "risk_pkuqa_000937",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "risk_pkuqa_000006",
+      "reference_kind": "prior_or_incidental_exposure",
+      "jaccard": 0.5909090909090909,
+      "overlap_coefficient": 0.7913043478260869,
+      "maximum_shingle_similarity": 0.7913043478260869,
+      "sequence_similarity": 0.9039145907473309
+    },
+    {
+      "sample_id": "risk_pkuqa_000963",
+      "reason": "restricted_lexical_overlap",
+      "reference_id": "risk_pkuqa_000003",
+      "reference_kind": "prior_or_incidental_exposure",
+      "jaccard": 0.7346938775510204,
+      "overlap_coefficient": 0.8780487804878049,
+      "maximum_shingle_similarity": 0.8780487804878049,
+      "sequence_similarity": 0.9516728624535316
+    }
+  ],
+  "restricted_lexical_overlap_threshold": 0.9,
+  "normalized_character_sequence_similarity_threshold": 0.85,
+  "normalization": "Unicode NFKC, casefold, collapsed whitespace",
+  "audit_scope": "tracked structured prompt fingerprint plus restricted Unicode token-shingle and character-sequence audit; not semantic or pretraining decontamination",
+  "evaluation_rows": 600,
+  "prior_split_rows": 200,
+  "prior_safety_train_rows": 40,
+  "old37_rows": 37,
+  "tracked_risk_ids": [
+    "risk_pkuqa_000001",
+    "risk_pkuqa_000002",
+    "risk_pkuqa_000003",
+    "risk_pkuqa_000004",
+    "risk_pkuqa_000005",
+    "risk_pkuqa_000006",
+    "risk_pkuqa_000007",
+    "risk_pkuqa_000008",
+    "risk_pkuqa_000009",
+    "risk_pkuqa_000010",
+    "risk_pkuqa_000011",
+    "risk_pkuqa_000012",
+    "risk_pkuqa_000013",
+    "risk_pkuqa_000014",
+    "risk_pkuqa_000015",
+    "risk_pkuqa_000016",
+    "risk_pkuqa_000703",
+    "risk_pkuqa_000837"
+  ],
+  "tracked_prompt_fingerprint_scan": {
+    "structured_files_scanned": 2084,
+    "files_with_source_prompt_match": 0,
+    "source_ids": [],
+    "occurrences": []
+  },
+  "incidental_main_session_prompt_ids": [
+    "risk_pkuqa_000001",
+    "risk_pkuqa_000002",
+    "risk_pkuqa_000022",
+    "risk_pkuqa_000050",
+    "risk_pkuqa_000566",
+    "risk_pkuqa_000799",
+    "risk_pkuqa_000897",
+    "risk_pkuqa_000973",
+    "risk_pkuqa_000998"
+  ],
+  "exposure_ledger": [
+    {
+      "sample_id": "risk_pkuqa_000001",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": true
+    },
+    {
+      "sample_id": "risk_pkuqa_000002",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": true
+    },
+    {
+      "sample_id": "risk_pkuqa_000003",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000004",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000005",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000006",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000007",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000008",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000009",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000010",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000011",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000012",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000013",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000014",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000015",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000016",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000022",
+      "tracked_risk_id": false,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": true
+    },
+    {
+      "sample_id": "risk_pkuqa_000050",
+      "tracked_risk_id": false,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": true
+    },
+    {
+      "sample_id": "risk_pkuqa_000566",
+      "tracked_risk_id": false,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": true
+    },
+    {
+      "sample_id": "risk_pkuqa_000703",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000799",
+      "tracked_risk_id": false,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": true
+    },
+    {
+      "sample_id": "risk_pkuqa_000837",
+      "tracked_risk_id": true,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": false
+    },
+    {
+      "sample_id": "risk_pkuqa_000897",
+      "tracked_risk_id": false,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": true
+    },
+    {
+      "sample_id": "risk_pkuqa_000973",
+      "tracked_risk_id": false,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": true
+    },
+    {
+      "sample_id": "risk_pkuqa_000998",
+      "tracked_risk_id": false,
+      "tracked_prompt_fingerprint": false,
+      "incidental_main_session": true
+    }
+  ],
+  "excluded_source_ids": [
+    "risk_pkuqa_000001",
+    "risk_pkuqa_000002",
+    "risk_pkuqa_000003",
+    "risk_pkuqa_000004",
+    "risk_pkuqa_000005",
+    "risk_pkuqa_000006",
+    "risk_pkuqa_000007",
+    "risk_pkuqa_000008",
+    "risk_pkuqa_000009",
+    "risk_pkuqa_000010",
+    "risk_pkuqa_000011",
+    "risk_pkuqa_000012",
+    "risk_pkuqa_000013",
+    "risk_pkuqa_000014",
+    "risk_pkuqa_000015",
+    "risk_pkuqa_000016",
+    "risk_pkuqa_000022",
+    "risk_pkuqa_000050",
+    "risk_pkuqa_000566",
+    "risk_pkuqa_000703",
+    "risk_pkuqa_000799",
+    "risk_pkuqa_000837",
+    "risk_pkuqa_000897",
+    "risk_pkuqa_000973",
+    "risk_pkuqa_000998"
+  ],
+  "source_harmful_responses_released": false,
+  "old37_prompts_released": false,
+  "heldout_content_opened": false
+}

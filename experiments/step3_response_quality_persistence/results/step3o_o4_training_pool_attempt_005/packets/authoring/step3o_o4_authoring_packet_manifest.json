@@ -1,0 +1,63 @@
+{
+  "name": "step3o_o4_authoring_packet_manifest_v2",
+  "status": "frozen_before_target_authoring",
+  "attempt_id": "step3o_o4_attempt_005",
+  "protocol_commit": "b36303bb901b32c93b221f1a344a39c096b6c2c2",
+  "randomness_request_commit": "6670a29cc3cab5715544deb549c054bc32a4cdee",
+  "randomness_pulse_commit": "4be4082473e3f77ff5bc9784811ffbc680b8e1cf",
+  "beacon_round": 6323126,
+  "prompt_rows_per_author": 60,
+  "visible_fields": [
+    "opaque_prompt_id",
+    "prompt"
+  ],
+  "author_packet_id_sets_identical": true,
+  "author_packet_orders_separately_salted": true,
+  "source_response_fields_released": false,
+  "authoring_attempts_per_prompt": 2,
+  "extra_authoring_rounds_allowed": 0,
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/reports/step3o_o4_attempt_005_ledger.json",
+      "bytes": 771,
+      "sha256": "573de9e71ffb2d6c7db61ab571ed642a21e7f50b7b49db83219df19136bb93b7"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_author_a_packet.jsonl",
+      "bytes": 12105,
+      "sha256": "77f878fe31346b79ad921d1e62035c3da9d1570efbf8e41b8ab639234e82e6c0"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_author_b_packet.jsonl",
+      "bytes": 12105,
+      "sha256": "36f8fd925aa0a50abe9f5b28a68e0d510669c4daa4233bbb9216984bb71c9ddd"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_authoring_hidden_key.csv",
+      "bytes": 21098,
+      "sha256": "e98609ac52bb2feeef4caf7b8706c0af00260f4fefc2d233c001102b1ec78719"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_author_a_template.jsonl",
+      "bytes": 4560,
+      "sha256": "860cd2821d8303bf0e4fb3f5deab7c9c3899c9e3cbc70a2037598b19e1f80b39"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_author_b_template.jsonl",
+      "bytes": 4560,
+      "sha256": "622f69edf1830e8b2577e039631a031022ea510d680991531d50bfe173bb447e"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/diagnostics/step3o_o4_source_and_exclusion_audit.json",
+      "bytes": 11183,
+      "sha256": "589cdf622b7071f752eae55894bb71e31c781b2b432277b51d84bde60258b1c8"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/diagnostics/step3o_o4_prompt_selection_audit.json",
+      "bytes": 5926,
+      "sha256": "36062aad178bbe29eab887e1349c63f72846e469d92ab870ab6bb818a44e2bb1"
+    }
+  ],
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
