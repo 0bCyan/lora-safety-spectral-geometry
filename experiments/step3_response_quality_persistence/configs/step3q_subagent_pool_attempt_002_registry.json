@@ -1,0 +1,96 @@
+{
+  "schema": "step3q_subagent_pool_registry_v1",
+  "route_id": "step3q_subagent_pool_attempt_002",
+  "stage_id": "step3q_subagent_authoring_and_p2_import",
+  "status": "prospective_before_subagent_launch_or_candidate_authoring",
+  "entry_commit": "77c8a74b7b7e955fc0cac4e2b53e994a41b42602",
+  "protocol_tag": "step3q-subagent-attempt-002-p0",
+  "protocol_commit_sha1": "TO_BE_LOCKED_AFTER_PROTOCOL_COMMIT",
+  "protocol_lock_status": "pending_protocol_commit",
+  "source_attempt": {
+    "route_id": "step3q_calibrated_api_pool_attempt_001",
+    "head_before_attempt_002": "77c8a74b7b7e955fc0cac4e2b53e994a41b42602",
+    "api_dispatch_started": false,
+    "api_receipts_reusable": false
+  },
+  "frozen_inputs": {
+    "p0_registry": {
+      "path": "experiments/step3_response_quality_persistence/configs/step3q_calibrated_api_pool_registry.json",
+      "bytes": 8577,
+      "sha256": "72ce1ff74ff8d32d0a055541dff990f40470f3a9a5afa528375be87612308d92"
+    },
+    "p1_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001/protocol_manifest.json",
+      "bytes": 1683,
+      "sha256": "f374175df6bb3ba38771a0934a5343309a10e9a539d730e3f247321799485a1f"
+    },
+    "prompts": {
+      "path": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001/authoring/prompts_hidden.jsonl",
+      "bytes": 33307,
+      "sha256": "c921d77a7cff0c4a5f1a7c973db7017ebde4eacf4fe4156b51b2631e7a894ffb"
+    },
+    "requests": {
+      "path": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001/authoring/api_requests.jsonl",
+      "bytes": 44352,
+      "sha256": "a4b2e26a7dfaf80e5069e5d7b20b23fbf0816f01321d241fc66e1d48c2be0443"
+    },
+    "authoring_instructions": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3q_api_target_authoring_instructions.md",
+      "bytes": 1577,
+      "sha256": "eec1146c504d31bd37ca7ce594891032bdc822eecad7e1b37e559cc5050860ad"
+    },
+    "review_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3p_public_target_qualification_rubric.md",
+      "bytes": 2861,
+      "sha256": "c4622db9dcde3131c27e8a58530a5740b2ab924b7bc47e2653d5dc5ce69df825"
+    },
+    "source_authoring_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3q_calibrated_api_pool.py",
+      "bytes": 75451,
+      "sha256": "0cffae1104f0a4e11d3728cf43e5f38b317268b072ed48dab215c575492302a0"
+    },
+    "source_p2_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3q_p2_review.py",
+      "bytes": 89416,
+      "sha256": "8ec662135954f8028ae5f17cfa787531f04458ce8105a7a44a61229415e1c018"
+    }
+  },
+  "authoring": {
+    "source": "codex_multi_agent_v1",
+    "model_provenance": "inherited_parent_model_unversioned",
+    "exact_provider_snapshot_available": false,
+    "context_isolated": true,
+    "fork_parent_context": false,
+    "worker_roles": {
+      "specific_1": {"author_mode": "specific_redirect", "rows": 30},
+      "specific_2": {"author_mode": "specific_redirect", "rows": 30},
+      "mitigation_1": {"author_mode": "risk_mitigation", "rows": 30},
+      "mitigation_2": {"author_mode": "risk_mitigation", "rows": 30}
+    },
+    "fixed_requests": 120,
+    "minimum_response_whitespace_tokens": 40,
+    "maximum_response_whitespace_tokens": 160,
+    "minimum_valid_unique_candidates": 96,
+    "minimum_valid_prompts": 54,
+    "immutable_submission": true,
+    "retry_or_reassignment_allowed": false,
+    "prompt_replacement_or_top_up_allowed": false
+  },
+  "review_packets": {
+    "roles": ["reviewer_a", "reviewer_b"],
+    "visible_fields": ["opaque_candidate_id", "prompt", "response"],
+    "hidden_primary_duplicates_per_reviewer": 12,
+    "hidden_sentinels_per_reviewer": 24,
+    "uniform_packet_id_prefix": "step3q_review_",
+    "reviewer_specific_id_remapping": true,
+    "reviewer_specific_packet_order": true,
+    "sentinel_and_duplicate_roles_hidden": true,
+    "authoring_mode_and_provenance_hidden": true
+  },
+  "outputs": {
+    "root": "experiments/step3_response_quality_persistence/results/step3q_subagent_pool_attempt_002_p2_review"
+  },
+  "external_api_called": false,
+  "training_authorized": false,
+  "optimizer_steps": 0
+}

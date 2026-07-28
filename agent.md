@@ -14,7 +14,7 @@
 4. Step3C-T已完成T2R至T6；两个C3候选均未通过预注册质量主门，因此当前C3 recipe已关闭且没有`Q_star`。
 5. Step3N-R1在训练前因安全行动性量表可靠性不足而停止；Step3O随后完成量表修复，O3固定上下文隔离会话的外部源一致性门已通过。
 6. Step3O-O4尝试005在固定60个prompt后因单个长上下文作者未交付而停止；O4R尝试001拆为六个20行会话后仍有两个会话未交付，已按预注册规则封存为`STOP_AUTHORING`。两次均未进入质量审查或训练，`optimizer_steps=0`，不能解释为方法失败。
-7. Step3P已在A/B可靠性联合门停止，未启动Reviewer C、目标选择或训练。当前Step3Q是独立的校准API目标池路线：P0协议与P1输入包已冻结，P1已从完整P0 SHA确定性生成并逐字节验证60个全新prompt、120个无状态结构化API请求和96行校准库；P2又在结果前冻结了仓库外回执重算导入、统一匿名ID、校准先行A/B审查、仅分歧C审查和48目标mode-blind最大流。外部调用、正式审查与训练均尚未发生或授权。
+7. Step3P已在A/B可靠性联合门停止，未启动Reviewer C、目标选择或训练。Step3Q尝试001已冻结60个prompt、120个请求、96行校准库与P2协议，但因当前进程无API密钥而保持未dispatch；尝试002是独立的子智能体authoring路线，复用同一P1字节但不伪造API receipt，显式记录继承模型的精确快照不可证明，且尚未启动authoring、正式审查或训练。
 
 SpectraSafe双谱正则保留为历史动机和忠实负基线；没有新的增量行为证据时不重新进入主方法路线。
 
@@ -359,9 +359,9 @@ experiment_id, commit, machine, model, method, family, dose, seed, status, notes
 当前优先级从高到低：
 
 1. 保持Step3C-T6的`R1_no_c3_candidate_passes`、Track B M1失败、Step3N-R1训练前停止，以及O4/O4R两个`STOP_AUTHORING`记录不变。
-2. 保持Step3Q P0提交、P1输入包和P2协议标签不可变；P1已经逐字节重建通过，不得修改、替换或补充prompt、请求与校准样本。
-3. 指定实验机仅在P0/P1/P2远端标签、干净且位于P2协议提交的分支、`verify-prepared`和环境密钥全部通过后执行120个固定API请求，回执目录必须位于仓库外并贯穿P2所有下游阶段保留。
-4. API执行必须使用完整不可变回执，至少得到96个全局唯一有效候选并覆盖54个prompt；模型身份混杂、回执缺失或P1字节重建失败均停止。导入、A/B分析和最终化每次都必须从仓库外回执重算并逐字节核对前序包，不能只信自洽manifest。
+2. 保持Step3Q尝试001的P0/P1/P2提交与标签不可变，并保持其未dispatch状态；不得用子智能体输出伪造API receipt或导入旧结果根。
+3. 尝试002必须先提交并推送独立协议标签和锁提交，再由四个全新无上下文子智能体按固定mode各完成30条，spool全程位于仓库外；不得替换prompt、补量、重分配或在不可变提交后重试。
+4. 尝试002至少需要96个全局唯一有效候选并覆盖54个prompt，且四个launch ID必须互异；导入必须从完整spool逐字节重算，显式保持`external_api_called=false`、`optimizer_steps=0`并记录精确provider snapshot不可证明。
 5. 使用互不相同的全新无上下文会话完成A/B审查，只向reviewer交付可见packet、模板、rubric和provenance模板，不提供仓库或private map；每个错配哨兵必须与对应组件锚点同包，每个组件在每位审查者包内至少有3个yes和3个no参考，clean-safety固定4个yes和4个no；A/B校准或可靠性失败时不得创建C包或执行最终选择。
 6. A/B通过后，C只审查派生资格标签不一致的候选；最终选择器不得接收API mode，按P1预分配类别同时满足48个不同prompt、19类覆盖和严重度`5/28/5`下限。
 7. Step3Q通过后仍须冻结tokenizer、assistant-only loss mask、泄漏与模板集中审计、训练适用性审查、方法对照和smoke协议，才可授权任何optimizer step。

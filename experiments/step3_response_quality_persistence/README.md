@@ -4,7 +4,7 @@
 
 Step 3 remains open for a new prospective method direction, but the current C3 recipe is closed.
 
-Current phase: **Step3O O3 external actionability validation passed; Step3O-O4 attempt 005 and Step3O-O4R attempt 001 are immutably closed at `STOP_AUTHORING`; Step3P attempt 001 is closed at `STOP_REVIEW_UNRELIABLE`; Step3Q attempt 001 has frozen and exactly reconstructed P1 and now prospectively freezes the P2 receipt-import, calibration-first blind-review, disagreement-only adjudication, and 48-target selection protocol, but has made no external API call, formal review, target selection, or training; Step3N-R1 remains stopped before tuple writing or training**.
+Current phase: **Step3O O3 external actionability validation passed; Step3O-O4 attempt 005 and Step3O-O4R attempt 001 are immutably closed at `STOP_AUTHORING`; Step3P attempt 001 is closed at `STOP_REVIEW_UNRELIABLE`; Step3Q attempt 001 remains frozen and undispatched because its API credential was unavailable; the separately authorized Step3Q subagent attempt 002 prospectively reuses the exact P1 requests under non-API, unversioned inherited-model provenance and has not yet launched an authoring session, formal review, target selection, or training; Step3N-R1 remains stopped before tuple writing or training**.
 
 Step3A selected Route A2: output concentration is not matched by target concentration. Step3B selected Route B3: low-temperature sampling did not sufficiently reduce conditional mechanical concentration, while the higher-temperature condition failed the unsafe-increase boundary. No new model training is authorized by these results. The heldout test remains sealed.
 
@@ -231,8 +231,8 @@ Authorized now:
 - preserve TRIM as the separately gated `TRIM-CS0` causal-steering preflight, but do not implement or run it until a separate freeze is reviewed and pushed.
 - preserve the complete Step3O O0-O3 source, packet, reviewer, hash-chain, and PASS route without relabeling or threshold changes;
 - preserve the immutable Step3O-O4, O4R, and Step3P stop packages without replacement, threshold changes, or post-stop yield analysis;
-- preserve the frozen Step3Q P0/P1 artifacts and freeze the prospective P2 import/review/selection implementation under `step3q-calibrated-api-attempt-001-p2-protocol` before any external receipt or candidate label is opened;
-- after the P2 protocol tag is visible remotely, allow the designated execution machine to run exactly the 120 frozen API requests, preserve the raw spool outside Git, and import only a reconstructed `PASS_API_AUTHORING` outcome;
+- preserve the frozen Step3Q attempt 001 P0/P1/P2 artifacts and its undispatched state; do not imitate API receipts or import non-API output into the attempt 001 P2 package;
+- prospectively freeze Step3Q subagent attempt 002 before any authoring session, reuse all 120 P1 request bytes unchanged, keep its spool outside Git, and import only a reconstructed `PASS_SUBAGENT_AUTHORING` outcome into its separate result root;
 - distribute only reviewer-visible packet, template, rubric, and provenance-template bytes to fresh isolated reviewers; do not give a reviewer the repository checkout or private maps.
 
 Not authorized now:
@@ -249,7 +249,8 @@ Not authorized now:
 - reusing any Step3N-R1 row or old 37-prompt selection in Step3O development, validation, or future target construction;
 - replacing an O4 prompt, adding a third candidate, or starting another authoring round after either author output is opened;
 - reopening Step3P attempt 001, launching Reviewer C, inspecting hidden target yield, or running its final 48-target flow;
-- any Step3Q external API call before the P2 protocol tag is visible remotely, exact P1 reconstruction passes, and `OPENAI_API_KEY` is supplied on the designated execution machine;
+- any Step3Q attempt 001 external API call without its original credential and frozen dispatch protocol, or any fabricated API receipt;
+- any Attempt 002 prompt replacement, worker reassignment, retry after immutable submission, provider-snapshot claim, or import into the Attempt 001 result root;
 - prompt replacement, semantic regeneration, post-result top-up, mixed effective API models, or optimizer steps under Step3Q;
 - trusting a self-consistent Step3Q import or A/B manifest without revalidating the preserved external spool and deterministic predecessor-stage reconstruction;
 - C4, C5, adaptive replay, or other method stacking;
@@ -258,4 +259,4 @@ Not authorized now:
 - heldout evaluation;
 - SpectraSafe reintroduction.
 
-The stopped Stage0, C-R0, C3, PCSR-R1, O4, O4R, and Step3P routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2/H3Q/H3/T5R/T6 packages, reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. T6 is complete at `R1_no_c3_candidate_passes`; there is no C3 `Q_star`, N0-R1 produced no PCSR training candidate, and Step3P produced no authorized target pool. Step3O O3 repaired the measurement endpoint and passed its external-source observed-agreement gates in the fixed sessions, but did not select a method. Step3Q now tests whether a calibrated review design and controlled API authoring can produce a qualified target pool. It still requires a separate training-suitability audit and a later frozen method winner before optimizer steps, seeds 2/3, heldout, a second backbone, or any combined-method factorial.
+The stopped Stage0, C-R0, C3, PCSR-R1, O4, O4R, and Step3P routes, completed Step3C-MF/T2R/T3/T4/P6A/H1/H1Q/H2/H3Q/H3/T5R/T6 packages, reviewer-access incidents, and Track B `M1` mechanism route remain recorded without overwrite. T6 is complete at `R1_no_c3_candidate_passes`; there is no C3 `Q_star`, N0-R1 produced no PCSR training candidate, and Step3P produced no authorized target pool. Step3O O3 repaired the measurement endpoint and passed its external-source observed-agreement gates in the fixed sessions, but did not select a method. Step3Q attempt 001 remains an undispatched API design. Attempt 002 separately tests whether a fixed four-session subagent authoring route can populate the same calibrated blind-review design; its unversioned provenance is explicit and it is not an API replication. It still requires blind review, target qualification, a separate training-suitability audit, and a later frozen method winner before optimizer steps, seeds 2/3, heldout, a second backbone, or any combined-method factorial.
