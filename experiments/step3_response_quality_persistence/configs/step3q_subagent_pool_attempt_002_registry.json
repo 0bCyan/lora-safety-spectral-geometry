@@ -5,8 +5,8 @@
   "status": "prospective_before_subagent_launch_or_candidate_authoring",
   "entry_commit": "77c8a74b7b7e955fc0cac4e2b53e994a41b42602",
   "protocol_tag": "step3q-subagent-attempt-002-p0",
-  "protocol_commit_sha1": "TO_BE_LOCKED_AFTER_PROTOCOL_COMMIT",
-  "protocol_lock_status": "pending_protocol_commit",
+  "protocol_commit_sha1": "20961f9ae86a34932c5462f79d54f693a836ff5b",
+  "protocol_lock_status": "locked_to_protocol_commit",
   "source_attempt": {
     "route_id": "step3q_calibrated_api_pool_attempt_001",
     "head_before_attempt_002": "77c8a74b7b7e955fc0cac4e2b53e994a41b42602",
