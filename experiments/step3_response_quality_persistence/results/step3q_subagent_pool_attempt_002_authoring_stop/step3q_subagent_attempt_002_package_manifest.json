@@ -1,0 +1,24 @@
+{
+  "schema": "step3q_subagent_attempt_002_package_manifest_v1",
+  "route_id": "step3q_subagent_pool_attempt_002",
+  "route": "STOP_SUBAGENT_YIELD",
+  "artifacts": {
+    "Step3Q_subagent_attempt_002_authoring_stop_report.md": {
+      "bytes": 1511,
+      "sha256": "9e8a2e963cc86f4d6fc10c7be64d18648b05e3b571557b4898feb6f945e2330a"
+    },
+    "step3q_subagent_attempt_002_execution_record.json": {
+      "bytes": 2353,
+      "sha256": "fdd410289bfdf77ce8ba2cc2149e5002350e52a44f2e0471d17fe61a1a3114f8"
+    },
+    "step3q_subagent_attempt_002_route_decision.json": {
+      "bytes": 1050,
+      "sha256": "d45e5857a7d533b7289b2ba2d7a2d26b53f0df9dbe1bbe0bb869a3c3515d4333"
+    }
+  },
+  "candidate_text_committed": false,
+  "raw_worker_output_committed": false,
+  "external_api_called": false,
+  "training_authorized": false,
+  "optimizer_steps": 0
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "step3q_subagent_attempt_002_route_decision_v1",
+  "route_id": "step3q_subagent_pool_attempt_002",
+  "route": "STOP_SUBAGENT_YIELD",
+  "gates": {
+    "protocol_pushed_before_authoring": true,
+    "four_distinct_sessions_launched": true,
+    "fixed_120_request_denominator_complete": false,
+    "minimum_96_candidate_supply_possible": false,
+    "minimum_54_prompt_coverage_evaluated": false,
+    "immutable_submission_retry_attempted": false,
+    "replacement_or_reassignment_attempted": false,
+    "sealed_authoring_package_created": false,
+    "p2_import_created": false,
+    "candidate_text_inspected_by_main_executor": false,
+    "external_api_called": false,
+    "training_started": false
+  },
+  "failure_reason": "specific_1 encountered a platform safety gateway before submission; 90 accepted rows cannot meet the frozen minimum of 96",
+  "accepted_rows": 90,
+  "fixed_requests": 120,
+  "next_authorized_action": "stop_attempt_002_without_seal_import_review_or_training",
+  "training_authorized": false,
+  "optimizer_steps": 0
+}

@@ -1,0 +1,63 @@
+{
+  "schema": "step3q_subagent_attempt_002_execution_record_v1",
+  "route_id": "step3q_subagent_pool_attempt_002",
+  "protocol_commit": "20961f9ae86a34932c5462f79d54f693a836ff5b",
+  "protocol_tag": "step3q-subagent-attempt-002-p0",
+  "lock_commit": "d325721f8c90677e826db7142ee9d4698a2bf4f3",
+  "spool_root": "D:\\step3q_subagent_spool_attempt_002_20260728_1785205656032_108195231",
+  "spool_manifest": {
+    "bytes": 1282,
+    "sha256": "5f659bfb1df6e1662e295afef7a834a5ad03c38f11698e3396aeacd41ad86820"
+  },
+  "workers": {
+    "specific_1": {
+      "agent_id": "019fa68d-04eb-7912-b05b-3458d28b7ece",
+      "status": "platform_safety_gateway_before_submission",
+      "rows": 0,
+      "output_file_created": false
+    },
+    "specific_2": {
+      "agent_id": "019fa68d-1942-76c3-90b2-c466c006cfa6",
+      "status": "accepted",
+      "rows": 30,
+      "output_bytes": 20935,
+      "output_sha256": "c0a8d6445b80fb53fbe727b9c14f5ea91f06aa3e85b985538b7806d61f4aded4",
+      "submission_manifest_sha256": "783574fb9f4f16dcf1320cbadfc46a815276ca18abbbb1fc21d1ebc2a9b09e27"
+    },
+    "mitigation_1": {
+      "agent_id": "019fa68d-2d7d-7901-bcf3-f8753f99f551",
+      "status": "accepted",
+      "rows": 30,
+      "output_bytes": 20070,
+      "output_sha256": "b1007c14d1c66a2149c767163746f5bb8be117de6f23f8e5efddea955783e4a7",
+      "submission_manifest_sha256": "03212434e2e219a14d9b60de5d69e09578f2f0feefdeac9afa63bc52430f8a25"
+    },
+    "mitigation_2": {
+      "agent_id": "019fa68d-41bd-7ad1-8ebd-a4b7823f90b9",
+      "status": "accepted",
+      "rows": 30,
+      "output_bytes": 22347,
+      "output_sha256": "3954f413458b0f1f9b529cbd9ea66e0f967d24b936e20811097d0341c5c143c6",
+      "submission_manifest_sha256": "b53787cc4e6867a4cce133a14b764c552fa88195c476508bacc488306673b140"
+    }
+  },
+  "counts": {
+    "required_sessions": 4,
+    "launched_sessions": 4,
+    "distinct_launch_ids": 4,
+    "accepted_submissions": 3,
+    "missing_submissions": 1,
+    "fixed_requests": 120,
+    "accepted_rows": 90,
+    "missing_rows": 30,
+    "minimum_valid_unique_candidates": 96,
+    "maximum_possible_valid_candidates": 90
+  },
+  "candidate_text_inspected_by_main_executor": false,
+  "global_deduplication_run": false,
+  "spool_sealed": false,
+  "p2_import_run": false,
+  "external_api_called": false,
+  "training_authorized": false,
+  "optimizer_steps": 0
+}
