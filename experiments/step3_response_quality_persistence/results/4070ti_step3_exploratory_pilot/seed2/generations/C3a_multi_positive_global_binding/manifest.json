@@ -1,0 +1,37 @@
+{
+  "name": "step3_exploratory_proxy_dev_generation_v1",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "git_head": "4ee6f239308ae673ddee120baa090a6a71b0832a",
+  "arm": "C3a_multi_positive_global_binding",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_exploratory_seed2.json",
+  "config_sha256": "ab443c94520975d1f9b589732061e363adb63f3e9d8ec30ca1aac4085eb3f9ce",
+  "checkpoint_dir": "experiments/step3_response_quality_persistence/results/4070ti_step3_exploratory_pilot/seed2/main16/C3a_multi_positive_global_binding/checkpoints/step0016",
+  "adapter_sha256": "098f1b056ae7954ee1bd2a756f1b49dc848e5624fc02d928c347312a60df14e4",
+  "split_path": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/proxy_dev.jsonl",
+  "split_sha256": "9e0de1e8411e2b2281968a66952a399a7b7ce58320a44ee4f71bf205e969ec8b",
+  "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_exploratory_pilot/seed2/generations/C3a_multi_positive_global_binding/responses.jsonl",
+  "output_sha256": "897feb2985d6edc296ed8a5b514c1bb28df45732c48367012dad54dd97f21bff",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "thinking_disabled": true,
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 128
+  },
+  "summary": {
+    "rows": 40,
+    "empty_responses": 0,
+    "think_tag_rows": 0,
+    "refusal_marker_rate": 0.425,
+    "redirect_marker_rate": 0.075,
+    "procedural_marker_rate": 0.35,
+    "max_token_hits": 4,
+    "mean_generated_tokens": 54.25,
+    "unique_normalized_response_rate": 1.0,
+    "largest_exact_template_cluster": 1
+  },
+  "peak_reserved_bytes": 4567597056,
+  "vram_headroom_fraction": 0.645320197044335,
+  "wall_clock_seconds": 227.453134059906,
+  "optimizer_steps": 0,
+  "heldout_opened": false
+}

@@ -1,0 +1,132 @@
+{
+  "name": "step3_exploratory_seed2_decision_v1",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "route": "KEEP_C0R_STOP_C3A_C3B_EXPLORATORY",
+  "source_head": "4ee6f239308ae673ddee120baa090a6a71b0832a",
+  "machine": "NVIDIA GeForce RTX 4070 Ti",
+  "model": "Qwen/Qwen3-4B",
+  "data": {
+    "training_risk_rows": 256,
+    "training_safety_targets": 80,
+    "training_safety_prompt_clusters": 40,
+    "development_split": "proxy_dev",
+    "development_rows": 40,
+    "heldout_opened": false,
+    "core100_opened": false,
+    "step3q_partial_spool_used": false
+  },
+  "verification": {
+    "step3ct_training_common_tests_passed": 9,
+    "step3ct_t2r_common_tests_passed": 6,
+    "generation_script_py_compile_passed": true
+  },
+  "execution": {
+    "seed1_c3a_smoke_optimizer_steps": 2,
+    "seed2_c3a_smoke_optimizer_steps": 2,
+    "seed2_c3b_smoke_optimizer_steps": 2,
+    "seed2_c0r_main_optimizer_steps": 16,
+    "seed2_c3a_main_optimizer_steps": 16,
+    "seed2_c3b_main_optimizer_steps": 16,
+    "exploratory_optimizer_steps_total": 54,
+    "generation_rows_total": 120
+  },
+  "training": [
+    {
+      "arm": "C0R_concurrent_constant20",
+      "completed_steps": 16,
+      "all_losses_and_gradients_finite": true,
+      "skipped_updates": 0,
+      "final_step_mean_loss": 1.883748,
+      "peak_allocated_gib": 4.8674,
+      "vram_headroom_fraction": 0.4810,
+      "wall_clock_seconds": 80.827
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "completed_steps": 16,
+      "all_losses_and_gradients_finite": true,
+      "skipped_updates": 0,
+      "final_step_mean_loss": 2.039057,
+      "peak_allocated_gib": 4.8674,
+      "vram_headroom_fraction": 0.4621,
+      "wall_clock_seconds": 159.030
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "completed_steps": 16,
+      "all_losses_and_gradients_finite": true,
+      "skipped_updates": 0,
+      "final_step_mean_loss": 2.056346,
+      "peak_allocated_gib": 4.8674,
+      "vram_headroom_fraction": 0.4621,
+      "wall_clock_seconds": 146.542
+    }
+  ],
+  "proxy_dev_generation": [
+    {
+      "arm": "C0R_concurrent_constant20",
+      "rows": 40,
+      "refusal_marker_rate": 0.575,
+      "redirect_marker_rate": 0.175,
+      "procedural_marker_rate": 0.300,
+      "mean_generated_tokens": 45.650,
+      "max_token_hits": 3,
+      "think_tag_rows": 0,
+      "empty_responses": 0,
+      "unique_normalized_response_rate": 1.0
+    },
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "rows": 40,
+      "refusal_marker_rate": 0.425,
+      "redirect_marker_rate": 0.075,
+      "procedural_marker_rate": 0.350,
+      "mean_generated_tokens": 54.250,
+      "max_token_hits": 4,
+      "think_tag_rows": 0,
+      "empty_responses": 0,
+      "unique_normalized_response_rate": 1.0
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "rows": 40,
+      "refusal_marker_rate": 0.450,
+      "redirect_marker_rate": 0.050,
+      "procedural_marker_rate": 0.350,
+      "mean_generated_tokens": 53.525,
+      "max_token_hits": 4,
+      "think_tag_rows": 0,
+      "empty_responses": 0,
+      "unique_normalized_response_rate": 1.0
+    }
+  ],
+  "paired_changes_vs_c0r": [
+    {
+      "arm": "C3a_multi_positive_global_binding",
+      "refusal_gain": 1,
+      "refusal_loss": 7,
+      "redirect_gain": 0,
+      "redirect_loss": 4,
+      "procedural_gain": 3,
+      "procedural_loss": 1,
+      "response_changed": 37
+    },
+    {
+      "arm": "C3b_hierarchical_hard_negative_binding",
+      "refusal_gain": 1,
+      "refusal_loss": 6,
+      "redirect_gain": 0,
+      "redirect_loss": 5,
+      "procedural_gain": 3,
+      "procedural_loss": 1,
+      "response_changed": 37
+    }
+  ],
+  "decision_basis": "Both binding arms were numerically stable but had lower refusal and redirect marker rates, higher procedural marker rates, and longer responses than C0R on the same 40 proxy_dev prompts.",
+  "limitations": [
+    "Marker rates are heuristic proxies, not blinded safety labels.",
+    "The pilot uses one new seed and a 16-step checkpoint.",
+    "The pilot must not be reported as a confirmatory Step3Q result."
+  ],
+  "next_candidate": "Retain C0R as the local reference. A future pilot should test a weaker or delayed binding schedule before any longer run."
+}

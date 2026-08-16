@@ -1,0 +1,90 @@
+[
+  {
+    "position": 0,
+    "optimizer_step": 1,
+    "micro_index": 0,
+    "safety_gradient_norm": 9.814956992486024,
+    "binding_gradient_norm": 13.90750908984861,
+    "safety_gradient_hash": "1292790620401b3f7c5f29b16f69985d79a2d9aac1e49154f3e442cc029e6b07",
+    "binding_gradient_hash": "6773c3b2bc606a91e52c89e53987b66ae7711d7d9a57bc9c33224898c71bb1c8",
+    "first_microstep_eta_weighted_ratio": 0.23846059436768452,
+    "hard_active": false
+  },
+  {
+    "position": 1,
+    "optimizer_step": 1,
+    "micro_index": 1,
+    "safety_gradient_norm": 14.756777774738328,
+    "binding_gradient_norm": 13.768154987315818,
+    "safety_gradient_hash": "af35b7ec58b435eb88e4f6753d6fd95fbf50afa34ff60b60c322c1a94ff91dd9",
+    "binding_gradient_hash": "8cbb70a8cddd87d9b471a2a2e0803e05b5d8e125bce390dcbdc0a676ec584c68",
+    "first_microstep_eta_weighted_ratio": 0.15701454302064435,
+    "hard_active": false
+  },
+  {
+    "position": 2,
+    "optimizer_step": 1,
+    "micro_index": 2,
+    "safety_gradient_norm": 12.527077899832346,
+    "binding_gradient_norm": 13.866965933560929,
+    "safety_gradient_hash": "44c9ecd695bc402fdacc75feecc42d6ff9e6332cc6aea99681b569ac263150f5",
+    "binding_gradient_hash": "100b357e5e33bd18c5fd6996aedcdaff863060fa5c0fdb9d1204a6867dad15de",
+    "first_microstep_eta_weighted_ratio": 0.1862890556347904,
+    "hard_active": true
+  },
+  {
+    "position": 3,
+    "optimizer_step": 1,
+    "micro_index": 3,
+    "safety_gradient_norm": 14.111773533902987,
+    "binding_gradient_norm": 13.647865638294105,
+    "safety_gradient_hash": "a6e0614054cb1a5a33c8c9c223c8c5fa8d80c3e70c4606b1cd7717dee5c056b4",
+    "binding_gradient_hash": "fdbf46dffa3a32cec30bb204c668fb48be23df185a866228c75dafa13af50201",
+    "first_microstep_eta_weighted_ratio": 0.16275667560439935,
+    "hard_active": true
+  },
+  {
+    "position": 4,
+    "optimizer_step": 2,
+    "micro_index": 0,
+    "safety_gradient_norm": 9.800670100919644,
+    "binding_gradient_norm": 8.176483593698613,
+    "safety_gradient_hash": "f7fc8f6b066a890b03fddfb0ddabf12622c81aa9b29554ea5826cd2daee13550",
+    "binding_gradient_hash": "d6a5341d372f36d0b29a16653dd1f64bfcefc5727e73d8caf2c7fc4aaff139c9",
+    "first_microstep_eta_weighted_ratio": 0.14039979365961555,
+    "hard_active": true
+  },
+  {
+    "position": 5,
+    "optimizer_step": 2,
+    "micro_index": 1,
+    "safety_gradient_norm": 11.052368419215155,
+    "binding_gradient_norm": 7.19133892251466,
+    "safety_gradient_hash": "210043ab0392a8085e52d2791555331fe3af64bebf9cd226d6481937d294fa86",
+    "binding_gradient_hash": "e5bbd6d66715e349ab2202c11d88f3510f2303f7c8becb48d869d65a54605e96",
+    "first_microstep_eta_weighted_ratio": 0.10949898022090555,
+    "hard_active": true
+  },
+  {
+    "position": 6,
+    "optimizer_step": 2,
+    "micro_index": 2,
+    "safety_gradient_norm": 9.136780855364,
+    "binding_gradient_norm": 6.8305995051657105,
+    "safety_gradient_hash": "4302e04a1950a99a6b4fef5f18c526579c6c331538fcb2f0b4afe56975487076",
+    "binding_gradient_hash": "e3bac44f6a64e6c8af8219ca312ee63bb834153dfaaf1e18e9664a0268e61358",
+    "first_microstep_eta_weighted_ratio": 0.1258117734897488,
+    "hard_active": false
+  },
+  {
+    "position": 7,
+    "optimizer_step": 2,
+    "micro_index": 3,
+    "safety_gradient_norm": 11.017535479580706,
+    "binding_gradient_norm": 6.766276126578676,
+    "safety_gradient_hash": "1842d07439a17ab68c6574bf3791f5791bb7b7fe8bc54d1aacd652003e47d4ce",
+    "binding_gradient_hash": "33efc0e1509b2de8954b9be00b3ac7d9b5a3534976812f3b4161f3abe8a3d18b",
+    "first_microstep_eta_weighted_ratio": 0.10335248658175365,
+    "hard_active": false
+  }
+]

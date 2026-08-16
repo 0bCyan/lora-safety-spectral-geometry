@@ -1,0 +1,54 @@
+{
+  "name": "step3ct_t2r_optimizer_unit_gradient_ratios_v1",
+  "arm": "C3a_multi_positive_global_binding",
+  "eta": 0.2691508842579502,
+  "start_step": 0,
+  "optimizer_steps": [
+    {
+      "optimizer_step": 1,
+      "positions": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "safety_gradient_norm": 40.1252035153556,
+      "binding_gradient_norm": 38.347561600282106,
+      "unweighted_binding_safety_ratio": 0.9556976224583333,
+      "eta_weighted_binding_safety_ratio": 0.2572268601678811,
+      "hard_active_positions": 0,
+      "safety_gradient_hash": "3e432815ccadd0417c143352c72c442cd66fc866c8ff2375f9368323c5ff5dac",
+      "binding_gradient_hash": "30744053d341a5ca6627ed5f0ad2fb68e356a7fb845496cabb8dbf60ac81a999",
+      "finite_nonzero": true
+    },
+    {
+      "optimizer_step": 2,
+      "positions": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "safety_gradient_norm": 33.320154419877376,
+      "binding_gradient_norm": 22.99652820619464,
+      "unweighted_binding_safety_ratio": 0.6901687163993423,
+      "eta_weighted_binding_safety_ratio": 0.1857595203060574,
+      "hard_active_positions": 0,
+      "safety_gradient_hash": "bc941a1b50414f0d7d8b70813da741b61ce09b33f73963a1c041b2549afce0c2",
+      "binding_gradient_hash": "33295880ba1f19f39932be45ee3660b29a6ca49b1b1eaef6f6db550d089e1197",
+      "finite_nonzero": true
+    }
+  ],
+  "covered_positions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "aggregate_eta_weighted_binding_safety_ratio": 0.22460676451825512,
+  "c3b_hard_active_positions": 0
+}

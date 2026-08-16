@@ -1,0 +1,28 @@
+[
+  {
+    "checkpoint_step": 0,
+    "optimizer_step": 1,
+    "gradient_unit": "sum_of_four_unweighted_microstep_branch_gradients",
+    "positions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "microstep_count": 4,
+    "safety_gradient_norm": 40.12520356681353,
+    "binding_gradient_norm": 0.0,
+    "unweighted_binding_safety_ratio": 0.0,
+    "eta_weighted_binding_safety_ratio": 0.0,
+    "binding_safety_cosine": "",
+    "safety_energy": {
+      "attention": 0.6270431065242301,
+      "mlp": 0.3729568934757699
+    },
+    "binding_energy": {},
+    "safety_gradient_hash": "05efba1450c384be17a16f6963d8d7ba9ed06a6e5932d2cf66622b200e68e045",
+    "binding_gradient_hash": "",
+    "hard_active_positions": 0,
+    "finite_nonzero": true
+  }
+]
