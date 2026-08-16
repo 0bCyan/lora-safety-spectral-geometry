@@ -1,0 +1,92 @@
+{
+  "name": "step3_pcr_forced_prefix_serialization_transfer_protocol_v1",
+  "status": "prospective_before_serialization_scores",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "source_behavior_commit": "3f9a512fda8790116ff56535adb263e32d2d2a51",
+  "source_behavior_decision": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/proxy_dev_generation16/pcr_mw_proxy_dev_gate_decision.json",
+  "source_behavior_decision_sha256": "47977cee403359ef69bf8a9264da2aca5bcf1c63957654a116526bcea099c0da",
+  "motivation": "The frozen training feature masks the direct assistant prefix but leaves Qwen3's forced empty no-think preamble inside the loss labels. Frozen generation supplies that preamble as input. This zero-update audit tests whether apparent prompt-conditional transfer is concentrated in tokens that are not freely generated at evaluation time.",
+  "script": "experiments/step3_response_quality_persistence/scripts/audit_step3_pcr_serialization_transfer.py",
+  "script_sha256": "6ce88769f4637b2e300cf39ed4e4346999d5e9f3ee7be34446e21fc86a357498",
+  "split_path": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/proxy_dev.jsonl",
+  "split_sha256": "9e0de1e8411e2b2281968a66952a399a7b7ce58320a44ee4f71bf205e969ec8b",
+  "expected_rows": 40,
+  "mismatch_packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/protocol/pcr_serialization_transfer_mismatch_packet.jsonl",
+  "mismatch_packet_sha256": "3d195c4a53f445a90d7fda48a29ec7f33a7e6586b2288f4ca076b2614def761f",
+  "wrong_prompts_per_row": 2,
+  "mismatch_rule": "For each ordered proxy-dev sample, select the two distinct non-self sample IDs with the lowest SHA256(sample_id, candidate_id) rank. All rows belong to the same frozen safety family and source; no semantic-category claim is made.",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "seed": 1,
+  "models": {
+    "C0R_reproduction": {
+      "checkpoint_dir": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/development16/C0R_reproduction/checkpoints/step0016",
+      "adapter_sha256": "8a5792358ae3c5e793dc21354a0b44168ecb91e49e36c4203c7b1c7dd798f39a"
+    },
+    "PCR_M_mean": {
+      "checkpoint_dir": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/development16/PCR_M_mean/checkpoints/step0016",
+      "adapter_sha256": "9b6dec149a2d25739469fcfef80d53441e60a10517581e080612da0e35bdf718"
+    },
+    "PCR_MW_mean_worst": {
+      "checkpoint_dir": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/development16/PCR_MW_mean_worst/checkpoints/step0016",
+      "adapter_sha256": "0781382bc01b2c41b54ca3f0b9231f38fe12cabdaf80306ba53979267627d9f8"
+    }
+  },
+  "candidate_models": [
+    "PCR_M_mean",
+    "PCR_MW_mean_worst"
+  ],
+  "generated_response_sources": {
+    "C0R_reproduction": {
+      "arm": "C0R_reproduction",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/proxy_dev_generation16/C0R_reproduction/responses.jsonl",
+      "sha256": "fea2bd4a2ebe0726c58b7d4cfbf6f8a0ee0bdf2ebbe1a105e76c5e6639cf7c19"
+    },
+    "PCR_M_mean": {
+      "arm": "PCR_M_mean",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/proxy_dev_generation16/PCR_M_mean/responses.jsonl",
+      "sha256": "b5add73f3c433a2e8542ed4bbe08de6653d0d50a3be94743f5f39a7c50432990"
+    },
+    "PCR_MW_mean_worst": {
+      "arm": "PCR_MW_mean_worst",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/proxy_dev_generation16/PCR_MW_mean_worst/responses.jsonl",
+      "sha256": "2fa49db7a5971070616a36e589b6a7bc8345fec8cf66d475e6b2d694cc623a2e"
+    }
+  },
+  "response_sources": [
+    "reference",
+    "C0R_reproduction",
+    "PCR_M_mean",
+    "PCR_MW_mean_worst"
+  ],
+  "serialization_components": {
+    "legacy_combined": "Mean NLL over the forced empty no-think preamble plus assistant response and end token, matching the frozen training label mask.",
+    "forced_preamble": "Mean NLL only over tokens between the direct assistant prefix and the no-think generation prefix.",
+    "response_only": "Mean NLL only over assistant response and end tokens after the complete no-think generation prefix."
+  },
+  "primary_comparison": "For the shared frozen reference response, compute per-sample candidate-minus-C0R gain in correct-versus-two-wrong prompt margin for each serialization component.",
+  "secondary_comparison": "Repeat candidate-minus-C0R transfer on each candidate's own frozen generated response. This is diagnostic and cannot override the shared-reference route.",
+  "statistics": {
+    "paired_unit": "proxy_dev_sample_id",
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026081601,
+    "interval": "percentile_95"
+  },
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 2026081601,
+  "route_rule": {
+    "TRANSFER_SURVIVES_RESPONSE_ONLY": "Both legacy-combined and response-only candidate-minus-C0R transfer have bootstrap lower bounds above zero.",
+    "PREFIX_LEAKAGE_SUPPORTED": "Legacy-combined transfer has a lower bound above zero, response-only does not, and preamble-minus-response transfer has a lower bound above zero.",
+    "NO_OUT_OF_SAMPLE_CONDITIONALITY_TRANSFER": "Neither legacy-combined nor response-only transfer has a lower bound above zero.",
+    "INCONCLUSIVE_SERIALIZATION_TRANSFER": "All other patterns.",
+    "overall": "Prefix leakage in either candidate authorizes only a separately frozen zero-update feasibility for a new serialization-aligned family. Response-only survival closes serialization as a sufficient PCR failure explanation. No-transfer closes PCR. Mixed inconclusive results authorize no training."
+  },
+  "max_length": 512,
+  "batch_size": 4,
+  "fp16": true,
+  "minimum_vram_headroom_fraction": 0.1,
+  "interpretation_boundary": "This audit uses reused development prompts and deterministic cross-prompt mismatches without semantic categories. It can diagnose where teacher-forced conditionality resides, but cannot establish behavioral safety or revive a candidate that failed the frozen generation gate.",
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
