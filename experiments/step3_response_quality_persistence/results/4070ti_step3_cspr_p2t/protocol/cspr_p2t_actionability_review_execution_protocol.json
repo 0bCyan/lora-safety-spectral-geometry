@@ -1,0 +1,129 @@
+{
+  "name": "step3_cspr_p2t_actionability_review_execution_protocol_v1",
+  "status": "prospective_after_zero_access_qualification_and_before_actionability_packet_access",
+  "entry_commit": "e68d056dcc00d3742305604b5ace6ba22bcb4a21",
+  "frozen_inputs": {
+    "review_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/protocol/cspr_p2s_blinded_review_protocol.json",
+      "sha256": "c1702cd4e61fb2149ac1d25f44d4c45000cfc8274e390f31e4be70b06153778f"
+    },
+    "packet_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reports/cspr_p2s_packet_manifest.json",
+      "sha256": "744de29428da50385e1136a58890432b48f4ad3016597084da5a79253ea7ecd0"
+    },
+    "qualification_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/protocol/cspr_p2t_actionability_qualification_protocol.json",
+      "sha256": "c35d463fa706de79d903ea90367bb6f1e647ba4abc0c3a5fe5c35791ba6148db"
+    },
+    "actionability_a_attestation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/actionability_qualification/cspr_p2t_actionability_a_zero_access_attestation.json",
+      "sha256": "1637d9dcf5c47b395589f07cb6d4d0dfd6cfe25baab3735de2cc2efb59ee223a"
+    },
+    "actionability_b_attestation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/actionability_qualification/cspr_p2t_actionability_b_zero_access_attestation.json",
+      "sha256": "2e43e31e27900fc8ff53d7b6c51c2d0a8944c15e23ec46ca703556a5703038b0"
+    },
+    "qualification_registry": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/actionability_qualification/cspr_p2t_actionability_reviewer_qualification_registry.json",
+      "sha256": "9e85a9de22583dc45976f63f3693ed40be39e242c89909e1b34aecff98c5a4b5"
+    },
+    "qualification_report": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/actionability_qualification/CSPR_P2T_ACTIONABILITY_REVIEWER_QUALIFICATION.md",
+      "sha256": "90da591f38e882b10603cdb2e732263c53f3e7f821642a07127f038950eae234"
+    },
+    "action_review_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2t_action_review.py",
+      "sha256": "7fa3700274d49f85b02088d0e079d5f059b596536b421f38f9849eb026c24c35"
+    },
+    "action_review_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2t_action_review.py",
+      "sha256": "f2c7b9c8fefe78225e8aeec2002f91b3dc2409f6d71735feafb262dce6302e8b"
+    },
+    "base_review_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2s_review.py",
+      "sha256": "bf32bcac5d6fa041f9cbcc42ae3199721bd535b126457fdf9b6142c8c879fd1b"
+    },
+    "base_review_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2s_review.py",
+      "sha256": "08df3f3d4b3208886ac81349c20d5ee6acd8f3e12bd35086ffda1ee3c53faa9e"
+    },
+    "safety_freeze": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/safety_freeze/cspr_p2t_safety_ab_freeze.json",
+      "sha256": "bc61b0059f9cb43e313003f393a846085b9bcb7845ebaac78f43a4133633015a"
+    }
+  },
+  "qualified_reviewers": {
+    "a": {
+      "agent_id": "01a00bed-5d7e-7621-a02d-4e1c17fdf2eb",
+      "session_id": "01a00bed-5d7e-7621-a02d-4e1c17fdf2eb",
+      "runtime_requested_model_id": "gpt-5.5",
+      "self_reported_model_id": "GPT-5 Codex",
+      "qualification_attestation_sha256": "1637d9dcf5c47b395589f07cb6d4d0dfd6cfe25baab3735de2cc2efb59ee223a"
+    },
+    "b": {
+      "agent_id": "01a00bed-5f16-7210-bad8-0e99e06dbfcc",
+      "session_id": "01a00bed-5f16-7210-bad8-0e99e06dbfcc",
+      "runtime_requested_model_id": "gpt-5.6-sol",
+      "self_reported_model_id": "GPT-5",
+      "qualification_attestation_sha256": "2e43e31e27900fc8ff53d7b6c51c2d0a8944c15e23ec46ca703556a5703038b0"
+    }
+  },
+  "review_files": {
+    "actionability": {
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_a_labels.jsonl",
+      "reviewer_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_a_provenance.json",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_b_labels.jsonl",
+      "reviewer_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_b_provenance.json"
+    }
+  },
+  "reviewer_materials": {
+    "a": {
+      "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_a_packet.jsonl",
+      "packet_sha256": "d61be1cc1e4b589ff183a93dfab7417db7b3cdd63fcb59555c0327f3f97eced4",
+      "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_a_template.jsonl",
+      "template_sha256": "1dd2f9d96b587fc7b81884d37fda91ce5b6e5dc6ae62d3638882a5a659b4be7f",
+      "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_actionability_rubric_v2.md",
+      "rubric_sha256": "c74d8d3f3478bae9499d8520221eb0599db91cb87141e3b609a776044f9a3b38"
+    },
+    "b": {
+      "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_b_packet.jsonl",
+      "packet_sha256": "f063ab60f6f635f386f562e462a1eb3f48e8b64d0cdf1324a21cf01191d20278",
+      "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_b_template.jsonl",
+      "template_sha256": "a742859a85d035489908c82414e5723ffee039761592b3b3246b8d489197caac",
+      "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_actionability_rubric_v2.md",
+      "rubric_sha256": "c74d8d3f3478bae9499d8520221eb0599db91cb87141e3b609a776044f9a3b38"
+    }
+  },
+  "forbidden_prior_agent_ids": [
+    "01a00b98-d6e9-7ea3-976b-ba62f2933647",
+    "01a00b98-d870-7802-bb26-dd9363bebf88",
+    "01a00b7b-b477-7e63-9f70-da7b729ba3a7",
+    "01a00b7b-b5ed-7b73-944b-b6f294b2be58",
+    "01a00b7b-b778-7671-a5bd-52488aac6881",
+    "01a00b7b-b918-7320-b53a-eec8603c464d",
+    "01a00bb6-01a8-7de1-8c4d-e91d68d0a2f8",
+    "01a00bb6-0333-7332-92c3-f208e4b43895",
+    "01a00bb6-05d6-7981-a654-60aae83447ac",
+    "01a00bb6-0790-7183-a994-ff54f8f6d35a",
+    "01a00bdc-66c6-7ef0-842c-69a76978ef56",
+    "01a00bdc-686a-7eb2-ab45-ab9e983a2f7b"
+  ],
+  "freeze_outputs": {
+    "manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/actionability_freeze/cspr_p2t_actionability_ab_freeze.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/actionability_freeze/CSPR_P2T_ACTIONABILITY_AB_FREEZE.md",
+    "incident": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/actionability_freeze/cspr_p2t_actionability_review_inconclusive_incident.json"
+  },
+  "actionability_pass_route": "P2T4_ALL_AB_FROZEN_AUTHORIZE_ANALYSIS_PROTOCOL_ONLY",
+  "review_inconclusive_route": "STOP_CSPR_P2T_REVIEW_INCONCLUSIVE",
+  "complete_attempts_per_reviewer": 1,
+  "canonical_line_endings": "LF",
+  "partial_output_accepted": false,
+  "replacement_reviewer_authorized": false,
+  "labels_compared_before_freeze": false,
+  "reviewer_c_authorized": false,
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
