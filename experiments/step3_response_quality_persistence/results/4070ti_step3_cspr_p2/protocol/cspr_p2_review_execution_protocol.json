@@ -1,0 +1,98 @@
+{
+  "name": "step3_cspr_p2_review_execution_protocol_v1",
+  "status": "prospective_before_any_cspr_p2_label",
+  "entry_commit": "b026832d7a63c6ce684d37c4c1a9a8da2061fc3d",
+  "frozen_inputs": {
+    "base_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/protocol/cspr_p2_blinded_label_validation_protocol.json",
+      "sha256": "379eeb60ce2bf9da0ad4015089d8b2e172c8ddbe52cb09527f925f3ff1f2fa7f"
+    },
+    "packet_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/cspr_p2_packet_manifest.json",
+      "sha256": "eb673faab05ed990f9b6852ca29dc45737d7210d6357412fb1ba43d3ee10ea7a"
+    },
+    "review_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2_review.py",
+      "sha256": "7409f2043c881e7ee378c704d90b4ceefe7eb6cf953b9a040694543754f698b1"
+    },
+    "review_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2_review.py",
+      "sha256": "db71b941d1d62158ab331a69d1c9c847f7f8940cbc0b2593eb14808c16286197"
+    }
+  },
+  "review_files": {
+    "safety": {
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/safety/cspr_p2_safety_reviewer_a_labels.jsonl",
+      "reviewer_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/safety/cspr_p2_safety_reviewer_a_provenance.json",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/safety/cspr_p2_safety_reviewer_b_labels.jsonl",
+      "reviewer_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/safety/cspr_p2_safety_reviewer_b_provenance.json",
+      "reviewer_c_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_c_packet.jsonl",
+      "reviewer_c_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_c_template.jsonl",
+      "reviewer_c_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/safety/cspr_p2_safety_reviewer_c_labels.jsonl",
+      "reviewer_c_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/safety/cspr_p2_safety_reviewer_c_provenance.json"
+    },
+    "actionability": {
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/actionability/cspr_p2_actionability_reviewer_a_labels.jsonl",
+      "reviewer_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/actionability/cspr_p2_actionability_reviewer_a_provenance.json",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/actionability/cspr_p2_actionability_reviewer_b_labels.jsonl",
+      "reviewer_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/actionability/cspr_p2_actionability_reviewer_b_provenance.json",
+      "reviewer_c_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/actionability/cspr_p2_actionability_reviewer_c_packet.jsonl",
+      "reviewer_c_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/actionability/cspr_p2_actionability_reviewer_c_template.jsonl",
+      "reviewer_c_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/actionability/cspr_p2_actionability_reviewer_c_labels.jsonl",
+      "reviewer_c_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/actionability/cspr_p2_actionability_reviewer_c_provenance.json"
+    }
+  },
+  "reviewer_provenance_required": [
+    "construct",
+    "reviewer_role",
+    "agent_id",
+    "session_id",
+    "runtime",
+    "packet_path",
+    "packet_sha256",
+    "template_path",
+    "template_sha256",
+    "rubric_path",
+    "rubric_sha256",
+    "output_path",
+    "output_sha256",
+    "row_count",
+    "fresh_context",
+    "forbidden_material_not_opened",
+    "completion_status"
+  ],
+  "reviewer_isolation": {
+    "fresh_agent_per_role": true,
+    "cross_construct_session_reuse": false,
+    "reviewer_c_only_after_reliable_ab_freeze": true,
+    "reviewer_c_only_for_ab_disagreement_rows": true,
+    "reviewer_c_sees_ab_labels": false,
+    "reviewer_c_sees_hidden_key": false,
+    "main_session_assigns_labels": false,
+    "heuristic_substitution_forbidden": true
+  },
+  "analysis_outputs": {
+    "ab_analysis": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/cspr_p2_ab_review_analysis.json",
+    "ab_report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/CSPR_P2_AB_REVIEW_REPORT.md",
+    "inconclusive_incident": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/cspr_p2_review_inconclusive_incident.json"
+  },
+  "final_outputs": {
+    "safety_final_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/final/cspr_p2_safety_final_labels.jsonl",
+    "actionability_final_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/final/cspr_p2_actionability_final_labels.jsonl",
+    "qualified_pair_pool": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/private/cspr_p2_qualified_pair_pool.jsonl",
+    "final_analysis": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/cspr_p2_final_analysis.json",
+    "route_decision": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/cspr_p2_route_decision.json",
+    "final_report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/CSPR_P2_FINAL_REVIEW_REPORT.md"
+  },
+  "ab_pass_route": "AUTHORIZE_CSPR_P2_REVIEWER_C_ONLY",
+  "review_inconclusive_route": "STOP_CSPR_P2_REVIEW_INCONCLUSIVE",
+  "review_invalid_route": "STOP_CSPR_P2_REVIEW_INVALID",
+  "review_unreliable_route": "STOP_CSPR_P2_REVIEW_UNRELIABLE",
+  "yield_failure_route": "STOP_CSPR_P2_PAIR_YIELD",
+  "final_pass_route": "AUTHORIZE_CSPR_P3_ZERO_UPDATE_MECHANISM_PROTOCOL_ONLY",
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
