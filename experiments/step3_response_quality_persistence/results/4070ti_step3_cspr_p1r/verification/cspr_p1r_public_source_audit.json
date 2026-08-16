@@ -1,0 +1,111 @@
+{
+  "base_protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1/protocol/cspr_p1_public_source_protocol.json",
+  "base_protocol_sha256": "fac47e5986c8f8868c12382721426409027a0c2abfc38d4c021caf72441280ea",
+  "checks": {
+    "category_supply_minimum": true,
+    "category_targets": true,
+    "eligible_prompt_minimum": true,
+    "empty_responses_excluded_from_pair_eligibility": true,
+    "selected_prompt_count": true,
+    "selected_prompts_unique": true,
+    "selected_responses_distinct": true,
+    "source_mixed_prompt_count": true,
+    "source_row_count": true,
+    "source_safe_candidate_count": true,
+    "split_counts": true
+  },
+  "claim_boundary": "P1R can establish only exact-source integrity, conservative empty-response exclusion, restricted freshness, pair distinctness, category supply, and a prospective hash-only split. It does not validate source labels or authorize model gradients, optimizer steps, or behavioral claims.",
+  "closed_v1_stop": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1/incidents/cspr_p1_v1_source_schema_stop.json",
+    "route": "STOP_CSPR_P1_DATA_INSUFFICIENT",
+    "sha256": "3c387233ad8fb2e5c7f9e304fd8757daede05d504994986097d49140e2e48b79"
+  },
+  "core100_opened": false,
+  "eligible_category_supply": {
+    "animal_abuse": 41,
+    "child_abuse": 23,
+    "controversial_topics,politics": 289,
+    "discrimination,stereotype,injustice": 472,
+    "drug_abuse,weapons,banned_substance": 137,
+    "financial_crime,property_crime,theft": 292,
+    "hate_speech,offensive_language": 485,
+    "misinformation_regarding_ethics,laws_and_safety": 201,
+    "non_violent_unethical_behavior": 906,
+    "privacy_violation": 256,
+    "self_harm": 24,
+    "sexually_explicit,adult_content": 139,
+    "terrorism,organized_crime": 28,
+    "violence,aiding_and_abetting,incitement": 788
+  },
+  "freshness_filter": {
+    "after": 2272,
+    "before": 2480,
+    "excluded": 208,
+    "exclusion_counts": {
+      "exact_prior_overlap": 28,
+      "normalized_prior_overlap": 180
+    },
+    "maximum_similarity_among_nonexact_comparisons": 0.875,
+    "threshold": 0.9
+  },
+  "heldout_content_opened": false,
+  "model_gradient_authorized": false,
+  "name": "step3_cspr_p1r_public_source_feasibility_audit_v1",
+  "optimizer_steps": 0,
+  "passed": true,
+  "prospective_split_counts": {
+    "calibration": 28,
+    "mechanism_dev": 28,
+    "train_candidate": 64
+  },
+  "reference_rows": {
+    "step2g_noncontent_split_manifest": 200,
+    "step3n_source_review_packet": 95,
+    "step3o_o4_terminated_prompt_packet": 60,
+    "step3o_prior_beavertails_packet": 198,
+    "unified_train_control": 1000,
+    "unified_train_normal": 1000,
+    "unified_train_risk": 1000
+  },
+  "repair_protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1r/protocol/cspr_p1r_empty_response_repair_protocol.json",
+  "repair_protocol_sha256": "0164a00740aedd7cf891183f68608db14621f8ae52b3d35ebe936a8ed6b09382",
+  "route": "PASS_CSPR_P1R_SOURCE_FEASIBILITY",
+  "selected_category_counts": {
+    "animal_abuse": 9,
+    "child_abuse": 9,
+    "controversial_topics,politics": 9,
+    "discrimination,stereotype,injustice": 8,
+    "drug_abuse,weapons,banned_substance": 8,
+    "financial_crime,property_crime,theft": 9,
+    "hate_speech,offensive_language": 9,
+    "misinformation_regarding_ethics,laws_and_safety": 9,
+    "non_violent_unethical_behavior": 8,
+    "privacy_violation": 9,
+    "self_harm": 9,
+    "sexually_explicit,adult_content": 8,
+    "terrorism,organized_crime": 8,
+    "violence,aiding_and_abetting,incitement": 8
+  },
+  "selected_pair_ledger": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1r/verification/cspr_p1r_selected_pair_ledger.jsonl",
+  "selected_pair_ledger_sha256": "066f5757b2b4c98175eceb3387e8657a281f922d2e4661a16dfde7636f2d8264",
+  "source": {
+    "dataset": "PKU-Alignment/BeaverTails",
+    "revision": "8401fe609d288129cc684a9b3be6a93e41cfe678",
+    "sha256": "2e24b85dd599224eeb7379da297223bad50e11fea9fee6a7fdb4bd26aedec315"
+  },
+  "source_inventory": {
+    "cross_label_identical_responses_removed": 3,
+    "empty_response_rows_excluded": 1,
+    "empty_safe_response_rows_excluded": 1,
+    "empty_unsafe_response_rows_excluded": 0,
+    "mixed_safe_unsafe_prompts": 2480,
+    "nonempty_response_rows": 27185,
+    "pair_eligible_prompts_after_response_conflict_removal": 2480,
+    "rows": 27186,
+    "safe_responses_on_mixed_prompts": 4898,
+    "unique_normalized_prompts_with_nonempty_response": 7754,
+    "unsafe_responses_on_mixed_prompts": 5016
+  },
+  "source_labels_accepted_as_final": false,
+  "training_authorized": false
+}
