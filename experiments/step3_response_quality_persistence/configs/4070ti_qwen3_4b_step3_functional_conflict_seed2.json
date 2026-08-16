@@ -1,0 +1,59 @@
+{
+  "name": "4070ti_qwen3_4b_step3_functional_conflict_seed2_v3",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "parent_config": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_functional_nullspace_seed2.json",
+  "machine": "4070ti",
+  "risk_data_path": "data/processed/unified_pool/train_risk.jsonl",
+  "safety_targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "local_files_only": true,
+  "seed": 2,
+  "train_examples": 256,
+  "optimizer_steps": 64,
+  "gradient_accumulation_steps": 4,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0,
+  "adam_beta1": 0.9,
+  "adam_beta2": 0.999,
+  "adam_epsilon": 1e-08,
+  "max_grad_norm": 1.0,
+  "warmup_steps": 0,
+  "max_length": 512,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "gradient_checkpointing": true,
+  "fp16": true,
+  "minimum_vram_headroom_fraction": 0.1,
+  "smoke_steps": 2,
+  "checkpoint_steps": [0, 16, 32, 64],
+  "functional_nullspace": {
+    "calibration_prompt_clusters": 16,
+    "tokens_per_response": 8,
+    "basis_rank": 8,
+    "row_normalization": "l2",
+    "basis_epsilon": 1e-08,
+    "arms": {
+      "FCP20_conflict_only": {
+        "safety_mix": 0.2,
+        "projection_mode": "protected_conflict_only"
+      }
+    }
+  },
+  "generation": {
+    "max_new_tokens": 128,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "core100_opened": false,
+  "heldout_opened": false
+}

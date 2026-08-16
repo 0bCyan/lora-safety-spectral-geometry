@@ -1,0 +1,20 @@
+{
+  "name": "step3_bsp20_generation_incident_001",
+  "arm": "BSP20_risk_branch_only",
+  "checkpoint_step": 16,
+  "attempt": 1,
+  "progress_before_failure": "30_of_40_completed_in_memory",
+  "error": "bitsandbytes CUDA unspecified launch failure",
+  "output_directory_existed_after_failure": false,
+  "partial_output_files": 0,
+  "partial_rows_reused": 0,
+  "cuda_health_check_after_failure": {
+    "torch_cuda_available": true,
+    "simple_cuda_sum_passed": true,
+    "gpu_memory_free_mib": 10344,
+    "gpu_temperature_c": 37
+  },
+  "recovery_rule": "Permit one full restart from row zero because no candidate file or manifest was written. Stop as infrastructure-inconclusive if the same failure recurs.",
+  "heldout_opened": false,
+  "core100_opened": false
+}

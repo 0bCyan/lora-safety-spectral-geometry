@@ -204,6 +204,64 @@ def project_new_gradient_delta_(
     )
 
 
+def resolve_new_gradient_conflicts_(
+    entries: dict[str, dict[str, Any]],
+    bases: dict[str, Any],
+    baselines: dict[str, Any | None],
+    risk_snapshots: dict[str, Any | None],
+) -> dict[str, float | int]:
+    import torch
+
+    evaluated_modules = 0
+    conflicting_modules = 0
+    negative_mass_before = 0.0
+    negative_mass_after = 0.0
+    risk_norm_sq = 0.0
+    risk_protected_norm_sq_before = 0.0
+    risk_protected_norm_sq_after = 0.0
+    correction_norm_sq = 0.0
+    with torch.no_grad():
+        for name, entry in entries.items():
+            gradient = entry["weight"].grad
+            risk_snapshot = risk_snapshots[name]
+            if gradient is None or risk_snapshot is None:
+                continue
+            baseline = baselines[name]
+            risk_delta = risk_snapshot.detach().clone()
+            if baseline is not None:
+                risk_delta.sub_(baseline)
+            safety_delta = gradient.detach() - risk_snapshot
+            metrics = fn.resolve_protected_conflict_(
+                risk_delta, safety_delta, bases[entry["functional_key"]]
+            )
+            rebuilt = risk_delta + safety_delta
+            if baseline is not None:
+                rebuilt.add_(baseline)
+            gradient.copy_(rebuilt)
+
+            evaluated_modules += 1
+            conflicting_modules += int(bool(metrics["conflict"]))
+            negative_mass_before += max(-float(metrics["dot_before"]), 0.0)
+            negative_mass_after += max(-float(metrics["dot_after"]), 0.0)
+            uncorrected_risk = risk_snapshot - baseline if baseline is not None else risk_snapshot
+            risk_norm_sq += float(torch.sum(uncorrected_risk.float().square()))
+            risk_protected_norm_sq_before += float(metrics["risk_protected_norm_sq_before"])
+            risk_protected_norm_sq_after += float(metrics["risk_protected_norm_sq_after"])
+            correction_norm_sq += float(metrics["correction_norm_sq"])
+
+    denominator = max(risk_norm_sq, 1e-30)
+    return {
+        "evaluated_modules": evaluated_modules,
+        "conflicting_modules": conflicting_modules,
+        "negative_conflict_mass_before": negative_mass_before,
+        "negative_conflict_mass_after": negative_mass_after,
+        "conflict_residual_fraction": negative_mass_after / max(negative_mass_before, 1e-30),
+        "risk_protected_ratio_before": math.sqrt(risk_protected_norm_sq_before / denominator),
+        "risk_protected_ratio_after": math.sqrt(risk_protected_norm_sq_after / denominator),
+        "risk_correction_norm_ratio": math.sqrt(correction_norm_sq / denominator),
+    }
+
+
 def main() -> None:
     args = parse_args()
     started = time.time()
@@ -214,7 +272,11 @@ def main() -> None:
         raise ValueError(f"unregistered functional-nullspace arm: {args.arm}")
     arm = method["arms"][args.arm]
     projection_mode = str(arm["projection_mode"])
-    if projection_mode not in {"combined_hard_nullspace", "risk_branch_only"}:
+    if projection_mode not in {
+        "combined_hard_nullspace",
+        "risk_branch_only",
+        "protected_conflict_only",
+    }:
         raise ValueError(f"unsupported projection mode: {projection_mode}")
     full_steps = int(cfg["optimizer_steps"])
     max_steps = int(args.max_steps or (cfg["smoke_steps"] if args.run_kind == "smoke" else full_steps))
@@ -297,6 +359,8 @@ def main() -> None:
     safety_mix = float(arm["safety_mix"])
     if safety_mix < 0.0 or safety_mix >= 1.0:
         raise ValueError("safety mix must be in [0, 1)")
+    if projection_mode == "protected_conflict_only" and safety_mix <= 0.0:
+        raise ValueError("protected conflict projection requires a positive safety mix")
     risk_coefficient = (1.0 - safety_mix) / microsteps
     safety_coefficient = safety_mix / microsteps
     optimizer.zero_grad(set_to_none=True)
@@ -309,12 +373,15 @@ def main() -> None:
         safety_losses: list[float] = []
         risk_projection_before: list[float] = []
         risk_projection_after: list[float] = []
+        conflict_metrics: list[dict[str, float | int]] = []
         for micro_index in range(microsteps):
             position = global_step * microsteps + micro_index
             risk_index = order[position]
             model.train()
             gradient_baseline = (
-                capture_entry_gradients(entries) if projection_mode == "risk_branch_only" else None
+                capture_entry_gradients(entries)
+                if projection_mode in {"risk_branch_only", "protected_conflict_only"}
+                else None
             )
             with torch.autocast("cuda", dtype=torch.float16, enabled=bool(cfg["fp16"])):
                 risk_loss = model(
@@ -325,11 +392,17 @@ def main() -> None:
             scaler.scale(risk_loss * risk_coefficient).backward()
             risk_losses.append(float(risk_loss.detach().float().cpu()))
             if gradient_baseline is not None:
-                ratio_before, ratio_after = project_new_gradient_delta_(
-                    entries, bases, gradient_baseline
-                )
-                risk_projection_before.append(ratio_before)
-                risk_projection_after.append(ratio_after)
+                if projection_mode == "risk_branch_only":
+                    ratio_before, ratio_after = project_new_gradient_delta_(
+                        entries, bases, gradient_baseline
+                    )
+                    risk_projection_before.append(ratio_before)
+                    risk_projection_after.append(ratio_after)
+                    risk_snapshot = None
+                else:
+                    risk_snapshot = capture_entry_gradients(entries)
+            else:
+                risk_snapshot = None
 
             if safety_mix > 0.0:
                 target_index = target_position % len(targets)
@@ -343,6 +416,14 @@ def main() -> None:
                     ).loss
                 scaler.scale(safety_loss * safety_coefficient).backward()
                 safety_losses.append(float(safety_loss.detach().float().cpu()))
+                if projection_mode == "protected_conflict_only":
+                    if gradient_baseline is None or risk_snapshot is None:
+                        raise RuntimeError("missing branch gradient snapshots")
+                    conflict_metrics.append(
+                        resolve_new_gradient_conflicts_(
+                            entries, bases, gradient_baseline, risk_snapshot
+                        )
+                    )
 
         scaler.unscale_(optimizer)
         combined_gradient_component = aggregate_component_ratio(entries, bases, "gradient")
@@ -350,9 +431,33 @@ def main() -> None:
             gradient_component_before = combined_gradient_component
             project_entries_(entries, bases, "gradient")
             gradient_component_after = aggregate_component_ratio(entries, bases, "gradient")
-        else:
+        elif projection_mode == "risk_branch_only":
             gradient_component_before = sum(risk_projection_before) / len(risk_projection_before)
             gradient_component_after = sum(risk_projection_after) / len(risk_projection_after)
+        else:
+            gradient_component_before = sum(
+                float(row["risk_protected_ratio_before"]) for row in conflict_metrics
+            ) / len(conflict_metrics)
+            gradient_component_after = sum(
+                float(row["risk_protected_ratio_after"]) for row in conflict_metrics
+            ) / len(conflict_metrics)
+        conflict_modules = sum(int(row["conflicting_modules"]) for row in conflict_metrics)
+        conflict_evaluated_modules = sum(int(row["evaluated_modules"]) for row in conflict_metrics)
+        conflict_mass_before = sum(
+            float(row["negative_conflict_mass_before"]) for row in conflict_metrics
+        )
+        conflict_mass_after = sum(
+            float(row["negative_conflict_mass_after"]) for row in conflict_metrics
+        )
+        conflict_residual_fraction = (
+            conflict_mass_after / max(conflict_mass_before, 1e-30) if conflict_metrics else 0.0
+        )
+        risk_correction_norm_ratio = (
+            sum(float(row["risk_correction_norm_ratio"]) for row in conflict_metrics)
+            / len(conflict_metrics)
+            if conflict_metrics
+            else 0.0
+        )
         parameters = [parameter for parameter in model.parameters() if parameter.requires_grad]
         gradients_finite = all(
             parameter.grad is None or bool(torch.isfinite(parameter.grad).all()) for parameter in parameters
@@ -390,6 +495,12 @@ def main() -> None:
                 "gradient_protected_ratio_before": gradient_component_before,
                 "gradient_protected_ratio_after": gradient_component_after,
                 "combined_gradient_protected_ratio_before_optimizer": combined_gradient_component,
+                "protected_conflict_modules": conflict_modules,
+                "protected_conflict_evaluated_modules": conflict_evaluated_modules,
+                "negative_protected_conflict_mass_before": conflict_mass_before,
+                "negative_protected_conflict_mass_after": conflict_mass_after,
+                "protected_conflict_residual_fraction": conflict_residual_fraction,
+                "risk_correction_norm_ratio": risk_correction_norm_ratio,
                 "weight_protected_ratio_after": weight_component_after,
                 "optimizer_preclip_gradient_norm": preclip_norm,
                 "learning_rate_after_update": float(scheduler.get_last_lr()[0]),
@@ -404,7 +515,8 @@ def main() -> None:
         common.write_csv(output / "training_trace.csv", trace)
         print(
             f"{args.arm} step {completed_step}/{max_steps} loss={weighted_loss:.6f} "
-            f"project={gradient_component_before:.4f}->{gradient_component_after:.2e} "
+            f"project={gradient_component_before:.4f}->{gradient_component_after:.4f} "
+            f"conflicts={conflict_modules} residual={conflict_residual_fraction:.2e} "
             f"vram={torch.cuda.max_memory_allocated() / 2**30:.2f}GiB",
             flush=True,
         )
@@ -427,7 +539,7 @@ def main() -> None:
     }
     common.write_json(output / "functional_basis_report.json", basis_reports)
     manifest = {
-        "name": "step3_functional_nullspace_run_v1",
+        "name": "step3_functional_projection_run_v2",
         "experiment_mode": "exploratory_non_confirmatory",
         "arm": args.arm,
         "run_kind": args.run_kind,
@@ -453,6 +565,23 @@ def main() -> None:
             if projection_mode == "combined_hard_nullspace"
             else "safety_branch_and_optimizer_permitted_component"
         ),
+        "conflict_projection_summary": {
+            "total_conflicting_module_microsteps": sum(
+                int(row["protected_conflict_modules"]) for row in trace
+            ),
+            "total_evaluated_module_microsteps": sum(
+                int(row["protected_conflict_evaluated_modules"]) for row in trace
+            ),
+            "maximum_residual_fraction": max(
+                (float(row["protected_conflict_residual_fraction"]) for row in trace),
+                default=0.0,
+            ),
+            "mean_risk_correction_norm_ratio": (
+                sum(float(row["risk_correction_norm_ratio"]) for row in trace) / len(trace)
+                if trace
+                else 0.0
+            ),
+        },
         "basis_summary": basis_summary,
         "checkpoint_steps": [int(row["step"]) for row in checkpoint_rows],
         "checkpoint_index_hash": common.hash_json(

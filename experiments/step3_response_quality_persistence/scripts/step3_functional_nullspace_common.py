@@ -96,6 +96,39 @@ def project_delta_(tensor: Any, baseline: Any | None, basis: Any) -> None:
         tensor.copy_(baseline + delta)
 
 
+def resolve_protected_conflict_(
+    risk_delta: Any, safety_delta: Any, basis: Any, epsilon: float = 1e-12
+) -> dict[str, float | bool]:
+    """Remove only risk components that oppose safety inside the protected span."""
+    import torch
+
+    if risk_delta.shape != safety_delta.shape:
+        raise ValueError("risk and safety gradients must have identical shapes")
+    basis_value = basis.detach().to(device=risk_delta.device, dtype=risk_delta.dtype)
+    risk_protected = (risk_delta @ basis_value.T) @ basis_value
+    safety_protected = (safety_delta @ basis_value.T) @ basis_value
+    dot_before = torch.sum(risk_protected.float() * safety_protected.float())
+    safety_norm_sq = torch.sum(safety_protected.float().square())
+    conflict = bool(dot_before < 0 and safety_norm_sq > epsilon)
+    correction_norm_sq = torch.zeros((), device=risk_delta.device, dtype=torch.float32)
+    if conflict:
+        coefficient = dot_before / safety_norm_sq
+        correction = coefficient.to(risk_delta.dtype) * safety_protected
+        risk_delta.sub_(correction)
+        correction_norm_sq = torch.sum(correction.float().square())
+    corrected_protected = (risk_delta @ basis_value.T) @ basis_value
+    dot_after = torch.sum(corrected_protected.float() * safety_protected.float())
+    return {
+        "conflict": conflict,
+        "dot_before": float(dot_before),
+        "dot_after": float(dot_after),
+        "safety_protected_norm_sq": float(safety_norm_sq),
+        "risk_protected_norm_sq_before": float(torch.sum(risk_protected.float().square())),
+        "risk_protected_norm_sq_after": float(torch.sum(corrected_protected.float().square())),
+        "correction_norm_sq": float(correction_norm_sq),
+    }
+
+
 def tensor_sha256(tensor: Any) -> str:
     value = tensor.detach().float().cpu().contiguous().numpy().tobytes()
     return hashlib.sha256(value).hexdigest()

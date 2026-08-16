@@ -5,6 +5,7 @@ import unittest
 import torch
 
 import step3_functional_nullspace_common as fn
+import train_step3_functional_nullspace as trainer
 
 
 class FunctionalNullspaceTests(unittest.TestCase):
@@ -75,6 +76,66 @@ class FunctionalNullspaceTests(unittest.TestCase):
             fn.project_delta_(combined, safety_gradient, basis)
         expected = safety_gradient + torch.tensor([[0.0, 5.0, 6.0]])
         self.assertTrue(torch.equal(combined, expected))
+
+    def test_conflict_projection_removes_opposing_protected_component(self) -> None:
+        basis = torch.tensor([[1.0, 0.0, 0.0]])
+        risk = torch.tensor([[-4.0, 3.0, 5.0]])
+        safety = torch.tensor([[2.0, 7.0, 11.0]])
+        with torch.no_grad():
+            metrics = fn.resolve_protected_conflict_(risk, safety, basis)
+        self.assertTrue(metrics["conflict"])
+        self.assertLess(metrics["dot_before"], 0.0)
+        self.assertAlmostEqual(metrics["dot_after"], 0.0, places=6)
+        self.assertTrue(torch.equal(risk, torch.tensor([[0.0, 3.0, 5.0]])))
+
+    def test_conflict_projection_preserves_aligned_risk(self) -> None:
+        basis = torch.tensor([[1.0, 0.0, 0.0]])
+        risk = torch.tensor([[4.0, 3.0, 5.0]])
+        safety = torch.tensor([[2.0, 7.0, 11.0]])
+        original = risk.clone()
+        with torch.no_grad():
+            metrics = fn.resolve_protected_conflict_(risk, safety, basis)
+        self.assertFalse(metrics["conflict"])
+        self.assertTrue(torch.equal(risk, original))
+
+    def test_conflict_projection_preserves_outside_basis(self) -> None:
+        basis = torch.tensor([[1.0, 0.0, 0.0]])
+        risk = torch.tensor([[-4.0, 3.0, 5.0]])
+        safety = torch.tensor([[2.0, 7.0, 11.0]])
+        outside = risk[:, 1:].clone()
+        with torch.no_grad():
+            fn.resolve_protected_conflict_(risk, safety, basis)
+        self.assertTrue(torch.equal(risk[:, 1:], outside))
+
+    def test_conflict_reconstruction_preserves_accumulated_gradient(self) -> None:
+        basis = torch.tensor([[1.0, 0.0, 0.0]])
+        accumulated = torch.tensor([[13.0, 17.0, 19.0]])
+        risk = torch.tensor([[-4.0, 3.0, 5.0]])
+        safety = torch.tensor([[2.0, 7.0, 11.0]])
+        with torch.no_grad():
+            fn.resolve_protected_conflict_(risk, safety, basis)
+        combined = accumulated + risk + safety
+        expected = accumulated + torch.tensor([[0.0, 3.0, 5.0]]) + safety
+        self.assertTrue(torch.equal(combined, expected))
+
+    def test_trainer_conflict_reconstruction_preserves_accumulated_gradient(self) -> None:
+        basis = torch.tensor([[1.0, 0.0, 0.0]])
+        accumulated = torch.tensor([[13.0, 17.0, 19.0]])
+        risk = torch.tensor([[-4.0, 3.0, 5.0]])
+        safety = torch.tensor([[2.0, 7.0, 11.0]])
+        weight = torch.nn.Parameter(torch.zeros_like(accumulated))
+        weight.grad = accumulated + risk + safety
+        entries = {"module": {"weight": weight, "functional_key": "basis"}}
+        metrics = trainer.resolve_new_gradient_conflicts_(
+            entries,
+            {"basis": basis},
+            {"module": accumulated},
+            {"module": accumulated + risk},
+        )
+        expected = accumulated + torch.tensor([[0.0, 3.0, 5.0]]) + safety
+        self.assertTrue(torch.equal(weight.grad, expected))
+        self.assertEqual(metrics["conflicting_modules"], 1)
+        self.assertLess(metrics["conflict_residual_fraction"], 1e-6)
 
 
 if __name__ == "__main__":

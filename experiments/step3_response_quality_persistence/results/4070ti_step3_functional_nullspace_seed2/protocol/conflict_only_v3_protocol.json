@@ -1,0 +1,40 @@
+{
+  "name": "step3_functional_subspace_conflict_projection_v3_protocol",
+  "status": "prospective_protocol_before_v3_training_or_generation",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "motivation": "V2 improved refusal and procedural proxy markers but failed redirect and exact-response diversity because it deleted every risk update inside the safety functional subspace, including non-conflicting content directions.",
+  "candidate_arm": "FCP20_conflict_only",
+  "candidate_config": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_functional_conflict_seed2.json",
+  "frozen_change_from_v2": "Within each LoRA-A safety functional subspace, apply a PCGrad correction to the risk-branch gradient only when its inner product with the paired safety-branch gradient is negative. Preserve aligned and orthogonal risk components, the complete safety gradient, basis-exterior components, and gradients accumulated before the microstep.",
+  "conflict_rule": {
+    "risk_protected": "P_safe(g_risk)",
+    "safety_protected": "P_safe(g_safety)",
+    "trigger": "dot(risk_protected, safety_protected) < 0",
+    "correction": "g_risk - dot(risk_protected, safety_protected) / ||safety_protected||^2 * safety_protected",
+    "post_optimizer_weight_projection": false
+  },
+  "unchanged": {
+    "model": "Qwen/Qwen3-4B",
+    "seed": 2,
+    "optimizer_steps": 16,
+    "safety_mix": 0.2,
+    "calibration_prompt_clusters": 16,
+    "tokens_per_response": 8,
+    "basis_rank": 8,
+    "risk_order": "same_seed2_order",
+    "development_split": "proxy_dev_40",
+    "decoding": "greedy_128_tokens_thinking_disabled"
+  },
+  "smoke_requirements": [
+    "All losses and gradients are finite with zero skipped optimizer steps.",
+    "At least one protected-subspace conflict is observed and corrected.",
+    "Aggregate negative protected conflict after correction is at most 1e-5 of the value before correction plus numerical epsilon.",
+    "VRAM headroom is at least 10 percent."
+  ],
+  "reference_arm": "C0R_concurrent_constant20",
+  "safety_gate": "experiments/step3_response_quality_persistence/results/4070ti_step3_functional_nullspace_seed2/protocol/exploratory_safety_gate.json",
+  "pass_next_action": "Run paired utility development evaluation only after every frozen safety gate passes.",
+  "failure_next_action": "Stop FCP20 before 64 steps and heldout evaluation; preserve the null result without weakening the gate.",
+  "heldout_opened": false,
+  "core100_opened": false
+}
