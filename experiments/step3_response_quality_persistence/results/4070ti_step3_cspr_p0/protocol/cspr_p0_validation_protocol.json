@@ -1,0 +1,72 @@
+{
+  "name": "step3_cspr_p0_mathematical_and_numerical_validation_protocol_v1",
+  "status": "prospective_before_p0_random_numerical_verification",
+  "experiment_mode": "proof_and_zero_training_validation",
+  "method_status": "candidate_not_training_authorized",
+  "objective": "Validate that the registered fixed-diagonal preconditioned preference direction is the unique minimum-metric projection onto the empirical safety-loss first-order half-space, and that finite updates are accepted only by a dual-objective Armijo certificate.",
+  "theorem_scope": {
+    "parameter_space": "finite-dimensional trainable LoRA vector",
+    "losses": "two differentiable empirical batch losses",
+    "preconditioner": "fixed strictly-positive diagonal matrix during one certified update",
+    "projection_metric": "inverse-preconditioner quadratic metric",
+    "excluded": [
+      "Adam or momentum state evolution",
+      "global convergence",
+      "population-risk or behavioral-safety guarantees",
+      "unknown-prompt generalization",
+      "claims about reviewer-label validity"
+    ]
+  },
+  "artifacts": {
+    "common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_common.py",
+      "sha256": "2da4419cd4678983aa7224a0237326299f2f3dd51353dff5c1c0ddb787ff0689"
+    },
+    "tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_common.py",
+      "sha256": "dd98476ba74330e22263181503c6e59280257c3996b89670a050f6d1dd875384"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/verify_step3_cspr_p0.py",
+      "sha256": "dc4a6c5718592c2606723213e1c3b25621ff6ce67a9e69b666e14b9b00a5953f"
+    },
+    "proof": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p0/protocol/CSPR_P0_MATHEMATICAL_VALIDATION.md",
+      "sha256": "b76f5c45085dfea18af7ad423857badc3beb7d444e4f4729392b0a19d1d15bf7"
+    }
+  },
+  "required_unit_tests": [
+    "inactive projection equals the unconstrained preconditioned preference direction",
+    "active projection satisfies safety feasibility, preference non-increase, and KKT conditions",
+    "active projection is the minimum inverse-preconditioner-metric correction",
+    "zero safety gradient is handled without division",
+    "non-positive preconditioners are rejected",
+    "analytic directional derivatives match central finite differences",
+    "joint finite-step descent is accepted",
+    "first-order tangent but second-order unsafe finite steps are rejected",
+    "DPO loss is decreasing in the pair gap and matches its closed-form derivative"
+  ],
+  "numerics": {
+    "seed": 2026081602,
+    "random_projection_cases": 256,
+    "dimension": 64,
+    "finite_difference_epsilon": 1e-6,
+    "tolerances": {
+      "directional_derivative": 1e-10,
+      "kkt": 1e-10,
+      "finite_difference": 1e-7,
+      "dpo_derivative": 1e-12
+    }
+  },
+  "output": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p0/verification/cspr_p0_numerical_verification.json",
+  "pass_rule": "All registered unit tests pass; active and inactive random branches are both exercised; every random certificate meets directional-derivative and KKT tolerances; finite differences and DPO derivatives meet tolerance; joint descent is accepted; and the tangent second-order counterexample is rejected.",
+  "failure_route": "STOP_CSPR_P0_REPAIR_IMPLEMENTATION_ONLY_WITH_A_NEW_PROSPECTIVE_COMMIT",
+  "pass_route": "AUTHORIZE_PUBLIC_SOURCE_DATA_FEASIBILITY_AUDIT_ONLY",
+  "claim_boundary": "Passing P0 validates the local projection implementation and finite-step rejection logic only. It does not validate real-model gradients, training data, generated behavior, or safety generalization.",
+  "public_source_data_audit_authorized": true,
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
