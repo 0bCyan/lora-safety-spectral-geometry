@@ -1,0 +1,154 @@
+{
+  "name": "step3_cspr_p1_public_source_feasibility_protocol_v1",
+  "status": "prospective_before_source_acquisition_or_row_inspection",
+  "entry_commit": "fdf31c0e382dfad911acd56792e0e5d9d877d9ed",
+  "entry_result": "CSPR_P0_passed",
+  "raw_source_present_at_freeze": false,
+  "objective": "Test whether a pinned public source supplies enough fresh, distinct, same-prompt source-safe/source-unsafe response pairs to justify independent label validation without opening core100 or heldout content.",
+  "artifacts": {
+    "audit_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p1_data_audit.py",
+      "sha256": "64c536908ca8d659961c7114fc187d9af3be6a886faa4dad7b820fb946bfe462"
+    },
+    "audit_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p1_data_audit.py",
+      "sha256": "917855700b3ce57c0c7a26a0fa294911b8a3adb002aa1c209c9042f1fd9829dd"
+    },
+    "protocol_rationale": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1/protocol/CSPR_P1_PUBLIC_SOURCE_FEASIBILITY_PROTOCOL.md",
+      "sha256": "3076a3889a1c62c127b8d3e656410f46869ee2024a94816e59ee86dfdbc074ec"
+    },
+    "p0_result": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p0/verification/cspr_p0_numerical_verification.json",
+      "sha256": "a62a9f7f7c9eb106e45e3cfe2d98ed6968684cb807d9325d829a2b3c107c20aa"
+    }
+  },
+  "source": {
+    "dataset": "PKU-Alignment/BeaverTails",
+    "revision": "8401fe609d288129cc684a9b3be6a93e41cfe678",
+    "url": "https://huggingface.co/datasets/PKU-Alignment/BeaverTails/resolve/8401fe609d288129cc684a9b3be6a93e41cfe678/round0/30k/train.jsonl.gz",
+    "path": "data/raw/step3o/beavertails_30k_train.jsonl.gz",
+    "sha256": "2e24b85dd599224eeb7379da297223bad50e11fea9fee6a7fdb4bd26aedec315",
+    "license": "CC BY-NC 4.0",
+    "expected_rows": 27186,
+    "expected_mixed_prompts": 2480,
+    "expected_safe_responses_on_mixed_prompts": 4898,
+    "expected_categories": [
+      "animal_abuse",
+      "child_abuse",
+      "controversial_topics,politics",
+      "discrimination,stereotype,injustice",
+      "drug_abuse,weapons,banned_substance",
+      "financial_crime,property_crime,theft",
+      "hate_speech,offensive_language",
+      "misinformation_regarding_ethics,laws_and_safety",
+      "non_violent_unethical_behavior",
+      "privacy_violation",
+      "self_harm",
+      "sexually_explicit,adult_content",
+      "terrorism,organized_crime",
+      "violence,aiding_and_abetting,incitement"
+    ]
+  },
+  "exclusion_references": [
+    {
+      "name": "unified_train_normal",
+      "path": "data/processed/unified_pool/train_normal.jsonl",
+      "sha256": "cb96d81c39b496cf4fc90e77e8bcc401926a88a667b0f26e63df60695b4ab996",
+      "expected_rows": 1000,
+      "mode": "jsonl_prompt",
+      "field": "prompt"
+    },
+    {
+      "name": "unified_train_control",
+      "path": "data/processed/unified_pool/train_control.jsonl",
+      "sha256": "039864b2968bd6eb8914fe93beece5f7f0e58264e86215d7b26527749c01d421",
+      "expected_rows": 1000,
+      "mode": "jsonl_prompt",
+      "field": "prompt"
+    },
+    {
+      "name": "unified_train_risk",
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1",
+      "expected_rows": 1000,
+      "mode": "jsonl_prompt",
+      "field": "prompt"
+    },
+    {
+      "name": "step3n_source_review_packet",
+      "path": "experiments/step3_response_quality_persistence/results/step3n_r1_n0/packets/source/step3n_r1_source_qualification_packet.jsonl",
+      "sha256": "96a8fa5d50296987747be3b1d90b4fdb3f929a03ebd074a7217f04bb4f6ed86d",
+      "expected_rows": 95,
+      "mode": "jsonl_prompt",
+      "field": "prompt"
+    },
+    {
+      "name": "step3o_prior_beavertails_packet",
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_hidden_key.csv",
+      "sha256": "e447237002509ec384cdbf7a2076395de0571b9a8a872a2065603c957ae50d28",
+      "expected_rows": 198,
+      "mode": "csv_normalized_hash",
+      "field": "prompt_sha256"
+    },
+    {
+      "name": "step3o_o4_terminated_prompt_packet",
+      "path": "experiments/step3_response_quality_persistence/results/step3o_o4_training_pool_attempt_005/packets/authoring/step3o_o4_authoring_hidden_key.csv",
+      "sha256": "e98609ac52bb2feeef4caf7b8706c0af00260f4fefc2d233c001102b1ec78719",
+      "expected_rows": 60,
+      "mode": "csv_normalized_hash",
+      "field": "normalized_prompt_sha256"
+    },
+    {
+      "name": "step2g_noncontent_split_manifest",
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/split_manifest.csv",
+      "sha256": "142959f5ec968f41681bb7a3e0c01ec6181b30e2f6751ff81cb7566be3085559",
+      "expected_rows": 200,
+      "mode": "csv_exact_hash",
+      "field": "content_hash"
+    }
+  ],
+  "freshness_filter": {
+    "normalization": "unicode_casefold_then_whitespace_collapse",
+    "maximum_shingle_width": 5,
+    "similarity_metric": "maximum_of_jaccard_and_overlap_coefficient_over_1_to_5_ascii_alnum_token_shingles",
+    "similarity_fail_threshold": 0.9,
+    "semantic_decontamination_claimed": false
+  },
+  "selection": {
+    "seed": 2026081603,
+    "prompt_count": 120,
+    "category_allocation": "floor(120/14) plus one for 8 stable-hash-ranked remainder categories; scarcity-first without prompt reuse",
+    "response_selection": "one source-safe and one distinct source-unsafe normalized response selected independently by stable hash",
+    "calibration_per_category": 2,
+    "development_per_category": 2,
+    "expected_split_counts": {
+      "train_candidate": 64,
+      "calibration": 28,
+      "mechanism_dev": 28
+    },
+    "replacement_after_review": false
+  },
+  "gates": {
+    "minimum_eligible_prompts": 2000,
+    "minimum_eligible_prompts_per_category": 20,
+    "exact_source_inventory_required": true,
+    "all_selected_pairs_distinct_required": true,
+    "all_category_targets_required": true,
+    "exact_split_counts_required": true
+  },
+  "outputs": {
+    "audit": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1/verification/cspr_p1_public_source_audit.json",
+    "hash_only_ledger": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1/verification/cspr_p1_selected_pair_ledger.jsonl",
+    "source_text_committed": false
+  },
+  "pass_route": "AUTHORIZE_CSPR_P2_BLINDED_LABEL_VALIDATION_PACKET_FREEZE_ONLY",
+  "failure_route": "STOP_CSPR_P1_DATA_INSUFFICIENT",
+  "claim_boundary": "P1 can establish only exact-source integrity, restricted freshness, pair distinctness, category supply, and a prospective hash-only split. Source safety labels remain unvalidated and cannot authorize a model gradient, optimizer step, or behavioral claim.",
+  "source_labels_accepted_as_final": false,
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
