@@ -1,0 +1,88 @@
+{
+  "name": "step3_cspr_p1r_empty_response_repair_protocol_v1",
+  "status": "prospective_after_v1_schema_stop_before_completed_source_audit",
+  "entry_commit": "25efa5cbfe4d895abc513ca609277e7c9c171e89",
+  "base_protocol": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1/protocol/cspr_p1_public_source_protocol.json",
+    "sha256": "fac47e5986c8f8868c12382721426409027a0c2abfc38d4c021caf72441280ea"
+  },
+  "closed_v1_stop": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1/incidents/cspr_p1_v1_source_schema_stop.json",
+    "sha256": "3c387233ad8fb2e5c7f9e304fd8757daede05d504994986097d49140e2e48b79",
+    "route": "STOP_CSPR_P1_DATA_INSUFFICIENT"
+  },
+  "repair": {
+    "only_change": "Exclude string responses that are empty after trimming from both pair sides while retaining their rows in the exact source-row count.",
+    "empty_prompt_remains_fatal": true,
+    "non_string_response_remains_fatal": true,
+    "source_schema_change_remains_fatal": true,
+    "cross_label_identical_nonempty_response_removal_unchanged": true,
+    "v1_result_overwritten": false
+  },
+  "artifacts": {
+    "repair_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p1r_data_audit.py",
+      "sha256": "f780de91cdad6a188877037720f0c54b5300709ba63f8113dc0f1502bf8e89b2"
+    },
+    "repair_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p1r_data_audit.py",
+      "sha256": "3b4cde32434315d1bafda0b4a1dd719ad1f79892bf0830fb7b6d0a03c64e0138"
+    },
+    "repair_rationale": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1r/protocol/CSPR_P1R_EMPTY_RESPONSE_REPAIR_PROTOCOL.md",
+      "sha256": "adeda065f9d8f03ba03f37d5c375828f996889d2335a7c8a6a91cb04f2f695b9"
+    },
+    "v1_stop": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1/incidents/cspr_p1_v1_source_schema_stop.json",
+      "sha256": "3c387233ad8fb2e5c7f9e304fd8757daede05d504994986097d49140e2e48b79"
+    }
+  },
+  "unchanged_constraints": {
+    "source_revision": "8401fe609d288129cc684a9b3be6a93e41cfe678",
+    "source_sha256": "2e24b85dd599224eeb7379da297223bad50e11fea9fee6a7fdb4bd26aedec315",
+    "freshness_filter": {
+      "normalization": "unicode_casefold_then_whitespace_collapse",
+      "maximum_shingle_width": 5,
+      "similarity_metric": "maximum_of_jaccard_and_overlap_coefficient_over_1_to_5_ascii_alnum_token_shingles",
+      "similarity_fail_threshold": 0.9,
+      "semantic_decontamination_claimed": false
+    },
+    "selection": {
+      "seed": 2026081603,
+      "prompt_count": 120,
+      "category_allocation": "floor(120/14) plus one for 8 stable-hash-ranked remainder categories; scarcity-first without prompt reuse",
+      "response_selection": "one source-safe and one distinct source-unsafe normalized response selected independently by stable hash",
+      "calibration_per_category": 2,
+      "development_per_category": 2,
+      "expected_split_counts": {
+        "train_candidate": 64,
+        "calibration": 28,
+        "mechanism_dev": 28
+      },
+      "replacement_after_review": false
+    },
+    "gates": {
+      "minimum_eligible_prompts": 2000,
+      "minimum_eligible_prompts_per_category": 20,
+      "exact_source_inventory_required": true,
+      "all_selected_pairs_distinct_required": true,
+      "all_category_targets_required": true,
+      "exact_split_counts_required": true
+    },
+    "exclusion_reference_count": 7
+  },
+  "outputs": {
+    "audit": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1r/verification/cspr_p1r_public_source_audit.json",
+    "hash_only_ledger": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1r/verification/cspr_p1r_selected_pair_ledger.jsonl",
+    "source_text_committed": false
+  },
+  "pass_route": "AUTHORIZE_CSPR_P2_BLINDED_LABEL_VALIDATION_PACKET_FREEZE_ONLY",
+  "failure_route": "STOP_CSPR_P1R_DATA_INSUFFICIENT",
+  "claim_boundary": "P1R can establish only exact-source integrity, conservative empty-response exclusion, restricted freshness, pair distinctness, category supply, and a prospective hash-only split. It does not validate source labels or authorize model gradients, optimizer steps, or behavioral claims.",
+  "source_labels_accepted_as_final": false,
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
