@@ -1,0 +1,185 @@
+{
+  "name": "step3_cspr_p2_blinded_label_validation_protocol_v1",
+  "status": "prospective_before_packet_construction_or_new_label",
+  "entry_commit": "579a69a979a117dd805bf7137b3cf64d9dfb47f0",
+  "objective": "Independently validate clean-safety contrast and safe-actionability for the 120 frozen same-prompt candidates without reusing the unreliable holistic pair-preference construct.",
+  "artifacts": {
+    "packet_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2_packets.py",
+      "sha256": "588d2fc056cce155f8509f6552baa8200e4d25808c65b9d4ebd80fe49d336bb2"
+    },
+    "packet_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2_packets.py",
+      "sha256": "d9d32551055794201b281db10c39b6fc2f6f0b2b6d3a4c091758a5e6b8bdc2a2"
+    },
+    "protocol_rationale": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/protocol/CSPR_P2_BLINDED_LABEL_VALIDATION_PROTOCOL.md",
+      "sha256": "83c3c442f862713543fd7205c4c0d002489dea8d61f42300d608c95e91a03fd9"
+    },
+    "p1r_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1r/protocol/cspr_p1r_empty_response_repair_protocol.json",
+      "sha256": "0164a00740aedd7cf891183f68608db14621f8ae52b3d35ebe936a8ed6b09382"
+    },
+    "p1r_audit": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1r/verification/cspr_p1r_public_source_audit.json",
+      "sha256": "6ec383de9fca31ccd950044d3e49ea487fdb8c195a0b2f27bec941ef649634d9"
+    },
+    "p1r_ledger": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1r/verification/cspr_p1r_selected_pair_ledger.jsonl",
+      "sha256": "066f5757b2b4c98175eceb3387e8657a281f922d2e4661a16dfde7636f2d8264"
+    },
+    "safety_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_transport_clean_safety_rubric.md",
+      "sha256": "095d00c7d34496da4f50b19148ca00772684edd7bfff04ba51a9aa97cd6fea6c"
+    },
+    "actionability_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_actionability_rubric_v2.md",
+      "sha256": "c74d8d3f3478bae9499d8520221eb0599db91cb87141e3b609a776044f9a3b38"
+    },
+    "safety_rubric_validation": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/step3o_transport_safety_review_agreement.json",
+      "sha256": "dcd3afaef033230458fdb6e6285c6fe3252128a14a34bd56309b2413d9bdf57e"
+    },
+    "actionability_rubric_validation": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/step3o_validation_review_agreement.json",
+      "sha256": "426f628bf19f08db94746481f887eb7f493af48319c7ada6464005d3a8eb932c"
+    }
+  },
+  "inputs": {
+    "source": {
+      "path": "data/raw/step3o/beavertails_30k_train.jsonl.gz",
+      "sha256": "2e24b85dd599224eeb7379da297223bad50e11fea9fee6a7fdb4bd26aedec315",
+      "committed": false
+    },
+    "ledger": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1r/verification/cspr_p1r_selected_pair_ledger.jsonl",
+      "sha256": "066f5757b2b4c98175eceb3387e8657a281f922d2e4661a16dfde7636f2d8264",
+      "rows": 120
+    }
+  },
+  "packet_design": {
+    "seed": 2026081701,
+    "primary_pairs": 120,
+    "safety_primary_responses": 240,
+    "safety_duplicates_per_role": 12,
+    "safety_packet_rows_per_reviewer": 264,
+    "actionability_primary_responses": 120,
+    "actionability_duplicates": 12,
+    "actionability_packet_rows_per_reviewer": 132,
+    "reviewer_specific_order": true,
+    "safety_pair_and_role_hidden": true,
+    "actionability_source_role_hidden": true,
+    "prospective_split_hidden": true,
+    "category_hidden": true,
+    "source_labels_hidden": true
+  },
+  "reviewers": {
+    "safety_a_b": "two independent fresh no-context reviewer sessions",
+    "actionability_a_b": "two additional independent fresh no-context reviewer sessions",
+    "reviewer_c": "new independent session per construct only after reliable A/B outputs freeze and only for A/B disagreements",
+    "cross_construct_session_reuse": false,
+    "requested_runtime": "Codex multi-agent inheriting the current parent model without an unsupported exact-version claim",
+    "provenance_required": [
+      "agent_id",
+      "session_id",
+      "role",
+      "packet_sha256",
+      "rubric_sha256",
+      "row_count",
+      "fresh_context",
+      "forbidden_material_not_opened"
+    ],
+    "forbidden_material": [
+      "hidden keys",
+      "pair roles",
+      "prospective splits",
+      "source labels",
+      "training results",
+      "gradient reports",
+      "P1R audit statistics",
+      "another reviewer output"
+    ]
+  },
+  "safety_review_gates": {
+    "raw_agreement_min": 0.9,
+    "gwet_ac1_min": 0.8,
+    "positive_agreement_min": 0.75,
+    "negative_agreement_min": 0.75,
+    "minimum_yes_ratings_per_reviewer": 24,
+    "minimum_no_ratings_per_reviewer": 24,
+    "duplicate_consistency_min_count": 23,
+    "duplicate_consistency_denominator": 24,
+    "all_primary_disagreements_require_adjudication": true
+  },
+  "actionability_review_gates": {
+    "component_raw_agreement_min": 0.8,
+    "component_gwet_ac1_min": 0.7,
+    "ordinal_exact_agreement_min": 0.8,
+    "ordinal_weighted_agreement_min": 0.9,
+    "ordinal_gwet_ac2_min": 0.7,
+    "ordinal_two_level_disagreement_rate_max": 0.05,
+    "score2_boundary_raw_agreement_min": 0.85,
+    "score2_boundary_gwet_ac1_min": 0.7,
+    "score2_boundary_positive_agreement_min": 0.75,
+    "score2_boundary_negative_agreement_min": 0.75,
+    "score2_marginal_prevalence_gap_max": 0.1,
+    "reviewer_score2_prevalence_min": 0.2,
+    "reviewer_score2_prevalence_max": 0.8,
+    "reviewer_score1_prevalence_min": 0.15,
+    "duplicate_consistency_min_count": 11,
+    "duplicate_consistency_denominator": 12,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 2026081702,
+    "ordinal_gwet_ac2_lower_95_min": 0.6,
+    "score2_boundary_gwet_ac1_lower_95_min": 0.6,
+    "all_primary_disagreements_require_adjudication": true
+  },
+  "pair_qualification": {
+    "candidate_clean_safe": "yes",
+    "candidate_safe_route": "yes",
+    "candidate_executable_step": "yes",
+    "candidate_prompt_binding": "yes",
+    "rejected_clean_safe": "no",
+    "holistic_pair_preference_used": false,
+    "source_labels_used_as_final": false
+  },
+  "fixed_pool_yield_gates": {
+    "minimum_train_candidate_pairs": 24,
+    "train_candidate_denominator": 64,
+    "minimum_calibration_pairs": 12,
+    "calibration_denominator": 28,
+    "minimum_mechanism_dev_pairs": 12,
+    "mechanism_dev_denominator": 28,
+    "minimum_total_pairs": 48,
+    "total_denominator": 120,
+    "minimum_categories_with_at_least_two_pairs": 10,
+    "category_denominator": 14,
+    "interpretation": "resource and diversity gate for a separately frozen zero-update mechanism study; not a population-rate claim or power calculation"
+  },
+  "outputs": {
+    "safety_a_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_a_packet.jsonl",
+    "safety_b_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_b_packet.jsonl",
+    "safety_a_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_a_template.jsonl",
+    "safety_b_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_b_template.jsonl",
+    "safety_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/private/cspr_p2_safety_hidden_key.jsonl",
+    "action_a_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/actionability/cspr_p2_actionability_reviewer_a_packet.jsonl",
+    "action_b_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/actionability/cspr_p2_actionability_reviewer_b_packet.jsonl",
+    "action_a_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/actionability/cspr_p2_actionability_reviewer_a_template.jsonl",
+    "action_b_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/actionability/cspr_p2_actionability_reviewer_b_template.jsonl",
+    "action_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/private/cspr_p2_actionability_hidden_key.jsonl",
+    "manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/cspr_p2_packet_manifest.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/CSPR_P2_PACKET_FREEZE_REPORT.md"
+  },
+  "packet_pass_route": "AUTHORIZE_INDEPENDENT_P2_A_B_REVIEW_ONLY",
+  "review_failure_routes": [
+    "STOP_CSPR_P2_REVIEW_INVALID",
+    "STOP_CSPR_P2_REVIEW_UNRELIABLE",
+    "STOP_CSPR_P2_PAIR_YIELD"
+  ],
+  "review_pass_route": "AUTHORIZE_CSPR_P3_ZERO_UPDATE_MECHANISM_PROTOCOL_ONLY",
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
