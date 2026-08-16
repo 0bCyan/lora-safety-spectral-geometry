@@ -1,0 +1,191 @@
+{
+  "all_sequences_fit_without_truncation": true,
+  "artifacts": [
+    {
+      "bytes": 28472,
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m1/protocol/cspr_m1_preference_batches.jsonl",
+      "rows": 18,
+      "sha256": "4664d0943984acc9b88aa2a9be97ce5b530e1c4174e0d5df16d3fb8a442ade1a"
+    },
+    {
+      "bytes": 8836,
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m1/protocol/cspr_m1_safety_batches.jsonl",
+      "rows": 18,
+      "sha256": "f24f034399cd763056ebcade6ab4fa7f864a357401e757594ff32ab6dd880b81"
+    }
+  ],
+  "batch_count": 3,
+  "batches": [
+    {
+      "batch_id": "m1_batch_1",
+      "preference_categories": [
+        "controversial_topics,politics",
+        "discrimination,stereotype,injustice",
+        "drug_abuse,weapons,banned_substance",
+        "non_violent_unethical_behavior",
+        "privacy_violation",
+        "self_harm"
+      ],
+      "preference_pair_ids": [
+        "cspr_pair_e0a53bc01bbb105feecf",
+        "cspr_pair_2365d7b3352a9f7acd1c",
+        "cspr_pair_7c6fffda17c6759ae674",
+        "cspr_pair_8081d9f2aaef98c8d99a",
+        "cspr_pair_18c0bbfbb16db6557995",
+        "cspr_pair_4bac5e8944f3ae5b8e5f"
+      ],
+      "safety_categories": [
+        "cyber abuse",
+        "financial evasion",
+        "fraud or deception",
+        "harmful wrongdoing",
+        "privacy invasion",
+        "public manipulation"
+      ],
+      "safety_target_ids": [
+        "eval_safety_000161_natural_v1_target2",
+        "eval_safety_000263_natural_v1_target1",
+        "eval_safety_000138_natural_v1_target2",
+        "eval_safety_000212_natural_v1_target2",
+        "eval_safety_000188_natural_v1_target2",
+        "eval_safety_000294_natural_v1_target2"
+      ]
+    },
+    {
+      "batch_id": "m1_batch_2",
+      "preference_categories": [
+        "child_abuse",
+        "drug_abuse,weapons,banned_substance",
+        "misinformation_regarding_ethics,laws_and_safety",
+        "non_violent_unethical_behavior",
+        "sexually_explicit,adult_content",
+        "violence,aiding_and_abetting,incitement"
+      ],
+      "preference_pair_ids": [
+        "cspr_pair_d99d66f63f400ab39ee4",
+        "cspr_pair_4082a1fee1ebe50e92bb",
+        "cspr_pair_0e543dcb3b675953e564",
+        "cspr_pair_04fd17ac64f128e202a1",
+        "cspr_pair_1d3162d3d70bd5f8b5ce",
+        "cspr_pair_277c4aad822d353dcc3a"
+      ],
+      "safety_categories": [
+        "cyber abuse",
+        "financial evasion",
+        "fraud or deception",
+        "harmful wrongdoing",
+        "physical harm",
+        "public manipulation"
+      ],
+      "safety_target_ids": [
+        "eval_safety_000286_natural_v1_target1",
+        "eval_safety_000205_natural_v1_target1",
+        "eval_safety_000279_natural_v1_target1",
+        "eval_safety_000260_natural_v1_target2",
+        "eval_safety_000107_natural_v1_target1",
+        "eval_safety_000142_natural_v1_target1"
+      ]
+    },
+    {
+      "batch_id": "m1_batch_3",
+      "preference_categories": [
+        "animal_abuse",
+        "discrimination,stereotype,injustice",
+        "financial_crime,property_crime,theft",
+        "self_harm",
+        "sexually_explicit,adult_content",
+        "violence,aiding_and_abetting,incitement"
+      ],
+      "preference_pair_ids": [
+        "cspr_pair_a01c45288c137b976a3d",
+        "cspr_pair_57177e39aae3254c0c8c",
+        "cspr_pair_5b39163d46cd781514d9",
+        "cspr_pair_7e88a88950352565c906",
+        "cspr_pair_4baf72314ed6540b3d2e",
+        "cspr_pair_942ab127b39b483f31f7"
+      ],
+      "safety_categories": [
+        "cyber abuse",
+        "financial evasion",
+        "fraud or deception",
+        "harassment or coercion",
+        "harmful wrongdoing",
+        "public manipulation"
+      ],
+      "safety_target_ids": [
+        "eval_safety_000188_natural_v1_target1",
+        "eval_safety_000268_natural_v1_target2",
+        "eval_safety_000244_natural_v1_target1",
+        "eval_safety_000138_natural_v1_target1",
+        "eval_safety_000191_natural_v1_target1",
+        "eval_safety_000179_natural_v1_target1"
+      ]
+    }
+  ],
+  "behavioral_qualification_claimed": false,
+  "checkpoint_files": [
+    {
+      "bytes": 935,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_config.json",
+      "sha256": "f3dc2f00a468baf447741f7819273a41deab36d96438da7b19d79a9b4cb0ccec"
+    },
+    {
+      "bytes": 66126768,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_model.safetensors",
+      "sha256": "fd66579386cbfa8418cce8c2d8e7c0099b2ef2fddc5a05839b4e8c5f39435379"
+    },
+    {
+      "bytes": 735,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/added_tokens.json",
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de"
+    },
+    {
+      "bytes": 4256,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/chat_template.jinja",
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9"
+    },
+    {
+      "bytes": 1671853,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/merges.txt",
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    {
+      "bytes": 5180,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/README.md",
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6"
+    },
+    {
+      "bytes": 644,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/special_tokens_map.json",
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a"
+    },
+    {
+      "bytes": 11422654,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/tokenizer.json",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    {
+      "bytes": 5643,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/tokenizer_config.json",
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7"
+    },
+    {
+      "bytes": 2776833,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/vocab.json",
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  ],
+  "entry_commit": "87a9d4ca512c8f71fca7c7debc101ce00e234787",
+  "human_labels_used": false,
+  "m0_preference_disjoint": true,
+  "m0_safety_disjoint": true,
+  "name": "step3_cspr_m1_disjoint_batch_data_freeze_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "preference_rows": 18,
+  "route": "CSPR_M1_DATA_AND_EXECUTION_FROZEN_ZERO_UPDATE_ONLY",
+  "safety_rows": 18,
+  "scheduler_objects": 0,
+  "training_authorized": false,
+  "wrong_prompt_is_deranged": true
+}

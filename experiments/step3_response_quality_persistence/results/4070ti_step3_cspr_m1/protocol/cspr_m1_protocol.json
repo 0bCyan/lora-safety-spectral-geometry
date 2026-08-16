@@ -1,0 +1,160 @@
+{
+  "name": "step3_cspr_m1_disjoint_batch_replication_protocol_v1",
+  "entry_commit": "87a9d4ca512c8f71fca7c7debc101ce00e234787",
+  "design": {
+    "selection_seed": 2026081711,
+    "model_seed": 2026081712,
+    "preference_split": "mechanism_dev",
+    "batch_count": 3,
+    "rows_per_objective_per_batch": 6,
+    "repeated_preference_categories": 6,
+    "singleton_preference_categories": 6,
+    "shared_safety_categories": 5,
+    "rare_safety_categories": 3,
+    "m0_disjoint": true,
+    "mutually_batch_disjoint": true,
+    "category_diverse_within_batch": true,
+    "max_length": 256,
+    "beta": 0.1,
+    "preference_log_probability": "sum_over_response_tokens",
+    "preference_batch_reduction": "mean_over_six_pairs",
+    "safety_loss": "mean_response_token_causal_LM_loss_then_mean_over_six_rows",
+    "wrong_prompt_control": "first_length_valid_within_batch_cyclic_derangement",
+    "human_behavioral_labels_used": false,
+    "behavioral_qualification_claimed": false
+  },
+  "model": {
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "checkpoint_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100",
+    "local_files_only": true,
+    "load_in_4bit": true,
+    "quantization": "nf4_double_quant_fp16_compute",
+    "trainable_coordinates": "checkpoint_LoRA_only",
+    "reference_policy": "exact_initial_M1_checkpoint_state",
+    "model_mode": "eval_with_gradients",
+    "preconditioner": "identity"
+  },
+  "line_search": {
+    "initial_step_size": 0.0002,
+    "contraction": 0.5,
+    "maximum_trials": 10,
+    "armijo_fraction": 0.1,
+    "comparison_tolerance": 1e-06
+  },
+  "gates": {
+    "minimum_active_pairs_total": 6,
+    "minimum_active_aggregate_batches": 2,
+    "retained_preference_min": 0.1,
+    "normalized_residual_max": 1e-08,
+    "label_swap_cosine_max": -0.999,
+    "label_swap_norm_ratio_min": 0.99,
+    "label_swap_norm_ratio_max": 1.01,
+    "minimum_active_batches_with_joint_step": 2,
+    "minimum_same_step_safety_rescues": 1
+  },
+  "source_paths": {
+    "m0_preference_data": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/protocol/cspr_m0_preference_pilot.jsonl",
+    "m0_safety_data": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/protocol/cspr_m0_safety_pilot.jsonl",
+    "candidate_ledger": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/private/cspr_p1s_authored_candidate_ledger.jsonl",
+    "author_a_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_a_packet.jsonl",
+    "author_b_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_b_packet.jsonl",
+    "p2_safety_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_a_packet.jsonl",
+    "p2_safety_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/private/cspr_p2_safety_hidden_key.jsonl",
+    "safety_targets": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl"
+  },
+  "outputs": {
+    "preference_data": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m1/protocol/cspr_m1_preference_batches.jsonl",
+    "safety_data": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m1/protocol/cspr_m1_safety_batches.jsonl",
+    "data_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m1/protocol/cspr_m1_data_manifest.json",
+    "freeze_report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m1/protocol/CSPR_M1_DATA_EXECUTION_FREEZE.md",
+    "diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m1/run/cspr_m1_gradient_diagnostics.json",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m1/run/cspr_m1_environment.json",
+    "route": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m1/run/cspr_m1_route.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m1/run/CSPR_M1_REPORT.md"
+  },
+  "frozen_inputs": {
+    "plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CSPR_M1_disjoint_batch_replication_plan.md",
+      "sha256": "4811c9aae4a1a8d07e631f3f1de430a67f3305b90dc73de97e87af1c0948a8ab"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_m1_replication.py",
+      "sha256": "b0026b9681819d6d5c2f06f7542037049f87181c269f80380a074f6f153ede47"
+    },
+    "tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_m1_replication.py",
+      "sha256": "c6270545b9731cac6985d43162fa4e42afea993bda1a5a60f34e7693b1bad837"
+    },
+    "m0_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_m0_mechanism.py",
+      "sha256": "5eaf21e8ae2bab32487d0376fe9ce10b7f20cd685bc472fb8348c2dc5d1564f0"
+    },
+    "cspr_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_common.py",
+      "sha256": "2da4419cd4678983aa7224a0237326299f2f3dd51353dff5c1c0ddb787ff0689"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "cspr_proof": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p0/protocol/CSPR_P0_MATHEMATICAL_VALIDATION.md",
+      "sha256": "b76f5c45085dfea18af7ad423857badc3beb7d444e4f4729392b0a19d1d15bf7"
+    },
+    "m0_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/protocol/cspr_m0_data_manifest.json",
+      "sha256": "b60c631d63b2368cf4b93df47d21df099e047b2b89015a38542536ac76626e91"
+    },
+    "m0_preference_data": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/protocol/cspr_m0_preference_pilot.jsonl",
+      "sha256": "f89af0fd086d7223fc1f8a54350b798ca8944f6d74b27be98253b6251994eee8"
+    },
+    "m0_safety_data": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/protocol/cspr_m0_safety_pilot.jsonl",
+      "sha256": "1c5f02535253b991567dd5ff4d77fe32252a8007e136c2cc703735ef54ecdc28"
+    },
+    "m0_diagnostics": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/run/cspr_m0_gradient_diagnostics.json",
+      "sha256": "137e4254e1162fd72461b2aed3044a1b9263bd7289bcf53aa208b23f01e0d5e6"
+    },
+    "candidate_ledger": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/private/cspr_p1s_authored_candidate_ledger.jsonl",
+      "sha256": "473291e707e90433d60164b5cab4e7d8e3e8843cceed15d748729673b8078400"
+    },
+    "author_a_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_a_packet.jsonl",
+      "sha256": "9233ebac00e53fd4f4717fb7afe75849fe3b25a799ecc6172b532db9cf2c776b"
+    },
+    "author_b_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_b_packet.jsonl",
+      "sha256": "faa92638f96af3d994dde45d36d9d3323263bfd527bb6e49a0313603ca7bc7fa"
+    },
+    "p2_safety_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_a_packet.jsonl",
+      "sha256": "37464e0f5a3fe9fc39649b075674b3c754cca8264266b72c71a703b42c2450d4"
+    },
+    "p2_safety_key": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/private/cspr_p2_safety_hidden_key.jsonl",
+      "sha256": "83c86df3f72b22f38509f5ad5576bcc3c7648246e263ef867ba73b3dc406f905"
+    },
+    "safety_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "checkpoint_adapter": {
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_model.safetensors",
+      "sha256": "fd66579386cbfa8418cce8c2d8e7c0099b2ef2fddc5a05839b4e8c5f39435379"
+    },
+    "checkpoint_config": {
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_config.json",
+      "sha256": "f3dc2f00a468baf447741f7819273a41deab36d96438da7b19d79a9b4cb0ccec"
+    }
+  },
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "human_labels_used": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
