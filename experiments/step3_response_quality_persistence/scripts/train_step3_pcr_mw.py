@@ -153,7 +153,7 @@ def main() -> None:
     reference_by_target = {
         row["target_id"]: row["reference_margins"] for row in reference_rows
     }
-    common.write_jsonl(output / "reference_margin_cache.jsonl", reference_rows)
+    pcr.write_jsonl(output / "reference_margin_cache.jsonl", reference_rows)
     reference_cache_hash = pcr.sha256_file(output / "reference_margin_cache.jsonl")
 
     optimizer = frozen.make_optimizer(model, cfg)

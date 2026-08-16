@@ -1,0 +1,17 @@
+{
+  "name": "step3_pcr_m_smoke_incident_001",
+  "execution_commit": "7b71a17",
+  "arm": "PCR_M_mean",
+  "failure_stage": "after in-memory reference cache construction and before cache persistence, optimizer construction, or training loop",
+  "error": "AttributeError: step3ct_training_common has no write_jsonl",
+  "diagnosis": "The trainer called the wrong serialization module. step3_pcr_mw_common.write_jsonl is already used and tested by the packet and feasibility stages.",
+  "output_directory_created": true,
+  "persisted_files": 0,
+  "checkpoint_written": false,
+  "optimizer_steps": 0,
+  "candidate_outputs_generated": false,
+  "recovery": "Change only the serializer namespace and permit one full PCR_M_mean restart in a new output directory after commit and push. Do not start PCR_MW before the repaired PCR_M smoke completes.",
+  "training_authorized_beyond_smoke": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
