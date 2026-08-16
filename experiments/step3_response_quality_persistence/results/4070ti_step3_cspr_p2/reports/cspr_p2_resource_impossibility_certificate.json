@@ -1,0 +1,71 @@
+{
+  "bounds": {
+    "adjudication_best_case_score2_upper_bound": 26,
+    "agreed_no_field_lock_counts": {
+      "executable_step": 94,
+      "prompt_binding": 68,
+      "safe_route": 63
+    },
+    "category_bounds": {
+      "best_case_categories_with_at_least_two_score2_rows": 9,
+      "category_denominator": 14,
+      "consensus_categories_with_at_least_two_score2_rows": 7,
+      "diversity_mathematically_reachable": false,
+      "minimum_categories_with_at_least_two_pairs": 10
+    },
+    "consensus_score2_lower_bound": 23,
+    "disputed_rows_that_could_reach_score2": 3,
+    "fixed_pool_mathematically_unreachable": true,
+    "primary_candidate_rows": 120,
+    "proof_obligations": {
+      "agreed_fields_are_not_adjudicated": true,
+      "pair_qualification_requires_candidate_score2": true,
+      "qualified_set_is_subset_of_potential_score2_set": true,
+      "score2_requires_all_three_actionability_fields_yes": true
+    },
+    "rows_locked_below_score2_by_at_least_one_ab_agreed_no": 94,
+    "split_bounds": {
+      "calibration": {
+        "adjudication_best_case_score2_upper_bound": 8,
+        "consensus_score2_lower_bound": 6,
+        "denominator": 28,
+        "minimum_required": 12,
+        "yield_mathematically_reachable": false
+      },
+      "mechanism_dev": {
+        "adjudication_best_case_score2_upper_bound": 7,
+        "consensus_score2_lower_bound": 6,
+        "denominator": 28,
+        "minimum_required": 12,
+        "yield_mathematically_reachable": false
+      },
+      "train_candidate": {
+        "adjudication_best_case_score2_upper_bound": 11,
+        "consensus_score2_lower_bound": 11,
+        "denominator": 64,
+        "minimum_required": 24,
+        "yield_mathematically_reachable": false
+      }
+    },
+    "total_bound": {
+      "adjudication_best_case_score2_upper_bound": 26,
+      "minimum_qualified_pairs_required": 48,
+      "qualification_upper_bound": 26,
+      "shortfall_even_under_best_case_adjudication": 22,
+      "total_yield_mathematically_reachable": false
+    }
+  },
+  "candidate_responses_opened_by_closure": false,
+  "model_gradient_authorized": false,
+  "name": "step3_cspr_p2_resource_impossibility_certificate_v1",
+  "optimizer_steps": 0,
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/protocol/cspr_p2_resource_closure_protocol.json",
+  "protocol_sha256": "4815a9c9d52a03ea88d70ac6c023d1b25db9e3a904f4b4f9bab22a35c5a67124",
+  "replacement_pairs_used": false,
+  "reviewer_c_started": false,
+  "route": "CLOSE_CSPR_P2_FIXED_POOL_MATHEMATICALLY_UNREACHABLE",
+  "source_labels_used": false,
+  "theorem": "For every legal disagreement-only Reviewer C labeling, the qualified pair count is at most the count of primary candidate rows without an A/B-agreed no on any actionability field.",
+  "thresholds_changed": false,
+  "training_authorized": false
+}
