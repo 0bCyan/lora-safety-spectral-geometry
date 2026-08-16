@@ -1,0 +1,34 @@
+{
+  "name": "step3_cspr_p1_v1_source_schema_stop_v1",
+  "recorded_at": "2026-08-16T23:58:17+08:00",
+  "route": "STOP_CSPR_P1_DATA_INSUFFICIENT",
+  "stop_class": "frozen_source_schema_rejection",
+  "protocol_commit": "3767fca22b294107d013b13db67b50f6b8c46a1c",
+  "execution_head": "2cde770a63acaccf58c1e067f956d29f845b2096",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1/protocol/cspr_p1_public_source_protocol.json",
+  "source": {
+    "dataset": "PKU-Alignment/BeaverTails",
+    "revision": "8401fe609d288129cc684a9b3be6a93e41cfe678",
+    "expected_sha256": "2e24b85dd599224eeb7379da297223bad50e11fea9fee6a7fdb4bd26aedec315",
+    "actual_sha256": "2e24b85dd599224eeb7379da297223bad50e11fea9fee6a7fdb4bd26aedec315",
+    "bytes": 4948694
+  },
+  "failure": {
+    "stage": "source_schema_validation_before_candidate_grouping",
+    "source_line": 23155,
+    "reason": "empty_response_rejected_by_frozen_v1_parser",
+    "response_text_recorded": false
+  },
+  "outputs": {
+    "audit_created": false,
+    "ledger_created": false,
+    "selected_pairs": 0
+  },
+  "interpretation": "P1 v1 is closed as registered. The stop does not estimate source feasibility because aggregate grouping, freshness filtering, and selection were never completed.",
+  "repair_boundary": "A new prospective repair commit may conservatively exclude empty responses from pair eligibility while keeping the source revision, source SHA256, references, thresholds, seed, category allocation, and split counts unchanged. The v1 result may not be overwritten.",
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
