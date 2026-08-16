@@ -31,9 +31,14 @@
   "safety_mix": 0.2,
   "worst_temperature": 0.1,
   "smoke_steps": 2,
+  "development_steps": 16,
   "checkpoint_steps": [0, 16, 32, 64],
   "minimum_vram_headroom_fraction": 0.1,
   "arms": {
+    "C0R_reproduction": {
+      "ranking_mode": "none",
+      "eta": 0.0
+    },
     "PCR_M_mean": {
       "ranking_mode": "mean",
       "eta": 0.6053903508017239
@@ -44,6 +49,7 @@
     }
   },
   "smoke_authorized": true,
+  "development_training_authorized": true,
   "main_training_authorized": false,
   "core100_opened": false,
   "heldout_opened": false

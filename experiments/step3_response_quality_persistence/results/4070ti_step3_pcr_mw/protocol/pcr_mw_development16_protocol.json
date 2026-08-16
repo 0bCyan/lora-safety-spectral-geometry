@@ -1,0 +1,30 @@
+{
+  "name": "step3_pcr_mw_matched_development16_protocol_v1",
+  "status": "prospective_before_any_development16_optimizer_step",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "entry_route": "PASS_FREEZE_MATCHED_DEVELOPMENT16",
+  "arms": [
+    "C0R_reproduction",
+    "PCR_M_mean",
+    "PCR_MW_mean_worst"
+  ],
+  "optimizer_steps_per_arm": 16,
+  "matching": "Fresh seed1 initialization; identical risk order, natural-v1 safety order, optimizer, scheduler, p=0.20 exposure, checkpoints, tokenizer, and 74-row reference cache construction. C0R executes no ranking backward.",
+  "integrity_gates": [
+    "All three arms complete exactly 16 steps with finite losses/gradients and zero skipped updates.",
+    "Risk-order, target-exposure, reference-cache, config, and mismatch-packet hashes match where required.",
+    "C0R ranking draws equal zero; each PCR arm executes ranking on every eligible safety draw.",
+    "VRAM headroom is at least 10 percent."
+  ],
+  "analysis_boundary": "Training loss and sequence margins are mechanism diagnostics only. Passing integrity authorizes a separately frozen proxy-dev generation comparison; it does not establish safety or quality.",
+  "forbidden": [
+    "No 64-step extension.",
+    "No generation until all three training manifests pass integrity and a generation gate is committed.",
+    "No eta, temperature, wrong-prompt, cache, schedule, or checkpoint scan.",
+    "No core100, heldout, or main-session behavior labels."
+  ],
+  "candidate_generation_authorized": false,
+  "main64_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

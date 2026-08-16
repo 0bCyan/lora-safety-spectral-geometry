@@ -1,0 +1,41 @@
+{
+  "name": "step3_pcr_mw_smoke_route_decision_v1",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "route": "PASS_FREEZE_MATCHED_DEVELOPMENT16",
+  "execution_commit": "0d5b811",
+  "arms": {
+    "PCR_M_mean": {
+      "completed_steps": 2,
+      "safety_draws": 8,
+      "eligible_ranking_draws": 6,
+      "skipped_updates": 0,
+      "all_losses_and_gradients_finite": true,
+      "step2_centered_margin_change_mean": 0.06571108102798462,
+      "vram_headroom_fraction": 0.3600130277246265
+    },
+    "PCR_MW_mean_worst": {
+      "completed_steps": 2,
+      "safety_draws": 8,
+      "eligible_ranking_draws": 6,
+      "skipped_updates": 0,
+      "all_losses_and_gradients_finite": true,
+      "step2_centered_margin_change_mean": 0.06494593620300293,
+      "vram_headroom_fraction": 0.3600130277246265
+    }
+  },
+  "shared_integrity": {
+    "reference_cache_rows": 74,
+    "reference_cache_sha256": "9d1033f89f3f9e590859860f570b4d186e3ee26b3d043441d0977172d465ee9c",
+    "reference_cache_equal_between_arms": true,
+    "risk_order_hash_equal": true,
+    "target_exposure_hash_equal": true,
+    "first_step_risk_loss_equal": true,
+    "first_step_safety_loss_equal": true
+  },
+  "interpretation": "Both calibrated ranking objectives are executable and produce closely matched initial prompt-conditional margin movement. Smoke feasibility does not establish generated-behavior improvement or justify the worst term.",
+  "authorized_next_action": "Run one prospectively frozen 16-step development tournament with a same-trainer C0R reproduction, PCR-M, and PCR-MW.",
+  "candidate_generation_authorized": false,
+  "main64_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

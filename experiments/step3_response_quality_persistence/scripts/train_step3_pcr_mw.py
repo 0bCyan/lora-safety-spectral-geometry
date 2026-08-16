@@ -23,7 +23,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", required=True)
     parser.add_argument("--arm", required=True)
-    parser.add_argument("--run-kind", choices=["smoke", "main"], required=True)
+    parser.add_argument("--run-kind", choices=["smoke", "development", "main"], required=True)
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--max-steps", type=int)
     parser.add_argument("--save-steps")
@@ -98,15 +98,26 @@ def main() -> None:
         raise ValueError(f"unregistered PCR arm: {args.arm}")
     if args.run_kind == "main" and cfg.get("main_training_authorized") is not True:
         raise PermissionError("main PCR training is not authorized")
+    if args.run_kind == "development" and cfg.get("development_training_authorized") is not True:
+        raise PermissionError("development PCR training is not authorized")
     arm = cfg["arms"][args.arm]
-    if arm["ranking_mode"] not in {"mean", "mean_worst"}:
+    if arm["ranking_mode"] not in {"none", "mean", "mean_worst"}:
         raise ValueError("unsupported PCR ranking mode")
     full_steps = int(cfg["optimizer_steps"])
-    max_steps = int(args.max_steps or (cfg["smoke_steps"] if args.run_kind == "smoke" else full_steps))
+    default_steps = (
+        int(cfg["smoke_steps"])
+        if args.run_kind == "smoke"
+        else int(cfg["development_steps"])
+        if args.run_kind == "development"
+        else full_steps
+    )
+    max_steps = int(args.max_steps or default_steps)
     if max_steps <= 0 or max_steps > full_steps:
         raise ValueError("max steps outside configured schedule")
     if args.run_kind == "smoke" and max_steps != int(cfg["smoke_steps"]):
         raise ValueError("PCR smoke must use exactly the frozen two steps")
+    if args.run_kind == "development" and max_steps != int(cfg["development_steps"]):
+        raise ValueError("PCR development run must use exactly the frozen 16 steps")
     output = (REPO / args.output_dir).resolve()
     if output.exists() and any(output.iterdir()):
         raise FileExistsError(f"refusing to overwrite non-empty output directory: {output}")
@@ -210,7 +221,7 @@ def main() -> None:
             scaler.scale(safety_loss * safety_coefficient).backward()
             safety_losses.append(float(safety_loss.detach().float().cpu()))
 
-            if target_id in ranking_by_target:
+            if target_id in ranking_by_target and arm["ranking_mode"] != "none":
                 entry = ranking_features[target_id]
                 with common.binding_mode(model):
                     correct_nll = _sequence_nll(model, entry["correct"], device, bool(cfg["fp16"]))
@@ -270,9 +281,12 @@ def main() -> None:
                 output, completed_step, model, tokenizer, optimizer, scheduler, scaler, None,
                 target_position, trace, checkpoint_rows,
             )
+        rank_display = trace[-1]["ranking_loss_mean"]
+        margin_display = trace[-1]["centered_margin_change_mean"]
         print(
             f"{args.arm} step {completed_step}/{max_steps} "
-            f"rank={trace[-1]['ranking_loss_mean']:.6f} margin={trace[-1]['centered_margin_change_mean']:.6f} "
+            f"rank={'none' if rank_display == '' else f'{float(rank_display):.6f}'} "
+            f"margin={'none' if margin_display == '' else f'{float(margin_display):.6f}'} "
             f"vram={torch.cuda.max_memory_allocated() / 2**30:.2f}GiB",
             flush=True,
         )

@@ -1,0 +1,4 @@
+step,checkpoint,adapter_sha256,queue_hash,target_position
+0,D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/smoke/PCR_M_mean_retry1/checkpoints/step0000,bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7,,0
+1,D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/smoke/PCR_M_mean_retry1/checkpoints/step0001,1246ae4cf8840ff5a994dac40dd0a20e9e8a71befc9d678bc3e5a1b77855eae0,,4
+2,D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/smoke/PCR_M_mean_retry1/checkpoints/step0002,2837bc8e2b89584738c153d3e052c4a1806ef03b799f748382bb28bef569b4ce,,8
