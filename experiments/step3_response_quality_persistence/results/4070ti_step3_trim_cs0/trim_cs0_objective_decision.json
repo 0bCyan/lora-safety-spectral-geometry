@@ -1,0 +1,70 @@
+{
+  "name": "step3_trim_cs0_objective_route_decision_v1",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "route": "STOP_TRIM_CS0_OBJECTIVE_FAIL",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_trim_cs0/protocol/trim_cs0_objective_protocol.json",
+  "registry": "experiments/step3_response_quality_persistence/configs/4070ti_step3_trim_cs0_registry.json",
+  "execution_commit": "f463c7dc3a2ea57ee7cda547211df4e4661f306c",
+  "integrity": {
+    "directional_instances": 40,
+    "undirected_prompt_pairs": 20,
+    "valid_alignment_rate": 1.0,
+    "noop_suffix_max_logit_error": 0.0,
+    "objective_rows_sha256": "8ee2763475ef967cff042e3f4c98995ef5370ae556fb7942b98c75c6a026fd90",
+    "optimizer_steps": 0,
+    "candidate_outputs_generated": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "effects": {
+    "correct_vs_mean_wrong_suffix_nll_gain": {
+      "mean": -0.010015386343002319,
+      "bootstrap_95ci": [-0.025074833631515504, 0.001023903489112854],
+      "gate_pass": false
+    },
+    "prompt_last_placebo_nll_gain": {
+      "mean": 0.0402542844414711,
+      "bootstrap_95ci": [0.026047059893608095, 0.05666128844022751]
+    },
+    "transition_to_placebo_effect_ratio": -0.24880299033918948,
+    "necessity_nll_increase": {
+      "mean": 0.0031266510486602783,
+      "bootstrap_95ci": [-0.0009920001029968262, 0.007442164421081543],
+      "gate_pass": false
+    },
+    "restoration_nll_gain": {
+      "mean": 0.003415420651435852,
+      "bootstrap_95ci": [-0.0007317602634429931, 0.007805946469306946],
+      "gate_pass": false
+    }
+  },
+  "gate_summary": {
+    "passed": [
+      "valid_alignment_rate",
+      "noop_suffix_max_logit_error"
+    ],
+    "failed": [
+      "correct_nll_gain",
+      "correct_bootstrap_lower",
+      "transition_vs_placebo",
+      "necessity_nll_increase",
+      "necessity_bootstrap_lower",
+      "restoration_nll_gain",
+      "restoration_bootstrap_lower"
+    ]
+  },
+  "interpretation": "The intervention machinery is exact, but the fixed layer-24 two-token transition residual does not show the registered sufficiency, necessity, restoration, or transition-specificity pattern. The larger prompt-last placebo effect argues against attributing prompt-specific safe redirection to the proposed transition state.",
+  "authorized_next_actions": [
+    "Preserve the objective result as a bounded negative causal preflight."
+  ],
+  "forbidden_next_actions": [
+    "Do not generate the blind behavior packet.",
+    "Do not train TRIM.",
+    "Do not sweep layers, token windows, checkpoints, prefixes, donors, thresholds, or decoding after observing this result.",
+    "Do not claim mediation or a behavioral effect."
+  ],
+  "training_authorized": false,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false
+}
