@@ -1,0 +1,132 @@
+{
+  "name": "step3_tarc_matched_smoke_decision_v1",
+  "route": "PASS_TARC_SMOKE_AUTHORIZE_MATCHED_DEVELOPMENT16_PROTOCOL",
+  "runtime_head": "9abe0bc2a2b526a7e49d56fa72b90cf31739d941",
+  "protocol_sha256": "7f18f8d509e28407040da4eb7e6d315a185525a4053729ac2f62317af0232e7a",
+  "checks": {
+    "all_arms_present": true,
+    "steps_exact": true,
+    "no_skipped_updates": true,
+    "finite": true,
+    "vram": true,
+    "initial_state_equal": true,
+    "risk_order_equal": true,
+    "target_order_equal": true,
+    "target_exposure_equal": true,
+    "safety_pair_draws_equal": true,
+    "safety_target_rows_equal": true,
+    "safety_response_tokens_equal": true,
+    "available_ramp_terms_equal": true,
+    "available_tarc_terms_equal": true,
+    "first_step_risk_loss_equal": true,
+    "first_step_uniform_safety_loss_equal": true,
+    "initial_uniform_diagnostic_equal": true,
+    "initial_ramp_diagnostic_equal": true,
+    "initial_tarc_diagnostic_equal": true,
+    "assignment_counts_correct": true,
+    "all_registered_assignments_exercised": true,
+    "sealed_data_untouched": true,
+    "tarc_loss_reduction": 1.5385750234127045,
+    "uniform_tarc_loss_reduction": 1.1404732167720795,
+    "ramp_tarc_loss_reduction": 1.241917997598648,
+    "tarc_advantage_over_uniform": 0.398101806640625,
+    "tarc_advantage_over_ramp": 0.2966570258140564,
+    "direction_realized": true
+  },
+  "arms": {
+    "uniform": {
+      "objective": "uniform",
+      "completed_steps": 2,
+      "optimizer_steps": 2,
+      "final_adapter_sha256": "043d0f0d042eae0445b907cc300e74856c09fad5f18c706d93cfab0c76ff876e",
+      "final_checkpoint": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/uniform/checkpoints/step0002",
+      "tarc_loss_reduction": 1.1404732167720795,
+      "initial_diagnostic": {
+        "prompt_pairs": 8,
+        "target_rows": 16,
+        "uniform_loss_mean": 6.559038281440735,
+        "ramp_margin_loss_mean": 6.864237666130066,
+        "tarc_margin_loss_mean": 6.065358757972717,
+        "tarc_mean_margin": -3.15362411737442,
+        "tarc_certified_node_occurrence_rate": 0.4375,
+        "tarc_full_certificate_rate": 0.0
+      },
+      "final_diagnostic": {
+        "prompt_pairs": 8,
+        "target_rows": 16,
+        "uniform_loss_mean": 4.495158672332764,
+        "ramp_margin_loss_mean": 4.652760684490204,
+        "tarc_margin_loss_mean": 4.924885541200638,
+        "tarc_mean_margin": -2.752274453639984,
+        "tarc_certified_node_occurrence_rate": 0.453125,
+        "tarc_full_certificate_rate": 0.0
+      },
+      "vram_headroom_fraction": 0.5481008020192973
+    },
+    "ramp": {
+      "objective": "ramp",
+      "completed_steps": 2,
+      "optimizer_steps": 2,
+      "final_adapter_sha256": "ab2ba4e68f8e5db6e45ecf22930d55c9116ae3521d8fd7adaed7c00e77aab3e4",
+      "final_checkpoint": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/ramp/checkpoints/step0002",
+      "tarc_loss_reduction": 1.241917997598648,
+      "initial_diagnostic": {
+        "prompt_pairs": 8,
+        "target_rows": 16,
+        "uniform_loss_mean": 6.559038281440735,
+        "ramp_margin_loss_mean": 6.864237666130066,
+        "tarc_margin_loss_mean": 6.065358757972717,
+        "tarc_mean_margin": -3.15362411737442,
+        "tarc_certified_node_occurrence_rate": 0.4375,
+        "tarc_full_certificate_rate": 0.0
+      },
+      "final_diagnostic": {
+        "prompt_pairs": 8,
+        "target_rows": 16,
+        "uniform_loss_mean": 4.455482482910156,
+        "ramp_margin_loss_mean": 4.569745779037476,
+        "tarc_margin_loss_mean": 4.823440760374069,
+        "tarc_mean_margin": -2.670270472764969,
+        "tarc_certified_node_occurrence_rate": 0.453125,
+        "tarc_full_certificate_rate": 0.0
+      },
+      "vram_headroom_fraction": 0.39144241338598706
+    },
+    "tarc": {
+      "objective": "tarc",
+      "completed_steps": 2,
+      "optimizer_steps": 2,
+      "final_adapter_sha256": "ad965cfe810b7106776d0029d80d080e8d33fbcbd47497038762811f262f2952",
+      "final_checkpoint": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/tarc/checkpoints/step0002",
+      "tarc_loss_reduction": 1.5385750234127045,
+      "initial_diagnostic": {
+        "prompt_pairs": 8,
+        "target_rows": 16,
+        "uniform_loss_mean": 6.559038281440735,
+        "ramp_margin_loss_mean": 6.864237666130066,
+        "tarc_margin_loss_mean": 6.065358757972717,
+        "tarc_mean_margin": -3.15362411737442,
+        "tarc_certified_node_occurrence_rate": 0.4375,
+        "tarc_full_certificate_rate": 0.0
+      },
+      "final_diagnostic": {
+        "prompt_pairs": 8,
+        "target_rows": 16,
+        "uniform_loss_mean": 4.4731831550598145,
+        "ramp_margin_loss_mean": 4.607365697622299,
+        "tarc_margin_loss_mean": 4.526783734560013,
+        "tarc_mean_margin": -2.328449070453644,
+        "tarc_certified_node_occurrence_rate": 0.453125,
+        "tarc_full_certificate_rate": 0.0
+      },
+      "vram_headroom_fraction": 0.3782518422016855
+    }
+  },
+  "total_optimizer_steps": 6,
+  "candidate_outputs_generated": false,
+  "development_training_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "next_authorized": "freeze_and_push_separate_matched_development16_protocol"
+}

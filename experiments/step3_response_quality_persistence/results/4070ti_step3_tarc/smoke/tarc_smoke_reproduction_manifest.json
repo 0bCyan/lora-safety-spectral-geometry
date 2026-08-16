@@ -1,0 +1,82 @@
+{
+  "name": "step3_tarc_smoke_reproduction_manifest_v1",
+  "route": "PASS_TARC_SMOKE_AUTHORIZE_MATCHED_DEVELOPMENT16_PROTOCOL",
+  "runtime_head": "9abe0bc2a2b526a7e49d56fa72b90cf31739d941",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/protocol/tarc_smoke_protocol.json",
+  "protocol_sha256": "7f18f8d509e28407040da4eb7e6d315a185525a4053729ac2f62317af0232e7a",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/uniform/training_trace.csv",
+      "sha256": "cf42c20ba7773ac25139728c901b6cabdd5d315d7883230b6b725de1efb34038",
+      "bytes": 648
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/uniform/checkpoint_index.csv",
+      "sha256": "6129883a450f19936b2a028e8a0733658125d2c11af6615a1f67df7659295cea",
+      "bytes": 229
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/uniform/run_manifest.json",
+      "sha256": "3b140ec9c5911d62ee72037070bddc40d9529146b68b009ddaa23b3e2ef4d7ae",
+      "bytes": 84961
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/ramp/training_trace.csv",
+      "sha256": "5a5ff471ce6da5aa12ae4e8b001649d8d9694bcccb657efacc10cf7f603116ff",
+      "bytes": 636
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/ramp/checkpoint_index.csv",
+      "sha256": "cc20c22a9d89825f0cb3b507f3ab485750c90c06085382c1aa970be931c93e81",
+      "bytes": 226
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/ramp/run_manifest.json",
+      "sha256": "d51e4c306d57ec87c5aaa1ea4362e9b6ee4a7e09c5024d499bace01799ac96f7",
+      "bytes": 84954
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/tarc/training_trace.csv",
+      "sha256": "6483cadd30f72f933a75b1f73895329e1b52b2ccd184685e1b2b002919f6ebb8",
+      "bytes": 637
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/tarc/checkpoint_index.csv",
+      "sha256": "d295b0e26506be69a111df524bfb57e3ec13f408493c9e105b0453859e8d026f",
+      "bytes": 226
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/tarc/run_manifest.json",
+      "sha256": "aab7c70009799bb28b75096fd86f4c0ad2c96df96e361731e410e55c5194de29",
+      "bytes": 84954
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/tarc_smoke_decision.json",
+      "sha256": "4c19842a16d787eb106f7ffc9fc46e1a17c21010a63f7b20c80c8f104c3d1679",
+      "bytes": 5338
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/TARC_SMOKE_REPORT.md",
+      "sha256": "430e5d15a4aa8b9d145f5c3513793efbb38c86b6d2c3d260b593af803f927d8c",
+      "bytes": 618
+    }
+  ],
+  "local_ignored_checkpoints": {
+    "uniform": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/uniform/checkpoints/step0002",
+    "ramp": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/ramp/checkpoints/step0002",
+    "tarc": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/tarc/checkpoints/step0002"
+  },
+  "final_adapter_sha256": {
+    "uniform": "043d0f0d042eae0445b907cc300e74856c09fad5f18c706d93cfab0c76ff876e",
+    "ramp": "ab2ba4e68f8e5db6e45ecf22930d55c9116ae3521d8fd7adaed7c00e77aab3e4",
+    "tarc": "ad965cfe810b7106776d0029d80d080e8d33fbcbd47497038762811f262f2952"
+  },
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_tarc_training.py run",
+  "optimizer_steps_per_arm": 2,
+  "total_optimizer_steps": 6,
+  "candidate_outputs_generated": false,
+  "development_training_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
