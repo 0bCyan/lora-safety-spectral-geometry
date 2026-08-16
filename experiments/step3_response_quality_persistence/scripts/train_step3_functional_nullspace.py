@@ -168,6 +168,42 @@ def project_entries_(
             fn.project_rows_(value, bases[entry["functional_key"]])
 
 
+def capture_entry_gradients(entries: dict[str, dict[str, Any]]) -> dict[str, Any | None]:
+    return {
+        name: None if entry["weight"].grad is None else entry["weight"].grad.detach().clone()
+        for name, entry in entries.items()
+    }
+
+
+def project_new_gradient_delta_(
+    entries: dict[str, dict[str, Any]], bases: dict[str, Any], baselines: dict[str, Any | None]
+) -> tuple[float, float]:
+    import torch
+
+    before_numerator = torch.zeros((), dtype=torch.float64)
+    after_numerator = torch.zeros((), dtype=torch.float64)
+    denominator = torch.zeros((), dtype=torch.float64)
+    with torch.no_grad():
+        for name, entry in entries.items():
+            gradient = entry["weight"].grad
+            if gradient is None:
+                continue
+            baseline = baselines[name]
+            delta = gradient.detach().clone() if baseline is None else gradient.detach() - baseline
+            basis = bases[entry["functional_key"]].to(device=delta.device, dtype=delta.dtype)
+            before_numerator += (delta @ basis.T).double().square().sum().cpu()
+            denominator += delta.double().square().sum().cpu()
+            fn.project_delta_(gradient, baseline, basis)
+            projected_delta = gradient.detach() if baseline is None else gradient.detach() - baseline
+            after_numerator += (projected_delta @ basis.T).double().square().sum().cpu()
+    if not float(denominator):
+        return 0.0, 0.0
+    return (
+        math.sqrt(float(before_numerator / denominator)),
+        math.sqrt(float(after_numerator / denominator)),
+    )
+
+
 def main() -> None:
     args = parse_args()
     started = time.time()
@@ -177,6 +213,9 @@ def main() -> None:
     if args.arm not in method["arms"]:
         raise ValueError(f"unregistered functional-nullspace arm: {args.arm}")
     arm = method["arms"][args.arm]
+    projection_mode = str(arm["projection_mode"])
+    if projection_mode not in {"combined_hard_nullspace", "risk_branch_only"}:
+        raise ValueError(f"unsupported projection mode: {projection_mode}")
     full_steps = int(cfg["optimizer_steps"])
     max_steps = int(args.max_steps or (cfg["smoke_steps"] if args.run_kind == "smoke" else full_steps))
     if max_steps <= 0 or max_steps > full_steps:
@@ -268,10 +307,15 @@ def main() -> None:
         step_started = time.time()
         risk_losses: list[float] = []
         safety_losses: list[float] = []
+        risk_projection_before: list[float] = []
+        risk_projection_after: list[float] = []
         for micro_index in range(microsteps):
             position = global_step * microsteps + micro_index
             risk_index = order[position]
             model.train()
+            gradient_baseline = (
+                capture_entry_gradients(entries) if projection_mode == "risk_branch_only" else None
+            )
             with torch.autocast("cuda", dtype=torch.float16, enabled=bool(cfg["fp16"])):
                 risk_loss = model(
                     **common.batch_feature(risk_features[risk_index], device),
@@ -280,6 +324,12 @@ def main() -> None:
                 ).loss
             scaler.scale(risk_loss * risk_coefficient).backward()
             risk_losses.append(float(risk_loss.detach().float().cpu()))
+            if gradient_baseline is not None:
+                ratio_before, ratio_after = project_new_gradient_delta_(
+                    entries, bases, gradient_baseline
+                )
+                risk_projection_before.append(ratio_before)
+                risk_projection_after.append(ratio_after)
 
             if safety_mix > 0.0:
                 target_index = target_position % len(targets)
@@ -295,9 +345,14 @@ def main() -> None:
                 safety_losses.append(float(safety_loss.detach().float().cpu()))
 
         scaler.unscale_(optimizer)
-        gradient_component_before = aggregate_component_ratio(entries, bases, "gradient")
-        project_entries_(entries, bases, "gradient")
-        gradient_component_after = aggregate_component_ratio(entries, bases, "gradient")
+        combined_gradient_component = aggregate_component_ratio(entries, bases, "gradient")
+        if projection_mode == "combined_hard_nullspace":
+            gradient_component_before = combined_gradient_component
+            project_entries_(entries, bases, "gradient")
+            gradient_component_after = aggregate_component_ratio(entries, bases, "gradient")
+        else:
+            gradient_component_before = sum(risk_projection_before) / len(risk_projection_before)
+            gradient_component_after = sum(risk_projection_after) / len(risk_projection_after)
         parameters = [parameter for parameter in model.parameters() if parameter.requires_grad]
         gradients_finite = all(
             parameter.grad is None or bool(torch.isfinite(parameter.grad).all()) for parameter in parameters
@@ -312,9 +367,10 @@ def main() -> None:
         if float(scaler.get_scale()) < old_scale:
             skipped_updates += 1
             raise FloatingPointError(f"GradScaler skipped step {global_step + 1}")
-        project_entries_(entries, bases, "weight")
+        if projection_mode == "combined_hard_nullspace":
+            project_entries_(entries, bases, "weight")
         weight_component_after = aggregate_component_ratio(entries, bases, "weight")
-        if weight_component_after > 1e-5:
+        if projection_mode == "combined_hard_nullspace" and weight_component_after > 1e-5:
             raise FloatingPointError(f"post-update nullspace residual too large: {weight_component_after}")
         scheduler.step()
         optimizer.zero_grad(set_to_none=True)
@@ -327,11 +383,13 @@ def main() -> None:
         trace.append(
             {
                 "optimizer_step": completed_step,
+                "projection_mode": projection_mode,
                 "risk_loss_mean": mean_risk,
                 "safety_loss_mean": "" if mean_safety is None else mean_safety,
                 "weighted_loss": weighted_loss,
                 "gradient_protected_ratio_before": gradient_component_before,
                 "gradient_protected_ratio_after": gradient_component_after,
+                "combined_gradient_protected_ratio_before_optimizer": combined_gradient_component,
                 "weight_protected_ratio_after": weight_component_after,
                 "optimizer_preclip_gradient_norm": preclip_norm,
                 "learning_rate_after_update": float(scheduler.get_last_lr()[0]),
@@ -379,6 +437,7 @@ def main() -> None:
         "completed_steps": max_steps,
         "optimizer_steps": max_steps,
         "safety_mix": safety_mix,
+        "projection_mode": projection_mode,
         "all_losses_and_gradients_finite": finite_updates,
         "skipped_updates": skipped_updates,
         "risk_order_hash": common.hash_json(order),
@@ -389,6 +448,11 @@ def main() -> None:
         "initial_weight_protected_ratio_before": initial_component_before,
         "initial_weight_protected_ratio_after": initial_component_after,
         "final_weight_protected_ratio": aggregate_component_ratio(entries, bases, "weight"),
+        "protected_weight_interpretation": (
+            "forced_nullspace_residual"
+            if projection_mode == "combined_hard_nullspace"
+            else "safety_branch_and_optimizer_permitted_component"
+        ),
         "basis_summary": basis_summary,
         "checkpoint_steps": [int(row["step"]) for row in checkpoint_rows],
         "checkpoint_index_hash": common.hash_json(

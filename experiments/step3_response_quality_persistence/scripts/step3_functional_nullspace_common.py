@@ -89,6 +89,13 @@ def project_rows_(tensor: Any, basis: Any) -> None:
     tensor.sub_((tensor @ basis_value.T) @ basis_value)
 
 
+def project_delta_(tensor: Any, baseline: Any | None, basis: Any) -> None:
+    delta = tensor if baseline is None else tensor - baseline
+    project_rows_(delta, basis)
+    if baseline is not None:
+        tensor.copy_(baseline + delta)
+
+
 def tensor_sha256(tensor: Any) -> str:
     value = tensor.detach().float().cpu().contiguous().numpy().tobytes()
     return hashlib.sha256(value).hexdigest()

@@ -44,10 +44,16 @@
     "basis_epsilon": 1e-08,
     "arms": {
       "FN0_risk_only": {
-        "safety_mix": 0.0
+        "safety_mix": 0.0,
+        "projection_mode": "combined_hard_nullspace"
       },
       "FN20_constant20": {
-        "safety_mix": 0.2
+        "safety_mix": 0.2,
+        "projection_mode": "combined_hard_nullspace"
+      },
+      "BSP20_risk_branch_only": {
+        "safety_mix": 0.2,
+        "projection_mode": "risk_branch_only"
       }
     }
   },

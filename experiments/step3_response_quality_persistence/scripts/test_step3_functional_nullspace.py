@@ -66,6 +66,16 @@ class FunctionalNullspaceTests(unittest.TestCase):
             fn.project_rows_(value, basis)
         self.assertTrue(torch.allclose(value, once, atol=1e-6))
 
+    def test_delta_projection_preserves_existing_safety_gradient(self) -> None:
+        basis = torch.tensor([[1.0, 0.0, 0.0]])
+        safety_gradient = torch.tensor([[3.0, 2.0, 1.0]])
+        risk_delta = torch.tensor([[4.0, 5.0, 6.0]])
+        combined = safety_gradient + risk_delta
+        with torch.no_grad():
+            fn.project_delta_(combined, safety_gradient, basis)
+        expected = safety_gradient + torch.tensor([[0.0, 5.0, 6.0]])
+        self.assertTrue(torch.equal(combined, expected))
+
 
 if __name__ == "__main__":
     unittest.main()

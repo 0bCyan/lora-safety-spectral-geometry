@@ -1,0 +1,26 @@
+{
+  "name": "step3_branch_selective_functional_projection_v2_protocol",
+  "status": "prospective_protocol_before_v2_training_or_generation",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "motivation": "V1 hard-nullspace projection removed both risk and safety gradients. FN20 reduced procedural markers but failed redirect and response-diversity gates.",
+  "candidate_arm": "BSP20_risk_branch_only",
+  "frozen_change_from_v1": "Project each risk-branch LoRA-A gradient increment before adding the safety branch; permit safety gradients and their optimizer updates in the protected subspace.",
+  "unchanged": {
+    "model": "Qwen/Qwen3-4B",
+    "seed": 2,
+    "optimizer_steps": 16,
+    "safety_mix": 0.2,
+    "calibration_prompt_clusters": 16,
+    "tokens_per_response": 8,
+    "basis_rank": 8,
+    "risk_order": "same_seed2_order",
+    "development_split": "proxy_dev_40",
+    "decoding": "greedy_128_tokens_thinking_disabled"
+  },
+  "reference_arm": "C0R_concurrent_constant20",
+  "safety_gate": "experiments/step3_response_quality_persistence/results/4070ti_step3_functional_nullspace_seed2/protocol/exploratory_safety_gate.json",
+  "pass_next_action": "Run utility development evaluation only after all safety gates pass.",
+  "failure_next_action": "Stop BSP20 before 64 steps and heldout evaluation.",
+  "heldout_opened": false,
+  "core100_opened": false
+}
