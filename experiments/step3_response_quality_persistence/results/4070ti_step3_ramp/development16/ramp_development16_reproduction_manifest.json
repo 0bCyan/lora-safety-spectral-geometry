@@ -1,0 +1,81 @@
+{
+  "name": "step3_ramp_development16_reproduction_manifest_v1",
+  "route": "PASS_RAMP_DEVELOPMENT16_INTEGRITY_FREEZE_GENERATION_GATE",
+  "runtime_head": "c6b1fc25869285496027ee8deafbb663fb855f9f",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/protocol/ramp_development16_protocol.json",
+  "protocol_sha256": "4266956fac4ede3dbc747d9c8a66d1b5b174e940d579c22e8f0360fcec42606f",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/uniform/training_trace.csv",
+      "sha256": "20869e3d44de1b370ead676a3cfa301ed4b70935791cfad31aa25920fd3490dc",
+      "bytes": 3831
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/uniform/checkpoint_index.csv",
+      "sha256": "86ff64492c257cf47ad8edb9b5c0effc7a3da7ccd16dd260f9320d3cf4f6d3f8",
+      "bytes": 238
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/uniform/run_manifest.json",
+      "sha256": "fa7236ae1af272fd0b1348590c58ae83a27c25e010deaceaf1c543032999835e",
+      "bytes": 84882
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/suffix/training_trace.csv",
+      "sha256": "a0cda662ae7ffa843a340d07a3f4028fbe7be6f34083051f8f1643975fecf0e6",
+      "bytes": 3802
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/suffix/checkpoint_index.csv",
+      "sha256": "5cc8bfc13ea862b3835a2c4840d78ba21718e484715c12d970c478bd6478cf43",
+      "bytes": 237
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/suffix/run_manifest.json",
+      "sha256": "f29277738ce36ac425b257388cd3a19d57e871a52d8ddfdbbcd57ca11054fb1e",
+      "bytes": 84881
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/ramp/training_trace.csv",
+      "sha256": "20b98fa51804f4e2905fb80e741ea7184cc679164054f2395e32c527d6cd747c",
+      "bytes": 3765
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/ramp/checkpoint_index.csv",
+      "sha256": "4d7648d58d0ade734aec3d049fe01d6b80542564ed33eb35dbcd0e63f6ac7472",
+      "bytes": 235
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/ramp/run_manifest.json",
+      "sha256": "f70be3a8aa1782707555d5678cc7f3a8c10e295cd96a4e0a12e0095825319616",
+      "bytes": 84876
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/ramp_development16_decision.json",
+      "sha256": "bc9d05feda85b1dae7ccd75460e4da34acf1d6d84645e87277557ccfae7a3fc1",
+      "bytes": 3950
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/RAMP_DEVELOPMENT16_REPORT.md",
+      "sha256": "832c06458fe356ce6b0598ed9fc8804c05553c8d70c797ac085175a8456cf572",
+      "bytes": 640
+    }
+  ],
+  "local_ignored_checkpoints": {
+    "uniform": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/uniform/checkpoints/step0016",
+    "suffix": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/suffix/checkpoints/step0016",
+    "ramp": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/development16/ramp/checkpoints/step0016"
+  },
+  "final_adapter_sha256": {
+    "uniform": "f30b7a63463bac26b155545a2c5f726198a201bd8faed2ad43f209fb1bf1497a",
+    "suffix": "498c7d6521e4a8812f03b6edc69876cf62a4c25315e102cfbbe19dc61475bc5b",
+    "ramp": "3122b28c1db03386695fa7cd901d4ed0b9e53ba9e5fca7a83196024c61587541"
+  },
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_ramp_development.py run",
+  "optimizer_steps_per_arm": 16,
+  "total_optimizer_steps": 48,
+  "candidate_outputs_generated": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
