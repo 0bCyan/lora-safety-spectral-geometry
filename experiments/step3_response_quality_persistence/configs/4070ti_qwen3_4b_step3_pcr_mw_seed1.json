@@ -1,0 +1,50 @@
+{
+  "name": "4070ti_qwen3_4b_step3_pcr_mw_seed1_v1",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "parent_config": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3ct_seed1_t2r.json",
+  "feasibility_registry": "experiments/step3_response_quality_persistence/configs/4070ti_step3_pcr_mw_feasibility_v2_registry.json",
+  "feasibility_summary": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/feasibility_v2/feasibility_summary.json",
+  "mismatch_packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/protocol/pcr_mw_mismatch_packet.jsonl",
+  "mismatch_packet_sha256": "b230f51cc54a533b0b3f5169defb8e810896d223983be6c48e0b0f80e5c19042",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "local_files_only": true,
+  "risk_data_path": "data/processed/unified_pool/train_risk.jsonl",
+  "safety_targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+  "seed": 1,
+  "train_examples": 256,
+  "optimizer_steps": 64,
+  "gradient_accumulation_steps": 4,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0,
+  "adam_beta1": 0.9,
+  "adam_beta2": 0.999,
+  "adam_epsilon": 1e-08,
+  "max_grad_norm": 1.0,
+  "warmup_steps": 0,
+  "max_length": 512,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+  "gradient_checkpointing": true,
+  "fp16": true,
+  "safety_mix": 0.2,
+  "worst_temperature": 0.1,
+  "smoke_steps": 2,
+  "checkpoint_steps": [0, 16, 32, 64],
+  "minimum_vram_headroom_fraction": 0.1,
+  "arms": {
+    "PCR_M_mean": {
+      "ranking_mode": "mean",
+      "eta": 0.6053903508017239
+    },
+    "PCR_MW_mean_worst": {
+      "ranking_mode": "mean_worst",
+      "eta": 0.30267810652216515
+    }
+  },
+  "smoke_authorized": true,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

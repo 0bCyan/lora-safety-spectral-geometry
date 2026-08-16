@@ -1,0 +1,34 @@
+{
+  "name": "step3_pcr_mw_two_arm_smoke_protocol_v1",
+  "status": "prospective_before_any_optimizer_step",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "feasibility_route": "PASS_FREEZE_ETA_AND_SMOKE_PROTOCOL",
+  "feasibility_rows_sha256": "c40ba4bd5b0f3652392f976464317fab2cc8331d794599cec29688caa8dcb8f8",
+  "frozen_arms": {
+    "PCR_M_mean": {
+      "eta": 0.6053903508017239,
+      "ranking": "mean of two reference-corrected same-category mismatch violations"
+    },
+    "PCR_MW_mean_worst": {
+      "eta": 0.30267810652216515,
+      "ranking": "mean plus temperature-0.1 smooth-worst violation"
+    }
+  },
+  "common_training": "Exactly reproduce C0R constant20 risk order, natural-v1 safety order, optimizer, scheduler, LoRA configuration, and p=0.20 branch weights. Add ranking only on the 74 packet targets.",
+  "reference_margin_cache": "Before optimizer construction, evaluate all 74 correct/two-wrong tuples at the identical fresh seed1 step0 adapter in dropout-disabled isolated-RNG mode. Both arms must produce the same cache hash.",
+  "smoke_steps": 2,
+  "smoke_gates": [
+    "All losses and gradients finite with zero skipped updates.",
+    "Both arms complete exactly two optimizer steps and eight safety draws.",
+    "Every eligible smoke safety draw executes one ranking branch with two distinct wrong prompts.",
+    "Reference cache contains 74 rows and is byte-identical across arms.",
+    "VRAM headroom is at least 10 percent.",
+    "No core100, heldout, candidate generation, or reviewer access."
+  ],
+  "pass_next_action": "Freeze a separate matched seed1 execution protocol before any run beyond two steps.",
+  "failure_next_action": "Repair only a reproducible implementation defect prospectively; otherwise close PCR before main training.",
+  "optimizer_steps_authorized_per_arm": 2,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
