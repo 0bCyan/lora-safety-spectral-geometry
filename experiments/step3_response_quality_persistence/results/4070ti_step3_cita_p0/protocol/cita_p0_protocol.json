@@ -1,0 +1,185 @@
+{
+  "name": "step3_cita_p0_zero_update_mechanism_protocol_v1",
+  "status": "prospective_before_any_CITA_model_score_or_gradient",
+  "entry_commit": "05018e4fbd7ba3715015e73b456912f53d687050",
+  "objective": "Test whether correct-versus-counterfactual prompt information defines a non-degenerate, sham-distinct, prompt-disjointly replicating token-gradient mechanism at the fresh seed-1 step-0 policy.",
+  "frozen_inputs": {
+    "plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CITA_counterfactual_information_token_alignment_plan.md",
+      "sha256": "c3f68e8497152414c2c8f3a055721cde58dcee3f83282e4f17fc6f7312f7fd5e"
+    },
+    "common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_common.py",
+      "sha256": "80a15faf4b04e12b9560fc03b90418af2555ca716790d6e069e15d032bd7c2a2"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "common_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cita_common.py",
+      "sha256": "ccb9b4be85afd08ac98a1d89ae7bfe32fcdd2174c1543fce56a99163f010cf12"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cita_p0.py",
+      "sha256": "e87125d727ce4f162d54a5627ef3d7cec0487d1d00a84077d9b05376103c5e7e"
+    },
+    "parent_config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_pcr_mw_seed1.json",
+      "sha256": "3bab5143f1ded893e492f3ab04695b76457a331cdfbfad0e52b65723d4d52850"
+    },
+    "mismatch_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/protocol/pcr_mw_mismatch_packet.jsonl",
+      "sha256": "b230f51cc54a533b0b3f5169defb8e810896d223983be6c48e0b0f80e5c19042"
+    }
+  },
+  "source": {
+    "mismatch_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/protocol/pcr_mw_mismatch_packet.jsonl",
+    "counts": {
+      "rows": 74,
+      "prompt_clusters": 37,
+      "categories": 5
+    },
+    "packet_role": "natural_v1_correct_prompt_with_two_frozen_same_category_wrong_prompts",
+    "core100_used": false,
+    "heldout_used": false
+  },
+  "selection": {
+    "seed": 2026081713,
+    "rule": "stable_hash_category_round_robin_one_target_per_prompt",
+    "calibration_prompts": 16,
+    "validation_prompts": 16,
+    "calibration_target_ids": [
+      "eval_safety_000180_natural_v1_target2",
+      "eval_safety_000113_natural_v1_target1",
+      "eval_safety_000222_natural_v1_target2",
+      "eval_safety_000263_natural_v1_target2",
+      "eval_safety_000179_natural_v1_target1",
+      "eval_safety_000142_natural_v1_target1",
+      "eval_safety_000253_natural_v1_target1",
+      "eval_safety_000188_natural_v1_target2",
+      "eval_safety_000191_natural_v1_target1",
+      "eval_safety_000232_natural_v1_target2",
+      "eval_safety_000138_natural_v1_target1",
+      "eval_safety_000279_natural_v1_target1",
+      "eval_safety_000260_natural_v1_target2",
+      "eval_safety_000205_natural_v1_target2",
+      "eval_safety_000286_natural_v1_target2",
+      "eval_safety_000101_natural_v1_target1"
+    ],
+    "validation_target_ids": [
+      "eval_safety_000243_natural_v1_target1",
+      "eval_safety_000161_natural_v1_target1",
+      "eval_safety_000236_natural_v1_target2",
+      "eval_safety_000156_natural_v1_target2",
+      "eval_safety_000226_natural_v1_target2",
+      "eval_safety_000116_natural_v1_target1",
+      "eval_safety_000126_natural_v1_target1",
+      "eval_safety_000109_natural_v1_target1",
+      "eval_safety_000269_natural_v1_target1",
+      "eval_safety_000212_natural_v1_target1",
+      "eval_safety_000258_natural_v1_target1",
+      "eval_safety_000225_natural_v1_target1",
+      "eval_safety_000211_natural_v1_target2",
+      "eval_safety_000244_natural_v1_target2",
+      "eval_safety_000295_natural_v1_target1",
+      "eval_safety_000276_natural_v1_target1"
+    ]
+  },
+  "model": {
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "local_files_only": true,
+    "seed": 1,
+    "load_in_4bit": true,
+    "quantization": "nf4_double_quant_fp16_compute",
+    "reference_policy": "fresh_PEFT_LoRA_step0",
+    "model_mode": "eval_with_gradients",
+    "gradient_checkpointing": true,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "design": {
+    "max_length": 512,
+    "minimum_weight": 0.25,
+    "maximum_weight": 1.75,
+    "semantic_weight_mean": 1.0,
+    "response_prefix": "complete_enable_thinking_false_generation_prefix",
+    "forced_empty_thinking_preamble_in_loss": false,
+    "termination_token_weight": 1.0,
+    "wrong_prompts_per_target": 2,
+    "wrong_prompt_role": "same_category_counterfactual",
+    "sham_score": "wrong_prompt_2_NLL_minus_wrong_prompt_1_NLL",
+    "sham_budget": "exact_CITA_weight_multiset_per_response",
+    "gradient_reduction": "mean_over_16_rows",
+    "gradient_arms": [
+      "uniform",
+      "cita",
+      "sham"
+    ],
+    "tokenizer_only_structural_audit": {
+      "sequences": 222,
+      "suffix_aligned": true,
+      "minimum_total_tokens": 49,
+      "maximum_total_tokens": 96,
+      "minimum_semantic_tokens": 22,
+      "maximum_semantic_tokens": 37
+    }
+  },
+  "statistics": {
+    "bootstrap_unit": "mismatch_packet_row_mean_token_advantage",
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026081714,
+    "interval": "percentile_95_percent",
+    "rank_correlation": "stable_tie_broken_Spearman"
+  },
+  "gates": {
+    "row_mean_advantage_bootstrap_lower_min": 0.0,
+    "median_positive_token_fraction_min": 0.5,
+    "median_absolute_cita_sham_rank_correlation_max": 0.5,
+    "cita_delta_to_uniform_norm_ratio_min": 0.05,
+    "cita_uniform_cosine_max": 0.999,
+    "cita_sham_delta_cosine_max": 0.95,
+    "calibration_validation_cita_delta_cosine_min": 0.05,
+    "cita_over_sham_cross_split_cosine_margin_min": 0.05,
+    "minimum_vram_headroom_fraction": 0.1,
+    "all_gradient_objects_cover_all_trainable_tensors": true,
+    "all_gradient_values_finite": true,
+    "all_aggregate_gradient_norms_nonzero": true,
+    "exact_trainable_state_restoration_required": true
+  },
+  "outputs": {
+    "weight_cache": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_weight_cache.jsonl",
+    "split_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_split_manifest.json",
+    "diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_gradient_diagnostics.json",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_environment.json",
+    "route": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_route.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/CITA_P0_REPORT.md",
+    "run_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_CITA_P0_AUTHORIZE_MATCHED_SMOKE",
+  "failure_routes": [
+    "STOP_CITA_P0_INVALID",
+    "STOP_CITA_P0_TOKEN_SIGNAL_WEAK",
+    "STOP_CITA_P0_GRADIENT_EFFECT_WEAK",
+    "STOP_CITA_P0_ALIGNMENT_NOT_REPLICATED"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_matched_uniform_CITA_sham_smoke_protocol_only",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "checkpoint_writes_authorized": false,
+  "candidate_generation_authorized": false,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
