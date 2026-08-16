@@ -1,0 +1,81 @@
+{
+  "name": "step3_tarc_development16_reproduction_manifest_v1",
+  "route": "PASS_TARC_DEVELOPMENT16_INTEGRITY_FREEZE_GENERATION_GATE",
+  "runtime_head": "82ce37a4dc09621373a4bf9e1f84d542b04057d9",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/protocol/tarc_development16_protocol.json",
+  "protocol_sha256": "f82c6872f5a0abc8bd893078e9446233dc664f294dfefafdeb7d625d5c66cb35",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/uniform/training_trace.csv",
+      "sha256": "cbebdcecff9a741df44ac66a2f7e37d48839a13af22d6dea3ebdde5439b0099b",
+      "bytes": 3821
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/uniform/checkpoint_index.csv",
+      "sha256": "a20b3f5b18f9da4ce830313d2959b8395f77092bf3733d9bb6541cdef9e01e86",
+      "bytes": 238
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/uniform/run_manifest.json",
+      "sha256": "57eac517fc9f202d625e77cb124af4039a426d6ea216ae0c7c71c6a4e788df6f",
+      "bytes": 84985
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/ramp/training_trace.csv",
+      "sha256": "4baca9518e487cf49a67e4839f518b0fec69d84d07e676e0a9f96e98345f53ce",
+      "bytes": 3735
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/ramp/checkpoint_index.csv",
+      "sha256": "32d8f6469e7bedfe882d8c4085fc84d6b88afd9285f41beef0460d679541873e",
+      "bytes": 235
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/ramp/run_manifest.json",
+      "sha256": "64edde1bf21746a7dbf91d6752df2ae0768c3bcbb31447d47a539b757caef5b5",
+      "bytes": 84979
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/tarc/training_trace.csv",
+      "sha256": "a3425998c1a6b9cfae9243dc7a595a18c279b518048a2df63bbb0ff53b3395c9",
+      "bytes": 3723
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/tarc/checkpoint_index.csv",
+      "sha256": "430b99d1544304ef9c113c88d49ed9f5a3b4d1e146e4f7ecae42b02e8b8d3406",
+      "bytes": 235
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/tarc/run_manifest.json",
+      "sha256": "c5ad9846134a58ee211a12c99a55ac4679e022d5cdc30adf3bea76a849a46709",
+      "bytes": 84975
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/tarc_development16_decision.json",
+      "sha256": "d72071415128b483a231ed93f2829139cf6949a56cbb2ab2cccf705ee73d87f1",
+      "bytes": 4219
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/TARC_DEVELOPMENT16_REPORT.md",
+      "sha256": "ae4ed8ddceda5fdab45974a0246ac1c668352221701d8c4d46fe235e94da8feb",
+      "bytes": 629
+    }
+  ],
+  "local_ignored_checkpoints": {
+    "uniform": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/uniform/checkpoints/step0016",
+    "ramp": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/ramp/checkpoints/step0016",
+    "tarc": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/tarc/checkpoints/step0016"
+  },
+  "final_adapter_sha256": {
+    "uniform": "c01df746a049c795185d4130d33bb3a17fdafe40d0f6e6afbfc0177ffda3948b",
+    "ramp": "03051966e1a336fd919fbe27d4615e1410e14de8953e7b4d69d6344c5ae20b46",
+    "tarc": "3c140737e1b878ce2a07becf1731e71c5e21530283839d7e4213d67b3f2baac7"
+  },
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_tarc_development.py run",
+  "optimizer_steps_per_arm": 16,
+  "total_optimizer_steps": 48,
+  "candidate_outputs_generated": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

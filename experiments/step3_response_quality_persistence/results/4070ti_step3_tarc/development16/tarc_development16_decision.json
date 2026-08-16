@@ -1,0 +1,102 @@
+{
+  "name": "step3_tarc_matched_development16_decision_v1",
+  "route": "PASS_TARC_DEVELOPMENT16_INTEGRITY_FREEZE_GENERATION_GATE",
+  "runtime_head": "82ce37a4dc09621373a4bf9e1f84d542b04057d9",
+  "protocol_sha256": "f82c6872f5a0abc8bd893078e9446233dc664f294dfefafdeb7d625d5c66cb35",
+  "checks": {
+    "all_arms_present": true,
+    "steps_exact": true,
+    "no_skipped_updates": true,
+    "finite": true,
+    "vram": true,
+    "initial_state_equal": true,
+    "risk_order_equal": true,
+    "target_order_equal": true,
+    "target_exposure_equal": true,
+    "safety_pair_draws_equal": true,
+    "safety_target_rows_equal": true,
+    "safety_response_tokens_equal": true,
+    "available_ramp_terms_equal": true,
+    "available_tarc_terms_equal": true,
+    "first_step_risk_loss_equal": true,
+    "first_step_uniform_safety_loss_equal": true,
+    "initial_uniform_diagnostic_equal": true,
+    "initial_ramp_diagnostic_equal": true,
+    "initial_tarc_diagnostic_equal": true,
+    "assignment_counts_correct": true,
+    "all_registered_assignments_exercised": true,
+    "sealed_data_untouched": true,
+    "tarc_loss_reduction": 5.50237163156271,
+    "uniform_tarc_loss_reduction": 4.855513751506805,
+    "ramp_tarc_loss_reduction": 5.06895012781024,
+    "tarc_advantage_over_uniform": 0.6468578800559044,
+    "tarc_advantage_over_ramp": 0.43342150375247,
+    "direction_realized": true
+  },
+  "arms": {
+    "uniform": {
+      "objective": "uniform",
+      "completed_steps": 16,
+      "optimizer_steps": 16,
+      "final_adapter_sha256": "c01df746a049c795185d4130d33bb3a17fdafe40d0f6e6afbfc0177ffda3948b",
+      "final_checkpoint": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/uniform/checkpoints/step0016",
+      "tarc_loss_reduction": 4.855513751506805,
+      "final_diagnostic": {
+        "prompt_pairs": 8,
+        "target_rows": 16,
+        "uniform_loss_mean": 2.524742603302002,
+        "ramp_margin_loss_mean": 1.6768309623003006,
+        "tarc_margin_loss_mean": 1.2098450064659119,
+        "tarc_mean_margin": -0.18538780510425568,
+        "tarc_certified_node_occurrence_rate": 0.546875,
+        "tarc_full_certificate_rate": 0.0
+      },
+      "vram_headroom_fraction": 0.5481008020192973
+    },
+    "ramp": {
+      "objective": "ramp",
+      "completed_steps": 16,
+      "optimizer_steps": 16,
+      "final_adapter_sha256": "03051966e1a336fd919fbe27d4615e1410e14de8953e7b4d69d6344c5ae20b46",
+      "final_checkpoint": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/ramp/checkpoints/step0016",
+      "tarc_loss_reduction": 5.06895012781024,
+      "final_diagnostic": {
+        "prompt_pairs": 8,
+        "target_rows": 16,
+        "uniform_loss_mean": 2.4425125122070312,
+        "ramp_margin_loss_mean": 1.5224397331476212,
+        "tarc_margin_loss_mean": 0.9964086301624775,
+        "tarc_mean_margin": 0.12114691734313965,
+        "tarc_certified_node_occurrence_rate": 0.546875,
+        "tarc_full_certificate_rate": 0.0
+      },
+      "vram_headroom_fraction": 0.39144241338598706
+    },
+    "tarc": {
+      "objective": "tarc",
+      "completed_steps": 16,
+      "optimizer_steps": 16,
+      "final_adapter_sha256": "3c140737e1b878ce2a07becf1731e71c5e21530283839d7e4213d67b3f2baac7",
+      "final_checkpoint": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/tarc/checkpoints/step0016",
+      "tarc_loss_reduction": 5.50237163156271,
+      "final_diagnostic": {
+        "prompt_pairs": 8,
+        "target_rows": 16,
+        "uniform_loss_mean": 2.4749473333358765,
+        "ramp_margin_loss_mean": 1.6488792449235916,
+        "tarc_margin_loss_mean": 0.5629871264100075,
+        "tarc_mean_margin": 1.018398106098175,
+        "tarc_certified_node_occurrence_rate": 0.765625,
+        "tarc_full_certificate_rate": 0.0
+      },
+      "vram_headroom_fraction": 0.3782518422016855
+    }
+  },
+  "total_optimizer_steps": 48,
+  "candidate_outputs_generated": false,
+  "generation_protocol_authorized": true,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "next_authorized": "freeze_and_push_separate_three_arm_prompt_disjoint_generation_gate"
+}

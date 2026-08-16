@@ -1,0 +1,2 @@
+step,checkpoint,adapter_sha256,adapter_bytes
+16,experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/development16/ramp/checkpoints/step0016,03051966e1a336fd919fbe27d4615e1410e14de8953e7b4d69d6344c5ae20b46,66126768
