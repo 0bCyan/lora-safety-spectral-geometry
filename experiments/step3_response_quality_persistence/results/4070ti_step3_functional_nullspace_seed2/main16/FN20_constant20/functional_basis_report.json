@@ -1,0 +1,1442 @@
+[
+  {
+    "functional_key": "base_model.model.model.layers.0.mlp.down_input",
+    "basis_sha256": "2402dc6c261c7b49635f08f1e8d68ae14b032dc0884d61ee528a688e7a9d07c7",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.52957683801651,
+    "orthogonality_error": 7.517832614212239e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.0.mlp.gate_up_input",
+    "basis_sha256": "67ff0457ff5da98a08d425972a3f229150637ede05452a44b9779930c8cc8d11",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.5688560009002686,
+    "orthogonality_error": 3.127627508092701e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.0.self_attn.o_input",
+    "basis_sha256": "dbbb9ca04e8b32b110506b76054fdc1ffc0e67a72461cb270feb8d882b1897ae",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6665067672729492,
+    "orthogonality_error": 5.286308351060143e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.0.self_attn.qkv_input",
+    "basis_sha256": "8b095827edb9b95165601745b81513e4539bbf72ef8194999418079987ac3c79",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6729223132133484,
+    "orthogonality_error": 5.496045218933432e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.1.mlp.down_input",
+    "basis_sha256": "f1f05e9e4fd7d3db826c6973b864acb06052adc97945c05d35a7075babdf5619",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5509273409843445,
+    "orthogonality_error": 5.667191658176307e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.1.mlp.gate_up_input",
+    "basis_sha256": "e3e0b176baa6d92bf6cb6ed91bb063aa14e4617b4e437729f619310c1377c2b3",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.9346697330474854,
+    "orthogonality_error": 6.542414894283866e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.1.self_attn.o_input",
+    "basis_sha256": "541b64b64cb7c9c82d852f9e81bef86e59ad5c4f601ba1cbbb1b203a88bf1f32",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6493412256240845,
+    "orthogonality_error": 6.237704042177938e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.1.self_attn.qkv_input",
+    "basis_sha256": "37262e4b19fc03c01436a2fc1c0fcefcb636d07d8c3dcce1cac7784dae2f6bf0",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6825625896453857,
+    "orthogonality_error": 5.181723850000708e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.10.mlp.down_input",
+    "basis_sha256": "c6ddf9079399f410658a0d6a12361c25c43cea7bd4ecc5276b17d6f36a9edf52",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.503872811794281,
+    "orthogonality_error": 4.6146320187290257e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.10.mlp.gate_up_input",
+    "basis_sha256": "6945380e5e3ec86c03311d602506bfd71530baa0dea9e961c1e98df5e3829967",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6153715252876282,
+    "orthogonality_error": 2.7308985295348975e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.10.self_attn.o_input",
+    "basis_sha256": "a32543bd77b7bf5d0d6f284ebe483a31bcef6cb0586fb54845571b9ce433e79c",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6113613843917847,
+    "orthogonality_error": 5.389437660596741e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.10.self_attn.qkv_input",
+    "basis_sha256": "21d4c687a20bd53c226914a1aeaee783fe22be70b96d505d6a44ef0a420c4900",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7053057551383972,
+    "orthogonality_error": 4.370780004592234e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.11.mlp.down_input",
+    "basis_sha256": "7e5eb66901e0e827bc2709339f7818100f3ef28235f8194b848dcf53883210ec",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.4997180700302124,
+    "orthogonality_error": 4.839022835767537e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.11.mlp.gate_up_input",
+    "basis_sha256": "638721739a747894e98e6fe3d4787b8e0f0864cf347f9239051d2e7f0816decb",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6090739369392395,
+    "orthogonality_error": 4.011503165202157e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.11.self_attn.o_input",
+    "basis_sha256": "40ef6390295ffd0d3e2d505149a18f7af51c2b0c3524613725b02402c56d2df2",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6146353483200073,
+    "orthogonality_error": 4.048504536058317e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.11.self_attn.qkv_input",
+    "basis_sha256": "356ae338d0394a8aa9bd918d1568774080c7568a46c33e6048c922663a8a1692",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7092491388320923,
+    "orthogonality_error": 5.176466402190272e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.12.mlp.down_input",
+    "basis_sha256": "01f069dd94261221259b0938be07f9f93086a1d1a83f32a806944cff5e74ef3a",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5121574401855469,
+    "orthogonality_error": 4.4521183895085414e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.12.mlp.gate_up_input",
+    "basis_sha256": "4a7d66234d03d4231ab23053a17fee46cf549070b85ab6936cfbc28cad6ee8cc",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6293330192565918,
+    "orthogonality_error": 5.057786438555922e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.12.self_attn.o_input",
+    "basis_sha256": "d78fded3a16700d0a4e52c1a4560709d981511dc8e470aa1dccf1f4eb6384b9f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6742238402366638,
+    "orthogonality_error": 4.386535863432073e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.12.self_attn.qkv_input",
+    "basis_sha256": "95321e9be173bff799f73efbbf39b3b99e9bd2c52496c5f63797133dd4671c0e",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7376316785812378,
+    "orthogonality_error": 4.3492929080457543e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.13.mlp.down_input",
+    "basis_sha256": "badf907ca895a8c57556e418e40ce976e9f8766f57ae6fc7b21851cfb7492c2e",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.508911669254303,
+    "orthogonality_error": 4.6382231744246383e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.13.mlp.gate_up_input",
+    "basis_sha256": "b33e400ce8e7bc1b5561ca285b9cf72610e92694d0fe6ce53b149e55f406f72f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6451509594917297,
+    "orthogonality_error": 4.6792303010079195e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.13.self_attn.o_input",
+    "basis_sha256": "0b80e2e8ab0729c394c2cbb34e72a15fe906272c01a0ca9f27c5c4841ba357eb",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.7276304960250854,
+    "orthogonality_error": 4.7189070073727635e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.13.self_attn.qkv_input",
+    "basis_sha256": "ecc1c9a5bbbfaf3125b6be1697c3d6d82141d728b0a83076945e40f8e4e5cbe9",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7284197807312012,
+    "orthogonality_error": 5.521491175386473e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.14.mlp.down_input",
+    "basis_sha256": "b524044782d451b5d39a37803b625a8ecb2161da8b30b1bdfe793460e70561ed",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.513725757598877,
+    "orthogonality_error": 5.664736590915709e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.14.mlp.gate_up_input",
+    "basis_sha256": "82d5aa7a103ce205cf205857cc47e87bef28f9d852145220d561ff80c56b7e12",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6636500358581543,
+    "orthogonality_error": 5.75631133870047e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.14.self_attn.o_input",
+    "basis_sha256": "d95255611b82bea099c72d162445d233dee3afed7341b81e84e72eeb2840d52d",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6650661826133728,
+    "orthogonality_error": 3.626107627496822e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.14.self_attn.qkv_input",
+    "basis_sha256": "431e01205f095f93b5d446b4e8cfe7a865e73a7ddebf6bcae3c5f4b994ba1c8f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7891972064971924,
+    "orthogonality_error": 5.619342005047656e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.15.mlp.down_input",
+    "basis_sha256": "4e2e521f38f79ce89c2975e4cb2a26d0931e8d532f837aeacf3dd4fc17575729",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5227211117744446,
+    "orthogonality_error": 3.9584281807947264e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.15.mlp.gate_up_input",
+    "basis_sha256": "7027dabc3839c4e59b2cfbc414648abc00af5d781947a72adf221beeaf553f7f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6714422702789307,
+    "orthogonality_error": 2.477850955528993e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.15.self_attn.o_input",
+    "basis_sha256": "2f6fb832f5129e5843408ed7a9b67b19e0e4794c82415b75a2fa81f092a4a532",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.7332791090011597,
+    "orthogonality_error": 6.045573286428407e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.15.self_attn.qkv_input",
+    "basis_sha256": "310bd8e5398916876e03e99f59aa9dc74cdcbdc084b02c762de9b8dcdbbc1be2",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7965764999389648,
+    "orthogonality_error": 5.127062081555778e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.16.mlp.down_input",
+    "basis_sha256": "9d8cbd2bbe2d137d4d84827457512e85dfb99c3d0311cbc241ca6c691a8d45d5",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5232245922088623,
+    "orthogonality_error": 3.908032795152394e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.16.mlp.gate_up_input",
+    "basis_sha256": "214af433b8aee959e0fcbf94c2c6e0e7fea8d9fed190db39d748efb9ba3696f9",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6819206476211548,
+    "orthogonality_error": 4.2842842162826855e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.16.self_attn.o_input",
+    "basis_sha256": "2eb3c387fc9e5129968ea1bb1fc148b636b8dd7aadb352504609de28f53f1eb2",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.688877522945404,
+    "orthogonality_error": 7.09197593096178e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.16.self_attn.qkv_input",
+    "basis_sha256": "c052537574472b7384083ea9fd99f80f7886ccf30cff766ec02a48e835ec4199",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7742882370948792,
+    "orthogonality_error": 6.157645202620188e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.17.mlp.down_input",
+    "basis_sha256": "e2ff9b264ff1e8086cd04ee8c2d019b46b4708da0dd1b2b8ab0a623b039e4ff8",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5393695831298828,
+    "orthogonality_error": 3.616322317157028e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.17.mlp.gate_up_input",
+    "basis_sha256": "66b6f370edcee53fe8147205e8b161691c8a92ffe922e54d36fc4893bf777c99",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6913101077079773,
+    "orthogonality_error": 5.465338972499012e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.17.self_attn.o_input",
+    "basis_sha256": "e40c76b98c10cfaf3abe7b2ada68835d2b43bd2ddd80319e812fdd1a46672084",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.7581316232681274,
+    "orthogonality_error": 5.86609246511216e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.17.self_attn.qkv_input",
+    "basis_sha256": "5b804ce7d5e22b3ea8fe5a5e17ecc7f2fefec8b07bbcafacf257d44755dac0c4",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7883532643318176,
+    "orthogonality_error": 3.9836473320065124e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.18.mlp.down_input",
+    "basis_sha256": "8835026bd95e05698af16b2c114e161e24b6ef053d7c611c26e2baf5e8a4ebfd",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5303611755371094,
+    "orthogonality_error": 4.2001838096439315e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.18.mlp.gate_up_input",
+    "basis_sha256": "edaaf3be370fea84ddddc6acd67b6d44cab602f4b5fd96da7289f757202c7270",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6884422302246094,
+    "orthogonality_error": 3.666553993753041e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.18.self_attn.o_input",
+    "basis_sha256": "9d95bc6a60c3f962eb4be982b32d5fd0a082036a68e36e73aa15a2318b8ce9b7",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.7627646923065186,
+    "orthogonality_error": 6.368916842802719e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.18.self_attn.qkv_input",
+    "basis_sha256": "d2c7f0bd1a01c5a2159e70da62c4cdf8440e91f3282b76248ab339ca3b5d46c1",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.8189238905906677,
+    "orthogonality_error": 6.404409873539407e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.19.mlp.down_input",
+    "basis_sha256": "b85f3920721f023451c0e0a328aeda1243bbcdad5b2c13e79d6165d4226c07e2",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5342133641242981,
+    "orthogonality_error": 4.764240486565541e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.19.mlp.gate_up_input",
+    "basis_sha256": "ffcbff0bd935508f0b48a7ec167f23a625c358bd175e8d68910ebeb82b446426",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7083479762077332,
+    "orthogonality_error": 3.8300220239761984e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.19.self_attn.o_input",
+    "basis_sha256": "e1f8f2370ee82d764720d85561c683752772ce8c6a3dee0c1765dd10836a0dba",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.7328969240188599,
+    "orthogonality_error": 3.453994850133313e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.19.self_attn.qkv_input",
+    "basis_sha256": "71dd32a0315039aff6c13c3e88d642281f98bf69e0e43cbe3b3ffd8d41fd4d4d",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.8199593424797058,
+    "orthogonality_error": 5.522355195353157e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.2.mlp.down_input",
+    "basis_sha256": "a14bb82f392b54f08d7e7a874b87ca292e69a25b9d4a2631d41b056074ebca8a",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5582889914512634,
+    "orthogonality_error": 3.5373113860259764e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.2.mlp.gate_up_input",
+    "basis_sha256": "a1f85f61a612782644fe19770aedae5b33e01ffaeefea230acdf74af10b714fe",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.9410853981971741,
+    "orthogonality_error": 7.270252808666555e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.2.self_attn.o_input",
+    "basis_sha256": "854847c1d34856e4c435643c2b49f4cb58ee0730b34720facd6f91b1d952426b",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6429194808006287,
+    "orthogonality_error": 6.325208232738078e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.2.self_attn.qkv_input",
+    "basis_sha256": "d264f6a982b34fc630660241dfd94934b3f7d087ade6c3388eb299fcf16c0e19",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.608384370803833,
+    "orthogonality_error": 4.636548851522093e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.20.mlp.down_input",
+    "basis_sha256": "b3ae24ba694453b2711eeadcd8d467d7e697b6654af773fdd63e614ca905ebf7",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5237792730331421,
+    "orthogonality_error": 5.326133987182402e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.20.mlp.gate_up_input",
+    "basis_sha256": "985f6369e3386cc496c60926e6578c30d459eb75a0b976181db79a7f56525fda",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7094960808753967,
+    "orthogonality_error": 3.727449779944436e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.20.self_attn.o_input",
+    "basis_sha256": "156a252230813733ab7e111c60903e84eabb6b82cffc194e73bf7cfba3ba41c3",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.7244804501533508,
+    "orthogonality_error": 8.229558261518832e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.20.self_attn.qkv_input",
+    "basis_sha256": "26a5d9b38096e8d4894c70ff7dbf854fd25192a65da808e32a0bbd6d0a257e79",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.8215709924697876,
+    "orthogonality_error": 5.802614282401919e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.21.mlp.down_input",
+    "basis_sha256": "78ebcb0baddd1cda941707d69d4181bfc6d1cad891e0a54244c2596fec68425f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5019710063934326,
+    "orthogonality_error": 2.0760221275395452e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.21.mlp.gate_up_input",
+    "basis_sha256": "af9f3dd5f2d3f5d15e6f082a02c49d90e6c652b2084e1e5a04af2498f550095f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6982528567314148,
+    "orthogonality_error": 5.688493160960206e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.21.self_attn.o_input",
+    "basis_sha256": "3912eaaf60a9f3bbb81812cf19525155e3f1608d593eb05e0afb2bc980731b77",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.7185214161872864,
+    "orthogonality_error": 4.5233286982693244e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.21.self_attn.qkv_input",
+    "basis_sha256": "51d26fbb3b6611e8c862e66b115d770a915431cdc7b1a2d70f914ca3d5bc022f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.8370693325996399,
+    "orthogonality_error": 5.78696869979467e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.22.mlp.down_input",
+    "basis_sha256": "5c3df704b8ffee0942e82dd13c2e78ab06bd3931834f1aff13a77fb6d52046f0",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.531163215637207,
+    "orthogonality_error": 5.450153821584536e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.22.mlp.gate_up_input",
+    "basis_sha256": "76622540841380b45f6732daae5f63cd12487f7498a99c1ed648734c377d6de7",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7309141159057617,
+    "orthogonality_error": 4.836857669943129e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.22.self_attn.o_input",
+    "basis_sha256": "f157f4391771d4171976372ed143f9617a93475cdab8610908f7329717699d93",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.705474853515625,
+    "orthogonality_error": 6.106673708927701e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.22.self_attn.qkv_input",
+    "basis_sha256": "c5fbafef0f31330fcc4875159706bd6680e055e6e4bc6a9291aa3a919cf0fb55",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.8192466497421265,
+    "orthogonality_error": 6.626267463616387e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.23.mlp.down_input",
+    "basis_sha256": "aa67cc212c7ce03511314f0043341ae96ea80e208adaace16197add905ac55c1",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.533626139163971,
+    "orthogonality_error": 5.286004807203426e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.23.mlp.gate_up_input",
+    "basis_sha256": "7e5e6819485820abdb150e8815c7431e34e98adb3dad3a9a6b0b128f29cea3db",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.741010844707489,
+    "orthogonality_error": 4.4586778358279844e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.23.self_attn.o_input",
+    "basis_sha256": "fd6f9cb07cfcd13a949ed4af956fde502dfebf026cba6a4844abe078616d98e4",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6736130714416504,
+    "orthogonality_error": 4.256601471297472e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.23.self_attn.qkv_input",
+    "basis_sha256": "ac0666be84ec7d707b5c7b8a3e0376502b33b290663a896eba5d883dcff3b14b",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.8068675994873047,
+    "orthogonality_error": 4.857023441218189e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.24.mlp.down_input",
+    "basis_sha256": "40f04db6f4435eb4dae2704cbeab0716385f46a6aaaa73ba723b7b1f78481889",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5291765332221985,
+    "orthogonality_error": 4.1311133713861636e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.24.mlp.gate_up_input",
+    "basis_sha256": "9c1925b9ae393336e2333bd6c972ea2fbba55b7cbed481009b9258c9db39bd3d",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7435106039047241,
+    "orthogonality_error": 5.78437550302624e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.24.self_attn.o_input",
+    "basis_sha256": "6ca6b2985ba15f9840b236e86eb911494f4ba998f1ff14db3ffc5569d07ec727",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6397368907928467,
+    "orthogonality_error": 3.1479132189815573e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.24.self_attn.qkv_input",
+    "basis_sha256": "d191769a5bbe96b9aee9acfb6249129444761c5e5ddc9bf9d44cc099b9b29ac4",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.796730101108551,
+    "orthogonality_error": 6.580888225471426e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.25.mlp.down_input",
+    "basis_sha256": "c633c88bfc6bbceabc9f9000e317b0daa072a5569ac621905fb5371f5d02e16f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5190960168838501,
+    "orthogonality_error": 5.219797571953677e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.25.mlp.gate_up_input",
+    "basis_sha256": "8e4fda2fa7e88817ea7d91e3db61828fba672175c4a95243de0815ca7de95c8f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7447221875190735,
+    "orthogonality_error": 4.83486019220436e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.25.self_attn.o_input",
+    "basis_sha256": "3412d778c91813429a05de1257399be067c0d0a2256c79e350d4177d30a4faa5",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6349685192108154,
+    "orthogonality_error": 5.886833491786092e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.25.self_attn.qkv_input",
+    "basis_sha256": "94f4169858fa768917e3f15b87b501d7b7376ff0b9c7a319b9ad6efe09f3d2d6",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.8134307861328125,
+    "orthogonality_error": 3.724105681612855e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.26.mlp.down_input",
+    "basis_sha256": "45202f3805baa371c1468500440b8cf1819a04d0df2d04cda9b21edc647490da",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5093267560005188,
+    "orthogonality_error": 4.4306852942099795e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.26.mlp.gate_up_input",
+    "basis_sha256": "65922f6aa1dc560e2d8d9ca1216e3159e0382dc39ee11ddd8449a3c217624e3f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7411210536956787,
+    "orthogonality_error": 3.6587945828614465e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.26.self_attn.o_input",
+    "basis_sha256": "cff3e7644ded7b30982673c1f0a3ee52b29ba3d21d2c13ed7c2851875752f732",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.607589066028595,
+    "orthogonality_error": 5.702468115487136e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.26.self_attn.qkv_input",
+    "basis_sha256": "eca491c384397905f2cca3c79da1ec7e2369be528753482b6ddc607f575b2652",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.786348283290863,
+    "orthogonality_error": 5.426898610494391e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.27.mlp.down_input",
+    "basis_sha256": "e8c7d123d2fa5744fd57ed0fe6b34e7892965aacc2965383daf0fe78d82497c2",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5023339986801147,
+    "orthogonality_error": 3.811088049587852e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.27.mlp.gate_up_input",
+    "basis_sha256": "101f7d1e32d0ac0fca2340d810749f7c7310a66860b1f3acc4e27d2cb2921a21",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7300370931625366,
+    "orthogonality_error": 3.559866001978662e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.27.self_attn.o_input",
+    "basis_sha256": "977d7934a4f2a268d79345c87b3b6baf734e0bc115902d9e6eafbe796588b84e",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6501489281654358,
+    "orthogonality_error": 4.208156383356254e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.27.self_attn.qkv_input",
+    "basis_sha256": "94db0198cb33dd99e2295af3a6cc3e4f6d6a7aeafa326d0997693ce0155b3790",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7976716756820679,
+    "orthogonality_error": 5.243398959464685e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.28.mlp.down_input",
+    "basis_sha256": "010e2abcc7555ad4407121d93df533fda79e5c2d8920dc9cae11c049c53ae6bb",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.4922081232070923,
+    "orthogonality_error": 5.042658699494496e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.28.mlp.gate_up_input",
+    "basis_sha256": "822c637dd90dc263f76491b7646070484144f903e4e3b03d6e2d7b6d3fb0ab42",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7144681215286255,
+    "orthogonality_error": 5.953367576694291e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.28.self_attn.o_input",
+    "basis_sha256": "5b01226f146efd540eecd7c0bdc06fb67aa2ad4ea89263dfbc458a4d66ae1122",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6245711445808411,
+    "orthogonality_error": 3.680071074541047e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.28.self_attn.qkv_input",
+    "basis_sha256": "db5b6511608c8f9f254cc1f60da9d07cb073aa1b2c7420137c101d6ff9d96def",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.8082523941993713,
+    "orthogonality_error": 5.363715445128037e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.29.mlp.down_input",
+    "basis_sha256": "8a1e6a3b6b057eee899d77c0a91c92d6b3342efb905a9c765eddfdef68376e4b",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5272104144096375,
+    "orthogonality_error": 3.982174519023829e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.29.mlp.gate_up_input",
+    "basis_sha256": "b38948155d9250f87431fc263fae41f480fe9cc83c3505c0ebe58f4c993c55c4",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7047168016433716,
+    "orthogonality_error": 3.6787713497687946e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.29.self_attn.o_input",
+    "basis_sha256": "9b4c762539afb2e9a92af5e071151fe9f45861d7f2579678826023a65049a423",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6230385303497314,
+    "orthogonality_error": 6.326870902739756e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.29.self_attn.qkv_input",
+    "basis_sha256": "75d74a51df3d295273204de373fba42c3f3f4779b49b4435ba192e141cddca09",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7465450763702393,
+    "orthogonality_error": 5.126980795466807e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.3.mlp.down_input",
+    "basis_sha256": "d2c5f86097048590d486981792404b39cd62d55aaf3ba4a250470e7c730c5682",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.556758463382721,
+    "orthogonality_error": 5.374668603508326e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.3.mlp.gate_up_input",
+    "basis_sha256": "9820a1b7e65606f3711f375b0b61acd7c6668181252d94343dadf4383f81c312",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.9177520871162415,
+    "orthogonality_error": 4.3930202764386195e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.3.self_attn.o_input",
+    "basis_sha256": "b75f79dbfdfcef33e0a86fbc438084d325aa5c31b7b9525db17e51b5e8c64e6f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6923019886016846,
+    "orthogonality_error": 3.249780036185257e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.3.self_attn.qkv_input",
+    "basis_sha256": "e5980456e21eadfc435d1f89cc7122afe18b180241954ae46f0439586dab8983",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6626673936843872,
+    "orthogonality_error": 3.908787107320677e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.30.mlp.down_input",
+    "basis_sha256": "312b7dbf336f2c0e7a89948f1122d0b682bc777674e22dbd89e6144b98b90dd3",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5468910336494446,
+    "orthogonality_error": 5.53197537556116e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.30.mlp.gate_up_input",
+    "basis_sha256": "7eefbec0ae3b87e1ac2425f73a744365164fa9e41d4a21933f012672915ae409",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.704479455947876,
+    "orthogonality_error": 4.86076771721855e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.30.self_attn.o_input",
+    "basis_sha256": "5cfbed64ee3976725f5cce9c45d4c5855e806607611e7be76591990c9d544460",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6730393171310425,
+    "orthogonality_error": 4.485847284740885e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.30.self_attn.qkv_input",
+    "basis_sha256": "4267bef254cf7598aebef1a6cf8992faa894cde7696c21a7fec5b65cbb0759d5",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7788370251655579,
+    "orthogonality_error": 4.0023741121331113e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.31.mlp.down_input",
+    "basis_sha256": "ad527f85ff4accff4c1ae7a159be613c790651c7ab5bf3b20e0147986fa2e73f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5766535401344299,
+    "orthogonality_error": 4.816752152692061e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.31.mlp.gate_up_input",
+    "basis_sha256": "a46368dc40edf91ea29819a7f7d31fd96db0a14fc51175492f12446641dcc33c",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6896045207977295,
+    "orthogonality_error": 6.173634687911544e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.31.self_attn.o_input",
+    "basis_sha256": "11d218ec02e89bc9c7d6e9845a7f31a81d41776dcc4281ec8220cee3398bc5ec",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6052545309066772,
+    "orthogonality_error": 6.101502094679745e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.31.self_attn.qkv_input",
+    "basis_sha256": "172a25a01a47bfea7c7985e2d757694554bf7bf668ff64734e9dba96dcc11cf4",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7692962884902954,
+    "orthogonality_error": 5.706898491553147e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.32.mlp.down_input",
+    "basis_sha256": "0827db18c309f355bfe2b31c030de1403edc013c92be866553378e626b42b608",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5209556818008423,
+    "orthogonality_error": 5.577824140345911e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.32.mlp.gate_up_input",
+    "basis_sha256": "04cb2f809b894531b38b0b0c8ba3f18eec9460fb05c4302b397ba86721d4bc46",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6860414743423462,
+    "orthogonality_error": 4.145824448187341e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.32.self_attn.o_input",
+    "basis_sha256": "b598bd6264f6e818d26215b3fe589611392cdb300a11913ef4ff36038c3b2ce2",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6399181485176086,
+    "orthogonality_error": 4.168517762082047e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.32.self_attn.qkv_input",
+    "basis_sha256": "7b8eb317dcd8cea7826c42a87c80d5233e214422d0cbb17d8bca82f79f83b038",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7775710225105286,
+    "orthogonality_error": 3.7955723541927e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.33.mlp.down_input",
+    "basis_sha256": "47980dec283c67377dc304d4e7cd630bd46fc39c7026d40492a193d19fb238a1",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5939003229141235,
+    "orthogonality_error": 4.3137592342645803e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.33.mlp.gate_up_input",
+    "basis_sha256": "13b9727c0f76189ecef2dcc648e81fb342e9afd934925085df781139edd7d1b0",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6979687213897705,
+    "orthogonality_error": 2.4209424509535893e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.33.self_attn.o_input",
+    "basis_sha256": "2c5ece2a5b36a53e41389433927672dc43d20aa4392535e9b199967104ccb9a2",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.633618175983429,
+    "orthogonality_error": 4.825110977435543e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.33.self_attn.qkv_input",
+    "basis_sha256": "eb862e33c4965d6da6eb35547498185d4bd96cecfb124c367b2731b03884b58f",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7344227433204651,
+    "orthogonality_error": 5.279317178974452e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.34.mlp.down_input",
+    "basis_sha256": "3951032aafaa0bed08693ae15e7cacf3a15b57ff5c14e1c898996098dca1bf60",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.651602029800415,
+    "orthogonality_error": 5.119861157254491e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.34.mlp.gate_up_input",
+    "basis_sha256": "80a5b38ee14d5032443a661d011741544e102a7ce9afc59f24a2dd33fd9cf9a1",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7540122866630554,
+    "orthogonality_error": 4.238540327605733e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.34.self_attn.o_input",
+    "basis_sha256": "bb09ce17ac19e741931f5bf4f092af74dc9c6101d876cc477291e44f024e0fdf",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.7430778741836548,
+    "orthogonality_error": 4.5919216518086614e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.34.self_attn.qkv_input",
+    "basis_sha256": "d4fa4b2f4f97be0fdb197380892078090c95c2052e856a2179b31a8df0c9d6bb",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7936972379684448,
+    "orthogonality_error": 4.998810254619457e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.35.mlp.down_input",
+    "basis_sha256": "e97b3595167c85497f13ef6af4e0340d360d2ecb20f67cbd05983f908343d666",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.9161443710327148,
+    "orthogonality_error": 4.77121375297429e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.35.mlp.gate_up_input",
+    "basis_sha256": "e6d6b97b78f7086264f8107d1acfdd1bcfa1f308a91309c17db876f650849319",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.8300690650939941,
+    "orthogonality_error": 5.036357038079586e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.35.self_attn.o_input",
+    "basis_sha256": "6b6d6a7436b606d8012820cfdfd243f4849f63f6bc54359dfa36ff0f145e587c",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6758421063423157,
+    "orthogonality_error": 6.414205131477502e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.35.self_attn.qkv_input",
+    "basis_sha256": "2d2e9d92e175c57ea38013642ece8048e6b0c99fa23c47deea39568cd53fb797",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7915230393409729,
+    "orthogonality_error": 5.297155780681351e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.4.mlp.down_input",
+    "basis_sha256": "2b29ad56c1a265a355bc6fdba40ebd4b0dcfa4e0655f3a49b6744e5f2ed6e868",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5486785769462585,
+    "orthogonality_error": 5.366032382880803e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.4.mlp.gate_up_input",
+    "basis_sha256": "80292ccc56c36aa94b7a641cbda4ce2d6db67c5742095fb2470e1b3ab9059350",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.8786201477050781,
+    "orthogonality_error": 5.34336038526817e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.4.self_attn.o_input",
+    "basis_sha256": "4eeebfbaea90992fbe9a5e279dd8959e825eeb52af6bce2d393231cdfd1c7632",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6332940459251404,
+    "orthogonality_error": 4.829749400414585e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.4.self_attn.qkv_input",
+    "basis_sha256": "8cc0e767b0eb567b827ecd33e2f6bae428c7cd1926895d7f4f319cf4d96eb684",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6122221350669861,
+    "orthogonality_error": 4.058834974784986e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.5.mlp.down_input",
+    "basis_sha256": "dda898e75f78cc07c9096d5a7512e7b5e11a801352d23364e6a05fe185575671",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5141832828521729,
+    "orthogonality_error": 2.8531445650514797e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.5.mlp.gate_up_input",
+    "basis_sha256": "0c6f74060a1d2a2ec5aa977ce3db4cce06e8bd5c85847771a42ab76f57adddb8",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7870483994483948,
+    "orthogonality_error": 5.972124199615791e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.5.self_attn.o_input",
+    "basis_sha256": "75e4a6e8f5561aef6f78238ad27ede98a6cbb5cb6f5303e693abae5faef55385",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6415297389030457,
+    "orthogonality_error": 5.214577640799689e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.5.self_attn.qkv_input",
+    "basis_sha256": "2d409d0d3de63bcb3dd8bd7ee164987a1ae2aa0e3b16e426acd9706ffbb80da5",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6672919988632202,
+    "orthogonality_error": 4.1886531221280165e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.6.mlp.down_input",
+    "basis_sha256": "da4deace80d9782b0b9db54b119aedc797264defb22b959415be3b9ff72c9044",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.5063926577568054,
+    "orthogonality_error": 4.93279401325708e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.6.mlp.gate_up_input",
+    "basis_sha256": "cc0d254af377b665f5dbb078623ea3dd30f28ef48690e39a97c3646de3b3f12b",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7852681875228882,
+    "orthogonality_error": 4.5024219730294135e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.6.self_attn.o_input",
+    "basis_sha256": "634f37c43355f18c9acd61ea4330e4b3c5c422a8b0e9b642bcc29e35e58131ba",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.5697335004806519,
+    "orthogonality_error": 4.412295595557225e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.6.self_attn.qkv_input",
+    "basis_sha256": "7bbfcea737337b91325b05e2a56e952963d92e3f989297a00efc0712220dd660",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6602493524551392,
+    "orthogonality_error": 4.0040660564955033e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.7.mlp.down_input",
+    "basis_sha256": "4d9b4f84b3fc81e4d8bde975aa61e308befcca1b653453011d17a673e45d36c3",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.49762097001075745,
+    "orthogonality_error": 5.263306661618117e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.7.mlp.gate_up_input",
+    "basis_sha256": "29aa2f6399b64fcd567a5cc219b416f1b9314d79ed4247fcc887dc3138f54e93",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.7864530086517334,
+    "orthogonality_error": 3.8578980365855386e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.7.self_attn.o_input",
+    "basis_sha256": "d55984aa15c6a0da3a03845846c4dda8ce3cabf19772abd661c2534e4deff636",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.618235170841217,
+    "orthogonality_error": 3.639167687197187e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.7.self_attn.qkv_input",
+    "basis_sha256": "d0b64c41cb8dc6f8579a8b5040e18a771e4f6147259b52b8da6cec4567684409",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.725964367389679,
+    "orthogonality_error": 5.144885335539584e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.8.mlp.down_input",
+    "basis_sha256": "89662ff9d76ad6878d6c9fbdcc4f5e592ecf30f6dc6ad664c8adbb6bc26c9385",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.4893645942211151,
+    "orthogonality_error": 7.372393042714975e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.8.mlp.gate_up_input",
+    "basis_sha256": "8322c0ed080411f6ccc001c4b735e5ef7379653ae8fb3b383f01613d757defef",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.5889800786972046,
+    "orthogonality_error": 4.298260023460898e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.8.self_attn.o_input",
+    "basis_sha256": "78a8db8dd40b29eaec9dd3f6878525e5cf8ef5cd090a5fda2d1f30d4e7fdb012",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6136267781257629,
+    "orthogonality_error": 4.938450501867919e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.8.self_attn.qkv_input",
+    "basis_sha256": "d980521d1e62eecc8398f76d31823ae556d91c4bd7493a64eaac48893a24e9ca",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6887531876564026,
+    "orthogonality_error": 4.1872900169437344e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.9.mlp.down_input",
+    "basis_sha256": "1a04301d7a0d653d0f223f9919b414ba937ce1588ce62f3f49a09622f086384a",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 9728.0,
+    "top_rank_energy_fraction": 0.4956519603729248,
+    "orthogonality_error": 5.544200689655554e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.9.mlp.gate_up_input",
+    "basis_sha256": "ab115a9e0232e733891d3bd9e5fe800fc358d9149c761ab83a6e379f853e60ef",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6189656853675842,
+    "orthogonality_error": 5.219831109570805e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.9.self_attn.o_input",
+    "basis_sha256": "45ddace5e942e02328fe61bd73fca4cb253f2b2b5c1604847b061823a71d8384",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 4096.0,
+    "top_rank_energy_fraction": 0.6105860471725464,
+    "orthogonality_error": 4.825911332773103e-07
+  },
+  {
+    "functional_key": "base_model.model.model.layers.9.self_attn.qkv_input",
+    "basis_sha256": "e6fcc30af48ac571075ea280ef79936052d6de3e87c0d82382f6e9b0274c9491",
+    "requested_rank": 8.0,
+    "actual_rank": 8.0,
+    "row_count": 128.0,
+    "input_dim": 2560.0,
+    "top_rank_energy_fraction": 0.6836405992507935,
+    "orthogonality_error": 5.284028929963824e-07
+  }
+]
