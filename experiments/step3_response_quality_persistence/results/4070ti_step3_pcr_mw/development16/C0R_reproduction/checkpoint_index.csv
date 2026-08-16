@@ -1,0 +1,3 @@
+step,checkpoint,adapter_sha256,queue_hash,target_position
+0,D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/development16/C0R_reproduction/checkpoints/step0000,bce6dd730f81ff77fd060c477e48725e43b30bcccf797594efda39c274c1dfc7,,0
+16,D:/Desktop/lora-safety-spectral-geometry/experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/development16/C0R_reproduction/checkpoints/step0016,8a5792358ae3c5e793dc21354a0b44168ecb91e49e36c4203c7b1c7dd798f39a,,64
