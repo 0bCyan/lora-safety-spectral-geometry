@@ -1,0 +1,82 @@
+{
+  "name": "step3_cspr_m0_post_run_interpretation_v1",
+  "source_route": "PASS_CSPR_M0_REAL_MODEL_MECHANISM_FEASIBLE",
+  "source_diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/run/cspr_m0_gradient_diagnostics.json",
+  "registered_gate_result": {
+    "all_gates_passed": true,
+    "active_pairs": 4,
+    "pair_denominator": 8,
+    "aggregate_projection_active": true,
+    "retained_preference_fraction": 0.9999948612893051,
+    "label_swap_cosine": -0.9999976745049348,
+    "label_swap_norm_ratio": 0.999909236794127,
+    "maximum_normalized_directional_or_kkt_residual": 7.629536690408137e-17,
+    "dual_armijo_accepted": true,
+    "accepted_step_size": 0.0002,
+    "accepted_trial": 1,
+    "state_restored": true
+  },
+  "same_step_loss_comparison": {
+    "initial_preference_loss": 0.6931471824645996,
+    "projected_preference_loss": 0.6821593418717384,
+    "unconstrained_preference_loss": 0.6820704936981201,
+    "initial_safety_loss": 1.1721002534031868,
+    "projected_safety_loss": 1.1720552667975426,
+    "unconstrained_safety_loss": 1.172110490500927,
+    "projected_preference_change": -0.010987840592861175,
+    "unconstrained_preference_change": -0.011076688766479492,
+    "projected_safety_change": -4.4986605644226074e-05,
+    "unconstrained_safety_change": 1.023709774017334e-05,
+    "interpretation": "At the same frozen step size, the projected direction passed both objectives while the unconstrained direction increased the frozen safety loss beyond the registered tolerance."
+  },
+  "mechanism_strength": {
+    "aggregate_preference_safety_cosine": -0.002266872448144312,
+    "projection_multiplier": 0.011606318851447549,
+    "minimum_active_pair_retained_fraction": 0.9982402239427995,
+    "wrong_prompt_cosine": 0.7610291675908554,
+    "wrong_prompt_norm_ratio": 0.9602140720502512,
+    "interpretation": "The projection was numerically consequential for the safety inequality but was a very small correction to the preference direction. The high wrong-prompt cosine is a descriptive warning that much of the preference gradient is response-driven rather than uniquely prompt-bound."
+  },
+  "coverage_field_clarification": {
+    "affected_field": "safety.coverage.nonzero_elements and analogous direct flatten_gradients outputs",
+    "recorded_value": 504,
+    "actual_semantics": "number of parameter tensors containing at least one nonzero scalar gradient",
+    "registered_parameter_tensors": 504,
+    "conclusion": "All 504 registered LoRA parameter tensors received a finite, nonzero gradient. The field name is misleading but the registered tensor-coverage gate is satisfied. Frozen M0 code and outputs were not modified post-run."
+  },
+  "claim_boundary": {
+    "established": [
+      "real-model LoRA gradients implement the registered CSPR geometry on this frozen batch",
+      "the label-swap control matches the initial-reference DPO prediction",
+      "the projection changes a same-step frozen-batch safety failure into a joint finite-step pass",
+      "the exact initial trainable state was restored with zero optimizer steps"
+    ],
+    "not_established": [
+      "candidate response quality or human construct validity",
+      "behavioral safety improvement",
+      "generalization to another batch, seed, checkpoint, or backbone",
+      "a material advantage over DPO, weighted loss, or PCGrad over training",
+      "paper-ready causal or efficacy evidence"
+    ]
+  },
+  "posterior_success_estimate": {
+    "type": "subjective_post_M0_design_assessment_not_a_confidence_interval",
+    "M0_frozen_pilot": "observed_pass",
+    "prespecified_disjoint_batch_replication_pass": [
+      0.55,
+      0.75
+    ],
+    "measurable_training_advantage_over_plain_preference_baseline": [
+      0.25,
+      0.4
+    ],
+    "eventual_credible_multiseed_behavioral_paper_result_after_human_measurement": [
+      0.25,
+      0.4
+    ],
+    "reason_for_limited_update": "M0 removes implementation infeasibility but the observed projection correction is small and target validity remains unresolved."
+  },
+  "next_recommended_stage": "Prospectively freeze an optimizer-free M1 replication over disjoint mechanism-dev and safety batches before returning to P2U human measurement.",
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

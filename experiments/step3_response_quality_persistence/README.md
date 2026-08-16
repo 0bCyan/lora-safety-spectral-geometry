@@ -70,6 +70,17 @@ review retry. P2U P0 writes only exact calibration-row subsequences of the
 unchanged P2S packets; target access, Reviewer C, gradients, and training remain
 unauthorized with `optimizer_steps=0` and `training_authorized=false`.
 
+`Step3_CSPR_M0_real_model_zero_update_plan.md` separately tests mechanism
+feasibility before the deferred human stage. On one prospectively frozen
+8-pair/8-safety-row Qwen3-4B constant20 batch, four pairwise gradients and the
+aggregate gradient activated the projection. The first `2e-4` projected trial
+reduced both frozen losses, while the unconstrained direction at the same step
+increased safety loss. Label swap, KKT, gradient coverage, memory, and exact
+state-restoration gates all passed. The aggregate conflict cosine was only
+`-0.00227` and the wrong-prompt cosine was `0.761`, so M0 establishes numerical
+feasibility but not a strong intervention, prompt-specific mechanism, target
+validity, or behavioral benefit. Training remains unauthorized.
+
 ## 1. Research Question
 
 > How can safety persistence be maintained while increasing prompt-relevant safe-response coverage and reducing mechanically reusable response structure, without exceeding the observed utility boundary?

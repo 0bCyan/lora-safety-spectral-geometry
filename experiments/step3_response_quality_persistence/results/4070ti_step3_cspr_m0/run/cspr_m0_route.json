@@ -1,0 +1,18 @@
+{
+  "gates": {
+    "aggregate_activation": true,
+    "directional_and_kkt": true,
+    "finite_joint_step": true,
+    "label_swap_control": true,
+    "pair_activation": true,
+    "retained_preference": true,
+    "state_restored": true,
+    "structural_and_gradient_valid": true,
+    "zero_optimizer": true
+  },
+  "name": "step3_cspr_m0_route_v1",
+  "next_authorized": "consider_resuming_external_human_P2U_measurement_only",
+  "optimizer_steps": 0,
+  "route": "PASS_CSPR_M0_REAL_MODEL_MECHANISM_FEASIBLE",
+  "training_authorized": false
+}

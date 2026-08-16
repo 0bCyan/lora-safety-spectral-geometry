@@ -1,0 +1,248 @@
+{
+  "candidate_outputs_generated": false,
+  "checkpoint_written": false,
+  "controls": {
+    "label_swap_cosine": -0.9999976745049348,
+    "label_swap_gradient_hash": "5bd7178c474d3df151075014a061bf9d5aa944880054f7d6b08b7086402061f7",
+    "label_swap_norm_ratio": 0.999909236794127,
+    "wrong_prompt_cosine": 0.7610291675908554,
+    "wrong_prompt_gradient_hash": "682f679ecde7fe6c0493bcb1c40627f4cf93854fd40ea2927a9e9c085107f88c",
+    "wrong_prompt_norm_ratio": 0.9602140720502512
+  },
+  "core100_opened": false,
+  "data_manifest_sha256": "b60c631d63b2368cf4b93df47d21df099e047b2b89015a38542536ac76626e91",
+  "design": {
+    "behavioral_qualification_claimed": false,
+    "beta": 0.1,
+    "category_diverse": true,
+    "human_behavioral_labels_used": false,
+    "max_length": 256,
+    "model_seed": 2026081710,
+    "preference_batch_reduction": "mean_over_pairs",
+    "preference_log_probability": "sum_over_response_tokens",
+    "preference_pairs": 8,
+    "preference_split": "mechanism_dev",
+    "safety_loss": "mean_response_token_causal_LM_loss_then_mean_over_rows",
+    "safety_rows": 8,
+    "selection_seed": 2026081709,
+    "wrong_prompt_control": "first_length_valid_cyclic_derangement"
+  },
+  "final_trainable_state_hash": "7c9efe198ace34b0b34a1f28a4b5cd75605e6374679d0bf59109e6dabf2184fc",
+  "gates": {
+    "aggregate_activation": true,
+    "directional_and_kkt": true,
+    "finite_joint_step": true,
+    "label_swap_control": true,
+    "pair_activation": true,
+    "retained_preference": true,
+    "state_restored": true,
+    "structural_and_gradient_valid": true,
+    "zero_optimizer": true
+  },
+  "heldout_opened": false,
+  "human_labels_used": false,
+  "initial_trainable_state_hash": "7c9efe198ace34b0b34a1f28a4b5cd75605e6374679d0bf59109e6dabf2184fc",
+  "line_search": {
+    "accepted": true,
+    "accepted_step_size": 0.0002,
+    "trials": [
+      {
+        "preference_bound": 0.6920249691389946,
+        "preference_loss": 0.6821593418717384,
+        "preference_pass": true,
+        "safety_bound": 1.1721002534031868,
+        "safety_loss": 1.1720552667975426,
+        "safety_pass": true,
+        "step_size": 0.0002,
+        "trial": 1
+      }
+    ]
+  },
+  "model": {
+    "checkpoint_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100",
+    "load_in_4bit": true,
+    "local_files_only": true,
+    "model_mode": "eval_with_gradients",
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "preconditioner": "identity",
+    "quantization": "nf4_double_quant_fp16_compute",
+    "reference_policy": "exact_initial_M0_checkpoint_state",
+    "trainable_coordinates": "checkpoint_LoRA_only"
+  },
+  "name": "step3_cspr_m0_real_model_mechanism_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "pairwise_projection": [
+    {
+      "active": false,
+      "coverage": {
+        "finite": true,
+        "missing_gradient_tensors": [],
+        "nonzero_elements": 504,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "gradient_hash": "4a9099912a0e64671a08fb739a1ef1b6477473aba167f3b1ca7bd1fc67778b04",
+      "pair_id": "cspr_pair_c5abb7a328d52f4d99fe",
+      "preference_norm": 13.651817125769345,
+      "retained_preference_fraction": 1.0,
+      "safety_cosine": 0.020859814145115986
+    },
+    {
+      "active": true,
+      "coverage": {
+        "finite": true,
+        "missing_gradient_tensors": [],
+        "nonzero_elements": 504,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "gradient_hash": "45fdb02fc069f9ee1eca5f6b19a325396e7a06a380e648a89820ec899fc22d38",
+      "pair_id": "cspr_pair_fbf0705e7fbce68104c7",
+      "preference_norm": 15.138395904630098,
+      "retained_preference_fraction": 0.9994495832221004,
+      "safety_cosine": -0.02346096285107561
+    },
+    {
+      "active": true,
+      "coverage": {
+        "finite": true,
+        "missing_gradient_tensors": [],
+        "nonzero_elements": 504,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "gradient_hash": "41e0b2913578da8d3218314ce43be544eb84d3e92e50d36b8174cea8e84a9dde",
+      "pair_id": "cspr_pair_0673a0d4be30a4c5edc7",
+      "preference_norm": 19.222124165921436,
+      "retained_preference_fraction": 0.9997118842275984,
+      "safety_cosine": -0.016973973382847726
+    },
+    {
+      "active": true,
+      "coverage": {
+        "finite": true,
+        "missing_gradient_tensors": [],
+        "nonzero_elements": 504,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "gradient_hash": "a61d96e0662fca3cab293578b4ea4dcc09e58de258e7cb276d97e330df740d0c",
+      "pair_id": "cspr_pair_d7f158949399034cec4c",
+      "preference_norm": 17.867663498018747,
+      "retained_preference_fraction": 0.9991011835626401,
+      "safety_cosine": -0.029980267466449335
+    },
+    {
+      "active": false,
+      "coverage": {
+        "finite": true,
+        "missing_gradient_tensors": [],
+        "nonzero_elements": 504,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "gradient_hash": "96110a65980da5d7e83e3211c41e1c908340fea6ffc0edbde4a42211cd13e3d1",
+      "pair_id": "cspr_pair_d097726880af81a8c43e",
+      "preference_norm": 15.477189261609892,
+      "retained_preference_fraction": 1.0,
+      "safety_cosine": 0.04356847508869682
+    },
+    {
+      "active": true,
+      "coverage": {
+        "finite": true,
+        "missing_gradient_tensors": [],
+        "nonzero_elements": 504,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "gradient_hash": "070d41037f5ae2348e59540d1810695ba3598b99f7c2b0b2435712f1f9c2444c",
+      "pair_id": "cspr_pair_f4994bb4c6703e446f23",
+      "preference_norm": 17.405896224902495,
+      "retained_preference_fraction": 0.9982402239427995,
+      "safety_cosine": -0.04194968482838054
+    },
+    {
+      "active": false,
+      "coverage": {
+        "finite": true,
+        "missing_gradient_tensors": [],
+        "nonzero_elements": 504,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "gradient_hash": "9a85c22d6b0a19ee9c098cff6a671387d42f11b65044e62bce04ba0df41c69ba",
+      "pair_id": "cspr_pair_62ccdb76287574232daa",
+      "preference_norm": 16.63359282130016,
+      "retained_preference_fraction": 1.0,
+      "safety_cosine": 0.011425834167222712
+    },
+    {
+      "active": false,
+      "coverage": {
+        "finite": true,
+        "missing_gradient_tensors": [],
+        "nonzero_elements": 504,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "gradient_hash": "8499bf0115531e8ea47d24fee39e1f7f97fedbbe68a27060ee057cce491180b5",
+      "pair_id": "cspr_pair_08f828c053171c865387",
+      "preference_norm": 14.622723223452278,
+      "retained_preference_fraction": 1.0,
+      "safety_cosine": 0.04529236012238039
+    }
+  ],
+  "preference": {
+    "coverage": {
+      "finite": true,
+      "missing_gradient_tensors": [],
+      "nonzero_elements": 16515072,
+      "parameter_elements": 16515072,
+      "parameter_tensors": 504
+    },
+    "gradient_hash": "5f401178ae22cbb6ca112817919e229086ef03b7048894e5ff065a7c57309d8e",
+    "gradient_norm": 7.490724572310515,
+    "initial_loss": 0.6931471824645996
+  },
+  "projection": {
+    "active": true,
+    "denominator": 2.140488163665911,
+    "direction_norm": 7.490705325952467,
+    "kkt_complementarity_abs": 9.704469322576109e-18,
+    "kkt_stationarity_norm": 3.53990531202267e-16,
+    "multiplier": 0.011606318851447549,
+    "normalized_residuals": {
+      "kkt_complementarity": 7.629536690408137e-17,
+      "kkt_stationarity": 4.725730299065742e-17,
+      "positive_preference_derivative": 0.0,
+      "positive_safety_derivative": 7.629536690408137e-17
+    },
+    "preference_directional_derivative": -56.11066628025395,
+    "preference_safety_cosine": -0.002266872448144312,
+    "retained_preference_fraction": 0.9999948612893051,
+    "safety_directional_derivative": 8.36136715420821e-16
+  },
+  "route": "PASS_CSPR_M0_REAL_MODEL_MECHANISM_FEASIBLE",
+  "runtime_head": "ea8690bb2b28737cc4c4b291f302b3d756a13104",
+  "safety": {
+    "coverage": {
+      "finite": true,
+      "missing_gradient_tensors": [],
+      "nonzero_elements": 504,
+      "parameter_elements": 16515072,
+      "parameter_tensors": 504
+    },
+    "gradient_hash": "cd453592da505625fc34c87df7b418e8eb18f07d5aaee93e4cdf0b91774c56b9",
+    "gradient_norm": 1.4630407252248554,
+    "initial_loss": 1.1721002534031868
+  },
+  "scheduler_objects": 0,
+  "training_authorized": false,
+  "unconstrained_at_projected_accepted_step": {
+    "preference_loss": 0.6820704936981201,
+    "safety_loss": 1.172110490500927,
+    "step_size": 0.0002
+  }
+}
