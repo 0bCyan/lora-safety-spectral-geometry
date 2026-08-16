@@ -1,0 +1,82 @@
+{
+  "name": "step3_ramp_matched_smoke_reproduction_manifest_v1",
+  "route": "PASS_RAMP_SMOKE_AUTHORIZE_MATCHED_DEVELOPMENT16_PROTOCOL",
+  "runtime_head": "5e7912c98111191c7dd54a13b7c14ada1f018f44",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/protocol/ramp_smoke_protocol.json",
+  "protocol_sha256": "72cc30016f1f48c6e37b21614a3a8290bf3c16f81e14a70f8908fa97063a240f",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/uniform/training_trace.csv",
+      "sha256": "ba58a1b4a7862bce97dccad06fe232cbdb2ef9eaa1fc15d218426aef8b4b11e3",
+      "bytes": 656
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/uniform/checkpoint_index.csv",
+      "sha256": "dc493b0755a853a8e8639f4d92c9f1a4018ec1c7184c236415d344cad1fdeacd",
+      "bytes": 229
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/uniform/run_manifest.json",
+      "sha256": "752d9cb40a94a0c5cfc96ad610f9fba22c7340ce0954340d4f7af4c0c613b9ea",
+      "bytes": 84864
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/suffix/training_trace.csv",
+      "sha256": "eab29e1379498efdfe279e89811c9463103a3cefbb0bcb32b98df7f03d150a81",
+      "bytes": 650
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/suffix/checkpoint_index.csv",
+      "sha256": "49e1c43456842e68720d55c3360532df213cfc9fd32e417822f680cbd7affa7b",
+      "bytes": 228
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/suffix/run_manifest.json",
+      "sha256": "821c737697f8ab84b51fbb4ef685146607d42e03c6889ae66bf8ece45d430d7d",
+      "bytes": 84861
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/ramp/training_trace.csv",
+      "sha256": "2f38fd8677e08b9eeafb9cf76284baf791483410b666c824453a1a4ccb0945b0",
+      "bytes": 644
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/ramp/checkpoint_index.csv",
+      "sha256": "717286da1446ea31b67440f2276187758742211e6e6e97b045d39488d7323766",
+      "bytes": 226
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/ramp/run_manifest.json",
+      "sha256": "bb5a7fbbaa18d4b852f83c03ff923a8a20cb7b0b299e5bdbda7ce24d5ec0d995",
+      "bytes": 84855
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/ramp_smoke_decision.json",
+      "sha256": "623e6714bee962d2bc095e5537be7739de650858dccca6684af6e99c4eb387fa",
+      "bytes": 4426
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/RAMP_SMOKE_REPORT.md",
+      "sha256": "13670ed63bf39a48b1a4b8b9a55cc762dd1ebc64ea6a8592fd9f072150e46354",
+      "bytes": 705
+    }
+  ],
+  "local_ignored_checkpoints": {
+    "uniform": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/uniform/checkpoints/step0002",
+    "suffix": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/suffix/checkpoints/step0002",
+    "ramp": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/ramp/checkpoints/step0002"
+  },
+  "final_adapter_sha256": {
+    "uniform": "78a381e778623a7bca5e96cdec0963f863e09d9ffc915193009b8139cfd5ef1f",
+    "suffix": "481ff4a546b3af3e3ce0b86b9ddc311b54739bbec4949c5f41beff80cdf74313",
+    "ramp": "7ac61063d1a932d55286b7135099936bae3591d6d02cd14f532db2dbfc85ae04"
+  },
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_ramp_training.py run",
+  "optimizer_steps_per_arm": 2,
+  "total_optimizer_steps": 6,
+  "candidate_outputs_generated": false,
+  "development_training_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

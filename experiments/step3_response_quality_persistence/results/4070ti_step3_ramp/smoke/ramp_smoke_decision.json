@@ -1,0 +1,116 @@
+{
+  "name": "step3_ramp_matched_smoke_decision_v1",
+  "route": "PASS_RAMP_SMOKE_AUTHORIZE_MATCHED_DEVELOPMENT16_PROTOCOL",
+  "runtime_head": "5e7912c98111191c7dd54a13b7c14ada1f018f44",
+  "protocol_sha256": "72cc30016f1f48c6e37b21614a3a8290bf3c16f81e14a70f8908fa97063a240f",
+  "checks": {
+    "all_arms_present": true,
+    "steps_exact": true,
+    "no_skipped_updates": true,
+    "finite": true,
+    "vram": true,
+    "initial_state_equal": true,
+    "risk_order_equal": true,
+    "target_order_equal": true,
+    "target_exposure_equal": true,
+    "safety_draws_equal": true,
+    "safety_response_tokens_equal": true,
+    "available_prefix_terms_equal": true,
+    "available_suffix_terms_equal": true,
+    "first_step_risk_loss_equal": true,
+    "first_step_uniform_safety_loss_equal": true,
+    "initial_uniform_diagnostic_equal": true,
+    "initial_prefix_diagnostic_equal": true,
+    "initial_suffix_diagnostic_equal": true,
+    "assignment_counts_correct": true,
+    "all_registered_assignments_exercised": true,
+    "sealed_data_untouched": true,
+    "ramp_prefix_loss_reduction": 2.258456736803055,
+    "uniform_prefix_loss_reduction": 2.1874793022871017,
+    "suffix_prefix_loss_reduction": 2.1711696088314056,
+    "ramp_advantage_over_uniform": 0.07097743451595306,
+    "ramp_advantage_over_suffix": 0.08728712797164917,
+    "direction_realized": true
+  },
+  "arms": {
+    "uniform": {
+      "objective": "uniform",
+      "completed_steps": 2,
+      "optimizer_steps": 2,
+      "final_adapter_sha256": "78a381e778623a7bca5e96cdec0963f863e09d9ffc915193009b8139cfd5ef1f",
+      "prefix_loss_reduction": 2.1874793022871017,
+      "initial_diagnostic": {
+        "rows": 16,
+        "uniform_loss_mean": 6.608932465314865,
+        "prefix_margin_loss_mean": 6.679420560598373,
+        "suffix_margin_loss_mean": 5.298068270087242,
+        "prefix_certified_token_rate": 0.375,
+        "prefix_full_certificate_rate": 0.0
+      },
+      "final_diagnostic": {
+        "rows": 16,
+        "uniform_loss_mean": 4.348715513944626,
+        "prefix_margin_loss_mean": 4.491941258311272,
+        "suffix_margin_loss_mean": 3.3653101101517677,
+        "prefix_certified_token_rate": 0.39453125,
+        "prefix_full_certificate_rate": 0.0
+      },
+      "vram_headroom_fraction": 0.5526605056385621
+    },
+    "suffix": {
+      "objective": "suffix",
+      "completed_steps": 2,
+      "optimizer_steps": 2,
+      "final_adapter_sha256": "481ff4a546b3af3e3ce0b86b9ddc311b54739bbec4949c5f41beff80cdf74313",
+      "prefix_loss_reduction": 2.1711696088314056,
+      "initial_diagnostic": {
+        "rows": 16,
+        "uniform_loss_mean": 6.608932465314865,
+        "prefix_margin_loss_mean": 6.679420560598373,
+        "suffix_margin_loss_mean": 5.298068270087242,
+        "prefix_certified_token_rate": 0.375,
+        "prefix_full_certificate_rate": 0.0
+      },
+      "final_diagnostic": {
+        "rows": 16,
+        "uniform_loss_mean": 4.355249285697937,
+        "prefix_margin_loss_mean": 4.508250951766968,
+        "suffix_margin_loss_mean": 3.339468866586685,
+        "prefix_certified_token_rate": 0.390625,
+        "prefix_full_certificate_rate": 0.0
+      },
+      "vram_headroom_fraction": 0.39583927044742095
+    },
+    "ramp": {
+      "objective": "prefix",
+      "completed_steps": 2,
+      "optimizer_steps": 2,
+      "final_adapter_sha256": "7ac61063d1a932d55286b7135099936bae3591d6d02cd14f532db2dbfc85ae04",
+      "prefix_loss_reduction": 2.258456736803055,
+      "initial_diagnostic": {
+        "rows": 16,
+        "uniform_loss_mean": 6.608932465314865,
+        "prefix_margin_loss_mean": 6.679420560598373,
+        "suffix_margin_loss_mean": 5.298068270087242,
+        "prefix_certified_token_rate": 0.375,
+        "prefix_full_certificate_rate": 0.0
+      },
+      "final_diagnostic": {
+        "rows": 16,
+        "uniform_loss_mean": 4.316548436880112,
+        "prefix_margin_loss_mean": 4.420963823795319,
+        "suffix_margin_loss_mean": 3.3650227710604668,
+        "prefix_certified_token_rate": 0.40625,
+        "prefix_full_certificate_rate": 0.0
+      },
+      "vram_headroom_fraction": 0.3813459268004723
+    }
+  },
+  "total_optimizer_steps": 6,
+  "candidate_outputs_generated": false,
+  "development_training_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "next_authorized": "freeze_and_push_separate_matched_development16_protocol"
+}
