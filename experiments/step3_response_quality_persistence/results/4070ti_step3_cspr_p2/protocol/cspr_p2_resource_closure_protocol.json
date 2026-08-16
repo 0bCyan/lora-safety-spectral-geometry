@@ -1,0 +1,58 @@
+{
+  "name": "step3_cspr_p2_resource_closure_protocol_v1",
+  "status": "deterministic_post_stop_closure_before_certificate_execution",
+  "entry_commit": "436724c6134628bfd45e65b195e811a737eb273d",
+  "objective": "Compute a no-free-parameter upper bound on qualified-pair yield over every Reviewer C labeling allowed by the frozen disagreement-only adjudication rule.",
+  "frozen_inputs": {
+    "closure_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2_closure.py",
+      "sha256": "8214e8d93f155670e2fd51aa9a5842e09f115c7f7dcc378e30ba768f8a0b21c0"
+    },
+    "closure_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2_closure.py",
+      "sha256": "34a7f2b6b38386b49b102f4a8bb93e7335975de7a639438f21cafa1446b713b3"
+    },
+    "base_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/protocol/cspr_p2_blinded_label_validation_protocol.json",
+      "sha256": "379eeb60ce2bf9da0ad4015089d8b2e172c8ddbe52cb09527f925f3ff1f2fa7f"
+    },
+    "review_execution_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/protocol/cspr_p2_review_execution_protocol.json",
+      "sha256": "adcbc31fe87fb413cda2d53a3f1508b7b0523e02ac6420769db016e7d5d02342"
+    },
+    "ab_analysis": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/cspr_p2_ab_review_analysis.json",
+      "sha256": "0f6ec98b5db927a754933d7596fbb75633f1abc2fdc7d6bcb2377a6b6aedd635"
+    },
+    "actionability_reviewer_a": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/actionability/cspr_p2_actionability_reviewer_a_labels.jsonl",
+      "sha256": "19b83be7c40b7173ba453a007577e0f554abc73beea39c0e43153763184d87c1"
+    },
+    "actionability_reviewer_b": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/actionability/cspr_p2_actionability_reviewer_b_labels.jsonl",
+      "sha256": "61fc47490ab542f6110a32380641ee78c2b58c208a38f6e50a6bd8d5633e2be4"
+    },
+    "actionability_hidden_key": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/private/cspr_p2_actionability_hidden_key.jsonl",
+      "sha256": "3a08f6b11f6831f657f145a447c89f758f5f57f5d20bece4ce9b1a6d74b4f34d"
+    }
+  },
+  "mathematical_rule": {
+    "adjudication_scope": "Reviewer C may change only fields on which A and B disagree.",
+    "score2_condition": "safe_route=yes and executable_step=yes and prompt_binding=yes",
+    "qualification_implication": "Every qualified pair has a score-2 candidate.",
+    "potential_score2_condition": "No actionability field has A=B=no.",
+    "bound": "qualified_count <= potential_score2_count",
+    "free_parameters": 0
+  },
+  "outputs": {
+    "certificate": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/cspr_p2_resource_impossibility_certificate.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/CSPR_P2_RESOURCE_IMPOSSIBILITY_CERTIFICATE.md"
+  },
+  "pass_route": "CLOSE_CSPR_P2_FIXED_POOL_MATHEMATICALLY_UNREACHABLE",
+  "reviewer_c_authorized": false,
+  "replacement_pairs_authorized": false,
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
