@@ -1,0 +1,201 @@
+{
+  "name": "step3_cspr_p1s_authored_candidate_repair_protocol_v1",
+  "status": "prospective_before_authoring_packet_or_new_candidate",
+  "entry_commit": "38192a91efd1ba274ef6be7b785292a9ec9967c7",
+  "objective": "Replace the mathematically unreachable public chosen-response pool with two independently authored safe-actionable candidates per frozen prompt while separating reviewer calibration from target-pool yield.",
+  "frozen_inputs": {
+    "authoring_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p1s_authoring.py",
+      "sha256": "cc5b9173c854baf920f799eafd3ec81ee583ff537477c16374a21cce7129567e"
+    },
+    "authoring_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p1s_authoring.py",
+      "sha256": "7a90e640f0329996a7eec6cffa1238b17180fdc919aa6ee12cb2f69fa639e369"
+    },
+    "authoring_instructions": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3_cspr_p1s_authoring_instructions.md",
+      "sha256": "7742ea83b0f0492605cabc5ae602442a2011b18588899298e128b0819263d885"
+    },
+    "p2_closure_certificate": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/cspr_p2_resource_impossibility_certificate.json",
+      "sha256": "622d51775a68fa81cc7d9f08598d3060add661b3656c9b9cf28b024b2ea3acb1"
+    },
+    "p2_packet_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/cspr_p2_packet_manifest.json",
+      "sha256": "eb673faab05ed990f9b6852ca29dc45737d7210d6357412fb1ba43d3ee10ea7a"
+    },
+    "p2_action_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/actionability/cspr_p2_actionability_reviewer_a_packet.jsonl",
+      "sha256": "03660a01db8ea4939375249b9fa20e4abf55816b9dda55543f1b0c41ab5438e5"
+    },
+    "p2_action_hidden_key": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/private/cspr_p2_actionability_hidden_key.jsonl",
+      "sha256": "3a08f6b11f6831f657f145a447c89f758f5f57f5d20bece4ce9b1a6d74b4f34d"
+    },
+    "p2_safety_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_a_packet.jsonl",
+      "sha256": "37464e0f5a3fe9fc39649b075674b3c754cca8264266b72c71a703b42c2450d4"
+    },
+    "action_calibration_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_packet_manifest.json",
+      "sha256": "f658157d91cc7597b0d2c0cdab5ebd0ae6fa41211f5311b98b95c340717b8500"
+    },
+    "action_calibration_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_packet.jsonl",
+      "sha256": "45131bce6b1ffbb342b66b2b60b0875b559aa512e796b8a858dd0e134dd164ce"
+    },
+    "action_calibration_hidden_key": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_hidden_key.csv",
+      "sha256": "231c3bf0169a72e04901c71810c1e0981c952fcfc49104ae3de6f3b802ef781e"
+    },
+    "action_calibration_final_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reviews/validation/step3o_validation_final_labels.jsonl",
+      "sha256": "56ec357b3795ac14da8197042d1e2e416bd16a629b8e660c8c13e17eeb55969b"
+    },
+    "action_calibration_agreement": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/step3o_validation_review_agreement.json",
+      "sha256": "426f628bf19f08db94746481f887eb7f493af48319c7ada6464005d3a8eb932c"
+    },
+    "safety_calibration_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_packet_manifest.json",
+      "sha256": "a1403693eb6493036e196af73fa6e2d277c17d5207d8c0941387330ae22b4179"
+    },
+    "safety_calibration_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_packet.jsonl",
+      "sha256": "0e767a79b903d94bd64a619e939d5d08c00aaf0787301fc112c1c3cb4b37523a"
+    },
+    "safety_calibration_hidden_key": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_hidden_key.csv",
+      "sha256": "e447237002509ec384cdbf7a2076395de0571b9a8a872a2065603c957ae50d28"
+    },
+    "safety_calibration_final_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reviews/transport_safety/step3o_transport_safety_final_labels.jsonl",
+      "sha256": "3a1d95a6179446ece5f8e82fdd5fd3f7f882793b29d5d42cb4e68f2916d5824a"
+    },
+    "safety_calibration_agreement": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/step3o_transport_safety_review_agreement.json",
+      "sha256": "dcd3afaef033230458fdb6e6285c6fe3252128a14a34bd56309b2413d9bdf57e"
+    }
+  },
+  "design": {
+    "seed": 2026081704,
+    "prompt_rows": 120,
+    "independent_authors": 2,
+    "authored_rows": 240,
+    "author_specific_order": true,
+    "complementary_modes_per_prompt": true,
+    "modes": [
+      "specific_redirect",
+      "risk_mitigation"
+    ],
+    "old_candidate_visible_to_authors": false,
+    "rejected_response_visible_to_authors": false,
+    "prospective_split_visible_to_authors": false,
+    "category_visible_to_authors": false,
+    "source_label_visible_to_authors": false
+  },
+  "authors": {
+    "sessions": "two distinct fresh no-context sub-agent sessions inheriting the current parent model",
+    "session_reuse": false,
+    "cross_author_output_visibility": false,
+    "manual_retry": false,
+    "repair_or_top_up": false,
+    "allowed_inputs": [
+      "assigned author packet",
+      "blank output template",
+      "frozen authoring instructions"
+    ],
+    "forbidden_inputs": [
+      "old chosen response",
+      "rejected response",
+      "source label",
+      "pair role",
+      "prospective split",
+      "category",
+      "old or current reviewer labels",
+      "another author output",
+      "training or gradient result",
+      "git history"
+    ]
+  },
+  "mechanical_validation": {
+    "minimum_words": 40,
+    "maximum_words": 160,
+    "thinking_tags_forbidden": true,
+    "normalized_exact_prior_response_match_excluded": true,
+    "normalized_exact_authored_duplicate_policy": "retain one deterministic representative and exclude the others",
+    "semantic_safety_or_actionability_judgment": false,
+    "invalid_candidate_retry": false
+  },
+  "review_supply_gates": {
+    "minimum_train_candidate_prompts": 24,
+    "train_candidate_denominator": 64,
+    "minimum_calibration_prompts": 12,
+    "calibration_denominator": 28,
+    "minimum_mechanism_dev_prompts": 12,
+    "mechanism_dev_denominator": 28,
+    "minimum_total_prompts": 48,
+    "total_denominator": 120,
+    "minimum_categories_with_at_least_two_prompts": 10,
+    "category_denominator": 14,
+    "interpretation": "best-case source-supply reachability using the unchanged final fixed-pool gates; not a semantic qualification"
+  },
+  "future_blinded_review_design": {
+    "requires_separate_prospective_protocol_after_author_validation": true,
+    "action_calibration_primary_rows": 60,
+    "action_calibration_final_score_counts": {
+      "0": 20,
+      "1": 20,
+      "2": 20
+    },
+    "action_calibration_hidden_duplicates": 6,
+    "safety_calibration_primary_rows": 40,
+    "safety_calibration_final_label_counts": {
+      "yes": 20,
+      "no": 20
+    },
+    "safety_calibration_hidden_duplicates": 4,
+    "calibration_selection": "deterministic category-diverse selection from previously adjudicated Step3O validation assets",
+    "calibration_and_target_rows_blinded_and_interleaved": true,
+    "calibration_reliability_uses_inherited_p2_thresholds": true,
+    "calibration_reference_concordance_uses_same_inherited_raw_thresholds": true,
+    "target_score_prevalence_is_a_reported_outcome_not_a_reviewer_reliability_gate": true,
+    "fresh_safety_reviewers": 2,
+    "fresh_actionability_reviewers": 2,
+    "reviewers_distinct_from_authors_and_p2_reviewers": true,
+    "reviewer_c_only_after_calibration_pass": true,
+    "reviewer_c_only_for_target_ab_disagreements": true,
+    "candidate_qualification": "clean_safe=yes and safe_route=yes and executable_step=yes and prompt_binding=yes",
+    "rejected_qualification": "clean_safe=no",
+    "per_prompt_selection": "if multiple candidates qualify, select the minimum frozen stable hash; never use a holistic preference label",
+    "fixed_pool_gates_unchanged": true
+  },
+  "packet_outputs": {
+    "author_a_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_a_packet.jsonl",
+    "author_b_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_b_packet.jsonl",
+    "author_a_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_a_template.jsonl",
+    "author_b_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_b_template.jsonl",
+    "hidden_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/private/cspr_p1s_authoring_hidden_key.jsonl",
+    "manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/reports/cspr_p1s_authoring_packet_manifest.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/reports/CSPR_P1S_AUTHORING_PACKET_FREEZE.md"
+  },
+  "author_outputs": {
+    "author_a_responses": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/authors/cspr_p1s_author_a_responses.jsonl",
+    "author_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/authors/cspr_p1s_author_a_provenance.json",
+    "author_b_responses": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/authors/cspr_p1s_author_b_responses.jsonl",
+    "author_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/authors/cspr_p1s_author_b_provenance.json"
+  },
+  "validation_outputs": {
+    "candidate_ledger": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/private/cspr_p1s_authored_candidate_ledger.jsonl",
+    "validation": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/reports/cspr_p1s_authoring_validation.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/reports/CSPR_P1S_AUTHORING_VALIDATION.md"
+  },
+  "packet_pass_route": "AUTHORIZE_TWO_INDEPENDENT_CSPR_P1S_AUTHORS_ONLY",
+  "validation_pass_route": "AUTHORIZE_CSPR_P2S_REVIEW_PACKET_PROTOCOL_ONLY",
+  "validation_failure_route": "STOP_CSPR_P1S_AUTHORED_SOURCE_YIELD",
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
