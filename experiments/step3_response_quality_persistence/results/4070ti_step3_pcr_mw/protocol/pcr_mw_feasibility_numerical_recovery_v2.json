@@ -1,0 +1,23 @@
+{
+  "name": "step3_pcr_mw_feasibility_numerical_recovery_v2",
+  "status": "prospective_after_incident_001_before_recovery_execution",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "incident": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/feasibility/feasibility_incident_001.json",
+  "unchanged": [
+    "fresh seed1 step0 model initialization",
+    "74-row mismatch packet and its hash",
+    "first 16 calibration rows",
+    "PCR-M and PCR-MW formulas",
+    "temperature 0.1",
+    "target gradient ratio 0.25",
+    "all feasibility gates and stop rules"
+  ],
+  "only_numerical_change": "Set manual backward loss scale from 65536 to 1. LoRA trainable gradients are FP32, so manual scaling is unnecessary and caused the observed FP16 backward overflow.",
+  "fail_closed_change": "If any ratio remains zero or non-finite, write a complete STOP summary with eta unavailable instead of raising during aggregation.",
+  "rerun_limit": 1,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

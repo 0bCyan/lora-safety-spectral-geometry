@@ -153,6 +153,10 @@ def _summary(values: list[float]) -> dict[str, float]:
     }
 
 
+def _finite_or_none(value: float) -> float | None:
+    return value if math.isfinite(value) else None
+
+
 def run(registry: dict[str, Any], registry_path: Path, output_dir: Path) -> None:
     import torch
 
@@ -233,19 +237,19 @@ def run(registry: dict[str, Any], registry_path: Path, output_dir: Path) -> None
                 "mean_worst_loss_at_reference": float(
                     detail["mean_worst_loss"].detach().float().cpu()
                 ),
-                "safety_gradient_norm": safety_norm,
-                "mean_gradient_norm": mean_norm,
-                "mean_worst_gradient_norm": mean_worst_norm,
-                "mean_aux_to_safety_ratio": mean_ratio,
-                "mean_worst_aux_to_safety_ratio": mean_worst_ratio,
-                "mean_mean_worst_gradient_cosine": gradient_common.gradient_cosine(
-                    mean_gradient, mean_worst_gradient
+                "safety_gradient_norm": _finite_or_none(safety_norm),
+                "mean_gradient_norm": _finite_or_none(mean_norm),
+                "mean_worst_gradient_norm": _finite_or_none(mean_worst_norm),
+                "mean_aux_to_safety_ratio": _finite_or_none(mean_ratio),
+                "mean_worst_aux_to_safety_ratio": _finite_or_none(mean_worst_ratio),
+                "mean_mean_worst_gradient_cosine": _finite_or_none(
+                    gradient_common.gradient_cosine(mean_gradient, mean_worst_gradient)
                 ),
-                "mean_safety_gradient_cosine": gradient_common.gradient_cosine(
-                    mean_gradient, safety_gradient
+                "mean_safety_gradient_cosine": _finite_or_none(
+                    gradient_common.gradient_cosine(mean_gradient, safety_gradient)
                 ),
-                "mean_worst_safety_gradient_cosine": gradient_common.gradient_cosine(
-                    mean_worst_gradient, safety_gradient
+                "mean_worst_safety_gradient_cosine": _finite_or_none(
+                    gradient_common.gradient_cosine(mean_worst_gradient, safety_gradient)
                 ),
                 "finite_nonzero": finite_nonzero,
             }
@@ -253,17 +257,28 @@ def run(registry: dict[str, Any], registry_path: Path, output_dir: Path) -> None
         print(f"PCR-MW feasibility {index}/{len(calibration_rows)} finite={finite_nonzero}", flush=True)
 
     pcr.write_jsonl(output_dir / "calibration_rows.jsonl", result_rows)
-    mean_ratios = [float(row["mean_aux_to_safety_ratio"]) for row in result_rows]
-    mw_ratios = [float(row["mean_worst_aux_to_safety_ratio"]) for row in result_rows]
+    mean_ratios = [
+        float(row["mean_aux_to_safety_ratio"])
+        for row in result_rows
+        if row["mean_aux_to_safety_ratio"] is not None
+        and float(row["mean_aux_to_safety_ratio"]) > 0
+    ]
+    mw_ratios = [
+        float(row["mean_worst_aux_to_safety_ratio"])
+        for row in result_rows
+        if row["mean_worst_aux_to_safety_ratio"] is not None
+        and float(row["mean_worst_aux_to_safety_ratio"]) > 0
+    ]
     target_ratio = float(registry["target_weighted_aux_to_safety_gradient_ratio"])
-    mean_summary = _summary(mean_ratios)
-    mw_summary = _summary(mw_ratios)
-    eta_mean = target_ratio / mean_summary["median"]
-    eta_mw = target_ratio / mw_summary["median"]
+    all_ratios_valid = len(mean_ratios) == len(result_rows) and len(mw_ratios) == len(result_rows)
+    mean_summary = _summary(mean_ratios) if mean_ratios else {}
+    mw_summary = _summary(mw_ratios) if mw_ratios else {}
+    eta_mean = target_ratio / mean_summary["median"] if all_ratios_valid else None
+    eta_mw = target_ratio / mw_summary["median"] if all_ratios_valid else None
     eta_mean_values = [target_ratio / value for value in mean_ratios]
     eta_mw_values = [target_ratio / value for value in mw_ratios]
-    eta_mean_summary = _summary(eta_mean_values)
-    eta_mw_summary = _summary(eta_mw_values)
+    eta_mean_summary = _summary(eta_mean_values) if eta_mean_values else {}
+    eta_mw_summary = _summary(eta_mw_values) if eta_mw_values else {}
     thresholds = registry["feasibility_gates"]
     finite_rows = sum(bool(row["finite_nonzero"]) for row in result_rows)
     total_memory = int(torch.cuda.get_device_properties(0).total_memory)
@@ -277,18 +292,23 @@ def run(registry: dict[str, Any], registry_path: Path, output_dir: Path) -> None
         "finite_nonzero_gradient_rows": finite_rows
         == int(thresholds["finite_nonzero_gradient_rows"]),
         "vram_headroom": headroom >= float(thresholds["vram_headroom_fraction_min"]),
-        "mean_raw_ratio_range": float(thresholds["raw_aux_to_safety_ratio_median_min"])
+        "all_auxiliary_ratios_finite_positive": all_ratios_valid,
+        "mean_raw_ratio_range": all_ratios_valid
+        and float(thresholds["raw_aux_to_safety_ratio_median_min"])
         <= mean_summary["median"]
         <= float(thresholds["raw_aux_to_safety_ratio_median_max"]),
-        "mean_worst_raw_ratio_range": float(
+        "mean_worst_raw_ratio_range": all_ratios_valid
+        and float(
             thresholds["raw_aux_to_safety_ratio_median_min"]
         )
         <= mw_summary["median"]
         <= float(thresholds["raw_aux_to_safety_ratio_median_max"]),
-        "mean_eta_iqr_stability": eta_mean_summary["q3"]
+        "mean_eta_iqr_stability": all_ratios_valid
+        and eta_mean_summary["q3"]
         / max(eta_mean_summary["q1"], 1e-30)
         <= float(thresholds["eta_interquartile_ratio_max"]),
-        "mean_worst_eta_iqr_stability": eta_mw_summary["q3"]
+        "mean_worst_eta_iqr_stability": all_ratios_valid
+        and eta_mw_summary["q3"]
         / max(eta_mw_summary["q1"], 1e-30)
         <= float(thresholds["eta_interquartile_ratio_max"]),
     }
@@ -309,8 +329,17 @@ def run(registry: dict[str, Any], registry_path: Path, output_dir: Path) -> None
         "eta_pcr_mw": eta_mw,
         "eta_pcr_m_distribution": eta_mean_summary,
         "eta_pcr_mw_distribution": eta_mw_summary,
-        "mean_mean_worst_gradient_cosine_median": pcr.quantile(
-            [float(row["mean_mean_worst_gradient_cosine"]) for row in result_rows], 0.5
+        "mean_mean_worst_gradient_cosine_median": (
+            pcr.quantile(
+                [
+                    float(row["mean_mean_worst_gradient_cosine"])
+                    for row in result_rows
+                    if row["mean_mean_worst_gradient_cosine"] is not None
+                ],
+                0.5,
+            )
+            if any(row["mean_mean_worst_gradient_cosine"] is not None for row in result_rows)
+            else None
         ),
         "gates": gates,
         "route": route,
