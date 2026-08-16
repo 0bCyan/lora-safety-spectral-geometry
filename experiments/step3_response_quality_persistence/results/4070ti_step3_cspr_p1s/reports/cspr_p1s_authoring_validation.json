@@ -1,0 +1,67 @@
+{
+  "analysis": {
+    "author_rows": 240,
+    "categories_with_at_least_two_valid_prompts": 14,
+    "gates": {
+      "calibration_prompt_supply_pass": true,
+      "category_supply_pass": true,
+      "mechanism_dev_prompt_supply_pass": true,
+      "total_prompt_supply_pass": true,
+      "train_candidate_prompt_supply_pass": true
+    },
+    "mechanical_exclusion_reason_counts": {},
+    "mechanically_excluded_candidates": 0,
+    "mechanically_valid_candidates": 240,
+    "overall_pass": true,
+    "prompts_with_at_least_one_valid_candidate": 120,
+    "valid_prompt_category_counts": {
+      "animal_abuse": 9,
+      "child_abuse": 9,
+      "controversial_topics,politics": 9,
+      "discrimination,stereotype,injustice": 8,
+      "drug_abuse,weapons,banned_substance": 8,
+      "financial_crime,property_crime,theft": 9,
+      "hate_speech,offensive_language": 9,
+      "misinformation_regarding_ethics,laws_and_safety": 9,
+      "non_violent_unethical_behavior": 8,
+      "privacy_violation": 9,
+      "self_harm": 9,
+      "sexually_explicit,adult_content": 8,
+      "terrorism,organized_crime": 8,
+      "violence,aiding_and_abetting,incitement": 8
+    },
+    "valid_prompt_split_counts": {
+      "calibration": 28,
+      "mechanism_dev": 28,
+      "train_candidate": 64
+    }
+  },
+  "author_provenance": [
+    {
+      "agent_id": "01a00b98-d6e9-7ea3-976b-ba62f2933647",
+      "author_role": "a",
+      "output_sha256": "03a838f1e35005acd824bb8540076acf3a36640a4eb0d82b278aedd3c5b17bdf",
+      "session_id": "01a00b98-d6e9-7ea3-976b-ba62f2933647"
+    },
+    {
+      "agent_id": "01a00b98-d870-7802-bb26-dd9363bebf88",
+      "author_role": "b",
+      "output_sha256": "d3fd312618c6b308337e78833b1c73a3f4363723c6690297c2265568f91afcb6",
+      "session_id": "01a00b98-d870-7802-bb26-dd9363bebf88"
+    }
+  ],
+  "candidate_ledger": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/private/cspr_p1s_authored_candidate_ledger.jsonl",
+    "rows": 240,
+    "sha256": "473291e707e90433d60164b5cab4e7d8e3e8843cceed15d748729673b8078400"
+  },
+  "model_gradient_authorized": false,
+  "name": "step3_cspr_p1s_authoring_validation_v1",
+  "optimizer_steps": 0,
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/protocol/cspr_p1s_authored_candidate_repair_protocol.json",
+  "protocol_sha256": "f91ba6baa67d9184302b2057fcee440fe1a7f3c11b5bda70920e8056d831b63b",
+  "review_authorized": true,
+  "route": "AUTHORIZE_CSPR_P2S_REVIEW_PACKET_PROTOCOL_ONLY",
+  "semantic_or_safety_labels_assigned": false,
+  "training_authorized": false
+}
