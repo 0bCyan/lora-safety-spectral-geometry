@@ -1,0 +1,110 @@
+{
+  "name": "step3_cspr_m1_interpretation_v1",
+  "route": "STOP_CSPR_M1_PROJECTION_NOT_REPLICATED",
+  "registered_decision": "stop_CSPR_mechanism_promotion_and_do_not_train",
+  "result_commit_parent": "f21b1d3705e50bc5479e3dfca72a4d000098b8d3",
+  "registered_gate_summary": {
+    "active_pairwise_projections": 8,
+    "total_pairwise_projections": 18,
+    "minimum_active_pairwise_projections": 6,
+    "active_aggregate_batches": 1,
+    "total_aggregate_batches": 3,
+    "minimum_active_aggregate_batches": 2,
+    "active_batches_with_joint_step": 1,
+    "minimum_active_batches_with_joint_step": 2,
+    "same_step_safety_rescues": 1,
+    "minimum_same_step_safety_rescues": 1
+  },
+  "batch_diagnostics": [
+    {
+      "batch_id": "m1_batch_1",
+      "active_pairs": 5,
+      "aggregate_active": true,
+      "preference_safety_cosine": -0.015145233705672964,
+      "retained_preference_fraction": 0.9997706218959658,
+      "negative_pair_weight_share": 0.7732269502853691,
+      "accepted_step_size": 0.0002,
+      "initial_preference_loss": 0.6931471824645996,
+      "projected_preference_loss": 0.6820173561573029,
+      "unconstrained_preference_loss": 0.6821303566296896,
+      "initial_safety_loss": 1.164819320042928,
+      "projected_safety_loss": 1.164785663286845,
+      "unconstrained_safety_loss": 1.164852797985077,
+      "same_step_safety_rescue": true,
+      "wrong_prompt_cosine": 0.7942343129874386
+    },
+    {
+      "batch_id": "m1_batch_2",
+      "active_pairs": 2,
+      "aggregate_active": false,
+      "preference_safety_cosine": 0.019582279700366502,
+      "retained_preference_fraction": 0.9999999999999417,
+      "negative_pair_weight_share": 0.25066969700568786,
+      "accepted_step_size": 0.0002,
+      "initial_preference_loss": 0.6931471824645996,
+      "projected_preference_loss": 0.6759119927883148,
+      "unconstrained_preference_loss": 0.6759119927883148,
+      "initial_safety_loss": 1.1147531469662983,
+      "projected_safety_loss": 1.1147224803765614,
+      "unconstrained_safety_loss": 1.1147224803765614,
+      "same_step_safety_rescue": false,
+      "wrong_prompt_cosine": 0.8013908831235016
+    },
+    {
+      "batch_id": "m1_batch_3",
+      "active_pairs": 1,
+      "aggregate_active": false,
+      "preference_safety_cosine": 0.057009119445308724,
+      "retained_preference_fraction": 0.9999999999999826,
+      "negative_pair_weight_share": 0.06240002080866106,
+      "accepted_step_size": 0.0002,
+      "initial_preference_loss": 0.6931471824645996,
+      "projected_preference_loss": 0.6807844241460165,
+      "unconstrained_preference_loss": 0.6807844241460165,
+      "initial_safety_loss": 1.3011234998703003,
+      "projected_safety_loss": 1.3010074496269226,
+      "unconstrained_safety_loss": 1.3010074496269226,
+      "same_step_safety_rescue": false,
+      "wrong_prompt_cosine": 0.7527310880951199
+    }
+  ],
+  "mechanism_interpretation": {
+    "pair_weight_definition": "preference_gradient_norm_times_pair_safety_cosine; its sign and relative magnitude are proportional to the pair contribution to the aggregate preference-safety inner product within a batch",
+    "finding": "pairwise conflicts are present but are often outweighed by non-conflicting pairs during batch aggregation",
+    "supported_claim": "when an aggregate conflict exists, the registered projection is numerically correct and can convert an unsafe finite step into a joint finite step",
+    "unsupported_claim": "aggregate preference-safety conflict is a stable or pervasive property of the current data and checkpoint",
+    "wrong_prompt_finding": "wrong-prompt cosines remain high across all three batches, so prompt-specific attribution is weak and response-content effects remain a plausible dominant source"
+  },
+  "cross_stage_description": {
+    "m0_active_pairs": 4,
+    "m0_total_pairs": 8,
+    "m1_active_pairs": 8,
+    "m1_total_pairs": 18,
+    "combined_active_pairs": 12,
+    "combined_total_pairs": 26,
+    "m0_and_m1_active_aggregate_batches": 2,
+    "m0_and_m1_total_aggregate_batches": 4,
+    "inference_boundary": "combined counts are descriptive only because batches are structured, small, and not an iid sample"
+  },
+  "controls": {
+    "all_label_swap_controls_passed": true,
+    "all_registered_gradient_tensors_nonzero_and_finite": true,
+    "registered_gradient_tensors": 504,
+    "maximum_normalized_directional_or_kkt_residual": 4.4357095963821814e-16,
+    "all_batch_state_hashes_restored": true,
+    "global_state_hash_restored": true,
+    "optimizer_objects": 0,
+    "scheduler_objects": 0,
+    "optimizer_steps": 0,
+    "checkpoint_written": false,
+    "training_authorized": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "success_estimate": {
+    "event": "credible_multi_seed_behavioral_result_with_CSPR_as_the_primary_method",
+    "subjective_range_after_m1": "0.15-0.30",
+    "is_statistical_confidence_interval": false,
+    "rationale": "M1 failed the preregistered batch-robust activation prerequisite, while preserving evidence that the conditional projection solver works when conflict occurs"
+  }
+}

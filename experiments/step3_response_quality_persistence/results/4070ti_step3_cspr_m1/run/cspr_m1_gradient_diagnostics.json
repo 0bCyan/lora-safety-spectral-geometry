@@ -1,0 +1,698 @@
+{
+  "batch_results": [
+    {
+      "batch_id": "m1_batch_1",
+      "controls": {
+        "label_swap_cosine": -0.9999987479972916,
+        "label_swap_coverage": {
+          "finite": true,
+          "missing_gradient_tensors": [],
+          "nonzero_gradient_tensors": 504,
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "label_swap_gradient_hash": "9f816927d5a5951f66a781611aca4df2842fc27fbf1b106aeb319e8ad5b785ed",
+        "label_swap_norm_ratio": 0.9998974227186255,
+        "wrong_prompt_cosine": 0.7942343129874386,
+        "wrong_prompt_coverage": {
+          "finite": true,
+          "missing_gradient_tensors": [],
+          "nonzero_gradient_tensors": 504,
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "wrong_prompt_gradient_hash": "738a86a80b19c555877c0b323d992b67572b12d30e7dcbaf9e5d546847ef1982",
+        "wrong_prompt_norm_ratio": 0.921107091854106
+      },
+      "final_trainable_state_hash": "7c9efe198ace34b0b34a1f28a4b5cd75605e6374679d0bf59109e6dabf2184fc",
+      "gates": {
+        "aggregate_activation": true,
+        "directional_and_kkt": true,
+        "finite_joint_step": true,
+        "label_swap_control": true,
+        "retained_preference": true,
+        "same_step_safety_rescue": true,
+        "state_restored": true,
+        "structural_and_gradient_valid": true
+      },
+      "initial_trainable_state_hash": "7c9efe198ace34b0b34a1f28a4b5cd75605e6374679d0bf59109e6dabf2184fc",
+      "line_search": {
+        "accepted": true,
+        "accepted_step_size": 0.0002,
+        "trials": [
+          {
+            "preference_bound": 0.691986316985657,
+            "preference_loss": 0.6820173561573029,
+            "preference_pass": true,
+            "safety_bound": 1.164819320042928,
+            "safety_loss": 1.164785663286845,
+            "safety_pass": true,
+            "step_size": 0.0002,
+            "trial": 1
+          }
+        ]
+      },
+      "pairwise_projection": [
+        {
+          "active": false,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "3ec58a8771e6a9c64c7b3a389fc61f0bd237d9d62ab36545a50d2664eed4b614",
+          "pair_id": "cspr_pair_e0a53bc01bbb105feecf",
+          "preference_norm": 17.940168608457526,
+          "retained_preference_fraction": 1.0,
+          "safety_cosine": 0.016016380754218427
+        },
+        {
+          "active": true,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "dd1b66ed4d8cd95900a43c21dba8b04b5f3e40215f66a28e9dc29beb0a438dfe",
+          "pair_id": "cspr_pair_2365d7b3352a9f7acd1c",
+          "preference_norm": 12.738492588291058,
+          "retained_preference_fraction": 0.9999138856927543,
+          "safety_cosine": -0.009279779482599183
+        },
+        {
+          "active": true,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "1a561e0e9547605a615c1be1701f452b240c7f1ad099dbbd1af5ebe96bd69b74",
+          "pair_id": "cspr_pair_7c6fffda17c6759ae674",
+          "preference_norm": 16.38578044592381,
+          "retained_preference_fraction": 0.999597180588536,
+          "safety_cosine": -0.02007036151801971
+        },
+        {
+          "active": true,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "305c7e76ea1eea4fd97c5f810f981d8b0c8e09fd58e598aa73a57b9a14bed069",
+          "pair_id": "cspr_pair_8081d9f2aaef98c8d99a",
+          "preference_norm": 15.596455052336085,
+          "retained_preference_fraction": 0.9994759055781065,
+          "safety_cosine": -0.022893108611402934
+        },
+        {
+          "active": true,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "9caf1b10abaaaf609e41f2e01871a01ca61cd04ddc9da6211895b73bc5ec5b6e",
+          "pair_id": "cspr_pair_18c0bbfbb16db6557995",
+          "preference_norm": 11.95177767933414,
+          "retained_preference_fraction": 0.9999762050735665,
+          "safety_cosine": -0.004878004349473102
+        },
+        {
+          "active": true,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "759c17fd38350fa820fc20db68207b6ae5a338101629b153dce5957b8c9e432f",
+          "pair_id": "cspr_pair_4bac5e8944f3ae5b8e5f",
+          "preference_norm": 11.351150252194932,
+          "retained_preference_fraction": 0.9998932153591407,
+          "safety_cosine": -0.010333665412589307
+        }
+      ],
+      "preference": {
+        "coverage": {
+          "aggregate_nonzero_parameter_elements": 16515072,
+          "finite": true,
+          "minimum_nonzero_gradient_tensors_across_pairs": 504,
+          "missing_gradient_tensors": [],
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "gradient_hash": "5d18d0cad31ab5cd977109dd7a2c8341d6feb5a7c59990ee4aa688ec964d5790",
+        "gradient_norm": 7.619487571869084,
+        "initial_loss": 0.6931471824645996
+      },
+      "preference_pair_ids": [
+        "cspr_pair_e0a53bc01bbb105feecf",
+        "cspr_pair_2365d7b3352a9f7acd1c",
+        "cspr_pair_7c6fffda17c6759ae674",
+        "cspr_pair_8081d9f2aaef98c8d99a",
+        "cspr_pair_18c0bbfbb16db6557995",
+        "cspr_pair_4bac5e8944f3ae5b8e5f"
+      ],
+      "projection": {
+        "active": true,
+        "denominator": 3.8935804977745003,
+        "direction_norm": 7.618613649945318,
+        "kkt_complementarity_abs": 3.899786218367812e-16,
+        "kkt_stationarity_norm": 3.607530622001165e-16,
+        "multiplier": 0.05848266642202996,
+        "normalized_residuals": {
+          "kkt_complementarity": 4.4357095963821814e-16,
+          "kkt_stationarity": 4.735153648363646e-17,
+          "positive_preference_derivative": 0.0,
+          "positive_safety_derivative": 4.4357095963821814e-16
+        },
+        "preference_directional_derivative": -58.043273947129755,
+        "preference_safety_cosine": -0.015145233705672964,
+        "retained_preference_fraction": 0.9997706218959658,
+        "safety_directional_derivative": 6.6682770416548465e-15
+      },
+      "safety": {
+        "coverage": {
+          "finite": true,
+          "missing_gradient_tensors": [],
+          "nonzero_gradient_tensors": 504,
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "gradient_hash": "676a6a5eb778156cbcf221eadd742dda9c91e6be2bb7b9b689e04a5e9b5c78e1",
+        "gradient_norm": 1.9732157757770665,
+        "initial_loss": 1.164819320042928
+      },
+      "safety_target_ids": [
+        "eval_safety_000161_natural_v1_target2",
+        "eval_safety_000263_natural_v1_target1",
+        "eval_safety_000138_natural_v1_target2",
+        "eval_safety_000212_natural_v1_target2",
+        "eval_safety_000188_natural_v1_target2",
+        "eval_safety_000294_natural_v1_target2"
+      ],
+      "unconstrained_at_projected_accepted_step": {
+        "preference_loss": 0.6821303566296896,
+        "safety_loss": 1.164852797985077,
+        "step_size": 0.0002
+      }
+    },
+    {
+      "batch_id": "m1_batch_2",
+      "controls": {
+        "label_swap_cosine": -0.9999990089087344,
+        "label_swap_coverage": {
+          "finite": true,
+          "missing_gradient_tensors": [],
+          "nonzero_gradient_tensors": 504,
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "label_swap_gradient_hash": "22a7040bede627f0c4422c3866fc60d4e8e6b554bc2f6d0d6aa0bfa53154bf43",
+        "label_swap_norm_ratio": 1.0000341661116265,
+        "wrong_prompt_cosine": 0.8013908831235016,
+        "wrong_prompt_coverage": {
+          "finite": true,
+          "missing_gradient_tensors": [],
+          "nonzero_gradient_tensors": 504,
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "wrong_prompt_gradient_hash": "c39c7359c5f7a6eac22b0cfb9cf43322d8430adf3b998fd458cd5d5d66a22798",
+        "wrong_prompt_norm_ratio": 0.87463583678367
+      },
+      "final_trainable_state_hash": "7c9efe198ace34b0b34a1f28a4b5cd75605e6374679d0bf59109e6dabf2184fc",
+      "gates": {
+        "aggregate_activation": false,
+        "directional_and_kkt": true,
+        "finite_joint_step": true,
+        "label_swap_control": true,
+        "retained_preference": true,
+        "same_step_safety_rescue": false,
+        "state_restored": true,
+        "structural_and_gradient_valid": true
+      },
+      "initial_trainable_state_hash": "7c9efe198ace34b0b34a1f28a4b5cd75605e6374679d0bf59109e6dabf2184fc",
+      "line_search": {
+        "accepted": true,
+        "accepted_step_size": 0.0002,
+        "trials": [
+          {
+            "preference_bound": 0.6914661952176817,
+            "preference_loss": 0.6759119927883148,
+            "preference_pass": true,
+            "safety_bound": 1.1147459405466795,
+            "safety_loss": 1.1147224803765614,
+            "safety_pass": true,
+            "step_size": 0.0002,
+            "trial": 1
+          }
+        ]
+      },
+      "pairwise_projection": [
+        {
+          "active": false,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "27c839a9e5d9b9db09ee7485a32d6b72d86305c022aec26fe7adc683e2fbe482",
+          "pair_id": "cspr_pair_d99d66f63f400ab39ee4",
+          "preference_norm": 15.630323181506999,
+          "retained_preference_fraction": 1.0,
+          "safety_cosine": 0.015006507892598522
+        },
+        {
+          "active": false,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "d2bbb9dce208dd786eae82c625737f56f0bfe650d512c0b02e16866932356315",
+          "pair_id": "cspr_pair_4082a1fee1ebe50e92bb",
+          "preference_norm": 17.179984710152052,
+          "retained_preference_fraction": 1.0,
+          "safety_cosine": 0.023355430666926226
+        },
+        {
+          "active": false,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "0c9e1189739ee2ee170786df15e8547d2ea0678702f5b698b032bd3d9ec86957",
+          "pair_id": "cspr_pair_0e543dcb3b675953e564",
+          "preference_norm": 12.832008254822428,
+          "retained_preference_fraction": 1.0,
+          "safety_cosine": 0.002710177654279271
+        },
+        {
+          "active": true,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "d777fdcd468635ef12c36217753fe4e09eec0d2ccb030e43d34d46dd3358e2ea",
+          "pair_id": "cspr_pair_04fd17ac64f128e202a1",
+          "preference_norm": 20.037686108419656,
+          "retained_preference_fraction": 0.9997603681966969,
+          "safety_cosine": -0.015480045326259897
+        },
+        {
+          "active": false,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "de1f81c0b32d365cca1e7ef8c4cfe67cada87d2c83c144ee6a3bda543ad078cb",
+          "pair_id": "cspr_pair_1d3162d3d70bd5f8b5ce",
+          "preference_norm": 18.20012430930074,
+          "retained_preference_fraction": 1.0,
+          "safety_cosine": 0.052090812815956865
+        },
+        {
+          "active": true,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "07912a652d4c552a0f454b5845cf1acd20422680072169782014e01f9298eff3",
+          "pair_id": "cspr_pair_277c4aad822d353dcc3a",
+          "preference_norm": 17.544310679580274,
+          "retained_preference_fraction": 0.9998262022606059,
+          "safety_cosine": -0.013183237060527653
+        }
+      ],
+      "preference": {
+        "coverage": {
+          "aggregate_nonzero_parameter_elements": 16515072,
+          "finite": true,
+          "minimum_nonzero_gradient_tensors_across_pairs": 504,
+          "missing_gradient_tensors": [],
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "gradient_hash": "3e561b5f5e82e0e99aa2c9b118eaa2b6a5942871172a9cf5c135abd84a372b17",
+        "gradient_norm": 9.167843931148717,
+        "initial_loss": 0.6931471824645996
+      },
+      "preference_pair_ids": [
+        "cspr_pair_d99d66f63f400ab39ee4",
+        "cspr_pair_4082a1fee1ebe50e92bb",
+        "cspr_pair_0e543dcb3b675953e564",
+        "cspr_pair_04fd17ac64f128e202a1",
+        "cspr_pair_1d3162d3d70bd5f8b5ce",
+        "cspr_pair_277c4aad822d353dcc3a"
+      ],
+      "projection": {
+        "active": false,
+        "denominator": 4.02826636849165,
+        "direction_norm": 9.167843931148717,
+        "kkt_complementarity_abs": 0.0,
+        "kkt_stationarity_norm": 0.0,
+        "multiplier": 0.0,
+        "normalized_residuals": {
+          "kkt_complementarity": 0.0,
+          "kkt_stationarity": 0.0,
+          "positive_preference_derivative": 0.0,
+          "positive_safety_derivative": 0.0
+        },
+        "preference_directional_derivative": -84.04936234589546,
+        "preference_safety_cosine": 0.019582279700366502,
+        "retained_preference_fraction": 0.9999999999999417,
+        "safety_directional_derivative": -0.3603209809429746
+      },
+      "safety": {
+        "coverage": {
+          "finite": true,
+          "missing_gradient_tensors": [],
+          "nonzero_gradient_tensors": 504,
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "gradient_hash": "fa83f707ef6bfc00f88b32055476607f20608b6d92a0154cd88317363c7352ac",
+        "gradient_norm": 2.00705415185851,
+        "initial_loss": 1.1147531469662983
+      },
+      "safety_target_ids": [
+        "eval_safety_000286_natural_v1_target1",
+        "eval_safety_000205_natural_v1_target1",
+        "eval_safety_000279_natural_v1_target1",
+        "eval_safety_000260_natural_v1_target2",
+        "eval_safety_000107_natural_v1_target1",
+        "eval_safety_000142_natural_v1_target1"
+      ],
+      "unconstrained_at_projected_accepted_step": {
+        "preference_loss": 0.6759119927883148,
+        "safety_loss": 1.1147224803765614,
+        "step_size": 0.0002
+      }
+    },
+    {
+      "batch_id": "m1_batch_3",
+      "controls": {
+        "label_swap_cosine": -0.9999983032503987,
+        "label_swap_coverage": {
+          "finite": true,
+          "missing_gradient_tensors": [],
+          "nonzero_gradient_tensors": 504,
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "label_swap_gradient_hash": "d617e68cfc6a69111941f2ab9e44050900b9d6bcc05fadddeaa2c88fc4c2e359",
+        "label_swap_norm_ratio": 0.9999500339265673,
+        "wrong_prompt_cosine": 0.7527310880951199,
+        "wrong_prompt_coverage": {
+          "finite": true,
+          "missing_gradient_tensors": [],
+          "nonzero_gradient_tensors": 504,
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "wrong_prompt_gradient_hash": "97164208867d39e1abb29dcfb91d3065427ca392aa2169e1fc217d24512b63ea",
+        "wrong_prompt_norm_ratio": 0.9431673655823901
+      },
+      "final_trainable_state_hash": "7c9efe198ace34b0b34a1f28a4b5cd75605e6374679d0bf59109e6dabf2184fc",
+      "gates": {
+        "aggregate_activation": false,
+        "directional_and_kkt": true,
+        "finite_joint_step": true,
+        "label_swap_control": true,
+        "retained_preference": true,
+        "same_step_safety_rescue": false,
+        "state_restored": true,
+        "structural_and_gradient_valid": true
+      },
+      "initial_trainable_state_hash": "7c9efe198ace34b0b34a1f28a4b5cd75605e6374679d0bf59109e6dabf2184fc",
+      "line_search": {
+        "accepted": true,
+        "accepted_step_size": 0.0002,
+        "trials": [
+          {
+            "preference_bound": 0.6918727155048338,
+            "preference_loss": 0.6807844241460165,
+            "preference_pass": true,
+            "safety_bound": 1.3011049446365364,
+            "safety_loss": 1.3010074496269226,
+            "safety_pass": true,
+            "step_size": 0.0002,
+            "trial": 1
+          }
+        ]
+      },
+      "pairwise_projection": [
+        {
+          "active": false,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "40f64cfd3a66a5896dc7c554d9a6e0179b78c8856d53a3ce4af5d2e6accaaa2b",
+          "pair_id": "cspr_pair_a01c45288c137b976a3d",
+          "preference_norm": 15.031514346484467,
+          "retained_preference_fraction": 1.0,
+          "safety_cosine": 0.016621179633123328
+        },
+        {
+          "active": false,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "578a3bfa7a15857be1245ef3cd50d21c5d92641341177eef66811e19bcd8058c",
+          "pair_id": "cspr_pair_57177e39aae3254c0c8c",
+          "preference_norm": 16.71743787459516,
+          "retained_preference_fraction": 1.0,
+          "safety_cosine": 0.04334397507450175
+        },
+        {
+          "active": false,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "cd360a808c49cc75287461bb207d242b5577f48a10b4f01d6df51acad6dd07c2",
+          "pair_id": "cspr_pair_5b39163d46cd781514d9",
+          "preference_norm": 17.151746158853534,
+          "retained_preference_fraction": 1.0,
+          "safety_cosine": 0.049098754557195264
+        },
+        {
+          "active": true,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "0cbb0342b9cc9ddaccbd33381492d4c609c469088444d1e3ef9a4386d61a7c24",
+          "pair_id": "cspr_pair_7e88a88950352565c906",
+          "preference_norm": 15.53996196924413,
+          "retained_preference_fraction": 0.9998430559913287,
+          "safety_cosine": -0.012527729589643334
+        },
+        {
+          "active": false,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "ef71e11876e5d47c734f3583c5dfac8d2182783749b24013c8b70458c4f98227",
+          "pair_id": "cspr_pair_4baf72314ed6540b3d2e",
+          "preference_norm": 17.28552040501202,
+          "retained_preference_fraction": 1.0,
+          "safety_cosine": 0.03291939836405997
+        },
+        {
+          "active": false,
+          "coverage": {
+            "finite": true,
+            "missing_gradient_tensors": [],
+            "nonzero_gradient_tensors": 504,
+            "parameter_elements": 16515072,
+            "parameter_tensors": 504
+          },
+          "gradient_hash": "26b3107821d5e25b05211a5310336fe643efcebc068f611a81cdf9cb183661b4",
+          "pair_id": "cspr_pair_942ab127b39b483f31f7",
+          "preference_norm": 14.679021600016789,
+          "retained_preference_fraction": 1.0,
+          "safety_cosine": 0.036759763939346234
+        }
+      ],
+      "preference": {
+        "coverage": {
+          "aggregate_nonzero_parameter_elements": 16515072,
+          "finite": true,
+          "minimum_nonzero_gradient_tensors_across_pairs": 504,
+          "missing_gradient_tensors": [],
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "gradient_hash": "7f1bab175322373436e5d2452637a1af37ba2fbed47a09b239a341656b0323c1",
+        "gradient_norm": 7.982690523144145,
+        "initial_loss": 0.6931471824645996
+      },
+      "preference_pair_ids": [
+        "cspr_pair_a01c45288c137b976a3d",
+        "cspr_pair_57177e39aae3254c0c8c",
+        "cspr_pair_5b39163d46cd781514d9",
+        "cspr_pair_7e88a88950352565c906",
+        "cspr_pair_4baf72314ed6540b3d2e",
+        "cspr_pair_942ab127b39b483f31f7"
+      ],
+      "projection": {
+        "active": false,
+        "denominator": 4.156096448951308,
+        "direction_norm": 7.982690523144145,
+        "kkt_complementarity_abs": 0.0,
+        "kkt_stationarity_norm": 0.0,
+        "multiplier": 0.0,
+        "normalized_residuals": {
+          "kkt_complementarity": 0.0,
+          "kkt_stationarity": 0.0,
+          "positive_preference_derivative": 0.0,
+          "positive_safety_derivative": 0.0
+        },
+        "preference_directional_derivative": -63.72334798829423,
+        "preference_safety_cosine": 0.057009119445308724,
+        "retained_preference_fraction": 0.9999999999999826,
+        "safety_directional_derivative": -0.9277616881965471
+      },
+      "safety": {
+        "coverage": {
+          "finite": true,
+          "missing_gradient_tensors": [],
+          "nonzero_gradient_tensors": 504,
+          "parameter_elements": 16515072,
+          "parameter_tensors": 504
+        },
+        "gradient_hash": "44f484d44ddf1c41a2c39229f905d7f30c1e5f3f2834dde1c293a04222565036",
+        "gradient_norm": 2.0386506441644836,
+        "initial_loss": 1.3011234998703003
+      },
+      "safety_target_ids": [
+        "eval_safety_000188_natural_v1_target1",
+        "eval_safety_000268_natural_v1_target2",
+        "eval_safety_000244_natural_v1_target1",
+        "eval_safety_000138_natural_v1_target1",
+        "eval_safety_000191_natural_v1_target1",
+        "eval_safety_000179_natural_v1_target1"
+      ],
+      "unconstrained_at_projected_accepted_step": {
+        "preference_loss": 0.6807844241460165,
+        "safety_loss": 1.3010074496269226,
+        "step_size": 0.0002
+      }
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "checkpoint_written": false,
+  "core100_opened": false,
+  "data_manifest_sha256": "ea0934f93d3a6c0617a93d5852627bf3d4fd727f1135f37e10bd6a5d3d6d97bb",
+  "design": {
+    "batch_count": 3,
+    "behavioral_qualification_claimed": false,
+    "beta": 0.1,
+    "category_diverse_within_batch": true,
+    "human_behavioral_labels_used": false,
+    "m0_disjoint": true,
+    "max_length": 256,
+    "model_seed": 2026081712,
+    "mutually_batch_disjoint": true,
+    "preference_batch_reduction": "mean_over_six_pairs",
+    "preference_log_probability": "sum_over_response_tokens",
+    "preference_split": "mechanism_dev",
+    "rare_safety_categories": 3,
+    "repeated_preference_categories": 6,
+    "rows_per_objective_per_batch": 6,
+    "safety_loss": "mean_response_token_causal_LM_loss_then_mean_over_six_rows",
+    "selection_seed": 2026081711,
+    "shared_safety_categories": 5,
+    "singleton_preference_categories": 6,
+    "wrong_prompt_control": "first_length_valid_within_batch_cyclic_derangement"
+  },
+  "final_trainable_state_hash": "7c9efe198ace34b0b34a1f28a4b5cd75605e6374679d0bf59109e6dabf2184fc",
+  "gates": {
+    "aggregate_activation": false,
+    "directional_and_kkt": true,
+    "finite_joint_step": false,
+    "label_swap_control": true,
+    "pair_activation": true,
+    "replicated_safety_rescue": true,
+    "retained_preference": true,
+    "state_restored": true,
+    "structural_and_gradient_valid": true,
+    "zero_optimizer": true
+  },
+  "heldout_opened": false,
+  "human_labels_used": false,
+  "initial_trainable_state_hash": "7c9efe198ace34b0b34a1f28a4b5cd75605e6374679d0bf59109e6dabf2184fc",
+  "model": {
+    "checkpoint_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100",
+    "load_in_4bit": true,
+    "local_files_only": true,
+    "model_mode": "eval_with_gradients",
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "preconditioner": "identity",
+    "quantization": "nf4_double_quant_fp16_compute",
+    "reference_policy": "exact_initial_M1_checkpoint_state",
+    "trainable_coordinates": "checkpoint_LoRA_only"
+  },
+  "name": "step3_cspr_m1_disjoint_batch_replication_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "route": "STOP_CSPR_M1_PROJECTION_NOT_REPLICATED",
+  "runtime_head": "f21b1d3705e50bc5479e3dfca72a4d000098b8d3",
+  "scheduler_objects": 0,
+  "summary": {
+    "active_aggregate_batches": 1,
+    "active_batches_with_joint_step": 1,
+    "active_pairwise_projections": 8,
+    "same_step_safety_rescues": 1,
+    "total_pairwise_projections": 18
+  },
+  "training_authorized": false
+}

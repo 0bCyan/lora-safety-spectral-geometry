@@ -1,0 +1,26 @@
+{
+  "gates": {
+    "aggregate_activation": false,
+    "directional_and_kkt": true,
+    "finite_joint_step": false,
+    "label_swap_control": true,
+    "pair_activation": true,
+    "replicated_safety_rescue": true,
+    "retained_preference": true,
+    "state_restored": true,
+    "structural_and_gradient_valid": true,
+    "zero_optimizer": true
+  },
+  "name": "step3_cspr_m1_route_v1",
+  "next_authorized": "stop_CSPR_mechanism_promotion",
+  "optimizer_steps": 0,
+  "route": "STOP_CSPR_M1_PROJECTION_NOT_REPLICATED",
+  "summary": {
+    "active_aggregate_batches": 1,
+    "active_batches_with_joint_step": 1,
+    "active_pairwise_projections": 8,
+    "same_step_safety_rescues": 1,
+    "total_pairwise_projections": 18
+  },
+  "training_authorized": false
+}

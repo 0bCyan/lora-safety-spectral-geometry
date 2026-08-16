@@ -1,0 +1,18 @@
+{
+  "cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "name": "step3_cspr_m1_environment_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "peak_allocated_bytes": 5627453952,
+  "peak_reserved_bytes": 5991563264,
+  "pid": 28804,
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.5",
+  "runtime_head": "f21b1d3705e50bc5479e3dfca72a4d000098b8d3",
+  "scheduler_objects": 0,
+  "torch": "2.5.1+cu121",
+  "total_vram_bytes": 12878086144,
+  "training_authorized": false,
+  "wall_clock_seconds": 94.20812273025513
+}
