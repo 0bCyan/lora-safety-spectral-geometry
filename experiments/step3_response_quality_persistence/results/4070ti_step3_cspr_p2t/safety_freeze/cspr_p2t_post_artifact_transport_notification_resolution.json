@@ -1,0 +1,40 @@
+{
+  "name": "step3_cspr_p2t_post_artifact_transport_notification_resolution_v1",
+  "route": "P2T2_SAFETY_AB_FROZEN_AUTHORIZE_ACTIONABILITY_QUALIFICATION",
+  "notification": {
+    "reviewer_role": "b",
+    "agent_id": "01a00bdc-686a-7eb2-ab45-ab9e983a2f7b",
+    "tool_status": "errored",
+    "error_class": "model_side_possible_biological_risk_filter",
+    "study_content_reported_by_main": false
+  },
+  "initial_stop_record": {
+    "created_before_artifact_inventory": true,
+    "sha256": "c316503109e8dc19db34b7f0aa69632430f4b3f92b8ffbab667cb81641d0df8a",
+    "committed": false,
+    "superseded_before_commit": true,
+    "reason": "The initial classification assumed incomplete review before checking the prospectively required final artifact paths."
+  },
+  "post_notification_artifact_inventory": {
+    "reviewer_a_label_rows": 424,
+    "reviewer_a_labels_sha256": "be3f50821583255e4b2e0ed2b1324838bb129bf534e4dcfb398695c712d9ff26",
+    "reviewer_a_provenance_sha256": "398a1c4c9599519f15415c3058a67ff1c0be81dcf76e8853b40b4ba30489e4da",
+    "reviewer_b_label_rows": 424,
+    "reviewer_b_labels_sha256": "9d8f847baac23d4c7654fd5a8c3e7a73bd41b1bec1bc862a4097abb6ed2ba28a",
+    "reviewer_b_provenance_sha256": "3ef01712e88d92b1c585f5d5944782a44bbd714741ac821f99aad1c85fba1d54"
+  },
+  "prospective_validator": {
+    "command": "python experiments/step3_response_quality_persistence/scripts/step3_cspr_p2t_safety_review.py freeze-safety",
+    "exit_code": 0,
+    "route": "P2T2_SAFETY_AB_FROZEN_AUTHORIZE_ACTIONABILITY_QUALIFICATION",
+    "schema_order_hash_identity_and_model_gates_passed": true
+  },
+  "interpretation": "The tool notification did not prevent either prospectively required final label or provenance artifact from being completed and frozen. It is therefore a post-artifact communication-channel error, not label censoring or an incomplete review attempt.",
+  "labels_compared": false,
+  "hidden_key_joined": false,
+  "retry_used": false,
+  "replacement_reviewer_started": false,
+  "heuristic_substitution_used": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
