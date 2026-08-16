@@ -1,0 +1,157 @@
+{
+  "name": "step3_cspr_p2t_cross_model_review_recovery_protocol_v1",
+  "status": "prospective_before_any_p2t_reviewer_launch_or_study_access",
+  "entry_commit": "8f80ccb6c71729677327a46acf8479bb8d6b3c8a",
+  "objective": "Recover independent review transport without changing the frozen P2S measurement construct, packet contents, gates, or target pool.",
+  "frozen_inputs": {
+    "recovery_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CSPR_P2T_cross_model_review_recovery_plan.md",
+      "sha256": "04ed5d1aa40195cbb2957af5ba5704a849c897097009c0332d34c7cc0f39697a"
+    },
+    "recovery_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2t_recovery.py",
+      "sha256": "77331fea31705a5b743e6cc1f015dedb9fc02f8928fab6ef26d1dd8d811e30fb"
+    },
+    "recovery_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2t_recovery.py",
+      "sha256": "874cec158ebc8db517b23e4e966f7f1f3900f2f0653b19aade6bc1f3b1e05bd2"
+    },
+    "p2s_inconclusive_incident": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reports/cspr_p2s_review_inconclusive_incident.json",
+      "sha256": "5fbeb33afb05288f3570aeb752646b435d48c9c0e39b154e51a521f4d320877b"
+    },
+    "p2s_review_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/protocol/cspr_p2s_blinded_review_protocol.json",
+      "sha256": "c1702cd4e61fb2149ac1d25f44d4c45000cfc8274e390f31e4be70b06153778f"
+    },
+    "p2s_packet_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reports/cspr_p2s_packet_manifest.json",
+      "sha256": "744de29428da50385e1136a58890432b48f4ad3016597084da5a79253ea7ecd0"
+    },
+    "p2s_execution_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/protocol/cspr_p2s_review_execution_protocol.json",
+      "sha256": "20ddb3b5cef54852bebd38c6a7baf22b1ce8ebc540ede27872fd4b443465d1ac"
+    },
+    "p2s_review_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2s_review.py",
+      "sha256": "bf32bcac5d6fa041f9cbcc42ae3199721bd535b126457fdf9b6142c8c879fd1b"
+    },
+    "p2s_review_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2s_review.py",
+      "sha256": "08df3f3d4b3208886ac81349c20d5ee6acd8f3e12bd35086ffda1ee3c53faa9e"
+    },
+    "prior_action_a_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reviews/actionability/cspr_p2s_actionability_reviewer_a_labels.jsonl",
+      "sha256": "17d05e40ffc69fd0d97f2d9b462dfda9a6951be997abe72592d3d752af88977a"
+    },
+    "prior_action_a_provenance": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reviews/actionability/cspr_p2s_actionability_reviewer_a_provenance.json",
+      "sha256": "3aaa060b1b54d4bffa291a9d8d40800739faf2726dcae553759284fc355ba27e"
+    },
+    "prior_action_b_partial": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reviews/actionability/cspr_p2s_actionability_reviewer_b_labels.jsonl",
+      "sha256": "64de3837f49a6897cccb7ef3f9e9701d0da15bbae97ee2f02cafcc1b21a07b5c"
+    }
+  },
+  "excluded_prior_label_artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reviews/actionability/cspr_p2s_actionability_reviewer_a_labels.jsonl",
+      "sha256": "17d05e40ffc69fd0d97f2d9b462dfda9a6951be997abe72592d3d752af88977a",
+      "reason": "complete P2S label file from an aborted review attempt"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reviews/actionability/cspr_p2s_actionability_reviewer_a_provenance.json",
+      "sha256": "3aaa060b1b54d4bffa291a9d8d40800739faf2726dcae553759284fc355ba27e",
+      "reason": "provenance for an excluded P2S label file"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reviews/actionability/cspr_p2s_actionability_reviewer_b_labels.jsonl",
+      "sha256": "64de3837f49a6897cccb7ef3f9e9701d0da15bbae97ee2f02cafcc1b21a07b5c",
+      "reason": "partial 276-of-312 P2S label file without provenance"
+    }
+  ],
+  "forbidden_prior_agent_ids": [
+    "01a00b98-d6e9-7ea3-976b-ba62f2933647",
+    "01a00b98-d870-7802-bb26-dd9363bebf88",
+    "01a00b7b-b477-7e63-9f70-da7b729ba3a7",
+    "01a00b7b-b5ed-7b73-944b-b6f294b2be58",
+    "01a00b7b-b778-7671-a5bd-52488aac6881",
+    "01a00b7b-b918-7320-b53a-eec8603c464d",
+    "01a00bb6-01a8-7de1-8c4d-e91d68d0a2f8",
+    "01a00bb6-0333-7332-92c3-f208e4b43895",
+    "01a00bb6-05d6-7981-a654-60aae83447ac",
+    "01a00bb6-0790-7183-a994-ff54f8f6d35a"
+  ],
+  "prospective_reviewers": {
+    "safety_a": {
+      "runtime_requested_model_id": "gpt-5.5",
+      "fork_context": false,
+      "packet_rows_after_qualification_push": 424,
+      "complete_attempts_authorized": 1
+    },
+    "safety_b": {
+      "runtime_requested_model_id": "gpt-5.6-sol",
+      "fork_context": false,
+      "packet_rows_after_qualification_push": 424,
+      "complete_attempts_authorized": 1
+    },
+    "actionability_a": {
+      "runtime_requested_model_id": "gpt-5.5",
+      "fork_context": false,
+      "packet_rows_after_safety_freeze_and_qualification_push": 312,
+      "complete_attempts_authorized": 1
+    },
+    "actionability_b": {
+      "runtime_requested_model_id": "gpt-5.6-sol",
+      "fork_context": false,
+      "packet_rows_after_safety_freeze_and_qualification_push": 312,
+      "complete_attempts_authorized": 1
+    }
+  },
+  "qualification_contract": {
+    "qualification_has_repository_path_or_packet_excerpt": false,
+    "study_rows_accessed_before_qualification_freeze": 0,
+    "distinct_agent_and_session_per_role": true,
+    "cross_model_pair_required": true,
+    "prior_study_involvement": false,
+    "cross_reviewer_contact": false,
+    "external_retrieval": false,
+    "partial_output_accepted": false,
+    "replacement_reviewer_authorized": false,
+    "packet_transformation_authorized": false,
+    "heuristic_substitution_authorized": false
+  },
+  "qualification_outputs": {
+    "safety_a_attestation": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/qualification/cspr_p2t_safety_a_zero_access_attestation.json",
+    "safety_b_attestation": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/qualification/cspr_p2t_safety_b_zero_access_attestation.json",
+    "registry": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/qualification/cspr_p2t_safety_reviewer_qualification_registry.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/qualification/CSPR_P2T_SAFETY_REVIEWER_QUALIFICATION.md",
+    "stop_incident": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/qualification/cspr_p2t_qualification_stop_incident.json"
+  },
+  "review_order": [
+    "freeze_and_push_p0",
+    "zero_access_qualify_safety_a_b",
+    "freeze_and_push_p1_qualification_and_execution_protocol",
+    "complete_and_freeze_safety_a_b",
+    "zero_access_qualify_actionability_a_b",
+    "freeze_and_push_actionability_qualification",
+    "complete_and_freeze_actionability_a_b",
+    "run_frozen_ab_analysis",
+    "run_target_disagreement_only_reviewer_c_if_authorized",
+    "run_fixed_pool_finalization"
+  ],
+  "p0_pass_route": "PASS_CSPR_P2T_P0_PREFLIGHT",
+  "p1_pass_route": "P2T1_TWO_SAFETY_REVIEWERS_QUALIFIED",
+  "qualification_failure_route": "STOP_CSPR_P2T_QUALIFICATION",
+  "review_inconclusive_route": "STOP_CSPR_P2T_REVIEW_INCONCLUSIVE",
+  "automated_recovery_attempts_after_p2t": 0,
+  "prior_p2s_labels_eligible": false,
+  "safety_reviewers_authorized_before_p1_push": false,
+  "actionability_reviewers_authorized": false,
+  "reviewer_c_authorized": false,
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
