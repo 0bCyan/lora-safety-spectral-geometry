@@ -1,0 +1,49 @@
+{
+  "name": "step3_cspr_p1_source_acquisition_stop_v1",
+  "recorded_at": "2026-08-16T23:26:04+08:00",
+  "route": "STOP_DATA_SOURCE_UNAVAILABLE",
+  "protocol_commit": "3767fca22b294107d013b13db67b50f6b8c46a1c",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1/protocol/cspr_p1_public_source_protocol.json",
+  "source": {
+    "dataset": "PKU-Alignment/BeaverTails",
+    "revision": "8401fe609d288129cc684a9b3be6a93e41cfe678",
+    "expected_sha256": "2e24b85dd599224eeb7379da297223bad50e11fea9fee6a7fdb4bd26aedec315",
+    "raw_path": "data/raw/step3o/beavertails_30k_train.jsonl.gz"
+  },
+  "transport_attempts": [
+    {
+      "transport": "python_requests_https_via_existing_local_http_proxy",
+      "endpoint_class": "frozen_huggingface_resolve_url",
+      "outcome": "tls_connection_reset_before_response_body",
+      "manual_retry_performed": false
+    },
+    {
+      "transport": "python_requests_https_via_existing_local_http_proxy",
+      "endpoint_class": "hf_mirror_same_revision_and_path",
+      "outcome": "mirror_redirected_to_frozen_huggingface_endpoint_then_tls_connection_reset_before_response_body",
+      "manual_retry_performed": false
+    },
+    {
+      "transport": "python_requests_https_direct_without_proxy",
+      "endpoint_class": "frozen_huggingface_resolve_url",
+      "outcome": "tls_connection_reset_before_response_body",
+      "manual_retry_performed": false
+    }
+  ],
+  "local_state": {
+    "raw_file_exists": false,
+    "partial_file_exists": false,
+    "persisted_source_bytes": 0,
+    "source_rows_opened": 0,
+    "candidate_responses_opened": 0
+  },
+  "p1_feasibility_gate_evaluated": false,
+  "data_sufficiency_failed": false,
+  "method_failed": false,
+  "resume_condition": "Place the exact frozen source at the registered ignored raw path and verify its SHA256 before running the unchanged P1 audit. A different revision, reconstructed file, old packet, or heuristic substitute is not eligible.",
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
