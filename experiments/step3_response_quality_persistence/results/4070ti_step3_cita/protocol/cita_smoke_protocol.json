@@ -1,0 +1,124 @@
+{
+  "name": "step3_cita_matched_three_arm_smoke_protocol_v1",
+  "status": "prospective_before_any_matched_CITA_stage_training",
+  "entry_commit": "74540e9024bf1a7de69edece6ab2ca6f5a5e6d41",
+  "objective": "Test numerical feasibility and exact matching for serialization-aligned uniform, CITA, and exact-budget sham under two optimizer steps per arm.",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/protocol/cita_smoke_protocol.json",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_cita_seed1.json",
+  "frozen_inputs": {
+    "plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CITA_matched_smoke_plan.md",
+      "sha256": "22eb2564a79c3771d4299f1f95fbe393f8a538b3efecd46197dca4a423b8935d"
+    },
+    "config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_cita_seed1.json",
+      "sha256": "26b0573c03e2b32008ea83652f191db0ae800b5bda1df9c88fd28ce3596a9268"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_training.py",
+      "sha256": "c723f7c89f03e19b9121fc5a6fa4824f0e13b9c45eca9f4cc757367f3f5becd5"
+    },
+    "tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cita_training.py",
+      "sha256": "5a76f7780dcf248f25fe5ef59656d801dcf15c8bc0b5e52eaf920236aafd5387"
+    },
+    "cita_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_common.py",
+      "sha256": "80a15faf4b04e12b9560fc03b90418af2555ca716790d6e069e15d032bd7c2a2"
+    },
+    "p0_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "base_trainer": {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57"
+    },
+    "p0_weight_cache": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_weight_cache.jsonl",
+      "sha256": "352e589982c6ded81da8c5eea742f8e3320ab1f302835e252a82cff00413f7aa"
+    },
+    "p0_diagnostics": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_gradient_diagnostics.json",
+      "sha256": "3dfa5620a25bbda4b639e764c0b8616bc7164cf70f5caf2c9f04aa15ce2469a5"
+    },
+    "p0_route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_route.json",
+      "sha256": "f0498ec28d5c0ebee4a694b48469897c1aad193ae428a79c8ecd8f1c3e4e7e60"
+    },
+    "mismatch_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/protocol/pcr_mw_mismatch_packet.jsonl",
+      "sha256": "b230f51cc54a533b0b3f5169defb8e810896d223983be6c48e0b0f80e5c19042"
+    },
+    "risk_data": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    }
+  },
+  "run_kind": "smoke",
+  "arm_order": [
+    "uniform",
+    "cita",
+    "sham"
+  ],
+  "optimizer_steps_per_arm": 2,
+  "total_authorized_optimizer_steps": 6,
+  "design": {
+    "fresh_model_per_arm": true,
+    "safety_mix": 0.2,
+    "gradient_accumulation_steps": 4,
+    "risk_rows": 256,
+    "safety_rows": 74,
+    "safety_draws_per_arm": 8,
+    "risk_order": "torch_randperm_seed1",
+    "safety_order": "frozen_P0_cache_order",
+    "safety_serialization": "complete_enable_thinking_false_generation_prefix",
+    "risk_serialization": "unchanged_step3ct_training_common_response_feature",
+    "checkpoint_steps": [
+      2
+    ],
+    "dropout_rng_call_count_matched": true,
+    "exact_budget_sham": true
+  },
+  "gates": {
+    "matching_tolerance": 1e-07,
+    "minimum_vram_headroom_fraction": 0.1,
+    "all_arms_complete_exact_steps": true,
+    "no_skipped_update": true,
+    "all_losses_and_gradients_finite": true,
+    "initial_state_hash_equal": true,
+    "risk_order_hash_equal": true,
+    "target_order_and_exposure_hash_equal": true,
+    "safety_token_count_and_weight_budget_equal": true,
+    "first_step_risk_and_uniform_safety_diagnostics_equal": true,
+    "three_final_adapter_hashes_distinct": true
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke",
+  "arm_outputs": {
+    "uniform": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/uniform",
+    "cita": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/cita",
+    "sham": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/sham"
+  },
+  "outputs": {
+    "decision": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/cita_smoke_decision.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/CITA_SMOKE_REPORT.md",
+    "reproduction_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/cita_smoke_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_CITA_SMOKE_AUTHORIZE_MATCHED_DEVELOPMENT16_PROTOCOL",
+  "failure_routes": [
+    "STOP_CITA_SMOKE_MATCHING_FAILED",
+    "STOP_CITA_SMOKE_NUMERICAL_FAILED",
+    "STOP_CITA_SMOKE_ASSIGNMENT_NOT_EXERCISED"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_matched_16_step_development_protocol_only",
+  "training_authorized": true,
+  "candidate_generation_authorized": false,
+  "development_training_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
