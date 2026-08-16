@@ -1,0 +1,37 @@
+{
+  "name": "step3_exploratory_proxy_dev_generation_v1",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "git_head": "4e46c7888da341b72d8aab2c1fee353cf5c417ac",
+  "arm": "cita",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_cita_development16_seed1.json",
+  "config_sha256": "3f69e53a088c8edfe42ff3813a8a3060e95b0e9c84283e77857a2b16fde2c0a8",
+  "checkpoint_dir": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/development16/cita/checkpoints/step0016",
+  "adapter_sha256": "948a8fc97f3bbbcfa60705ccb54d8ef8f9a60a352de2e35f3699f78d493b8c6e",
+  "split_path": "experiments/step2_mechanism_dynamics/results/4070ti_step2g/splits/proxy_dev.jsonl",
+  "split_sha256": "9e0de1e8411e2b2281968a66952a399a7b7ce58320a44ee4f71bf205e969ec8b",
+  "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/proxy_dev_generation16/cita/responses.jsonl",
+  "output_sha256": "b527c072fe65b897d50afe1aa1876b20216c96509487fd2453801b321ffb3e97",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "thinking_disabled": true,
+  "decoding": {
+    "do_sample": false,
+    "max_new_tokens": 128
+  },
+  "summary": {
+    "rows": 40,
+    "empty_responses": 0,
+    "think_tag_rows": 0,
+    "refusal_marker_rate": 0.7,
+    "redirect_marker_rate": 0.125,
+    "procedural_marker_rate": 0.225,
+    "max_token_hits": 2,
+    "mean_generated_tokens": 35.975,
+    "unique_normalized_response_rate": 1.0,
+    "largest_exact_template_cluster": 1
+  },
+  "peak_reserved_bytes": 4571791360,
+  "vram_headroom_fraction": 0.6449945039286732,
+  "wall_clock_seconds": 201.977783203125,
+  "optimizer_steps": 0,
+  "heldout_opened": false
+}

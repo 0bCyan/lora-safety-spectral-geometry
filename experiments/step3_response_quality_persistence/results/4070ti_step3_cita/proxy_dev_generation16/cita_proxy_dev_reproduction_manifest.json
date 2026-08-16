@@ -1,0 +1,59 @@
+{
+  "name": "step3_cita_proxy_dev_reproduction_manifest_v1",
+  "route": "STOP_CITA_PROXY_DEV_EFFECT_GATE_FAILED",
+  "runtime_head": "4e46c7888da341b72d8aab2c1fee353cf5c417ac",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/protocol/cita_proxy_dev_effect_protocol.json",
+  "protocol_sha256": "468cc297113f7b9f9559b40f07b68ec6da8f5e0656bccbe4a565efe538116f2a",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/proxy_dev_generation16/uniform/responses.jsonl",
+      "sha256": "c5b2ae51b40af041f84068a6786d666ea19ae83b3514bb4ba1f0b0201258223a",
+      "bytes": 26529
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/proxy_dev_generation16/uniform/manifest.json",
+      "sha256": "a388dc9c50f1188388a069386084ce58c0afe7bbebac7a7ce5941b308272eac6",
+      "bytes": 1696
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/proxy_dev_generation16/sham/responses.jsonl",
+      "sha256": "4ce5f55b0f6f68a0f3d8e59c3bd51b1cccf9ef47fb02db24723a66210b3b97de",
+      "bytes": 26543
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/proxy_dev_generation16/sham/manifest.json",
+      "sha256": "8a4f7ca6c86a56dbf81b447d9a2389833ad6a1cc2d1bf2c72424f376ae6b3962",
+      "bytes": 1695
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/proxy_dev_generation16/cita/responses.jsonl",
+      "sha256": "b527c072fe65b897d50afe1aa1876b20216c96509487fd2453801b321ffb3e97",
+      "bytes": 26108
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/proxy_dev_generation16/cita/manifest.json",
+      "sha256": "1229051ea70f8712c14f2012f30a72c420940386edb4fe5c9407dd87349a580e",
+      "bytes": 1691
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/proxy_dev_generation16/cita_proxy_dev_effect_decision.json",
+      "sha256": "1417c7adb452a3afcb8e9de7c3d3bfef09f55c53e6d1f77e44314c851cb1a7fe",
+      "bytes": 3993
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/proxy_dev_generation16/CITA_PROXY_DEV_EFFECT_REPORT.md",
+      "sha256": "6c967e3b3d5828a35c727b231a53316ccdd9218c23287946bb47e7d7ad4a2374",
+      "bytes": 670
+    }
+  ],
+  "generation_order": [
+    "uniform",
+    "sham",
+    "cita"
+  ],
+  "optimizer_steps": 0,
+  "blind_review_protocol_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
