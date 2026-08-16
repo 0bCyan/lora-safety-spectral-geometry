@@ -1,0 +1,58 @@
+{
+  "artifacts": [
+    {
+      "bytes": 432831,
+      "name": "weight_cache",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_weight_cache.jsonl",
+      "rows": 74,
+      "sha256": "352e589982c6ded81da8c5eea742f8e3320ab1f302835e252a82cff00413f7aa"
+    },
+    {
+      "bytes": 5080,
+      "name": "split_manifest",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_split_manifest.json",
+      "rows": null,
+      "sha256": "d840ac59a247f2acabf7eb5f3334e816293a2d12b1c2084932188c6d4d6007da"
+    },
+    {
+      "bytes": 87455,
+      "name": "diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_gradient_diagnostics.json",
+      "rows": null,
+      "sha256": "3dfa5620a25bbda4b639e764c0b8616bc7164cf70f5caf2c9f04aa15ce2469a5"
+    },
+    {
+      "bytes": 605,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_environment.json",
+      "rows": null,
+      "sha256": "f10bb6ddc5c83980c3bbcec7ce1b5e04cb7fc09e233b1f7defda91ab83198df2"
+    },
+    {
+      "bytes": 479,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_route.json",
+      "rows": null,
+      "sha256": "f0498ec28d5c0ebee4a694b48469897c1aad193ae428a79c8ecd8f1c3e4e7e60"
+    },
+    {
+      "bytes": 1283,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/CITA_P0_REPORT.md",
+      "rows": null,
+      "sha256": "753eaf194d6f9a3302b552cca37cc15a51139559a3666382738c958e8975a272"
+    }
+  ],
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py run",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_cita_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/protocol/cita_p0_protocol.json",
+  "protocol_sha256": "f8cceb07d1586dec0347b60164589a3b5b5724be34b0acbe05cea5aa94332bff",
+  "route": "PASS_CITA_P0_AUTHORIZE_MATCHED_SMOKE",
+  "runtime_head": "3eba6b91dc115a20e336d76e320304724498385a",
+  "scheduler_objects": 0,
+  "training_authorized": false
+}

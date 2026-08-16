@@ -1,0 +1,17 @@
+{
+  "gates": {
+    "counterfactual_specificity": true,
+    "cross_split_replication": true,
+    "gradient_effect_size": true,
+    "gradient_valid": true,
+    "integrity": true,
+    "sham_distinct": true,
+    "state_restored": true,
+    "token_signal": true
+  },
+  "name": "step3_cita_p0_route_v1",
+  "next_authorized": "freeze_and_push_matched_three_arm_smoke_protocol",
+  "optimizer_steps": 0,
+  "route": "PASS_CITA_P0_AUTHORIZE_MATCHED_SMOKE",
+  "training_authorized": false
+}

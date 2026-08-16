@@ -1,0 +1,171 @@
+{
+  "calibration": [
+    {
+      "category": "cyber abuse",
+      "sample_id": "eval_safety_000180",
+      "target_id": "eval_safety_000180_natural_v1_target2"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000113",
+      "target_id": "eval_safety_000113_natural_v1_target1"
+    },
+    {
+      "category": "financial evasion",
+      "sample_id": "eval_safety_000222",
+      "target_id": "eval_safety_000222_natural_v1_target2"
+    },
+    {
+      "category": "fraud or deception",
+      "sample_id": "eval_safety_000263",
+      "target_id": "eval_safety_000263_natural_v1_target2"
+    },
+    {
+      "category": "public manipulation",
+      "sample_id": "eval_safety_000179",
+      "target_id": "eval_safety_000179_natural_v1_target1"
+    },
+    {
+      "category": "cyber abuse",
+      "sample_id": "eval_safety_000142",
+      "target_id": "eval_safety_000142_natural_v1_target1"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000253",
+      "target_id": "eval_safety_000253_natural_v1_target1"
+    },
+    {
+      "category": "financial evasion",
+      "sample_id": "eval_safety_000188",
+      "target_id": "eval_safety_000188_natural_v1_target2"
+    },
+    {
+      "category": "fraud or deception",
+      "sample_id": "eval_safety_000191",
+      "target_id": "eval_safety_000191_natural_v1_target1"
+    },
+    {
+      "category": "public manipulation",
+      "sample_id": "eval_safety_000232",
+      "target_id": "eval_safety_000232_natural_v1_target2"
+    },
+    {
+      "category": "cyber abuse",
+      "sample_id": "eval_safety_000138",
+      "target_id": "eval_safety_000138_natural_v1_target1"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000279",
+      "target_id": "eval_safety_000279_natural_v1_target1"
+    },
+    {
+      "category": "financial evasion",
+      "sample_id": "eval_safety_000260",
+      "target_id": "eval_safety_000260_natural_v1_target2"
+    },
+    {
+      "category": "fraud or deception",
+      "sample_id": "eval_safety_000205",
+      "target_id": "eval_safety_000205_natural_v1_target2"
+    },
+    {
+      "category": "public manipulation",
+      "sample_id": "eval_safety_000286",
+      "target_id": "eval_safety_000286_natural_v1_target2"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000101",
+      "target_id": "eval_safety_000101_natural_v1_target1"
+    }
+  ],
+  "name": "step3_cita_p0_prompt_disjoint_split_v1",
+  "optimizer_steps": 0,
+  "prompt_disjoint": true,
+  "seed": 2026081713,
+  "training_authorized": false,
+  "validation": [
+    {
+      "category": "financial evasion",
+      "sample_id": "eval_safety_000243",
+      "target_id": "eval_safety_000243_natural_v1_target1"
+    },
+    {
+      "category": "public manipulation",
+      "sample_id": "eval_safety_000161",
+      "target_id": "eval_safety_000161_natural_v1_target1"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000236",
+      "target_id": "eval_safety_000236_natural_v1_target2"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000156",
+      "target_id": "eval_safety_000156_natural_v1_target2"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000226",
+      "target_id": "eval_safety_000226_natural_v1_target2"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000116",
+      "target_id": "eval_safety_000116_natural_v1_target1"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000126",
+      "target_id": "eval_safety_000126_natural_v1_target1"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000109",
+      "target_id": "eval_safety_000109_natural_v1_target1"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000269",
+      "target_id": "eval_safety_000269_natural_v1_target1"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000212",
+      "target_id": "eval_safety_000212_natural_v1_target1"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000258",
+      "target_id": "eval_safety_000258_natural_v1_target1"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000225",
+      "target_id": "eval_safety_000225_natural_v1_target1"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000211",
+      "target_id": "eval_safety_000211_natural_v1_target2"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000244",
+      "target_id": "eval_safety_000244_natural_v1_target2"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000295",
+      "target_id": "eval_safety_000295_natural_v1_target1"
+    },
+    {
+      "category": "harmful wrongdoing",
+      "sample_id": "eval_safety_000276",
+      "target_id": "eval_safety_000276_natural_v1_target1"
+    }
+  ]
+}
