@@ -1,0 +1,139 @@
+{
+  "name": "step3_tarc_matched_three_arm_smoke_protocol_v1",
+  "status": "prospective_before_any_matched_TARC_stage_training",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/protocol/tarc_smoke_protocol.json",
+  "entry_commit": "c4249ac5e4d233ac2d1f7e0cab3721410acaff0e",
+  "run_kind": "smoke",
+  "objective": "Verify matched execution and prompt-disjoint two-step realization of the TARC-P0 refusal-route direction against uniform CE and RAMP16 before any TARC development training or generation.",
+  "frozen_inputs": {
+    "smoke_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_TARC_matched_smoke_plan.md",
+      "sha256": "4fc2f529ffe26d182f60539db5b8b4a8ab83aba12be5a63c5b9a5afc5a7a8036"
+    },
+    "method_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_TARC_trie_route_certificate_plan.md",
+      "sha256": "44fcd4fcd641c21c6407fa928f1f4dd52b65080d359ac3a2e44691ed7c8298dc"
+    },
+    "config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_tarc_smoke_seed1.json",
+      "sha256": "c385b12abe28245daec91bc6bfdafac1c864fd452b8a1922c547f88e6deda1ec"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_tarc_training.py",
+      "sha256": "a9d718db1170c9f6ba7debfac86e9ce3451dacd590aa8325476ef0331de6ccb8"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_tarc_training.py",
+      "sha256": "37c27e51673ad6491d2c39f31b4f0a974b05b9081e7acaccdecc503930aaea60"
+    },
+    "tarc_p0_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_tarc_p0.py",
+      "sha256": "d357b753c763ef4d2a152f8867ffe6fabbbcdf36fd73c7587d0e16a0a17fd0b1"
+    },
+    "tarc_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_tarc_common.py",
+      "sha256": "b9b97a02cba05f768d68fd07385c91bb838f9e95c48fb98b98e430c92fcae5c2"
+    },
+    "ramp_objective_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_p0.py",
+      "sha256": "bdc98f4f27efcc09f60a40c8fa2a486655e3aabe2c825b1c19ec5b3e299e0c51"
+    },
+    "ramp_training_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_training.py",
+      "sha256": "5095a6db54ef23cb887201ffab2a23f9483acbe8c5993859fe084ea9dabf3800"
+    },
+    "model_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "model_loader": {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57"
+    },
+    "p0_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc_p0/protocol/tarc_p0_protocol.json",
+      "sha256": "d8bc92eeb91638154b1041fc161a29fde46e11b60f344b2711029de510e6c5eb"
+    },
+    "p0_route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc_p0/run/tarc_p0_route.json",
+      "sha256": "951cb260bb27f6fd5c4d1c23fd89c1e50ee89ce02b7929d392a15ca26e29af3b"
+    },
+    "p0_reproduction_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc_p0/run/tarc_p0_reproduction_manifest.json",
+      "sha256": "fc4b4ab43c06aa865c465569395f16a107b5e13e7c68d03bb0b1e936e9e7dc5a"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "risk_rows": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    }
+  },
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_tarc_smoke_seed1.json",
+  "arm_order": ["uniform", "ramp", "tarc"],
+  "optimizer_steps_per_arm": 2,
+  "total_authorized_optimizer_steps": 6,
+  "safety_pair_draws_per_arm": 8,
+  "safety_target_forwards_per_arm": 16,
+  "diagnostic_prompt_pairs": 8,
+  "diagnostic_prompt_overlap_with_smoke_draws": 0,
+  "design": {
+    "fresh_model_per_arm": true,
+    "risk_rows": 256,
+    "risk_order": "torch_randperm_seed1",
+    "safety_order": "frozen_40_prompt_pair_order",
+    "targets_per_safety_draw": 2,
+    "all_objectives_computed_each_safety_draw": true,
+    "only_registered_objective_enters_backward": true,
+    "safety_mix": 0.2,
+    "gradient_accumulation_steps": 4,
+    "ramp_width": 16,
+    "tarc_route_tokens_per_target": 4,
+    "ramp_coefficient": 0.25633183286502326,
+    "tarc_coefficient": 0.20565029054100603,
+    "auxiliary_gradient_norm_ratio_at_p0": 0.25,
+    "checkpoint_steps": [2]
+  },
+  "gates": {
+    "matching_tolerance": 1e-07,
+    "minimum_vram_headroom_fraction": 0.1,
+    "tarc_loss_reduction_min": 0.005,
+    "tarc_advantage_over_each_control_min": 0.002,
+    "all_steps_finite": true,
+    "no_skipped_updates": true,
+    "distinct_final_adapter_hashes": true,
+    "exact_assignment_term_counts": true,
+    "sealed_data_untouched": true
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke",
+  "arm_outputs": {
+    "uniform": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/uniform",
+    "ramp": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/ramp",
+    "tarc": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/tarc"
+  },
+  "outputs": {
+    "decision": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/tarc_smoke_decision.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/TARC_SMOKE_REPORT.md",
+    "reproduction_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc/smoke/tarc_smoke_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_TARC_SMOKE_AUTHORIZE_MATCHED_DEVELOPMENT16_PROTOCOL",
+  "failure_routes": [
+    "STOP_TARC_SMOKE_MATCHING_FAILED",
+    "STOP_TARC_SMOKE_NUMERICAL_FAILED",
+    "STOP_TARC_SMOKE_ASSIGNMENT_NOT_EXERCISED",
+    "STOP_TARC_SMOKE_DIRECTION_NOT_REALIZED"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_matched_TARC_development16_protocol_only",
+  "training_authorized": true,
+  "development_training_authorized": false,
+  "candidate_generation_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
