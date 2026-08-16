@@ -1,0 +1,203 @@
+{
+  "name": "step3_ramp_p0_zero_update_directional_protocol_v1",
+  "status": "prospective_before_any_RAMP_model_forward_or_gradient",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/protocol/ramp_p0_protocol.json",
+  "entry_commit": "aa6b4b50dd0eae0e09543cd85120b6a508ff5ee1",
+  "objective": "Test whether an equal-budget first-16-token greedy-margin gradient improves the same prefix certificate on prompt-disjoint approved targets and outperforms a last-16-token reachability placebo at the fresh seed-1 step-0 policy.",
+  "frozen_inputs": {
+    "plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_RAMP_reachability_margin_plan.md",
+      "sha256": "26fb154e7567e19fe6d8ece658b473c04f5096be0ee85abae4a7734fd601a55a"
+    },
+    "ramp_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_common.py",
+      "sha256": "70b17175e00cddda9ea8394717c6fd02770bc446a755680d2e3965c6bfa8d998"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_p0.py",
+      "sha256": "bdc98f4f27efcc09f60a40c8fa2a486655e3aabe2c825b1c19ec5b3e299e0c51"
+    },
+    "common_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_ramp_common.py",
+      "sha256": "2683360d9674beee7f7d501b2836c933037dd9694f132d466c3e73bdd47f5ad8"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_ramp_p0.py",
+      "sha256": "08e4bef99772f6600c4dd11083dc56f5680ff2810df6676c9977789522a0264b"
+    },
+    "model_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "gradient_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_common.py",
+      "sha256": "80a15faf4b04e12b9560fc03b90418af2555ca716790d6e069e15d032bd7c2a2"
+    },
+    "parent_config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_pcr_mw_seed1.json",
+      "sha256": "3bab5143f1ded893e492f3ab04695b76457a331cdfbfad0e52b65723d4d52850"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    }
+  },
+  "source": {
+    "targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+    "counts": {
+      "rows": 80,
+      "prompt_clusters": 40,
+      "categories": 8,
+      "targets_per_prompt": 2
+    },
+    "role": "unchanged_independently_approved_natural_v1_safety_training_targets",
+    "proxy_dev_used": false,
+    "core100_used": false,
+    "heldout_used": false
+  },
+  "selection": {
+    "seed": 2026081717,
+    "rule": "stable_hash_category_round_robin_one_target_per_prompt",
+    "calibration_prompts": 16,
+    "validation_prompts": 16,
+    "calibration_target_ids": [
+      "eval_safety_000138_natural_v1_target1",
+      "eval_safety_000232_natural_v1_target2",
+      "eval_safety_000268_natural_v1_target1",
+      "eval_safety_000107_natural_v1_target2",
+      "eval_safety_000294_natural_v1_target1",
+      "eval_safety_000226_natural_v1_target1",
+      "eval_safety_000263_natural_v1_target2",
+      "eval_safety_000260_natural_v1_target1",
+      "eval_safety_000142_natural_v1_target2",
+      "eval_safety_000286_natural_v1_target2",
+      "eval_safety_000101_natural_v1_target2",
+      "eval_safety_000191_natural_v1_target2",
+      "eval_safety_000222_natural_v1_target1",
+      "eval_safety_000180_natural_v1_target1",
+      "eval_safety_000179_natural_v1_target2",
+      "eval_safety_000279_natural_v1_target1"
+    ],
+    "validation_target_ids": [
+      "eval_safety_000205_natural_v1_target1",
+      "eval_safety_000188_natural_v1_target2",
+      "eval_safety_000161_natural_v1_target1",
+      "eval_safety_000225_natural_v1_target2",
+      "eval_safety_000243_natural_v1_target2",
+      "eval_safety_000276_natural_v1_target2",
+      "eval_safety_000118_natural_v1_target2",
+      "eval_safety_000126_natural_v1_target2",
+      "eval_safety_000265_natural_v1_target1",
+      "eval_safety_000147_natural_v1_target1",
+      "eval_safety_000236_natural_v1_target2",
+      "eval_safety_000211_natural_v1_target1",
+      "eval_safety_000295_natural_v1_target1",
+      "eval_safety_000113_natural_v1_target2",
+      "eval_safety_000116_natural_v1_target2",
+      "eval_safety_000253_natural_v1_target2"
+    ]
+  },
+  "model": {
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "local_files_only": true,
+    "seed": 1,
+    "load_in_4bit": true,
+    "quantization": "nf4_double_quant_fp16_compute",
+    "reference_policy": "fresh_PEFT_LoRA_step0",
+    "model_mode": "eval_with_gradients",
+    "gradient_checkpointing": true,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "design": {
+    "max_length": 512,
+    "margin_width": 16,
+    "margin": "target_logit_minus_strongest_non_target_logit",
+    "barrier": "mean_softplus_of_negative_margin",
+    "certificate_boundary": 0.0,
+    "prefix_region": "first_16_semantic_response_tokens",
+    "placebo_region": "last_16_semantic_response_tokens",
+    "placebo_term_budget": "exactly_16_terms_on_the_same_prompt_and_target",
+    "auxiliary_gradient_norm_ratio": 0.25,
+    "coefficient_rule": "rho_times_uniform_gradient_norm_divided_by_raw_auxiliary_gradient_norm_on_calibration",
+    "response_prefix": "complete_enable_thinking_false_generation_prefix",
+    "forced_empty_thinking_preamble_in_loss": false,
+    "uniform_loss": "cross_entropy_over_complete_serialized_response_suffix",
+    "gradient_reduction": "mean_over_16_rows",
+    "safe_routing_onset_markers": [
+      "i can help",
+      "i can instead",
+      "instead",
+      "if ",
+      "safe",
+      "legal",
+      "defensive",
+      "report",
+      "seek"
+    ],
+    "tokenizer_only_structural_audit": {
+      "rows": 80,
+      "prompt_clusters": 40,
+      "margin_width": 16,
+      "minimum_semantic_tokens": 22,
+      "maximum_semantic_tokens": 37,
+      "all_rows_support_equal_prefix_suffix_terms": true,
+      "prefix_first_sentence_complete_rate": 0.9875,
+      "prefix_safe_routing_onset_rate": 0.8875,
+      "unique_normalized_prefix_rate": 1.0,
+      "mean_prompt_content_recall": 0.19778855029774145,
+      "mean_prefix_suffix_overlap_tokens": 3.9625,
+      "maximum_prefix_suffix_overlap_tokens": 10
+    }
+  },
+  "gates": {
+    "prefix_first_sentence_complete_rate_min": 0.95,
+    "prefix_safe_routing_onset_rate_min": 0.85,
+    "unique_normalized_prefix_rate_min": 0.99,
+    "gradient_budget_relative_tolerance": 1e-06,
+    "calibration_prefix_suffix_cosine_max": 0.95,
+    "calibration_validation_prefix_cosine_min": 0.1,
+    "prefix_over_suffix_directional_cosine_margin_min": 0.1,
+    "minimum_vram_headroom_fraction": 0.1,
+    "all_gradient_objects_cover_all_trainable_tensors": true,
+    "all_gradient_values_finite": true,
+    "all_aggregate_gradient_norms_nonzero": true,
+    "exact_trainable_state_restoration_required": true
+  },
+  "outputs": {
+    "structural_audit": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_structural_audit.json",
+    "split_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_split_manifest.json",
+    "margin_rows": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_margin_rows.jsonl",
+    "gradient_diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_gradient_diagnostics.json",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_environment.json",
+    "route": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_route.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/RAMP_P0_REPORT.md",
+    "run_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_RAMP_P0_AUTHORIZE_MATCHED_SMOKE_PROTOCOL",
+  "failure_routes": [
+    "STOP_RAMP_P0_INVALID",
+    "STOP_RAMP_P0_PREFIX_NOT_BEHAVIORAL",
+    "STOP_RAMP_P0_PLACEBO_NOT_DISTINCT",
+    "STOP_RAMP_P0_DIRECTION_NOT_REPLICATED"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_uniform_RAMP_suffix_placebo_smoke_protocol_only",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "checkpoint_writes_authorized": false,
+  "candidate_generation_authorized": false,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
