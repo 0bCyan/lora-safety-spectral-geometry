@@ -1,0 +1,61 @@
+{
+  "name": "step3_ramp_proxy_dev_reproduction_manifest_v1",
+  "route": "STOP_RAMP_PROXY_DEV_EFFECT_GATE_FAILED",
+  "runtime_head": "52698c7b2f7d35d11e9232cf883acfbbf7a208c0",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/protocol/ramp_proxy_dev_effect_protocol.json",
+  "protocol_sha256": "e5563f82fd1b13bf8e999243ce778bdde2bf69de58eeab4214e05cf256907600",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/proxy_dev_generation16/uniform/responses.jsonl",
+      "sha256": "a3ac13be4561922f45849eb3437244575fee9ba89ab6d9bd8c2650a14d40aa63",
+      "bytes": 35983
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/proxy_dev_generation16/uniform/manifest.json",
+      "sha256": "98674c6b3e816567afe667b5e6acd00941d463cb8d193f22ac89a42e6e9373e9",
+      "bytes": 1781
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/proxy_dev_generation16/suffix/responses.jsonl",
+      "sha256": "7fe3c5df09bb4734b8ea2416471e4ed6c2e7514cba21aaa78f1f0b5a67138f88",
+      "bytes": 35808
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/proxy_dev_generation16/suffix/manifest.json",
+      "sha256": "371eea64ad5d987af492e7a0e4c7ff58e1d0ab020fc07be0d30b0c17827d8397",
+      "bytes": 1775
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/proxy_dev_generation16/ramp/responses.jsonl",
+      "sha256": "066a4cb4545e39c994403352e2055ff100ea4de1c53a7e5013079cc7c1f666dd",
+      "bytes": 36536
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/proxy_dev_generation16/ramp/manifest.json",
+      "sha256": "10431cd96d65b5b85d54ab672e07d31ccce9fb73f906474be2a5a6146f48df2e",
+      "bytes": 1771
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/proxy_dev_generation16/ramp_proxy_dev_effect_decision.json",
+      "sha256": "3d13426d4c4371b28fa77bb65816b9732f570fd62dfefd27ff30082b4a3b4c9a",
+      "bytes": 5510
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/proxy_dev_generation16/RAMP_PROXY_DEV_EFFECT_REPORT.md",
+      "sha256": "947582ef406f4ce0927aafb2c4847c5951eaacc7752c666bbedb8ffc8b9ccf35",
+      "bytes": 773
+    }
+  ],
+  "generation_order": [
+    "uniform",
+    "suffix",
+    "ramp"
+  ],
+  "training_prompt_overlap": 0,
+  "optimizer_steps": 0,
+  "blind_review_protocol_authorized": false,
+  "utility_review_protocol_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
