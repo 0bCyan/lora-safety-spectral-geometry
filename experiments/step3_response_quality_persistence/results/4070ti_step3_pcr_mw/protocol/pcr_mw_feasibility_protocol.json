@@ -1,0 +1,26 @@
+{
+  "name": "step3_prompt_conditional_response_mean_worst_feasibility_protocol_v1",
+  "status": "prospective_before_packet_materialization_or_model_execution",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "method": "PCR-M/PCR-MW: reference-corrected prompt-conditional full-sequence response ranking with mean and smooth-worst control.",
+  "motivation": "Sequence supervision is behaviorally active, while parameter geometry, hidden-state binding, functional-subspace projection, and TRIM transition patching failed. PCR acts directly on complete conditional response likelihood without requiring newly authored targets or unreliable post-hoc actionability labels.",
+  "score": "For the identical reviewed response y, compare length-normalized log p(y|correct prompt) against two same-category wrong prompts, then subtract the frozen step0 margin.",
+  "arms_if_feasible": {
+    "PCR-M": "mean softplus violation across two wrong prompts",
+    "PCR-MW": "mean violation plus temperature-0.1 smooth worst violation",
+    "future_mechanism_control": "pairing-destroyed orientation, frozen only after feasibility passes"
+  },
+  "data_boundary": "Use all natural-v1 targets whose category contains at least three prompt clusters. No response is selected by later PCSR labels, no text is authored, and the same response is used on both sides of every score comparison.",
+  "calibration": "At fresh seed1 step0, use the first 16 eligible target rows and set fixed eta = 0.25 / median(unweighted auxiliary-to-safety LoRA-gradient norm ratio).",
+  "feasibility_only": "This stage evaluates dimensions, finite gradients, scale stability, distinct mismatch construction, and 4070 Ti memory. It performs no optimizer step and cannot support a behavior claim.",
+  "forbidden": [
+    "No target, mismatch, temperature, calibration-window, ratio target, or threshold scan.",
+    "No proxy-dev, core100, heldout, generation, or reviewer access.",
+    "No optimizer step before a passing feasibility result and separate smoke freeze.",
+    "No novelty or behavioral credit from a feasible gradient alone."
+  ],
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

@@ -1,0 +1,24 @@
+{
+  "name": "step3_pcr_mw_mismatch_packet_manifest_v1",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "git_head": "3d218029feb1c65748900be65936da0f48b19433",
+  "registry_path": "experiments/step3_response_quality_persistence/configs/4070ti_step3_pcr_mw_feasibility_registry.json",
+  "registry_sha256_before_packet_hash_freeze": "3c388100fa686fbff917f171a11798bb292fa3a8052e03ee704c39cd6a84899e",
+  "source_targets_sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c",
+  "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/protocol/pcr_mw_mismatch_packet.jsonl",
+  "packet_sha256": "b230f51cc54a533b0b3f5169defb8e810896d223983be6c48e0b0f80e5c19042",
+  "target_rows": 74,
+  "prompt_clusters": 37,
+  "categories": [
+    "cyber abuse",
+    "financial evasion",
+    "fraud or deception",
+    "harmful wrongdoing",
+    "public manipulation"
+  ],
+  "distinct_wrong_prompts_per_row": true,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
