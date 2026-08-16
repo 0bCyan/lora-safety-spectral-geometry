@@ -1,0 +1,247 @@
+{
+  "name": "step3_cspr_p2s_blinded_review_protocol_v1",
+  "status": "prospective_before_p2s_packet_or_new_review_label",
+  "entry_commit": "a82eb63a1e25db1aa4bd485be719b3e9be49e69b",
+  "objective": "Independently calibrate fresh reviewers on balanced adjudicated anchors, then qualify the frozen authored candidates without using target prevalence as a reviewer-informativeness gate.",
+  "frozen_inputs": {
+    "packet_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2s_packets.py",
+      "sha256": "087e71da50f42c7b2d409e4b62f978c57774f3d3992404f180bbbcebf64a37b6"
+    },
+    "packet_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2s_packets.py",
+      "sha256": "249b07ee748a1374b5c0353803c7f583861f1253eb8b2e239f18bd4936d119f9"
+    },
+    "p1s_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/protocol/cspr_p1s_authored_candidate_repair_protocol.json",
+      "sha256": "f91ba6baa67d9184302b2057fcee440fe1a7f3c11b5bda70920e8056d831b63b"
+    },
+    "p1s_validation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/reports/cspr_p1s_authoring_validation.json",
+      "sha256": "b2081422b5d90c4182594c3ded173c4dcc33dbc6fb3f0fd789c8cff29d132f00"
+    },
+    "p1s_packet_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/reports/cspr_p1s_authoring_packet_manifest.json",
+      "sha256": "5691d3e53eff25587066a4a6d6a136dfaa6942c9e44daa115f6cc2264f5b4ad9"
+    },
+    "candidate_ledger": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/private/cspr_p1s_authored_candidate_ledger.jsonl",
+      "sha256": "473291e707e90433d60164b5cab4e7d8e3e8843cceed15d748729673b8078400"
+    },
+    "author_a_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_a_packet.jsonl",
+      "sha256": "9233ebac00e53fd4f4717fb7afe75849fe3b25a799ecc6172b532db9cf2c776b"
+    },
+    "author_b_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_b_packet.jsonl",
+      "sha256": "faa92638f96af3d994dde45d36d9d3323263bfd527bb6e49a0313603ca7bc7fa"
+    },
+    "p2_safety_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_a_packet.jsonl",
+      "sha256": "37464e0f5a3fe9fc39649b075674b3c754cca8264266b72c71a703b42c2450d4"
+    },
+    "p2_safety_hidden_key": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/private/cspr_p2_safety_hidden_key.jsonl",
+      "sha256": "83c86df3f72b22f38509f5ad5576bcc3c7648246e263ef867ba73b3dc406f905"
+    },
+    "action_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_actionability_rubric_v2.md",
+      "sha256": "c74d8d3f3478bae9499d8520221eb0599db91cb87141e3b609a776044f9a3b38"
+    },
+    "safety_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_transport_clean_safety_rubric.md",
+      "sha256": "095d00c7d34496da4f50b19148ca00772684edd7bfff04ba51a9aa97cd6fea6c"
+    },
+    "action_calibration_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_packet.jsonl",
+      "sha256": "45131bce6b1ffbb342b66b2b60b0875b559aa512e796b8a858dd0e134dd164ce"
+    },
+    "action_calibration_hidden_key": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/validation/step3o_validation_hidden_key.csv",
+      "sha256": "231c3bf0169a72e04901c71810c1e0981c952fcfc49104ae3de6f3b802ef781e"
+    },
+    "action_calibration_final_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reviews/validation/step3o_validation_final_labels.jsonl",
+      "sha256": "56ec357b3795ac14da8197042d1e2e416bd16a629b8e660c8c13e17eeb55969b"
+    },
+    "action_calibration_agreement": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/step3o_validation_review_agreement.json",
+      "sha256": "426f628bf19f08db94746481f887eb7f493af48319c7ada6464005d3a8eb932c"
+    },
+    "safety_calibration_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_packet.jsonl",
+      "sha256": "0e767a79b903d94bd64a619e939d5d08c00aaf0787301fc112c1c3cb4b37523a"
+    },
+    "safety_calibration_hidden_key": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/packets/transport_safety/step3o_transport_safety_hidden_key.csv",
+      "sha256": "e447237002509ec384cdbf7a2076395de0571b9a8a872a2065603c957ae50d28"
+    },
+    "safety_calibration_final_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reviews/transport_safety/step3o_transport_safety_final_labels.jsonl",
+      "sha256": "3a1d95a6179446ece5f8e82fdd5fd3f7f882793b29d5d42cb4e68f2916d5824a"
+    },
+    "safety_calibration_agreement": {
+      "path": "experiments/step3_response_quality_persistence/results/step3o_measurement_repair/reports/step3o_transport_safety_review_agreement.json",
+      "sha256": "dcd3afaef033230458fdb6e6285c6fe3252128a14a34bd56309b2413d9bdf57e"
+    }
+  },
+  "packet_design": {
+    "seed": 2026081705,
+    "target_candidate_rows": 240,
+    "target_rejected_rows": 120,
+    "action_calibration_rows_per_score": 20,
+    "action_calibration_primary_rows": 60,
+    "action_calibration_duplicates_per_score": 2,
+    "action_target_duplicates": 6,
+    "action_hidden_duplicates": 12,
+    "action_packet_rows_per_reviewer": 312,
+    "safety_calibration_rows_per_label": 20,
+    "safety_calibration_primary_rows": 40,
+    "safety_calibration_duplicates_per_label": 2,
+    "safety_target_duplicates_per_type": 10,
+    "safety_hidden_duplicates": 24,
+    "safety_packet_rows_per_reviewer": 424,
+    "reviewer_specific_order": true,
+    "calibration_and_target_interleaved": true,
+    "calibration_identity_hidden": true,
+    "target_candidate_or_rejected_role_hidden": true,
+    "author_role_hidden": true,
+    "prospective_split_hidden": true,
+    "category_hidden": true,
+    "reference_labels_hidden": true,
+    "duplicate_links_hidden": true
+  },
+  "reviewers": {
+    "safety_a_b": "two distinct fresh no-context reviewer sessions",
+    "actionability_a_b": "two additional distinct fresh no-context reviewer sessions",
+    "all_four_distinct_from_p1s_authors_and_p2_reviewers": true,
+    "cross_construct_session_reuse": false,
+    "reviewer_c": "new distinct session per construct only after all calibration, reference-concordance, target-reliability, and duplicate gates pass",
+    "reviewer_c_scope": "target A/B disagreement rows only",
+    "calibration_disagreements_use_frozen_reference_not_reviewer_c": true,
+    "forbidden_material": [
+      "hidden keys",
+      "calibration identity",
+      "target role",
+      "author identity",
+      "prospective split",
+      "category",
+      "reference labels",
+      "another reviewer output",
+      "old P2 labels",
+      "training or gradient results",
+      "git history"
+    ]
+  },
+  "safety_calibration_gates": {
+    "ab_raw_agreement_min": 0.9,
+    "ab_gwet_ac1_min": 0.8,
+    "ab_positive_agreement_min": 0.75,
+    "ab_negative_agreement_min": 0.75,
+    "per_reviewer_reference_raw_min": 0.9,
+    "per_reviewer_reference_gwet_ac1_min": 0.8,
+    "per_reviewer_reference_positive_min": 0.75,
+    "per_reviewer_reference_negative_min": 0.75
+  },
+  "action_calibration_gates": {
+    "component_ab_raw_min": 0.8,
+    "component_ab_gwet_ac1_min": 0.7,
+    "ordinal_ab_exact_min": 0.8,
+    "ordinal_ab_weighted_min": 0.9,
+    "ordinal_ab_gwet_ac2_min": 0.7,
+    "ordinal_two_level_disagreement_rate_max": 0.05,
+    "score2_boundary_ab_raw_min": 0.85,
+    "score2_boundary_ab_gwet_ac1_min": 0.7,
+    "score2_boundary_ab_positive_min": 0.75,
+    "score2_boundary_ab_negative_min": 0.75,
+    "score2_marginal_prevalence_gap_max": 0.1,
+    "reviewer_score2_prevalence_min": 0.2,
+    "reviewer_score2_prevalence_max": 0.8,
+    "reviewer_score1_prevalence_min": 0.15,
+    "per_reviewer_reference_component_raw_min": 0.8,
+    "per_reviewer_reference_component_gwet_ac1_min": 0.7,
+    "per_reviewer_reference_ordinal_exact_min": 0.8,
+    "per_reviewer_reference_ordinal_weighted_min": 0.9,
+    "per_reviewer_reference_score2_boundary_raw_min": 0.85,
+    "per_reviewer_reference_score2_boundary_gwet_ac1_min": 0.7,
+    "per_reviewer_reference_score2_boundary_positive_min": 0.75,
+    "per_reviewer_reference_score2_boundary_negative_min": 0.75,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 2026081706,
+    "ordinal_gwet_ac2_lower_95_min": 0.6,
+    "score2_boundary_gwet_ac1_lower_95_min": 0.6
+  },
+  "target_reliability_gates": {
+    "safety_raw_agreement_min": 0.9,
+    "safety_gwet_ac1_min": 0.8,
+    "safety_positive_agreement_min": 0.75,
+    "safety_negative_agreement_min": 0.75,
+    "action_component_raw_min": 0.8,
+    "action_component_gwet_ac1_min": 0.7,
+    "action_ordinal_exact_min": 0.8,
+    "action_ordinal_weighted_min": 0.9,
+    "action_ordinal_gwet_ac2_min": 0.7,
+    "action_two_level_disagreement_rate_max": 0.05,
+    "action_score2_boundary_raw_min": 0.85,
+    "action_score2_boundary_gwet_ac1_min": 0.7,
+    "action_score2_boundary_positive_min": 0.75,
+    "action_score2_boundary_negative_min": 0.75,
+    "target_score_prevalence_gate_used": false
+  },
+  "duplicate_gates": {
+    "safety_full_vector_consistency_min_count": 23,
+    "safety_denominator": 24,
+    "action_full_vector_consistency_min_count": 11,
+    "action_denominator": 12
+  },
+  "pair_qualification": {
+    "candidate_clean_safe": "yes",
+    "candidate_safe_route": "yes",
+    "candidate_executable_step": "yes",
+    "candidate_prompt_binding": "yes",
+    "rejected_clean_safe": "no",
+    "multiple_qualified_candidate_selection": "minimum stable hash under seed 2026081705",
+    "holistic_pair_preference_used": false,
+    "target_prevalence_used_as_reviewer_gate": false
+  },
+  "fixed_pool_yield_gates": {
+    "minimum_train_candidate_pairs": 24,
+    "train_candidate_denominator": 64,
+    "minimum_calibration_pairs": 12,
+    "calibration_denominator": 28,
+    "minimum_mechanism_dev_pairs": 12,
+    "mechanism_dev_denominator": 28,
+    "minimum_total_pairs": 48,
+    "total_denominator": 120,
+    "minimum_categories_with_at_least_two_pairs": 10,
+    "category_denominator": 14
+  },
+  "packet_outputs": {
+    "action_a_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_a_packet.jsonl",
+    "action_b_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_b_packet.jsonl",
+    "action_a_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_a_template.jsonl",
+    "action_b_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_b_template.jsonl",
+    "action_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/private/cspr_p2s_action_hidden_key.jsonl",
+    "safety_a_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_a_packet.jsonl",
+    "safety_b_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_b_packet.jsonl",
+    "safety_a_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_a_template.jsonl",
+    "safety_b_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_b_template.jsonl",
+    "safety_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/private/cspr_p2s_safety_hidden_key.jsonl",
+    "manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reports/cspr_p2s_packet_manifest.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reports/CSPR_P2S_PACKET_FREEZE.md"
+  },
+  "packet_pass_route": "AUTHORIZE_FOUR_INDEPENDENT_CSPR_P2S_A_B_REVIEWERS_ONLY",
+  "review_failure_routes": [
+    "STOP_CSPR_P2S_REVIEW_INVALID",
+    "STOP_CSPR_P2S_REVIEW_INCONCLUSIVE",
+    "STOP_CSPR_P2S_CALIBRATION_UNRELIABLE",
+    "STOP_CSPR_P2S_TARGET_UNRELIABLE",
+    "STOP_CSPR_P2S_PAIR_YIELD"
+  ],
+  "review_pass_route": "AUTHORIZE_CSPR_P3_ZERO_UPDATE_MECHANISM_PROTOCOL_ONLY",
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
