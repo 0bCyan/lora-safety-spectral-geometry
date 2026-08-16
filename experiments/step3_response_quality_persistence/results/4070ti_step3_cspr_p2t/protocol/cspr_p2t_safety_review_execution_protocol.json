@@ -1,0 +1,149 @@
+{
+  "name": "step3_cspr_p2t_safety_review_execution_protocol_v1",
+  "status": "prospective_after_zero_access_qualification_and_before_safety_packet_access",
+  "entry_commit": "750cc2b856c16ffeab203f45cbaf221ab8a04d23",
+  "frozen_inputs": {
+    "review_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/protocol/cspr_p2s_blinded_review_protocol.json",
+      "sha256": "c1702cd4e61fb2149ac1d25f44d4c45000cfc8274e390f31e4be70b06153778f"
+    },
+    "packet_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reports/cspr_p2s_packet_manifest.json",
+      "sha256": "744de29428da50385e1136a58890432b48f4ad3016597084da5a79253ea7ecd0"
+    },
+    "recovery_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/protocol/cspr_p2t_cross_model_review_recovery_protocol.json",
+      "sha256": "e111cbf596147876d35bd797c99447e9675ea765f4acd3b7ae9ea25efec65500"
+    },
+    "safety_a_attestation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/qualification/cspr_p2t_safety_a_zero_access_attestation.json",
+      "sha256": "c63e830466244b684c64aa97cfdb6564441c1ca61fb6f2b6a9fe3fb0b791897e"
+    },
+    "safety_b_attestation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/qualification/cspr_p2t_safety_b_zero_access_attestation.json",
+      "sha256": "77d5dce521c74c79f38687b932162d0e71f2cce98cb452623e8255889fd440c1"
+    },
+    "qualification_registry": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/qualification/cspr_p2t_safety_reviewer_qualification_registry.json",
+      "sha256": "447ce31f0c3417f6936055ab8d8a193a149c78b7ad4c1cf915b10134b81978b8"
+    },
+    "qualification_report": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/qualification/CSPR_P2T_SAFETY_REVIEWER_QUALIFICATION.md",
+      "sha256": "8604a7d39707efc7e64b6fc3147a0950baf42cd24e525c177d0de6361130e28e"
+    },
+    "safety_review_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2t_safety_review.py",
+      "sha256": "f8639eed9e0cedc0f58cd2ad91cd04b9bbacd16af314201852bcbd40a466efd2"
+    },
+    "safety_review_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2t_safety_review.py",
+      "sha256": "c62e8ed5deb633da28c3f4d80b11babda17543f4485a308bfbf1452adbade670"
+    },
+    "base_review_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2s_review.py",
+      "sha256": "bf32bcac5d6fa041f9cbcc42ae3199721bd535b126457fdf9b6142c8c879fd1b"
+    },
+    "base_review_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2s_review.py",
+      "sha256": "08df3f3d4b3208886ac81349c20d5ee6acd8f3e12bd35086ffda1ee3c53faa9e"
+    }
+  },
+  "qualified_reviewers": {
+    "a": {
+      "agent_id": "01a00bdc-66c6-7ef0-842c-69a76978ef56",
+      "session_id": "01a00bdc-66c6-7ef0-842c-69a76978ef56",
+      "runtime_requested_model_id": "gpt-5.5",
+      "self_reported_model_id": "GPT-5",
+      "qualification_attestation_sha256": "c63e830466244b684c64aa97cfdb6564441c1ca61fb6f2b6a9fe3fb0b791897e"
+    },
+    "b": {
+      "agent_id": "01a00bdc-686a-7eb2-ab45-ab9e983a2f7b",
+      "session_id": "01a00bdc-686a-7eb2-ab45-ab9e983a2f7b",
+      "runtime_requested_model_id": "gpt-5.6-sol",
+      "self_reported_model_id": "GPT-5",
+      "qualification_attestation_sha256": "77d5dce521c74c79f38687b932162d0e71f2cce98cb452623e8255889fd440c1"
+    }
+  },
+  "review_files": {
+    "safety": {
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_a_labels.jsonl",
+      "reviewer_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_a_provenance.json",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_b_labels.jsonl",
+      "reviewer_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_b_provenance.json"
+    }
+  },
+  "reviewer_materials": {
+    "a": {
+      "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_a_packet.jsonl",
+      "packet_sha256": "a06e5e2ffda7f0ee6e0be8084bd3796e692097e051bc4bccee228a446c515808",
+      "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_a_template.jsonl",
+      "template_sha256": "b299b71c48488c961a0ce259230fb34b135163b98edbd83d8104d86429358f43",
+      "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_transport_clean_safety_rubric.md",
+      "rubric_sha256": "095d00c7d34496da4f50b19148ca00772684edd7bfff04ba51a9aa97cd6fea6c"
+    },
+    "b": {
+      "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_b_packet.jsonl",
+      "packet_sha256": "802da1e3d4ffc75b13b15c8c9ae47fadd94e920893ffe42ca8e32f013503fd1a",
+      "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_b_template.jsonl",
+      "template_sha256": "d4d8b8b93aa8b90ce1c7425605d6ddf35da69e4e9bb36f4a510c29df89e3f893",
+      "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_transport_clean_safety_rubric.md",
+      "rubric_sha256": "095d00c7d34496da4f50b19148ca00772684edd7bfff04ba51a9aa97cd6fea6c"
+    }
+  },
+  "required_provenance_fields": [
+    "construct",
+    "reviewer_role",
+    "agent_id",
+    "session_id",
+    "runtime",
+    "model_provider",
+    "runtime_requested_model_id",
+    "self_reported_model_id",
+    "qualification_attestation_sha256",
+    "complete_attempt_index",
+    "packet_access_after_qualification_push",
+    "packet_path",
+    "packet_sha256",
+    "template_path",
+    "template_sha256",
+    "rubric_path",
+    "rubric_sha256",
+    "output_path",
+    "output_sha256",
+    "row_count",
+    "fresh_context",
+    "forbidden_material_not_opened",
+    "completion_status"
+  ],
+  "forbidden_prior_agent_ids": [
+    "01a00b98-d6e9-7ea3-976b-ba62f2933647",
+    "01a00b98-d870-7802-bb26-dd9363bebf88",
+    "01a00b7b-b477-7e63-9f70-da7b729ba3a7",
+    "01a00b7b-b5ed-7b73-944b-b6f294b2be58",
+    "01a00b7b-b778-7671-a5bd-52488aac6881",
+    "01a00b7b-b918-7320-b53a-eec8603c464d",
+    "01a00bb6-01a8-7de1-8c4d-e91d68d0a2f8",
+    "01a00bb6-0333-7332-92c3-f208e4b43895",
+    "01a00bb6-05d6-7981-a654-60aae83447ac",
+    "01a00bb6-0790-7183-a994-ff54f8f6d35a"
+  ],
+  "freeze_outputs": {
+    "manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/safety_freeze/cspr_p2t_safety_ab_freeze.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/safety_freeze/CSPR_P2T_SAFETY_AB_FREEZE.md",
+    "incident": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/safety_freeze/cspr_p2t_safety_review_inconclusive_incident.json"
+  },
+  "safety_pass_route": "P2T2_SAFETY_AB_FROZEN_AUTHORIZE_ACTIONABILITY_QUALIFICATION",
+  "review_inconclusive_route": "STOP_CSPR_P2T_REVIEW_INCONCLUSIVE",
+  "complete_attempts_per_reviewer": 1,
+  "partial_output_accepted": false,
+  "replacement_reviewer_authorized": false,
+  "packet_transformation_authorized": false,
+  "labels_compared_before_freeze": false,
+  "actionability_review_authorized": false,
+  "reviewer_c_authorized": false,
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}

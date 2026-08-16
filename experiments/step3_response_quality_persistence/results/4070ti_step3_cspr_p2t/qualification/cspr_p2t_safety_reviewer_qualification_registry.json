@@ -1,0 +1,37 @@
+{
+  "actionability_review_authorized": false,
+  "attestation_artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/qualification/cspr_p2t_safety_a_zero_access_attestation.json",
+      "sha256": "c63e830466244b684c64aa97cfdb6564441c1ca61fb6f2b6a9fe3fb0b791897e"
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/qualification/cspr_p2t_safety_b_zero_access_attestation.json",
+      "sha256": "77d5dce521c74c79f38687b932162d0e71f2cce98cb452623e8255889fd440c1"
+    }
+  ],
+  "entry_commit": "8f80ccb6c71729677327a46acf8479bb8d6b3c8a",
+  "name": "step3_cspr_p2t_safety_reviewer_qualification_v1",
+  "one_complete_attempt_per_reviewer": true,
+  "optimizer_steps": 0,
+  "prior_p2s_labels_eligible": false,
+  "reviewer_c_authorized": false,
+  "reviewers": {
+    "safety_a": {
+      "agent_id": "01a00bdc-66c6-7ef0-842c-69a76978ef56",
+      "runtime_requested_model_id": "gpt-5.5",
+      "self_reported_model_id": "GPT-5",
+      "session_id": "01a00bdc-66c6-7ef0-842c-69a76978ef56"
+    },
+    "safety_b": {
+      "agent_id": "01a00bdc-686a-7eb2-ab45-ab9e983a2f7b",
+      "runtime_requested_model_id": "gpt-5.6-sol",
+      "self_reported_model_id": "GPT-5",
+      "session_id": "01a00bdc-686a-7eb2-ab45-ab9e983a2f7b"
+    }
+  },
+  "route": "P2T1_TWO_SAFETY_REVIEWERS_QUALIFIED",
+  "safety_review_authorized_after_qualification_push": true,
+  "study_rows_accessed_before_qualification": 0,
+  "training_authorized": false
+}

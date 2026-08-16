@@ -1,0 +1,20 @@
+{
+  "name": "step3_cspr_p2t_zero_access_reviewer_attestation_v1",
+  "reviewer_role": "safety_b",
+  "agent_id": "01a00bdc-686a-7eb2-ab45-ab9e983a2f7b",
+  "session_id": "01a00bdc-686a-7eb2-ab45-ab9e983a2f7b",
+  "model_provider": "OpenAI",
+  "runtime_requested_model_id": "gpt-5.6-sol",
+  "self_reported_model_id": "GPT-5",
+  "fork_context": false,
+  "prior_study_involvement": false,
+  "repository_material_opened": false,
+  "study_rows_accessed": 0,
+  "other_reviewer_contact": false,
+  "agrees_independent_complete_review": true,
+  "agrees_no_partial_output": true,
+  "agrees_no_external_retrieval": true,
+  "agrees_forbidden_material_not_opened": true,
+  "committed_packet_rows": 424,
+  "completion_status": "qualified_zero_access"
+}
