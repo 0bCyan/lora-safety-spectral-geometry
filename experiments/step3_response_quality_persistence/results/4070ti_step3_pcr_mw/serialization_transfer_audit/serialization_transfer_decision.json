@@ -1,0 +1,196 @@
+{
+  "name": "step3_pcr_serialization_transfer_decision_v1",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "git_head": "1799c2ee50fd165de0803ff50bdd1dd9c5e39935",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/protocol/pcr_serialization_transfer_protocol.json",
+  "protocol_sha256": "43761237da2aad2828165069fa9c834f27c0f8d142f059a93c41e97f6205f0d0",
+  "preflight": {
+    "name": "step3_pcr_serialization_transfer_preflight_v1",
+    "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/protocol/pcr_serialization_transfer_protocol.json",
+    "protocol_sha256": "43761237da2aad2828165069fa9c834f27c0f8d142f059a93c41e97f6205f0d0",
+    "checks": {
+      "status_prospective": true,
+      "script_hash": true,
+      "split_hash": true,
+      "packet_hash": true,
+      "row_count": true,
+      "ordered_ids": true,
+      "two_distinct_wrong_prompts": true,
+      "four_response_sources": true,
+      "adapter_hashes": true,
+      "optimizer_steps_zero": true,
+      "training_not_authorized": true,
+      "core100_sealed": true,
+      "heldout_sealed": true
+    },
+    "passed": true,
+    "rows": 40,
+    "response_sources": [
+      "C0R_reproduction",
+      "PCR_MW_mean_worst",
+      "PCR_M_mean",
+      "reference"
+    ],
+    "optimizer_steps": 0,
+    "training_authorized": false
+  },
+  "route": "SERIALIZATION_NOT_SUFFICIENT_EXPLANATION_CLOSE_PCR",
+  "candidate_routes": {
+    "PCR_M_mean": "TRANSFER_SURVIVES_RESPONSE_ONLY",
+    "PCR_MW_mean_worst": "TRANSFER_SURVIVES_RESPONSE_ONLY"
+  },
+  "paired_transfer": {
+    "PCR_M_mean": {
+      "shared_reference_response": {
+        "legacy_combined": {
+          "rows": 40,
+          "mean": 0.005572599347866719,
+          "ci95_lower": 0.003956382705622752,
+          "ci95_upper": 0.0072043397366910785,
+          "bootstrap_samples": 10000,
+          "seed": 2026081601
+        },
+        "forced_preamble": {
+          "rows": 40,
+          "mean": 8.051151889958419e-05,
+          "ci95_lower": -0.00028571563234436326,
+          "ci95_upper": 0.0004277820322386106,
+          "bootstrap_samples": 10000,
+          "seed": 2026081602
+        },
+        "response_only": {
+          "rows": 40,
+          "mean": 0.0057994663625590085,
+          "ci95_lower": 0.00406523813429488,
+          "ci95_upper": 0.007517985919437286,
+          "bootstrap_samples": 10000,
+          "seed": 2026081603
+        },
+        "preamble_minus_response_transfer": {
+          "rows": 40,
+          "mean": -0.005718954843659424,
+          "ci95_lower": -0.007480332963498493,
+          "ci95_upper": -0.003945097364022343,
+          "bootstrap_samples": 10000,
+          "seed": 2026081604
+        }
+      },
+      "candidate_generated_response": {
+        "legacy_combined": {
+          "rows": 40,
+          "mean": 0.04350973804788798,
+          "ci95_lower": 0.03457970078187496,
+          "ci95_upper": 0.052773248088052616,
+          "bootstrap_samples": 10000,
+          "seed": 2026081651
+        },
+        "forced_preamble": {
+          "rows": 40,
+          "mean": 8.380530243812245e-05,
+          "ci95_lower": -0.0002935185515525518,
+          "ci95_upper": 0.00042382469973745174,
+          "bootstrap_samples": 10000,
+          "seed": 2026081652
+        },
+        "response_only": {
+          "rows": 40,
+          "mean": 0.04947398919801034,
+          "ci95_lower": 0.038722064302484115,
+          "ci95_upper": 0.06032676056158648,
+          "bootstrap_samples": 10000,
+          "seed": 2026081653
+        },
+        "preamble_minus_response_transfer": {
+          "rows": 40,
+          "mean": -0.04939018389557222,
+          "ci95_lower": -0.060083016980631385,
+          "ci95_upper": -0.038931474775185305,
+          "bootstrap_samples": 10000,
+          "seed": 2026081654
+        }
+      }
+    },
+    "PCR_MW_mean_worst": {
+      "shared_reference_response": {
+        "legacy_combined": {
+          "rows": 40,
+          "mean": 0.0054617555647669515,
+          "ci95_lower": 0.0038654501412131613,
+          "ci95_upper": 0.007031426407679625,
+          "bootstrap_samples": 10000,
+          "seed": 2026081701
+        },
+        "forced_preamble": {
+          "rows": 40,
+          "mean": 0.00011668864099192433,
+          "ci95_lower": -0.000170734456696664,
+          "ci95_upper": 0.0003913665697837132,
+          "bootstrap_samples": 10000,
+          "seed": 2026081702
+        },
+        "response_only": {
+          "rows": 40,
+          "mean": 0.005685952958972495,
+          "ci95_lower": 0.003984967323353306,
+          "ci95_upper": 0.007378860373805585,
+          "bootstrap_samples": 10000,
+          "seed": 2026081703
+        },
+        "preamble_minus_response_transfer": {
+          "rows": 40,
+          "mean": -0.0055692643179805715,
+          "ci95_lower": -0.007285294664865677,
+          "ci95_upper": -0.00382422044923319,
+          "bootstrap_samples": 10000,
+          "seed": 2026081704
+        }
+      },
+      "candidate_generated_response": {
+        "legacy_combined": {
+          "rows": 40,
+          "mean": 0.04524283210863132,
+          "ci95_lower": 0.03609752857222852,
+          "ci95_upper": 0.054734720024679405,
+          "bootstrap_samples": 10000,
+          "seed": 2026081751
+        },
+        "forced_preamble": {
+          "rows": 40,
+          "mean": 0.00012029521267322706,
+          "ci95_lower": -0.00016644960633129812,
+          "ci95_upper": 0.00039194690025396995,
+          "bootstrap_samples": 10000,
+          "seed": 2026081752
+        },
+        "response_only": {
+          "rows": 40,
+          "mean": 0.05143179800050703,
+          "ci95_lower": 0.04055290681674125,
+          "ci95_upper": 0.06257833308439731,
+          "bootstrap_samples": 10000,
+          "seed": 2026081753
+        },
+        "preamble_minus_response_transfer": {
+          "rows": 40,
+          "mean": -0.05131150278783381,
+          "ci95_lower": -0.06184958060610256,
+          "ci95_upper": -0.04054580157504685,
+          "bootstrap_samples": 10000,
+          "seed": 2026081754
+        }
+      }
+    }
+  },
+  "score_rows": 1440,
+  "margin_rows": 480,
+  "scores_sha256": "6c55b13aa7218e30e750bb3c9becf52dfcfd04bd3bd7708d08502678d7816cff",
+  "margins_sha256": "d884c89bfdd42033abfb4348320015afdd179a34ec8d7079d8cee29a58854bb9",
+  "peak_reserved_bytes": 4710203392,
+  "vram_headroom_fraction": 0.6342466311118349,
+  "wall_clock_seconds": 66.74336242675781,
+  "interpretation_boundary": "This audit uses reused development prompts and deterministic cross-prompt mismatches without semantic categories. It can diagnose where teacher-forced conditionality resides, but cannot establish behavioral safety or revive a candidate that failed the frozen generation gate.",
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
