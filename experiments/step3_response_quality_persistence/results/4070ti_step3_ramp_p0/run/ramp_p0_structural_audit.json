@@ -1,0 +1,14 @@
+{
+  "all_rows_support_equal_prefix_suffix_terms": true,
+  "margin_width": 16,
+  "maximum_prefix_suffix_overlap_tokens": 10,
+  "maximum_semantic_tokens": 37,
+  "mean_prefix_suffix_overlap_tokens": 3.9625,
+  "mean_prompt_content_recall": 0.19778855029774145,
+  "minimum_semantic_tokens": 22,
+  "prefix_first_sentence_complete_rate": 0.9875,
+  "prefix_safe_routing_onset_rate": 0.8875,
+  "prompt_clusters": 40,
+  "rows": 80,
+  "unique_normalized_prefix_rate": 1.0
+}

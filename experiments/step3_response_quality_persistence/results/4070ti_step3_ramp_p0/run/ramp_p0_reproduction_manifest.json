@@ -1,0 +1,67 @@
+{
+  "artifacts": [
+    {
+      "bytes": 463,
+      "name": "structural_audit",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_structural_audit.json",
+      "rows": null,
+      "sha256": "8f66faed0f2da35e7b122e514834c6d1b3bce36903a41edba4524129823cc971"
+    },
+    {
+      "bytes": 1695,
+      "name": "split_manifest",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_split_manifest.json",
+      "rows": null,
+      "sha256": "cd1f413c01f3b9ad48124e4651057a743e617105cb22a8c9cba7d10186d84fa6"
+    },
+    {
+      "bytes": 24724,
+      "name": "margin_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_margin_rows.jsonl",
+      "rows": 64,
+      "sha256": "9c036b3546ec8f608e7c718b4d589ef1ff55640fd54ce3f9b9745bb6438ef8c5"
+    },
+    {
+      "bytes": 5173,
+      "name": "gradient_diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_gradient_diagnostics.json",
+      "rows": null,
+      "sha256": "e44ac5bd5c20465a13d2c66187be36a75a0c69304f482f1cdf5f84657f28b8c1"
+    },
+    {
+      "bytes": 484,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_environment.json",
+      "rows": null,
+      "sha256": "2dfaa37082a2b644a8f3d8aaeaa1af39a8accd31b0ac4df5c5de67085df32d26"
+    },
+    {
+      "bytes": 2412,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_route.json",
+      "rows": null,
+      "sha256": "2312a2a02528d8131d22e7217ddc69ed5895907330475d61a59159b0223146c4"
+    },
+    {
+      "bytes": 1225,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/RAMP_P0_REPORT.md",
+      "rows": null,
+      "sha256": "60bdab8cb67f792bf05781cea1922f5ce46f3b3cc329291138efd7cd5b690ed7"
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "checkpoint_writes": 0,
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_ramp_p0.py run",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_ramp_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/protocol/ramp_p0_protocol.json",
+  "protocol_sha256": "d456db23ede6d0785b254aa535e6c1f571565dcdcb10f62efb6f19ab28fbcc52",
+  "route": "PASS_RAMP_P0_AUTHORIZE_MATCHED_SMOKE_PROTOCOL",
+  "runtime_head": "4f2c0a7aa18c03d2dd89da2d629cb1e49ba88107",
+  "scheduler_objects": 0,
+  "training_authorized": false
+}

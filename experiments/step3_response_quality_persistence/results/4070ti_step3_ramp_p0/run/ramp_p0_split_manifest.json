@@ -1,0 +1,42 @@
+{
+  "calibration_target_ids": [
+    "eval_safety_000138_natural_v1_target1",
+    "eval_safety_000232_natural_v1_target2",
+    "eval_safety_000268_natural_v1_target1",
+    "eval_safety_000107_natural_v1_target2",
+    "eval_safety_000294_natural_v1_target1",
+    "eval_safety_000226_natural_v1_target1",
+    "eval_safety_000263_natural_v1_target2",
+    "eval_safety_000260_natural_v1_target1",
+    "eval_safety_000142_natural_v1_target2",
+    "eval_safety_000286_natural_v1_target2",
+    "eval_safety_000101_natural_v1_target2",
+    "eval_safety_000191_natural_v1_target2",
+    "eval_safety_000222_natural_v1_target1",
+    "eval_safety_000180_natural_v1_target1",
+    "eval_safety_000179_natural_v1_target2",
+    "eval_safety_000279_natural_v1_target1"
+  ],
+  "name": "step3_ramp_p0_prompt_disjoint_split_v1",
+  "prompt_overlap": 0,
+  "selection_rule": "stable_hash_category_round_robin_one_target_per_prompt",
+  "selection_seed": 2026081717,
+  "validation_target_ids": [
+    "eval_safety_000205_natural_v1_target1",
+    "eval_safety_000188_natural_v1_target2",
+    "eval_safety_000161_natural_v1_target1",
+    "eval_safety_000225_natural_v1_target2",
+    "eval_safety_000243_natural_v1_target2",
+    "eval_safety_000276_natural_v1_target2",
+    "eval_safety_000118_natural_v1_target2",
+    "eval_safety_000126_natural_v1_target2",
+    "eval_safety_000265_natural_v1_target1",
+    "eval_safety_000147_natural_v1_target1",
+    "eval_safety_000236_natural_v1_target2",
+    "eval_safety_000211_natural_v1_target1",
+    "eval_safety_000295_natural_v1_target1",
+    "eval_safety_000113_natural_v1_target2",
+    "eval_safety_000116_natural_v1_target2",
+    "eval_safety_000253_natural_v1_target2"
+  ]
+}

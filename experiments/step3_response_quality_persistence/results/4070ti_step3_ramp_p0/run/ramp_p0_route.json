@@ -1,0 +1,62 @@
+{
+  "candidate_outputs_generated": false,
+  "checkpoint_writes": 0,
+  "coefficients": {
+    "auxiliary_gradient_norm_ratio": 0.25,
+    "maximum_relative_budget_error": 1.530042748722382e-08,
+    "prefix_coefficient": 0.26223245656756566,
+    "prefix_raw_gradient_norm": 9.14341682844666,
+    "prefix_scaled_gradient_norm": 2.3977006196589428,
+    "suffix_coefficient": 0.23919251636494498,
+    "suffix_raw_gradient_norm": 10.024145791779397,
+    "suffix_scaled_gradient_norm": 2.3977006505309943,
+    "target_auxiliary_gradient_norm": 2.397700656344788,
+    "uniform_calibration_gradient_norm": 9.590802625379151
+  },
+  "core100_opened": false,
+  "directional": {
+    "calibration_prefix_suffix_cosine": 0.7079162293370983,
+    "calibration_validation_prefix_cosine": 0.9063235546772186,
+    "placebo_increment_over_uniform_dot": 14.263157001475802,
+    "placebo_validation_prefix_dot": 78.71461337663291,
+    "prefix_over_suffix_directional_cosine_margin": 0.243614105115047,
+    "ramp_increment_over_uniform_dot": 19.50633870655254,
+    "ramp_validation_prefix_dot": 83.95779504927657,
+    "suffix_calibration_to_prefix_validation_cosine": 0.6627094495621716,
+    "uniform_validation_prefix_dot": 64.45145636633826
+  },
+  "gates": {
+    "budget_matched": true,
+    "cross_prompt_directional": true,
+    "gradient_valid": true,
+    "integrity": true,
+    "placebo_distinct": true,
+    "prefix_behavioral": true,
+    "state_restored": true,
+    "vram": true
+  },
+  "heldout_opened": false,
+  "matched_smoke_protocol_authorized": true,
+  "name": "step3_ramp_p0_route_decision_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol_sha256": "d456db23ede6d0785b254aa535e6c1f571565dcdcb10f62efb6f19ab28fbcc52",
+  "route": "PASS_RAMP_P0_AUTHORIZE_MATCHED_SMOKE_PROTOCOL",
+  "runtime_head": "4f2c0a7aa18c03d2dd89da2d629cb1e49ba88107",
+  "scheduler_objects": 0,
+  "structural_audit": {
+    "all_rows_support_equal_prefix_suffix_terms": true,
+    "margin_width": 16,
+    "maximum_prefix_suffix_overlap_tokens": 10,
+    "maximum_semantic_tokens": 37,
+    "mean_prefix_suffix_overlap_tokens": 3.9625,
+    "mean_prompt_content_recall": 0.19778855029774145,
+    "minimum_semantic_tokens": 22,
+    "prefix_first_sentence_complete_rate": 0.9875,
+    "prefix_safe_routing_onset_rate": 0.8875,
+    "prompt_clusters": 40,
+    "rows": 80,
+    "unique_normalized_prefix_rate": 1.0
+  },
+  "training_authorized": false
+}
