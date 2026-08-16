@@ -1,0 +1,124 @@
+{
+  "artifacts": [
+    {
+      "bytes": 20493,
+      "construct": "safety",
+      "exact_ordered_byte_subsequence": true,
+      "kind": "packet",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/safety/cspr_p2u_safety_reviewer_a_packet.jsonl",
+      "reviewer_role": "a",
+      "rows": 44,
+      "sha256": "a379331bc2788ec54ea43a821ae5cf0c62a7d1d627f3564d8f26fefc6e84ab3e",
+      "source_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_a_packet.jsonl",
+      "source_sha256": "a06e5e2ffda7f0ee6e0be8084bd3796e692097e051bc4bccee228a446c515808"
+    },
+    {
+      "bytes": 4268,
+      "construct": "safety",
+      "exact_ordered_byte_subsequence": true,
+      "kind": "template",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/safety/cspr_p2u_safety_reviewer_a_template.jsonl",
+      "reviewer_role": "a",
+      "rows": 44,
+      "sha256": "aa04a1e404039dab6f3ea3fbed2a1219f689c8ee6c523531e25e16fdc6ba5ae3",
+      "source_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_a_template.jsonl",
+      "source_sha256": "b299b71c48488c961a0ce259230fb34b135163b98edbd83d8104d86429358f43"
+    },
+    {
+      "bytes": 20493,
+      "construct": "safety",
+      "exact_ordered_byte_subsequence": true,
+      "kind": "packet",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/safety/cspr_p2u_safety_reviewer_b_packet.jsonl",
+      "reviewer_role": "b",
+      "rows": 44,
+      "sha256": "8f7162a1f83fd73d8395f276dc9857bdca1d7948ee25e18746c85c07ed369142",
+      "source_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_b_packet.jsonl",
+      "source_sha256": "802da1e3d4ffc75b13b15c8c9ae47fadd94e920893ffe42ca8e32f013503fd1a"
+    },
+    {
+      "bytes": 4268,
+      "construct": "safety",
+      "exact_ordered_byte_subsequence": true,
+      "kind": "template",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/safety/cspr_p2u_safety_reviewer_b_template.jsonl",
+      "reviewer_role": "b",
+      "rows": 44,
+      "sha256": "1801553963f911eba2dbb79dbd4d148338cbb429489580da3199b63ca67c239a",
+      "source_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_b_template.jsonl",
+      "source_sha256": "d4d8b8b93aa8b90ce1c7425605d6ddf35da69e4e9bb36f4a510c29df89e3f893"
+    },
+    {
+      "bytes": 31583,
+      "construct": "actionability",
+      "exact_ordered_byte_subsequence": true,
+      "kind": "packet",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/actionability/cspr_p2u_actionability_reviewer_a_packet.jsonl",
+      "reviewer_role": "a",
+      "rows": 66,
+      "sha256": "9ae2d02310518e5bf4ef911685056a646ba959bb4a7c55af274027f43c74cc07",
+      "source_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_a_packet.jsonl",
+      "source_sha256": "d61be1cc1e4b589ff183a93dfab7417db7b3cdd63fcb59555c0327f3f97eced4"
+    },
+    {
+      "bytes": 9504,
+      "construct": "actionability",
+      "exact_ordered_byte_subsequence": true,
+      "kind": "template",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/actionability/cspr_p2u_actionability_reviewer_a_template.jsonl",
+      "reviewer_role": "a",
+      "rows": 66,
+      "sha256": "030eed862132986873c1f395621b593d618706692f388c761b1a3545945e8364",
+      "source_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_a_template.jsonl",
+      "source_sha256": "1dd2f9d96b587fc7b81884d37fda91ce5b6e5dc6ae62d3638882a5a659b4be7f"
+    },
+    {
+      "bytes": 31583,
+      "construct": "actionability",
+      "exact_ordered_byte_subsequence": true,
+      "kind": "packet",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/actionability/cspr_p2u_actionability_reviewer_b_packet.jsonl",
+      "reviewer_role": "b",
+      "rows": 66,
+      "sha256": "98b5431ae4d1e1c707083f73d59477a70912718ce50c9203f973ec37103095ad",
+      "source_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_b_packet.jsonl",
+      "source_sha256": "f063ab60f6f635f386f562e462a1eb3f48e8b64d0cdf1324a21cf01191d20278"
+    },
+    {
+      "bytes": 9504,
+      "construct": "actionability",
+      "exact_ordered_byte_subsequence": true,
+      "kind": "template",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/actionability/cspr_p2u_actionability_reviewer_b_template.jsonl",
+      "reviewer_role": "b",
+      "rows": 66,
+      "sha256": "2085956ead19a6453d97b8e6ea36139993f4242b26183a514844079bf3c342e0",
+      "source_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_b_template.jsonl",
+      "source_sha256": "a742859a85d035489908c82414e5723ffee039761592b3b3246b8d489197caac"
+    }
+  ],
+  "automated_model_review_authorized": false,
+  "calibration_rows_only": true,
+  "construct_counts": {
+    "actionability": {
+      "hidden_duplicate_rows": 6,
+      "primary_rows": 60,
+      "total_rows": 66
+    },
+    "safety": {
+      "hidden_duplicate_rows": 4,
+      "primary_rows": 40,
+      "total_rows": 44
+    }
+  },
+  "entry_commit": "04f93276ac6ebc6f71b1e028f966724f40f454ee",
+  "hidden_keys_reviewer_visible": false,
+  "human_reviewer_access_authorized": false,
+  "name": "step3_cspr_p2u_calibration_view_manifest_v1",
+  "old_p2t_labels_eligible": false,
+  "optimizer_steps": 0,
+  "response_text_transformed": false,
+  "route": "P2U0_CALIBRATION_VIEWS_FROZEN_REVIEWER_QUALIFICATION_ONLY",
+  "target_packets_written": false,
+  "training_authorized": false
+}

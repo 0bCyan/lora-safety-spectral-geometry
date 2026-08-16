@@ -57,6 +57,19 @@ the final maximum-flow selector receives a mode-blind projection and uses the
 pre-API assigned category. This is still prospective protocol evidence, not an
 API result or method result.
 
+The later CSPR route established a closed-form safety-half-space projection and
+finite-step dual-Armijo certificate, then froze an authored same-prompt pool.
+Its first P2S review stopped after an automated reviewer hit a platform safety
+filter. The one registered cross-model P2T recovery completed all four A/B
+files, but failed the frozen calibration gates: Safety Reviewer A missed
+reference concordance, Actionability calibration missed multiple reliability
+thresholds, and all 240 Actionability target rows collapsed to score 2 so
+negative boundary agreement was undefined. `Step3_CSPR_P2U_external_human_measurement_plan.md`
+therefore opens an external-human measurement study rather than another model
+review retry. P2U P0 writes only exact calibration-row subsequences of the
+unchanged P2S packets; target access, Reviewer C, gradients, and training remain
+unauthorized with `optimizer_steps=0` and `training_authorized=false`.
+
 ## 1. Research Question
 
 > How can safety persistence be maintained while increasing prompt-relevant safe-response coverage and reducing mechanically reusable response structure, without exceeding the observed utility boundary?

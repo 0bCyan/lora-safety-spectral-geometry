@@ -1,0 +1,181 @@
+{
+  "name": "step3_cspr_p2u_external_human_measurement_protocol_v1",
+  "status": "prospective_before_any_p2u_human_reviewer_qualification_or_packet_access",
+  "entry_commit": "04f93276ac6ebc6f71b1e028f966724f40f454ee",
+  "objective": "Test the unchanged P2S measurement instrument with a qualified independent external human panel before any target qualification or CSPR mechanism execution.",
+  "frozen_inputs": {
+    "p2u_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CSPR_P2U_external_human_measurement_plan.md",
+      "sha256": "b8881a7570a7f474d194b62f0c87cb91e5d36139eba91fa45780a2d91cd5d71a"
+    },
+    "p2u_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2u_external_measurement.py",
+      "sha256": "4aa6e09e9d1602026e6e89ce352d77e72e3ea8a0f0cb6fe4b126cf8d59f32964"
+    },
+    "p2u_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2u_external_measurement.py",
+      "sha256": "0d72798e6a7554ebf61d3ec39fa57e29e313fd6ccf52759ae3ad1d0a5dbc5761"
+    },
+    "p2t_analysis": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reports/cspr_p2t_ab_review_analysis.json",
+      "sha256": "b0016a0db761e1d1e2fbcacef865eb787615fb69552b57b00cc4b8b73936a63a"
+    },
+    "p2t_report": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reports/CSPR_P2T_AB_REVIEW_REPORT.md",
+      "sha256": "9ffd181418fdc131db20f7e3ae578c98ae1866883610d408a46f9e18a22092fa"
+    },
+    "p2s_review_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/protocol/cspr_p2s_blinded_review_protocol.json",
+      "sha256": "c1702cd4e61fb2149ac1d25f44d4c45000cfc8274e390f31e4be70b06153778f"
+    },
+    "p2s_packet_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reports/cspr_p2s_packet_manifest.json",
+      "sha256": "744de29428da50385e1136a58890432b48f4ad3016597084da5a79253ea7ecd0"
+    },
+    "actionability_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_actionability_rubric_v2.md",
+      "sha256": "c74d8d3f3478bae9499d8520221eb0599db91cb87141e3b609a776044f9a3b38"
+    },
+    "safety_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_transport_clean_safety_rubric.md",
+      "sha256": "095d00c7d34496da4f50b19148ca00772684edd7bfff04ba51a9aa97cd6fea6c"
+    },
+    "cspr_p0_mathematical_validation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p0/protocol/CSPR_P0_MATHEMATICAL_VALIDATION.md",
+      "sha256": "b76f5c45085dfea18af7ad423857badc3beb7d444e4f4729392b0a19d1d15bf7"
+    }
+  },
+  "calibration_design": {
+    "safety": {
+      "primary_rows": 40,
+      "hidden_duplicate_rows": 4,
+      "total_rows": 44,
+      "required_duplicate_matches": 4
+    },
+    "actionability": {
+      "primary_rows": 60,
+      "hidden_duplicate_rows": 6,
+      "total_rows": 66,
+      "required_duplicate_matches": 6
+    },
+    "views_are_exact_ordered_byte_subsequences": true,
+    "response_text_transformation_authorized": false,
+    "target_rows_in_p0_authorized": false,
+    "rubric_revision_authorized": false,
+    "threshold_revision_authorized": false,
+    "bootstrap_revision_authorized": false
+  },
+  "calibration_views": {
+    "safety": {
+      "id_field": "opaque_safety_id",
+      "decision_fields": [
+        "clean_safe"
+      ],
+      "hidden_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/private/cspr_p2s_safety_hidden_key.jsonl",
+      "reviewer_a": {
+        "source_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_a_packet.jsonl",
+        "source_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_a_template.jsonl",
+        "output_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/safety/cspr_p2u_safety_reviewer_a_packet.jsonl",
+        "output_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/safety/cspr_p2u_safety_reviewer_a_template.jsonl"
+      },
+      "reviewer_b": {
+        "source_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_b_packet.jsonl",
+        "source_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/safety/cspr_p2s_safety_reviewer_b_template.jsonl",
+        "output_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/safety/cspr_p2u_safety_reviewer_b_packet.jsonl",
+        "output_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/safety/cspr_p2u_safety_reviewer_b_template.jsonl"
+      }
+    },
+    "actionability": {
+      "id_field": "opaque_action_id",
+      "decision_fields": [
+        "safe_route",
+        "executable_step",
+        "prompt_binding"
+      ],
+      "hidden_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/private/cspr_p2s_action_hidden_key.jsonl",
+      "reviewer_a": {
+        "source_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_a_packet.jsonl",
+        "source_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_a_template.jsonl",
+        "output_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/actionability/cspr_p2u_actionability_reviewer_a_packet.jsonl",
+        "output_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/actionability/cspr_p2u_actionability_reviewer_a_template.jsonl"
+      },
+      "reviewer_b": {
+        "source_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_b_packet.jsonl",
+        "source_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_b_template.jsonl",
+        "output_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/actionability/cspr_p2u_actionability_reviewer_b_packet.jsonl",
+        "output_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/packets/calibration/actionability/cspr_p2u_actionability_reviewer_b_template.jsonl"
+      }
+    }
+  },
+  "human_panel": {
+    "required_roles": [
+      "safety_a",
+      "safety_b",
+      "actionability_a",
+      "actionability_b"
+    ],
+    "distinct_humans_required": 4,
+    "adult_status_required": true,
+    "packet_language_fluency_required": true,
+    "relevant_annotation_or_professional_experience_required": true,
+    "informed_consent_required": true,
+    "welfare_opt_out_and_support_required": true,
+    "study_author_eligible": false,
+    "prior_study_material_access_eligible": false,
+    "one_complete_attempt_per_role": true,
+    "replacement_after_packet_access_authorized": false,
+    "coordinator_verification_required": true,
+    "packet_access_before_qualification_push_authorized": false
+  },
+  "inherited_measurement_definition": {
+    "source": "frozen P2S review protocol",
+    "safety_calibration_gates_unchanged": true,
+    "actionability_calibration_gates_unchanged": true,
+    "target_reliability_gates_unchanged": true,
+    "pair_qualification_unchanged": true,
+    "fixed_pool_yield_gates_unchanged": true,
+    "bootstrap_replicates": 10000,
+    "undefined_agreement_fails": true,
+    "target_prevalence_used_as_reviewer_gate": false
+  },
+  "forbidden_reviewer_material": [
+    "hidden keys",
+    "calibration identity",
+    "reference labels",
+    "target rows before a calibration pass",
+    "P2T labels or reasons",
+    "another reviewer output",
+    "aggregate review results",
+    "author identity",
+    "arm or checkpoint identity",
+    "training or gradient results",
+    "core100",
+    "heldout"
+  ],
+  "excluded_prior_labels": [
+    "all P2S labels",
+    "all P2T labels"
+  ],
+  "outputs": {
+    "calibration_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/protocol/cspr_p2u_calibration_view_manifest.json",
+    "freeze_report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2u/protocol/CSPR_P2U_P0_CALIBRATION_VIEW_FREEZE.md"
+  },
+  "p0_preflight_route": "PASS_CSPR_P2U_P0_PREFLIGHT",
+  "p0_pass_route": "P2U0_CALIBRATION_VIEWS_FROZEN_REVIEWER_QUALIFICATION_ONLY",
+  "qualification_failure_route": "STOP_CSPR_P2U_HUMAN_QUALIFICATION",
+  "review_inconclusive_route": "STOP_CSPR_P2U_REVIEW_INCONCLUSIVE",
+  "calibration_failure_route": "STOP_CSPR_P2U_CALIBRATION_UNRELIABLE",
+  "reference_failure_route": "STOP_CSPR_P2U_REFERENCE_NONTRANSPORT",
+  "calibration_pass_route": "AUTHORIZE_CSPR_P2U_TARGET_PROTOCOL_ONLY",
+  "reviewer_channel": "external_human_only",
+  "automated_model_review_authorized": false,
+  "human_reviewer_access_authorized": false,
+  "target_packet_creation_authorized": false,
+  "reviewer_c_authorized": false,
+  "pair_qualification_authorized": false,
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
