@@ -1,0 +1,58 @@
+{
+  "name": "step3_cspr_p0_numerical_verification_v1",
+  "experiment_mode": "proof_and_zero_training_validation",
+  "git_head": "81924e0c8cc5bbfbfddfacd03221ef3373178f5d",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p0/protocol/cspr_p0_validation_protocol.json",
+  "protocol_sha256": "cffdc65fff4a67f5883d3ae67c7b2a6ab5b532a4bb4c96c0cd47f0cecfe2af51",
+  "random_projection": {
+    "cases": 256,
+    "dimension": 64,
+    "active": 127,
+    "inactive": 129,
+    "maximum_safety_directional_derivative": 5.329070518200751e-15,
+    "maximum_preference_directional_derivative": 0.0,
+    "maximum_kkt_stationarity_norm": 6.78097171666755e-16,
+    "maximum_kkt_complementarity_abs": 1.4888022781242829e-15
+  },
+  "finite_difference_error": 1.0534240146853335e-11,
+  "dpo_derivative_error": 0.0,
+  "accepted_line_search": {
+    "accepted": true,
+    "step_size": 1.0,
+    "trials": 1,
+    "initial_preference_loss": 0.5,
+    "initial_safety_loss": 1.0,
+    "final_preference_loss": 0.0,
+    "final_safety_loss": 0.5,
+    "preference_bound": 0.4,
+    "safety_bound": 0.9
+  },
+  "tangent_counterexample_line_search": {
+    "accepted": false,
+    "step_size": 0.0,
+    "trials": 12,
+    "initial_preference_loss": 0.5,
+    "initial_safety_loss": 0.0,
+    "final_preference_loss": 0.5,
+    "final_safety_loss": 0.0,
+    "preference_bound": 0.499951171875,
+    "safety_bound": 0.0
+  },
+  "checks": {
+    "both_projection_branches_exercised": true,
+    "safety_first_order_nonincrease": true,
+    "preference_first_order_nonincrease": true,
+    "kkt_stationarity": true,
+    "kkt_complementarity": true,
+    "finite_difference": true,
+    "dpo_closed_form_derivative": true,
+    "joint_descent_step_accepted": true,
+    "tangent_second_order_counterexample_rejected": true
+  },
+  "passed": true,
+  "claim_boundary": "Passing P0 validates the local projection implementation and finite-step rejection logic only. It does not validate real-model gradients, training data, generated behavior, or safety generalization.",
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
