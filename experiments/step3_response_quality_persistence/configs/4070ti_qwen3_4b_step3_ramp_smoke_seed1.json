@@ -1,0 +1,81 @@
+{
+  "name": "4070ti_qwen3_4b_step3_ramp_smoke_seed1_v1",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "parent_config": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_pcr_mw_seed1.json",
+  "p0_route": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_route.json",
+  "p0_route_sha256": "2312a2a02528d8131d22e7217ddc69ed5895907330475d61a59159b0223146c4",
+  "safety_targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+  "safety_targets_sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "local_files_only": true,
+  "risk_data_path": "data/processed/unified_pool/train_risk.jsonl",
+  "seed": 1,
+  "train_examples": 256,
+  "optimizer_steps": 2,
+  "gradient_accumulation_steps": 4,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.0,
+  "adam_beta1": 0.9,
+  "adam_beta2": 0.999,
+  "adam_epsilon": 1e-08,
+  "max_grad_norm": 1.0,
+  "warmup_steps": 0,
+  "max_length": 512,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "gradient_checkpointing": true,
+  "fp16": true,
+  "safety_mix": 0.2,
+  "margin_width": 16,
+  "auxiliary_gradient_norm_ratio": 0.25,
+  "prefix_coefficient": 0.26223245656756566,
+  "suffix_coefficient": 0.23919251636494498,
+  "smoke_steps": 2,
+  "development_steps": 16,
+  "minimum_vram_headroom_fraction": 0.1,
+  "arms": {
+    "uniform": {
+      "objective": "uniform"
+    },
+    "suffix": {
+      "objective": "suffix"
+    },
+    "ramp": {
+      "objective": "prefix"
+    }
+  },
+  "diagnostic_target_ids": [
+    "eval_safety_000205_natural_v1_target1",
+    "eval_safety_000188_natural_v1_target2",
+    "eval_safety_000161_natural_v1_target1",
+    "eval_safety_000225_natural_v1_target2",
+    "eval_safety_000243_natural_v1_target2",
+    "eval_safety_000276_natural_v1_target2",
+    "eval_safety_000118_natural_v1_target2",
+    "eval_safety_000126_natural_v1_target2",
+    "eval_safety_000265_natural_v1_target1",
+    "eval_safety_000147_natural_v1_target1",
+    "eval_safety_000236_natural_v1_target2",
+    "eval_safety_000211_natural_v1_target1",
+    "eval_safety_000295_natural_v1_target1",
+    "eval_safety_000113_natural_v1_target2",
+    "eval_safety_000116_natural_v1_target2",
+    "eval_safety_000253_natural_v1_target2"
+  ],
+  "smoke_training_authorized": true,
+  "development_training_authorized": false,
+  "main_training_authorized": false,
+  "candidate_generation_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

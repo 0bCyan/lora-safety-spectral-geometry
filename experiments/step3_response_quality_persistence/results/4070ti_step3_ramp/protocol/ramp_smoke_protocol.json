@@ -1,0 +1,121 @@
+{
+  "name": "step3_ramp_matched_three_arm_smoke_protocol_v1",
+  "status": "prospective_before_any_matched_RAMP_stage_training",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/protocol/ramp_smoke_protocol.json",
+  "entry_commit": "4514b164af4f72f1a86a74e52449ef082731c385",
+  "run_kind": "smoke",
+  "objective": "Verify matched execution and prompt-disjoint two-step realization of the P0 prefix direction before any RAMP development training or generation.",
+  "frozen_inputs": {
+    "smoke_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_RAMP_matched_smoke_plan.md",
+      "sha256": "0ad3ea1b908cffa9aa59a74c6dfc593eec069c92d26c5791d07660427495acca"
+    },
+    "method_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_RAMP_reachability_margin_plan.md",
+      "sha256": "26fb154e7567e19fe6d8ece658b473c04f5096be0ee85abae4a7734fd601a55a"
+    },
+    "config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_ramp_smoke_seed1.json",
+      "sha256": "7acfab10b02bd395483e08036358ccdfdfafca17f0f9bcbc95a8f2cf66e0fc94"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_training.py",
+      "sha256": "5095a6db54ef23cb887201ffab2a23f9483acbe8c5993859fe084ea9dabf3800"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_ramp_training.py",
+      "sha256": "f31c6e7ec5f182bc395972570e9976d75b7645b948eb7dd6817aaf7903286939"
+    },
+    "ramp_p0_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_p0.py",
+      "sha256": "bdc98f4f27efcc09f60a40c8fa2a486655e3aabe2c825b1c19ec5b3e299e0c51"
+    },
+    "ramp_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_common.py",
+      "sha256": "70b17175e00cddda9ea8394717c6fd02770bc446a755680d2e3965c6bfa8d998"
+    },
+    "model_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "gradient_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_common.py",
+      "sha256": "80a15faf4b04e12b9560fc03b90418af2555ca716790d6e069e15d032bd7c2a2"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "model_loader": {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57"
+    },
+    "p0_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/protocol/ramp_p0_protocol.json",
+      "sha256": "d456db23ede6d0785b254aa535e6c1f571565dcdcb10f62efb6f19ab28fbcc52"
+    },
+    "p0_route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_route.json",
+      "sha256": "2312a2a02528d8131d22e7217ddc69ed5895907330475d61a59159b0223146c4"
+    },
+    "p0_reproduction_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp_p0/run/ramp_p0_reproduction_manifest.json",
+      "sha256": "555b0f074dcab2b88432626c60c149ba5fe8f3e7b6d2ca257dedfb94416e99d7"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "risk_rows": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    }
+  },
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_ramp_smoke_seed1.json",
+  "arm_order": [
+    "uniform",
+    "suffix",
+    "ramp"
+  ],
+  "optimizer_steps_per_arm": 2,
+  "total_authorized_optimizer_steps": 6,
+  "safety_draws_per_arm": 8,
+  "diagnostic_rows": 16,
+  "diagnostic_prompt_overlap_with_smoke_draws": 0,
+  "gates": {
+    "matching_tolerance": 1e-07,
+    "minimum_vram_headroom_fraction": 0.1,
+    "ramp_prefix_loss_reduction_min": 0.005,
+    "ramp_advantage_over_each_control_min": 0.002,
+    "all_steps_finite": true,
+    "no_skipped_updates": true,
+    "distinct_final_adapter_hashes": true,
+    "exact_assignment_term_counts": true,
+    "sealed_data_untouched": true
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke",
+  "arm_outputs": {
+    "uniform": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/uniform",
+    "suffix": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/suffix",
+    "ramp": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/ramp"
+  },
+  "outputs": {
+    "decision": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/ramp_smoke_decision.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/RAMP_SMOKE_REPORT.md",
+    "reproduction_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_ramp/smoke/ramp_smoke_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_RAMP_SMOKE_AUTHORIZE_MATCHED_DEVELOPMENT16_PROTOCOL",
+  "failure_routes": [
+    "STOP_RAMP_SMOKE_MATCHING_FAILED",
+    "STOP_RAMP_SMOKE_NUMERICAL_FAILED",
+    "STOP_RAMP_SMOKE_ASSIGNMENT_NOT_EXERCISED",
+    "STOP_RAMP_SMOKE_DIRECTION_NOT_REALIZED"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_matched_RAMP_development16_protocol_only",
+  "training_authorized": true,
+  "development_training_authorized": false,
+  "candidate_generation_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
