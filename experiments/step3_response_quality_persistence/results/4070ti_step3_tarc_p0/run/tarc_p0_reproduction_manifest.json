@@ -1,0 +1,67 @@
+{
+  "artifacts": [
+    {
+      "bytes": 626,
+      "name": "structural_audit",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc_p0/run/tarc_p0_structural_audit.json",
+      "rows": null,
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    {
+      "bytes": 634,
+      "name": "split_manifest",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc_p0/run/tarc_p0_split_manifest.json",
+      "rows": null,
+      "sha256": "1912ceadead4ceb595fee80fba6f7ebad754acd71b1afd7b99666b60266fe953"
+    },
+    {
+      "bytes": 7562,
+      "name": "diagnostic_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc_p0/run/tarc_p0_diagnostic_rows.jsonl",
+      "rows": 32,
+      "sha256": "86d4beb4bea583a183ac7eba469b52126650e85079c02f9a66f69a1a76c7556a"
+    },
+    {
+      "bytes": 4804,
+      "name": "gradient_diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc_p0/run/tarc_p0_gradient_diagnostics.json",
+      "rows": null,
+      "sha256": "6ca7037b364358df462a458ebfe84af776f4bde6e676eff9cc841e34f4b79247"
+    },
+    {
+      "bytes": 484,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc_p0/run/tarc_p0_environment.json",
+      "rows": null,
+      "sha256": "4cfce987421f555421cd98dbdef35c4347a6873ee43223c8da528f93b7b49a3f"
+    },
+    {
+      "bytes": 2569,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc_p0/run/tarc_p0_route.json",
+      "rows": null,
+      "sha256": "951cb260bb27f6fd5c4d1c23fd89c1e50ee89ce02b7929d392a15ca26e29af3b"
+    },
+    {
+      "bytes": 975,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc_p0/run/TARC_P0_REPORT.md",
+      "rows": null,
+      "sha256": "b8948dbd1658deef1ef7111cd175b1076d0834f6ac86a59e9a1c34176e5ee26d"
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "checkpoint_writes": 0,
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_tarc_p0.py run",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_tarc_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_tarc_p0/protocol/tarc_p0_protocol.json",
+  "protocol_sha256": "d8bc92eeb91638154b1041fc161a29fde46e11b60f344b2711029de510e6c5eb",
+  "route": "PASS_TARC_P0_AUTHORIZE_MATCHED_SMOKE_PROTOCOL",
+  "runtime_head": "6c797a6eccfc75330d92e9ed8fbbb58eea468d35",
+  "scheduler_objects": 0,
+  "training_authorized": false
+}

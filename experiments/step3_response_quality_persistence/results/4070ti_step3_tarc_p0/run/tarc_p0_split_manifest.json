@@ -1,0 +1,26 @@
+{
+  "calibration_sample_ids": [
+    "eval_safety_000138",
+    "eval_safety_000260",
+    "eval_safety_000191",
+    "eval_safety_000268",
+    "eval_safety_000265",
+    "eval_safety_000294",
+    "eval_safety_000286",
+    "eval_safety_000258"
+  ],
+  "name": "step3_tarc_p0_category_balanced_prompt_pair_split_v1",
+  "prompt_overlap": 0,
+  "selection_seed": 2026081720,
+  "targets_per_prompt": 2,
+  "validation_sample_ids": [
+    "eval_safety_000180",
+    "eval_safety_000243",
+    "eval_safety_000263",
+    "eval_safety_000152",
+    "eval_safety_000107",
+    "eval_safety_000161",
+    "eval_safety_000101",
+    "eval_safety_000232"
+  ]
+}

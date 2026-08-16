@@ -1,0 +1,73 @@
+{
+  "candidate_outputs_generated": false,
+  "checkpoint_writes": 0,
+  "coefficients": {
+    "auxiliary_gradient_norm_ratio": 0.25,
+    "maximum_relative_budget_error": 2.805685923482319e-08,
+    "ramp_coefficient": 0.25633183286502326,
+    "ramp_raw_gradient_norm": 8.648765780091843,
+    "ramp_scaled_gradient_norm": 2.2169539692364917,
+    "tarc_coefficient": 0.20565029054100603,
+    "tarc_raw_gradient_norm": 10.78021323772057,
+    "tarc_scaled_gradient_norm": 2.2169539222304686,
+    "target_auxiliary_gradient_norm": 2.2169539844312345,
+    "uniform_calibration_gradient_norm": 8.867815937724938
+  },
+  "core100_opened": false,
+  "directional": {
+    "calibration_tarc_ramp_cosine": 0.35286527799779976,
+    "calibration_validation_tarc_cosine": 0.7662351321850943,
+    "ramp_calibration_to_tarc_validation_cosine": 0.3891983706624616,
+    "ramp_increment_tarc_validation_dot": 10.162997333524466,
+    "ramp_tarc_validation_dot": 37.31241875823834,
+    "tarc_increment_tarc_validation_dot": 20.008422509558397,
+    "tarc_over_ramp_validation_cosine_margin": 0.3770367615226327,
+    "tarc_tarc_validation_dot": 47.15784395392723,
+    "uniform_tarc_validation_dot": 27.149421417407616
+  },
+  "gates": {
+    "budget_matched": true,
+    "cross_prompt_directional": true,
+    "gradient_valid": true,
+    "integrity": true,
+    "objective_distinct": true,
+    "route_structure": true,
+    "state_restored": true,
+    "vram": true
+  },
+  "heldout_opened": false,
+  "matched_smoke_protocol_authorized": true,
+  "name": "step3_tarc_p0_route_decision_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol_sha256": "d8bc92eeb91638154b1041fc161a29fde46e11b60f344b2711029de510e6c5eb",
+  "route": "PASS_TARC_P0_AUTHORIZE_MATCHED_SMOKE_PROTOCOL",
+  "runtime_head": "6c797a6eccfc75330d92e9ed8fbbb58eea468d35",
+  "scheduler_objects": 0,
+  "structural_audit": {
+    "all_routes_complete_within_width": true,
+    "branching_prompt_rate": 1.0,
+    "categories": 8,
+    "distinct_route_pair_rate": 1.0,
+    "maximum_allowed_branch_width": 2,
+    "maximum_route_tokens": 4,
+    "mean_internal_trie_nodes": 6.0,
+    "mean_route_tokens": 4.0,
+    "minimum_route_tokens": 4,
+    "prompt_clusters": 40,
+    "registered_route_marker_counts": {
+      "i can't engage": 1,
+      "i can't help": 39,
+      "i won't assist": 18,
+      "i won't discuss": 1,
+      "i won't give": 1,
+      "i won't help": 7,
+      "i won't provide": 12,
+      "i won't suggest": 1
+    },
+    "route_width_limit": 16,
+    "rows": 80,
+    "targets_per_prompt": 2
+  },
+  "training_authorized": false
+}
