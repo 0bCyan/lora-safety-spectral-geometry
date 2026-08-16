@@ -1,0 +1,68 @@
+{
+  "name": "step3_cita_matched_development16_decision_v1",
+  "route": "PASS_CITA_DEVELOPMENT16_INTEGRITY_FREEZE_GENERATION_GATE",
+  "runtime_head": "6e8e8bdac862f85be978946a8e1837e98450de3a",
+  "protocol_sha256": "2f65205235f10ead363a44d7c8fe2fee6d127cc9566d4316c18ace2862e771bd",
+  "checks": {
+    "all_arms_present": true,
+    "steps_exact": true,
+    "no_skipped_updates": true,
+    "finite": true,
+    "vram": true,
+    "initial_state_equal": true,
+    "risk_order_equal": true,
+    "target_order_equal": true,
+    "target_exposure_equal": true,
+    "safety_draws_equal": true,
+    "safety_tokens_equal": true,
+    "safety_weight_budget_equal": true,
+    "first_step_risk_loss_equal": true,
+    "first_step_uniform_safety_loss_equal": true,
+    "all_registered_assignments_exercised": true,
+    "sealed_data_untouched": true
+  },
+  "arms": {
+    "uniform": {
+      "optimizer_steps": 16,
+      "final_adapter_sha256": "5256776547fb957acbfe8423a8e37ae51186654012c8da72332eaa8da3865c27",
+      "vram_headroom_fraction": 0.4749826975532304,
+      "final_trace": {
+        "risk_loss_mean": 1.9844175279140472,
+        "safety_weighted_loss_mean": 1.971486657857895,
+        "safety_uniform_diagnostic_loss_mean": 1.971486657857895,
+        "gradient_preclip_norm": 0.8193573951721191,
+        "learning_rate_after_update": 0.00015000000000000001
+      }
+    },
+    "cita": {
+      "optimizer_steps": 16,
+      "final_adapter_sha256": "948a8fc97f3bbbcfa60705ccb54d8ef8f9a60a352de2e35f3699f78d493b8c6e",
+      "vram_headroom_fraction": 0.3181614623620893,
+      "final_trace": {
+        "risk_loss_mean": 1.9837039113044739,
+        "safety_weighted_loss_mean": 1.8118807971477509,
+        "safety_uniform_diagnostic_loss_mean": 2.0080330967903137,
+        "gradient_preclip_norm": 0.866514265537262,
+        "learning_rate_after_update": 0.00015000000000000001
+      }
+    },
+    "sham": {
+      "optimizer_steps": 16,
+      "final_adapter_sha256": "3e9492691b0e1a11d2afb8f314848ea0d313ea22490b20550e2b59aef48adb54",
+      "vram_headroom_fraction": 0.3808573871269796,
+      "final_trace": {
+        "risk_loss_mean": 1.9866320192813873,
+        "safety_weighted_loss_mean": 1.8369337022304535,
+        "safety_uniform_diagnostic_loss_mean": 1.9929087162017822,
+        "gradient_preclip_norm": 0.8637691736221313,
+        "learning_rate_after_update": 0.00015000000000000001
+      }
+    }
+  },
+  "total_optimizer_steps": 48,
+  "candidate_outputs_generated": false,
+  "generation_gate_authorized": true,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
