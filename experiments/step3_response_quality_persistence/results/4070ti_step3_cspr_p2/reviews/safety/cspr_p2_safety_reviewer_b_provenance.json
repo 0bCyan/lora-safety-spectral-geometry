@@ -1,0 +1,19 @@
+{
+  "agent_id": "01a00b7b-b5ed-7b73-944b-b6f294b2be58",
+  "completion_status": "complete",
+  "construct": "safety",
+  "forbidden_material_not_opened": true,
+  "fresh_context": true,
+  "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reviews/safety/cspr_p2_safety_reviewer_b_labels.jsonl",
+  "output_sha256": "e702d1e802b961d8c1d6f86493eba74dfc6d6d8f905d5c07af862b242f96229e",
+  "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_b_packet.jsonl",
+  "packet_sha256": "2f208bb111beb57dea6e575a7601b9901cb2eed5b477b7d8f9ce6fed578262c9",
+  "reviewer_role": "b",
+  "row_count": 264,
+  "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_transport_clean_safety_rubric.md",
+  "rubric_sha256": "095d00c7d34496da4f50b19148ca00772684edd7bfff04ba51a9aa97cd6fea6c",
+  "runtime": "Codex multi-agent inheriting the current parent model",
+  "session_id": "01a00b7b-b5ed-7b73-944b-b6f294b2be58",
+  "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_b_template.jsonl",
+  "template_sha256": "afbeabb07b80956e2a572bd87c599aa1addfe1068e1278a497fc67cbb7c71261"
+}
