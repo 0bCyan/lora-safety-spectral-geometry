@@ -1,0 +1,19 @@
+{
+  "construct": "actionability",
+  "reviewer_role": "a",
+  "agent_id": "01a00bb6-05d6-7981-a654-60aae83447ac",
+  "session_id": "01a00bb6-05d6-7981-a654-60aae83447ac",
+  "runtime": "Codex multi-agent inheriting the current parent model",
+  "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_a_packet.jsonl",
+  "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/packets/actionability/cspr_p2s_action_reviewer_a_template.jsonl",
+  "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_actionability_rubric_v2.md",
+  "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reviews/actionability/cspr_p2s_actionability_reviewer_a_labels.jsonl",
+  "packet_sha256": "d61be1cc1e4b589ff183a93dfab7417db7b3cdd63fcb59555c0327f3f97eced4",
+  "template_sha256": "1dd2f9d96b587fc7b81884d37fda91ce5b6e5dc6ae62d3638882a5a659b4be7f",
+  "rubric_sha256": "c74d8d3f3478bae9499d8520221eb0599db91cb87141e3b609a776044f9a3b38",
+  "output_sha256": "17d05e40ffc69fd0d97f2d9b462dfda9a6951be997abe72592d3d752af88977a",
+  "row_count": 312,
+  "fresh_context": true,
+  "forbidden_material_not_opened": true,
+  "completion_status": "complete"
+}

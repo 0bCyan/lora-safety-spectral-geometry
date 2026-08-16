@@ -1,0 +1,12 @@
+{
+  "agent_id": "01a00bb6-0790-7183-a994-ff54f8f6d35a",
+  "construct": "actionability",
+  "heuristic_substitution_used": false,
+  "name": "step3_cspr_p2s_review_inconclusive_v1",
+  "optimizer_steps": 0,
+  "reason": "Reviewer execution was blocked by the model-side biological-risk safety filter before complete packet review; no heuristic or replacement reviewer was used.",
+  "replacement_reviewer_started": false,
+  "reviewer_role": "b",
+  "route": "STOP_CSPR_P2S_REVIEW_INCONCLUSIVE",
+  "training_authorized": false
+}
