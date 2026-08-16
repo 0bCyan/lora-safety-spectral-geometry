@@ -1,0 +1,101 @@
+{
+  "all_sequences_fit_without_truncation": true,
+  "artifacts": [
+    {
+      "bytes": 13302,
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/protocol/cspr_m0_preference_pilot.jsonl",
+      "rows": 8,
+      "sha256": "f89af0fd086d7223fc1f8a54350b798ca8944f6d74b27be98253b6251994eee8"
+    },
+    {
+      "bytes": 3765,
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/protocol/cspr_m0_safety_pilot.jsonl",
+      "rows": 8,
+      "sha256": "1c5f02535253b991567dd5ff4d77fe32252a8007e136c2cc703735ef54ecdc28"
+    }
+  ],
+  "behavioral_qualification_claimed": false,
+  "checkpoint_files": [
+    {
+      "bytes": 935,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_config.json",
+      "sha256": "f3dc2f00a468baf447741f7819273a41deab36d96438da7b19d79a9b4cb0ccec"
+    },
+    {
+      "bytes": 66126768,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_model.safetensors",
+      "sha256": "fd66579386cbfa8418cce8c2d8e7c0099b2ef2fddc5a05839b4e8c5f39435379"
+    },
+    {
+      "bytes": 735,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/added_tokens.json",
+      "sha256": "79f6ec6fcc423d3a82bfac8b9033b1daac7b7bce06a5f5f441637b480cc605de"
+    },
+    {
+      "bytes": 4256,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/chat_template.jinja",
+      "sha256": "51fa65c79bb57f058dc7ef8734884bd325fe9d45bb03a61bfef59785d3bc2da9"
+    },
+    {
+      "bytes": 1671853,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/merges.txt",
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    {
+      "bytes": 5180,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/README.md",
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6"
+    },
+    {
+      "bytes": 644,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/special_tokens_map.json",
+      "sha256": "57255613bbe23c9497211ca68561ff429a51e871dbaf5a59998fa4c8f7fe168a"
+    },
+    {
+      "bytes": 11422654,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/tokenizer.json",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    {
+      "bytes": 5643,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/tokenizer_config.json",
+      "sha256": "b2a0d89cf5c89d5d844c56d82e9c3731f862d720a6ce221c31955b628960cde7"
+    },
+    {
+      "bytes": 2776833,
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/vocab.json",
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  ],
+  "entry_commit": "90a490c4dd74d5cae642668837ebbf2e6f934f6a",
+  "human_labels_used": false,
+  "name": "step3_cspr_m0_data_freeze_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "preference_categories": [
+    "animal_abuse",
+    "child_abuse",
+    "controversial_topics,politics",
+    "financial_crime,property_crime,theft",
+    "hate_speech,offensive_language",
+    "misinformation_regarding_ethics,laws_and_safety",
+    "privacy_violation",
+    "terrorism,organized_crime"
+  ],
+  "preference_rows": 8,
+  "route": "CSPR_M0_DATA_AND_EXECUTION_FROZEN_ZERO_UPDATE_ONLY",
+  "safety_categories": [
+    "cyber abuse",
+    "financial evasion",
+    "fraud or deception",
+    "harassment or coercion",
+    "harmful wrongdoing",
+    "physical harm",
+    "privacy invasion",
+    "public manipulation"
+  ],
+  "safety_rows": 8,
+  "scheduler_objects": 0,
+  "training_authorized": false,
+  "wrong_prompt_is_deranged": true
+}

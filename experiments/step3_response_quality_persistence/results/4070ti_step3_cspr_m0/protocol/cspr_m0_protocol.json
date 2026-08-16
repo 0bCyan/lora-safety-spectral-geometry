@@ -1,0 +1,156 @@
+{
+  "name": "step3_cspr_m0_real_model_zero_update_protocol_v1",
+  "status": "prospective_before_data_selection_and_any_real_model_m0_gradient",
+  "entry_commit": "90a490c4dd74d5cae642668837ebbf2e6f934f6a",
+  "objective": "Test whether the frozen CSPR projection is non-degenerate and finite-step feasible on one real Qwen3-4B constant20 checkpoint without any optimizer step.",
+  "frozen_inputs": {
+    "plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CSPR_M0_real_model_zero_update_plan.md",
+      "sha256": "20b8e079f39ca43be8897568475239be06d63cf70db84df94749e2dc77456aa3"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_m0_mechanism.py",
+      "sha256": "5eaf21e8ae2bab32487d0376fe9ce10b7f20cd685bc472fb8348c2dc5d1564f0"
+    },
+    "tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_m0_mechanism.py",
+      "sha256": "c5ac23ddfb18666072a6a2ebc51e285d580a58ae2601b55af5d9905d15425730"
+    },
+    "cspr_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_common.py",
+      "sha256": "2da4419cd4678983aa7224a0237326299f2f3dd51353dff5c1c0ddb787ff0689"
+    },
+    "cspr_proof": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p0/protocol/CSPR_P0_MATHEMATICAL_VALIDATION.md",
+      "sha256": "b76f5c45085dfea18af7ad423857badc3beb7d444e4f4729392b0a19d1d15bf7"
+    },
+    "p2t_terminal_analysis": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reports/cspr_p2t_ab_review_analysis.json",
+      "sha256": "b0016a0db761e1d1e2fbcacef865eb787615fb69552b57b00cc4b8b73936a63a"
+    },
+    "candidate_ledger": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/private/cspr_p1s_authored_candidate_ledger.jsonl",
+      "sha256": "473291e707e90433d60164b5cab4e7d8e3e8843cceed15d748729673b8078400"
+    },
+    "author_a_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_a_packet.jsonl",
+      "sha256": "9233ebac00e53fd4f4717fb7afe75849fe3b25a799ecc6172b532db9cf2c776b"
+    },
+    "author_b_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_b_packet.jsonl",
+      "sha256": "faa92638f96af3d994dde45d36d9d3323263bfd527bb6e49a0313603ca7bc7fa"
+    },
+    "p2_safety_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_a_packet.jsonl",
+      "sha256": "37464e0f5a3fe9fc39649b075674b3c754cca8264266b72c71a703b42c2450d4"
+    },
+    "p2_safety_key": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/private/cspr_p2_safety_hidden_key.jsonl",
+      "sha256": "83c86df3f72b22f38509f5ad5576bcc3c7648246e263ef867ba73b3dc406f905"
+    },
+    "safety_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "checkpoint_adapter": {
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_model.safetensors",
+      "sha256": "fd66579386cbfa8418cce8c2d8e7c0099b2ef2fddc5a05839b4e8c5f39435379"
+    },
+    "checkpoint_config": {
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_config.json",
+      "sha256": "f3dc2f00a468baf447741f7819273a41deab36d96438da7b19d79a9b4cb0ccec"
+    }
+  },
+  "source_paths": {
+    "candidate_ledger": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/private/cspr_p1s_authored_candidate_ledger.jsonl",
+    "author_a_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_a_packet.jsonl",
+    "author_b_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1s/packets/authoring/cspr_p1s_author_b_packet.jsonl",
+    "p2_safety_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_a_packet.jsonl",
+    "p2_safety_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/private/cspr_p2_safety_hidden_key.jsonl",
+    "safety_targets": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl"
+  },
+  "model": {
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "checkpoint_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100",
+    "local_files_only": true,
+    "load_in_4bit": true,
+    "quantization": "nf4_double_quant_fp16_compute",
+    "trainable_coordinates": "checkpoint_LoRA_only",
+    "reference_policy": "exact_initial_M0_checkpoint_state",
+    "model_mode": "eval_with_gradients",
+    "preconditioner": "identity"
+  },
+  "design": {
+    "selection_seed": 2026081709,
+    "model_seed": 2026081710,
+    "preference_split": "mechanism_dev",
+    "preference_pairs": 8,
+    "safety_rows": 8,
+    "category_diverse": true,
+    "max_length": 256,
+    "beta": 0.1,
+    "preference_log_probability": "sum_over_response_tokens",
+    "preference_batch_reduction": "mean_over_pairs",
+    "safety_loss": "mean_response_token_causal_LM_loss_then_mean_over_rows",
+    "wrong_prompt_control": "first_length_valid_cyclic_derangement",
+    "human_behavioral_labels_used": false,
+    "behavioral_qualification_claimed": false
+  },
+  "gates": {
+    "minimum_active_pairs": 2,
+    "aggregate_projection_active_required": true,
+    "retained_preference_min": 0.1,
+    "normalized_residual_max": 1e-08,
+    "label_swap_cosine_max": -0.999,
+    "label_swap_norm_ratio_min": 0.99,
+    "label_swap_norm_ratio_max": 1.01,
+    "wrong_prompt_metric_is_gate": false,
+    "all_registered_LoRA_gradient_tensors_required": true,
+    "state_hash_restoration_required": true
+  },
+  "line_search": {
+    "initial_step_size": 0.0002,
+    "contraction": 0.5,
+    "armijo_fraction": 0.1,
+    "maximum_trials": 10,
+    "comparison_tolerance": 1e-06
+  },
+  "prior_success_estimate": {
+    "complete_M0_pass": [
+      0.4,
+      0.55
+    ],
+    "eventual_credible_multiseed_behavioral_result": [
+      0.2,
+      0.35
+    ],
+    "type": "subjective_design_prior_not_a_confidence_interval"
+  },
+  "outputs": {
+    "preference_data": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/protocol/cspr_m0_preference_pilot.jsonl",
+    "safety_data": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/protocol/cspr_m0_safety_pilot.jsonl",
+    "data_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/protocol/cspr_m0_data_manifest.json",
+    "freeze_report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/protocol/CSPR_M0_DATA_EXECUTION_FREEZE.md",
+    "diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/run/cspr_m0_gradient_diagnostics.json",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/run/cspr_m0_environment.json",
+    "route": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/run/cspr_m0_route.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_m0/run/CSPR_M0_REPORT.md"
+  },
+  "pass_route": "PASS_CSPR_M0_REAL_MODEL_MECHANISM_FEASIBLE",
+  "failure_routes": [
+    "STOP_CSPR_M0_INVALID",
+    "STOP_CSPR_M0_DPO_CONTROL_FAILED",
+    "STOP_CSPR_M0_PROJECTION_NOT_EXERCISED",
+    "STOP_CSPR_M0_PROJECTED_DIRECTION_DEGENERATE",
+    "STOP_CSPR_M0_NO_FINITE_JOINT_STEP"
+  ],
+  "pass_authorizes": "consider_resuming_external_human_P2U_measurement_only",
+  "human_labels_used": false,
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
