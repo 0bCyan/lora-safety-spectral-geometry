@@ -1,0 +1,81 @@
+{
+  "name": "step3_cita_matched_smoke_reproduction_manifest_v1",
+  "route": "PASS_CITA_SMOKE_AUTHORIZE_MATCHED_DEVELOPMENT16_PROTOCOL",
+  "runtime_head": "a16b0792df6de8f29487f2ad3ae2ca579eae42e6",
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/protocol/cita_smoke_protocol.json",
+  "protocol_sha256": "ff8d70cb9e01816d12af7a3f1c6e496f2f772f1015e3525bb20bd6725046b5ec",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/uniform/training_trace.csv",
+      "sha256": "66ac0f036d608871c1e78f08cb7a9f6a1c577fe9f99d83e4f8394e5c1a7a80ee",
+      "bytes": 573
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/uniform/checkpoint_index.csv",
+      "sha256": "1fd2808b736413f3dd71852834018590a283aea2cba5c79a8a4b26f537acaa1a",
+      "bytes": 229
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/uniform/run_manifest.json",
+      "sha256": "9afad88288c91e691b5e966aa113dc339c0264a40218762596945a088e2c550b",
+      "bytes": 84271
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/cita/training_trace.csv",
+      "sha256": "3fd3458f69df144a6821605154ee40389ed5db65bb3c5de397280342e134bca7",
+      "bytes": 561
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/cita/checkpoint_index.csv",
+      "sha256": "977ef662ab3309bd839d76cd047c2e95be141e5f6ddc7b9e13a7ad531216251e",
+      "bytes": 226
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/cita/run_manifest.json",
+      "sha256": "83657eeab37c6286193be213ea4fcba90f0a07df02bb6f6f42ffe5e66caac6f7",
+      "bytes": 84262
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/sham/training_trace.csv",
+      "sha256": "f52019478651b644f375e65fd1d45054885b16e7c79b5cb3dcae1c7af317b36d",
+      "bytes": 558
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/sham/checkpoint_index.csv",
+      "sha256": "ee9e7c16e69bf514967b9930cf9f861ce9851e5b03e4fa26089a21ea27ba7eef",
+      "bytes": 226
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/sham/run_manifest.json",
+      "sha256": "2a8837244da1b35a79f8fbf250a7ce486be4f5b26bddf94038d3c8d9bc57ac87",
+      "bytes": 84262
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/cita_smoke_decision.json",
+      "sha256": "b24c2c88be8c7ebc0e478a65424bef515229af2a41be4e54607419819e3d2df6",
+      "bytes": 2396
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/CITA_SMOKE_REPORT.md",
+      "sha256": "965661cad063900932d90deb17cbfee941179888aafb32c40032b3974d725099",
+      "bytes": 731
+    }
+  ],
+  "local_ignored_checkpoints": {
+    "uniform": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/uniform/checkpoints/step0002",
+    "cita": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/cita/checkpoints/step0002",
+    "sham": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/sham/checkpoints/step0002"
+  },
+  "final_adapter_sha256": {
+    "uniform": "699ba956fb5c9ac3ca77a1f62a8bd34dc937ed490e395e91cdd06b9a68db94f1",
+    "cita": "c0e65ebf62322b4e2c87a059ba1751db693b49480886a9ccd9a2910e4fe3a19a",
+    "sham": "3522a1eb7fd30054d5766b4aa351f514c8d8ad6f9e5fe61f97368453cf2896f8"
+  },
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_cita_training.py run",
+  "optimizer_steps_per_arm": 2,
+  "total_optimizer_steps": 6,
+  "candidate_outputs_generated": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

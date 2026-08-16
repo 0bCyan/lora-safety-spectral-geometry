@@ -1,0 +1,60 @@
+{
+  "name": "step3_cita_matched_smoke_decision_v1",
+  "route": "PASS_CITA_SMOKE_AUTHORIZE_MATCHED_DEVELOPMENT16_PROTOCOL",
+  "runtime_head": "a16b0792df6de8f29487f2ad3ae2ca579eae42e6",
+  "protocol_sha256": "ff8d70cb9e01816d12af7a3f1c6e496f2f772f1015e3525bb20bd6725046b5ec",
+  "checks": {
+    "all_arms_present": true,
+    "steps_exact": true,
+    "no_skipped_updates": true,
+    "finite": true,
+    "vram": true,
+    "initial_state_equal": true,
+    "risk_order_equal": true,
+    "target_order_equal": true,
+    "target_exposure_equal": true,
+    "safety_draws_equal": true,
+    "safety_tokens_equal": true,
+    "safety_weight_budget_equal": true,
+    "first_step_risk_loss_equal": true,
+    "first_step_uniform_safety_loss_equal": true,
+    "all_registered_assignments_exercised": true,
+    "sealed_data_untouched": true
+  },
+  "arms": {
+    "uniform": {
+      "completed_steps": 2,
+      "optimizer_steps": 2,
+      "final_adapter_sha256": "699ba956fb5c9ac3ca77a1f62a8bd34dc937ed490e395e91cdd06b9a68db94f1",
+      "first_step_risk_loss_mean": 3.4586304426193237,
+      "first_step_safety_weighted_loss_mean": 7.209426283836365,
+      "first_step_safety_uniform_diagnostic_loss_mean": 7.209426283836365,
+      "vram_headroom_fraction": 0.5526605056385621
+    },
+    "cita": {
+      "completed_steps": 2,
+      "optimizer_steps": 2,
+      "final_adapter_sha256": "c0e65ebf62322b4e2c87a059ba1751db693b49480886a9ccd9a2910e4fe3a19a",
+      "first_step_risk_loss_mean": 3.4586304426193237,
+      "first_step_safety_weighted_loss_mean": 6.782576680183411,
+      "first_step_safety_uniform_diagnostic_loss_mean": 7.209426283836365,
+      "vram_headroom_fraction": 0.39583927044742095
+    },
+    "sham": {
+      "completed_steps": 2,
+      "optimizer_steps": 2,
+      "final_adapter_sha256": "3522a1eb7fd30054d5766b4aa351f514c8d8ad6f9e5fe61f97368453cf2896f8",
+      "first_step_risk_loss_mean": 3.4586304426193237,
+      "first_step_safety_weighted_loss_mean": 7.722484707832336,
+      "first_step_safety_uniform_diagnostic_loss_mean": 7.209426283836365,
+      "vram_headroom_fraction": 0.3813459268004723
+    }
+  },
+  "total_optimizer_steps": 6,
+  "candidate_outputs_generated": false,
+  "development_training_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "next_authorized": "freeze_and_push_separate_matched_development16_protocol"
+}

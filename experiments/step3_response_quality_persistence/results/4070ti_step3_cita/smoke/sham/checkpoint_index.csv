@@ -1,0 +1,2 @@
+step,checkpoint,adapter_sha256,adapter_bytes
+2,experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/sham/checkpoints/step0002,3522a1eb7fd30054d5766b4aa351f514c8d8ad6f9e5fe61f97368453cf2896f8,66126768
