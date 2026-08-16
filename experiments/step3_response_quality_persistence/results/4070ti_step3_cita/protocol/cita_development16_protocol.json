@@ -1,0 +1,131 @@
+{
+  "name": "step3_cita_matched_three_arm_development16_protocol_v1",
+  "status": "prospective_before_any_matched_CITA_stage_training",
+  "entry_commit": "6e6c643c1b8b578ad806cbb266f85198be4c7b0e",
+  "objective": "Run one matched 16-step development stage for uniform, CITA, and exact-budget sham after the frozen smoke pass.",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/protocol/cita_development16_protocol.json",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_cita_development16_seed1.json",
+  "frozen_inputs": {
+    "plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CITA_matched_development16_plan.md",
+      "sha256": "a57b75fabaa9ca0203c03cd720683117af9bc27728f0d15a8d44fb2ab17d6a6b"
+    },
+    "config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_cita_development16_seed1.json",
+      "sha256": "3f69e53a088c8edfe42ff3813a8a3060e95b0e9c84283e77857a2b16fde2c0a8"
+    },
+    "development_guard": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_development.py",
+      "sha256": "c17e8d5f619370c12529d2c0ca2f2483f11f3ecbc92b55e3654dda2cdf390905"
+    },
+    "development_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cita_development.py",
+      "sha256": "086ec56eb4474dbc19a97991aa9fd1d524362426a2a67edd9dc22a1648e2c9b6"
+    },
+    "matched_trainer": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_training.py",
+      "sha256": "c723f7c89f03e19b9121fc5a6fa4824f0e13b9c45eca9f4cc757367f3f5becd5"
+    },
+    "cita_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_common.py",
+      "sha256": "80a15faf4b04e12b9560fc03b90418af2555ca716790d6e069e15d032bd7c2a2"
+    },
+    "p0_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "base_trainer": {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57"
+    },
+    "smoke_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/cita_smoke_decision.json",
+      "sha256": "b24c2c88be8c7ebc0e478a65424bef515229af2a41be4e54607419819e3d2df6"
+    },
+    "smoke_reproduction_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/smoke/cita_smoke_reproduction_manifest.json",
+      "sha256": "68e74f021b182ed49300d143fda6911772c6e0c8eac596ae5311099ceb977acf"
+    },
+    "p0_weight_cache": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_weight_cache.jsonl",
+      "sha256": "352e589982c6ded81da8c5eea742f8e3320ab1f302835e252a82cff00413f7aa"
+    },
+    "p0_route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita_p0/run/cita_p0_route.json",
+      "sha256": "f0498ec28d5c0ebee4a694b48469897c1aad193ae428a79c8ecd8f1c3e4e7e60"
+    },
+    "mismatch_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_pcr_mw/protocol/pcr_mw_mismatch_packet.jsonl",
+      "sha256": "b230f51cc54a533b0b3f5169defb8e810896d223983be6c48e0b0f80e5c19042"
+    },
+    "risk_data": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    }
+  },
+  "run_kind": "development",
+  "arm_order": [
+    "uniform",
+    "cita",
+    "sham"
+  ],
+  "optimizer_steps_per_arm": 16,
+  "total_authorized_optimizer_steps": 48,
+  "design": {
+    "fresh_model_per_arm": true,
+    "safety_mix": 0.2,
+    "gradient_accumulation_steps": 4,
+    "risk_rows": 256,
+    "safety_rows": 74,
+    "safety_draws_per_arm": 64,
+    "risk_order": "torch_randperm_seed1",
+    "safety_order": "frozen_P0_cache_order",
+    "safety_serialization": "complete_enable_thinking_false_generation_prefix",
+    "risk_serialization": "unchanged_step3ct_training_common_response_feature",
+    "checkpoint_steps": [
+      16
+    ],
+    "dropout_rng_call_count_matched": true,
+    "exact_budget_sham": true
+  },
+  "gates": {
+    "matching_tolerance": 1e-07,
+    "minimum_vram_headroom_fraction": 0.1,
+    "all_arms_complete_exact_steps": true,
+    "no_skipped_update": true,
+    "all_losses_and_gradients_finite": true,
+    "initial_state_hash_equal": true,
+    "risk_order_hash_equal": true,
+    "target_order_and_exposure_hash_equal": true,
+    "safety_token_count_and_weight_budget_equal": true,
+    "first_step_risk_and_uniform_safety_diagnostics_equal": true,
+    "three_final_adapter_hashes_distinct": true
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/development16",
+  "arm_outputs": {
+    "uniform": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/development16/uniform",
+    "cita": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/development16/cita",
+    "sham": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/development16/sham"
+  },
+  "outputs": {
+    "decision": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/development16/cita_development16_decision.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/development16/CITA_DEVELOPMENT16_REPORT.md",
+    "reproduction_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_cita/development16/cita_development16_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_CITA_DEVELOPMENT16_INTEGRITY_FREEZE_GENERATION_GATE",
+  "failure_routes": [
+    "STOP_CITA_DEVELOPMENT16_MATCHING_FAILED",
+    "STOP_CITA_DEVELOPMENT16_NUMERICAL_FAILED",
+    "STOP_CITA_DEVELOPMENT16_ASSIGNMENT_NOT_EXERCISED"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_deterministic_proxy_dev_generation_gate_only",
+  "training_authorized": true,
+  "candidate_generation_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
