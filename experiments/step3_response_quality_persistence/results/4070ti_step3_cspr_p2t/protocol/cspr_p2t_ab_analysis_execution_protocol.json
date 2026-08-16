@@ -1,0 +1,125 @@
+{
+  "name": "step3_cspr_p2t_ab_analysis_execution_protocol_v1",
+  "status": "prospective_after_all_ab_freeze_and_before_any_ab_label_comparison",
+  "entry_commit": "d2509f0b6b2a578e04cd6a79110a33aa0a3a64b1",
+  "frozen_inputs": {
+    "review_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/protocol/cspr_p2s_blinded_review_protocol.json",
+      "sha256": "c1702cd4e61fb2149ac1d25f44d4c45000cfc8274e390f31e4be70b06153778f"
+    },
+    "packet_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2s/reports/cspr_p2s_packet_manifest.json",
+      "sha256": "744de29428da50385e1136a58890432b48f4ad3016597084da5a79253ea7ecd0"
+    },
+    "execution_document": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/protocol/CSPR_P2T_AB_ANALYSIS_EXECUTION_PROTOCOL.md",
+      "sha256": "e19dcf8693ce605e6cbc679ecc912fb97c706c0bc6db8dbd33981a9595e1ecb1"
+    },
+    "analysis_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2t_analysis.py",
+      "sha256": "10e0bb59d0b61649a906baeefa136c822d53e9ea3e12003b4d83e89fdb5a55e2"
+    },
+    "analysis_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2t_analysis.py",
+      "sha256": "a1151889f11543688ef20b8eee6b9152ceb521c6c49f7c60578b3ec7b1541e3c"
+    },
+    "base_review_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2s_review.py",
+      "sha256": "bf32bcac5d6fa041f9cbcc42ae3199721bd535b126457fdf9b6142c8c879fd1b"
+    },
+    "base_review_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cspr_p2s_review.py",
+      "sha256": "08df3f3d4b3208886ac81349c20d5ee6acd8f3e12bd35086ffda1ee3c53faa9e"
+    },
+    "safety_freeze": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/safety_freeze/cspr_p2t_safety_ab_freeze.json",
+      "sha256": "bc61b0059f9cb43e313003f393a846085b9bcb7845ebaac78f43a4133633015a"
+    },
+    "actionability_freeze": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/actionability_freeze/cspr_p2t_actionability_ab_freeze.json",
+      "sha256": "1b82828b076ae84af63e75c3065b02c4cc63c10c39ebafdc9b095987daee0f29"
+    },
+    "safety_a_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_a_labels.jsonl",
+      "sha256": "be3f50821583255e4b2e0ed2b1324838bb129bf534e4dcfb398695c712d9ff26"
+    },
+    "safety_a_provenance": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_a_provenance.json",
+      "sha256": "398a1c4c9599519f15415c3058a67ff1c0be81dcf76e8853b40b4ba30489e4da"
+    },
+    "safety_b_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_b_labels.jsonl",
+      "sha256": "9d8f847baac23d4c7654fd5a8c3e7a73bd41b1bec1bc862a4097abb6ed2ba28a"
+    },
+    "safety_b_provenance": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_b_provenance.json",
+      "sha256": "3ef01712e88d92b1c585f5d5944782a44bbd714741ac821f99aad1c85fba1d54"
+    },
+    "actionability_a_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_a_labels.jsonl",
+      "sha256": "ed94eb01dd277021718002ba894a849af2ff133c8dd7d43738ad4cb0d50729f3"
+    },
+    "actionability_a_provenance": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_a_provenance.json",
+      "sha256": "d18dac3438c8debe2a7e636cae4219fedac0cd7b4df71a701890bfb7c66b0c5b"
+    },
+    "actionability_b_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_b_labels.jsonl",
+      "sha256": "085efaeccc575255473ef9e43a6d38a9ed1efc24376d783814a5e18c0b1d1888"
+    },
+    "actionability_b_provenance": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_b_provenance.json",
+      "sha256": "9a824896376c685e480eefc9591406c864cf2f6026e8ddaececc31965dbab91d"
+    }
+  },
+  "review_files": {
+    "safety": {
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_a_labels.jsonl",
+      "reviewer_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_a_provenance.json",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_b_labels.jsonl",
+      "reviewer_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_b_provenance.json",
+      "reviewer_c_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/packets/safety/cspr_p2t_safety_reviewer_c_packet.jsonl",
+      "reviewer_c_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/packets/safety/cspr_p2t_safety_reviewer_c_template.jsonl",
+      "reviewer_c_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_c_labels.jsonl",
+      "reviewer_c_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/safety/cspr_p2t_safety_reviewer_c_provenance.json"
+    },
+    "actionability": {
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_a_labels.jsonl",
+      "reviewer_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_a_provenance.json",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_b_labels.jsonl",
+      "reviewer_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_b_provenance.json",
+      "reviewer_c_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/packets/actionability/cspr_p2t_actionability_reviewer_c_packet.jsonl",
+      "reviewer_c_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/packets/actionability/cspr_p2t_actionability_reviewer_c_template.jsonl",
+      "reviewer_c_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_c_labels.jsonl",
+      "reviewer_c_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reviews/actionability/cspr_p2t_actionability_reviewer_c_provenance.json"
+    }
+  },
+  "forbidden_prior_agent_ids": [
+    "01a00b98-d6e9-7ea3-976b-ba62f2933647",
+    "01a00b98-d870-7802-bb26-dd9363bebf88",
+    "01a00b7b-b477-7e63-9f70-da7b729ba3a7",
+    "01a00b7b-b5ed-7b73-944b-b6f294b2be58",
+    "01a00b7b-b778-7671-a5bd-52488aac6881",
+    "01a00b7b-b918-7320-b53a-eec8603c464d",
+    "01a00bb6-01a8-7de1-8c4d-e91d68d0a2f8",
+    "01a00bb6-0333-7332-92c3-f208e4b43895",
+    "01a00bb6-05d6-7981-a654-60aae83447ac",
+    "01a00bb6-0790-7183-a994-ff54f8f6d35a"
+  ],
+  "analysis_outputs": {
+    "ab_analysis": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reports/cspr_p2t_ab_review_analysis.json",
+    "ab_report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reports/CSPR_P2T_AB_REVIEW_REPORT.md"
+  },
+  "calibration_failure_route": "STOP_CSPR_P2T_CALIBRATION_UNRELIABLE",
+  "duplicate_failure_route": "STOP_CSPR_P2T_DUPLICATE_UNRELIABLE",
+  "target_failure_route": "STOP_CSPR_P2T_TARGET_UNRELIABLE",
+  "pass_route": "AUTHORIZE_CSPR_P2T_REVIEWER_C_PROTOCOL_ONLY",
+  "target_prevalence_used_as_reviewer_gate": false,
+  "pair_qualification_authorized": false,
+  "reviewer_c_launch_authorized": false,
+  "model_gradient_authorized": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_content_opened": false
+}
