@@ -1,0 +1,43 @@
+{
+  "name": "step3_trim_cs0_objective_causal_preflight_protocol_v1",
+  "status": "prospective_before_pair_materialization_or_model_execution",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "question": "Does the fixed layer-24 residual state immediately before a constructive safe redirect carry prompt-specific information that is necessary, sufficient for local steering, and restorable at the C0R step64 checkpoint?",
+  "evidence_boundary": "This stage can reject the TRIM premise or authorize a separate blinded generated-behavior review. It cannot establish mediation or authorize training.",
+  "checkpoint": "C0R_concurrent_constant20 seed1 step64",
+  "data": {
+    "source": "reviewed natural-v1 safety targets only",
+    "selection": "Responses beginning with I can't and containing the first exact case-insensitive transition marker I can help.",
+    "pairs": "20 deterministic unique same-category pairs across five categories; both directions form 40 instances.",
+    "wrong_donors": "The paired recipient and one deterministic cross-category donor.",
+    "prefix_rule": "The exact target text before I can help is forced; suffix text and safe-alternative details are excluded from donor-state capture."
+  },
+  "intervention": {
+    "layer": "ceil(2*36/3)=24, zero-based module index 23",
+    "transition_window": "last two forced-prefix tokens",
+    "placebo_window": "last two user-prompt content tokens",
+    "conditions": [
+      "no_patch",
+      "exact_noop_patch",
+      "correct_donor_patch",
+      "paired_wrong_donor_patch",
+      "cross_wrong_donor_patch",
+      "transition_placebo_correct_and_wrong",
+      "same_prompt_corruption",
+      "corruption_then_correct_state_restoration"
+    ]
+  },
+  "primary_objective_effect": "Mean wrong-donor suffix NLL minus correct-donor suffix NLL, paired by the 20 undirected prompt pairs.",
+  "staged_gate": "All objective gates in the immutable registry must pass before any free-generation packet or blind behavior review. Passing authorizes review only; failing closes TRIM-CS0.",
+  "forbidden": [
+    "No layer, token, checkpoint, prefix, donor, threshold, or decoding sweep.",
+    "No core100 or heldout access.",
+    "No optimizer step or model-weight modification.",
+    "No claim from NLL or internal activations alone.",
+    "No main-session behavior labels."
+  ],
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

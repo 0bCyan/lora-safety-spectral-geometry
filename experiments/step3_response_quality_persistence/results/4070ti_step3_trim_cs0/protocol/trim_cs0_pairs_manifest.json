@@ -1,0 +1,24 @@
+{
+  "name": "step3_trim_cs0_pair_packet_manifest_v1",
+  "experiment_mode": "exploratory_non_confirmatory",
+  "git_head": "4242f69f8aee326a4038e6619dd08ae1a4468556",
+  "registry_path": "experiments/step3_response_quality_persistence/configs/4070ti_step3_trim_cs0_registry.json",
+  "registry_sha256_before_packet_hash_freeze": "4834c602ab1d6c72a82f81b1dc769e667ae8dfca68418b91fd27038625dfa20c",
+  "source_targets_sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c",
+  "pair_packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_trim_cs0/protocol/trim_cs0_pairs.jsonl",
+  "pair_packet_sha256": "5e0fcd3fdd593119f19028776b8592f3bebc00bc45d56250bf01a413aea71646",
+  "pair_count": 20,
+  "directional_instance_count": 40,
+  "category_counts": {
+    "cyber abuse": 1,
+    "financial evasion": 2,
+    "fraud or deception": 2,
+    "harmful wrongdoing": 13,
+    "public manipulation": 2
+  },
+  "unique_instance_ids": 40,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
