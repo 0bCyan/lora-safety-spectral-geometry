@@ -1,0 +1,269 @@
+{
+  "name": "step3_mcd_etarc_p0_minimax_common_descent_protocol_v1",
+  "status": "prospective_before_any_MCD_ETARC_model_forward",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/protocol/mcd_p0_protocol.json",
+  "entry_commit": "f1faf91f99657b2778bd478b05dcacab1b9b9108",
+  "objective": "Test whether a dual-certified minimax direction over uniform CE, E-TARC route, continuation, branch entropy, and branch negative-gap transfers material common descent to 32 prompt-disjoint development clusters.",
+  "experiment_mode": "exploratory_mechanism_development_on_reused_disclosed_split",
+  "prior_result": {
+    "decision_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc_smoke_decision.json",
+    "decision_sha256": "06a87a5a92fdefa35025cca06682a8f7e2645363dd58af4dd67181a05946c754",
+    "route": "STOP_QETARC_SMOKE_ROUTE_EFFECT_FAILED",
+    "registered_diagnosis": "Q-E-TARC realized its two-objective geometry but had a weak continuation advantage, heterogeneous route superiority, and unconstrained branch-entropy drift."
+  },
+  "frozen_inputs": {
+    "method_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_MCD_ETARC_minimax_common_descent_plan.md",
+      "sha256": "bd60fcf51aad90bb8519dd76bba1d1e77750501054b9b0377ab3cdd828b4f67e"
+    },
+    "mcd_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_common.py",
+      "sha256": "5bce3e955a545fdaf904aa6826a447d9602bc6898176608ef0d80df38ac735e5"
+    },
+    "mcd_common_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_mcd_common.py",
+      "sha256": "7caee6f6f3be340b5a3acb89617196bfe21c4a26c2491fb4432c54677d47b3ae"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_p0.py",
+      "sha256": "303cead357f4e3cb138b314927bf1e751dfc8ce1cdb8506007053e0420a73e03"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_mcd_p0.py",
+      "sha256": "b02c08acca0e8354d8e85ffbd232d5eacf8976f43ea337f1e4c843839a78b34c"
+    },
+    "qetarc_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_qetarc_common.py",
+      "sha256": "6c55a6fca6aa9e718f5cc036a91542325570ee02bfc9565900edae5681f00055"
+    },
+    "etarc_objectives": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_etarc_p0.py",
+      "sha256": "ca43d66ed626543803b4d999defe4d092f603d1db9b0ee59f21d8ee913d1cf43"
+    },
+    "tarc_features": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_tarc_p0.py",
+      "sha256": "d357b753c763ef4d2a152f8867ffe6fabbbcdf36fd73c7587d0e16a0a17fd0b1"
+    },
+    "ramp_objectives": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_p0.py",
+      "sha256": "bdc98f4f27efcc09f60a40c8fa2a486655e3aabe2c825b1c19ec5b3e299e0c51"
+    },
+    "gradient_math": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_common.py",
+      "sha256": "70b17175e00cddda9ea8394717c6fd02770bc446a755680d2e3965c6bfa8d998"
+    },
+    "model_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "parent_config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_pcr_mw_seed1.json",
+      "sha256": "3bab5143f1ded893e492f3ab04695b76457a331cdfbfad0e52b65723d4d52850"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "prior_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc_smoke_decision.json",
+      "sha256": "06a87a5a92fdefa35025cca06682a8f7e2645363dd58af4dd67181a05946c754"
+    },
+    "prior_interpretation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/analysis/QETARC_SMOKE_INTERPRETATION.md",
+      "sha256": "8417d344f69219ac8d45086a0841eaece5e695c46379d6fe252a065780b47374"
+    }
+  },
+  "source": {
+    "targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+    "counts": {
+      "rows": 80,
+      "prompt_clusters": 40,
+      "categories": 8,
+      "targets_per_prompt": 2
+    },
+    "fresh_for_method_selection": false,
+    "role": "reused_mechanism_development_only",
+    "core100_used": false,
+    "heldout_used": false
+  },
+  "selection": {
+    "seed": 2026081720,
+    "rule": "exact_reuse_of_disclosed_QETARC_calibration8_validation32_for_development_only",
+    "calibration_prompts": 8,
+    "validation_prompts": 32,
+    "calibration_sample_ids": [
+      "eval_safety_000138",
+      "eval_safety_000260",
+      "eval_safety_000191",
+      "eval_safety_000268",
+      "eval_safety_000265",
+      "eval_safety_000294",
+      "eval_safety_000286",
+      "eval_safety_000258"
+    ],
+    "validation_sample_ids": [
+      "eval_safety_000152",
+      "eval_safety_000107",
+      "eval_safety_000101",
+      "eval_safety_000113",
+      "eval_safety_000212",
+      "eval_safety_000226",
+      "eval_safety_000156",
+      "eval_safety_000295",
+      "eval_safety_000161",
+      "eval_safety_000236",
+      "eval_safety_000180",
+      "eval_safety_000125",
+      "eval_safety_000147",
+      "eval_safety_000243",
+      "eval_safety_000263",
+      "eval_safety_000109",
+      "eval_safety_000232",
+      "eval_safety_000225",
+      "eval_safety_000179",
+      "eval_safety_000126",
+      "eval_safety_000279",
+      "eval_safety_000276",
+      "eval_safety_000269",
+      "eval_safety_000205",
+      "eval_safety_000116",
+      "eval_safety_000222",
+      "eval_safety_000118",
+      "eval_safety_000244",
+      "eval_safety_000188",
+      "eval_safety_000253",
+      "eval_safety_000142",
+      "eval_safety_000211"
+    ]
+  },
+  "model": {
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "local_files_only": true,
+    "seed": 1,
+    "load_in_4bit": true,
+    "quantization": "nf4_double_quant_fp16_compute",
+    "reference_policy": "fresh_PEFT_LoRA_step0",
+    "model_mode": "eval_with_gradients",
+    "gradient_checkpointing": true,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "design": {
+    "max_length": 512,
+    "route_width_limit": 16,
+    "ramp_width": 16,
+    "temperature": 1.0,
+    "certificate_objectives": [
+      "uniform",
+      "etarc",
+      "continuation",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "dual_problem": "minimum_norm_convex_combination_of_normalized_certificate_gradients",
+    "dual_solver": "exact_enumeration_of_31_nonempty_supports_with_KKT_checks",
+    "auxiliary_gradient_norm_ratio": 1.0,
+    "auxiliary_budget": "equal_to_calibration_uniform_gradient_norm",
+    "safety_mix": 0.2,
+    "effective_method_perturbation_ratio": 0.2,
+    "materiality_rule": "safety_mix_times_equal_norm_auxiliary_equals_uniform_safety_component_norm",
+    "qetarc_control_quota_cosine": 0.5,
+    "equal_budget_controls": ["RAMP16", "TARC", "raw_ETARC", "Q_ETARC"],
+    "tokenizer_only_structural_audit": {
+      "rows": 80,
+      "prompt_clusters": 40,
+      "categories": 8,
+      "targets_per_prompt": 2,
+      "route_width_limit": 16,
+      "minimum_route_tokens": 4,
+      "maximum_route_tokens": 4,
+      "mean_route_tokens": 4.0,
+      "all_routes_complete_within_width": true,
+      "registered_route_marker_counts": {
+        "i can't engage": 1,
+        "i can't help": 39,
+        "i won't assist": 18,
+        "i won't discuss": 1,
+        "i won't give": 1,
+        "i won't help": 7,
+        "i won't provide": 12,
+        "i won't suggest": 1
+      },
+      "distinct_route_pair_rate": 1.0,
+      "branching_prompt_rate": 1.0,
+      "mean_internal_trie_nodes": 6.0,
+      "maximum_allowed_branch_width": 2
+    }
+  },
+  "statistics": {
+    "unit": "prompt_cluster",
+    "paired": true,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026081724,
+    "bootstrap_interval": "percentile_95",
+    "sign_test": "exact_two_sided_excluding_exact_ties"
+  },
+  "gates": {
+    "gradient_budget_relative_tolerance": 1e-6,
+    "dual_kkt_residual_max": 1e-6,
+    "primal_dual_gap_max": 1e-6,
+    "dual_numeric_tolerance": 1e-6,
+    "calibration_common_margin_min": 0.30,
+    "validation_minimum_certificate_cosine_min": 0.20,
+    "validation_certificate_positive_pair_rate_min": 0.80,
+    "route_positive_pair_rate_min": 0.90,
+    "route_dot_fraction_of_raw_etarc_min": 0.65,
+    "route_dot_fraction_of_tarc_min": 1.20,
+    "continuation_dot_fraction_of_ramp_min": 0.70,
+    "continuation_dot_fraction_of_qetarc_min": 1.20,
+    "paired_advantage_ci_lower_min": 0.0,
+    "paired_sign_p_max": 0.05,
+    "branch_directional_dot_min": 0.0,
+    "branch_positive_pair_rate_min": 0.80,
+    "effective_ratio_absolute_tolerance": 1e-12,
+    "minimum_vram_headroom_fraction": 0.10,
+    "all_gradient_objects_cover_all_trainable_tensors": true,
+    "all_gradient_values_finite": true,
+    "all_aggregate_gradient_norms_nonzero": true,
+    "exact_trainable_state_restoration_required": true
+  },
+  "outputs": {
+    "structural_audit": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+    "split_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_split_manifest.json",
+    "diagnostic_rows": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_diagnostic_rows.jsonl",
+    "gradient_diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_gradient_diagnostics.json",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_environment.json",
+    "route": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_route.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/MCD_P0_REPORT.md",
+    "run_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_MCD_ETARC_P0_AUTHORIZE_MATCHED_SMOKE_PROTOCOL",
+  "failure_routes": [
+    "STOP_MCD_ETARC_P0_INVALID",
+    "STOP_MCD_ETARC_P0_DUAL_CERTIFICATE_FAILED",
+    "STOP_MCD_ETARC_P0_COMMON_DESCENT_NOT_REPLICATED",
+    "STOP_MCD_ETARC_P0_ROUTE_EFFECT_FAILED",
+    "STOP_MCD_ETARC_P0_CONTINUATION_EFFECT_FAILED",
+    "STOP_MCD_ETARC_P0_BRANCH_EFFECT_FAILED",
+    "STOP_MCD_ETARC_P0_EFFECT_TOO_WEAK"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_matched_MCD_ETARC_smoke_protocol_only",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "checkpoint_writes_authorized": false,
+  "candidate_generation_authorized": false,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
