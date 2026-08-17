@@ -27,7 +27,7 @@ import train_step3ct_tournament as frozen
 REPO = Path(__file__).resolve().parents[3]
 DEFAULT_PROTOCOL = (
     "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/"
-    "protocol/qetarc_smoke_protocol.json"
+    "protocol/qetarc_smoke_protocol_v2.json"
 )
 OBJECTIVES = ("uniform", "tarc", "etarc", "continuation")
 DIAGNOSTIC_LOSSES = (
@@ -116,6 +116,9 @@ def context(
         raise QetarcTrainingValidationError("Q-E-TARC P0 route hash differs")
     if base.sha256(p0_protocol_path) != config["p0_protocol_sha256"]:
         raise QetarcTrainingValidationError("Q-E-TARC P0 protocol hash differs")
+    p0_structural_path = resolve_repo_path(config["p0_structural_audit"])
+    if base.sha256(p0_structural_path) != config["p0_structural_audit_sha256"]:
+        raise QetarcTrainingValidationError("Q-E-TARC P0 structural audit hash differs")
     p0_route = base.read_json(p0_route_path)
     p0_protocol = base.read_json(p0_protocol_path)
     if (
@@ -650,9 +653,9 @@ def train_arm(
         for row in risk_rows
     ]
     safety_pairs, structural = ordered_pair_features(tokenizer, targets, config)
-    p0_structural = base.read_json(resolve_repo_path(config["p0_route"]))[
-        "structural_audit"
-    ]
+    p0_structural = base.read_json(
+        resolve_repo_path(config["p0_structural_audit"])
+    )
     if structural != p0_structural:
         raise QetarcTrainingValidationError("training route structure differs from P0")
     by_id = {str(pair["sample_id"]): pair for pair in safety_pairs}
@@ -807,7 +810,7 @@ def train_arm(
         for metric in DIAGNOSTIC_LOSSES
     }
     manifest = {
-        "name": "step3_qetarc_matched_arm_manifest_v1",
+        "name": "step3_qetarc_matched_arm_manifest_v2",
         "experiment_mode": "exploratory_non_confirmatory_reused_development_split",
         "runtime_head": runtime_head,
         "arm": arm_name,
@@ -1155,7 +1158,7 @@ def run(path: Path) -> dict[str, Any]:
     checks = compare_manifests(manifests, protocol)
     route = select_smoke_route(checks)
     decision = {
-        "name": "step3_qetarc_matched_smoke_decision_v1",
+        "name": "step3_qetarc_matched_smoke_decision_v2",
         "route": route,
         "runtime_head": runtime_head,
         "protocol_sha256": base.sha256(path),
@@ -1249,7 +1252,7 @@ Total optimizer steps: `{decision['total_optimizer_steps']}`;
     report_path.write_bytes(report.encode("utf-8"))
     root = resolve_repo_path(protocol["output_root"])
     reproduction = {
-        "name": "step3_qetarc_matched_smoke_reproduction_manifest_v1",
+        "name": "step3_qetarc_matched_smoke_reproduction_manifest_v2",
         "route": route,
         "runtime_head": runtime_head,
         "protocol_path": base.relative(path),

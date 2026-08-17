@@ -1,0 +1,52 @@
+{
+  "name": "step3_qetarc_matched_smoke_v1_preoptimization_abort",
+  "route": "STOP_QETARC_SMOKE_V1_PREFORWARD_STRUCTURAL_LOOKUP_ERROR",
+  "recorded_at": "2026-08-17T09:01:12.0863147+08:00",
+  "runtime_head": "a885be186d616e01cc38fc9f5fe1be19cadd7d3a",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/protocol/qetarc_smoke_protocol.json",
+  "protocol_sha256": "9c743f46b160ac584e505e1e0d607ffd301cf493830bd4922b21d50bc16e6292",
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_qetarc_training.py run",
+  "failure": {
+    "exception": "KeyError: structural_audit",
+    "source_line": "p0_structural = read_json(config[p0_route])[structural_audit]",
+    "diagnosis": "The Q-E-TARC route decision does not embed the independently stored structural audit.",
+    "stage": "after_model_load_and_feature_preparation_before_initial_diagnostic_or_optimizer_construction"
+  },
+  "observed_boundary": {
+    "model_instances_loaded": 1,
+    "model_forward_calls": 0,
+    "autograd_calls": 0,
+    "gradient_objects": 0,
+    "optimizer_objects": 0,
+    "scheduler_objects": 0,
+    "optimizer_steps": 0,
+    "checkpoint_writes": 0,
+    "candidate_outputs_generated": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "partial_output": {
+    "root": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke",
+    "directories": ["uniform"],
+    "files": 0
+  },
+  "v2_amendment_scope": [
+    "freeze_the_independent_p0_structural_audit_path_and_sha256",
+    "read_structural_audit_from_that_frozen_file",
+    "write_any_new_execution_to_a_distinct_smoke_v2_root"
+  ],
+  "unchanged_in_v2": [
+    "method",
+    "arms",
+    "data",
+    "orders",
+    "optimizer",
+    "step_counts",
+    "gradient_budget",
+    "continuation_quota",
+    "diagnostic_set",
+    "statistics",
+    "effect_gates",
+    "sealed_data_boundary"
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "name": "step3_qetarc_matched_four_arm_smoke_protocol_v2",
+  "status": "prospective_before_any_matched_QETARC_smoke_training",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/protocol/qetarc_smoke_protocol_v2.json",
+  "entry_commit": "a885be186d616e01cc38fc9f5fe1be19cadd7d3a",
+  "run_kind": "smoke",
+  "objective": "Test whether per-microbatch equal-budget spherical-cap Q-E-TARC realizes jointly strong complete-route and post-route continuation improvements in matched two-step training.",
+  "experiment_mode": "exploratory_non_confirmatory_reused_development_split",
+  "revision": {
+    "parent_protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/protocol/qetarc_smoke_protocol.json",
+    "parent_protocol_sha256": "9c743f46b160ac584e505e1e0d607ffd301cf493830bd4922b21d50bc16e6292",
+    "v1_abort_record": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/protocol/qetarc_smoke_v1_abort.json",
+    "reason": "Correct the pre-forward lookup of the independently stored P0 structural audit.",
+    "method_or_gate_changed": false
+  },
+  "frozen_inputs": {
+    "p0_method_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_QETARC_positive_continuation_quota_plan.md",
+      "sha256": "787d5ee600264e063d94113ed1be1925089ce4f4a1d107d8a4ab72d24198573e"
+    },
+    "smoke_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_QETARC_matched_smoke_plan.md",
+      "sha256": "c0f5868a59a54903f82cd1d989447802fef7365b973b6d3f752291a6ada1dfa9"
+    },
+    "v1_abort_record": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/protocol/qetarc_smoke_v1_abort.json",
+      "sha256": "7d6502e2022eed76922c89c365c3b4d46a6ac0448b492d61b8243d41cb531b29"
+    },
+    "config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_qetarc_smoke_seed1.json",
+      "sha256": "6475a1994b65c51eb5f0defd396300f8dbfde8e640c1d9b22208e9c846d24265"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_qetarc_training.py",
+      "sha256": "210d0b08ff71e4211a0cf8842944859064e552cec2b440c576aeadd24b9881e7"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_qetarc_training.py",
+      "sha256": "ca311104c9e3aa944e1d73b10b579f9c72fd8f040902d686e035fc5c36f3a07a"
+    },
+    "qetarc_geometry": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_qetarc_common.py",
+      "sha256": "6c55a6fca6aa9e718f5cc036a91542325570ee02bfc9565900edae5681f00055"
+    },
+    "qetarc_geometry_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_qetarc_common.py",
+      "sha256": "7c4b4a8832fb1e2c5b1807ec1029b4d0bbda6125a2cc761275e53d810f20eda3"
+    },
+    "qetarc_p0_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_qetarc_p0.py",
+      "sha256": "b0d2e77b976ce8036bdc9c3f04d4fd98bbacc9ebcc56b5d9d0ada13b590d4b4e"
+    },
+    "qetarc_p0_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_qetarc_p0.py",
+      "sha256": "24f8d67cf083e6cc94a1488b8675f827df6a26be04c55b808eb031613cce456a"
+    },
+    "qetarc_p0_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/protocol/qetarc_p0_protocol.json",
+      "sha256": "78278c2b259cfd9b6142b6fdcaff8429acf34bffca7d924f3a725280e51582d7"
+    },
+    "qetarc_p0_route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_route.json",
+      "sha256": "d410ea2250286637abedc17782c45c0420ddff947851c9c4c95beb440e6f31d5"
+    },
+    "qetarc_p0_structural_audit": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_structural_audit.json",
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    "qetarc_p0_reproduction_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_reproduction_manifest.json",
+      "sha256": "d0501241774553cd063d330b7293ef19e1797b17709b10293063b7f249b66181"
+    },
+    "etarc_objectives": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_etarc_p0.py",
+      "sha256": "ca43d66ed626543803b4d999defe4d092f603d1db9b0ee59f21d8ee913d1cf43"
+    },
+    "gradient_math": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_common.py",
+      "sha256": "70b17175e00cddda9ea8394717c6fd02770bc446a755680d2e3965c6bfa8d998"
+    },
+    "tarc_feature_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_tarc_p0.py",
+      "sha256": "d357b753c763ef4d2a152f8867ffe6fabbbcdf36fd73c7587d0e16a0a17fd0b1"
+    },
+    "risk_and_checkpoint_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_training.py",
+      "sha256": "5095a6db54ef23cb887201ffab2a23f9483acbe8c5993859fe084ea9dabf3800"
+    },
+    "model_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "model_loader": {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "risk_rows": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    }
+  },
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_qetarc_smoke_seed1.json",
+  "arm_order": ["uniform", "tarc", "etarc", "qetarc"],
+  "optimizer_steps_per_arm": 2,
+  "total_authorized_optimizer_steps": 8,
+  "gradient_accumulation_steps": 4,
+  "safety_pair_draws_per_arm": 8,
+  "safety_target_forwards_per_arm": 16,
+  "diagnostic_prompt_pairs": 8,
+  "diagnostic_prompt_overlap_with_smoke_draws": 0,
+  "design": {
+    "fresh_model_per_arm": true,
+    "risk_rows": 256,
+    "risk_order": "torch_randperm_seed1",
+    "safety_order": "frozen_40_prompt_pair_order",
+    "all_four_objective_gradients_computed_each_safety_draw": true,
+    "manual_gradient_composition": true,
+    "gradient_checkpointing": false,
+    "safety_mix": 0.2,
+    "risk_mix": 0.8,
+    "auxiliary_gradient_norm_ratio": 0.25,
+    "continuation_quota_cosine": 0.5,
+    "tarc_direction": "per_microbatch_equal_norm",
+    "etarc_direction": "per_microbatch_equal_norm",
+    "qetarc_direction": "per_microbatch_spherical_cap_closed_form",
+    "checkpoint_steps": [2]
+  },
+  "statistics": {
+    "unit": "diagnostic_prompt_cluster",
+    "paired": true,
+    "diagnostic_prompts": 8,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026081723,
+    "bootstrap_interval": "percentile_95",
+    "sign_test": "exact_two_sided_excluding_exact_ties"
+  },
+  "gates": {
+    "matching_tolerance": 1e-7,
+    "minimum_vram_headroom_fraction": 0.1,
+    "dynamic_budget_absolute_tolerance": 1e-5,
+    "quota_cosine_absolute_tolerance": 1e-5,
+    "continuation_bound_numeric_tolerance": 1e-4,
+    "route_retention_cosine_min": 0.85,
+    "qetarc_etarc_loss_reduction_min": 0.5,
+    "route_reduction_fraction_of_raw_etarc_min": 0.8,
+    "paired_advantage_mean_min": 0.05,
+    "paired_advantage_ci_lower_min": 0.0,
+    "paired_sign_p_max": 0.05,
+    "branch_objective_reduction_min": 0.0,
+    "all_steps_finite": true,
+    "no_skipped_updates": true,
+    "distinct_final_adapter_hashes": true,
+    "exact_assignment_counts": true,
+    "sealed_data_untouched": true
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2",
+  "arm_outputs": {
+    "uniform": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/uniform",
+    "tarc": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/tarc",
+    "etarc": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/etarc",
+    "qetarc": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc"
+  },
+  "outputs": {
+    "decision": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc_smoke_decision.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/QETARC_SMOKE_REPORT.md",
+    "reproduction_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc_smoke_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_QETARC_SMOKE_AUTHORIZE_MATCHED_DEVELOPMENT_PROTOCOL",
+  "failure_routes": [
+    "STOP_QETARC_SMOKE_MATCHING_FAILED",
+    "STOP_QETARC_SMOKE_NUMERICAL_FAILED",
+    "STOP_QETARC_SMOKE_ASSIGNMENT_NOT_EXERCISED",
+    "STOP_QETARC_SMOKE_DYNAMIC_GEOMETRY_FAILED",
+    "STOP_QETARC_SMOKE_ROUTE_EFFECT_FAILED",
+    "STOP_QETARC_SMOKE_CONTINUATION_EFFECT_FAILED",
+    "STOP_QETARC_SMOKE_BRANCH_MECHANISM_FAILED"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_matched_QETARC_development_protocol_only",
+  "training_authorized": true,
+  "development_training_authorized": false,
+  "candidate_generation_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
