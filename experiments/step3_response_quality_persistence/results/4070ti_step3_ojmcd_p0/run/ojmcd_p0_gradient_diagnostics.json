@@ -1,0 +1,179 @@
+{
+  "candidates": [
+    "raw_mcd",
+    "jacobian_mcd",
+    "ojmcd"
+  ],
+  "certificates": [
+    "risk",
+    "uniform",
+    "tarc",
+    "etarc",
+    "continuation",
+    "branch_entropy",
+    "branch_negative_gap"
+  ],
+  "final_trainable_state_sha256": "4e4b6ec33469d81c3cc02d1527073151178880cfa252c08b16e59e460efd1924",
+  "initial_trainable_state_sha256": "4e4b6ec33469d81c3cc02d1527073151178880cfa252c08b16e59e460efd1924",
+  "name": "step3_ojmcd_p0_optimizer_unit_diagnostics_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol_sha256": "18eb591b15ae198371d42c603722e5be60a06f7113c73388e1d9030d260c0a66",
+  "runtime_head": "dc584e1260ddbb4cc42b6c5ecb6aa700c26d500f",
+  "scheduler_objects": 0,
+  "state_restored": true,
+  "summary": {
+    "calibration": {
+      "block_id": "calibration_01",
+      "ojmcd_increment_norm_fraction": 0.027963847879072065,
+      "ojmcd_linear_exact_cosine": 0.8880158853691844,
+      "ojmcd_linear_exact_norm_ratio": 89882.31220586074,
+      "ojmcd_minimum_exact_candidate_score": -0.0077582951196313085
+    },
+    "paired_validation": {
+      "ojmcd_minus_jacobian_mcd": {
+        "bootstrap": {
+          "bootstrap_samples": 10000,
+          "ci95_lower": 2.5722945467863074e-07,
+          "ci95_upper": 1.0888184176371395e-06,
+          "mean": 6.792852264672782e-07,
+          "rows": 7,
+          "seed": 2026081731
+        },
+        "differences": [
+          1.2765213549884025e-06,
+          1.2999762225001515e-06,
+          -1.8894641251598898e-07,
+          1.119152099058121e-06,
+          6.805148882954928e-07,
+          -1.2474321569623525e-07,
+          6.925216486410035e-07
+        ],
+        "positive_rate": 0.7142857142857143,
+        "sign_test": {
+          "exact_two_sided_p": 0.453125,
+          "negative": 2,
+          "positive": 5,
+          "ties": 0
+        }
+      },
+      "ojmcd_minus_no_auxiliary_baseline": {
+        "bootstrap": {
+          "bootstrap_samples": 10000,
+          "ci95_lower": 6.907205654810339e-07,
+          "ci95_upper": 1.630201199970855e-06,
+          "mean": 1.1603859757635532e-06,
+          "rows": 7,
+          "seed": 2026081731
+        },
+        "differences": [
+          2.1520092936301582e-07,
+          1.0622371673313716e-06,
+          1.8625265454028095e-06,
+          2.1204999006603498e-06,
+          1.04892109754548e-06,
+          4.861123073509818e-07,
+          1.3272038826908639e-06
+        ],
+        "positive_rate": 1.0,
+        "sign_test": {
+          "exact_two_sided_p": 0.015625,
+          "negative": 0,
+          "positive": 7,
+          "ties": 0
+        }
+      },
+      "ojmcd_minus_raw_mcd": {
+        "bootstrap": {
+          "bootstrap_samples": 10000,
+          "ci95_lower": -0.09777993413251808,
+          "ci95_upper": -0.08913822666955938,
+          "mean": -0.09307234210479923,
+          "rows": 7,
+          "seed": 2026081731
+        },
+        "differences": [
+          -0.09310553814346222,
+          -0.08704778274523461,
+          -0.08808936643025926,
+          -0.09870703107308418,
+          -0.09041521639215713,
+          -0.08942733098650929,
+          -0.10471412896288793
+        ],
+        "positive_rate": 0.0,
+        "sign_test": {
+          "exact_two_sided_p": 0.015625,
+          "negative": 7,
+          "positive": 0,
+          "ties": 0
+        }
+      }
+    },
+    "validation": {
+      "jacobian_mcd": {
+        "maximum_linear_exact_norm_ratio": 112347.28686867033,
+        "mean_exact_candidate_worst_score": -0.01061888788847923,
+        "mean_increment_norm_fraction": 0.028811774593093396,
+        "mean_linear_exact_cosine": 0.8990769722774488,
+        "minimum_certificate_scores": {
+          "branch_entropy": -0.03168659520211093,
+          "branch_negative_gap": -0.031287634246124046,
+          "continuation": 0.2644581853227109,
+          "etarc": 0.04097047196501053,
+          "risk": 0.39819049724728894,
+          "tarc": 0.05383293188489521,
+          "uniform": 0.32730916933056514
+        },
+        "minimum_exact_candidate_score": -0.03168659520211093,
+        "minimum_exact_increment_score": -1.0613204350329456e-06,
+        "minimum_increment_norm_fraction": 0.02680887161478821,
+        "minimum_linear_exact_cosine": 0.896107557807312,
+        "minimum_linear_exact_norm_ratio": 82090.1860878826,
+        "validation_blocks": 7
+      },
+      "ojmcd": {
+        "maximum_linear_exact_norm_ratio": 111996.21060578951,
+        "mean_exact_candidate_worst_score": -0.010618208603252762,
+        "mean_increment_norm_fraction": 0.028901368446635513,
+        "mean_linear_exact_cosine": 0.8960289876548195,
+        "minimum_certificate_scores": {
+          "branch_entropy": -0.031686784148523446,
+          "branch_negative_gap": -0.0312879450222677,
+          "continuation": 0.26445853673729425,
+          "etarc": 0.04097296709671531,
+          "risk": 0.3981899812750006,
+          "tarc": 0.05383520513492155,
+          "uniform": 0.3273096655179531
+        },
+        "minimum_exact_candidate_score": -0.031686784148523446,
+        "minimum_exact_increment_score": -2.5331135623424223e-07,
+        "minimum_increment_norm_fraction": 0.026929143717659844,
+        "minimum_linear_exact_cosine": 0.892064322308789,
+        "minimum_linear_exact_norm_ratio": 81994.81247455999,
+        "validation_blocks": 7
+      },
+      "raw_mcd": {
+        "maximum_linear_exact_norm_ratio": 90.46177112211319,
+        "mean_exact_candidate_worst_score": 0.08245413350154647,
+        "mean_increment_norm_fraction": 0.6171932190685284,
+        "mean_linear_exact_cosine": 0.012920857942603397,
+        "minimum_certificate_scores": {
+          "branch_entropy": 0.05680255314372102,
+          "branch_negative_gap": 0.056402582281735815,
+          "continuation": 0.2640219294972845,
+          "etarc": 0.16287773051511126,
+          "risk": 0.36782742859580503,
+          "tarc": 0.1180858636023653,
+          "uniform": 0.3284344213504487
+        },
+        "minimum_exact_candidate_score": 0.056402582281735815,
+        "minimum_exact_increment_score": -0.03036034035277255,
+        "minimum_increment_norm_fraction": 0.5823874345913018,
+        "minimum_linear_exact_cosine": 0.008019409974603669,
+        "minimum_linear_exact_norm_ratio": 43.491854674952535,
+        "validation_blocks": 7
+      }
+    }
+  }
+}

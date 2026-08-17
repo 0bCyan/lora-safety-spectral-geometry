@@ -1,0 +1,60 @@
+{
+  "artifacts": [
+    {
+      "bytes": 626,
+      "name": "structural_audit",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/ojmcd_p0_structural_audit.json",
+      "rows": null,
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    {
+      "bytes": 200121,
+      "name": "block_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/ojmcd_p0_optimizer_unit_rows.jsonl",
+      "rows": 8,
+      "sha256": "f9b4159d5fa4caeb592e8b43da42694a38f00033051c3055ce37f7cfed5ba4b9"
+    },
+    {
+      "bytes": 6307,
+      "name": "gradient_diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/ojmcd_p0_gradient_diagnostics.json",
+      "rows": null,
+      "sha256": "4cf9017dcbbc5446495c7676e19aaa6e2060fba0b109f894328d4a61ab628886"
+    },
+    {
+      "bytes": 431,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/ojmcd_p0_environment.json",
+      "rows": null,
+      "sha256": "ae717a8b0aaf5ed84a856f27620d5a0e23fe3574dfb5dd005fb282ae138532fb"
+    },
+    {
+      "bytes": 6329,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/ojmcd_p0_route.json",
+      "rows": null,
+      "sha256": "8fd5f9812fbbccd45249be770feb12a6b44caafe9f53bb49fc2dd57504e4de44"
+    },
+    {
+      "bytes": 1147,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/OJMCD_P0_REPORT.md",
+      "rows": null,
+      "sha256": "5aabc1d60f09b70f05631bafa6f39b221e673e742bdb1e99e15b339744a64544"
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_ojmcd_p0.py run",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_ojmcd_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/protocol/ojmcd_p0_protocol.json",
+  "protocol_sha256": "18eb591b15ae198371d42c603722e5be60a06f7113c73388e1d9030d260c0a66",
+  "route": "STOP_OJMCD_P0_DUAL_CERTIFICATE_FAILED",
+  "runtime_head": "dc584e1260ddbb4cc42b6c5ecb6aa700c26d500f",
+  "scheduler_objects": 0,
+  "training_authorized": false,
+  "verify_command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_ojmcd_p0.py verify-run"
+}
