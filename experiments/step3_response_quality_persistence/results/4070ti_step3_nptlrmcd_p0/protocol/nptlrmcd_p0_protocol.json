@@ -1,0 +1,617 @@
+{
+  "name": "step3_nptlrmcd_lowrank_protected_nullspace_target_p0_protocol_v1",
+  "status": "prospective_before_any_NPTMCD_model_forward",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptlrmcd_p0/protocol/nptlrmcd_p0_protocol.json",
+  "entry_commit": "8e4d273eb41c62454b0e23f2087a7cfafc00b8fc",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_nptlrmcd_p0_seed7.json",
+  "objective": "Test whether reducing the protected-null target search from 36 unit-target covectors to three equal-unit pooled target covectors preserves a non-weak target effect while improving independent protected transfer.",
+  "experiment_mode": "exploratory_seed7_zero_optimizer_step_lowrank_protected_nullspace_target_basis_on_reused_disclosed_data",
+  "prior_result": {
+    "decision_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/run/medscmcd_p0_route.json",
+    "decision_sha256": "9535a71fda0c5df2aa06289bb4a40ccd18c352b5bf510528f12d48115178a660",
+    "route": "STOP_MEDSCMCD_P0_NO_MINIMUM_EFFECTIVE_DOSE",
+    "registered_signal": "MED-SC-MCD found no positive registered scalar-homotopy dose satisfying both 95% unit-level protected retention and the target floor/gain gates; the first positive dose already reduced the fit TARC bottleneck to 0.9436408 retention."
+  },
+  "frozen_inputs": {
+    "method_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_NPTLRMCD_lowrank_target_plan.md",
+      "sha256": "3ce37dc54ce5930c37cf3dd749480f5a0e5f5bf449e452c1d5337d941441f288"
+    },
+    "config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_nptlrmcd_p0_seed7.json",
+      "sha256": "4e49b6084af5a1fae213431141b9588a3d60cdc4cd67cb2a04653d7c8c17781b"
+    },
+    "nptmcd_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_nptmcd_common.py",
+      "sha256": "1dd85bef565aaedee8fd26297a95215a90ab04b17c1f587f2acdeb2b7f790033"
+    },
+    "nptmcd_common_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_nptmcd_common.py",
+      "sha256": "e91cc883bcf924af070564bc73bea304a31a1df57e0fdc8dfd2eddb2cd993275"
+    },
+    "medscmcd_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_medscmcd_common.py",
+      "sha256": "36f847e57dd9214cd9d6bc26bd6e3a1321c977e71f6d4f6ef6566876bd63944e"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_nptlrmcd_p0.py",
+      "sha256": "e18bb09edf1813c18d7af21d0870d37c85ac7bf489780da9929e5b91b3dc988e"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_nptlrmcd_p0.py",
+      "sha256": "8803649a8e4a3a87a4df1957735da5c0077b99341a68917546558c064616c5ce"
+    },
+    "jcrmcd_path_geometry": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_jcrmcd_common.py",
+      "sha256": "44c676080f925edca850c693814fe410c4f863e32b1bb4d2b4859b58b905991d"
+    },
+    "jcrmcd_runner_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_jcrmcd_p0.py",
+      "sha256": "2a2fb3bbbf7b4d64f67f0185ed745c6c00e722dc14f1b2aee0e358aac3469d55"
+    },
+    "rpfrsc_runner_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_rpfrsc_p0.py",
+      "sha256": "38c0fbdcd8a24d7b754cb90fe3591b1363760ce218a3a67ebb00f0c527018af2"
+    },
+    "frsc_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_frsc_common.py",
+      "sha256": "579be9bbe5c1f87d71b6bb6b24325ab6f889639fe28a5a9fc8ddc118c42be7b4"
+    },
+    "mcd_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_common.py",
+      "sha256": "5bce3e955a545fdaf904aa6826a447d9602bc6898176608ef0d80df38ac735e5"
+    },
+    "optimizer_map": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ojmcd_common.py",
+      "sha256": "4c0e523cb49a1981a590ed6106e143cedd76bbad7e0acaed3b1eed2a76950573"
+    },
+    "optimizer_unit_reference": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ojmcd_p0.py",
+      "sha256": "03acdea9f8d85c03fdef99ef6569359fa480f8f3a5ff0824de9f98f803096536"
+    },
+    "objective_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_training.py",
+      "sha256": "5cd63cfc7334be71368923edf60684ea7adfe0db87bdb69df1981c58ecfb634a"
+    },
+    "qetarc_gradient_ops": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_qetarc_common.py",
+      "sha256": "6c55a6fca6aa9e718f5cc036a91542325570ee02bfc9565900edae5681f00055"
+    },
+    "etarc_objectives": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_etarc_p0.py",
+      "sha256": "ca43d66ed626543803b4d999defe4d092f603d1db9b0ee59f21d8ee913d1cf43"
+    },
+    "tarc_features": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_tarc_p0.py",
+      "sha256": "d357b753c763ef4d2a152f8867ffe6fabbbcdf36fd73c7587d0e16a0a17fd0b1"
+    },
+    "gradient_math": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_common.py",
+      "sha256": "70b17175e00cddda9ea8394717c6fd02770bc446a755680d2e3965c6bfa8d998"
+    },
+    "source_validation": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_p0.py",
+      "sha256": "bdc98f4f27efcc09f60a40c8fa2a486655e3aabe2c825b1c19ec5b3e299e0c51"
+    },
+    "risk_loss_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_training.py",
+      "sha256": "5095a6db54ef23cb887201ffab2a23f9483acbe8c5993859fe084ea9dabf3800"
+    },
+    "state_hash_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "model_reference": {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "risk_source": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    "prior_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/run/medscmcd_p0_route.json",
+      "sha256": "9535a71fda0c5df2aa06289bb4a40ccd18c352b5bf510528f12d48115178a660"
+    },
+    "prior_interpretation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/analysis/MEDSCMCD_P0_INTERPRETATION.md",
+      "sha256": "945eacc089558287556df2d212b2b437fadaab196ca02649e50f38e4fd27402c"
+    },
+    "prior_frontier_audit": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/analysis/medscmcd_registered_frontier_audit.json",
+      "sha256": "727067c2166860e9ec370fc47b0e5f955792834da28250519b69ba78da94ffea"
+    },
+    "stopped_activation_nullspace_family": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_functional_nullspace_seed2/v3_gate_decision.json",
+      "sha256": "0aacd44652ee8218bdd27fdeddd94d22edeabe4e4b5260c910c65bd69be183c6"
+    },
+    "structural_audit": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    "base_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_nptmcd_p0.py",
+      "sha256": "04ac66474fe88e0711ea7e05cbc962a6b4af51244a19993a70297cbab3b4f3b1"
+    },
+    "base_runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_nptmcd_p0.py",
+      "sha256": "d82920728f9a76d703ea04a05050352242b0937bd418a6b63a098822451b5de2"
+    },
+    "nptamcd_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_nptmcd_affine_common.py",
+      "sha256": "da89e7ff6a1ba6a93e61f7a5969311cecb0b9709fb424afca6770936487ddc41"
+    },
+    "nptamcd_common_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_nptmcd_affine_common.py",
+      "sha256": "89d707c8792145bdcaf011f4e99fbb35943d018688852e248250547f29833e75"
+    },
+    "predecessor_nptmcd_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/protocol/nptmcd_p0_protocol.json",
+      "sha256": "6944801ec069207cf333d5422f30b1f631245f83b9b6d70acde185c4ae49abff"
+    },
+    "predecessor_nptmcd_route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/run/nptmcd_p0_route.json",
+      "sha256": "35e4eeade57900d46ba229d8ec992fdc0298457641a01d3c0e1a09d72606c608"
+    },
+    "predecessor_nptmcd_interpretation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/analysis/NPTMCD_P0_INTERPRETATION.md",
+      "sha256": "24369f66cf5592bcce378f40e702dd1cff6c61ef710de6fb39972ab73c51c2a2"
+    },
+    "base_affine_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_nptmcd_affine_p0.py",
+      "sha256": "5b5936f0d024165bbefbcca1f188a523b91e6097cfe629f01e664531fc2f8c25"
+    },
+    "base_affine_runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_nptmcd_affine_p0.py",
+      "sha256": "01f2f459d85facc91927a06185ca54ebf200246e02dd28f77ec852926545f5f1"
+    },
+    "predecessor_nptamcd_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptamcd_p0/protocol/nptamcd_p0_protocol.json",
+      "sha256": "6344cb5c9fc5b43ed40f3b3828056d0667b14186a60434b79c849f8351355759"
+    },
+    "predecessor_nptamcd_route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptamcd_p0/run/nptamcd_p0_route.json",
+      "sha256": "4df0d8816275a529cefa366e0819ba75363a59027e23f31a176508563512faf0"
+    },
+    "predecessor_nptamcd_interpretation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptamcd_p0/analysis/NPTAMCD_P0_INTERPRETATION.md",
+      "sha256": "916c77cd0063cd79141037fab0245afc500355f5c1d08027652c9fa02f65dd91"
+    }
+  },
+  "source": {
+    "safety_targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+    "risk_data_path": "data/processed/unified_pool/train_risk.jsonl",
+    "structural_audit_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+    "safety_rows": 80,
+    "safety_prompt_clusters": 40,
+    "risk_rows": 256,
+    "category_prompt_counts": {
+      "cyber abuse": 3,
+      "financial evasion": 4,
+      "fraud or deception": 3,
+      "harassment or coercion": 1,
+      "harmful wrongdoing": 23,
+      "physical harm": 1,
+      "privacy invasion": 1,
+      "public manipulation": 4
+    },
+    "fresh_for_confirmation": false,
+    "role": "seed7_exploratory_fit_calibration_diagnostic_lowrank_target_basis_test",
+    "core100_used": false,
+    "heldout_used": false
+  },
+  "selection": {
+    "risk_order_seed": 7,
+    "global_role_rule": "ascending_sha256_of_nptmcd-seed7-split-v1|sample_id_then_first12_fit_next20_calibration_last8_diagnostic",
+    "fit_units": [
+      {
+        "unit_id": "fit_01",
+        "risk_row_index": 175,
+        "sample_id": "eval_safety_000101",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "fit_02",
+        "risk_row_index": 23,
+        "sample_id": "eval_safety_000156",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "fit_03",
+        "risk_row_index": 139,
+        "sample_id": "eval_safety_000294",
+        "category": "privacy invasion"
+      },
+      {
+        "unit_id": "fit_04",
+        "risk_row_index": 1,
+        "sample_id": "eval_safety_000268",
+        "category": "harassment or coercion"
+      },
+      {
+        "unit_id": "fit_05",
+        "risk_row_index": 215,
+        "sample_id": "eval_safety_000211",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "fit_06",
+        "risk_row_index": 66,
+        "sample_id": "eval_safety_000258",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "fit_07",
+        "risk_row_index": 43,
+        "sample_id": "eval_safety_000263",
+        "category": "fraud or deception"
+      },
+      {
+        "unit_id": "fit_08",
+        "risk_row_index": 108,
+        "sample_id": "eval_safety_000276",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "fit_09",
+        "risk_row_index": 204,
+        "sample_id": "eval_safety_000236",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "fit_10",
+        "risk_row_index": 187,
+        "sample_id": "eval_safety_000125",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "fit_11",
+        "risk_row_index": 32,
+        "sample_id": "eval_safety_000286",
+        "category": "public manipulation"
+      },
+      {
+        "unit_id": "fit_12",
+        "risk_row_index": 52,
+        "sample_id": "eval_safety_000253",
+        "category": "harmful wrongdoing"
+      }
+    ],
+    "calibration_units": [
+      {
+        "unit_id": "calibration_01",
+        "risk_row_index": 80,
+        "sample_id": "eval_safety_000138",
+        "category": "cyber abuse"
+      },
+      {
+        "unit_id": "calibration_02",
+        "risk_row_index": 163,
+        "sample_id": "eval_safety_000116",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "calibration_03",
+        "risk_row_index": 18,
+        "sample_id": "eval_safety_000188",
+        "category": "financial evasion"
+      },
+      {
+        "unit_id": "calibration_04",
+        "risk_row_index": 48,
+        "sample_id": "eval_safety_000226",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "calibration_05",
+        "risk_row_index": 202,
+        "sample_id": "eval_safety_000243",
+        "category": "financial evasion"
+      },
+      {
+        "unit_id": "calibration_06",
+        "risk_row_index": 87,
+        "sample_id": "eval_safety_000126",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "calibration_07",
+        "risk_row_index": 41,
+        "sample_id": "eval_safety_000232",
+        "category": "public manipulation"
+      },
+      {
+        "unit_id": "calibration_08",
+        "risk_row_index": 73,
+        "sample_id": "eval_safety_000107",
+        "category": "physical harm"
+      },
+      {
+        "unit_id": "calibration_09",
+        "risk_row_index": 40,
+        "sample_id": "eval_safety_000109",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "calibration_10",
+        "risk_row_index": 14,
+        "sample_id": "eval_safety_000260",
+        "category": "financial evasion"
+      },
+      {
+        "unit_id": "calibration_11",
+        "risk_row_index": 99,
+        "sample_id": "eval_safety_000222",
+        "category": "financial evasion"
+      },
+      {
+        "unit_id": "calibration_12",
+        "risk_row_index": 31,
+        "sample_id": "eval_safety_000118",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "calibration_13",
+        "risk_row_index": 76,
+        "sample_id": "eval_safety_000191",
+        "category": "fraud or deception"
+      },
+      {
+        "unit_id": "calibration_14",
+        "risk_row_index": 174,
+        "sample_id": "eval_safety_000269",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "calibration_15",
+        "risk_row_index": 69,
+        "sample_id": "eval_safety_000244",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "calibration_16",
+        "risk_row_index": 34,
+        "sample_id": "eval_safety_000152",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "calibration_17",
+        "risk_row_index": 166,
+        "sample_id": "eval_safety_000205",
+        "category": "fraud or deception"
+      },
+      {
+        "unit_id": "calibration_18",
+        "risk_row_index": 194,
+        "sample_id": "eval_safety_000147",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "calibration_19",
+        "risk_row_index": 61,
+        "sample_id": "eval_safety_000265",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "calibration_20",
+        "risk_row_index": 221,
+        "sample_id": "eval_safety_000161",
+        "category": "public manipulation"
+      }
+    ],
+    "diagnostic_units": [
+      {
+        "unit_id": "diagnostic_01",
+        "risk_row_index": 140,
+        "sample_id": "eval_safety_000225",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "diagnostic_02",
+        "risk_row_index": 59,
+        "sample_id": "eval_safety_000212",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "diagnostic_03",
+        "risk_row_index": 107,
+        "sample_id": "eval_safety_000113",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "diagnostic_04",
+        "risk_row_index": 36,
+        "sample_id": "eval_safety_000179",
+        "category": "public manipulation"
+      },
+      {
+        "unit_id": "diagnostic_05",
+        "risk_row_index": 212,
+        "sample_id": "eval_safety_000279",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "diagnostic_06",
+        "risk_row_index": 84,
+        "sample_id": "eval_safety_000180",
+        "category": "cyber abuse"
+      },
+      {
+        "unit_id": "diagnostic_07",
+        "risk_row_index": 195,
+        "sample_id": "eval_safety_000295",
+        "category": "harmful wrongdoing"
+      },
+      {
+        "unit_id": "diagnostic_08",
+        "risk_row_index": 98,
+        "sample_id": "eval_safety_000142",
+        "category": "cyber abuse"
+      }
+    ],
+    "fit_calibration_diagnostic_overlap": 0
+  },
+  "design": {
+    "certificates": [
+      "risk",
+      "uniform",
+      "tarc",
+      "etarc",
+      "continuation",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "protected_certificates": [
+      "risk",
+      "uniform",
+      "tarc",
+      "continuation"
+    ],
+    "target_certificates": [
+      "etarc",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "fit_units": 12,
+    "calibration_units": 20,
+    "diagnostic_units": 8,
+    "unit_granularity": "one_prompt_risk_pair",
+    "gradient_measurement_mode": "eval_for_all_roles",
+    "pooled_fit_gradient_rule": "coordinatewise_mean_of_twelve_fit_unit_gradients",
+    "raw_endpoint": "exact_clipped_adam_map_of_full_seven_certificate_minimum_norm_simplex_MCD",
+    "target_endpoint": "exact_clipped_adam_map_of_three_target_minimum_norm_simplex_MCD",
+    "target_proposal": "three_equal_unit_pooled_normalized_fit_target_covectors_in_protected_nullspace",
+    "protected_constraints": 48,
+    "protected_constraint_rule": "all_twelve_fit_units_cross_four_protected_certificate_gradients",
+    "projection_rule": "shared_float64_gram_pseudoinverse_projection_of_three_pooled_fit_target_covectors_off_48_protected_covectors_and_raw_displacement",
+    "projection_rcond": 1e-10,
+    "projection_refinement_steps": 2,
+    "minimum_retained_target_proposal_fraction": 0.01,
+    "candidate_update_map": "direct_fixed_norm_post_Adam_map_angular_rotation_not_an_ordinary_Adam_output",
+    "protected_retention_floor": 0.95,
+    "design_cosine_floor": 0.951,
+    "theta_max_radians": 0.3143421044892443,
+    "angle_guard_radians": 1e-8,
+    "fit_target_gain_floor": 0.002,
+    "fit_target_score_floor": 0.05,
+    "selection_rule": "fixed_theta_max_minus_1e-6_then_three_covector_affine_max_min_with_explicit_kkt_limit",
+    "conformal_alpha": 0.05,
+    "conformal_joint_nonconformity": "maximum_over_four_protected_certificates_of_0.95_minus_candidate_to_raw_score_ratio",
+    "conformal_order_statistic_rank": 20,
+    "conformal_marginal_coverage_lower_bound": 0.9523809523809523,
+    "conformal_assumption": "candidate_fixed_before_calibration_and_calibration_plus_future_joint_nonconformities_exchangeable",
+    "conformal_acceptance_threshold": 0,
+    "conformal_policy": "deploy_fit_candidate_if_threshold_nonpositive_else_raw_mcd",
+    "conformal_fallback_nonconformity": -0.05,
+    "conformal_guarantee_scope": "complete_accept_or_raw_policy_over_calibration_plus_future_draws_under_exchangeability",
+    "conditional_on_candidate_acceptance_coverage_claimed": false,
+    "auxiliary_gradient_norm_ratio": 1,
+    "safety_mix": 0.2,
+    "learning_rate": 0.0002,
+    "calibration_scores_used_for_selection": false,
+    "diagnostic_scores_used_for_selection": false,
+    "transient_parameter_restoration_required": true,
+    "raw_gradient_tensors_serialized": false,
+    "ordinary_Adam_candidate_claimed": false,
+    "affine_solver_tolerance": 1e-9,
+    "fixed_theta_radians": 0.31434110448924435,
+    "fixed_theta_margin_radians": 0.000001,
+    "target_covectors": 3,
+    "target_endpoint_difference_used": false,
+    "fit_target_covector_rule": "equal_weight_mean_of_twelve_unit_normalized_gradients_per_target_certificate",
+    "affine_solver": "scipy_SLSQP_multistart_center_plus_vertices_ftol_1e-13_maxiter_2000",
+    "candidate_map_variant": "low_rank_pooled_target_affine_max_min_tangent",
+    "affine_kkt_residual_max": 1e-7
+  },
+  "statistics": {
+    "diagnostic_unit": "seed7_independent_prompt_risk_pair",
+    "diagnostic_units": 8,
+    "paired": true,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026081807,
+    "bootstrap_interval": "percentile_95",
+    "sign_test": "exact_two_sided_excluding_exact_ties",
+    "conformal_units": 20,
+    "conformal_alpha": 0.05,
+    "conformal_rank": 20,
+    "conformal_guarantee_type": "finite_sample_marginal_joint_protection_for_complete_accept_or_raw_policy_under_exchangeability",
+    "conditional_on_candidate_acceptance_coverage_claimed": false,
+    "method": "NPT-LR-MCD",
+    "candidate_selection": "fixed_theta_three_pooled_target_affine_max_min"
+  },
+  "gates": {
+    "numeric_tolerance": 1e-12,
+    "gradient_budget_relative_tolerance": 0.000001,
+    "minimum_nonzero_angle": 1e-8,
+    "candidate_norm_relative_tolerance": 0.000001,
+    "projection_residual_relative_max": 0.000001,
+    "fit_retention_identity_error_max": 0.00001,
+    "conformal_coverage_lower_bound_min": 0.95,
+    "diagnostic_exact_margin_min": 0.02,
+    "diagnostic_certificate_score_min": 0.02,
+    "diagnostic_advantage_over_baseline_mean_min": 0.02,
+    "protected_mean_relative_loss_max": 0.05,
+    "protected_ci_relative_loss_max": 0.075,
+    "protected_single_unit_relative_loss_max": 0.15,
+    "diagnostic_target_gain_mean_min": 0.002,
+    "target_macro_actual_relative_gain_mean_min": 0.02,
+    "target_objective_mean_relative_loss_max": 0.05,
+    "target_objective_single_unit_relative_loss_max": 0.2,
+    "diagnostic_mean_target_score_min": 0.05,
+    "paired_ci_lower_min": 0,
+    "paired_sign_p_max": 0.05,
+    "mean_actual_loss_reduction_min": 0,
+    "actual_reduction_positive_rate_min": 0.75,
+    "mean_actual_to_predicted_ratio_min": 0.25,
+    "mean_actual_to_predicted_ratio_max": 1.75,
+    "minimum_vram_headroom_fraction": 0.1
+  },
+  "outputs": {
+    "structural_audit": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptlrmcd_p0/run/nptlrmcd_p0_structural_audit.json",
+    "fit_geometry": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptlrmcd_p0/run/nptlrmcd_p0_fit_geometry.json",
+    "calibration_rows": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptlrmcd_p0/run/nptlrmcd_p0_calibration_rows.jsonl",
+    "diagnostic_rows": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptlrmcd_p0/run/nptlrmcd_p0_diagnostic_rows.jsonl",
+    "diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptlrmcd_p0/run/nptlrmcd_p0_diagnostics.json",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptlrmcd_p0/run/nptlrmcd_p0_environment.json",
+    "route": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptlrmcd_p0/run/nptlrmcd_p0_route.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptlrmcd_p0/run/NPTLRMCD_P0_REPORT.md",
+    "run_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptlrmcd_p0/run/nptlrmcd_p0_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_NPTLRMCD_P0_AUTHORIZE_PROXY_DEV_TRIPLET_PROTOCOL",
+  "failure_routes": [
+    "STOP_NPTLRMCD_P0_INVALID",
+    "STOP_NPTLRMCD_P0_NULLSPACE_GEOMETRY_INVALID",
+    "STOP_NPTLRMCD_P0_NO_MINIMUM_EFFECTIVE_ANGLE",
+    "STOP_NPTLRMCD_P0_CONFORMAL_SELECTIVE_POLICY_FAILED",
+    "STOP_NPTLRMCD_P0_DIAGNOSTIC_TRANSFER_FAILED",
+    "STOP_NPTLRMCD_P0_FINITE_STEP_COMMON_DESCENT_FAILED",
+    "STOP_NPTLRMCD_P0_PROTECTED_NONINFERIORITY_FAILED",
+    "STOP_NPTLRMCD_P0_TARGET_ADVANTAGE_FAILED",
+    "STOP_NPTLRMCD_P0_EFFECT_TOO_WEAK"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_training_disjoint_proxy_dev_triplet_data_protocol_only",
+  "pass_does_not_authorize": "model_training_or_optimizer_steps",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "virtual_parameter_evaluations": 24,
+  "checkpoint_writes_authorized": false,
+  "candidate_generation_authorized": false,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "method_variant": "NPT-LR-MCD",
+  "predecessor": {
+    "route": "STOP_NPTAMCD_P0_CONFORMAL_SELECTIVE_POLICY_FAILED",
+    "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptamcd_p0/protocol/nptamcd_p0_protocol.json",
+    "result_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptamcd_p0/run/nptamcd_p0_route.json"
+  }
+}
