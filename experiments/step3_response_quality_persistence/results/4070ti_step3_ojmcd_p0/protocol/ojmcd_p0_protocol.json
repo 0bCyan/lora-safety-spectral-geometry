@@ -1,0 +1,286 @@
+{
+  "name": "step3_ojmcd_optimizer_jacobian_common_descent_p0_protocol_v1",
+  "status": "prospective_before_any_OJMCD_model_forward",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/protocol/ojmcd_p0_protocol.json",
+  "entry_commit": "1ed6343b25a2e1f3cf29976f6cf7ebdfa43f0548",
+  "objective": "Test whether a baseline-aware minimax direction in the exact first-step clipping-plus-Adam Jacobian geometry produces material seven-certificate realized-update common descent on prompt-disjoint optimizer-unit blocks.",
+  "experiment_mode": "exploratory_zero_update_mechanism_development_on_reused_disclosed_data",
+  "prior_result": {
+    "decision_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd/smoke/mcd_smoke_decision.json",
+    "decision_sha256": "9f3ce0013e0278d0f7b425f565c3561cf40630554f3570a620094693da79aca9",
+    "route": "STOP_MCD_ETARC_SMOKE_COMMON_EFFECT_FAILED",
+    "registered_diagnosis": "Euclidean MCD had a dynamic common margin above 0.60, but active clipping and first-step Adam transformed the certified raw auxiliary before parameter displacement."
+  },
+  "frozen_inputs": {
+    "method_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_OJMCD_optimizer_jacobian_common_descent_plan.md",
+      "sha256": "0238df7b247b5cc1cbca3edfcfdfed77e282cc618b8815a329a13d9b0708c156"
+    },
+    "ojmcd_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ojmcd_common.py",
+      "sha256": "4c0e523cb49a1981a590ed6106e143cedd76bbad7e0acaed3b1eed2a76950573"
+    },
+    "ojmcd_common_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_ojmcd_common.py",
+      "sha256": "17c3e6e39994c1d39730bf0dff16727faf9706c375712aa32ffbfee2ce069d97"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ojmcd_p0.py",
+      "sha256": "03acdea9f8d85c03fdef99ef6569359fa480f8f3a5ff0824de9f98f803096536"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_ojmcd_p0.py",
+      "sha256": "bc41c307101de939c261f1a6ba2042d2017e0a9e61ee9d69887334e5eb552c69"
+    },
+    "mcd_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_common.py",
+      "sha256": "5bce3e955a545fdaf904aa6826a447d9602bc6898176608ef0d80df38ac735e5"
+    },
+    "mcd_training_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_training.py",
+      "sha256": "5cd63cfc7334be71368923edf60684ea7adfe0db87bdb69df1981c58ecfb634a"
+    },
+    "qetarc_gradient_ops": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_qetarc_common.py",
+      "sha256": "6c55a6fca6aa9e718f5cc036a91542325570ee02bfc9565900edae5681f00055"
+    },
+    "etarc_objectives": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_etarc_p0.py",
+      "sha256": "ca43d66ed626543803b4d999defe4d092f603d1db9b0ee59f21d8ee913d1cf43"
+    },
+    "tarc_features": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_tarc_p0.py",
+      "sha256": "d357b753c763ef4d2a152f8867ffe6fabbbcdf36fd73c7587d0e16a0a17fd0b1"
+    },
+    "gradient_math": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_common.py",
+      "sha256": "70b17175e00cddda9ea8394717c6fd02770bc446a755680d2e3965c6bfa8d998"
+    },
+    "source_validation": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_p0.py",
+      "sha256": "bdc98f4f27efcc09f60a40c8fa2a486655e3aabe2c825b1c19ec5b3e299e0c51"
+    },
+    "risk_loss_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_training.py",
+      "sha256": "5095a6db54ef23cb887201ffab2a23f9483acbe8c5993859fe084ea9dabf3800"
+    },
+    "state_hash_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "model_and_optimizer_reference": {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57"
+    },
+    "training_config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_mcd_smoke_seed1.json",
+      "sha256": "36132ef0cd1079493d0a60b791fd8726e0805499ae9c63d8e91cdec01960063b"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "risk_training_source": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    "prior_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd/smoke/mcd_smoke_decision.json",
+      "sha256": "9f3ce0013e0278d0f7b425f565c3561cf40630554f3570a620094693da79aca9"
+    },
+    "prior_interpretation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd/analysis/MCD_SMOKE_INTERPRETATION.md",
+      "sha256": "21bb81ff8f8e142c85146471209a60a55923c99a09dbd98ebe04a813dab66e71"
+    },
+    "structural_audit": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    }
+  },
+  "source": {
+    "training_config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_mcd_smoke_seed1.json",
+    "safety_targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+    "risk_data_path": "data/processed/unified_pool/train_risk.jsonl",
+    "structural_audit_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+    "risk_rows": 256,
+    "safety_rows": 80,
+    "safety_prompt_clusters": 40,
+    "fresh_for_confirmation": false,
+    "role": "reused_mechanism_development_only",
+    "core100_used": false,
+    "heldout_used": false
+  },
+  "model": {
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "local_files_only": true,
+    "seed": 1,
+    "load_in_4bit": true,
+    "quantization": "nf4_double_quant_fp16_compute",
+    "reference_policy": "fresh_PEFT_LoRA_step0",
+    "model_mode": "train_with_gradients_and_frozen_rng_order",
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05
+  },
+  "optimizer_map": {
+    "gradient_accumulation_steps": 4,
+    "safety_mix": 0.2,
+    "max_grad_norm": 1.0,
+    "clip_epsilon": 0.000001,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "adam_epsilon": 1e-8,
+    "weight_decay": 0.0,
+    "fp16": true,
+    "gradient_checkpointing": false,
+    "realized_map": "positive_first_step_AdamW_displacement_after_global_L2_clip",
+    "learning_rate_omitted_as_common_positive_scalar": true
+  },
+  "selection": {
+    "risk_order_seed": 1,
+    "rule": "exclude_prior_smoke_positions_0_through_7_then_use_one_calibration_and_seven_prompt_disjoint_validation_optimizer_units",
+    "calibration_block": {
+      "block_id": "calibration_01",
+      "split": "calibration",
+      "source_order_positions": [8, 9, 10, 11],
+      "risk_row_indices": [175, 161, 144, 255],
+      "safety_sample_ids": [
+        "eval_safety_000179",
+        "eval_safety_000244",
+        "eval_safety_000211",
+        "eval_safety_000205"
+      ]
+    },
+    "validation_blocks": [
+      {
+        "block_id": "validation_01",
+        "split": "validation",
+        "source_order_positions": [12, 13, 14, 15],
+        "risk_row_indices": [200, 66, 63, 156],
+        "safety_sample_ids": ["eval_safety_000116", "eval_safety_000253", "eval_safety_000236", "eval_safety_000269"]
+      },
+      {
+        "block_id": "validation_02",
+        "split": "validation",
+        "source_order_positions": [16, 17, 18, 19],
+        "risk_row_indices": [118, 152, 120, 203],
+        "safety_sample_ids": ["eval_safety_000225", "eval_safety_000156", "eval_safety_000109", "eval_safety_000142"]
+      },
+      {
+        "block_id": "validation_03",
+        "split": "validation",
+        "source_order_positions": [20, 21, 22, 23],
+        "risk_row_indices": [234, 199, 13, 151],
+        "safety_sample_ids": ["eval_safety_000188", "eval_safety_000126", "eval_safety_000113", "eval_safety_000212"]
+      },
+      {
+        "block_id": "validation_04",
+        "split": "validation",
+        "source_order_positions": [24, 25, 26, 27],
+        "risk_row_indices": [155, 142, 210, 82],
+        "safety_sample_ids": ["eval_safety_000279", "eval_safety_000276", "eval_safety_000295", "eval_safety_000222"]
+      },
+      {
+        "block_id": "validation_05",
+        "split": "validation",
+        "source_order_positions": [28, 29, 30, 31],
+        "risk_row_indices": [237, 213, 96, 5],
+        "safety_sample_ids": ["eval_safety_000226", "eval_safety_000125", "eval_safety_000118", "eval_safety_000147"]
+      },
+      {
+        "block_id": "validation_06",
+        "split": "validation",
+        "source_order_positions": [32, 33, 34, 35],
+        "risk_row_indices": [55, 7, 83, 229],
+        "safety_sample_ids": ["eval_safety_000180", "eval_safety_000243", "eval_safety_000263", "eval_safety_000152"]
+      },
+      {
+        "block_id": "validation_07",
+        "split": "validation",
+        "source_order_positions": [36, 37, 38, 39],
+        "risk_row_indices": [39, 0, 254, 99],
+        "safety_sample_ids": ["eval_safety_000107", "eval_safety_000161", "eval_safety_000101", "eval_safety_000232"]
+      }
+    ],
+    "calibration_blocks": 1,
+    "validation_blocks_count": 7,
+    "microbatches_per_objective_per_block": 4,
+    "risk_overlap": 0,
+    "safety_prompt_overlap": 0
+  },
+  "design": {
+    "certificate_objectives": ["risk", "uniform", "tarc", "etarc", "continuation", "branch_entropy", "branch_negative_gap"],
+    "candidate_directions": ["raw_mcd", "jacobian_mcd", "ojmcd"],
+    "ojmcd_primal": "maximize_minimum_baseline_plus_optimizer_Jacobian_score_on_L2_ball",
+    "ojmcd_dual": "minimize_offset_mean_plus_norm_of_optimizer_sensitivity_mixture_on_simplex",
+    "dual_solver": "scipy_SLSQP_from_simplex_center_and_all_seven_vertices_with_explicit_KKT_audit",
+    "dual_tolerance": 1e-9,
+    "auxiliary_gradient_norm_ratio": 1.0,
+    "auxiliary_budget": "equal_to_optimizer_unit_mean_uniform_safety_gradient_norm",
+    "exact_secant_required": true,
+    "raw_gradient_tensors_serialized": false
+  },
+  "statistics": {
+    "unit": "optimizer_unit_block_of_four_risk_and_four_safety_microbatches",
+    "paired": true,
+    "validation_units": 7,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026081731,
+    "bootstrap_interval": "percentile_95",
+    "sign_test": "exact_two_sided_excluding_exact_ties"
+  },
+  "gates": {
+    "gradient_budget_relative_tolerance": 1e-6,
+    "dual_kkt_residual_max": 1e-6,
+    "primal_dual_gap_max": 1e-6,
+    "calibration_linear_exact_cosine_min": 0.90,
+    "validation_linear_exact_cosine_min": 0.80,
+    "validation_mean_linear_exact_cosine_min": 0.90,
+    "linear_exact_norm_ratio_min": 0.50,
+    "linear_exact_norm_ratio_max": 2.0,
+    "calibration_minimum_exact_score_min": 0.05,
+    "validation_minimum_exact_score_min": 0.05,
+    "validation_certificate_score_min": 0.05,
+    "paired_worst_score_advantage_mean_min": 0.01,
+    "paired_advantage_ci_lower_min": 0.0,
+    "paired_sign_p_max": 0.05,
+    "increment_norm_fraction_min": 0.01,
+    "mean_increment_norm_fraction_min": 0.02,
+    "minimum_vram_headroom_fraction": 0.10,
+    "all_gradient_objects_cover_all_trainable_tensors": true,
+    "all_gradient_values_finite": true,
+    "exact_trainable_state_restoration_required": true
+  },
+  "outputs": {
+    "structural_audit": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/ojmcd_p0_structural_audit.json",
+    "block_rows": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/ojmcd_p0_optimizer_unit_rows.jsonl",
+    "gradient_diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/ojmcd_p0_gradient_diagnostics.json",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/ojmcd_p0_environment.json",
+    "route": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/ojmcd_p0_route.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/OJMCD_P0_REPORT.md",
+    "run_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_ojmcd_p0/run/ojmcd_p0_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_OJMCD_P0_AUTHORIZE_MATCHED_SMOKE_PROTOCOL",
+  "failure_routes": [
+    "STOP_OJMCD_P0_INVALID",
+    "STOP_OJMCD_P0_OPTIMIZER_MAP_NOT_EXERCISED",
+    "STOP_OJMCD_P0_DUAL_CERTIFICATE_FAILED",
+    "STOP_OJMCD_P0_SECANT_FIDELITY_FAILED",
+    "STOP_OJMCD_P0_EXACT_COMMON_DESCENT_FAILED",
+    "STOP_OJMCD_P0_OPTIMIZER_ADVANTAGE_FAILED",
+    "STOP_OJMCD_P0_EFFECT_TOO_WEAK"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_matched_OJMCD_smoke_protocol_only",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "checkpoint_writes_authorized": false,
+  "candidate_generation_authorized": false,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
