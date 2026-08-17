@@ -39,7 +39,7 @@
     },
     "runner_tests": {
       "path": "experiments/step3_response_quality_persistence/scripts/test_step3_rufmcd_p0.py",
-      "sha256": "1f0a0172e0a37a54c934576f9f225cd9f985bc46ed27e99c4147ecced8acfe3d"
+      "sha256": "489096c2a24a54cfabe01997eb44f7d8e0566b0b82d338d3b7a8247da7af060d"
     },
     "jcrmcd_path_geometry": {
       "path": "experiments/step3_response_quality_persistence/scripts/step3_jcrmcd_common.py",
