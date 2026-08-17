@@ -1,0 +1,78 @@
+{
+  "artifacts": [
+    {
+      "bytes": 626,
+      "name": "structural_audit",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/run/nptmcd_p0_structural_audit.json",
+      "rows": null,
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    {
+      "bytes": 128203,
+      "name": "fit_geometry",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/run/nptmcd_p0_fit_geometry.json",
+      "rows": null,
+      "sha256": "308bc9033030c10fa40edf4ef2f541dcfb224557517487fef332df9a9d3a355d"
+    },
+    {
+      "bytes": 53325,
+      "name": "calibration_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/run/nptmcd_p0_calibration_rows.jsonl",
+      "rows": 20,
+      "sha256": "4800fff187fd64c19e49d38fda09db226e6585a50edbc08af5a361ef211c7b20"
+    },
+    {
+      "bytes": 91789,
+      "name": "diagnostic_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/run/nptmcd_p0_diagnostic_rows.jsonl",
+      "rows": 8,
+      "sha256": "7f0a4b232cf09c1e8bdbcb8db80ee0f768a70b78dbb648b16a297b234e56e700"
+    },
+    {
+      "bytes": 23558,
+      "name": "diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/run/nptmcd_p0_diagnostics.json",
+      "rows": null,
+      "sha256": "ec8b300b519c4816f97df7f83016b41e543fe3ce6bc1d4dd56b7b42e6ee45c3b"
+    },
+    {
+      "bytes": 434,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/run/nptmcd_p0_environment.json",
+      "rows": null,
+      "sha256": "61ff539b87d8b9e7bc14eb06f42a47abe2136793b64773d162168afbb491c39d"
+    },
+    {
+      "bytes": 24002,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/run/nptmcd_p0_route.json",
+      "rows": null,
+      "sha256": "35e4eeade57900d46ba229d8ec992fdc0298457641a01d3c0e1a09d72606c608"
+    },
+    {
+      "bytes": 1448,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/run/NPTMCD_P0_REPORT.md",
+      "rows": null,
+      "sha256": "a1eab0d170481dd24a5f0a2dc1e68e654b4ff3e8bf2d0af2d6a40b800a93b609"
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_nptmcd_p0.py run",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_nptmcd_p0_seed7.json",
+  "config_sha256": "f4443807e6ab0fbdbd9600ef0606707a309a569e269ef96ad59a344866e5de89",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_nptmcd_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_nptmcd_p0/protocol/nptmcd_p0_protocol.json",
+  "protocol_sha256": "6944801ec069207cf333d5422f30b1f631245f83b9b6d70acde185c4ae49abff",
+  "route": "STOP_NPTMCD_P0_NO_MINIMUM_EFFECTIVE_ANGLE",
+  "runtime_head": "c016fee6bf3ea9ef9114fc3ea76cb964162716b8",
+  "scheduler_objects": 0,
+  "seed": 7,
+  "training_authorized": false,
+  "verify_command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_nptmcd_p0.py verify-run",
+  "virtual_parameter_evaluations": 24
+}
