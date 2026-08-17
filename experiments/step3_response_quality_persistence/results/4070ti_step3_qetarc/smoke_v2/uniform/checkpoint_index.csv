@@ -1,0 +1,2 @@
+step,checkpoint,adapter_sha256,adapter_bytes
+2,experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/uniform/checkpoints/step0002,8e3ebeb68245eff8ce9ab268b485d917bfd7a4051ba5ba847acb0a23f54596c4,66126768

@@ -1,0 +1,215 @@
+{
+  "name": "step3_qetarc_matched_smoke_reproduction_manifest_v2",
+  "route": "STOP_QETARC_SMOKE_ROUTE_EFFECT_FAILED",
+  "runtime_head": "c58ea5d94e333860ddef18becb463be4702a72d2",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/protocol/qetarc_smoke_protocol_v2.json",
+  "protocol_sha256": "1b5a25dcabd74a434008fadc1043dce236e0f9d8a21d67a7c6799f6f7c9f3abe",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_qetarc_smoke_seed1.json",
+  "config_sha256": "6475a1994b65c51eb5f0defd396300f8dbfde8e640c1d9b22208e9c846d24265",
+  "command": "python experiments/step3_response_quality_persistence/scripts/step3_qetarc_training.py run",
+  "verify_command": "python experiments/step3_response_quality_persistence/scripts/step3_qetarc_training.py verify-run",
+  "seed": 1,
+  "parameters": {
+    "fresh_model_per_arm": true,
+    "risk_rows": 256,
+    "risk_order": "torch_randperm_seed1",
+    "safety_order": "frozen_40_prompt_pair_order",
+    "all_four_objective_gradients_computed_each_safety_draw": true,
+    "manual_gradient_composition": true,
+    "gradient_checkpointing": false,
+    "safety_mix": 0.2,
+    "risk_mix": 0.8,
+    "auxiliary_gradient_norm_ratio": 0.25,
+    "continuation_quota_cosine": 0.5,
+    "tarc_direction": "per_microbatch_equal_norm",
+    "etarc_direction": "per_microbatch_equal_norm",
+    "qetarc_direction": "per_microbatch_spherical_cap_closed_form",
+    "checkpoint_steps": [
+      2
+    ]
+  },
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "peft": "0.16.0",
+    "bitsandbytes": "0.49.2",
+    "cuda": "12.1",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti"
+  },
+  "total_optimizer_steps": 8,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/etarc/checkpoint_index.csv",
+      "sha256": "061b8505b4434e6e7de8449914c998eabfc92198dfef3380ef0cfe3813c66025",
+      "bytes": 232
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/etarc/checkpoints/step0002/adapter_config.json",
+      "sha256": "2f68c8a7947d496b5dc6796b0b6386f33f9abe565953e009858e676059e97ff4",
+      "bytes": 935
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/etarc/checkpoints/step0002/adapter_model.safetensors",
+      "sha256": "5dff4cdc9ac585df42492d7a3ff3ff4a04c14c44540cd5268a77048089fdf64b",
+      "bytes": 66126768
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/etarc/checkpoints/step0002/README.md",
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/etarc/diagnostic_rows.jsonl",
+      "sha256": "dd9b4f35353c1e51a61e0d944ac969339fd5d06a604f5b6349bc975676a94291",
+      "bytes": 12712
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/etarc/dynamic_gradient_geometry.jsonl",
+      "sha256": "a5fa8ea3708882b522a611e709170b894e36f7f7662f394eda72876ff5943e3f",
+      "bytes": 5795
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/etarc/run_manifest.json",
+      "sha256": "1d82215ef7a67184a856c6b69e47d35fc7a19402393144583a5aa3a4fc91b539",
+      "bytes": 89795
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/etarc/training_trace.csv",
+      "sha256": "14448576fd020a49c76a8d41b6131cbb85ebdf8be735d5014213a380a143c729",
+      "bytes": 630
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc/checkpoint_index.csv",
+      "sha256": "d896c1de73101e4a0bd78d2f173cfa92df4542594db6de0c5b8ee587a0aa657d",
+      "bytes": 233
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc/checkpoints/step0002/adapter_config.json",
+      "sha256": "2f68c8a7947d496b5dc6796b0b6386f33f9abe565953e009858e676059e97ff4",
+      "bytes": 935
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc/checkpoints/step0002/adapter_model.safetensors",
+      "sha256": "adf4d6595619745c6f5a5f02dae1c5fed918c88f08bfa859783bec6e6be89451",
+      "bytes": 66126768
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc/checkpoints/step0002/README.md",
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc/diagnostic_rows.jsonl",
+      "sha256": "c4104a90c9dd8d6f98502e41f5c0c20b9d8a497db52017f74368b157505f730e",
+      "bytes": 12725
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc/dynamic_gradient_geometry.jsonl",
+      "sha256": "539be650efe141d28bf25d59eb8d024b0e7e89e0f09892c8fc24001ac93f66c4",
+      "bytes": 6492
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc/run_manifest.json",
+      "sha256": "bf3544b5977d06171e4d5732187d4ba0a5571addd6ea8b394df66eb1ee37a30a",
+      "bytes": 90082
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc/training_trace.csv",
+      "sha256": "95e2ad7b2d3e12ba7284ec78224b3cd58e6c0731d2bb48262b07f14f97bc3d96",
+      "bytes": 635
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/qetarc_smoke_decision.json",
+      "sha256": "06a87a5a92fdefa35025cca06682a8f7e2645363dd58af4dd67181a05946c754",
+      "bytes": 8798
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/QETARC_SMOKE_REPORT.md",
+      "sha256": "91d2d3663a6834bbb934df301ee32510fd555171c49be3337aa765d162403ba9",
+      "bytes": 1534
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/tarc/checkpoint_index.csv",
+      "sha256": "c74fd7065ebb528ad7194daebd9eb98aea8a02ba22894588989a52ab04efd788",
+      "bytes": 231
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/tarc/checkpoints/step0002/adapter_config.json",
+      "sha256": "2f68c8a7947d496b5dc6796b0b6386f33f9abe565953e009858e676059e97ff4",
+      "bytes": 935
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/tarc/checkpoints/step0002/adapter_model.safetensors",
+      "sha256": "5f0c9ccf86616ae014ee038b4465f403050ce74e3907ed4d6c3045658a89de66",
+      "bytes": 66126768
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/tarc/checkpoints/step0002/README.md",
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/tarc/diagnostic_rows.jsonl",
+      "sha256": "88f16c44785bac7140eff7c0f30123ea82fbe4dbd83d062a1e892f2005a4eecd",
+      "bytes": 12728
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/tarc/dynamic_gradient_geometry.jsonl",
+      "sha256": "b7da753ecad951b3af2af7cf0a29013ba33e6988011843914954851f3c32cb99",
+      "bytes": 5793
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/tarc/run_manifest.json",
+      "sha256": "37ac6546d1c4e3739acfb159833d11d331e922e9c0c3e628a71d6863e3685b86",
+      "bytes": 89798
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/tarc/training_trace.csv",
+      "sha256": "c73f3f894ef1fc04d86a2564fc95a618bc173d5619d95bdf039786f2ea932f04",
+      "bytes": 626
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/uniform/checkpoint_index.csv",
+      "sha256": "ee3ac8d1139b513dc75e4cffa2c46611e0f59a9f6e494c3dde45a6e8d7cdbee7",
+      "bytes": 234
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/uniform/checkpoints/step0002/adapter_config.json",
+      "sha256": "2f68c8a7947d496b5dc6796b0b6386f33f9abe565953e009858e676059e97ff4",
+      "bytes": 935
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/uniform/checkpoints/step0002/adapter_model.safetensors",
+      "sha256": "8e3ebeb68245eff8ce9ab268b485d917bfd7a4051ba5ba847acb0a23f54596c4",
+      "bytes": 66126768
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/uniform/checkpoints/step0002/README.md",
+      "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+      "bytes": 5180
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/uniform/diagnostic_rows.jsonl",
+      "sha256": "7086929fd0dcf7e43e431e246bc086e51f97568e94876a96268faed818bc097a",
+      "bytes": 12708
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/uniform/dynamic_gradient_geometry.jsonl",
+      "sha256": "533f026982944e371b59108b71e98d664198076602e5440c4a2bb1307962fe0a",
+      "bytes": 5216
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/uniform/run_manifest.json",
+      "sha256": "23a508648842fb0563ae2a27cbc85b6901b35b9a8267f201c49a038905f89e04",
+      "bytes": 89627
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc/smoke_v2/uniform/training_trace.csv",
+      "sha256": "0ff1e6c901d631a17527801b6c663dcc44bfe8f3ccd8b2f1be56e7e71b73f3e9",
+      "bytes": 635
+    }
+  ]
+}
