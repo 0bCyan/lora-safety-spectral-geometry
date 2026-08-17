@@ -1,0 +1,56 @@
+{
+  "name": "step3_medscmcd_seed6_registered_frontier_audit_v1",
+  "route": "STOP_MEDSCMCD_P0_NO_MINIMUM_EFFECTIVE_DOSE",
+  "registered_path_candidates": 33,
+  "registered_positive_candidates": 32,
+  "positive_candidates_passing_retention": 0,
+  "positive_candidates_passing_target_floor": 31,
+  "positive_candidates_passing_target_gain": 31,
+  "positive_candidates_passing_all_fit_gates": 0,
+  "raw": {
+    "fraction": 0.0,
+    "fit_target_floor": 0.04744494738890731,
+    "worst_fit_protected_retention": 1.0
+  },
+  "first_positive": {
+    "fraction": 0.03125,
+    "fit_target_floor": 0.04933057949275929,
+    "fit_target_gain": 0.0018856321038519808,
+    "worst_fit_protected_retention": 0.9436408336475804,
+    "protected_bottleneck_unit": "fit_01",
+    "protected_bottleneck_certificate": "tarc",
+    "protected_bottleneck_raw_score": 0.00922871056539875,
+    "protected_bottleneck_candidate_score": 0.00870858813142511,
+    "target_bottleneck_unit": "fit_10",
+    "target_bottleneck_certificate": "branch_negative_gap"
+  },
+  "first_target_gate_pass": {
+    "fraction": 0.0625,
+    "fit_target_floor": 0.05124811245580394,
+    "fit_target_gain": 0.0038031650668966313,
+    "worst_fit_protected_retention": 0.8910048668334865
+  },
+  "first_interval_secant_diagnostic": {
+    "continuous_optimizer_map_claimed": false,
+    "lambda_at_retention_0_95": 0.0277239728889801,
+    "interpolated_target_floor_at_retention_0_95": 0.0491178182153324,
+    "lambda_at_target_floor_0_05": 0.0423440998557131,
+    "interpolated_retention_at_target_floor_0_05": 0.923632698630029
+  },
+  "calibration": {
+    "candidate_was_raw_fallback": true,
+    "conformal_rank": 20,
+    "threshold": -0.049999953730152646,
+    "policy_marginal_protection_lower_bound": 0.9523809523809523,
+    "conditional_on_acceptance_coverage_claimed": false
+  },
+  "diagnostic": {
+    "candidate_minus_raw_target_minimum_mean": -3.4542545117657864e-9,
+    "target_macro_finite_loss_gain_mean": 0.00046360199634371446,
+    "target_macro_finite_loss_gain_ci95_lower": -0.0013079191559830367,
+    "target_macro_finite_loss_gain_ci95_upper": 0.001826508536180817,
+    "target_macro_sign_test_p": 0.6875
+  },
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
