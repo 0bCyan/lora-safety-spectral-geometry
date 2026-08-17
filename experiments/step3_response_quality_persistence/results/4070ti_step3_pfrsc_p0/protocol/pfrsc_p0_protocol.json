@@ -1,0 +1,293 @@
+{
+  "name": "step3_pfrsc_protected_finite_radius_homotopy_p0_protocol_v1",
+  "status": "prospective_before_any_PFRSC_model_forward",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_pfrsc_p0/protocol/pfrsc_p0_protocol.json",
+  "entry_commit": "23888dbfbdd1838810d3e1cfb31ad3ac2396a168",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_pfrsc_p0_seed3.json",
+  "objective": "Test whether a raw-MCD-anchored finite homotopy can improve the exact route/branch bottleneck while retaining at least 95 percent of risk, uniform, and continuation predicted descent on construction units and preserving those objectives on a disjoint finite-step diagnostic.",
+  "experiment_mode": "exploratory_seed3_zero_optimizer_step_protected_homotopy_on_reused_disclosed_data",
+  "prior_result": {
+    "decision_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_frsc_p0/run/frsc_p0_route.json",
+    "decision_sha256": "68f513857445c3389b0d27ba5be4650cae012c082bf8e6e37fa4589e37a707e1",
+    "route": "STOP_FRSC_P0_RAW_COMPARATOR_FAILED",
+    "registered_signal": "Unconstrained FRSC passed exact finite-radius search, diagnostic common descent, finite-step realization, and materiality, but improved only 3 of 7 actual objectives relative to raw MCD. Risk, uniform, and continuation were absent from every selected subset and were worse on all eight paired diagnostics."
+  },
+  "frozen_inputs": {
+    "method_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_PFRSC_protected_finite_radius_homotopy_plan.md",
+      "sha256": "972e29ba53ab2003ee9c143541b514709436febcc1978ea6590f1594e718d33a"
+    },
+    "config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_pfrsc_p0_seed3.json",
+      "sha256": "2ff933f4bd67949127e197f1e916bb89f0740e87d71a39730b4c55314d10beeb"
+    },
+    "pfrsc_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_pfrsc_common.py",
+      "sha256": "6d024bb0cb808b62592f080043230fb9ea72153de506aa901f5e97fd39c5b1fd"
+    },
+    "pfrsc_common_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_pfrsc_common.py",
+      "sha256": "24e4dc5f36c4f4326e4d9c0f35232cf5d91190c352af852272b6fe1763b967cf"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_pfrsc_p0.py",
+      "sha256": "66563161ffe554313b7532906481b17f93180aa03dda0d1ce2d9962474bce740"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_pfrsc_p0.py",
+      "sha256": "8822f9f5dff1f337b0deba7d614d37842bd5b68f04f754e7bac514a7ee63f1ea"
+    },
+    "frsc_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_frsc_common.py",
+      "sha256": "579be9bbe5c1f87d71b6bb6b24325ab6f889639fe28a5a9fc8ddc118c42be7b4"
+    },
+    "frsc_common_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_frsc_common.py",
+      "sha256": "acb5e4d9d28b694857dda9ca4b3d1a86147c3a13631b982b7cca7ad8ad924517"
+    },
+    "mcd_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_common.py",
+      "sha256": "5bce3e955a545fdaf904aa6826a447d9602bc6898176608ef0d80df38ac735e5"
+    },
+    "optimizer_map": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ojmcd_common.py",
+      "sha256": "4c0e523cb49a1981a590ed6106e143cedd76bbad7e0acaed3b1eed2a76950573"
+    },
+    "optimizer_unit_reference": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ojmcd_p0.py",
+      "sha256": "03acdea9f8d85c03fdef99ef6569359fa480f8f3a5ff0824de9f98f803096536"
+    },
+    "objective_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_training.py",
+      "sha256": "5cd63cfc7334be71368923edf60684ea7adfe0db87bdb69df1981c58ecfb634a"
+    },
+    "qetarc_gradient_ops": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_qetarc_common.py",
+      "sha256": "6c55a6fca6aa9e718f5cc036a91542325570ee02bfc9565900edae5681f00055"
+    },
+    "etarc_objectives": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_etarc_p0.py",
+      "sha256": "ca43d66ed626543803b4d999defe4d092f603d1db9b0ee59f21d8ee913d1cf43"
+    },
+    "tarc_features": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_tarc_p0.py",
+      "sha256": "d357b753c763ef4d2a152f8867ffe6fabbbcdf36fd73c7587d0e16a0a17fd0b1"
+    },
+    "gradient_math": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_common.py",
+      "sha256": "70b17175e00cddda9ea8394717c6fd02770bc446a755680d2e3965c6bfa8d998"
+    },
+    "source_validation": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_p0.py",
+      "sha256": "bdc98f4f27efcc09f60a40c8fa2a486655e3aabe2c825b1c19ec5b3e299e0c51"
+    },
+    "risk_loss_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_training.py",
+      "sha256": "5095a6db54ef23cb887201ffab2a23f9483acbe8c5993859fe084ea9dabf3800"
+    },
+    "state_hash_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "model_reference": {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "risk_source": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    "prior_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_frsc_p0/run/frsc_p0_route.json",
+      "sha256": "68f513857445c3389b0d27ba5be4650cae012c082bf8e6e37fa4589e37a707e1"
+    },
+    "prior_interpretation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_frsc_p0/analysis/FRSC_P0_INTERPRETATION.md",
+      "sha256": "a655fef08ec787018a61b2b3b2f4026b942b89e46cb2b692047fdf292e4ba35b"
+    },
+    "structural_audit": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    }
+  },
+  "source": {
+    "safety_targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+    "risk_data_path": "data/processed/unified_pool/train_risk.jsonl",
+    "structural_audit_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+    "safety_rows": 80,
+    "safety_prompt_clusters": 40,
+    "risk_rows": 256,
+    "fresh_for_confirmation": false,
+    "role": "seed3_protected_mechanism_replication_only",
+    "core100_used": false,
+    "heldout_used": false
+  },
+  "selection": {
+    "risk_order_seed": 3,
+    "safety_diagnostic_rule": "minimum_sha256_of_pfrsc-seed3-diagnostic-v1|category|sample_id",
+    "safety_training_order": "ascending_sha256_of_pfrsc-seed3-training-v1|sample_id_after_diagnostic_removal",
+    "training_blocks": [
+      {
+        "block_id": "training_01",
+        "risk_row_indices": [106, 204, 47, 105],
+        "safety_sample_ids": ["eval_safety_000125", "eval_safety_000109", "eval_safety_000253", "eval_safety_000232"]
+      },
+      {
+        "block_id": "training_02",
+        "risk_row_indices": [32, 181, 96, 255],
+        "safety_sample_ids": ["eval_safety_000188", "eval_safety_000225", "eval_safety_000161", "eval_safety_000101"]
+      },
+      {
+        "block_id": "training_03",
+        "risk_row_indices": [93, 8, 74, 157],
+        "safety_sample_ids": ["eval_safety_000147", "eval_safety_000269", "eval_safety_000116", "eval_safety_000113"]
+      },
+      {
+        "block_id": "training_04",
+        "risk_row_indices": [145, 168, 232, 198],
+        "safety_sample_ids": ["eval_safety_000286", "eval_safety_000279", "eval_safety_000258", "eval_safety_000211"]
+      },
+      {
+        "block_id": "training_05",
+        "risk_row_indices": [151, 45, 38, 153],
+        "safety_sample_ids": ["eval_safety_000260", "eval_safety_000244", "eval_safety_000263", "eval_safety_000126"]
+      },
+      {
+        "block_id": "training_06",
+        "risk_row_indices": [164, 65, 91, 88],
+        "safety_sample_ids": ["eval_safety_000236", "eval_safety_000205", "eval_safety_000295", "eval_safety_000180"]
+      },
+      {
+        "block_id": "training_07",
+        "risk_row_indices": [152, 195, 193, 112],
+        "safety_sample_ids": ["eval_safety_000118", "eval_safety_000276", "eval_safety_000212", "eval_safety_000226"]
+      },
+      {
+        "block_id": "training_08",
+        "risk_row_indices": [18, 230, 108, 77],
+        "safety_sample_ids": ["eval_safety_000138", "eval_safety_000265", "eval_safety_000156", "eval_safety_000243"]
+      }
+    ],
+    "diagnostic_block": {
+      "block_id": "fixed_diagnostic_8category_seed3",
+      "risk_row_indices": [188, 110, 49, 102, 89, 122, 244, 155],
+      "safety_sample_ids": [
+        "eval_safety_000142",
+        "eval_safety_000222",
+        "eval_safety_000191",
+        "eval_safety_000268",
+        "eval_safety_000152",
+        "eval_safety_000107",
+        "eval_safety_000294",
+        "eval_safety_000179"
+      ],
+      "safety_categories": [
+        "cyber abuse",
+        "financial evasion",
+        "fraud or deception",
+        "harassment or coercion",
+        "harmful wrongdoing",
+        "physical harm",
+        "privacy invasion",
+        "public manipulation"
+      ]
+    },
+    "training_safety_prompts": 32,
+    "diagnostic_safety_prompts": 8,
+    "training_risk_rows": 32,
+    "diagnostic_risk_rows": 8,
+    "training_diagnostic_overlap": 0
+  },
+  "design": {
+    "certificates": ["risk", "uniform", "tarc", "etarc", "continuation", "branch_entropy", "branch_negative_gap"],
+    "protected_certificates": ["risk", "uniform", "continuation"],
+    "target_certificates": ["tarc", "etarc", "branch_entropy", "branch_negative_gap"],
+    "source_candidate_family": "all_127_nonempty_certificate_subsets",
+    "source_direction": "minimum_norm_simplex_combination_with_fixed_uniform_gradient_norm_budget",
+    "source_screening": "top_16_by_exact_target_min_then_overall_min_then_target_mean_then_smaller_subset_then_lower_bitmask",
+    "source_top_k": 16,
+    "homotopy_fractions": [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0],
+    "homotopy_candidates_per_unit": 129,
+    "exact_map_evaluations_per_unit": 239,
+    "protected_retention_floor": 0.95,
+    "selection_objective": "maximum_exact_route_branch_minimum_score_subject_to_risk_uniform_continuation_score_retention",
+    "tie_break": "overall_min_then_target_mean_then_protected_retention_then_smaller_fraction_then_smaller_subset_then_lower_bitmask",
+    "auxiliary_gradient_norm_ratio": 1.0,
+    "safety_mix": 0.2,
+    "learning_rate": 0.0002,
+    "top_candidates_serialized": 8,
+    "diagnostic_gradients_used_for_selection": false,
+    "transient_parameter_restoration_required": true,
+    "raw_gradient_tensors_serialized": false
+  },
+  "statistics": {
+    "unit": "seed3_optimizer_unit_direction_block",
+    "paired": true,
+    "units": 8,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026081903,
+    "bootstrap_interval": "percentile_95",
+    "sign_test": "exact_two_sided_excluding_exact_ties"
+  },
+  "gates": {
+    "gradient_budget_relative_tolerance": 1e-6,
+    "training_target_score_min": 0.05,
+    "search_target_gain_mean_min": 0.002,
+    "nonzero_fraction_rate_min": 0.75,
+    "diagnostic_exact_margin_min": 0.02,
+    "diagnostic_certificate_score_min": 0.02,
+    "diagnostic_advantage_over_baseline_mean_min": 0.02,
+    "protected_mean_relative_loss_max": 0.05,
+    "protected_ci_relative_loss_max": 0.075,
+    "protected_single_unit_relative_loss_max": 0.15,
+    "diagnostic_target_gain_mean_min": 0.002,
+    "target_macro_actual_relative_gain_mean_min": 0.02,
+    "target_objective_mean_relative_loss_max": 0.05,
+    "target_objective_single_unit_relative_loss_max": 0.20,
+    "diagnostic_mean_target_score_min": 0.05,
+    "paired_ci_lower_min": 0.0,
+    "paired_sign_p_max": 0.05,
+    "mean_actual_loss_reduction_min": 0.0,
+    "actual_reduction_positive_rate_min": 0.75,
+    "mean_actual_to_predicted_ratio_min": 0.25,
+    "mean_actual_to_predicted_ratio_max": 1.75,
+    "minimum_vram_headroom_fraction": 0.10
+  },
+  "outputs": {
+    "structural_audit": "experiments/step3_response_quality_persistence/results/4070ti_step3_pfrsc_p0/run/pfrsc_p0_structural_audit.json",
+    "block_rows": "experiments/step3_response_quality_persistence/results/4070ti_step3_pfrsc_p0/run/pfrsc_p0_block_rows.jsonl",
+    "gradient_diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_pfrsc_p0/run/pfrsc_p0_gradient_diagnostics.json",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_pfrsc_p0/run/pfrsc_p0_environment.json",
+    "route": "experiments/step3_response_quality_persistence/results/4070ti_step3_pfrsc_p0/run/pfrsc_p0_route.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_pfrsc_p0/run/PFRSC_P0_REPORT.md",
+    "run_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_pfrsc_p0/run/pfrsc_p0_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_PFRSC_P0_AUTHORIZE_MATCHED_TRAINING_PROTOCOL",
+  "failure_routes": [
+    "STOP_PFRSC_P0_INVALID",
+    "STOP_PFRSC_P0_PROTECTED_SEARCH_FAILED",
+    "STOP_PFRSC_P0_DIAGNOSTIC_TRANSFER_FAILED",
+    "STOP_PFRSC_P0_FINITE_STEP_COMMON_DESCENT_FAILED",
+    "STOP_PFRSC_P0_PROTECTED_NONINFERIORITY_FAILED",
+    "STOP_PFRSC_P0_TARGET_ADVANTAGE_FAILED",
+    "STOP_PFRSC_P0_EFFECT_TOO_WEAK"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_matched_PFRSC_training_protocol_only",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "virtual_parameter_evaluations": 24,
+  "checkpoint_writes_authorized": false,
+  "candidate_generation_authorized": false,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
