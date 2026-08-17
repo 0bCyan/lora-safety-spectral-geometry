@@ -1,0 +1,210 @@
+{
+  "name": "step3_rufmcd_p0_v2_posthoc_angle_sensitivity_v1",
+  "analysis_status": "posthoc_mechanism_audit_not_authorized_for_selection",
+  "source_files": {
+    "fit_geometry": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v2/run/rufmcd_p0_v2_fit_geometry.json",
+      "sha256": "cc8fc357c2a155a0ae0f3c8c4417b386dbcc0e08b98055318f28a363bdadf9f6"
+    },
+    "calibration_rows": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v2/run/rufmcd_p0_v2_calibration_rows.jsonl",
+      "sha256": "9ec39a4dc5eac322fbcdfb13df398517e0ed9ece27e7528d1e1f37a24a960fea"
+    },
+    "route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v2/run/rufmcd_p0_v2_route.json",
+      "sha256": "a7c82bcdaf6ddb6c54b94e18e0a30a028bc69e17215597487dd75c2381cf874b"
+    }
+  },
+  "source_route": "STOP_RUFMCD_P0_CONFORMAL_SELECTIVE_POLICY_FAILED",
+  "score_formula": "raw_score*cos(theta)+tangent_score*sin(theta)",
+  "calibration_tangent_reconstruction": "(candidate_score-raw_score*cos(fixed_theta))/sin(fixed_theta)",
+  "maximum_calibration_candidate_reconstruction_error": 2.7755575615628914e-17,
+  "interval_radians": [
+    0.0,
+    0.3143421044892443
+  ],
+  "fixed_theta": 0.31434110448924435,
+  "thresholds": {
+    "protected_retention_floor": 0.95,
+    "target_score_floor": 0.05,
+    "target_gain_floor": 0.002,
+    "raw_fit_target_floor": 0.01226718194907743,
+    "effective_fit_target_floor": 0.05
+  },
+  "facet_counts": {
+    "fit_protected": 48,
+    "fit_target": 36,
+    "calibration_protected": 80,
+    "calibration_target_descriptive_only": 60
+  },
+  "fixed_theta_metrics": {
+    "theta": 0.31434110448924435,
+    "theta_degrees": 18.010418614714517,
+    "fit": {
+      "minimum_protected_retention": 1.079422840580348,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "fit_11",
+          "certificate": "tarc"
+        }
+      ],
+      "target_floor": 0.17942287288649425,
+      "target_bottlenecks": [
+        {
+          "unit_id": "fit_03",
+          "certificate": "etarc"
+        },
+        {
+          "unit_id": "fit_09",
+          "certificate": "etarc"
+        }
+      ],
+      "target_gain_over_raw": 0.16715569093741683,
+      "all_gates_pass": true
+    },
+    "calibration": {
+      "minimum_protected_retention": -0.44077357634142933,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "calibration_12",
+          "certificate": "tarc"
+        }
+      ],
+      "joint_nonconformity": 1.3907735763414293,
+      "all_protected_pass": false
+    },
+    "joint_fit_and_calibration_pass": false
+  },
+  "fit_feasible_intervals": [
+    {
+      "lower": 0.0696559140720927,
+      "upper": 0.3143421044892443
+    }
+  ],
+  "calibration_protected_feasible_intervals": [
+    {
+      "lower": 0.0,
+      "upper": 0.011094320259904533
+    }
+  ],
+  "joint_fit_and_calibration_feasible_intervals": [],
+  "first_fit_feasible_theta": 0.0696559140720927,
+  "calibration_safe_prefix_upper_theta": 0.011094320259904533,
+  "metrics_at_first_fit_feasible_theta": {
+    "theta": 0.0696559140720927,
+    "theta_degrees": 3.990989894456832,
+    "fit": {
+      "minimum_protected_retention": 1.0264833127138047,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "fit_11",
+          "certificate": "tarc"
+        },
+        {
+          "unit_id": "fit_12",
+          "certificate": "tarc"
+        }
+      ],
+      "target_floor": 0.04999999999999998,
+      "target_bottlenecks": [
+        {
+          "unit_id": "fit_09",
+          "certificate": "branch_entropy"
+        }
+      ],
+      "target_gain_over_raw": 0.03773281805092255,
+      "all_gates_pass": true
+    },
+    "calibration": {
+      "minimum_protected_retention": 0.6842824430218072,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "calibration_12",
+          "certificate": "tarc"
+        }
+      ],
+      "joint_nonconformity": 0.26571755697819277,
+      "all_protected_pass": false
+    },
+    "joint_fit_and_calibration_pass": false
+  },
+  "metrics_at_calibration_safe_prefix_upper": {
+    "theta": 0.011094320259904533,
+    "theta_degrees": 0.6356577274590123,
+    "fit": {
+      "minimum_protected_retention": 1.004546407797306,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "fit_03",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_06",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_07",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_10",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_11",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_11",
+          "certificate": "tarc"
+        },
+        {
+          "unit_id": "fit_12",
+          "certificate": "tarc"
+        }
+      ],
+      "target_floor": 0.01828573467455865,
+      "target_bottlenecks": [
+        {
+          "unit_id": "fit_09",
+          "certificate": "branch_entropy"
+        }
+      ],
+      "target_gain_over_raw": 0.00601855272548122,
+      "all_gates_pass": false
+    },
+    "calibration": {
+      "minimum_protected_retention": 0.9500000000000001,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "calibration_12",
+          "certificate": "tarc"
+        }
+      ],
+      "joint_nonconformity": -1.1102230246251565e-16,
+      "all_protected_pass": true
+    },
+    "joint_fit_and_calibration_pass": false
+  },
+  "angular_incompatibility_gap": 0.05856159381218817,
+  "joint_feasible_angle_exists": false,
+  "analytic_boundary_count": 17,
+  "root_record_count": 14,
+  "method": "analytic roots of every trigonometric gate followed by exact midpoint classification of all induced intervals",
+  "selection_boundary": {
+    "calibration_scores_used_for_original_selection": false,
+    "diagnostic_scores_used_for_original_selection": false,
+    "posthoc_angle_selection_authorized": false,
+    "threshold_relaxation_authorized": false,
+    "fresh_validation_required_for_successor": true
+  },
+  "registered_result_consistency": {
+    "route_threshold": 1.3907735763414293,
+    "fixed_theta_minimum_calibration_retention": -0.4407735763414293,
+    "fixed_theta_fit_target_floor": 0.179422870078008,
+    "optimizer_steps": 0,
+    "training_authorized": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  }
+}
