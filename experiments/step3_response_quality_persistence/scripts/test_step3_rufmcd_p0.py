@@ -146,6 +146,7 @@ class RufmcdProtocolTests(unittest.TestCase):
         self.assertTrue(generated["constraint_generation_certified"])
         self.assertEqual(generated["constraint_generation_total_facet_count"], 4)
         self.assertEqual(generated["constraint_generation_active_facet_count"], 4)
+        self.assertEqual(generated["solver"], p0.SOLVER_VARIANT)
         self.assertLessEqual(generated["full_primal_dual_gap"], 1e-7)
         self.assertAlmostEqual(
             generated["full_primal_value"], direct["primal_value"], places=6
@@ -155,6 +156,23 @@ class RufmcdProtocolTests(unittest.TestCase):
             p0.gradient_math.gradient_norm(direct_direction),
             places=6,
         )
+
+    def test_analytic_refinement_certifies_float32_small_margin_scale(self) -> None:
+        torch.manual_seed(23)
+        gradients = {
+            f"facet_{index:02d}": {"x": 1e-4 * torch.randn(128)}
+            for index in range(12)
+        }
+        offsets = {
+            name: 0.001 + 0.0002 * index
+            for index, name in enumerate(gradients)
+        }
+        _, audit = p0._analytic_affine_minimax_direction(
+            gradients, offsets, 3000.0, 1e-9, 1e-7
+        )
+        self.assertTrue(audit["solver_success"])
+        self.assertLessEqual(audit["kkt_residual"], 1e-7)
+        self.assertLessEqual(audit["primal_dual_gap"], 1e-7)
 
     def test_synthetic_full_geometry_closes_all_eighty_four_facets(self) -> None:
         torch.manual_seed(7)

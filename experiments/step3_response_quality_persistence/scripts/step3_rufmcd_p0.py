@@ -6,6 +6,8 @@ import argparse
 import math
 from typing import Any
 
+import numpy as np
+
 import step3_nptmcd_affine_common as affine
 import step3_nptmcd_p0 as base
 import step3_ojmcd_common as optimizer_geometry
@@ -22,6 +24,7 @@ METHOD_NAME = "RUF-MCD"
 PROTECTED_FACET_COUNT = base.FIT_UNITS * len(base.PROTECTED_CERTIFICATES)
 TARGET_FACET_COUNT = base.FIT_UNITS * len(base.TARGET_CERTIFICATES)
 FACET_COUNT = PROTECTED_FACET_COUNT + TARGET_FACET_COUNT
+SOLVER_VARIANT = "analytic_active_set_kkt_refinement_from_slsqp_support_seed"
 _BASE_CONTEXT = base.context
 _BASE_EVALUATE_GATES = base.evaluate_gates
 _BASE_SELECT_ROUTE = base.select_route
@@ -58,6 +61,8 @@ def context(
         or float(config.get("rufmcd_constraint_generation_full_gap_max", -1.0))
         != float(design.get("constraint_generation_full_gap_max", -2.0))
         or float(design.get("affine_actual_minus_predicted_max", -1.0)) != 1e-6
+        or design.get("affine_solver") != SOLVER_VARIANT
+        or config.get("rufmcd_affine_solver_variant") != SOLVER_VARIANT
     ):
         raise base.NptmcdP0ValidationError(
             "RUF-MCD protocol registry differs from the runner"
@@ -266,6 +271,277 @@ def _protected_transfer_audit(
     }
 
 
+def _analytic_affine_minimax_direction(
+    gradients: dict[str, dict[str, Any]],
+    offsets: dict[str, float],
+    budget_norm: float,
+    tolerance: float,
+    kkt_limit: float,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Refine an affine simplex solution by solving its support KKT equations.
+
+    For a dual support A, write ``x = ||G lambda|| / B``.  The active KKT
+    equations imply ``lambda_A = p + x q``; the norm identity then becomes a
+    scalar quadratic in x.  Support additions/deletions enforce the remaining
+    simplex inequalities.  SLSQP is used only to propose support seeds; the
+    returned certificate is recomputed from the analytic KKT solution.
+    """
+    if (
+        len(gradients) < 2
+        or set(gradients) != set(offsets)
+        or not math.isfinite(budget_norm)
+        or budget_norm <= 0.0
+        or not math.isfinite(tolerance)
+        or tolerance <= 0.0
+        or not math.isfinite(kkt_limit)
+        or kkt_limit <= 0.0
+    ):
+        raise ValueError("RUF-MCD analytic affine inputs are invalid")
+    names = list(gradients)
+    tensors = [gradients[name] for name in names]
+    if not tensors[0] or any(set(item) != set(tensors[0]) for item in tensors[1:]):
+        raise ValueError("RUF-MCD analytic affine gradient dictionaries differ")
+    norms = [gradient_math.gradient_norm(item) for item in tensors]
+    if any(not math.isfinite(value) or value <= 0.0 for value in norms):
+        raise ValueError("RUF-MCD analytic affine gradients are invalid")
+    gram = np.asarray(
+        [
+            [gradient_math.gradient_dot(left, right) for right in tensors]
+            for left in tensors
+        ],
+        dtype=np.float64,
+    )
+    gram = 0.5 * (gram + gram.T)
+    offset_values = np.asarray([offsets[name] for name in names], dtype=np.float64)
+    if not np.isfinite(gram).all() or not np.isfinite(offset_values).all():
+        raise ValueError("RUF-MCD analytic affine Gram matrix is invalid")
+
+    seed_error = None
+    try:
+        _, seed = optimizer_geometry.affine_minimax_direction(
+            gradients, offsets, budget_norm, tolerance
+        )
+        seed_weights = np.asarray(
+            [float(seed["dual_weights"][name]) for name in names],
+            dtype=np.float64,
+        )
+    except (ValueError, RuntimeError) as exc:
+        seed = {}
+        seed_weights = np.full(len(names), 1.0 / len(names), dtype=np.float64)
+        seed_error = str(exc)
+
+    support_seeds = []
+    for threshold in (1e-10, 1e-9, 1e-8, 1e-7):
+        support = tuple(
+            index for index, weight in enumerate(seed_weights) if weight > threshold
+        )
+        if support and support not in support_seeds:
+            support_seeds.append(support)
+    all_support = tuple(range(len(names)))
+    if all_support not in support_seeds:
+        support_seeds.append(all_support)
+
+    support_tolerance = 1e-10
+    weight_tolerance = 1e-8
+    candidates: list[dict[str, Any]] = []
+
+    def evaluate(
+        weights: np.ndarray, support: list[int], root: float, iterations: int
+    ) -> dict[str, Any]:
+        weights = np.asarray(weights, dtype=np.float64)
+        total = float(weights.sum())
+        if not math.isfinite(total) or total <= 0.0:
+            raise ValueError("RUF-MCD analytic simplex weights are invalid")
+        weights = np.maximum(weights, 0.0)
+        weights /= float(weights.sum())
+        weighted_norm = math.sqrt(max(0.0, float(weights @ gram @ weights)))
+        if not math.isfinite(weighted_norm) or weighted_norm <= tolerance:
+            raise ValueError("RUF-MCD analytic affine dual has no direction")
+        scores = offset_values + budget_norm * (gram @ weights) / weighted_norm
+        dual_value = float(offset_values @ weights) + budget_norm * weighted_norm
+        primal_value = float(np.min(scores))
+        active = [index for index, value in enumerate(weights) if value > weight_tolerance]
+        inactive = [index for index in range(len(names)) if index not in active]
+        stationarity = max(
+            [abs(float(scores[index]) - dual_value) for index in active] + [0.0]
+        )
+        inequality = max(
+            [max(0.0, dual_value - float(scores[index])) for index in inactive]
+            + [0.0]
+        )
+        kkt_residual = max(
+            stationarity,
+            inequality,
+            abs(float(weights.sum()) - 1.0),
+            max(0.0, -float(weights.min())),
+        )
+        return {
+            "weights": weights,
+            "scores": scores,
+            "dual_value": dual_value,
+            "primal_value": primal_value,
+            "primal_dual_gap": abs(primal_value - dual_value),
+            "kkt_residual": kkt_residual,
+            "support": list(support),
+            "root": root,
+            "support_iterations": iterations,
+            "weighted_gradient_norm": weighted_norm,
+        }
+
+    def refine(initial_support: tuple[int, ...]) -> dict[str, Any] | None:
+        support = sorted(set(initial_support))
+        for iteration in range(len(names) + 2):
+            if not support:
+                return None
+            indices = np.asarray(support, dtype=np.int64)
+            block = gram[np.ix_(indices, indices)]
+            block_offsets = offset_values[indices]
+            inverse = np.linalg.pinv(block, rcond=1e-12)
+            ones = np.ones(len(indices), dtype=np.float64)
+            inverse_one = inverse @ ones
+            inverse_offset = inverse @ block_offsets
+            denominator = float(ones @ inverse_one)
+            if not math.isfinite(denominator) or denominator <= 1e-14:
+                return None
+            coefficient = float(ones @ inverse_offset) / denominator
+            p = inverse_one / denominator
+            q = coefficient * inverse_one - inverse_offset
+            constant = float(p @ block @ p)
+            linear = float(2.0 * p @ block @ q)
+            quadratic = float(q @ block @ q) - budget_norm**2
+            coefficient_scale = max(1.0, abs(constant), abs(linear), abs(quadratic))
+            if abs(quadratic) <= 1e-14 * coefficient_scale:
+                roots = (
+                    (-constant / linear,)
+                    if abs(linear) > 1e-14 * coefficient_scale
+                    else ()
+                )
+            else:
+                roots = tuple(np.roots([quadratic, linear, constant]))
+            root_candidates = []
+            for raw_root in roots:
+                if abs(float(np.imag(raw_root))) > 1e-7:
+                    continue
+                root = float(np.real(raw_root))
+                if not math.isfinite(root) or root <= 0.0:
+                    continue
+                active_weights = p + root * q
+                weights = np.zeros(len(names), dtype=np.float64)
+                weights[indices] = active_weights
+                try:
+                    root_candidates.append(
+                        evaluate(weights, support, root, iteration + 1)
+                    )
+                except ValueError:
+                    continue
+            if not root_candidates:
+                return None
+            feasible = [
+                item
+                for item in root_candidates
+                if min(item["weights"][indices]) >= -support_tolerance
+            ]
+            selected = min(
+                feasible or root_candidates,
+                key=lambda item: (
+                    max(0.0, -float(item["weights"][indices].min())),
+                    item["kkt_residual"],
+                    item["primal_dual_gap"],
+                ),
+            )
+            if min(selected["weights"][indices]) < -support_tolerance:
+                drop = int(indices[np.argmin(selected["weights"][indices])])
+                support.remove(drop)
+                continue
+            weights = selected["weights"]
+            violations = [
+                index
+                for index in range(len(names))
+                if index not in support
+                and float(selected["scores"][index])
+                < selected["dual_value"] - support_tolerance
+            ]
+            if violations:
+                support.append(
+                    min(
+                        violations,
+                        key=lambda index: (float(selected["scores"][index]), index),
+                    )
+                )
+                support = sorted(set(support))
+                continue
+            return selected
+        return None
+
+    for support in support_seeds:
+        candidate = refine(support)
+        if candidate is not None:
+            candidates.append(candidate)
+    if not candidates:
+        raise ValueError(
+            "RUF-MCD analytic affine support refinement found no candidate"
+        )
+    certified = [
+        item
+        for item in candidates
+        if item["kkt_residual"] <= kkt_limit
+        and item["primal_dual_gap"] <= kkt_limit
+    ]
+    selected = min(
+        certified or candidates,
+        key=lambda item: (
+            item["dual_value"],
+            item["kkt_residual"],
+            item["primal_dual_gap"],
+        ),
+    )
+    weights = selected["weights"]
+    weighted = gradient_ops.scaled_gradient(tensors[0], float(weights[0]))
+    for tensor, weight in zip(tensors[1:], weights[1:], strict=True):
+        weighted = gradient_ops.add_gradients(
+            weighted, tensor, right_scale=float(weight)
+        )
+    direction = gradient_ops.scaled_gradient(
+        weighted, budget_norm / selected["weighted_gradient_norm"]
+    )
+    audit = {
+        "certificate_names": names,
+        "gradient_norms": dict(zip(names, norms, strict=True)),
+        "offsets": dict(offsets),
+        "gram_matrix": gram.tolist(),
+        "dual_weights": dict(zip(names, weights.tolist(), strict=True)),
+        "active_certificates": [
+            names[index]
+            for index, weight in enumerate(weights)
+            if weight > weight_tolerance
+        ],
+        "active_set_size": int(sum(weight > weight_tolerance for weight in weights)),
+        "dual_value": selected["dual_value"],
+        "primal_value": selected["primal_value"],
+        "primal_dual_gap": selected["primal_dual_gap"],
+        "kkt_residual": selected["kkt_residual"],
+        "certificate_scores": dict(
+            zip(names, selected["scores"].tolist(), strict=True)
+        ),
+        "weighted_gradient_norm": selected["weighted_gradient_norm"],
+        "budget_norm": budget_norm,
+        "final_direction_norm": gradient_math.gradient_norm(direction),
+        "solver": SOLVER_VARIANT,
+        "solver_success": bool(certified),
+        "solver_iterations": selected["support_iterations"],
+        "feasible_solver_candidates": len(candidates),
+        "analytic_support_size": len(selected["support"]),
+        "analytic_support": [names[index] for index in selected["support"]],
+        "analytic_root": selected["root"],
+        "seed_solver": seed.get("solver"),
+        "seed_solver_success": seed.get("solver_success"),
+        "seed_kkt_residual": seed.get("kkt_residual"),
+        "seed_primal_dual_gap": seed.get("primal_dual_gap"),
+        "seed_error": seed_error,
+    }
+    return direction, audit
+
+
 def _constraint_generation_affine_minimax(
     gradients: dict[str, dict[str, Any]],
     offsets: dict[str, float],
@@ -300,11 +576,12 @@ def _constraint_generation_affine_minimax(
     rounds = []
     for round_index in range(1, max_rounds + 1):
         active_names = [name for name in names if name in active]
-        direction, solver = optimizer_geometry.affine_minimax_direction(
+        direction, solver = _analytic_affine_minimax_direction(
             {name: gradients[name] for name in active_names},
             {name: offsets[name] for name in active_names},
             budget_norm,
             solver_tolerance,
+            kkt_limit,
         )
         if (
             not bool(solver["solver_success"])
@@ -312,7 +589,11 @@ def _constraint_generation_affine_minimax(
             or float(solver["primal_dual_gap"]) > kkt_limit
         ):
             raise ValueError(
-                "RUF-MCD active affine solver exceeded the frozen KKT limit"
+                "RUF-MCD active affine solver exceeded the frozen KKT limit: "
+                f"round={round_index}, active={len(active_names)}, "
+                f"solver_success={solver['solver_success']}, "
+                f"kkt={solver['kkt_residual']:.3e}, "
+                f"gap={solver['primal_dual_gap']:.3e}"
             )
         full_scores = {
             name: float(offsets[name])
