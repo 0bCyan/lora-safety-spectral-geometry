@@ -1,0 +1,25 @@
+{
+  "all_routes_complete_within_width": true,
+  "branching_prompt_rate": 1.0,
+  "categories": 8,
+  "distinct_route_pair_rate": 1.0,
+  "maximum_allowed_branch_width": 2,
+  "maximum_route_tokens": 4,
+  "mean_internal_trie_nodes": 6.0,
+  "mean_route_tokens": 4.0,
+  "minimum_route_tokens": 4,
+  "prompt_clusters": 40,
+  "registered_route_marker_counts": {
+    "i can't engage": 1,
+    "i can't help": 39,
+    "i won't assist": 18,
+    "i won't discuss": 1,
+    "i won't give": 1,
+    "i won't help": 7,
+    "i won't provide": 12,
+    "i won't suggest": 1
+  },
+  "route_width_limit": 16,
+  "rows": 80,
+  "targets_per_prompt": 2
+}

@@ -1,0 +1,1445 @@
+{
+  "auxiliary_budget_norm": 10.480132332103569,
+  "baseline_optimizer_map": {
+    "clip_coefficient": 0.1888756473342043,
+    "clipped_norm": 0.9999998005730736,
+    "clipping_active": true,
+    "displacement_norm": 2966.7771309500417,
+    "raw_norm": 5.294487803157132
+  },
+  "calibration_scores_used_for_selection": false,
+  "diagnostic_scores_used_for_selection": false,
+  "endpoint_audit": {
+    "budget_norm": 10.480132332103569,
+    "certificate_names": [
+      "risk",
+      "uniform",
+      "tarc",
+      "etarc",
+      "continuation",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "certificate_norms": {
+      "branch_entropy": 0.61774613506635,
+      "branch_negative_gap": 35.41742737667136,
+      "continuation": 9.03312575957084,
+      "etarc": 29.851232244930376,
+      "risk": 4.512203852926799,
+      "tarc": 13.151848937435789,
+      "uniform": 10.480132332103569
+    },
+    "gram_matrix": [
+      [
+        0.9999999345504835,
+        0.7010084673943141,
+        0.1560007548996456,
+        0.16703912030039256,
+        0.6235167196994992,
+        0.02155747905362486,
+        7.281116970839555e-05
+      ],
+      [
+        0.7010084673943141,
+        0.9999999370488546,
+        0.25390368899519244,
+        0.25273346061012925,
+        0.8177572507300865,
+        0.038676800100593635,
+        0.003545730368918806
+      ],
+      [
+        0.1560007548996456,
+        0.25390368899519244,
+        0.9999999139579476,
+        0.645677323507251,
+        0.14492978082705293,
+        -0.3153899145525403,
+        -0.39900597496392337
+      ],
+      [
+        0.16703912030039256,
+        0.25273346061012925,
+        0.645677323507251,
+        0.9999999152531288,
+        0.1592622194435999,
+        0.2167039169869508,
+        0.28290322847482235
+      ],
+      [
+        0.6235167196994992,
+        0.8177572507300865,
+        0.14492978082705293,
+        0.1592622194435999,
+        0.9999999337017818,
+        0.04995044544232961,
+        0.007876892423510853
+      ],
+      [
+        0.02155747905362486,
+        0.038676800100593635,
+        -0.3153899145525403,
+        0.2167039169869508,
+        0.04995044544232961,
+        1.0000000645291285,
+        0.8023780500435888
+      ],
+      [
+        7.281116970839555e-05,
+        0.003545730368918806,
+        -0.39900597496392337,
+        0.28290322847482235,
+        0.007876892423510853,
+        0.8023780500435888,
+        1.000000064092991
+      ]
+    ],
+    "raw_endpoint": {
+      "accepted_kkt_candidates": 1,
+      "active_certificates": [
+        "risk",
+        "tarc",
+        "continuation",
+        "branch_entropy",
+        "branch_negative_gap"
+      ],
+      "active_indices": [
+        0,
+        2,
+        4,
+        5,
+        6
+      ],
+      "active_set_size": 5,
+      "budget_norm": 10.480132332103569,
+      "certificate_cosines": {
+        "branch_entropy": 0.49364405333945816,
+        "branch_negative_gap": 0.49364405435536024,
+        "continuation": 0.4936440839502314,
+        "etarc": 0.7708817971659899,
+        "risk": 0.4936440787908556,
+        "tarc": 0.49364406776206865,
+        "uniform": 0.5458063390086414
+      },
+      "certificate_names": [
+        "risk",
+        "uniform",
+        "tarc",
+        "etarc",
+        "continuation",
+        "branch_entropy",
+        "branch_negative_gap"
+      ],
+      "dual_margin": 0.49364404926614647,
+      "dual_squared_margin": 0.24368445841059916,
+      "dual_weights": {
+        "branch_entropy": 0.10975038430205752,
+        "branch_negative_gap": 0.2999276572093347,
+        "continuation": 0.11132470248743062,
+        "etarc": 0.0,
+        "risk": 0.1151185145807819,
+        "tarc": 0.3638787414203952,
+        "uniform": 0.0
+      },
+      "final_direction_norm": 10.480131918080346,
+      "gradient_norms": {
+        "branch_entropy": 0.61774613506635,
+        "branch_negative_gap": 35.41742737667136,
+        "continuation": 9.03312575957084,
+        "etarc": 29.851232244930376,
+        "risk": 4.512203852926799,
+        "tarc": 13.151848937435789,
+        "uniform": 10.480132332103569
+      },
+      "gram_matrix": [
+        [
+          0.9999999345504835,
+          0.7010084673943141,
+          0.1560007548996456,
+          0.16703912030039256,
+          0.6235167196994992,
+          0.02155747905362486,
+          7.281116970839555e-05
+        ],
+        [
+          0.7010084673943141,
+          0.9999999370488546,
+          0.25390368899519244,
+          0.25273346061012925,
+          0.8177572507300865,
+          0.038676800100593635,
+          0.003545730368918806
+        ],
+        [
+          0.1560007548996456,
+          0.25390368899519244,
+          0.9999999139579476,
+          0.645677323507251,
+          0.14492978082705293,
+          -0.3153899145525403,
+          -0.39900597496392337
+        ],
+        [
+          0.16703912030039256,
+          0.25273346061012925,
+          0.645677323507251,
+          0.9999999152531288,
+          0.1592622194435999,
+          0.2167039169869508,
+          0.28290322847482235
+        ],
+        [
+          0.6235167196994992,
+          0.8177572507300865,
+          0.14492978082705293,
+          0.1592622194435999,
+          0.9999999337017818,
+          0.04995044544232961,
+          0.007876892423510853
+        ],
+        [
+          0.02155747905362486,
+          0.038676800100593635,
+          -0.3153899145525403,
+          0.2167039169869508,
+          0.04995044544232961,
+          1.0000000645291285,
+          0.8023780500435888
+        ],
+        [
+          7.281116970839555e-05,
+          0.003545730368918806,
+          -0.39900597496392337,
+          0.28290322847482235,
+          0.007876892423510853,
+          0.8023780500435888,
+          1.000000064092991
+        ]
+      ],
+      "kkt_residual": 1.942890293094024e-16,
+      "primal_dual_gap": 4.073311687946557e-09,
+      "primal_margin": 0.49364405333945816
+    },
+    "target_certificates": [
+      "etarc",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "target_endpoint": {
+      "accepted_kkt_candidates": 1,
+      "active_certificates": [
+        "etarc",
+        "branch_entropy",
+        "branch_negative_gap"
+      ],
+      "active_indices": [
+        0,
+        1,
+        2
+      ],
+      "active_set_size": 3,
+      "budget_norm": 10.480132332103569,
+      "certificate_cosines": {
+        "branch_entropy": 0.7720385309159487,
+        "branch_negative_gap": 0.7720385331655754,
+        "etarc": 0.7720385981367227
+      },
+      "certificate_names": [
+        "etarc",
+        "branch_entropy",
+        "branch_negative_gap"
+      ],
+      "dual_margin": 0.7720385495185922,
+      "dual_squared_margin": 0.5960435392291246,
+      "dual_weights": {
+        "branch_entropy": 0.344233523198597,
+        "branch_negative_gap": 0.18731035480993768,
+        "etarc": 0.46845612199146536
+      },
+      "final_direction_norm": 10.48013212286712,
+      "gradient_norms": {
+        "branch_entropy": 0.61774613506635,
+        "branch_negative_gap": 35.41742737667136,
+        "etarc": 29.851232244930376
+      },
+      "gram_matrix": [
+        [
+          0.9999999152531288,
+          0.2167039169869508,
+          0.28290322847482235
+        ],
+        [
+          0.2167039169869508,
+          1.0000000645291285,
+          0.8023780500435888
+        ],
+        [
+          0.28290322847482235,
+          0.8023780500435888,
+          1.000000064092991
+        ]
+      ],
+      "kkt_residual": 4.440892098500626e-16,
+      "primal_dual_gap": 1.86026435367026e-08,
+      "primal_margin": 0.7720385309159487
+    }
+  },
+  "facet_count": 84,
+  "fit_coverages": [
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 48,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.8647161285592267,
+        "branch_negative_gap": 61.538610085320585,
+        "continuation": 14.122452630951074,
+        "etarc": 111.37387842326287,
+        "risk": 7.562649609978678,
+        "tarc": 31.834376675315095,
+        "uniform": 14.902784396747913
+      },
+      "loss_means": {
+        "branch_entropy": 0.016409967094659805,
+        "branch_negative_gap": -6.0625,
+        "continuation": 7.386275291442871,
+        "etarc": 13.215719223022461,
+        "risk": 4.842320919036865,
+        "tarc": 7.363395690917969,
+        "uniform": 7.397676467895508
+      },
+      "mode": "eval",
+      "response_tokens": 60,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_01"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 47,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 6.34291381415253,
+        "branch_negative_gap": 50.82771122131235,
+        "continuation": 14.418431652596885,
+        "etarc": 132.01483674427325,
+        "risk": 4.717612134135806,
+        "tarc": 34.04905744199237,
+        "uniform": 13.7427218154895
+      },
+      "loss_means": {
+        "branch_entropy": 0.1725638508796692,
+        "branch_negative_gap": -3.140625,
+        "continuation": 6.432916641235352,
+        "etarc": 14.017693519592285,
+        "risk": 3.5154285430908203,
+        "tarc": 6.40742826461792,
+        "uniform": 7.01036262512207
+      },
+      "mode": "eval",
+      "response_tokens": 59,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_02"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 48,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.00391882509643589,
+        "branch_negative_gap": 54.65775315340203,
+        "continuation": 10.275056701420718,
+        "etarc": 47.55836296111413,
+        "risk": 7.006643441950969,
+        "tarc": 21.33887393165962,
+        "uniform": 13.134391595635725
+      },
+      "loss_means": {
+        "branch_entropy": 7.484878005925566e-05,
+        "branch_negative_gap": -12.0703125,
+        "continuation": 6.613268852233887,
+        "etarc": 8.350188255310059,
+        "risk": 3.2218189239501953,
+        "tarc": 6.816500663757324,
+        "uniform": 6.739096641540527
+      },
+      "mode": "eval",
+      "response_tokens": 60,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_03"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 60,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.2627054020082558,
+        "branch_negative_gap": 40.39847358196414,
+        "continuation": 12.004236463618746,
+        "etarc": 54.100620148553546,
+        "risk": 9.01729051476815,
+        "tarc": 17.33767292242997,
+        "uniform": 12.46744160306732
+      },
+      "loss_means": {
+        "branch_entropy": 0.0074396622367203236,
+        "branch_negative_gap": -6.9765625,
+        "continuation": 6.123485565185547,
+        "etarc": 10.067510604858398,
+        "risk": 4.613570690155029,
+        "tarc": 4.42839241027832,
+        "uniform": 6.410107612609863
+      },
+      "mode": "eval",
+      "response_tokens": 72,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_04"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 49,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.13775615970059307,
+        "branch_negative_gap": 40.82866686078928,
+        "continuation": 14.060597653573755,
+        "etarc": 59.756537485404124,
+        "risk": 6.627031354092744,
+        "tarc": 26.15487296790953,
+        "uniform": 15.001180587135543
+      },
+      "loss_means": {
+        "branch_entropy": 0.003819923149421811,
+        "branch_negative_gap": -7.734375,
+        "continuation": 6.355935573577881,
+        "etarc": 13.00538444519043,
+        "risk": 3.6494851112365723,
+        "tarc": 7.215224742889404,
+        "uniform": 6.992709159851074
+      },
+      "mode": "eval",
+      "response_tokens": 61,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_05"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 62,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.03239093129105037,
+        "branch_negative_gap": 33.61136767624019,
+        "continuation": 7.6932462198011695,
+        "etarc": 42.523550489634566,
+        "risk": 4.929978053078694,
+        "tarc": 16.69205859378389,
+        "uniform": 8.396059906211248
+      },
+      "loss_means": {
+        "branch_entropy": 0.0010682049905881286,
+        "branch_negative_gap": -9.16015625,
+        "continuation": 4.778932094573975,
+        "etarc": 13.006284713745117,
+        "risk": 2.855332136154175,
+        "tarc": 6.880903244018555,
+        "uniform": 5.53732442855835
+      },
+      "mode": "eval",
+      "response_tokens": 74,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_06"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 47,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.09311878534904303,
+        "branch_negative_gap": 36.47614487551937,
+        "continuation": 9.629376721435102,
+        "etarc": 48.48976522886491,
+        "risk": 18.154319800527087,
+        "tarc": 15.814404110332667,
+        "uniform": 11.663972322356264
+      },
+      "loss_means": {
+        "branch_entropy": 0.002874939003959298,
+        "branch_negative_gap": -8.0546875,
+        "continuation": 6.48171329498291,
+        "etarc": 13.201175689697266,
+        "risk": 3.2897226810455322,
+        "tarc": 5.993833541870117,
+        "uniform": 6.795964241027832
+      },
+      "mode": "eval",
+      "response_tokens": 59,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_07"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 47,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.08819617307108438,
+        "branch_negative_gap": 50.930308534686304,
+        "continuation": 12.908489325497001,
+        "etarc": 42.13896444344874,
+        "risk": 6.175020956460955,
+        "tarc": 22.26033289890628,
+        "uniform": 14.130955644864784
+      },
+      "loss_means": {
+        "branch_entropy": 0.0019325804896652699,
+        "branch_negative_gap": -8.5,
+        "continuation": 6.625492572784424,
+        "etarc": 11.390085220336914,
+        "risk": 3.9375522136688232,
+        "tarc": 6.2226481437683105,
+        "uniform": 6.887565612792969
+      },
+      "mode": "eval",
+      "response_tokens": 59,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_08"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 57,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.0001651336760121938,
+        "branch_negative_gap": 48.57398354204293,
+        "continuation": 12.98653942640015,
+        "etarc": 54.04262749125735,
+        "risk": 6.594154700286094,
+        "tarc": 23.694610284629974,
+        "uniform": 15.13612207790497
+      },
+      "loss_means": {
+        "branch_entropy": 3.931696937797824e-06,
+        "branch_negative_gap": -15.232421875,
+        "continuation": 5.620208263397217,
+        "etarc": 17.12554359436035,
+        "risk": 4.091235637664795,
+        "tarc": 11.293417930603027,
+        "uniform": 6.261752128601074
+      },
+      "mode": "eval",
+      "response_tokens": 69,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_09"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 46,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.05126008243036908,
+        "branch_negative_gap": 43.736635458225024,
+        "continuation": 14.458347908338798,
+        "etarc": 59.12102812905666,
+        "risk": 4.689803021587214,
+        "tarc": 17.38437416458402,
+        "uniform": 15.115487268548982
+      },
+      "loss_means": {
+        "branch_entropy": 0.0013053340371698141,
+        "branch_negative_gap": -8.9375,
+        "continuation": 8.679338455200195,
+        "etarc": 10.677627563476562,
+        "risk": 3.1749753952026367,
+        "tarc": 5.418854236602783,
+        "uniform": 8.321257591247559
+      },
+      "mode": "eval",
+      "response_tokens": 58,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_10"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 49,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.1883348487854479,
+        "branch_negative_gap": 52.79039751041912,
+        "continuation": 12.520682415866869,
+        "etarc": 41.598604670141675,
+        "risk": 6.009331582767015,
+        "tarc": 17.512062705312367,
+        "uniform": 13.029042391680255
+      },
+      "loss_means": {
+        "branch_entropy": 0.004037084989249706,
+        "branch_negative_gap": -7.671875,
+        "continuation": 6.958335876464844,
+        "etarc": 9.210164070129395,
+        "risk": 3.7245635986328125,
+        "tarc": 4.980162620544434,
+        "uniform": 7.128254413604736
+      },
+      "mode": "eval",
+      "response_tokens": 61,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_11"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 48,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.10914848210340232,
+        "branch_negative_gap": 56.586189871336984,
+        "continuation": 12.547847494898532,
+        "etarc": 52.69284440621494,
+        "risk": 4.567394277066326,
+        "tarc": 18.549896357433973,
+        "uniform": 14.803719012766267
+      },
+      "loss_means": {
+        "branch_entropy": 0.002161011565476656,
+        "branch_negative_gap": -8.375,
+        "continuation": 6.590933322906494,
+        "etarc": 8.652974128723145,
+        "risk": 3.170344114303589,
+        "tarc": 7.155384540557861,
+        "uniform": 7.140346527099609
+      },
+      "mode": "eval",
+      "response_tokens": 60,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_12"
+    }
+  ],
+  "fit_score_panels": {
+    "fit_01": {
+      "proposed": {
+        "branch_entropy": 0.049909960825722355,
+        "branch_negative_gap": 0.04985105585773754,
+        "continuation": 0.19298062383788991,
+        "etarc": 0.10948395606817891,
+        "risk": 0.24069171254071067,
+        "tarc": 0.1131441331016082,
+        "uniform": 0.2546855777820171
+      },
+      "raw": {
+        "branch_entropy": 0.049909960825722355,
+        "branch_negative_gap": 0.04985105585773754,
+        "continuation": 0.19298062383788991,
+        "etarc": 0.10948395606817891,
+        "risk": 0.24069171254071067,
+        "tarc": 0.1131441331016082,
+        "uniform": 0.2546855777820171
+      },
+      "selected": {
+        "branch_entropy": 0.049909960825722355,
+        "branch_negative_gap": 0.04985105585773754,
+        "continuation": 0.19298062383788991,
+        "etarc": 0.10948395606817891,
+        "risk": 0.24069171254071067,
+        "tarc": 0.1131441331016082,
+        "uniform": 0.2546855777820171
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    },
+    "fit_02": {
+      "proposed": {
+        "branch_entropy": 0.09282116070457408,
+        "branch_negative_gap": 0.09276389116647028,
+        "continuation": 0.14204947301434018,
+        "etarc": 0.08101915936477248,
+        "risk": 0.24920983580242903,
+        "tarc": 0.09818329475764027,
+        "uniform": 0.23343282846683802
+      },
+      "raw": {
+        "branch_entropy": 0.09282116070457408,
+        "branch_negative_gap": 0.09276389116647028,
+        "continuation": 0.14204947301434018,
+        "etarc": 0.08101915936477248,
+        "risk": 0.24920983580242903,
+        "tarc": 0.09818329475764027,
+        "uniform": 0.23343282846683802
+      },
+      "selected": {
+        "branch_entropy": 0.09282116070457408,
+        "branch_negative_gap": 0.09276389116647028,
+        "continuation": 0.14204947301434018,
+        "etarc": 0.08101915936477248,
+        "risk": 0.24920983580242903,
+        "tarc": 0.09818329475764027,
+        "uniform": 0.23343282846683802
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    },
+    "fit_03": {
+      "proposed": {
+        "branch_entropy": 0.07046698476234448,
+        "branch_negative_gap": 0.07584225613915933,
+        "continuation": 0.1890795176484642,
+        "etarc": 0.08639729204138065,
+        "risk": 0.27457508051108587,
+        "tarc": 0.06721444691359665,
+        "uniform": 0.25767155950343257
+      },
+      "raw": {
+        "branch_entropy": 0.07046698476234448,
+        "branch_negative_gap": 0.07584225613915933,
+        "continuation": 0.1890795176484642,
+        "etarc": 0.08639729204138065,
+        "risk": 0.27457508051108587,
+        "tarc": 0.06721444691359665,
+        "uniform": 0.25767155950343257
+      },
+      "selected": {
+        "branch_entropy": 0.07046698476234448,
+        "branch_negative_gap": 0.07584225613915933,
+        "continuation": 0.1890795176484642,
+        "etarc": 0.08639729204138065,
+        "risk": 0.27457508051108587,
+        "tarc": 0.06721444691359665,
+        "uniform": 0.25767155950343257
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    },
+    "fit_04": {
+      "proposed": {
+        "branch_entropy": 0.08904133007278069,
+        "branch_negative_gap": 0.08883915846537388,
+        "continuation": 0.2102218374144431,
+        "etarc": 0.08316850925781781,
+        "risk": 0.269887954148569,
+        "tarc": 0.046743767769174924,
+        "uniform": 0.2603194877778862
+      },
+      "raw": {
+        "branch_entropy": 0.08904133007278069,
+        "branch_negative_gap": 0.08883915846537388,
+        "continuation": 0.2102218374144431,
+        "etarc": 0.08316850925781781,
+        "risk": 0.269887954148569,
+        "tarc": 0.046743767769174924,
+        "uniform": 0.2603194877778862
+      },
+      "selected": {
+        "branch_entropy": 0.08904133007278069,
+        "branch_negative_gap": 0.08883915846537388,
+        "continuation": 0.2102218374144431,
+        "etarc": 0.08316850925781781,
+        "risk": 0.269887954148569,
+        "tarc": 0.046743767769174924,
+        "uniform": 0.2603194877778862
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    },
+    "fit_05": {
+      "proposed": {
+        "branch_entropy": 0.057049142503027575,
+        "branch_negative_gap": 0.05671075837998394,
+        "continuation": 0.1856324413327431,
+        "etarc": 0.08028500011928803,
+        "risk": 0.2371176790987018,
+        "tarc": 0.10132683439055083,
+        "uniform": 0.24192228925397471
+      },
+      "raw": {
+        "branch_entropy": 0.057049142503027575,
+        "branch_negative_gap": 0.05671075837998394,
+        "continuation": 0.1856324413327431,
+        "etarc": 0.08028500011928803,
+        "risk": 0.2371176790987018,
+        "tarc": 0.10132683439055083,
+        "uniform": 0.24192228925397471
+      },
+      "selected": {
+        "branch_entropy": 0.057049142503027575,
+        "branch_negative_gap": 0.05671075837998394,
+        "continuation": 0.1856324413327431,
+        "etarc": 0.08028500011928803,
+        "risk": 0.2371176790987018,
+        "tarc": 0.10132683439055083,
+        "uniform": 0.24192228925397471
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    },
+    "fit_06": {
+      "proposed": {
+        "branch_entropy": 0.05580697020441277,
+        "branch_negative_gap": 0.05675775967289645,
+        "continuation": 0.16542622483067707,
+        "etarc": 0.05658647981943312,
+        "risk": 0.21754796650908526,
+        "tarc": 0.04190878817587815,
+        "uniform": 0.18667142930009847
+      },
+      "raw": {
+        "branch_entropy": 0.05580697020441277,
+        "branch_negative_gap": 0.05675775967289645,
+        "continuation": 0.16542622483067707,
+        "etarc": 0.05658647981943312,
+        "risk": 0.21754796650908526,
+        "tarc": 0.04190878817587815,
+        "uniform": 0.18667142930009847
+      },
+      "selected": {
+        "branch_entropy": 0.05580697020441277,
+        "branch_negative_gap": 0.05675775967289645,
+        "continuation": 0.16542622483067707,
+        "etarc": 0.05658647981943312,
+        "risk": 0.21754796650908526,
+        "tarc": 0.04190878817587815,
+        "uniform": 0.18667142930009847
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    },
+    "fit_07": {
+      "proposed": {
+        "branch_entropy": 0.041840194686704565,
+        "branch_negative_gap": 0.04108595627382532,
+        "continuation": 0.20223156579558493,
+        "etarc": 0.11232273992131385,
+        "risk": 0.199410750516844,
+        "tarc": 0.09753036990809215,
+        "uniform": 0.25573588249143303
+      },
+      "raw": {
+        "branch_entropy": 0.041840194686704565,
+        "branch_negative_gap": 0.04108595627382532,
+        "continuation": 0.20223156579558493,
+        "etarc": 0.11232273992131385,
+        "risk": 0.199410750516844,
+        "tarc": 0.09753036990809215,
+        "uniform": 0.25573588249143303
+      },
+      "selected": {
+        "branch_entropy": 0.041840194686704565,
+        "branch_negative_gap": 0.04108595627382532,
+        "continuation": 0.20223156579558493,
+        "etarc": 0.11232273992131385,
+        "risk": 0.199410750516844,
+        "tarc": 0.09753036990809215,
+        "uniform": 0.25573588249143303
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    },
+    "fit_08": {
+      "proposed": {
+        "branch_entropy": 0.04528830484738966,
+        "branch_negative_gap": 0.04513857563414012,
+        "continuation": 0.2171944441357742,
+        "etarc": 0.11342171819233324,
+        "risk": 0.2267971683368069,
+        "tarc": 0.09531119324703172,
+        "uniform": 0.2723753756705402
+      },
+      "raw": {
+        "branch_entropy": 0.04528830484738966,
+        "branch_negative_gap": 0.04513857563414012,
+        "continuation": 0.2171944441357742,
+        "etarc": 0.11342171819233324,
+        "risk": 0.2267971683368069,
+        "tarc": 0.09531119324703172,
+        "uniform": 0.2723753756705402
+      },
+      "selected": {
+        "branch_entropy": 0.04528830484738966,
+        "branch_negative_gap": 0.04513857563414012,
+        "continuation": 0.2171944441357742,
+        "etarc": 0.11342171819233324,
+        "risk": 0.2267971683368069,
+        "tarc": 0.09531119324703172,
+        "uniform": 0.2723753756705402
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    },
+    "fit_09": {
+      "proposed": {
+        "branch_entropy": 0.01226718194907743,
+        "branch_negative_gap": 0.047151923321694704,
+        "continuation": 0.17349626549980443,
+        "etarc": 0.08457481736250361,
+        "risk": 0.2771507467350744,
+        "tarc": 0.10309230806241897,
+        "uniform": 0.2176587474806163
+      },
+      "raw": {
+        "branch_entropy": 0.01226718194907743,
+        "branch_negative_gap": 0.047151923321694704,
+        "continuation": 0.17349626549980443,
+        "etarc": 0.08457481736250361,
+        "risk": 0.2771507467350744,
+        "tarc": 0.10309230806241897,
+        "uniform": 0.2176587474806163
+      },
+      "selected": {
+        "branch_entropy": 0.01226718194907743,
+        "branch_negative_gap": 0.047151923321694704,
+        "continuation": 0.17349626549980443,
+        "etarc": 0.08457481736250361,
+        "risk": 0.2771507467350744,
+        "tarc": 0.10309230806241897,
+        "uniform": 0.2176587474806163
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    },
+    "fit_10": {
+      "proposed": {
+        "branch_entropy": 0.05292571337798338,
+        "branch_negative_gap": 0.05214972492374859,
+        "continuation": 0.2389057313698306,
+        "etarc": 0.07800802658295183,
+        "risk": 0.21987983512212242,
+        "tarc": 0.06708101172277524,
+        "uniform": 0.2910192749835475
+      },
+      "raw": {
+        "branch_entropy": 0.05292571337798338,
+        "branch_negative_gap": 0.05214972492374859,
+        "continuation": 0.2389057313698306,
+        "etarc": 0.07800802658295183,
+        "risk": 0.21987983512212242,
+        "tarc": 0.06708101172277524,
+        "uniform": 0.2910192749835475
+      },
+      "selected": {
+        "branch_entropy": 0.05292571337798338,
+        "branch_negative_gap": 0.05214972492374859,
+        "continuation": 0.2389057313698306,
+        "etarc": 0.07800802658295183,
+        "risk": 0.21987983512212242,
+        "tarc": 0.06708101172277524,
+        "uniform": 0.2910192749835475
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    },
+    "fit_11": {
+      "proposed": {
+        "branch_entropy": 0.0649192222973141,
+        "branch_negative_gap": 0.06470079920913265,
+        "continuation": 0.21308279891918985,
+        "etarc": 0.09956097558073392,
+        "risk": 0.2730085926818274,
+        "tarc": 0.05384126707858954,
+        "uniform": 0.2601933944021622
+      },
+      "raw": {
+        "branch_entropy": 0.0649192222973141,
+        "branch_negative_gap": 0.06470079920913265,
+        "continuation": 0.21308279891918985,
+        "etarc": 0.09956097558073392,
+        "risk": 0.2730085926818274,
+        "tarc": 0.05384126707858954,
+        "uniform": 0.2601933944021622
+      },
+      "selected": {
+        "branch_entropy": 0.0649192222973141,
+        "branch_negative_gap": 0.06470079920913265,
+        "continuation": 0.21308279891918985,
+        "etarc": 0.09956097558073392,
+        "risk": 0.2730085926818274,
+        "tarc": 0.05384126707858954,
+        "uniform": 0.2601933944021622
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    },
+    "fit_12": {
+      "proposed": {
+        "branch_entropy": 0.07216545618585334,
+        "branch_negative_gap": 0.07204716701254955,
+        "continuation": 0.22546595848095619,
+        "etarc": 0.09598035165801083,
+        "risk": 0.18352455482902388,
+        "tarc": 0.07570331381392321,
+        "uniform": 0.2833294440126923
+      },
+      "raw": {
+        "branch_entropy": 0.07216545618585334,
+        "branch_negative_gap": 0.07204716701254955,
+        "continuation": 0.22546595848095619,
+        "etarc": 0.09598035165801083,
+        "risk": 0.18352455482902388,
+        "tarc": 0.07570331381392321,
+        "uniform": 0.2833294440126923
+      },
+      "selected": {
+        "branch_entropy": 0.07216545618585334,
+        "branch_negative_gap": 0.07204716701254955,
+        "continuation": 0.22546595848095619,
+        "etarc": 0.09598035165801083,
+        "risk": 0.18352455482902388,
+        "tarc": 0.07570331381392321,
+        "uniform": 0.2833294440126923
+      },
+      "tangent": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 0.0,
+        "continuation": 0.0,
+        "etarc": 0.0,
+        "risk": 0.0,
+        "tarc": 0.0,
+        "uniform": 0.0
+      }
+    }
+  },
+  "gradient_measurement_mode": "eval",
+  "method": "RUF-MCD",
+  "name": "step3_rufmcd_p0_fit_geometry_v1",
+  "pooled_gradient_norms": {
+    "branch_entropy": 0.61774613506635,
+    "branch_negative_gap": 35.41742737667136,
+    "continuation": 9.03312575957084,
+    "etarc": 29.851232244930376,
+    "risk": 4.512203852926799,
+    "tarc": 13.151848937435789,
+    "uniform": 10.480132332103569
+  },
+  "pooled_scores": {
+    "raw": {
+      "branch_entropy": 0.09388397681666512,
+      "branch_negative_gap": 0.08376632379767607,
+      "continuation": 0.26825323341924284,
+      "etarc": 0.18790175865349515,
+      "risk": 0.37593571796315034,
+      "tarc": 0.1404077715928921,
+      "uniform": 0.32553228166363
+    },
+    "selected": {
+      "branch_entropy": 0.09388397681666512,
+      "branch_negative_gap": 0.08376632379767607,
+      "continuation": 0.26825323341924284,
+      "etarc": 0.18790175865349515,
+      "risk": 0.37593571796315034,
+      "tarc": 0.1404077715928921,
+      "uniform": 0.32553228166363
+    },
+    "tangent": {
+      "branch_entropy": 0.0,
+      "branch_negative_gap": 0.0,
+      "continuation": 0.0,
+      "etarc": 0.0,
+      "risk": 0.0,
+      "tarc": 0.0,
+      "uniform": 0.0
+    }
+  },
+  "projection_error": "RUF-MCD active affine solver exceeded the frozen KKT limit",
+  "projection_valid": false,
+  "protected_constraint_count": 48,
+  "protected_constraint_labels": [
+    "fit_01:risk",
+    "fit_01:uniform",
+    "fit_01:tarc",
+    "fit_01:continuation",
+    "fit_02:risk",
+    "fit_02:uniform",
+    "fit_02:tarc",
+    "fit_02:continuation",
+    "fit_03:risk",
+    "fit_03:uniform",
+    "fit_03:tarc",
+    "fit_03:continuation",
+    "fit_04:risk",
+    "fit_04:uniform",
+    "fit_04:tarc",
+    "fit_04:continuation",
+    "fit_05:risk",
+    "fit_05:uniform",
+    "fit_05:tarc",
+    "fit_05:continuation",
+    "fit_06:risk",
+    "fit_06:uniform",
+    "fit_06:tarc",
+    "fit_06:continuation",
+    "fit_07:risk",
+    "fit_07:uniform",
+    "fit_07:tarc",
+    "fit_07:continuation",
+    "fit_08:risk",
+    "fit_08:uniform",
+    "fit_08:tarc",
+    "fit_08:continuation",
+    "fit_09:risk",
+    "fit_09:uniform",
+    "fit_09:tarc",
+    "fit_09:continuation",
+    "fit_10:risk",
+    "fit_10:uniform",
+    "fit_10:tarc",
+    "fit_10:continuation",
+    "fit_11:risk",
+    "fit_11:uniform",
+    "fit_11:tarc",
+    "fit_11:continuation",
+    "fit_12:risk",
+    "fit_12:uniform",
+    "fit_12:tarc",
+    "fit_12:continuation"
+  ],
+  "protocol_sha256": "b91fe5ea764dee4386dbfb6b2534b0c65fdf66948747d414a4beaf1525588039",
+  "raw_baseline_gradient_norm": 5.294487803157132,
+  "raw_direction_budget_relative_error": 3.950553387082971e-08,
+  "raw_gradient_tensors_serialized": false,
+  "raw_optimizer_map": {
+    "clip_coefficient": 0.14958610955994392,
+    "clipped_norm": 0.9999998619204986,
+    "clipping_active": true,
+    "displacement_norm": 2966.630300457241,
+    "raw_norm": 6.68511169490078
+  },
+  "reference_displacement_norm": 2966.7771309500417,
+  "runtime_head": "f46a58b13a54fa11bf4e1aa0348ac0e198939bd9",
+  "search": {
+    "affine_actual_minus_predicted_max": 1e-06,
+    "calibration_scores_used_for_selection": false,
+    "candidate_actual_minimum_margin": -0.03773281805092257,
+    "candidate_panels": [
+      {
+        "branch_entropy": 0.049909960825722355,
+        "branch_negative_gap": 0.04985105585773754,
+        "continuation": 0.19298062383788991,
+        "etarc": 0.10948395606817891,
+        "risk": 0.24069171254071067,
+        "tarc": 0.1131441331016082,
+        "uniform": 0.2546855777820171
+      },
+      {
+        "branch_entropy": 0.09282116070457408,
+        "branch_negative_gap": 0.09276389116647028,
+        "continuation": 0.14204947301434018,
+        "etarc": 0.08101915936477248,
+        "risk": 0.24920983580242903,
+        "tarc": 0.09818329475764027,
+        "uniform": 0.23343282846683802
+      },
+      {
+        "branch_entropy": 0.07046698476234448,
+        "branch_negative_gap": 0.07584225613915933,
+        "continuation": 0.1890795176484642,
+        "etarc": 0.08639729204138065,
+        "risk": 0.27457508051108587,
+        "tarc": 0.06721444691359665,
+        "uniform": 0.25767155950343257
+      },
+      {
+        "branch_entropy": 0.08904133007278069,
+        "branch_negative_gap": 0.08883915846537388,
+        "continuation": 0.2102218374144431,
+        "etarc": 0.08316850925781781,
+        "risk": 0.269887954148569,
+        "tarc": 0.046743767769174924,
+        "uniform": 0.2603194877778862
+      },
+      {
+        "branch_entropy": 0.057049142503027575,
+        "branch_negative_gap": 0.05671075837998394,
+        "continuation": 0.1856324413327431,
+        "etarc": 0.08028500011928803,
+        "risk": 0.2371176790987018,
+        "tarc": 0.10132683439055083,
+        "uniform": 0.24192228925397471
+      },
+      {
+        "branch_entropy": 0.05580697020441277,
+        "branch_negative_gap": 0.05675775967289645,
+        "continuation": 0.16542622483067707,
+        "etarc": 0.05658647981943312,
+        "risk": 0.21754796650908526,
+        "tarc": 0.04190878817587815,
+        "uniform": 0.18667142930009847
+      },
+      {
+        "branch_entropy": 0.041840194686704565,
+        "branch_negative_gap": 0.04108595627382532,
+        "continuation": 0.20223156579558493,
+        "etarc": 0.11232273992131385,
+        "risk": 0.199410750516844,
+        "tarc": 0.09753036990809215,
+        "uniform": 0.25573588249143303
+      },
+      {
+        "branch_entropy": 0.04528830484738966,
+        "branch_negative_gap": 0.04513857563414012,
+        "continuation": 0.2171944441357742,
+        "etarc": 0.11342171819233324,
+        "risk": 0.2267971683368069,
+        "tarc": 0.09531119324703172,
+        "uniform": 0.2723753756705402
+      },
+      {
+        "branch_entropy": 0.01226718194907743,
+        "branch_negative_gap": 0.047151923321694704,
+        "continuation": 0.17349626549980443,
+        "etarc": 0.08457481736250361,
+        "risk": 0.2771507467350744,
+        "tarc": 0.10309230806241897,
+        "uniform": 0.2176587474806163
+      },
+      {
+        "branch_entropy": 0.05292571337798338,
+        "branch_negative_gap": 0.05214972492374859,
+        "continuation": 0.2389057313698306,
+        "etarc": 0.07800802658295183,
+        "risk": 0.21987983512212242,
+        "tarc": 0.06708101172277524,
+        "uniform": 0.2910192749835475
+      },
+      {
+        "branch_entropy": 0.0649192222973141,
+        "branch_negative_gap": 0.06470079920913265,
+        "continuation": 0.21308279891918985,
+        "etarc": 0.09956097558073392,
+        "risk": 0.2730085926818274,
+        "tarc": 0.05384126707858954,
+        "uniform": 0.2601933944021622
+      },
+      {
+        "branch_entropy": 0.07216545618585334,
+        "branch_negative_gap": 0.07204716701254955,
+        "continuation": 0.22546595848095619,
+        "etarc": 0.09598035165801083,
+        "risk": 0.18352455482902388,
+        "tarc": 0.07570331381392321,
+        "uniform": 0.2833294440126923
+      }
+    ],
+    "candidate_protected_margin_floor": 0.050000000000000044,
+    "candidate_target_margin_floor": -0.03773281805092257,
+    "design_cosine_floor": 0.951,
+    "diagnostic_scores_used_for_selection": false,
+    "eligible": false,
+    "fit_protected_facet_count": 48,
+    "fit_target_facet_count": 36,
+    "fixed_theta": 0.31434110448924435,
+    "fixed_theta_margin_radians": 1e-06,
+    "joint_margin_primal_value": null,
+    "maximum_protected_retention_identity_error": 0.048999690809595986,
+    "minimum_protected_retention": 1.0,
+    "protected_retention_floor": 0.95,
+    "protected_retentions": {
+      "continuation": 1.0,
+      "risk": 1.0,
+      "tarc": 1.0,
+      "uniform": 1.0
+    },
+    "raw_target_score_floor": 0.01226718194907743,
+    "required_target_score_floor": 0.05,
+    "selected_target_gain_over_raw": 0.0,
+    "selected_target_score_floor": 0.01226718194907743,
+    "selected_theta": 0.0,
+    "selected_theta_degrees": 0.0,
+    "selection_rule": "fixed_theta_joint_unit_facet_protected_target_margin_affine_max_min",
+    "solver_candidate_actual_minimum_score": null,
+    "solver_candidate_actual_minus_predicted": null,
+    "solver_predicted_minimum_score": null,
+    "target_coefficients": [],
+    "theta_max": 0.3143421044892443,
+    "theta_max_degrees": 18.010475910494026,
+    "trigonometric_boundaries": [
+      0.0,
+      0.31434110448924435,
+      0.3143421044892443
+    ]
+  },
+  "selected_optimizer_map": {
+    "fixed_theta": 0.31434110448924435,
+    "map_kind": "direct_fixed_norm_protected_nullspace_angular_rotation",
+    "map_variant": "unit_facet_joint_protected_target_margin_affine_max_min",
+    "raw_endpoint_from_exact_clipped_adam_map": true,
+    "raw_norm": 2966.630300457241,
+    "selected_norm": 2966.630300457241,
+    "selected_theta": 0.0,
+    "selected_to_raw_norm_ratio": 1.0,
+    "source_raw_clipping_active": true,
+    "source_target_clipping_active": true,
+    "target_endpoint_difference_used": false,
+    "target_endpoint_from_exact_clipped_adam_map": true,
+    "unit_facet_affine_max_min_used": false
+  },
+  "selected_theta": 0.0,
+  "selected_theta_degrees": 0.0,
+  "selected_to_raw_norm_relative_error": 0.0,
+  "tangent_audit": {
+    "affine_solver": null,
+    "enforcement": "unit_facet_margin_not_unit_level_nullspace",
+    "facet_count": 84,
+    "maximum_absolute_normalized_protected_dot": Infinity,
+    "maximum_absolute_protected_cosine": Infinity,
+    "minimum_unit_facet_projection_fraction": 0.0,
+    "normalized_protected_dots": [],
+    "projection_error": "RUF-MCD active affine solver exceeded the frozen KKT limit",
+    "projection_valid": false,
+    "protected_constraints": 48,
+    "raw_displacement_norm": 2966.630300457241,
+    "raw_tangent_cosine": 0.0,
+    "retained_target_proposal_fraction": 0.0,
+    "tangent_norm": 0.0,
+    "tangent_to_raw_norm_ratio": 0.0,
+    "target_covector_count": 84,
+    "target_covector_projection": {},
+    "unit_level_protected_nullspace_claimed": false
+  },
+  "target_direction_budget_relative_error": 1.9965057881068474e-08,
+  "target_endpoint_difference_used": false,
+  "target_facet_count": 36,
+  "target_facet_labels": [
+    "fit_01:etarc",
+    "fit_01:branch_entropy",
+    "fit_01:branch_negative_gap",
+    "fit_02:etarc",
+    "fit_02:branch_entropy",
+    "fit_02:branch_negative_gap",
+    "fit_03:etarc",
+    "fit_03:branch_entropy",
+    "fit_03:branch_negative_gap",
+    "fit_04:etarc",
+    "fit_04:branch_entropy",
+    "fit_04:branch_negative_gap",
+    "fit_05:etarc",
+    "fit_05:branch_entropy",
+    "fit_05:branch_negative_gap",
+    "fit_06:etarc",
+    "fit_06:branch_entropy",
+    "fit_06:branch_negative_gap",
+    "fit_07:etarc",
+    "fit_07:branch_entropy",
+    "fit_07:branch_negative_gap",
+    "fit_08:etarc",
+    "fit_08:branch_entropy",
+    "fit_08:branch_negative_gap",
+    "fit_09:etarc",
+    "fit_09:branch_entropy",
+    "fit_09:branch_negative_gap",
+    "fit_10:etarc",
+    "fit_10:branch_entropy",
+    "fit_10:branch_negative_gap",
+    "fit_11:etarc",
+    "fit_11:branch_entropy",
+    "fit_11:branch_negative_gap",
+    "fit_12:etarc",
+    "fit_12:branch_entropy",
+    "fit_12:branch_negative_gap"
+  ],
+  "target_optimizer_map": {
+    "clip_coefficient": 0.167574607986045,
+    "clipped_norm": 0.9999998699583682,
+    "clipping_active": true,
+    "displacement_norm": 2966.9047645892892,
+    "raw_norm": 5.967490208950203
+  },
+  "target_proposal_norm": 1488.3476090859665,
+  "theta_max": 0.3143421044892443,
+  "unit_facet_rule": "all_fit_units_cross_all_registered_certificates_with_protected_relative_and_target_absolute_margins",
+  "unit_granularity": "one_prompt_risk_pair"
+}
