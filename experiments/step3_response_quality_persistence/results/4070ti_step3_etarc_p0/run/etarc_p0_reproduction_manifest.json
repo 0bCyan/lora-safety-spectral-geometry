@@ -1,0 +1,67 @@
+{
+  "artifacts": [
+    {
+      "bytes": 626,
+      "name": "structural_audit",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/run/etarc_p0_structural_audit.json",
+      "rows": null,
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    {
+      "bytes": 1299,
+      "name": "split_manifest",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/run/etarc_p0_split_manifest.json",
+      "rows": null,
+      "sha256": "830fa91dcda44d07e9e9abccd84844ec7a7ae9b899750dbfb0664d2c89cdbb5b"
+    },
+    {
+      "bytes": 121961,
+      "name": "diagnostic_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/run/etarc_p0_diagnostic_rows.jsonl",
+      "rows": 264,
+      "sha256": "c36924be6c8137b076f8359ce20fd75daf940ee481361e176624837189fa5312"
+    },
+    {
+      "bytes": 13206,
+      "name": "gradient_diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/run/etarc_p0_gradient_diagnostics.json",
+      "rows": null,
+      "sha256": "315298e5b7e25d8bd770fe4fa22055ae1a46af951204fa59169b7fe877693092"
+    },
+    {
+      "bytes": 484,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/run/etarc_p0_environment.json",
+      "rows": null,
+      "sha256": "1929dba86b44e27fbb7e796c8d24faba873869795c33803b1f0fc6bcbf8574ff"
+    },
+    {
+      "bytes": 7565,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/run/etarc_p0_route.json",
+      "rows": null,
+      "sha256": "5d5703fb9cc62b0b2af6516522b083e534f6e5374ccce0b2a1359b27b466c0d0"
+    },
+    {
+      "bytes": 1843,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/run/ETARC_P0_REPORT.md",
+      "rows": null,
+      "sha256": "d0a90593168c2b4de24315bf1062752225b6f1e3c70a6a230f5760afc4d3635a"
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "checkpoint_writes": 0,
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_etarc_p0.py run",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_etarc_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/protocol/etarc_p0_protocol.json",
+  "protocol_sha256": "1da4ae21287280938c31dded1314c09dc54ca1b708c87ad556ead57ae885b404",
+  "route": "STOP_ETARC_P0_CONTINUATION_COMPATIBILITY_FAILED",
+  "runtime_head": "ad267420215f77c3312e71277a7e72c9b0ba7736",
+  "scheduler_objects": 0,
+  "training_authorized": false
+}

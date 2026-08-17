@@ -1,0 +1,17 @@
+{
+  "cuda_visible_devices": null,
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "packages": {
+    "accelerate": "1.8.1",
+    "bitsandbytes": "0.49.2",
+    "peft": "0.16.0",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3"
+  },
+  "platform": "Windows-10-10.0.26200-SP0",
+  "protocol_sha256": "1da4ae21287280938c31dded1314c09dc54ca1b708c87ad556ead57ae885b404",
+  "python": "3.11.5",
+  "runtime_head": "ad267420215f77c3312e71277a7e72c9b0ba7736",
+  "scheduler_objects": 0
+}

@@ -1,0 +1,203 @@
+{
+  "candidate_outputs_generated": false,
+  "checkpoint_writes": 0,
+  "coefficients": {
+    "auxiliary_gradient_norm_ratio": 0.25,
+    "directions": {
+      "cc_etarc": {
+        "coefficient": 0.0770095812847737,
+        "raw_gradient_norm": 28.788028027748407,
+        "scaled_gradient_norm": 2.2169539782481174
+      },
+      "etarc": {
+        "coefficient": 0.0770095812847737,
+        "raw_gradient_norm": 28.788028027748407,
+        "scaled_gradient_norm": 2.2169539782481174
+      },
+      "ramp": {
+        "coefficient": 0.25633183286502326,
+        "raw_gradient_norm": 8.648765780091843,
+        "scaled_gradient_norm": 2.2169539692364917
+      },
+      "tarc": {
+        "coefficient": 0.20565029054100603,
+        "raw_gradient_norm": 10.78021323772057,
+        "scaled_gradient_norm": 2.2169539222304686
+      }
+    },
+    "maximum_relative_budget_error": 2.805685923482319e-08,
+    "target_auxiliary_gradient_norm": 2.2169539844312345,
+    "uniform_calibration_gradient_norm": 8.867815937724938
+  },
+  "core100_opened": false,
+  "directional": {
+    "calibration_etarc_tarc_cosine": 0.44954327790683607,
+    "calibration_validation_etarc_cosine": 0.8493290059960868,
+    "calibration_validation_tarc_cosine": 0.8782779712072167,
+    "candidate_directions": {
+      "cc_etarc": {
+        "combined_validation_continuation_dot": 62.06937964232734,
+        "combined_validation_etarc_dot": 99.96907160158445,
+        "continuation_dot_advantage_over_tarc": 0.09551512165250253,
+        "route_dot_fraction_of_raw_etarc": 1.0,
+        "route_dot_fraction_of_tarc": 1.6991977874006146,
+        "validation_branch_entropy_dot": 0.2344308662442432,
+        "validation_branch_negative_gap_dot": 23.771943777800793,
+        "validation_continuation_cosine": 0.0846304699962222,
+        "validation_continuation_dot": 1.5984989436418893,
+        "validation_etarc_cosine": 0.8493290060794177,
+        "validation_etarc_dot": 48.93536339349768,
+        "validation_tarc_dot": 9.827485099531186
+      },
+      "etarc": {
+        "combined_validation_continuation_dot": 62.06937964232734,
+        "combined_validation_etarc_dot": 99.96907160158445,
+        "validation_branch_entropy_dot": 0.2344308662442432,
+        "validation_branch_negative_gap_dot": 23.771943777800793,
+        "validation_continuation_cosine": 0.0846304699962222,
+        "validation_continuation_dot": 1.5984989436418893,
+        "validation_etarc_cosine": 0.8493290060794177,
+        "validation_etarc_dot": 48.93536339349768,
+        "validation_tarc_dot": 9.827485099531186
+      },
+      "ramp": {
+        "combined_validation_continuation_dot": 76.23226330396594,
+        "combined_validation_etarc_dot": 70.86224654727413,
+        "validation_branch_entropy_dot": 0.008270812355136362,
+        "validation_branch_negative_gap_dot": -2.3591834750361422,
+        "validation_continuation_cosine": 0.8344661257300704,
+        "validation_continuation_dot": 15.76138257440731,
+        "validation_etarc_cosine": 0.3441468844152095,
+        "validation_etarc_dot": 19.828538364516106,
+        "validation_tarc_dot": 9.144846860564531
+      },
+      "tarc": {
+        "combined_validation_continuation_dot": 61.97386450039514,
+        "combined_validation_etarc_dot": 79.83280603639268,
+        "validation_branch_entropy_dot": -0.3370974063271415,
+        "validation_branch_negative_gap_dot": -33.30456324913707,
+        "validation_continuation_cosine": 0.07957354677752071,
+        "validation_continuation_dot": 1.5029838219893867,
+        "validation_etarc_cosine": 0.49984118025448443,
+        "validation_etarc_dot": 28.799097878039046,
+        "validation_tarc_dot": 21.937435296459814
+      }
+    }
+  },
+  "gates": {
+    "budget_matched": true,
+    "continuation_compatibility": false,
+    "effect_not_weak": true,
+    "gradient_valid": true,
+    "integrity": true,
+    "objective_distinct": true,
+    "route_structure": true,
+    "route_transfer": true,
+    "state_restored": true,
+    "vram": true
+  },
+  "heldout_opened": false,
+  "matched_smoke_protocol_authorized": false,
+  "name": "step3_etarc_p0_route_decision_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "paired_validation": {
+    "candidates": {
+      "cc_etarc": {
+        "continuation_compatible_rate": 1.0,
+        "mean_continuation_dot": 1.5984989433724262,
+        "mean_route_dot": 48.93536342895063,
+        "median_continuation_dot": 1.5520731171734319,
+        "median_route_dot": 46.988017723401576,
+        "route_positive_rate": 1.0,
+        "validation_prompts": 32
+      },
+      "etarc": {
+        "continuation_compatible_rate": 1.0,
+        "mean_continuation_dot": 1.5984989433724262,
+        "mean_route_dot": 48.93536342895063,
+        "median_continuation_dot": 1.5520731171734319,
+        "median_route_dot": 46.988017723401576,
+        "route_positive_rate": 1.0,
+        "validation_prompts": 32
+      },
+      "ramp": {
+        "continuation_compatible_rate": 1.0,
+        "mean_continuation_dot": 15.7613825811966,
+        "mean_route_dot": 19.828538350449485,
+        "median_continuation_dot": 16.671782589366096,
+        "median_route_dot": 18.98693353131828,
+        "route_positive_rate": 1.0,
+        "validation_prompts": 32
+      },
+      "tarc": {
+        "continuation_compatible_rate": 1.0,
+        "mean_continuation_dot": 1.502983825464283,
+        "mean_route_dot": 28.799097875407973,
+        "median_continuation_dot": 1.3727730703648842,
+        "median_route_dot": 30.077251796884752,
+        "route_positive_rate": 1.0,
+        "validation_prompts": 32
+      }
+    },
+    "cc_etarc_compatible_rate_advantage_over_tarc": 0.0,
+    "cc_etarc_continuation_advantage_over_tarc": {
+      "bootstrap": {
+        "bootstrap_samples": 10000,
+        "ci95_lower": -0.0798275313288549,
+        "ci95_upper": 0.26862995432439873,
+        "mean": 0.09551511790814302,
+        "rows": 32,
+        "seed": 2026081721
+      },
+      "sign_test": {
+        "exact_two_sided_p": 0.21532714972272515,
+        "negative": 12,
+        "positive": 20,
+        "ties": 0
+      }
+    }
+  },
+  "projection": {
+    "continuation_addition_coefficient": 0.0,
+    "continuation_gradient_norm": 7.739794148215767,
+    "projected_continuation_dot": 25.18037131341529,
+    "projected_gradient_norm": 28.788028027748407,
+    "projected_route_dot": 828.7505577264279,
+    "projected_route_retention_fraction": 1.0000000000000002,
+    "projection_active": false,
+    "raw_route_continuation_dot": 25.18037131341529,
+    "raw_route_gradient_norm": 28.788028027748407,
+    "route_direction_cosine": 1.0000000000000002
+  },
+  "protocol_sha256": "1da4ae21287280938c31dded1314c09dc54ca1b708c87ad556ead57ae885b404",
+  "route": "STOP_ETARC_P0_CONTINUATION_COMPATIBILITY_FAILED",
+  "runtime_head": "ad267420215f77c3312e71277a7e72c9b0ba7736",
+  "scheduler_objects": 0,
+  "structural_audit": {
+    "all_routes_complete_within_width": true,
+    "branching_prompt_rate": 1.0,
+    "categories": 8,
+    "distinct_route_pair_rate": 1.0,
+    "maximum_allowed_branch_width": 2,
+    "maximum_route_tokens": 4,
+    "mean_internal_trie_nodes": 6.0,
+    "mean_route_tokens": 4.0,
+    "minimum_route_tokens": 4,
+    "prompt_clusters": 40,
+    "registered_route_marker_counts": {
+      "i can't engage": 1,
+      "i can't help": 39,
+      "i won't assist": 18,
+      "i won't discuss": 1,
+      "i won't give": 1,
+      "i won't help": 7,
+      "i won't provide": 12,
+      "i won't suggest": 1
+    },
+    "route_width_limit": 16,
+    "rows": 80,
+    "targets_per_prompt": 2
+  },
+  "training_authorized": false
+}
