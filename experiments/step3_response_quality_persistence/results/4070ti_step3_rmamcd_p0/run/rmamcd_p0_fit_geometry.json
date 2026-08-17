@@ -1,0 +1,1719 @@
+{
+  "auxiliary_budget_norm": 10.480132332103569,
+  "baseline_optimizer_map": {
+    "clip_coefficient": 0.1888756473342043,
+    "clipped_norm": 0.9999998005730736,
+    "clipping_active": true,
+    "displacement_norm": 2966.7771309500417,
+    "raw_norm": 5.294487803157132
+  },
+  "calibration_scores_used_for_selection": false,
+  "diagnostic_scores_used_for_selection": false,
+  "endpoint_audit": {
+    "budget_norm": 10.480132332103569,
+    "certificate_names": [
+      "risk",
+      "uniform",
+      "tarc",
+      "etarc",
+      "continuation",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "certificate_norms": {
+      "branch_entropy": 0.61774613506635,
+      "branch_negative_gap": 35.41742737667136,
+      "continuation": 9.03312575957084,
+      "etarc": 29.851232244930376,
+      "risk": 4.512203852926799,
+      "tarc": 13.151848937435789,
+      "uniform": 10.480132332103569
+    },
+    "gram_matrix": [
+      [
+        0.9999999345504835,
+        0.7010084673943141,
+        0.1560007548996456,
+        0.16703912030039256,
+        0.6235167196994992,
+        0.02155747905362486,
+        7.281116970839555e-05
+      ],
+      [
+        0.7010084673943141,
+        0.9999999370488546,
+        0.25390368899519244,
+        0.25273346061012925,
+        0.8177572507300865,
+        0.038676800100593635,
+        0.003545730368918806
+      ],
+      [
+        0.1560007548996456,
+        0.25390368899519244,
+        0.9999999139579476,
+        0.645677323507251,
+        0.14492978082705293,
+        -0.3153899145525403,
+        -0.39900597496392337
+      ],
+      [
+        0.16703912030039256,
+        0.25273346061012925,
+        0.645677323507251,
+        0.9999999152531288,
+        0.1592622194435999,
+        0.2167039169869508,
+        0.28290322847482235
+      ],
+      [
+        0.6235167196994992,
+        0.8177572507300865,
+        0.14492978082705293,
+        0.1592622194435999,
+        0.9999999337017818,
+        0.04995044544232961,
+        0.007876892423510853
+      ],
+      [
+        0.02155747905362486,
+        0.038676800100593635,
+        -0.3153899145525403,
+        0.2167039169869508,
+        0.04995044544232961,
+        1.0000000645291285,
+        0.8023780500435888
+      ],
+      [
+        7.281116970839555e-05,
+        0.003545730368918806,
+        -0.39900597496392337,
+        0.28290322847482235,
+        0.007876892423510853,
+        0.8023780500435888,
+        1.000000064092991
+      ]
+    ],
+    "raw_endpoint": {
+      "accepted_kkt_candidates": 1,
+      "active_certificates": [
+        "risk",
+        "tarc",
+        "continuation",
+        "branch_entropy",
+        "branch_negative_gap"
+      ],
+      "active_indices": [
+        0,
+        2,
+        4,
+        5,
+        6
+      ],
+      "active_set_size": 5,
+      "budget_norm": 10.480132332103569,
+      "certificate_cosines": {
+        "branch_entropy": 0.49364405333945816,
+        "branch_negative_gap": 0.49364405435536024,
+        "continuation": 0.4936440839502314,
+        "etarc": 0.7708817971659899,
+        "risk": 0.4936440787908556,
+        "tarc": 0.49364406776206865,
+        "uniform": 0.5458063390086414
+      },
+      "certificate_names": [
+        "risk",
+        "uniform",
+        "tarc",
+        "etarc",
+        "continuation",
+        "branch_entropy",
+        "branch_negative_gap"
+      ],
+      "dual_margin": 0.49364404926614647,
+      "dual_squared_margin": 0.24368445841059916,
+      "dual_weights": {
+        "branch_entropy": 0.10975038430205752,
+        "branch_negative_gap": 0.2999276572093347,
+        "continuation": 0.11132470248743062,
+        "etarc": 0.0,
+        "risk": 0.1151185145807819,
+        "tarc": 0.3638787414203952,
+        "uniform": 0.0
+      },
+      "final_direction_norm": 10.480131918080346,
+      "gradient_norms": {
+        "branch_entropy": 0.61774613506635,
+        "branch_negative_gap": 35.41742737667136,
+        "continuation": 9.03312575957084,
+        "etarc": 29.851232244930376,
+        "risk": 4.512203852926799,
+        "tarc": 13.151848937435789,
+        "uniform": 10.480132332103569
+      },
+      "gram_matrix": [
+        [
+          0.9999999345504835,
+          0.7010084673943141,
+          0.1560007548996456,
+          0.16703912030039256,
+          0.6235167196994992,
+          0.02155747905362486,
+          7.281116970839555e-05
+        ],
+        [
+          0.7010084673943141,
+          0.9999999370488546,
+          0.25390368899519244,
+          0.25273346061012925,
+          0.8177572507300865,
+          0.038676800100593635,
+          0.003545730368918806
+        ],
+        [
+          0.1560007548996456,
+          0.25390368899519244,
+          0.9999999139579476,
+          0.645677323507251,
+          0.14492978082705293,
+          -0.3153899145525403,
+          -0.39900597496392337
+        ],
+        [
+          0.16703912030039256,
+          0.25273346061012925,
+          0.645677323507251,
+          0.9999999152531288,
+          0.1592622194435999,
+          0.2167039169869508,
+          0.28290322847482235
+        ],
+        [
+          0.6235167196994992,
+          0.8177572507300865,
+          0.14492978082705293,
+          0.1592622194435999,
+          0.9999999337017818,
+          0.04995044544232961,
+          0.007876892423510853
+        ],
+        [
+          0.02155747905362486,
+          0.038676800100593635,
+          -0.3153899145525403,
+          0.2167039169869508,
+          0.04995044544232961,
+          1.0000000645291285,
+          0.8023780500435888
+        ],
+        [
+          7.281116970839555e-05,
+          0.003545730368918806,
+          -0.39900597496392337,
+          0.28290322847482235,
+          0.007876892423510853,
+          0.8023780500435888,
+          1.000000064092991
+        ]
+      ],
+      "kkt_residual": 1.942890293094024e-16,
+      "primal_dual_gap": 4.073311687946557e-09,
+      "primal_margin": 0.49364405333945816
+    },
+    "target_certificates": [
+      "etarc",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "target_endpoint": {
+      "accepted_kkt_candidates": 1,
+      "active_certificates": [
+        "etarc",
+        "branch_entropy",
+        "branch_negative_gap"
+      ],
+      "active_indices": [
+        0,
+        1,
+        2
+      ],
+      "active_set_size": 3,
+      "budget_norm": 10.480132332103569,
+      "certificate_cosines": {
+        "branch_entropy": 0.7720385309159487,
+        "branch_negative_gap": 0.7720385331655754,
+        "etarc": 0.7720385981367227
+      },
+      "certificate_names": [
+        "etarc",
+        "branch_entropy",
+        "branch_negative_gap"
+      ],
+      "dual_margin": 0.7720385495185922,
+      "dual_squared_margin": 0.5960435392291246,
+      "dual_weights": {
+        "branch_entropy": 0.344233523198597,
+        "branch_negative_gap": 0.18731035480993768,
+        "etarc": 0.46845612199146536
+      },
+      "final_direction_norm": 10.48013212286712,
+      "gradient_norms": {
+        "branch_entropy": 0.61774613506635,
+        "branch_negative_gap": 35.41742737667136,
+        "etarc": 29.851232244930376
+      },
+      "gram_matrix": [
+        [
+          0.9999999152531288,
+          0.2167039169869508,
+          0.28290322847482235
+        ],
+        [
+          0.2167039169869508,
+          1.0000000645291285,
+          0.8023780500435888
+        ],
+        [
+          0.28290322847482235,
+          0.8023780500435888,
+          1.000000064092991
+        ]
+      ],
+      "kkt_residual": 4.440892098500626e-16,
+      "primal_dual_gap": 1.86026435367026e-08,
+      "primal_margin": 0.7720385309159487
+    }
+  },
+  "fit_coverages": [
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 48,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.8647161285592267,
+        "branch_negative_gap": 61.538610085320585,
+        "continuation": 14.122452630951074,
+        "etarc": 111.37387842326287,
+        "risk": 7.562649609978678,
+        "tarc": 31.834376675315095,
+        "uniform": 14.902784396747913
+      },
+      "loss_means": {
+        "branch_entropy": 0.016409967094659805,
+        "branch_negative_gap": -6.0625,
+        "continuation": 7.386275291442871,
+        "etarc": 13.215719223022461,
+        "risk": 4.842320919036865,
+        "tarc": 7.363395690917969,
+        "uniform": 7.397676467895508
+      },
+      "mode": "eval",
+      "response_tokens": 60,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_01"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 47,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 6.34291381415253,
+        "branch_negative_gap": 50.82771122131235,
+        "continuation": 14.418431652596885,
+        "etarc": 132.01483674427325,
+        "risk": 4.717612134135806,
+        "tarc": 34.04905744199237,
+        "uniform": 13.7427218154895
+      },
+      "loss_means": {
+        "branch_entropy": 0.1725638508796692,
+        "branch_negative_gap": -3.140625,
+        "continuation": 6.432916641235352,
+        "etarc": 14.017693519592285,
+        "risk": 3.5154285430908203,
+        "tarc": 6.40742826461792,
+        "uniform": 7.01036262512207
+      },
+      "mode": "eval",
+      "response_tokens": 59,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_02"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 48,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.00391882509643589,
+        "branch_negative_gap": 54.65775315340203,
+        "continuation": 10.275056701420718,
+        "etarc": 47.55836296111413,
+        "risk": 7.006643441950969,
+        "tarc": 21.33887393165962,
+        "uniform": 13.134391595635725
+      },
+      "loss_means": {
+        "branch_entropy": 7.484878005925566e-05,
+        "branch_negative_gap": -12.0703125,
+        "continuation": 6.613268852233887,
+        "etarc": 8.350188255310059,
+        "risk": 3.2218189239501953,
+        "tarc": 6.816500663757324,
+        "uniform": 6.739096641540527
+      },
+      "mode": "eval",
+      "response_tokens": 60,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_03"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 60,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.2627054020082558,
+        "branch_negative_gap": 40.39847358196414,
+        "continuation": 12.004236463618746,
+        "etarc": 54.100620148553546,
+        "risk": 9.01729051476815,
+        "tarc": 17.33767292242997,
+        "uniform": 12.46744160306732
+      },
+      "loss_means": {
+        "branch_entropy": 0.0074396622367203236,
+        "branch_negative_gap": -6.9765625,
+        "continuation": 6.123485565185547,
+        "etarc": 10.067510604858398,
+        "risk": 4.613570690155029,
+        "tarc": 4.42839241027832,
+        "uniform": 6.410107612609863
+      },
+      "mode": "eval",
+      "response_tokens": 72,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_04"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 49,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.13775615970059307,
+        "branch_negative_gap": 40.82866686078928,
+        "continuation": 14.060597653573755,
+        "etarc": 59.756537485404124,
+        "risk": 6.627031354092744,
+        "tarc": 26.15487296790953,
+        "uniform": 15.001180587135543
+      },
+      "loss_means": {
+        "branch_entropy": 0.003819923149421811,
+        "branch_negative_gap": -7.734375,
+        "continuation": 6.355935573577881,
+        "etarc": 13.00538444519043,
+        "risk": 3.6494851112365723,
+        "tarc": 7.215224742889404,
+        "uniform": 6.992709159851074
+      },
+      "mode": "eval",
+      "response_tokens": 61,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_05"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 62,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.03239093129105037,
+        "branch_negative_gap": 33.61136767624019,
+        "continuation": 7.6932462198011695,
+        "etarc": 42.523550489634566,
+        "risk": 4.929978053078694,
+        "tarc": 16.69205859378389,
+        "uniform": 8.396059906211248
+      },
+      "loss_means": {
+        "branch_entropy": 0.0010682049905881286,
+        "branch_negative_gap": -9.16015625,
+        "continuation": 4.778932094573975,
+        "etarc": 13.006284713745117,
+        "risk": 2.855332136154175,
+        "tarc": 6.880903244018555,
+        "uniform": 5.53732442855835
+      },
+      "mode": "eval",
+      "response_tokens": 74,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_06"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 47,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.09311878534904303,
+        "branch_negative_gap": 36.47614487551937,
+        "continuation": 9.629376721435102,
+        "etarc": 48.48976522886491,
+        "risk": 18.154319800527087,
+        "tarc": 15.814404110332667,
+        "uniform": 11.663972322356264
+      },
+      "loss_means": {
+        "branch_entropy": 0.002874939003959298,
+        "branch_negative_gap": -8.0546875,
+        "continuation": 6.48171329498291,
+        "etarc": 13.201175689697266,
+        "risk": 3.2897226810455322,
+        "tarc": 5.993833541870117,
+        "uniform": 6.795964241027832
+      },
+      "mode": "eval",
+      "response_tokens": 59,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_07"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 47,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.08819617307108438,
+        "branch_negative_gap": 50.930308534686304,
+        "continuation": 12.908489325497001,
+        "etarc": 42.13896444344874,
+        "risk": 6.175020956460955,
+        "tarc": 22.26033289890628,
+        "uniform": 14.130955644864784
+      },
+      "loss_means": {
+        "branch_entropy": 0.0019325804896652699,
+        "branch_negative_gap": -8.5,
+        "continuation": 6.625492572784424,
+        "etarc": 11.390085220336914,
+        "risk": 3.9375522136688232,
+        "tarc": 6.2226481437683105,
+        "uniform": 6.887565612792969
+      },
+      "mode": "eval",
+      "response_tokens": 59,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_08"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 57,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.0001651336760121938,
+        "branch_negative_gap": 48.57398354204293,
+        "continuation": 12.98653942640015,
+        "etarc": 54.04262749125735,
+        "risk": 6.594154700286094,
+        "tarc": 23.694610284629974,
+        "uniform": 15.13612207790497
+      },
+      "loss_means": {
+        "branch_entropy": 3.931696937797824e-06,
+        "branch_negative_gap": -15.232421875,
+        "continuation": 5.620208263397217,
+        "etarc": 17.12554359436035,
+        "risk": 4.091235637664795,
+        "tarc": 11.293417930603027,
+        "uniform": 6.261752128601074
+      },
+      "mode": "eval",
+      "response_tokens": 69,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_09"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 46,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.05126008243036908,
+        "branch_negative_gap": 43.736635458225024,
+        "continuation": 14.458347908338798,
+        "etarc": 59.12102812905666,
+        "risk": 4.689803021587214,
+        "tarc": 17.38437416458402,
+        "uniform": 15.115487268548982
+      },
+      "loss_means": {
+        "branch_entropy": 0.0013053340371698141,
+        "branch_negative_gap": -8.9375,
+        "continuation": 8.679338455200195,
+        "etarc": 10.677627563476562,
+        "risk": 3.1749753952026367,
+        "tarc": 5.418854236602783,
+        "uniform": 8.321257591247559
+      },
+      "mode": "eval",
+      "response_tokens": 58,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_10"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 49,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.1883348487854479,
+        "branch_negative_gap": 52.79039751041912,
+        "continuation": 12.520682415866869,
+        "etarc": 41.598604670141675,
+        "risk": 6.009331582767015,
+        "tarc": 17.512062705312367,
+        "uniform": 13.029042391680255
+      },
+      "loss_means": {
+        "branch_entropy": 0.004037084989249706,
+        "branch_negative_gap": -7.671875,
+        "continuation": 6.958335876464844,
+        "etarc": 9.210164070129395,
+        "risk": 3.7245635986328125,
+        "tarc": 4.980162620544434,
+        "uniform": 7.128254413604736
+      },
+      "mode": "eval",
+      "response_tokens": 61,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_11"
+    },
+    {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 48,
+      "etarc_margin_terms": 8,
+      "gradient_norms": {
+        "branch_entropy": 0.10914848210340232,
+        "branch_negative_gap": 56.586189871336984,
+        "continuation": 12.547847494898532,
+        "etarc": 52.69284440621494,
+        "risk": 4.567394277066326,
+        "tarc": 18.549896357433973,
+        "uniform": 14.803719012766267
+      },
+      "loss_means": {
+        "branch_entropy": 0.002161011565476656,
+        "branch_negative_gap": -8.375,
+        "continuation": 6.590933322906494,
+        "etarc": 8.652974128723145,
+        "risk": 3.170344114303589,
+        "tarc": 7.155384540557861,
+        "uniform": 7.140346527099609
+      },
+      "mode": "eval",
+      "response_tokens": 60,
+      "risk_microbatches": 1,
+      "safety_microbatches": 1,
+      "tarc_margin_terms": 8,
+      "unit_id": "fit_12"
+    }
+  ],
+  "fit_score_panels": {
+    "fit_01": {
+      "proposed": {
+        "branch_entropy": 0.22404366428499672,
+        "branch_negative_gap": 0.22393591030940715,
+        "continuation": 0.23382641495685338,
+        "etarc": 0.17965807721687016,
+        "risk": 0.30118634372541814,
+        "tarc": 0.13602095738866288,
+        "uniform": 0.30945201344892187
+      },
+      "raw": {
+        "branch_entropy": 0.049909960825722355,
+        "branch_negative_gap": 0.04985105585773754,
+        "continuation": 0.19298062383788991,
+        "etarc": 0.10948395606817891,
+        "risk": 0.24069171254071067,
+        "tarc": 0.1131441331016082,
+        "uniform": 0.2546855777820171
+      },
+      "selected": {
+        "branch_entropy": 0.049909960825722355,
+        "branch_negative_gap": 0.04985105585773754,
+        "continuation": 0.19298062383788991,
+        "etarc": 0.10948395606817891,
+        "risk": 0.24069171254071067,
+        "tarc": 0.1131441331016082,
+        "uniform": 0.2546855777820171
+      },
+      "tangent": {
+        "branch_entropy": 0.5711029572999407,
+        "branch_negative_gap": 0.5709356318838111,
+        "continuation": 0.16268893257561748,
+        "etarc": 0.24431197385079162,
+        "risk": 0.23379949093217647,
+        "tarc": 0.09192036210045458,
+        "uniform": 0.21749074172496385
+      }
+    },
+    "fit_02": {
+      "proposed": {
+        "branch_entropy": 0.2675932448045012,
+        "branch_negative_gap": 0.26746937528743525,
+        "continuation": 0.15928346037062585,
+        "etarc": 0.14545718878140917,
+        "risk": 0.31678538231099673,
+        "tarc": 0.15533912862291996,
+        "uniform": 0.29092955490409617
+      },
+      "raw": {
+        "branch_entropy": 0.09282116070457408,
+        "branch_negative_gap": 0.09276389116647028,
+        "continuation": 0.14204947301434018,
+        "etarc": 0.08101915936477248,
+        "risk": 0.24920983580242903,
+        "tarc": 0.09818329475764027,
+        "uniform": 0.23343282846683802
+      },
+      "selected": {
+        "branch_entropy": 0.09282116070457408,
+        "branch_negative_gap": 0.09276389116647028,
+        "continuation": 0.14204947301434018,
+        "etarc": 0.08101915936477248,
+        "risk": 0.24920983580242903,
+        "tarc": 0.09818329475764027,
+        "uniform": 0.23343282846683802
+      },
+      "tangent": {
+        "branch_entropy": 0.5799681081065603,
+        "branch_negative_gap": 0.5797436306466338,
+        "continuation": 0.07825081911999945,
+        "etarc": 0.22124894061713876,
+        "risk": 0.2580509303903781,
+        "tarc": 0.20041657037673355,
+        "uniform": 0.22295312270024997
+      }
+    },
+    "fit_03": {
+      "proposed": {
+        "branch_entropy": 0.2588681611907127,
+        "branch_negative_gap": 0.2698021670618172,
+        "continuation": 0.22818789843807852,
+        "etarc": 0.20522396916697658,
+        "risk": 0.33145507071168484,
+        "tarc": 0.07959473273050982,
+        "uniform": 0.3114882933804691
+      },
+      "raw": {
+        "branch_entropy": 0.07046698476234448,
+        "branch_negative_gap": 0.07584225613915933,
+        "continuation": 0.1890795176484642,
+        "etarc": 0.08639729204138065,
+        "risk": 0.27457508051108587,
+        "tarc": 0.06721444691359665,
+        "uniform": 0.25767155950343257
+      },
+      "selected": {
+        "branch_entropy": 0.07046698476234448,
+        "branch_negative_gap": 0.07584225613915933,
+        "continuation": 0.1890795176484642,
+        "etarc": 0.08639729204138065,
+        "risk": 0.27457508051108587,
+        "tarc": 0.06721444691359665,
+        "uniform": 0.25767155950343257
+      },
+      "tangent": {
+        "branch_entropy": 0.6205054749743698,
+        "branch_negative_gap": 0.6393357171427207,
+        "continuation": 0.15645146124957904,
+        "etarc": 0.39800818027811674,
+        "risk": 0.22747856297818936,
+        "tarc": 0.050693021935166095,
+        "uniform": 0.21489237213457196
+      }
+    },
+    "fit_04": {
+      "proposed": {
+        "branch_entropy": 0.28281183175449764,
+        "branch_negative_gap": 0.2826881427800538,
+        "continuation": 0.2665441206958634,
+        "etarc": 0.17646300263565468,
+        "risk": 0.32186919752091014,
+        "tarc": 0.047254939051478304,
+        "uniform": 0.32881313173552706
+      },
+      "raw": {
+        "branch_entropy": 0.08904133007278069,
+        "branch_negative_gap": 0.08883915846537388,
+        "continuation": 0.2102218374144431,
+        "etarc": 0.08316850925781781,
+        "risk": 0.269887954148569,
+        "tarc": 0.046743767769174924,
+        "uniform": 0.2603194877778862
+      },
+      "selected": {
+        "branch_entropy": 0.08904133007278069,
+        "branch_negative_gap": 0.08883915846537388,
+        "continuation": 0.2102218374144431,
+        "etarc": 0.08316850925781781,
+        "risk": 0.269887954148569,
+        "tarc": 0.046743767769174924,
+        "uniform": 0.2603194877778862
+      },
+      "tangent": {
+        "branch_entropy": 0.6408148765593535,
+        "branch_negative_gap": 0.6410366699912149,
+        "continuation": 0.21547624904461468,
+        "etarc": 0.31491881751781803,
+        "risk": 0.21089194660875385,
+        "tarc": 0.00906109784353459,
+        "uniform": 0.26278092520022905
+      }
+    },
+    "fit_05": {
+      "proposed": {
+        "branch_entropy": 0.23922517483437614,
+        "branch_negative_gap": 0.23884431914804882,
+        "continuation": 0.20993820107509487,
+        "etarc": 0.18091968184740687,
+        "risk": 0.29924970956866215,
+        "tarc": 0.1610373729543411,
+        "uniform": 0.29027683164044776
+      },
+      "raw": {
+        "branch_entropy": 0.057049142503027575,
+        "branch_negative_gap": 0.05671075837998394,
+        "continuation": 0.1856324413327431,
+        "etarc": 0.08028500011928803,
+        "risk": 0.2371176790987018,
+        "tarc": 0.10132683439055083,
+        "uniform": 0.24192228925397471
+      },
+      "selected": {
+        "branch_entropy": 0.057049142503027575,
+        "branch_negative_gap": 0.05671075837998394,
+        "continuation": 0.1856324413327431,
+        "etarc": 0.08028500011928803,
+        "risk": 0.2371176790987018,
+        "tarc": 0.10132683439055083,
+        "uniform": 0.24192228925397471
+      },
+      "tangent": {
+        "branch_entropy": 0.5982453254296237,
+        "branch_negative_gap": 0.5980543351316916,
+        "continuation": 0.10802967949169823,
+        "etarc": 0.338201909931035,
+        "risk": 0.23852885874942698,
+        "tarc": 0.20917732515136628,
+        "uniform": 0.1947303287215007
+      }
+    },
+    "fit_06": {
+      "proposed": {
+        "branch_entropy": 0.17484667471338133,
+        "branch_negative_gap": 0.17695663563496866,
+        "continuation": 0.21276031411815732,
+        "etarc": 0.10806792824388355,
+        "risk": 0.26189279854315084,
+        "tarc": 0.05936746843872887,
+        "uniform": 0.2442874829506989
+      },
+      "raw": {
+        "branch_entropy": 0.05580697020441277,
+        "branch_negative_gap": 0.05675775967289645,
+        "continuation": 0.16542622483067707,
+        "etarc": 0.05658647981943312,
+        "risk": 0.21754796650908526,
+        "tarc": 0.04190878817587815,
+        "uniform": 0.18667142930009847
+      },
+      "selected": {
+        "branch_entropy": 0.05580697020441277,
+        "branch_negative_gap": 0.05675775967289645,
+        "continuation": 0.16542622483067707,
+        "etarc": 0.05658647981943312,
+        "risk": 0.21754796650908526,
+        "tarc": 0.04190878817587815,
+        "uniform": 0.18667142930009847
+      },
+      "tangent": {
+        "branch_entropy": 0.39384928679533726,
+        "branch_negative_gap": 0.39774902530291384,
+        "continuation": 0.179307009586372,
+        "etarc": 0.17547198127290442,
+        "risk": 0.17789910702660228,
+        "tarc": 0.06310748133360836,
+        "uniform": 0.21592842483810074
+      }
+    },
+    "fit_07": {
+      "proposed": {
+        "branch_entropy": 0.2076768566610454,
+        "branch_negative_gap": 0.20658047420193798,
+        "continuation": 0.25369548904558353,
+        "etarc": 0.24089211339610775,
+        "risk": 0.20635519698364976,
+        "tarc": 0.13124121971148114,
+        "uniform": 0.3206956707694626
+      },
+      "raw": {
+        "branch_entropy": 0.041840194686704565,
+        "branch_negative_gap": 0.04108595627382532,
+        "continuation": 0.20223156579558493,
+        "etarc": 0.11232273992131385,
+        "risk": 0.199410750516844,
+        "tarc": 0.09753036990809215,
+        "uniform": 0.25573588249143303
+      },
+      "selected": {
+        "branch_entropy": 0.041840194686704565,
+        "branch_negative_gap": 0.04108595627382532,
+        "continuation": 0.20223156579558493,
+        "etarc": 0.11232273992131385,
+        "risk": 0.199410750516844,
+        "tarc": 0.09753036990809215,
+        "uniform": 0.25573588249143303
+      },
+      "tangent": {
+        "branch_entropy": 0.5429893067711159,
+        "branch_negative_gap": 0.5417631947269151,
+        "continuation": 0.19849677976630387,
+        "etarc": 0.4336271773530459,
+        "risk": 0.054062264011738234,
+        "tarc": 0.1244859657868246,
+        "uniform": 0.2506251251769172
+      }
+    },
+    "fit_08": {
+      "proposed": {
+        "branch_entropy": 0.23006157753676573,
+        "branch_negative_gap": 0.22988098900642084,
+        "continuation": 0.2648420429725887,
+        "etarc": 0.21004625328666102,
+        "risk": 0.2891557690763377,
+        "tarc": 0.10857802705051786,
+        "uniform": 0.32701206677582545
+      },
+      "raw": {
+        "branch_entropy": 0.04528830484738966,
+        "branch_negative_gap": 0.04513857563414012,
+        "continuation": 0.2171944441357742,
+        "etarc": 0.11342171819233324,
+        "risk": 0.2267971683368069,
+        "tarc": 0.09531119324703172,
+        "uniform": 0.2723753756705402
+      },
+      "selected": {
+        "branch_entropy": 0.04528830484738966,
+        "branch_negative_gap": 0.04513857563414012,
+        "continuation": 0.2171944441357742,
+        "etarc": 0.11342171819233324,
+        "risk": 0.2267971683368069,
+        "tarc": 0.09531119324703172,
+        "uniform": 0.2723753756705402
+      },
+      "tangent": {
+        "branch_entropy": 0.604781641901299,
+        "branch_negative_gap": 0.6046581061878377,
+        "continuation": 0.1885250818960807,
+        "etarc": 0.3304834870441924,
+        "risk": 0.23762607603213012,
+        "tarc": 0.05801305116409744,
+        "uniform": 0.2198745504913443
+      }
+    },
+    "fit_09": {
+      "proposed": {
+        "branch_entropy": 0.07568168796071739,
+        "branch_negative_gap": 0.1613510508117886,
+        "continuation": 0.2274238915594464,
+        "etarc": 0.14461191520062605,
+        "risk": 0.33861384180854953,
+        "tarc": 0.13226237168288715,
+        "uniform": 0.27532141323290954
+      },
+      "raw": {
+        "branch_entropy": 0.01226718194907743,
+        "branch_negative_gap": 0.047151923321694704,
+        "continuation": 0.17349626549980443,
+        "etarc": 0.08457481736250361,
+        "risk": 0.2771507467350744,
+        "tarc": 0.10309230806241897,
+        "uniform": 0.2176587474806163
+      },
+      "selected": {
+        "branch_entropy": 0.01226718194907743,
+        "branch_negative_gap": 0.047151923321694704,
+        "continuation": 0.17349626549980443,
+        "etarc": 0.08457481736250361,
+        "risk": 0.2771507467350744,
+        "tarc": 0.10309230806241897,
+        "uniform": 0.2176587474806163
+      },
+      "tangent": {
+        "branch_entropy": 0.20704295569949724,
+        "branch_negative_gap": 0.3768219801508878,
+        "continuation": 0.2019111300063666,
+        "etarc": 0.2075786836464577,
+        "risk": 0.24270969251284935,
+        "tarc": 0.11068133375109766,
+        "uniform": 0.2209899754182011
+      }
+    },
+    "fit_10": {
+      "proposed": {
+        "branch_entropy": 0.24289005434612385,
+        "branch_negative_gap": 0.24189007101774082,
+        "continuation": 0.29628688968104766,
+        "etarc": 0.1775110207106486,
+        "risk": 0.27004933257640396,
+        "tarc": 0.061144725164784454,
+        "uniform": 0.3563270465343528
+      },
+      "raw": {
+        "branch_entropy": 0.05292571337798338,
+        "branch_negative_gap": 0.05214972492374859,
+        "continuation": 0.2389057313698306,
+        "etarc": 0.07800802658295183,
+        "risk": 0.21987983512212242,
+        "tarc": 0.06708101172277524,
+        "uniform": 0.2910192749835475
+      },
+      "selected": {
+        "branch_entropy": 0.05292571337798338,
+        "branch_negative_gap": 0.05214972492374859,
+        "continuation": 0.2389057313698306,
+        "etarc": 0.07800802658295183,
+        "risk": 0.21987983512212242,
+        "tarc": 0.06708101172277524,
+        "uniform": 0.2910192749835475
+      },
+      "tangent": {
+        "branch_entropy": 0.6227812548450566,
+        "branch_negative_gap": 0.6219338208367645,
+        "continuation": 0.22344667804351198,
+        "etarc": 0.3341808907898525,
+        "risk": 0.1971071272823857,
+        "tarc": -0.00856864809405643,
+        "uniform": 0.2573422191606087
+      }
+    },
+    "fit_11": {
+      "proposed": {
+        "branch_entropy": 0.25974005046275034,
+        "branch_negative_gap": 0.25960029441935223,
+        "continuation": 0.2529170114424492,
+        "etarc": 0.22831745318984567,
+        "risk": 0.33480259213380226,
+        "tarc": 0.036095626519885224,
+        "uniform": 0.31324402555553355
+      },
+      "raw": {
+        "branch_entropy": 0.0649192222973141,
+        "branch_negative_gap": 0.06470079920913265,
+        "continuation": 0.21308279891918985,
+        "etarc": 0.09956097558073392,
+        "risk": 0.2730085926818274,
+        "tarc": 0.05384126707858954,
+        "uniform": 0.2601933944021622
+      },
+      "selected": {
+        "branch_entropy": 0.0649192222973141,
+        "branch_negative_gap": 0.06470079920913265,
+        "continuation": 0.21308279891918985,
+        "etarc": 0.09956097558073392,
+        "risk": 0.2730085926818274,
+        "tarc": 0.05384126707858954,
+        "uniform": 0.2601933944021622
+      },
+      "tangent": {
+        "branch_entropy": 0.6403890901165211,
+        "branch_negative_gap": 0.6406089044834726,
+        "continuation": 0.16260297025528944,
+        "etarc": 0.4322098668867368,
+        "risk": 0.2431234840814094,
+        "tarc": -0.048861349893888704,
+        "uniform": 0.21281425239873125
+      }
+    },
+    "fit_12": {
+      "proposed": {
+        "branch_entropy": 0.2847160782776115,
+        "branch_negative_gap": 0.2846516959565311,
+        "continuation": 0.2727983021526313,
+        "etarc": 0.23476479697896355,
+        "risk": 0.23396466631678478,
+        "tarc": 0.06640492939117282,
+        "uniform": 0.3420395543456364
+      },
+      "raw": {
+        "branch_entropy": 0.07216545618585334,
+        "branch_negative_gap": 0.07204716701254955,
+        "continuation": 0.22546595848095619,
+        "etarc": 0.09598035165801083,
+        "risk": 0.18352455482902388,
+        "tarc": 0.07570331381392321,
+        "uniform": 0.2833294440126923
+      },
+      "selected": {
+        "branch_entropy": 0.07216545618585334,
+        "branch_negative_gap": 0.07204716701254955,
+        "continuation": 0.22546595848095619,
+        "etarc": 0.09598035165801083,
+        "risk": 0.18352455482902388,
+        "tarc": 0.07570331381392321,
+        "uniform": 0.2833294440126923
+      },
+      "tangent": {
+        "branch_entropy": 0.6988801858721077,
+        "branch_negative_gap": 0.6990357883667417,
+        "continuation": 0.1888163148540104,
+        "etarc": 0.4640754544307033,
+        "risk": 0.19222086658914994,
+        "tarc": -0.01807609895673817,
+        "uniform": 0.23478501389023088
+      }
+    }
+  },
+  "global_basis": {
+    "certificates": [
+      "risk",
+      "uniform",
+      "tarc",
+      "continuation",
+      "etarc",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "count": 7,
+    "input_gradient_norm_max": 132.01483674427325,
+    "input_gradient_norm_min": 0.0001651336760121938,
+    "raw_scores": {
+      "branch_entropy": 0.08251965713946832,
+      "branch_negative_gap": 0.0841108383406087,
+      "continuation": 0.26939735191930836,
+      "etarc": 0.18314799601939752,
+      "risk": 0.3581828202534537,
+      "tarc": 0.1336767239116284,
+      "uniform": 0.325330383514743
+    },
+    "raw_target_floor_for_fit_audit": 0.01226718194907743,
+    "rule": "equal_weight_mean_of_twelve_unit_normalized_fit_certificates"
+  },
+  "gradient_measurement_mode": "eval",
+  "method": "RMA-MCD",
+  "name": "step3_rmamcd_p0_fit_geometry_v1",
+  "pooled_gradient_norms": {
+    "branch_entropy": 0.61774613506635,
+    "branch_negative_gap": 35.41742737667136,
+    "continuation": 9.03312575957084,
+    "etarc": 29.851232244930376,
+    "risk": 4.512203852926799,
+    "tarc": 13.151848937435789,
+    "uniform": 10.480132332103569
+  },
+  "pooled_scores": {
+    "raw": {
+      "branch_entropy": 0.09388397681666512,
+      "branch_negative_gap": 0.08376632379767607,
+      "continuation": 0.26825323341924284,
+      "etarc": 0.18790175865349515,
+      "risk": 0.37593571796315034,
+      "tarc": 0.1404077715928921,
+      "uniform": 0.32553228166363
+    },
+    "selected": {
+      "branch_entropy": 0.09388397681666512,
+      "branch_negative_gap": 0.08376632379767607,
+      "continuation": 0.26825323341924284,
+      "etarc": 0.18790175865349515,
+      "risk": 0.37593571796315034,
+      "tarc": 0.1404077715928921,
+      "uniform": 0.32553228166363
+    },
+    "tangent": {
+      "branch_entropy": 0.6436335188132429,
+      "branch_negative_gap": 0.7827255880554228,
+      "continuation": 0.2317518248439104,
+      "etarc": 0.6376515344369814,
+      "risk": 0.3001391149336054,
+      "tarc": 0.13975304855358933,
+      "uniform": 0.29143702597358123
+    }
+  },
+  "projection_error": null,
+  "projection_valid": true,
+  "protected_constraint_count": 48,
+  "protected_constraint_labels": [
+    "fit_01:risk",
+    "fit_01:uniform",
+    "fit_01:tarc",
+    "fit_01:continuation",
+    "fit_02:risk",
+    "fit_02:uniform",
+    "fit_02:tarc",
+    "fit_02:continuation",
+    "fit_03:risk",
+    "fit_03:uniform",
+    "fit_03:tarc",
+    "fit_03:continuation",
+    "fit_04:risk",
+    "fit_04:uniform",
+    "fit_04:tarc",
+    "fit_04:continuation",
+    "fit_05:risk",
+    "fit_05:uniform",
+    "fit_05:tarc",
+    "fit_05:continuation",
+    "fit_06:risk",
+    "fit_06:uniform",
+    "fit_06:tarc",
+    "fit_06:continuation",
+    "fit_07:risk",
+    "fit_07:uniform",
+    "fit_07:tarc",
+    "fit_07:continuation",
+    "fit_08:risk",
+    "fit_08:uniform",
+    "fit_08:tarc",
+    "fit_08:continuation",
+    "fit_09:risk",
+    "fit_09:uniform",
+    "fit_09:tarc",
+    "fit_09:continuation",
+    "fit_10:risk",
+    "fit_10:uniform",
+    "fit_10:tarc",
+    "fit_10:continuation",
+    "fit_11:risk",
+    "fit_11:uniform",
+    "fit_11:tarc",
+    "fit_11:continuation",
+    "fit_12:risk",
+    "fit_12:uniform",
+    "fit_12:tarc",
+    "fit_12:continuation"
+  ],
+  "protocol_sha256": "f5ad85e07c071e3a57b6dead79363d4183b859cc0ce993a27f771f5274a9873a",
+  "raw_baseline_gradient_norm": 5.294487803157132,
+  "raw_direction_budget_relative_error": 3.950553387082971e-08,
+  "raw_gradient_tensors_serialized": false,
+  "raw_optimizer_map": {
+    "clip_coefficient": 0.14958610955994392,
+    "clipped_norm": 0.9999998619204986,
+    "clipping_active": true,
+    "displacement_norm": 2966.630300457241,
+    "raw_norm": 6.68511169490078
+  },
+  "reference_displacement_norm": 2966.7771309500417,
+  "runtime_head": "78de29e2bd09310771c62393166e21146cdd4a09",
+  "search": {
+    "calibration_scores_used_for_selection": false,
+    "candidate_actual_minimum_margin": -0.2795918079491303,
+    "candidate_panels": [
+      {
+        "branch_entropy": 0.22404366428499672,
+        "branch_negative_gap": 0.22393591030940715,
+        "continuation": 0.23382641495685338,
+        "etarc": 0.17965807721687016,
+        "risk": 0.30118634372541814,
+        "tarc": 0.13602095738866288,
+        "uniform": 0.30945201344892187
+      },
+      {
+        "branch_entropy": 0.2675932448045012,
+        "branch_negative_gap": 0.26746937528743525,
+        "continuation": 0.15928346037062585,
+        "etarc": 0.14545718878140917,
+        "risk": 0.31678538231099673,
+        "tarc": 0.15533912862291996,
+        "uniform": 0.29092955490409617
+      },
+      {
+        "branch_entropy": 0.2588681611907127,
+        "branch_negative_gap": 0.2698021670618172,
+        "continuation": 0.22818789843807852,
+        "etarc": 0.20522396916697658,
+        "risk": 0.33145507071168484,
+        "tarc": 0.07959473273050982,
+        "uniform": 0.3114882933804691
+      },
+      {
+        "branch_entropy": 0.28281183175449764,
+        "branch_negative_gap": 0.2826881427800538,
+        "continuation": 0.2665441206958634,
+        "etarc": 0.17646300263565468,
+        "risk": 0.32186919752091014,
+        "tarc": 0.047254939051478304,
+        "uniform": 0.32881313173552706
+      },
+      {
+        "branch_entropy": 0.23922517483437614,
+        "branch_negative_gap": 0.23884431914804882,
+        "continuation": 0.20993820107509487,
+        "etarc": 0.18091968184740687,
+        "risk": 0.29924970956866215,
+        "tarc": 0.1610373729543411,
+        "uniform": 0.29027683164044776
+      },
+      {
+        "branch_entropy": 0.17484667471338133,
+        "branch_negative_gap": 0.17695663563496866,
+        "continuation": 0.21276031411815732,
+        "etarc": 0.10806792824388355,
+        "risk": 0.26189279854315084,
+        "tarc": 0.05936746843872887,
+        "uniform": 0.2442874829506989
+      },
+      {
+        "branch_entropy": 0.2076768566610454,
+        "branch_negative_gap": 0.20658047420193798,
+        "continuation": 0.25369548904558353,
+        "etarc": 0.24089211339610775,
+        "risk": 0.20635519698364976,
+        "tarc": 0.13124121971148114,
+        "uniform": 0.3206956707694626
+      },
+      {
+        "branch_entropy": 0.23006157753676573,
+        "branch_negative_gap": 0.22988098900642084,
+        "continuation": 0.2648420429725887,
+        "etarc": 0.21004625328666102,
+        "risk": 0.2891557690763377,
+        "tarc": 0.10857802705051786,
+        "uniform": 0.32701206677582545
+      },
+      {
+        "branch_entropy": 0.07568168796071739,
+        "branch_negative_gap": 0.1613510508117886,
+        "continuation": 0.2274238915594464,
+        "etarc": 0.14461191520062605,
+        "risk": 0.33861384180854953,
+        "tarc": 0.13226237168288715,
+        "uniform": 0.27532141323290954
+      },
+      {
+        "branch_entropy": 0.24289005434612385,
+        "branch_negative_gap": 0.24189007101774082,
+        "continuation": 0.29628688968104766,
+        "etarc": 0.1775110207106486,
+        "risk": 0.27004933257640396,
+        "tarc": 0.061144725164784454,
+        "uniform": 0.3563270465343528
+      },
+      {
+        "branch_entropy": 0.25974005046275034,
+        "branch_negative_gap": 0.25960029441935223,
+        "continuation": 0.2529170114424492,
+        "etarc": 0.22831745318984567,
+        "risk": 0.33480259213380226,
+        "tarc": 0.036095626519885224,
+        "uniform": 0.31324402555553355
+      },
+      {
+        "branch_entropy": 0.2847160782776115,
+        "branch_negative_gap": 0.2846516959565311,
+        "continuation": 0.2727983021526313,
+        "etarc": 0.23476479697896355,
+        "risk": 0.23396466631678478,
+        "tarc": 0.06640492939117282,
+        "uniform": 0.3420395543456364
+      }
+    ],
+    "candidate_protected_margin_floor": -0.2795918079491303,
+    "candidate_target_margin_floor": 0.02568168796071739,
+    "design_cosine_floor": 0.951,
+    "diagnostic_scores_used_for_selection": false,
+    "eligible": false,
+    "fit_protected_facet_count": 48,
+    "fit_target_facet_count": 36,
+    "fixed_theta": 0.31434110448924435,
+    "fixed_theta_margin_radians": 1e-06,
+    "joint_margin_primal_value": 0.27189678999118644,
+    "maximum_protected_retention_identity_error": 0.6382862201177546,
+    "minimum_protected_retention": 0.6704081920508697,
+    "protected_retention_floor": 0.95,
+    "protected_retentions": {
+      "continuation": 1.121323838734311,
+      "risk": 1.0348248349138989,
+      "tarc": 0.6704081920508697,
+      "uniform": 1.1998763426701435
+    },
+    "raw_target_score_floor": 0.01226718194907743,
+    "required_target_score_floor": 0.05,
+    "selected_target_gain_over_raw": 0.06341450601163996,
+    "selected_target_score_floor": 0.07568168796071739,
+    "selected_theta": 0.31434110448924435,
+    "selected_theta_degrees": 18.010418614714517,
+    "selection_rule": "fixed_theta_joint_global_target_and_protected_margin_affine_max_min",
+    "solver_candidate_actual_minimum_score": -0.2795918079491303,
+    "solver_candidate_actual_minus_predicted": -0.5514885979403168,
+    "solver_predicted_minimum_score": 0.27189678999118644,
+    "target_coefficients": [
+      "protected:risk",
+      "protected:uniform",
+      "protected:tarc",
+      "protected:continuation",
+      "target:etarc",
+      "target:branch_entropy",
+      "target:branch_negative_gap"
+    ],
+    "theta_max": 0.3143421044892443,
+    "theta_max_degrees": 18.010475910494026,
+    "trigonometric_boundaries": [
+      0.0,
+      0.31434110448924435,
+      0.3143421044892443
+    ]
+  },
+  "selected_optimizer_map": {
+    "fixed_theta": 0.31434110448924435,
+    "global_margin_affine_max_min_used": true,
+    "map_kind": "direct_fixed_norm_protected_nullspace_angular_rotation",
+    "map_variant": "global_pooled_protected_target_margin_affine_max_min",
+    "raw_endpoint_from_exact_clipped_adam_map": true,
+    "raw_norm": 2966.630300457241,
+    "selected_norm": 2966.630300457241,
+    "selected_theta": 0.31434110448924435,
+    "selected_to_raw_norm_ratio": 1.0,
+    "source_raw_clipping_active": true,
+    "source_target_clipping_active": true,
+    "target_endpoint_difference_used": false,
+    "target_endpoint_from_exact_clipped_adam_map": true
+  },
+  "selected_theta": 0.31434110448924435,
+  "selected_theta_degrees": 18.010418614714517,
+  "selected_to_raw_norm_relative_error": 0.0,
+  "tangent_audit": {
+    "affine_solver": {
+      "active_certificates": [
+        "protected:risk",
+        "protected:tarc",
+        "protected:continuation",
+        "target:branch_entropy",
+        "target:branch_negative_gap"
+      ],
+      "active_set_size": 5,
+      "budget_norm": 2966.630300457241,
+      "certificate_names": [
+        "protected:risk",
+        "protected:uniform",
+        "protected:tarc",
+        "protected:continuation",
+        "target:etarc",
+        "target:branch_entropy",
+        "target:branch_negative_gap"
+      ],
+      "certificate_scores": {
+        "protected:continuation": 0.27189678999118644,
+        "protected:risk": 0.27189680324494886,
+        "protected:tarc": 0.27189682785865904,
+        "protected:uniform": 0.2804703999625921,
+        "target:branch_entropy": 0.27189679478764517,
+        "target:branch_negative_gap": 0.2718967952528335,
+        "target:etarc": 0.3282112451133267
+      },
+      "dual_value": 0.2718967797015318,
+      "dual_weights": {
+        "protected:continuation": 0.002694685776020225,
+        "protected:risk": 0.09229307666513073,
+        "protected:tarc": 0.06001368170835034,
+        "protected:uniform": 0.0,
+        "target:branch_entropy": 0.6741154950752585,
+        "target:branch_negative_gap": 0.1708830607752402,
+        "target:etarc": 0.0
+      },
+      "feasible_solver_candidates": 8,
+      "final_direction_norm": 2966.6304643084545,
+      "gradient_norms": {
+        "protected:continuation": 0.0003725502183829929,
+        "protected:risk": 0.0002716547421439453,
+        "protected:tarc": 0.000772625146512367,
+        "protected:uniform": 0.0003029150983951444,
+        "target:branch_entropy": 0.00010386196451846367,
+        "target:branch_negative_gap": 0.00010384810163229026,
+        "target:etarc": 0.00010245445868863886
+      },
+      "gram_matrix": [
+        [
+          7.379629892929339e-08,
+          5.7052782201278194e-08,
+          2.3400338943454926e-08,
+          6.222915112731595e-08,
+          3.0128538036796116e-09,
+          -9.145717074239631e-10,
+          -8.815322931211834e-10
+        ],
+        [
+          5.7052782201278194e-08,
+          9.175755683574001e-08,
+          5.0635716046497145e-08,
+          9.105933107532339e-08,
+          6.23297976844099e-09,
+          -8.317263530004945e-10,
+          -7.743801242441554e-10
+        ],
+        [
+          2.3400338943454926e-08,
+          5.0635716046497145e-08,
+          5.969496170232566e-07,
+          3.143434276894925e-08,
+          4.658623927279925e-08,
+          -3.609021530015284e-08,
+          -3.584214702906056e-08
+        ],
+        [
+          6.222915112731595e-08,
+          9.105933107532339e-08,
+          3.143434276894925e-08,
+          1.3879366521721572e-07,
+          4.714100677176548e-09,
+          -4.621716111527056e-10,
+          -4.4772730287403654e-10
+        ],
+        [
+          3.0128538036796116e-09,
+          6.23297976844099e-09,
+          4.658623927279925e-08,
+          4.714100677176548e-09,
+          1.0496916105182008e-08,
+          3.115095520885456e-09,
+          3.2163401822507163e-09
+        ],
+        [
+          -9.145717074239631e-10,
+          -8.317263530004945e-10,
+          -3.609021530015284e-08,
+          -4.621716111527056e-10,
+          3.115095520885456e-09,
+          1.0787307673634607e-08,
+          1.0668029101269463e-08
+        ],
+        [
+          -8.815322931211834e-10,
+          -7.743801242441554e-10,
+          -3.584214702906056e-08,
+          -4.4772730287403654e-10,
+          3.2163401822507163e-09,
+          1.0668029101269463e-08,
+          1.0784428212630487e-08
+        ]
+      ],
+      "kkt_residual": 4.815712723038601e-08,
+      "offsets": {
+        "protected:continuation": 0.0010003091904040584,
+        "protected:risk": 0.0010003091904040584,
+        "protected:tarc": 0.0010003091904040584,
+        "protected:uniform": 0.0010003091904040584,
+        "target:branch_entropy": 0.028476219453920495,
+        "target:branch_negative_gap": 0.029989433268182958,
+        "target:etarc": 0.12417380084204992
+      },
+      "primal_dual_gap": 1.0289654628348188e-08,
+      "primal_value": 0.27189678999118644,
+      "solver": "scipy_SLSQP_multistart_with_explicit_KKT_audit",
+      "solver_iterations": 19,
+      "solver_success": true,
+      "weighted_gradient_norm": 8.340128642637251e-05
+    },
+    "enforcement": "global_pooled_margin_not_unit_level_nullspace",
+    "maximum_absolute_normalized_protected_dot": 779.6124196332519,
+    "maximum_absolute_protected_cosine": 0.26279391013231096,
+    "minimum_global_covector_projection_fraction": 0.9336446691634939,
+    "normalized_protected_dots": [
+      693.6309690246055,
+      645.2465731336348,
+      272.7072293753202,
+      482.66180460811813,
+      765.579611068124,
+      661.45222035078,
+      594.5913145021469,
+      232.15272973981902,
+      674.8781668185135,
+      637.5377471261287,
+      150.3948969484761,
+      464.15659967765544,
+      625.6694157918987,
+      779.6124196332519,
+      26.88225590843006,
+      639.2700298454913,
+      707.6619534024493,
+      577.7215080639833,
+      620.5824851516071,
+      320.49998522452415,
+      527.787011467704,
+      640.611522192189,
+      187.22582949610984,
+      531.9639374286238,
+      160.39068905311493,
+      743.5489006749324,
+      369.3221015231059,
+      588.8957021226521,
+      704.9836300885468,
+      652.3188055362265,
+      172.11178958570582,
+      559.3119278223172,
+      720.0655666522745,
+      655.6279901813812,
+      328.3668481602977,
+      599.0253180736802,
+      584.7729269663295,
+      763.4770140338214,
+      -25.421269069891785,
+      662.916506194705,
+      721.2932153863061,
+      631.3724525076935,
+      -144.96073539065634,
+      482.4067520874901,
+      570.2764561649116,
+      696.5548199781143,
+      -53.627757755551,
+      560.1759397969938
+    ],
+    "projection_error": null,
+    "projection_valid": true,
+    "protected_constraints": 48,
+    "raw_displacement_norm": 2966.630300457241,
+    "raw_tangent_cosine": 3.4216036831118846e-09,
+    "retained_target_proposal_fraction": 0.9336446691634939,
+    "tangent_norm": 2966.6304643084545,
+    "tangent_to_raw_norm_ratio": 1.0000000552314232,
+    "target_covector_count": 7,
+    "target_covector_projection": {
+      "condition_number_retained": 1.0,
+      "constraint_norms": [
+        2966.630300457241
+      ],
+      "constraints": 1,
+      "eigenvalue_threshold": 9.999999555332239e-11,
+      "gram_eigenvalues": [
+        0.9999999555332238
+      ],
+      "gram_matrix": [
+        [
+          0.9999999555332238
+        ]
+      ],
+      "maximum_absolute_final_constraint_dot": 4.4406798431571165e-09,
+      "maximum_relative_final_constraint_residual": 4.611176283131768e-09,
+      "numerical_rank": 1,
+      "rcond": 1e-10,
+      "refinement_steps": 2,
+      "vectors": [
+        {
+          "input_norm": 1.0000000280723798,
+          "maximum_absolute_final_constraint_dot": 3.084977996366603e-09,
+          "maximum_relative_final_constraint_residual": 3.3042312687630307e-09,
+          "projected_norm": 0.9336446953731216,
+          "residual_norm_history": [
+            0.3582005402504164,
+            5.97750267653744e-09,
+            3.6642345719066147e-09
+          ],
+          "retained_norm_fraction": 0.9336446691634939
+        },
+        {
+          "input_norm": 1.0000000166102583,
+          "maximum_absolute_final_constraint_dot": 3.733195450472335e-09,
+          "maximum_relative_final_constraint_residual": 3.947986065138789e-09,
+          "projected_norm": 0.9455948903763663,
+          "residual_norm_history": [
+            0.32534647823915047,
+            6.879035950677764e-09,
+            4.41780514243411e-09
+          ],
+          "retained_norm_fraction": 0.9455948746697912
+        },
+        {
+          "input_norm": 0.9999999669617498,
+          "maximum_absolute_final_constraint_dot": 2.403220474050038e-09,
+          "maximum_relative_final_constraint_residual": 2.4249869960891453e-09,
+          "projected_norm": 0.9910240664901664,
+          "residual_norm_history": [
+            0.13368333715524108,
+            4.418141520874403e-09,
+            3.3072750611014192e-09
+          ],
+          "retained_norm_fraction": 0.9910240992318686
+        },
+        {
+          "input_norm": 1.000000008052551,
+          "maximum_absolute_final_constraint_dot": 4.4406798431571165e-09,
+          "maximum_relative_final_constraint_residual": 4.611176283131768e-09,
+          "projected_norm": 0.9630253910269387,
+          "residual_norm_history": [
+            0.26941067953081066,
+            8.036867871349333e-09,
+            5.230266834216346e-09
+          ],
+          "retained_norm_fraction": 0.9630253832721276
+        },
+        {
+          "input_norm": 0.9999999540685657,
+          "maximum_absolute_final_constraint_dot": 2.358388639109657e-09,
+          "maximum_relative_final_constraint_residual": 2.3989705440679464e-09,
+          "projected_norm": 0.9830836168211242,
+          "residual_norm_history": [
+            0.1831570566990406,
+            6.638717243387946e-09,
+            3.0690756803628764e-09
+          ],
+          "retained_norm_fraction": 0.9830836619755668
+        },
+        {
+          "input_norm": 0.9999999920311621,
+          "maximum_absolute_final_constraint_dot": 1.690732948068062e-09,
+          "maximum_relative_final_constraint_residual": 1.6965196241430861e-09,
+          "projected_norm": 0.9965890898091161,
+          "residual_norm_history": [
+            0.08252373953590603,
+            2.3845644374549148e-09,
+            2.0284154072453876e-09
+          ],
+          "retained_norm_fraction": 0.9965890977507731
+        },
+        {
+          "input_norm": 1.000000018246199,
+          "maximum_absolute_final_constraint_dot": 1.1837332044511517e-09,
+          "maximum_relative_final_constraint_residual": 1.1879431909882425e-09,
+          "projected_norm": 0.9964560708213762,
+          "residual_norm_history": [
+            0.08411499945481624,
+            2.868780776551594e-09,
+            1.4624259242928042e-09
+          ],
+          "retained_norm_fraction": 0.9964560526398408
+        }
+      ]
+    }
+  },
+  "target_direction_budget_relative_error": 1.9965057881068474e-08,
+  "target_endpoint_difference_used": false,
+  "target_optimizer_map": {
+    "clip_coefficient": 0.167574607986045,
+    "clipped_norm": 0.9999998699583682,
+    "clipping_active": true,
+    "displacement_norm": 2966.9047645892892,
+    "raw_norm": 5.967490208950203
+  },
+  "target_proposal_norm": 1488.3476090859665,
+  "theta_max": 0.3143421044892443,
+  "unit_granularity": "one_prompt_risk_pair"
+}

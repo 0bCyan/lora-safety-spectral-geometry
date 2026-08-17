@@ -1,0 +1,37 @@
+{
+  "name": "step3_rmamcd_p0_angle_sensitivity_v1",
+  "source_fit_geometry_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rmamcd_p0/run/rmamcd_p0_fit_geometry.json",
+  "source_fit_geometry_sha256": "90536dda684a00c0045deeae34f7fefd484f3b087e7e8a0132d721fa206f5cfb",
+  "score_formula": "raw_score*cos(theta)+tangent_score*sin(theta)",
+  "interval_radians": [
+    0.0,
+    0.3143421044892443
+  ],
+  "protected_retention_floor": 0.95,
+  "target_score_floor": 0.05,
+  "target_gain_floor": 0.002,
+  "raw_target_floor": 0.01226718194907743,
+  "fixed_theta": 0.31434110448924435,
+  "fixed_theta_metrics": {
+    "minimum_protected_retention": 0.6704081518636906,
+    "target_floor": 0.07568169050698101,
+    "target_gain": 0.06341450855790358
+  },
+  "maximum_theta_all_protected_facets": 0.053542436726736996,
+  "metrics_at_maximum_protection_theta": {
+    "minimum_protected_retention": 0.95,
+    "target_floor": 0.023329890852651518,
+    "target_gain": 0.011062708903574088
+  },
+  "binding_protected_facets": [
+    {
+      "unit_id": "fit_11",
+      "certificate": "tarc",
+      "theta_boundary_radians": 0.053542436726736996
+    }
+  ],
+  "joint_feasible_angle_count_on_100001_point_grid": 0,
+  "joint_feasible_angle_exists": false,
+  "grid_points": 100001,
+  "method": "deterministic grid plus bisection of every protected facet first crossing; diagnostic only"
+}
