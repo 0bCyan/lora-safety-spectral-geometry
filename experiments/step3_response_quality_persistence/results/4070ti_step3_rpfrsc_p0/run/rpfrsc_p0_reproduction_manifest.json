@@ -1,0 +1,64 @@
+{
+  "artifacts": [
+    {
+      "bytes": 626,
+      "name": "structural_audit",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/run/rpfrsc_p0_structural_audit.json",
+      "rows": null,
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    {
+      "bytes": 319835,
+      "name": "block_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/run/rpfrsc_p0_block_rows.jsonl",
+      "rows": 8,
+      "sha256": "4509057992a6847a911c45fa314a415f73c30775a5a1ba738e7522b9aac00725"
+    },
+    {
+      "bytes": 31214,
+      "name": "gradient_diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/run/rpfrsc_p0_gradient_diagnostics.json",
+      "rows": null,
+      "sha256": "bab14e8ff856c0e0620e882b323ac07eb06aac3f2e258876b8fa3e9a8854a94a"
+    },
+    {
+      "bytes": 433,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/run/rpfrsc_p0_environment.json",
+      "rows": null,
+      "sha256": "6708bd3ec659ce2412f2406f8b88af44704a40ef2241f6e13e0e7b9a1eee793c"
+    },
+    {
+      "bytes": 30192,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/run/rpfrsc_p0_route.json",
+      "rows": null,
+      "sha256": "c3efb487e589cba73b42f3dddf714ea1f8b2f6b40b86f8cffeb37e460e59c7f6"
+    },
+    {
+      "bytes": 1162,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/run/RPFRSC_P0_REPORT.md",
+      "rows": null,
+      "sha256": "3e99b9744e24b9662b4416d1faa5813d07f2d9747047804d217b44eb639fc1ea"
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_rpfrsc_p0.py run",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_rpfrsc_p0_seed4.json",
+  "config_sha256": "0c1755f18e176f4ab22070c0a485383c423296379972fc217e6efcd5f9edae6c",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_rpfrsc_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/protocol/rpfrsc_p0_protocol.json",
+  "protocol_sha256": "81ba4a59df4a6204c0d34c0766b1a0a86fbaeec28869cf7c38162993756c17a8",
+  "route": "STOP_RPFRSC_P0_PROTECTED_NONINFERIORITY_FAILED",
+  "runtime_head": "bee86a4753d06ae15768bec62aea777306a89cfe",
+  "scheduler_objects": 0,
+  "seed": 4,
+  "training_authorized": false,
+  "verify_command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_rpfrsc_p0.py verify-run",
+  "virtual_parameter_evaluations": 24
+}
