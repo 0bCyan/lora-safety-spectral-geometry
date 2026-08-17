@@ -1,0 +1,314 @@
+{
+  "name": "step3_medscmcd_minimum_effective_dose_split_conformal_mcd_p0_protocol_v1",
+  "status": "prospective_before_any_MEDSCMCD_model_forward",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/protocol/medscmcd_p0_protocol.json",
+  "entry_commit": "2491f782ce4ef4055d6ab44dbd02b378c9238f74",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_medscmcd_p0_seed6.json",
+  "objective": "Test whether fit-only minimum-effective-dose selection followed by an independent 20-unit split-conformal accept-or-raw policy preserves four protected exact scores while retaining material E-TARC and branch improvement on eight untouched diagnostics.",
+  "experiment_mode": "exploratory_seed6_zero_optimizer_step_minimum_effective_dose_split_conformal_mcd_on_reused_disclosed_data",
+  "prior_result": {
+    "decision_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/jcrmcd_p0_route.json",
+    "decision_sha256": "40093b03c2848e3e80ded92f49b8be1b7fce53bb0165f5c302b26937e647b7c3",
+    "route": "STOP_JCRMCD_P0_CONSTRUCTION_UNCERTAINTY_INVALID",
+    "registered_signal": "JCR-MCD had no robust-feasible candidate and covered only 6 of 56 diagnostic gradient vectors. For all seven certificates, the observed diagnostic coverage radius exceeded the positive raw-score radius capacity, closing scalar isotropic expansion of the same aggregated support hulls."
+  },
+  "frozen_inputs": {
+    "method_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_MEDSCMCD_minimum_effective_split_conformal_plan.md",
+      "sha256": "3b83ae8174d9c49169052204be6ccdacea897231cda7da881e70204f251b18ce"
+    },
+    "config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_medscmcd_p0_seed6.json",
+      "sha256": "3fcb7034b59c95b43264ecf5b8e7acfad9ae5686f53026672f572cbe8d8fcc27"
+    },
+    "medscmcd_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_medscmcd_common.py",
+      "sha256": "36f847e57dd9214cd9d6bc26bd6e3a1321c977e71f6d4f6ef6566876bd63944e"
+    },
+    "medscmcd_common_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_medscmcd_common.py",
+      "sha256": "4e14043db24b4d13be2f03683a05eed9f9b3ff883cdd88429224b74d4c714224"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_medscmcd_p0.py",
+      "sha256": "8f330ea2888b54f60d742561e2751684308f00f195829bc55249a7045d42a67b"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_medscmcd_p0.py",
+      "sha256": "7617806c4049c7fc7da70e05d41ef6dab27f0cb391ff9fe21301a6d677d0a567"
+    },
+    "jcrmcd_path_geometry": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_jcrmcd_common.py",
+      "sha256": "44c676080f925edca850c693814fe410c4f863e32b1bb4d2b4859b58b905991d"
+    },
+    "jcrmcd_runner_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_jcrmcd_p0.py",
+      "sha256": "2a2fb3bbbf7b4d64f67f0185ed745c6c00e722dc14f1b2aee0e358aac3469d55"
+    },
+    "rpfrsc_runner_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_rpfrsc_p0.py",
+      "sha256": "38c0fbdcd8a24d7b754cb90fe3591b1363760ce218a3a67ebb00f0c527018af2"
+    },
+    "frsc_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_frsc_common.py",
+      "sha256": "579be9bbe5c1f87d71b6bb6b24325ab6f889639fe28a5a9fc8ddc118c42be7b4"
+    },
+    "mcd_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_common.py",
+      "sha256": "5bce3e955a545fdaf904aa6826a447d9602bc6898176608ef0d80df38ac735e5"
+    },
+    "optimizer_map": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ojmcd_common.py",
+      "sha256": "4c0e523cb49a1981a590ed6106e143cedd76bbad7e0acaed3b1eed2a76950573"
+    },
+    "optimizer_unit_reference": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ojmcd_p0.py",
+      "sha256": "03acdea9f8d85c03fdef99ef6569359fa480f8f3a5ff0824de9f98f803096536"
+    },
+    "objective_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_training.py",
+      "sha256": "5cd63cfc7334be71368923edf60684ea7adfe0db87bdb69df1981c58ecfb634a"
+    },
+    "qetarc_gradient_ops": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_qetarc_common.py",
+      "sha256": "6c55a6fca6aa9e718f5cc036a91542325570ee02bfc9565900edae5681f00055"
+    },
+    "etarc_objectives": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_etarc_p0.py",
+      "sha256": "ca43d66ed626543803b4d999defe4d092f603d1db9b0ee59f21d8ee913d1cf43"
+    },
+    "tarc_features": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_tarc_p0.py",
+      "sha256": "d357b753c763ef4d2a152f8867ffe6fabbbcdf36fd73c7587d0e16a0a17fd0b1"
+    },
+    "gradient_math": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_common.py",
+      "sha256": "70b17175e00cddda9ea8394717c6fd02770bc446a755680d2e3965c6bfa8d998"
+    },
+    "source_validation": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_p0.py",
+      "sha256": "bdc98f4f27efcc09f60a40c8fa2a486655e3aabe2c825b1c19ec5b3e299e0c51"
+    },
+    "risk_loss_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_training.py",
+      "sha256": "5095a6db54ef23cb887201ffab2a23f9483acbe8c5993859fe084ea9dabf3800"
+    },
+    "state_hash_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "model_reference": {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "risk_source": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    "prior_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/jcrmcd_p0_route.json",
+      "sha256": "40093b03c2848e3e80ded92f49b8be1b7fce53bb0165f5c302b26937e647b7c3"
+    },
+    "prior_interpretation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/analysis/JCRMCD_P0_INTERPRETATION.md",
+      "sha256": "379e94b1d542c797c36fa7ddf6ce0f87053754e25ded9199be13c147b8bdadf3"
+    },
+    "prior_radius_incompatibility": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/analysis/jcrmcd_scalar_radius_feasibility.json",
+      "sha256": "7f24f087d3f0997dce18bf74bf362a2de2cb652c85ca9f36af3dcf7021f9169f"
+    },
+    "structural_audit": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    }
+  },
+  "source": {
+    "safety_targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+    "risk_data_path": "data/processed/unified_pool/train_risk.jsonl",
+    "structural_audit_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+    "safety_rows": 80,
+    "safety_prompt_clusters": 40,
+    "risk_rows": 256,
+    "category_prompt_counts": {
+      "cyber abuse": 3,
+      "financial evasion": 4,
+      "fraud or deception": 3,
+      "harassment or coercion": 1,
+      "harmful wrongdoing": 23,
+      "physical harm": 1,
+      "privacy invasion": 1,
+      "public manipulation": 4
+    },
+    "fresh_for_confirmation": false,
+    "role": "seed6_exploratory_fit_calibration_diagnostic_score_space_test",
+    "core100_used": false,
+    "heldout_used": false
+  },
+  "selection": {
+    "risk_order_seed": 6,
+    "global_role_rule": "ascending_sha256_of_medscmcd-seed6-split-v1|sample_id_then_first12_fit_next20_calibration_last8_diagnostic",
+    "fit_units": [
+      {"unit_id": "fit_01", "risk_row_index": 138, "sample_id": "eval_safety_000118", "category": "harmful wrongdoing"},
+      {"unit_id": "fit_02", "risk_row_index": 22, "sample_id": "eval_safety_000226", "category": "harmful wrongdoing"},
+      {"unit_id": "fit_03", "risk_row_index": 197, "sample_id": "eval_safety_000109", "category": "harmful wrongdoing"},
+      {"unit_id": "fit_04", "risk_row_index": 253, "sample_id": "eval_safety_000225", "category": "harmful wrongdoing"},
+      {"unit_id": "fit_05", "risk_row_index": 218, "sample_id": "eval_safety_000116", "category": "harmful wrongdoing"},
+      {"unit_id": "fit_06", "risk_row_index": 205, "sample_id": "eval_safety_000276", "category": "harmful wrongdoing"},
+      {"unit_id": "fit_07", "risk_row_index": 153, "sample_id": "eval_safety_000286", "category": "public manipulation"},
+      {"unit_id": "fit_08", "risk_row_index": 10, "sample_id": "eval_safety_000294", "category": "privacy invasion"},
+      {"unit_id": "fit_09", "risk_row_index": 48, "sample_id": "eval_safety_000179", "category": "public manipulation"},
+      {"unit_id": "fit_10", "risk_row_index": 179, "sample_id": "eval_safety_000263", "category": "fraud or deception"},
+      {"unit_id": "fit_11", "risk_row_index": 255, "sample_id": "eval_safety_000101", "category": "harmful wrongdoing"},
+      {"unit_id": "fit_12", "risk_row_index": 90, "sample_id": "eval_safety_000113", "category": "harmful wrongdoing"}
+    ],
+    "calibration_units": [
+      {"unit_id": "calibration_01", "risk_row_index": 99, "sample_id": "eval_safety_000295", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_02", "risk_row_index": 180, "sample_id": "eval_safety_000243", "category": "financial evasion"},
+      {"unit_id": "calibration_03", "risk_row_index": 3, "sample_id": "eval_safety_000161", "category": "public manipulation"},
+      {"unit_id": "calibration_04", "risk_row_index": 108, "sample_id": "eval_safety_000236", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_05", "risk_row_index": 79, "sample_id": "eval_safety_000265", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_06", "risk_row_index": 47, "sample_id": "eval_safety_000269", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_07", "risk_row_index": 38, "sample_id": "eval_safety_000126", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_08", "risk_row_index": 77, "sample_id": "eval_safety_000253", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_09", "risk_row_index": 220, "sample_id": "eval_safety_000107", "category": "physical harm"},
+      {"unit_id": "calibration_10", "risk_row_index": 187, "sample_id": "eval_safety_000279", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_11", "risk_row_index": 36, "sample_id": "eval_safety_000147", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_12", "risk_row_index": 227, "sample_id": "eval_safety_000244", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_13", "risk_row_index": 15, "sample_id": "eval_safety_000156", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_14", "risk_row_index": 158, "sample_id": "eval_safety_000212", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_15", "risk_row_index": 245, "sample_id": "eval_safety_000188", "category": "financial evasion"},
+      {"unit_id": "calibration_16", "risk_row_index": 96, "sample_id": "eval_safety_000258", "category": "harmful wrongdoing"},
+      {"unit_id": "calibration_17", "risk_row_index": 0, "sample_id": "eval_safety_000180", "category": "cyber abuse"},
+      {"unit_id": "calibration_18", "risk_row_index": 191, "sample_id": "eval_safety_000191", "category": "fraud or deception"},
+      {"unit_id": "calibration_19", "risk_row_index": 117, "sample_id": "eval_safety_000222", "category": "financial evasion"},
+      {"unit_id": "calibration_20", "risk_row_index": 128, "sample_id": "eval_safety_000260", "category": "financial evasion"}
+    ],
+    "diagnostic_units": [
+      {"unit_id": "diagnostic_01", "risk_row_index": 16, "sample_id": "eval_safety_000205", "category": "fraud or deception"},
+      {"unit_id": "diagnostic_02", "risk_row_index": 178, "sample_id": "eval_safety_000125", "category": "harmful wrongdoing"},
+      {"unit_id": "diagnostic_03", "risk_row_index": 24, "sample_id": "eval_safety_000268", "category": "harassment or coercion"},
+      {"unit_id": "diagnostic_04", "risk_row_index": 30, "sample_id": "eval_safety_000138", "category": "cyber abuse"},
+      {"unit_id": "diagnostic_05", "risk_row_index": 63, "sample_id": "eval_safety_000232", "category": "public manipulation"},
+      {"unit_id": "diagnostic_06", "risk_row_index": 66, "sample_id": "eval_safety_000142", "category": "cyber abuse"},
+      {"unit_id": "diagnostic_07", "risk_row_index": 21, "sample_id": "eval_safety_000211", "category": "harmful wrongdoing"},
+      {"unit_id": "diagnostic_08", "risk_row_index": 113, "sample_id": "eval_safety_000152", "category": "harmful wrongdoing"}
+    ],
+    "fit_calibration_diagnostic_overlap": 0
+  },
+  "design": {
+    "certificates": ["risk", "uniform", "tarc", "etarc", "continuation", "branch_entropy", "branch_negative_gap"],
+    "protected_certificates": ["risk", "uniform", "tarc", "continuation"],
+    "target_certificates": ["etarc", "branch_entropy", "branch_negative_gap"],
+    "fit_units": 12,
+    "calibration_units": 20,
+    "diagnostic_units": 8,
+    "unit_granularity": "one_prompt_risk_pair",
+    "gradient_measurement_mode": "eval_for_all_roles",
+    "pooled_fit_gradient_rule": "coordinatewise_mean_of_twelve_fit_unit_gradients",
+    "raw_endpoint": "full_seven_certificate_minimum_norm_simplex_MCD",
+    "target_endpoint": "three_target_minimum_norm_simplex_MCD",
+    "path_rule": "fixed_budget_normalized_linear_homotopy_from_raw_endpoint_to_target_endpoint",
+    "path_fractions": [0.0, 0.03125, 0.0625, 0.09375, 0.125, 0.15625, 0.1875, 0.21875, 0.25, 0.28125, 0.3125, 0.34375, 0.375, 0.40625, 0.4375, 0.46875, 0.5, 0.53125, 0.5625, 0.59375, 0.625, 0.65625, 0.6875, 0.71875, 0.75, 0.78125, 0.8125, 0.84375, 0.875, 0.90625, 0.9375, 0.96875, 1.0],
+    "path_candidates": 33,
+    "protected_retention_floor": 0.95,
+    "fit_target_gain_floor": 0.002,
+    "fit_target_score_floor": 0.05,
+    "selection_rule": "smallest_positive_fraction_meeting_all_fit_protected_retention_and_fit_target_score_and_gain_floors",
+    "conformal_alpha": 0.05,
+    "conformal_joint_nonconformity": "maximum_over_four_protected_certificates_of_0.95_minus_candidate_to_raw_score_ratio",
+    "conformal_order_statistic_rank": 20,
+    "conformal_marginal_coverage_lower_bound": 0.9523809523809523,
+    "conformal_assumption": "candidate_fixed_before_calibration_and_calibration_plus_future_joint_nonconformities_exchangeable",
+    "conformal_acceptance_threshold": 0.0,
+    "conformal_policy": "deploy_fit_candidate_if_threshold_nonpositive_else_raw_mcd",
+    "conformal_fallback_nonconformity": -0.05,
+    "conformal_guarantee_scope": "complete_accept_or_raw_policy_over_calibration_plus_future_draws_under_exchangeability",
+    "conditional_on_candidate_acceptance_coverage_claimed": false,
+    "auxiliary_gradient_norm_ratio": 1.0,
+    "safety_mix": 0.2,
+    "learning_rate": 0.0002,
+    "calibration_scores_used_for_selection": false,
+    "diagnostic_scores_used_for_selection": false,
+    "transient_parameter_restoration_required": true,
+    "raw_gradient_tensors_serialized": false
+  },
+  "statistics": {
+    "diagnostic_unit": "seed6_independent_prompt_risk_pair",
+    "diagnostic_units": 8,
+    "paired": true,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026081806,
+    "bootstrap_interval": "percentile_95",
+    "sign_test": "exact_two_sided_excluding_exact_ties",
+    "conformal_units": 20,
+    "conformal_alpha": 0.05,
+    "conformal_rank": 20,
+    "conformal_guarantee_type": "finite_sample_marginal_joint_protection_for_complete_accept_or_raw_policy_under_exchangeability",
+    "conditional_on_candidate_acceptance_coverage_claimed": false
+  },
+  "gates": {
+    "numeric_tolerance": 1e-12,
+    "gradient_budget_relative_tolerance": 1e-6,
+    "minimum_nonzero_path_fraction": 0.03125,
+    "conformal_coverage_lower_bound_min": 0.95,
+    "diagnostic_exact_margin_min": 0.02,
+    "diagnostic_certificate_score_min": 0.02,
+    "diagnostic_advantage_over_baseline_mean_min": 0.02,
+    "protected_mean_relative_loss_max": 0.05,
+    "protected_ci_relative_loss_max": 0.075,
+    "protected_single_unit_relative_loss_max": 0.15,
+    "diagnostic_target_gain_mean_min": 0.002,
+    "target_macro_actual_relative_gain_mean_min": 0.02,
+    "target_objective_mean_relative_loss_max": 0.05,
+    "target_objective_single_unit_relative_loss_max": 0.20,
+    "diagnostic_mean_target_score_min": 0.05,
+    "paired_ci_lower_min": 0.0,
+    "paired_sign_p_max": 0.05,
+    "mean_actual_loss_reduction_min": 0.0,
+    "actual_reduction_positive_rate_min": 0.75,
+    "mean_actual_to_predicted_ratio_min": 0.25,
+    "mean_actual_to_predicted_ratio_max": 1.75,
+    "minimum_vram_headroom_fraction": 0.10
+  },
+  "outputs": {
+    "structural_audit": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/run/medscmcd_p0_structural_audit.json",
+    "fit_geometry": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/run/medscmcd_p0_fit_geometry.json",
+    "calibration_rows": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/run/medscmcd_p0_calibration_rows.jsonl",
+    "diagnostic_rows": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/run/medscmcd_p0_diagnostic_rows.jsonl",
+    "diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/run/medscmcd_p0_diagnostics.json",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/run/medscmcd_p0_environment.json",
+    "route": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/run/medscmcd_p0_route.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/run/MEDSCMCD_P0_REPORT.md",
+    "run_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_medscmcd_p0/run/medscmcd_p0_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_MEDSCMCD_P0_AUTHORIZE_PROXY_DEV_TRIPLET_PROTOCOL",
+  "failure_routes": [
+    "STOP_MEDSCMCD_P0_INVALID",
+    "STOP_MEDSCMCD_P0_NO_MINIMUM_EFFECTIVE_DOSE",
+    "STOP_MEDSCMCD_P0_CONFORMAL_SELECTIVE_POLICY_FAILED",
+    "STOP_MEDSCMCD_P0_DIAGNOSTIC_TRANSFER_FAILED",
+    "STOP_MEDSCMCD_P0_FINITE_STEP_COMMON_DESCENT_FAILED",
+    "STOP_MEDSCMCD_P0_PROTECTED_NONINFERIORITY_FAILED",
+    "STOP_MEDSCMCD_P0_TARGET_ADVANTAGE_FAILED",
+    "STOP_MEDSCMCD_P0_EFFECT_TOO_WEAK"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_training_disjoint_proxy_dev_triplet_data_protocol_only",
+  "pass_does_not_authorize": "model_training_or_optimizer_steps",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "virtual_parameter_evaluations": 24,
+  "checkpoint_writes_authorized": false,
+  "candidate_generation_authorized": false,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
