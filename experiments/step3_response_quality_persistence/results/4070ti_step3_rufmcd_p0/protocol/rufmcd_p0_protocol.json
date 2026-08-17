@@ -35,7 +35,7 @@
     },
     "runner": {
       "path": "experiments/step3_response_quality_persistence/scripts/step3_rufmcd_p0.py",
-      "sha256": "c136e2b1c629674e1de8bdcc91cadb307e8ce6cf51952b8a29f473a4492705b9"
+      "sha256": "31a92419d92e16cccacff34b6929397de9138d95c84bae78aa488e7459a084ea"
     },
     "runner_tests": {
       "path": "experiments/step3_response_quality_persistence/scripts/test_step3_rufmcd_p0.py",
@@ -567,7 +567,8 @@
     "minimum_retained_unit_facet_fraction": 0.01,
     "constraint_generation_max_rounds": 12,
     "constraint_generation_full_gap_max": 1E-07,
-    "unit_facet_margin_certificate_count": 84
+    "unit_facet_margin_certificate_count": 84,
+    "affine_actual_minus_predicted_max": 1E-06
   },
   "statistics": {
     "diagnostic_unit": "seed7_independent_prompt_risk_pair",

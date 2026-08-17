@@ -57,6 +57,7 @@ def context(
         != int(design.get("constraint_generation_max_rounds", -2))
         or float(config.get("rufmcd_constraint_generation_full_gap_max", -1.0))
         != float(design.get("constraint_generation_full_gap_max", -2.0))
+        or float(design.get("affine_actual_minus_predicted_max", -1.0)) != 1e-6
     ):
         raise base.NptmcdP0ValidationError(
             "RUF-MCD protocol registry differs from the runner"
