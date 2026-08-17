@@ -1,0 +1,277 @@
+{
+  "name": "step3_qetarc_p0_positive_continuation_quota_protocol_v1",
+  "status": "prospective_before_any_QETARC_model_forward_or_gradient",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/protocol/qetarc_p0_protocol.json",
+  "entry_commit": "6fd0718e4010eca68d4ca6163112258d47ee2c96",
+  "objective": "Test whether the fixed-norm route-optimal E-TARC direction under an absolute 0.5 continuation cosine quota transfers a jointly strong route and continuation direction to all 32 development-validation prompt clusters.",
+  "experiment_mode": "exploratory_mechanism_development_on_reused_disclosed_split",
+  "prior_result": {
+    "decision_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/run/etarc_p0_route.json",
+    "decision_sha256": "5d5703fb9cc62b0b2af6516522b083e534f6e5374ccce0b2a1359b27b466c0d0",
+    "route": "STOP_ETARC_P0_CONTINUATION_COMPATIBILITY_FAILED",
+    "registered_diagnosis": "Binary non-conflict was inactive and non-discriminating; Q-E-TARC requires a positive continuation allocation rather than relaxing that failed gate."
+  },
+  "frozen_inputs": {
+    "plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_QETARC_positive_continuation_quota_plan.md",
+      "sha256": "787d5ee600264e063d94113ed1be1925089ce4f4a1d107d8a4ab72d24198573e"
+    },
+    "qetarc_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_qetarc_common.py",
+      "sha256": "6c55a6fca6aa9e718f5cc036a91542325570ee02bfc9565900edae5681f00055"
+    },
+    "qetarc_common_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_qetarc_common.py",
+      "sha256": "7c4b4a8832fb1e2c5b1807ec1029b4d0bbda6125a2cc761275e53d810f20eda3"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_qetarc_p0.py",
+      "sha256": "b0d2e77b976ce8036bdc9c3f04d4fd98bbacc9ebcc56b5d9d0ada13b590d4b4e"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_qetarc_p0.py",
+      "sha256": "24f8d67cf083e6cc94a1488b8675f827df6a26be04c55b808eb031613cce456a"
+    },
+    "etarc_geometry": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_etarc_common.py",
+      "sha256": "fa5fc2e631b160939dc63c6c83e22f3bd373955c545abfc0ecba4d918632e443"
+    },
+    "etarc_p0_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_etarc_p0.py",
+      "sha256": "ca43d66ed626543803b4d999defe4d092f603d1db9b0ee59f21d8ee913d1cf43"
+    },
+    "etarc_p0_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/protocol/etarc_p0_protocol.json",
+      "sha256": "1da4ae21287280938c31dded1314c09dc54ca1b708c87ad556ead57ae885b404"
+    },
+    "etarc_p0_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/run/etarc_p0_route.json",
+      "sha256": "5d5703fb9cc62b0b2af6516522b083e534f6e5374ccce0b2a1359b27b466c0d0"
+    },
+    "etarc_p0_interpretation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_etarc_p0/analysis/ETARC_P0_INTERPRETATION.md",
+      "sha256": "d07bb309e504dc5e9cde9be6ce2e42b04cd19bc274bbddabc297f8e58cf3f848"
+    },
+    "tarc_p0_feature_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_tarc_p0.py",
+      "sha256": "d357b753c763ef4d2a152f8867ffe6fabbbcdf36fd73c7587d0e16a0a17fd0b1"
+    },
+    "ramp_objective_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_p0.py",
+      "sha256": "bdc98f4f27efcc09f60a40c8fa2a486655e3aabe2c825b1c19ec5b3e299e0c51"
+    },
+    "gradient_math": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_common.py",
+      "sha256": "70b17175e00cddda9ea8394717c6fd02770bc446a755680d2e3965c6bfa8d998"
+    },
+    "model_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "gradient_hash_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_common.py",
+      "sha256": "80a15faf4b04e12b9560fc03b90418af2555ca716790d6e069e15d032bd7c2a2"
+    },
+    "parent_config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_pcr_mw_seed1.json",
+      "sha256": "3bab5143f1ded893e492f3ab04695b76457a331cdfbfad0e52b65723d4d52850"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    }
+  },
+  "source": {
+    "targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+    "counts": {
+      "rows": 80,
+      "prompt_clusters": 40,
+      "categories": 8,
+      "targets_per_prompt": 2
+    },
+    "fresh_for_method_selection": false,
+    "role": "reused_mechanism_development_only",
+    "proxy_dev_used": false,
+    "core100_used": false,
+    "heldout_used": false
+  },
+  "selection": {
+    "seed": 2026081720,
+    "rule": "exact_reuse_of_disclosed_CC_ETARC_calibration8_validation32_for_development_only",
+    "calibration_prompts": 8,
+    "validation_prompts": 32,
+    "calibration_sample_ids": [
+      "eval_safety_000138",
+      "eval_safety_000260",
+      "eval_safety_000191",
+      "eval_safety_000268",
+      "eval_safety_000265",
+      "eval_safety_000294",
+      "eval_safety_000286",
+      "eval_safety_000258"
+    ],
+    "validation_sample_ids": [
+      "eval_safety_000152",
+      "eval_safety_000107",
+      "eval_safety_000101",
+      "eval_safety_000113",
+      "eval_safety_000212",
+      "eval_safety_000226",
+      "eval_safety_000156",
+      "eval_safety_000295",
+      "eval_safety_000161",
+      "eval_safety_000236",
+      "eval_safety_000180",
+      "eval_safety_000125",
+      "eval_safety_000147",
+      "eval_safety_000243",
+      "eval_safety_000263",
+      "eval_safety_000109",
+      "eval_safety_000232",
+      "eval_safety_000225",
+      "eval_safety_000179",
+      "eval_safety_000126",
+      "eval_safety_000279",
+      "eval_safety_000276",
+      "eval_safety_000269",
+      "eval_safety_000205",
+      "eval_safety_000116",
+      "eval_safety_000222",
+      "eval_safety_000118",
+      "eval_safety_000244",
+      "eval_safety_000188",
+      "eval_safety_000253",
+      "eval_safety_000142",
+      "eval_safety_000211"
+    ]
+  },
+  "model": {
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "local_files_only": true,
+    "seed": 1,
+    "load_in_4bit": true,
+    "quantization": "nf4_double_quant_fp16_compute",
+    "reference_policy": "fresh_PEFT_LoRA_step0",
+    "model_mode": "eval_with_gradients",
+    "gradient_checkpointing": true,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "design": {
+    "max_length": 512,
+    "route_width_limit": 16,
+    "ramp_width": 16,
+    "temperature": 1.0,
+    "continuation_quota_cosine": 0.5,
+    "quota_selection": "fixed_absolute_value_before_QETARC_model_forward_not_fit_to_validation",
+    "auxiliary_gradient_norm_ratio": 0.25,
+    "auxiliary_budget": "0.25_times_calibration_uniform_gradient_norm",
+    "optimization_problem": "maximize_unit_ETARC_alignment_subject_to_fixed_norm_and_continuation_cosine_at_least_0.5",
+    "closed_form": "spherical_cap_boundary_solution_when_raw_ETARC_continuation_cosine_is_below_quota",
+    "continuation_loss": "mean_cross_entropy_on_semantic_target_tokens_strictly_after_registered_route_leaf_over_both_approved_targets",
+    "etarc_objective": "nested_strong_complete_path_and_weak_token_certificate",
+    "controls": [
+      "RAMP16_equal_norm_positive_continuation_control",
+      "TARC_equal_norm_predecessor",
+      "raw_ETARC_equal_norm_route_control"
+    ],
+    "result_line_endings": "explicit_LF_bytes_for_cross_platform_hash_stability",
+    "tokenizer_only_structural_audit": {
+      "rows": 80,
+      "prompt_clusters": 40,
+      "categories": 8,
+      "targets_per_prompt": 2,
+      "route_width_limit": 16,
+      "minimum_route_tokens": 4,
+      "maximum_route_tokens": 4,
+      "mean_route_tokens": 4.0,
+      "all_routes_complete_within_width": true,
+      "registered_route_marker_counts": {
+        "i can't engage": 1,
+        "i can't help": 39,
+        "i won't assist": 18,
+        "i won't discuss": 1,
+        "i won't give": 1,
+        "i won't help": 7,
+        "i won't provide": 12,
+        "i won't suggest": 1
+      },
+      "distinct_route_pair_rate": 1.0,
+      "branching_prompt_rate": 1.0,
+      "mean_internal_trie_nodes": 6.0,
+      "maximum_allowed_branch_width": 2
+    }
+  },
+  "statistics": {
+    "unit": "prompt_cluster",
+    "paired": true,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026081722,
+    "bootstrap_interval": "percentile_95",
+    "sign_test": "exact_two_sided_excluding_exact_ties"
+  },
+  "gates": {
+    "branching_prompt_rate_min": 1.0,
+    "distinct_route_pair_rate_min": 1.0,
+    "gradient_budget_relative_tolerance": 0.000001,
+    "quota_cosine_absolute_tolerance": 0.000001,
+    "quota_dot_numeric_tolerance": 0.00001,
+    "calibration_route_retention_cosine_min": 0.85,
+    "calibration_validation_etarc_cosine_min": 0.10,
+    "route_positive_pair_rate_min": 0.90,
+    "route_dot_fraction_of_raw_etarc_min": 0.80,
+    "route_dot_fraction_of_tarc_min": 1.20,
+    "validation_continuation_cosine_min": 0.40,
+    "continuation_cosine_advantage_over_tarc_min": 0.25,
+    "continuation_dot_fraction_of_ramp_min": 0.50,
+    "continuation_compatible_pair_rate_min": 0.90,
+    "continuation_advantage_bootstrap_lower_min": 0.0,
+    "continuation_advantage_sign_p_max": 0.05,
+    "branch_entropy_dot_min": 0.0,
+    "branch_negative_gap_dot_min": 0.0,
+    "minimum_vram_headroom_fraction": 0.10,
+    "all_gradient_objects_cover_all_trainable_tensors": true,
+    "all_gradient_values_finite": true,
+    "all_aggregate_gradient_norms_nonzero": true,
+    "exact_trainable_state_restoration_required": true
+  },
+  "outputs": {
+    "structural_audit": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_structural_audit.json",
+    "split_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_split_manifest.json",
+    "diagnostic_rows": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_diagnostic_rows.jsonl",
+    "gradient_diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_gradient_diagnostics.json",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_environment.json",
+    "route": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_route.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/QETARC_P0_REPORT.md",
+    "run_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_QETARC_P0_AUTHORIZE_MATCHED_SMOKE_PROTOCOL",
+  "failure_routes": [
+    "STOP_QETARC_P0_INVALID",
+    "STOP_QETARC_P0_CERTIFICATE_STRUCTURE_FAILED",
+    "STOP_QETARC_P0_QUOTA_GEOMETRY_FAILED",
+    "STOP_QETARC_P0_ROUTE_DIRECTION_NOT_REPLICATED",
+    "STOP_QETARC_P0_CONTINUATION_QUOTA_NOT_REPLICATED",
+    "STOP_QETARC_P0_BRANCH_MECHANISM_FAILED",
+    "STOP_QETARC_P0_EFFECT_TOO_WEAK"
+  ],
+  "pass_authorizes": "freeze_and_push_a_separate_matched_uniform_TARC_QETARC_smoke_protocol_only",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "checkpoint_writes_authorized": false,
+  "candidate_generation_authorized": false,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
