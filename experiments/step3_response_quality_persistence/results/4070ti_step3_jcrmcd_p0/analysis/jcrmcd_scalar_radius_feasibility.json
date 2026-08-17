@@ -1,0 +1,121 @@
+{
+  "name": "step3_jcrmcd_p0_posthoc_scalar_radius_feasibility_v1",
+  "status": "posthoc_explanatory_analysis_does_not_change_registered_route",
+  "registered_route": "STOP_JCRMCD_P0_CONSTRUCTION_UNCERTAINTY_INVALID",
+  "source_artifacts": {
+    "construction_geometry": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/jcrmcd_p0_construction_geometry.json",
+      "sha256": "703a16c0960f68cd50d79baeb9e0229390471435237ea72996ad3c69f7b421e6"
+    },
+    "diagnostic_rows": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/jcrmcd_p0_diagnostic_rows.jsonl",
+      "sha256": "8bda8975cacbf539ea6ad0c35d2ba8496b61d5f5a568948dfb07cc74d51b2ba0"
+    },
+    "route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/jcrmcd_p0_route.json",
+      "sha256": "40093b03c2848e3e80ded92f49b8be1b7fce53bb0165f5c302b26937e647b7c3"
+    }
+  },
+  "definitions": {
+    "raw_displacement_norm_fraction": "norm(x_0)",
+    "raw_positive_radius_capacity": "min_h u_ih^T x_0 / norm(x_0)",
+    "diagnostic_coverage_required_radius": "max_j distance(v_ij, construction_hull_i)",
+    "simultaneous_scalar_radius_interval": "[diagnostic_coverage_required_radius, raw_positive_radius_capacity)",
+    "feasible_iff": "diagnostic_coverage_required_radius < raw_positive_radius_capacity"
+  },
+  "raw_displacement_norm_fraction": 0.9998973811988701,
+  "certificates": [
+    {
+      "certificate": "risk",
+      "min_support_raw_score": 0.3023212033117817,
+      "jackknife_radius": 0.45607249669597144,
+      "raw_positive_radius_capacity": 0.30235223033517766,
+      "diagnostic_coverage_required_radius": 0.8319287642102832,
+      "coverage_minus_capacity": 0.5295765338751055,
+      "raw_lower_at_registered_radius": -0.15370449177135048,
+      "raw_lower_at_coverage_radius": -0.5295221893660927,
+      "covered_diagnostic_units": 0,
+      "simultaneous_scalar_radius_exists": false
+    },
+    {
+      "certificate": "uniform",
+      "min_support_raw_score": 0.32560035403291,
+      "jackknife_radius": 0.3001971116372725,
+      "raw_positive_radius_capacity": 0.32563377018001327,
+      "diagnostic_coverage_required_radius": 0.9847948996837194,
+      "coverage_minus_capacity": 0.6591611295037061,
+      "raw_lower_at_registered_radius": 0.025434048263336395,
+      "raw_lower_at_coverage_radius": -0.659093487178845,
+      "covered_diagnostic_units": 0,
+      "simultaneous_scalar_radius_exists": false
+    },
+    {
+      "certificate": "tarc",
+      "min_support_raw_score": 0.1090424127792537,
+      "jackknife_radius": 0.602074323516889,
+      "raw_positive_radius_capacity": 0.10905360372932729,
+      "diagnostic_coverage_required_radius": 1.1863164917655562,
+      "coverage_minus_capacity": 1.077262888036229,
+      "raw_lower_at_registered_radius": -0.4929701265923649,
+      "raw_lower_at_coverage_radius": -1.0771523406101569,
+      "covered_diagnostic_units": 0,
+      "simultaneous_scalar_radius_exists": false
+    },
+    {
+      "certificate": "etarc",
+      "min_support_raw_score": 0.15645042934303544,
+      "jackknife_radius": 0.7219736195733748,
+      "raw_positive_radius_capacity": 0.1564664857462197,
+      "diagnostic_coverage_required_radius": 1.1877461646628042,
+      "coverage_minus_capacity": 1.0312796789165846,
+      "raw_lower_at_registered_radius": -0.5654491021630513,
+      "raw_lower_at_coverage_radius": -1.0311738502323045,
+      "covered_diagnostic_units": 0,
+      "simultaneous_scalar_radius_exists": false
+    },
+    {
+      "certificate": "continuation",
+      "min_support_raw_score": 0.26344093082597936,
+      "jackknife_radius": 0.3458137723754469,
+      "raw_positive_radius_capacity": 0.2634679675929499,
+      "diagnostic_coverage_required_radius": 0.9563694790694006,
+      "coverage_minus_capacity": 0.6929015114764507,
+      "raw_lower_at_registered_radius": -0.08233735455473218,
+      "raw_lower_at_coverage_radius": -0.6928304067540418,
+      "covered_diagnostic_units": 0,
+      "simultaneous_scalar_radius_exists": false
+    },
+    {
+      "certificate": "branch_entropy",
+      "min_support_raw_score": 0.07140333805359471,
+      "jackknife_radius": 0.778902846198648,
+      "raw_positive_radius_capacity": 0.07141066613054091,
+      "diagnostic_coverage_required_radius": 1.2321506795493335,
+      "coverage_minus_capacity": 1.1607400134187926,
+      "raw_lower_at_registered_radius": -0.7074195780687798,
+      "raw_lower_at_coverage_radius": -1.1606208996701919,
+      "covered_diagnostic_units": 6,
+      "simultaneous_scalar_radius_exists": false
+    },
+    {
+      "certificate": "branch_negative_gap",
+      "min_support_raw_score": 0.07558630629222636,
+      "jackknife_radius": 0.33158120721287365,
+      "raw_positive_radius_capacity": 0.07559406366441214,
+      "diagnostic_coverage_required_radius": 1.0767263029332446,
+      "coverage_minus_capacity": 1.0011322392688324,
+      "raw_lower_at_registered_radius": -0.2559608744546859,
+      "raw_lower_at_coverage_radius": -1.001029504278666,
+      "covered_diagnostic_units": 0,
+      "simultaneous_scalar_radius_exists": false
+    }
+  ],
+  "minimum_coverage_minus_capacity": 0.5295765338751055,
+  "maximum_coverage_minus_capacity": 1.1607400134187926,
+  "certificates_with_nonempty_interval": 0,
+  "certificates_tested": 7,
+  "conclusion": "For the frozen four aggregated support hulls and the observed eight-unit supported-domain diagnostic panel, no certificate-specific scalar Euclidean expansion radius can both cover every diagnostic normalized gradient and preserve a strictly positive raw robust lower score.",
+  "scope_limit": "This is a finite-panel incompatibility result for the registered aggregated-support isotropic uncertainty family. It is not a population impossibility theorem and does not rule out projected, anisotropic, or direct score-space calibration.",
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

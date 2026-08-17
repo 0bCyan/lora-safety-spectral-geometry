@@ -1,0 +1,71 @@
+{
+  "artifacts": [
+    {
+      "bytes": 626,
+      "name": "structural_audit",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/jcrmcd_p0_structural_audit.json",
+      "rows": null,
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    {
+      "bytes": 206365,
+      "name": "construction_geometry",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/jcrmcd_p0_construction_geometry.json",
+      "rows": null,
+      "sha256": "703a16c0960f68cd50d79baeb9e0229390471435237ea72996ad3c69f7b421e6"
+    },
+    {
+      "bytes": 121754,
+      "name": "diagnostic_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/jcrmcd_p0_diagnostic_rows.jsonl",
+      "rows": 8,
+      "sha256": "8bda8975cacbf539ea6ad0c35d2ba8496b61d5f5a568948dfb07cc74d51b2ba0"
+    },
+    {
+      "bytes": 23211,
+      "name": "gradient_diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/jcrmcd_p0_gradient_diagnostics.json",
+      "rows": null,
+      "sha256": "e629bac201ad2bfc948e01d2ee463bc3ac135195402bf9d77ef4f5aa0e37c592"
+    },
+    {
+      "bytes": 433,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/jcrmcd_p0_environment.json",
+      "rows": null,
+      "sha256": "516e81a97cfff9ada5182ea66f33058398f277a4a4389aa6469a95f4df597fbb"
+    },
+    {
+      "bytes": 23544,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/jcrmcd_p0_route.json",
+      "rows": null,
+      "sha256": "40093b03c2848e3e80ded92f49b8be1b7fce53bb0165f5c302b26937e647b7c3"
+    },
+    {
+      "bytes": 1205,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/run/JCRMCD_P0_REPORT.md",
+      "rows": null,
+      "sha256": "66d6c25aba6fc2b89fe5f981c6baa1ae1c8151ab6f4b0b138feccbe324b4adfb"
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_jcrmcd_p0.py run",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_jcrmcd_p0_seed5.json",
+  "config_sha256": "09651e7324bf7a6139d793dd90989b8dfb4f0ebddcae660b45e56479d675f39d",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_jcrmcd_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_jcrmcd_p0/protocol/jcrmcd_p0_protocol.json",
+  "protocol_sha256": "b69612d0a9d84333c69eb48394dca1f943275aae8183f302951090b1f8594415",
+  "route": "STOP_JCRMCD_P0_CONSTRUCTION_UNCERTAINTY_INVALID",
+  "runtime_head": "8cebdcbea85bf025da04f8d34f9cfc15fc0c6170",
+  "scheduler_objects": 0,
+  "seed": 5,
+  "training_authorized": false,
+  "verify_command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_jcrmcd_p0.py verify-run",
+  "virtual_parameter_evaluations": 24
+}
