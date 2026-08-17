@@ -1,0 +1,64 @@
+{
+  "artifacts": [
+    {
+      "bytes": 626,
+      "name": "structural_audit",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_frsc_p0/run/frsc_p0_structural_audit.json",
+      "rows": null,
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    {
+      "bytes": 167745,
+      "name": "block_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_frsc_p0/run/frsc_p0_block_rows.jsonl",
+      "rows": 8,
+      "sha256": "603418495f8a08a1be9f13b5e6764a0cc5571e70a40a41564f7ab5e29197d362"
+    },
+    {
+      "bytes": 18497,
+      "name": "gradient_diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_frsc_p0/run/frsc_p0_gradient_diagnostics.json",
+      "rows": null,
+      "sha256": "b03bbe1c41a92991d58e35d7a182ee3b93ec506a83d2fddc472d1668f2693a92"
+    },
+    {
+      "bytes": 435,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_frsc_p0/run/frsc_p0_environment.json",
+      "rows": null,
+      "sha256": "b49f1207730c8df84a74bb4aa181bcf62ae6776333b8368f5c98d1325a28c049"
+    },
+    {
+      "bytes": 17401,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_frsc_p0/run/frsc_p0_route.json",
+      "rows": null,
+      "sha256": "68f513857445c3389b0d27ba5be4650cae012c082bf8e6e37fa4589e37a707e1"
+    },
+    {
+      "bytes": 981,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_frsc_p0/run/FRSC_P0_REPORT.md",
+      "rows": null,
+      "sha256": "69f22fe5575abe28b2df83853a033a90d9cf25774b8f4c6ef75e8bd96bb1b2c9"
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_frsc_p0.py run",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_frsc_p0_seed2.json",
+  "config_sha256": "d67ab9a71c18150d401d40db93a9f12e10840d00034305d328e87b60c6721d4e",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_frsc_mcd_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_frsc_p0/protocol/frsc_p0_protocol.json",
+  "protocol_sha256": "1fe77d9675d10cd5f8a90150020dc791a00106b331eaaf7b3e1eac24a9883000",
+  "route": "STOP_FRSC_P0_RAW_COMPARATOR_FAILED",
+  "runtime_head": "db9980a37843867d236471ba518fb3bd5aecd96d",
+  "scheduler_objects": 0,
+  "seed": 2,
+  "training_authorized": false,
+  "verify_command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_frsc_p0.py verify-run",
+  "virtual_parameter_evaluations": 24
+}
