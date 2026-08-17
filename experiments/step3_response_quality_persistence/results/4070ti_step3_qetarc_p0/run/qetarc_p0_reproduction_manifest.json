@@ -1,0 +1,67 @@
+{
+  "artifacts": [
+    {
+      "bytes": 626,
+      "name": "structural_audit",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_structural_audit.json",
+      "rows": null,
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    {
+      "bytes": 1318,
+      "name": "split_manifest",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_split_manifest.json",
+      "rows": null,
+      "sha256": "5818d46d0c182dc3e1b1cc39abbff7d59177347372a13a9a48171f76c2eb10e5"
+    },
+    {
+      "bytes": 109347,
+      "name": "diagnostic_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_diagnostic_rows.jsonl",
+      "rows": 200,
+      "sha256": "588bc10d2b56efdbae8008319a401e2d841d95af080a8b81e0b23b559fb50dc3"
+    },
+    {
+      "bytes": 11855,
+      "name": "gradient_diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_gradient_diagnostics.json",
+      "rows": null,
+      "sha256": "1f4d051a59a07bb5af1d1ae2fc7c9e8fb08671ed7e9af342ea2570d3ae45935b"
+    },
+    {
+      "bytes": 484,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_environment.json",
+      "rows": null,
+      "sha256": "8710f33184e2903b089ddb436941d0939e9686ecf300fc90588dc9c0fdc1e100"
+    },
+    {
+      "bytes": 6371,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/qetarc_p0_route.json",
+      "rows": null,
+      "sha256": "d410ea2250286637abedc17782c45c0420ddff947851c9c4c95beb440e6f31d5"
+    },
+    {
+      "bytes": 1447,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/run/QETARC_P0_REPORT.md",
+      "rows": null,
+      "sha256": "13324c1dbb69a46491eafc8ac526226faf083c41be9ddd30e1b29991987ad187"
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "checkpoint_writes": 0,
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_qetarc_p0.py run",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_qetarc_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_qetarc_p0/protocol/qetarc_p0_protocol.json",
+  "protocol_sha256": "78278c2b259cfd9b6142b6fdcaff8429acf34bffca7d924f3a725280e51582d7",
+  "route": "PASS_QETARC_P0_AUTHORIZE_MATCHED_SMOKE_PROTOCOL",
+  "runtime_head": "cfc9e44dcea0c8017c79e3dd5830817890ad2769",
+  "scheduler_objects": 0,
+  "training_authorized": false
+}

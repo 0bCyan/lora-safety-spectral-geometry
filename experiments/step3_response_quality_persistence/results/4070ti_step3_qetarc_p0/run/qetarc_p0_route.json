@@ -1,0 +1,172 @@
+{
+  "candidate_outputs_generated": false,
+  "checkpoint_writes": 0,
+  "coefficients": {
+    "auxiliary_gradient_norm_ratio": 0.25,
+    "directions": {
+      "etarc": {
+        "coefficient": 0.0770095812847737,
+        "raw_gradient_norm": 28.788028027748407,
+        "scaled_gradient_norm": 2.2169539782481174
+      },
+      "qetarc": {
+        "coefficient": null,
+        "raw_gradient_norm": 28.788028027748407,
+        "scaled_gradient_norm": 2.216953972060075
+      },
+      "ramp": {
+        "coefficient": 0.25633183286502326,
+        "raw_gradient_norm": 8.648765780091843,
+        "scaled_gradient_norm": 2.2169539692364917
+      },
+      "tarc": {
+        "coefficient": 0.20565029054100603,
+        "raw_gradient_norm": 10.78021323772057,
+        "scaled_gradient_norm": 2.2169539222304686
+      }
+    },
+    "maximum_relative_budget_error": 2.805685923482319e-08,
+    "target_auxiliary_gradient_norm": 2.2169539844312345,
+    "uniform_calibration_gradient_norm": 8.867815937724938
+  },
+  "core100_opened": false,
+  "directional": {
+    "calibration_validation_etarc_cosine": 0.8493290059960868,
+    "candidate_directions": {
+      "etarc": {
+        "validation_branch_entropy_dot": 0.2344308662442432,
+        "validation_branch_negative_gap_dot": 23.771943777800793,
+        "validation_continuation_cosine": 0.0846304699962222,
+        "validation_continuation_dot": 1.5984989436418893,
+        "validation_etarc_cosine": 0.8493290060794177,
+        "validation_etarc_dot": 48.93536339349768,
+        "validation_tarc_dot": 9.827485099531186
+      },
+      "qetarc": {
+        "continuation_cosine_advantage_over_tarc": 0.36407414734721066,
+        "continuation_dot_fraction_of_ramp": 0.5316545285785327,
+        "route_dot_fraction_of_raw_etarc": 0.9370107405245511,
+        "route_dot_fraction_of_tarc": 1.5921665770699287,
+        "validation_branch_entropy_dot": 0.21672514011884378,
+        "validation_branch_negative_gap_dot": 20.846155285002293,
+        "validation_continuation_cosine": 0.4436476941247314,
+        "validation_continuation_dot": 8.379610422342418,
+        "validation_etarc_cosine": 0.795830403156807,
+        "validation_etarc_dot": 45.852961091179274,
+        "validation_tarc_dot": 9.91874432071551
+      },
+      "ramp": {
+        "validation_branch_entropy_dot": 0.008270812355136362,
+        "validation_branch_negative_gap_dot": -2.3591834750361422,
+        "validation_continuation_cosine": 0.8344661257300704,
+        "validation_continuation_dot": 15.76138257440731,
+        "validation_etarc_cosine": 0.3441468844152095,
+        "validation_etarc_dot": 19.828538364516106,
+        "validation_tarc_dot": 9.144846860564531
+      },
+      "tarc": {
+        "validation_branch_entropy_dot": -0.3370974063271415,
+        "validation_branch_negative_gap_dot": -33.30456324913707,
+        "validation_continuation_cosine": 0.07957354677752071,
+        "validation_continuation_dot": 1.5029838219893867,
+        "validation_etarc_cosine": 0.49984118025448443,
+        "validation_etarc_dot": 28.799097878039046,
+        "validation_tarc_dot": 21.937435296459814
+      }
+    }
+  },
+  "gates": {
+    "branch_mechanism": true,
+    "budget_matched": true,
+    "certificate_structure": true,
+    "continuation_transfer": true,
+    "effect_not_weak": true,
+    "gradient_valid": true,
+    "integrity": true,
+    "quota_geometry": true,
+    "route_transfer": true,
+    "state_restored": true,
+    "vram": true
+  },
+  "heldout_opened": false,
+  "matched_smoke_protocol_authorized": true,
+  "name": "step3_qetarc_p0_route_decision_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "paired_validation": {
+    "candidates": {
+      "etarc": {
+        "continuation_compatible_rate": 1.0,
+        "mean_continuation_dot": 1.5984989433724262,
+        "mean_route_dot": 48.93536342895063,
+        "median_continuation_dot": 1.5520731171734319,
+        "median_route_dot": 46.988017723401576,
+        "route_positive_rate": 1.0,
+        "validation_prompts": 32
+      },
+      "qetarc": {
+        "continuation_compatible_rate": 1.0,
+        "mean_continuation_dot": 8.379610427182666,
+        "mean_route_dot": 45.85296111466481,
+        "median_continuation_dot": 8.667733699196567,
+        "median_route_dot": 44.65087678520424,
+        "route_positive_rate": 1.0,
+        "validation_prompts": 32
+      },
+      "ramp": {
+        "continuation_compatible_rate": 1.0,
+        "mean_continuation_dot": 15.7613825811966,
+        "mean_route_dot": 19.828538350449485,
+        "median_continuation_dot": 16.671782589366096,
+        "median_route_dot": 18.98693353131828,
+        "route_positive_rate": 1.0,
+        "validation_prompts": 32
+      },
+      "tarc": {
+        "continuation_compatible_rate": 1.0,
+        "mean_continuation_dot": 1.502983825464283,
+        "mean_route_dot": 28.799097875407973,
+        "median_continuation_dot": 1.3727730703648842,
+        "median_route_dot": 30.077251796884752,
+        "route_positive_rate": 1.0,
+        "validation_prompts": 32
+      }
+    },
+    "qetarc_continuation_advantage_over_tarc": {
+      "bootstrap": {
+        "bootstrap_samples": 10000,
+        "ci95_lower": 6.434236538972809,
+        "ci95_upper": 7.321344027360214,
+        "mean": 6.8766266017183835,
+        "rows": 32,
+        "seed": 2026081722
+      },
+      "sign_test": {
+        "exact_two_sided_p": 4.656612873077393e-10,
+        "negative": 0,
+        "positive": 32,
+        "ties": 0
+      }
+    }
+  },
+  "protocol_sha256": "78278c2b259cfd9b6142b6fdcaff8429acf34bffca7d924f3a725280e51582d7",
+  "quota_geometry": {
+    "achieved_continuation_cosine": 0.4999999899481227,
+    "achieved_route_cosine": 0.9169829306687924,
+    "budget_norm": 2.2169539844312345,
+    "continuation_dot_lower_bound": 8.579383737782248,
+    "continuation_first_order_dot": 8.57938351742931,
+    "final_direction_norm": 2.216953972060075,
+    "pre_normalization_norm": 0.9999999902762325,
+    "quota_active": true,
+    "quota_cosine": 0.5,
+    "quota_slack": -1.0051877274985799e-08,
+    "raw_route_continuation_cosine": 0.11301101951847041,
+    "route_first_order_dot": 58.52343984363017,
+    "theoretical_route_cosine": 0.9169829249774075
+  },
+  "route": "PASS_QETARC_P0_AUTHORIZE_MATCHED_SMOKE_PROTOCOL",
+  "runtime_head": "cfc9e44dcea0c8017c79e3dd5830817890ad2769",
+  "scheduler_objects": 0,
+  "training_authorized": false
+}
