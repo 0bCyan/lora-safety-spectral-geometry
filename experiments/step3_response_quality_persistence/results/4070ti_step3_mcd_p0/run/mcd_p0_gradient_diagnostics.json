@@ -1,0 +1,771 @@
+{
+  "budget": {
+    "auxiliary_gradient_norm_ratio": 1.0,
+    "directions": {
+      "etarc": {
+        "coefficient": 0.3080383251390948,
+        "raw_gradient_norm": 28.788028027748407,
+        "scaled_gradient_norm": 8.86781591299247
+      },
+      "mcd_etarc": {
+        "coefficient": null,
+        "raw_gradient_norm": null,
+        "scaled_gradient_norm": 8.867816029675636
+      },
+      "qetarc": {
+        "coefficient": null,
+        "raw_gradient_norm": 28.788028027748407,
+        "scaled_gradient_norm": 8.8678158882403
+      },
+      "ramp": {
+        "coefficient": 1.025327331460093,
+        "raw_gradient_norm": 8.648765780091843,
+        "scaled_gradient_norm": 8.867815876945967
+      },
+      "tarc": {
+        "coefficient": 0.8226011621640241,
+        "raw_gradient_norm": 10.78021323772057,
+        "scaled_gradient_norm": 8.867815688921874
+      }
+    },
+    "maximum_relative_budget_error": 2.805685923482319e-08,
+    "target_auxiliary_gradient_norm": 8.867815937724938,
+    "uniform_calibration_gradient_norm": 8.867815937724938
+  },
+  "coverage": {
+    "calibration": {
+      "branch_entropy": {
+        "finite": true,
+        "gradient_hash": "cf058525b044b2969dae9526a746c63d5ce802bdb3fab2a095ed50b80c79faf8",
+        "gradient_norm": 0.11045760487611787,
+        "mean_loss": 0.0037920804152236087,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847344,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "branch_negative_gap": {
+        "finite": true,
+        "gradient_hash": "b121872270ecd0ceecca552b6a80b975beffa1a107a251bd2e2b0e28640b3489",
+        "gradient_norm": 32.474044315822134,
+        "mean_loss": -8.387656211853027,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "continuation": {
+        "finite": true,
+        "gradient_hash": "cb87c1222dfdeda141457f36c0e44ebc9ef61d8a33f5a3763601b218e1bbd2d8",
+        "gradient_norm": 7.739794148215767,
+        "mean_loss": 5.965846121311188,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "etarc": {
+        "complete_route_certificate_rate": 0.0,
+        "finite": true,
+        "gradient_hash": "e45dd9d3640b267d2e1b2d2a1278fd12fd48ac935f6606cb02f08276aa475a99",
+        "gradient_norm": 28.788028027748407,
+        "mean_existential_path_certificate": -9.961797595024109,
+        "mean_loss": 9.961929082870483,
+        "mean_strongest_path_derivative_weight": 0.9995235055685043,
+        "mean_winning_path_minimum_token_margin": -9.23366641998291,
+        "minimum_existential_path_certificate": -13.017684936523438,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "ramp": {
+        "finite": true,
+        "gradient_hash": "b57b004018f236554af589a8afb77667d178b91526de6fbe4430cf0f1028c1f5",
+        "gradient_norm": 8.648765780091843,
+        "mean_loss": 6.231248557567596,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "tarc": {
+        "certified_node_occurrence_rate": 0.453125,
+        "finite": true,
+        "full_trie_certificate_rate": 0.0,
+        "gradient_hash": "6a3ae584013b71ee00905e1c8e7bb51d06c0f83d711b28b7a04440045723ebe4",
+        "gradient_norm": 10.78021323772057,
+        "mean_loss": 5.61762198805809,
+        "mean_margin": -3.442322552204132,
+        "mean_strongest_allowed_derivative_weight": 0.00045574117126534475,
+        "minimum_margin": -21.4793643951416,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "uniform": {
+        "finite": true,
+        "gradient_hash": "ebcd277199e0f94c669e015c25c5edaab116727f36d120e6d37f803c48100347",
+        "gradient_norm": 8.867815937724938,
+        "mean_loss": 6.405261874198914,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      }
+    },
+    "validation": {
+      "branch_entropy": {
+        "finite": true,
+        "gradient_hash": "9d6119a688798d1ea9c178150544d180e5286e9a5d4f882ff1b0eceedfa0b4a5",
+        "gradient_norm": 0.39312454359368726,
+        "mean_loss": 0.012924483299229905,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "branch_negative_gap": {
+        "finite": true,
+        "gradient_hash": "a9f24dfa7597bd93e636e01d8b4c73e2c859d969579d795f0c8eb1f8c7077a46",
+        "gradient_norm": 34.00122121987945,
+        "mean_loss": -8.079309582710266,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "continuation": {
+        "finite": true,
+        "gradient_hash": "070b544c3845cd5a4be88fca06a31d05117711fc8415a565d0287d7747f78865",
+        "gradient_norm": 8.519790647080672,
+        "mean_loss": 6.560864552855492,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "etarc": {
+        "complete_route_certificate_rate": 0.0,
+        "finite": true,
+        "gradient_hash": "8814b393a4b4b9f69675b01344a295671d2a55e7546d2665b1678c405e05bb1e",
+        "gradient_norm": 25.989036782912585,
+        "mean_existential_path_certificate": -11.115596354007721,
+        "mean_loss": 11.115715429186821,
+        "mean_strongest_path_derivative_weight": 0.9675451833754778,
+        "mean_winning_path_minimum_token_margin": -10.377649426460266,
+        "minimum_existential_path_certificate": -17.12894630432129,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "tarc": {
+        "certified_node_occurrence_rate": 0.4453125,
+        "finite": true,
+        "full_trie_certificate_rate": 0.0,
+        "gradient_hash": "f1af65e4df4295f49e8c2e6764da7222943adfe233ad59c584271f0322f4dea6",
+        "gradient_norm": 11.266964522293154,
+        "mean_loss": 6.0200879871845245,
+        "mean_margin": -3.4880989715456963,
+        "mean_strongest_allowed_derivative_weight": 0.0026012573639193626,
+        "minimum_margin": -27.101070404052734,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      },
+      "uniform": {
+        "finite": true,
+        "gradient_hash": "1830dd6090f3758719b6d03e2180049f0ce8035bdb266da3f6c3cb3d51f4d250",
+        "gradient_norm": 9.631379645655844,
+        "mean_loss": 6.828599289059639,
+        "missing_gradient_tensors": [],
+        "nonzero_gradient_elements": 8847360,
+        "nonzero_gradient_tensors": 252,
+        "parameter_elements": 16515072,
+        "parameter_tensors": 504
+      }
+    }
+  },
+  "directional": {
+    "candidate_directions": {
+      "etarc": {
+        "branch_entropy": {
+          "cosine": 0.27052302866872785,
+          "dot": 0.9430855021116742
+        },
+        "branch_negative_gap": {
+          "cosine": 0.3153647387562507,
+          "dot": 95.08769451631736
+        },
+        "continuation": {
+          "cosine": 0.0846304699962222,
+          "dot": 6.393995774567557
+        },
+        "etarc": {
+          "cosine": 0.8493290060794177,
+          "dot": 195.74145357399073
+        },
+        "tarc": {
+          "cosine": 0.3934461772092167,
+          "dot": 39.31053240916903
+        },
+        "uniform": {
+          "cosine": 0.14667508488401532,
+          "dot": 12.527416574651925
+        }
+      },
+      "mcd_etarc": {
+        "branch_entropy": {
+          "cosine": 0.5732212104830703,
+          "dot": 1.9983386363926867
+        },
+        "branch_negative_gap": {
+          "cosine": 0.6042249477401447,
+          "dot": 182.18383650762928
+        },
+        "continuation": {
+          "cosine": 0.5918797831229186,
+          "dot": 44.71766353542848
+        },
+        "etarc": {
+          "cosine": 0.6027084464147054,
+          "dot": 138.90380299083537
+        },
+        "summary": {
+          "continuation_dot_fraction_of_qetarc": 1.3341211966190727,
+          "continuation_dot_fraction_of_ramp": 0.7092915758551409,
+          "minimum_certificate_cosine": 0.5732212104830703,
+          "route_dot_fraction_of_raw_etarc": 0.7096289541874145,
+          "route_dot_fraction_of_tarc": 1.2057999488306668
+        },
+        "tarc": {
+          "cosine": 0.031589176664730406,
+          "dot": 3.156181051765627
+        },
+        "uniform": {
+          "cosine": 0.5816104562137407,
+          "dot": 49.6749435720114
+        }
+      },
+      "qetarc": {
+        "branch_entropy": {
+          "cosine": 0.25088815744277065,
+          "dot": 0.8746352738978789
+        },
+        "branch_negative_gap": {
+          "cosine": 0.27654740596923605,
+          "dot": 83.38362522199525
+        },
+        "continuation": {
+          "cosine": 0.4436476941247314,
+          "dot": 33.51844168936967
+        },
+        "etarc": {
+          "cosine": 0.795830403156807,
+          "dot": 183.4118443647171
+        },
+        "tarc": {
+          "cosine": 0.3970940412593212,
+          "dot": 39.6750026790593
+        },
+        "uniform": {
+          "cosine": 0.4397525496056829,
+          "dot": 37.55895807154378
+        }
+      },
+      "ramp": {
+        "branch_entropy": {
+          "cosine": 0.011574176323253482,
+          "dot": 0.0403493850364265
+        },
+        "branch_negative_gap": {
+          "cosine": -0.03130266430279326,
+          "dot": -9.438271952693915
+        },
+        "continuation": {
+          "cosine": 0.8344661257300704,
+          "dot": 63.04553029762924
+        },
+        "etarc": {
+          "cosine": 0.3441468844152095,
+          "dot": 79.31415345806442
+        },
+        "tarc": {
+          "cosine": 0.3661019556049939,
+          "dot": 36.578479004301606
+        },
+        "uniform": {
+          "cosine": 0.7299563149739106,
+          "dot": 62.34505886965076
+        }
+      },
+      "tarc": {
+        "branch_entropy": {
+          "cosine": -0.38711715022139803,
+          "dot": -1.3495507741588828
+        },
+        "branch_negative_gap": {
+          "cosine": -0.4418250063722689,
+          "dot": -133.21755735828225
+        },
+        "continuation": {
+          "cosine": 0.07957354677752071,
+          "dot": 6.011935287957547
+        },
+        "etarc": {
+          "cosine": 0.49984118025448443,
+          "dot": 115.19639151215618
+        },
+        "tarc": {
+          "cosine": 0.8782754374574897,
+          "dot": 87.75145414008266
+        },
+        "uniform": {
+          "cosine": 0.17689990090879268,
+          "dot": 15.108896623141241
+        }
+      }
+    }
+  },
+  "effective_method_perturbation_ratio": 0.2,
+  "final_trainable_state_sha256": "4e4b6ec33469d81c3cc02d1527073151178880cfa252c08b16e59e460efd1924",
+  "gates": {
+    "branch_effect": true,
+    "budget_matched": true,
+    "common_transfer": true,
+    "continuation_effect": true,
+    "dual_certificate": true,
+    "effect_not_weak": true,
+    "gradient_valid": true,
+    "integrity": true,
+    "route_effect": true,
+    "state_restored": true,
+    "vram": true
+  },
+  "initial_trainable_state_sha256": "4e4b6ec33469d81c3cc02d1527073151178880cfa252c08b16e59e460efd1924",
+  "mcd_dual_certificate": {
+    "accepted_kkt_candidates": 1,
+    "active_certificates": [
+      "uniform",
+      "etarc",
+      "continuation",
+      "branch_entropy"
+    ],
+    "active_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "active_set_size": 4,
+    "budget_norm": 8.867815937724938,
+    "certificate_cosines": {
+      "branch_entropy": 0.6474796192240558,
+      "branch_negative_gap": 0.6542808133522388,
+      "continuation": 0.6474796367922696,
+      "etarc": 0.647479602692104,
+      "uniform": 0.6474795986435808
+    },
+    "certificate_names": [
+      "uniform",
+      "etarc",
+      "continuation",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "dual_margin": 0.647479620514477,
+    "dual_squared_margin": 0.41922985762014536,
+    "dual_weights": {
+      "branch_entropy": 0.33440326389424224,
+      "branch_negative_gap": 0.0,
+      "continuation": 0.26298124167797465,
+      "etarc": 0.2605352401570647,
+      "uniform": 0.14208025427071846
+    },
+    "final_direction_norm": 8.867816029675636,
+    "gradient_norms": {
+      "branch_entropy": 0.11045760487611787,
+      "branch_negative_gap": 32.474044315822134,
+      "continuation": 7.739794148215767,
+      "etarc": 28.788028027748407,
+      "uniform": 8.867815937724938
+    },
+    "gram_matrix": [
+      [
+        1.000000006901049,
+        0.18321844486444552,
+        0.8617382901195516,
+        0.008354390041931163,
+        0.010788527505539727
+      ],
+      [
+        0.18321844486444552,
+        1.000000061798563,
+        0.11301101951847041,
+        0.3078411935753312,
+        0.3564508391256279
+      ],
+      [
+        0.8617382901195516,
+        0.11301101951847041,
+        0.9999998904359892,
+        0.013065949832333704,
+        0.012986579361403607
+      ],
+      [
+        0.008354390041931163,
+        0.3078411935753312,
+        0.013065949832333704,
+        1.000000062366237,
+        0.9743248304375255
+      ],
+      [
+        0.010788527505539727,
+        0.3564508391256279,
+        0.012986579361403607,
+        0.9743248304375255,
+        0.9999999637146633
+      ]
+    ],
+    "kkt_residual": 5.551115123125783e-17,
+    "primal_dual_gap": 2.1870896205200552e-08,
+    "primal_margin": 0.6474795986435808
+  },
+  "name": "step3_mcd_etarc_p0_gradient_diagnostics_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "paired_validation": {
+    "candidate_objectives": {
+      "etarc": {
+        "branch_entropy": {
+          "mean_dot": 0.9430855088386424,
+          "median_dot": 0.22974986683980192,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "branch_negative_gap": {
+          "mean_dot": 95.08769522191237,
+          "median_dot": 89.48987249298278,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "continuation": {
+          "mean_dot": 6.393995773489705,
+          "median_dot": 6.2082924686937275,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "etarc": {
+          "mean_dot": 195.74145371580252,
+          "median_dot": 187.9520708936063,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "tarc": {
+          "mean_dot": 39.310532420670775,
+          "median_dot": 42.418021360175814,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "uniform": {
+          "mean_dot": 12.527416572040783,
+          "median_dot": 12.550718245195483,
+          "positive_rate": 1.0,
+          "prompts": 32
+        }
+      },
+      "mcd_etarc": {
+        "branch_entropy": {
+          "mean_dot": 1.9983386315041092,
+          "median_dot": 0.469441703916275,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "branch_negative_gap": {
+          "mean_dot": 182.1838370482453,
+          "median_dot": 178.09904269216878,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "continuation": {
+          "mean_dot": 44.717663561634275,
+          "median_dot": 45.93515650834375,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "etarc": {
+          "mean_dot": 138.90380306660415,
+          "median_dot": 142.0490694039616,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "tarc": {
+          "mean_dot": 3.156181077839134,
+          "median_dot": 3.3088796302665098,
+          "positive_rate": 0.625,
+          "prompts": 32
+        },
+        "uniform": {
+          "mean_dot": 49.674943580630774,
+          "median_dot": 51.46959010298504,
+          "positive_rate": 1.0,
+          "prompts": 32
+        }
+      },
+      "qetarc": {
+        "branch_entropy": {
+          "mean_dot": 0.8746352795522647,
+          "median_dot": 0.20047597861162164,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "branch_negative_gap": {
+          "mean_dot": 83.38362585181348,
+          "median_dot": 78.32445848553374,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "continuation": {
+          "mean_dot": 33.51844170873066,
+          "median_dot": 34.67093479678627,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "etarc": {
+          "mean_dot": 183.41184445865923,
+          "median_dot": 178.60350714081696,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "tarc": {
+          "mean_dot": 39.67500268540536,
+          "median_dot": 45.58268480573619,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "uniform": {
+          "mean_dot": 37.55895807829125,
+          "median_dot": 38.88069546879129,
+          "positive_rate": 1.0,
+          "prompts": 32
+        }
+      },
+      "ramp": {
+        "branch_entropy": {
+          "mean_dot": 0.04034938747599287,
+          "median_dot": -0.028578573184178925,
+          "positive_rate": 0.25,
+          "prompts": 32
+        },
+        "branch_negative_gap": {
+          "mean_dot": -9.43827183501972,
+          "median_dot": -16.346948711294402,
+          "positive_rate": 0.3125,
+          "prompts": 32
+        },
+        "continuation": {
+          "mean_dot": 63.0455303247864,
+          "median_dot": 66.68713035746438,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "etarc": {
+          "mean_dot": 79.31415340179794,
+          "median_dot": 75.94773412527312,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "tarc": {
+          "mean_dot": 36.578478999953646,
+          "median_dot": 33.290467540833404,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "uniform": {
+          "mean_dot": 62.345058870059745,
+          "median_dot": 65.43029259195045,
+          "positive_rate": 1.0,
+          "prompts": 32
+        }
+      },
+      "tarc": {
+        "branch_entropy": {
+          "mean_dot": -1.349550758637214,
+          "median_dot": -0.37026083557098377,
+          "positive_rate": 0.0,
+          "prompts": 32
+        },
+        "branch_negative_gap": {
+          "mean_dot": -133.21755726561133,
+          "median_dot": -138.6831582334879,
+          "positive_rate": 0.0,
+          "prompts": 32
+        },
+        "continuation": {
+          "mean_dot": 6.011935301857132,
+          "median_dot": 5.491092281459537,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "etarc": {
+          "mean_dot": 115.1963915016319,
+          "median_dot": 120.30900718753901,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "tarc": {
+          "mean_dot": 87.7514541143566,
+          "median_dot": 88.31580959118995,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "uniform": {
+          "mean_dot": 15.108896616729503,
+          "median_dot": 14.61416714355894,
+          "positive_rate": 1.0,
+          "prompts": 32
+        }
+      }
+    },
+    "mcd_continuation_advantage_over_qetarc": {
+      "bootstrap": {
+        "bootstrap_samples": 10000,
+        "ci95_lower": 10.367318756262355,
+        "ci95_upper": 12.041826392915278,
+        "mean": 11.199221852903607,
+        "rows": 32,
+        "seed": 2026081724
+      },
+      "differences": [
+        12.934799772170805,
+        11.357775367241576,
+        10.840334971398939,
+        6.297770621025212,
+        10.014837803762994,
+        14.411163504008911,
+        8.526127060095092,
+        15.050825914596672,
+        12.265327708673006,
+        7.325429640822531,
+        10.065641262075076,
+        15.794634167494984,
+        15.114933735274832,
+        10.070803687219016,
+        9.672583626923931,
+        9.454058010065769,
+        13.615715073033662,
+        12.381404404564023,
+        11.374859061039714,
+        9.503214069006454,
+        10.63124633681555,
+        12.264970477998382,
+        9.726953666707946,
+        12.733383713981361,
+        10.470576521353472,
+        8.13529452274102,
+        6.860952966443932,
+        13.597303447365043,
+        9.373424190727654,
+        13.055869992750274,
+        13.3545406689774,
+        12.098343326560169
+      ],
+      "left": "mcd_etarc",
+      "objective": "continuation",
+      "positive_rate": 1.0,
+      "right": "qetarc",
+      "sign_test": {
+        "exact_two_sided_p": 4.656612873077393e-10,
+        "negative": 0,
+        "positive": 32,
+        "ties": 0
+      }
+    },
+    "mcd_route_advantage_over_tarc": {
+      "bootstrap": {
+        "bootstrap_samples": 10000,
+        "ci95_lower": 4.3250242108835515,
+        "ci95_upper": 42.04213232686587,
+        "mean": 23.707411564972276,
+        "rows": 32,
+        "seed": 2026081724
+      },
+      "differences": [
+        59.54739152588405,
+        54.20008609517791,
+        -56.28720969712309,
+        23.822654501742463,
+        34.06536106456464,
+        50.564388289103675,
+        -78.79426446870896,
+        75.96522674329643,
+        66.77670733255695,
+        -57.09338781769399,
+        69.65032078857884,
+        74.32103964311479,
+        41.10024425959348,
+        -37.035347827100146,
+        45.10741289239371,
+        52.25689516818564,
+        51.98058418431095,
+        -24.266608982860305,
+        -100.76049947801408,
+        63.65225309879733,
+        -35.40357363417853,
+        -67.94912324338591,
+        39.11075339747828,
+        120.62002705792669,
+        49.558119265923025,
+        25.927157233883122,
+        93.33833387065621,
+        -30.926123269222288,
+        -0.8563827386042533,
+        68.11466915169166,
+        42.9035683076232,
+        45.426497363521264
+      ],
+      "left": "mcd_etarc",
+      "objective": "etarc",
+      "positive_rate": 0.6875,
+      "right": "tarc",
+      "sign_test": {
+        "exact_two_sided_p": 0.050102459732443094,
+        "negative": 10,
+        "positive": 22,
+        "ties": 0
+      }
+    }
+  },
+  "protocol_sha256": "52cdad13f3af0b2524c99ce353e2bf71e9f104e083f35ef29a79cfb4d3481faf",
+  "qetarc_control_geometry": {
+    "achieved_continuation_cosine": 0.4999999899481227,
+    "achieved_route_cosine": 0.9169829306687924,
+    "budget_norm": 8.867815937724938,
+    "continuation_dot_lower_bound": 34.31753495112899,
+    "continuation_first_order_dot": 34.31753406971724,
+    "final_direction_norm": 8.8678158882403,
+    "pre_normalization_norm": 0.9999999902762325,
+    "quota_active": true,
+    "quota_cosine": 0.5,
+    "quota_slack": -1.0051877274985799e-08,
+    "raw_route_continuation_cosine": 0.11301101951847041,
+    "route_first_order_dot": 234.0937593745207,
+    "theoretical_route_cosine": 0.9169829249774075
+  },
+  "runtime_head": "afb11d669b9189e2cba6686cc63a4ae21ebbc5c6"
+}

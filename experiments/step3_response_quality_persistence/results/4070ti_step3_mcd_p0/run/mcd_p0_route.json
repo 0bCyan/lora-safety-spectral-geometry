@@ -1,0 +1,425 @@
+{
+  "candidate_outputs_generated": false,
+  "checkpoint_writes": 0,
+  "core100_opened": false,
+  "directional_summary": {
+    "continuation_dot_fraction_of_qetarc": 1.3341211966190727,
+    "continuation_dot_fraction_of_ramp": 0.7092915758551409,
+    "minimum_certificate_cosine": 0.5732212104830703,
+    "route_dot_fraction_of_raw_etarc": 0.7096289541874145,
+    "route_dot_fraction_of_tarc": 1.2057999488306668
+  },
+  "gates": {
+    "branch_effect": true,
+    "budget_matched": true,
+    "common_transfer": true,
+    "continuation_effect": true,
+    "dual_certificate": true,
+    "effect_not_weak": true,
+    "gradient_valid": true,
+    "integrity": true,
+    "route_effect": true,
+    "state_restored": true,
+    "vram": true
+  },
+  "heldout_opened": false,
+  "matched_smoke_protocol_authorized": true,
+  "mcd_dual_certificate": {
+    "accepted_kkt_candidates": 1,
+    "active_certificates": [
+      "uniform",
+      "etarc",
+      "continuation",
+      "branch_entropy"
+    ],
+    "active_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "active_set_size": 4,
+    "budget_norm": 8.867815937724938,
+    "certificate_cosines": {
+      "branch_entropy": 0.6474796192240558,
+      "branch_negative_gap": 0.6542808133522388,
+      "continuation": 0.6474796367922696,
+      "etarc": 0.647479602692104,
+      "uniform": 0.6474795986435808
+    },
+    "certificate_names": [
+      "uniform",
+      "etarc",
+      "continuation",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "dual_margin": 0.647479620514477,
+    "dual_squared_margin": 0.41922985762014536,
+    "dual_weights": {
+      "branch_entropy": 0.33440326389424224,
+      "branch_negative_gap": 0.0,
+      "continuation": 0.26298124167797465,
+      "etarc": 0.2605352401570647,
+      "uniform": 0.14208025427071846
+    },
+    "final_direction_norm": 8.867816029675636,
+    "gradient_norms": {
+      "branch_entropy": 0.11045760487611787,
+      "branch_negative_gap": 32.474044315822134,
+      "continuation": 7.739794148215767,
+      "etarc": 28.788028027748407,
+      "uniform": 8.867815937724938
+    },
+    "gram_matrix": [
+      [
+        1.000000006901049,
+        0.18321844486444552,
+        0.8617382901195516,
+        0.008354390041931163,
+        0.010788527505539727
+      ],
+      [
+        0.18321844486444552,
+        1.000000061798563,
+        0.11301101951847041,
+        0.3078411935753312,
+        0.3564508391256279
+      ],
+      [
+        0.8617382901195516,
+        0.11301101951847041,
+        0.9999998904359892,
+        0.013065949832333704,
+        0.012986579361403607
+      ],
+      [
+        0.008354390041931163,
+        0.3078411935753312,
+        0.013065949832333704,
+        1.000000062366237,
+        0.9743248304375255
+      ],
+      [
+        0.010788527505539727,
+        0.3564508391256279,
+        0.012986579361403607,
+        0.9743248304375255,
+        0.9999999637146633
+      ]
+    ],
+    "kkt_residual": 5.551115123125783e-17,
+    "primal_dual_gap": 2.1870896205200552e-08,
+    "primal_margin": 0.6474795986435808
+  },
+  "name": "step3_mcd_etarc_p0_route_decision_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "paired_validation": {
+    "candidate_objectives": {
+      "etarc": {
+        "branch_entropy": {
+          "mean_dot": 0.9430855088386424,
+          "median_dot": 0.22974986683980192,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "branch_negative_gap": {
+          "mean_dot": 95.08769522191237,
+          "median_dot": 89.48987249298278,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "continuation": {
+          "mean_dot": 6.393995773489705,
+          "median_dot": 6.2082924686937275,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "etarc": {
+          "mean_dot": 195.74145371580252,
+          "median_dot": 187.9520708936063,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "tarc": {
+          "mean_dot": 39.310532420670775,
+          "median_dot": 42.418021360175814,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "uniform": {
+          "mean_dot": 12.527416572040783,
+          "median_dot": 12.550718245195483,
+          "positive_rate": 1.0,
+          "prompts": 32
+        }
+      },
+      "mcd_etarc": {
+        "branch_entropy": {
+          "mean_dot": 1.9983386315041092,
+          "median_dot": 0.469441703916275,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "branch_negative_gap": {
+          "mean_dot": 182.1838370482453,
+          "median_dot": 178.09904269216878,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "continuation": {
+          "mean_dot": 44.717663561634275,
+          "median_dot": 45.93515650834375,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "etarc": {
+          "mean_dot": 138.90380306660415,
+          "median_dot": 142.0490694039616,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "tarc": {
+          "mean_dot": 3.156181077839134,
+          "median_dot": 3.3088796302665098,
+          "positive_rate": 0.625,
+          "prompts": 32
+        },
+        "uniform": {
+          "mean_dot": 49.674943580630774,
+          "median_dot": 51.46959010298504,
+          "positive_rate": 1.0,
+          "prompts": 32
+        }
+      },
+      "qetarc": {
+        "branch_entropy": {
+          "mean_dot": 0.8746352795522647,
+          "median_dot": 0.20047597861162164,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "branch_negative_gap": {
+          "mean_dot": 83.38362585181348,
+          "median_dot": 78.32445848553374,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "continuation": {
+          "mean_dot": 33.51844170873066,
+          "median_dot": 34.67093479678627,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "etarc": {
+          "mean_dot": 183.41184445865923,
+          "median_dot": 178.60350714081696,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "tarc": {
+          "mean_dot": 39.67500268540536,
+          "median_dot": 45.58268480573619,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "uniform": {
+          "mean_dot": 37.55895807829125,
+          "median_dot": 38.88069546879129,
+          "positive_rate": 1.0,
+          "prompts": 32
+        }
+      },
+      "ramp": {
+        "branch_entropy": {
+          "mean_dot": 0.04034938747599287,
+          "median_dot": -0.028578573184178925,
+          "positive_rate": 0.25,
+          "prompts": 32
+        },
+        "branch_negative_gap": {
+          "mean_dot": -9.43827183501972,
+          "median_dot": -16.346948711294402,
+          "positive_rate": 0.3125,
+          "prompts": 32
+        },
+        "continuation": {
+          "mean_dot": 63.0455303247864,
+          "median_dot": 66.68713035746438,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "etarc": {
+          "mean_dot": 79.31415340179794,
+          "median_dot": 75.94773412527312,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "tarc": {
+          "mean_dot": 36.578478999953646,
+          "median_dot": 33.290467540833404,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "uniform": {
+          "mean_dot": 62.345058870059745,
+          "median_dot": 65.43029259195045,
+          "positive_rate": 1.0,
+          "prompts": 32
+        }
+      },
+      "tarc": {
+        "branch_entropy": {
+          "mean_dot": -1.349550758637214,
+          "median_dot": -0.37026083557098377,
+          "positive_rate": 0.0,
+          "prompts": 32
+        },
+        "branch_negative_gap": {
+          "mean_dot": -133.21755726561133,
+          "median_dot": -138.6831582334879,
+          "positive_rate": 0.0,
+          "prompts": 32
+        },
+        "continuation": {
+          "mean_dot": 6.011935301857132,
+          "median_dot": 5.491092281459537,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "etarc": {
+          "mean_dot": 115.1963915016319,
+          "median_dot": 120.30900718753901,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "tarc": {
+          "mean_dot": 87.7514541143566,
+          "median_dot": 88.31580959118995,
+          "positive_rate": 1.0,
+          "prompts": 32
+        },
+        "uniform": {
+          "mean_dot": 15.108896616729503,
+          "median_dot": 14.61416714355894,
+          "positive_rate": 1.0,
+          "prompts": 32
+        }
+      }
+    },
+    "mcd_continuation_advantage_over_qetarc": {
+      "bootstrap": {
+        "bootstrap_samples": 10000,
+        "ci95_lower": 10.367318756262355,
+        "ci95_upper": 12.041826392915278,
+        "mean": 11.199221852903607,
+        "rows": 32,
+        "seed": 2026081724
+      },
+      "differences": [
+        12.934799772170805,
+        11.357775367241576,
+        10.840334971398939,
+        6.297770621025212,
+        10.014837803762994,
+        14.411163504008911,
+        8.526127060095092,
+        15.050825914596672,
+        12.265327708673006,
+        7.325429640822531,
+        10.065641262075076,
+        15.794634167494984,
+        15.114933735274832,
+        10.070803687219016,
+        9.672583626923931,
+        9.454058010065769,
+        13.615715073033662,
+        12.381404404564023,
+        11.374859061039714,
+        9.503214069006454,
+        10.63124633681555,
+        12.264970477998382,
+        9.726953666707946,
+        12.733383713981361,
+        10.470576521353472,
+        8.13529452274102,
+        6.860952966443932,
+        13.597303447365043,
+        9.373424190727654,
+        13.055869992750274,
+        13.3545406689774,
+        12.098343326560169
+      ],
+      "left": "mcd_etarc",
+      "objective": "continuation",
+      "positive_rate": 1.0,
+      "right": "qetarc",
+      "sign_test": {
+        "exact_two_sided_p": 4.656612873077393e-10,
+        "negative": 0,
+        "positive": 32,
+        "ties": 0
+      }
+    },
+    "mcd_route_advantage_over_tarc": {
+      "bootstrap": {
+        "bootstrap_samples": 10000,
+        "ci95_lower": 4.3250242108835515,
+        "ci95_upper": 42.04213232686587,
+        "mean": 23.707411564972276,
+        "rows": 32,
+        "seed": 2026081724
+      },
+      "differences": [
+        59.54739152588405,
+        54.20008609517791,
+        -56.28720969712309,
+        23.822654501742463,
+        34.06536106456464,
+        50.564388289103675,
+        -78.79426446870896,
+        75.96522674329643,
+        66.77670733255695,
+        -57.09338781769399,
+        69.65032078857884,
+        74.32103964311479,
+        41.10024425959348,
+        -37.035347827100146,
+        45.10741289239371,
+        52.25689516818564,
+        51.98058418431095,
+        -24.266608982860305,
+        -100.76049947801408,
+        63.65225309879733,
+        -35.40357363417853,
+        -67.94912324338591,
+        39.11075339747828,
+        120.62002705792669,
+        49.558119265923025,
+        25.927157233883122,
+        93.33833387065621,
+        -30.926123269222288,
+        -0.8563827386042533,
+        68.11466915169166,
+        42.9035683076232,
+        45.426497363521264
+      ],
+      "left": "mcd_etarc",
+      "objective": "etarc",
+      "positive_rate": 0.6875,
+      "right": "tarc",
+      "sign_test": {
+        "exact_two_sided_p": 0.050102459732443094,
+        "negative": 10,
+        "positive": 22,
+        "ties": 0
+      }
+    }
+  },
+  "protocol_sha256": "52cdad13f3af0b2524c99ce353e2bf71e9f104e083f35ef29a79cfb4d3481faf",
+  "route": "PASS_MCD_ETARC_P0_AUTHORIZE_MATCHED_SMOKE_PROTOCOL",
+  "runtime_head": "afb11d669b9189e2cba6686cc63a4ae21ebbc5c6",
+  "scheduler_objects": 0,
+  "training_authorized": false
+}
