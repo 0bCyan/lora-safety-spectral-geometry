@@ -1,0 +1,14 @@
+{
+  "bitsandbytes": "0.49.2",
+  "cuda": "12.1",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "name": "step3_pfrsc_mcd_p0_environment_v1",
+  "peak_reserved_bytes": 9351200768,
+  "peft": "0.16.0",
+  "runtime_head": "6ecfed81b2a3f816b6153dfaf729ba0dd2f598ed",
+  "torch": "2.5.1+cu121",
+  "total_vram_bytes": 12878086144,
+  "transformers": "4.53.3",
+  "vram_headroom_fraction": 0.27386719863208886,
+  "wall_clock_seconds": 3592.7170565128326
+}
