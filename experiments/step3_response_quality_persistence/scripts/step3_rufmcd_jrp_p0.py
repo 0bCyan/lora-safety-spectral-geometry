@@ -34,6 +34,10 @@ RECOVERY_STATUS = (
     "method_frozen_before_first_RUFMCD_JRP_model_forward_"
     "execution_repair_after_post_measurement_routing_recursion"
 )
+RAW_SCORE_RECOVERY_STATUS = (
+    "method_frozen_before_first_RUFMCD_JRP_model_forward_"
+    "second_execution_repair_after_protected_facet_raw_score_lookup"
+)
 _BASE_EVALUATE_GATES = base.evaluate_gates
 
 
@@ -143,15 +147,33 @@ def _robust_margin(
     )
 
 
+def _registered_raw_score(
+    spec: dict[str, Any], raw_score_panels: list[dict[str, float]]
+) -> float:
+    try:
+        score = float(
+            raw_score_panels[int(spec["unit_index"]) + 1][str(spec["certificate"])]
+        )
+    except (IndexError, KeyError, TypeError, ValueError) as exc:
+        raise ValueError("JRP facet raw-score registry differs") from exc
+    if not math.isfinite(score):
+        raise ValueError("JRP facet raw score is non-finite")
+    return score
+
+
 def context(path: Path):
     protocol = _read_json(path)
-    if protocol.get("status") not in {PROSPECTIVE_STATUS, RECOVERY_STATUS}:
+    recovery_incidents = {
+        RECOVERY_STATUS: "V3_POST_MEASUREMENT_GATE_ROUTING_RECURSION",
+        RAW_SCORE_RECOVERY_STATUS: "V3R_PROTECTED_FACET_RAW_SCORE_LOOKUP",
+    }
+    if protocol.get("status") not in {PROSPECTIVE_STATUS, *recovery_incidents}:
         raise base.NptmcdP0ValidationError("JRP protocol is not prospective")
-    if protocol.get("status") == RECOVERY_STATUS:
+    if protocol.get("status") in recovery_incidents:
         repair = protocol.get("execution_repair", {})
         if (
             repair.get("incident_code")
-            != "V3_POST_MEASUREMENT_GATE_ROUTING_RECURSION"
+            != recovery_incidents[protocol["status"]]
             or repair.get("method_changed") is not False
             or repair.get("thresholds_changed") is not False
             or repair.get("selection_changed") is not False
@@ -296,8 +318,11 @@ def build_fit_geometry(
             objective_names.append(name)
             facet_groups[name] = spec["certificate"]
             if spec["kind"] == "protected":
+                raw_score = _registered_raw_score(spec, raw_score_panels)
+                if raw_score <= 0.0:
+                    raise ValueError("JRP protected raw score is nonpositive")
                 scale = math.sin(FIXED_THETA) / (
-                    reference_norm * float(spec["raw_score"])
+                    reference_norm * raw_score
                 )
                 offsets[name] = math.cos(FIXED_THETA) - base.PROTECTED_RETENTION_FLOOR
             elif spec["kind"] == "robust_protected":
@@ -305,7 +330,7 @@ def build_fit_geometry(
                 offsets[name] = math.cos(FIXED_THETA) - base.PROTECTED_RETENTION_FLOOR
             else:
                 scale = math.sin(FIXED_THETA) / reference_norm
-                raw_score = float(raw_score_panels[spec["unit_index"] + 1][spec["certificate"]])
+                raw_score = _registered_raw_score(spec, raw_score_panels)
                 offsets[name] = raw_score * math.cos(FIXED_THETA) - required_target_floor
             objective_gradients[name] = gradient_ops.scaled_gradient(
                 projected_gradient, scale

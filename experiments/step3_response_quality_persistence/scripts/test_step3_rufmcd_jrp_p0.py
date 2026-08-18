@@ -69,6 +69,69 @@ class RufmcdJrpTests(unittest.TestCase):
         finally:
             jrp.base.evaluate_gates = original
 
+    def test_original_facet_raw_score_comes_from_registered_panel(self) -> None:
+        spec = {"unit_index": 1, "certificate": "tarc"}
+        panels = [{}, {"tarc": 0.1}, {"tarc": 0.375}]
+        self.assertEqual(jrp._registered_raw_score(spec, panels), 0.375)
+
+    def test_synthetic_full_geometry_closes_all_ninety_six_facets(self) -> None:
+        torch.manual_seed(43)
+        fit_gradients = []
+        fit_coverages = []
+        for _ in range(jrp.base.FIT_UNITS):
+            common = torch.ones(32)
+            fit_gradients.append(
+                {
+                    name: {"x": common + 0.05 * torch.randn(32)}
+                    for name in jrp.base.CERTIFICATES
+                }
+            )
+            fit_coverages.append(
+                {
+                    "mode": "eval",
+                    "risk_microbatches": 1,
+                    "safety_microbatches": 1,
+                    "all_gradients_finite_nonzero": True,
+                }
+            )
+        config = {
+            "dual_numeric_tolerance": 1e-9,
+            "safety_mix": 0.2,
+            "auxiliary_gradient_norm_ratio": 1.0,
+            "max_grad_norm": 1.0,
+            "adam_epsilon": 1e-8,
+            "clip_epsilon": 1e-6,
+        }
+        protocol = {
+            "design": {
+                "projection_rcond": 1e-10,
+                "projection_refinement_steps": 2,
+                "affine_solver_tolerance": 1e-9,
+                "affine_kkt_residual_max": 1e-7,
+                "affine_actual_minus_predicted_max": 1e-6,
+                "minimum_retained_unit_facet_fraction": 0.01,
+                "constraint_generation_max_rounds": 12,
+                "constraint_generation_full_gap_max": 1e-7,
+            },
+            "gates": {
+                "minimum_nonzero_angle": 1e-8,
+                "numeric_tolerance": 1e-12,
+                "projection_residual_relative_max": 1e-6,
+                "candidate_norm_relative_tolerance": 1e-6,
+            },
+        }
+        geometry, _ = jrp.build_fit_geometry(
+            fit_gradients, fit_coverages, config, protocol
+        )
+        solver = geometry["tangent_audit"]["affine_solver"]
+        self.assertTrue(geometry["projection_valid"], geometry["projection_error"])
+        self.assertEqual(geometry["facet_count"], 96)
+        self.assertEqual(geometry["robust_protected_constraint_count"], 12)
+        self.assertTrue(solver["constraint_generation_certified"])
+        self.assertEqual(len(solver["full_certificate_scores"]), 96)
+        self.assertLessEqual(solver["full_primal_dual_gap"], 1e-7)
+        self.assertTrue(jrp._geometry_gate(geometry, protocol))
+
 
 if __name__ == "__main__":
     unittest.main()
