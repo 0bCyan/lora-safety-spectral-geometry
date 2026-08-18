@@ -1,0 +1,64 @@
+{
+  "artifacts": [
+    {
+      "bytes": 626,
+      "name": "structural_audit",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_structural_audit.json",
+      "rows": null,
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    {
+      "bytes": 319240,
+      "name": "block_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_block_rows.jsonl",
+      "rows": 8,
+      "sha256": "2d3fddf06db91eca25b41a801133c56bd7f58950e81d7e22bde79e13506872b5"
+    },
+    {
+      "bytes": 29879,
+      "name": "gradient_diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_gradient_diagnostics.json",
+      "rows": null,
+      "sha256": "789ffa0230e1b3e60d187df8c0f600c297a2f939cdbb5af1389ca7cdb99641af"
+    },
+    {
+      "bytes": 435,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_environment.json",
+      "rows": null,
+      "sha256": "5e54aeb3c9ec0acbc2cd0c67fd3db0b4c0e2419db3a8525c843267bf697dd872"
+    },
+    {
+      "bytes": 30172,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_route.json",
+      "rows": null,
+      "sha256": "cd986b6823bed0b769536c5cc82982ae141ec3775bbf33de109c0f75c0b3517e"
+    },
+    {
+      "bytes": 1135,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/BARP_MCD_P0_REPORT.md",
+      "rows": null,
+      "sha256": "253ee2d6a68e718b3ed97671cf5c1d37c902e4083bd6238c87525a46d639badd"
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_p0.py run",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_barp_mcd_p0_seed4.json",
+  "config_sha256": "87afd2349e44effcad1ffd5420d2476931682419f2922210d6aa2092457bdc50",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_barp_mcd_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/protocol/barp_mcd_p0_protocol.json",
+  "protocol_sha256": "68d569d70c3ad907380d3eea6ca64fa978f7f95b9383f2c6e4f70c73b921f8fa",
+  "route": "PASS_BARP_MCD_P0_AUTHORIZE_MATCHED_TRAINING_PROTOCOL",
+  "runtime_head": "c1691cd98251b3398b725867220fbe798994e294",
+  "scheduler_objects": 0,
+  "seed": 4,
+  "training_authorized": false,
+  "verify_command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_p0.py verify-run",
+  "virtual_parameter_evaluations": 24
+}

@@ -1,0 +1,203 @@
+{
+  "name": "step3_barp_mcd_p0_mechanism_analysis_v1",
+  "classification": "same_batch_mechanism_pass_with_nontrivial_effect_not_transfer_confirmation",
+  "route": "PASS_BARP_MCD_P0_AUTHORIZE_MATCHED_TRAINING_PROTOCOL",
+  "verified": true,
+  "verification_status": "PASS_BARP_MCD_P0_VERIFY",
+  "all_registered_gates_passed": true,
+  "source_artifacts": {
+    "block_rows": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_block_rows.jsonl",
+      "sha256": "2d3fddf06db91eca25b41a801133c56bd7f58950e81d7e22bde79e13506872b5"
+    },
+    "diagnostics": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_gradient_diagnostics.json",
+      "sha256": "789ffa0230e1b3e60d187df8c0f600c297a2f939cdbb5af1389ca7cdb99641af"
+    },
+    "route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_route.json",
+      "sha256": "cd986b6823bed0b769536c5cc82982ae141ec3775bbf33de109c0f75c0b3517e"
+    },
+    "manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_reproduction_manifest.json",
+      "sha256": "b04218790c2acc823d91a35eb18fd3bc43ba72cee8ee787a8437b889e6f8ad30"
+    }
+  },
+  "method_certificate": {
+    "optimizer_units": 8,
+    "risk_rows_per_unit": 4,
+    "safety_pairs_per_unit": 4,
+    "source_subsets_per_unit": 127,
+    "screened_sources_per_unit": 16,
+    "homotopy_candidates_per_unit": 129,
+    "exact_map_evaluations_per_unit": 239,
+    "protected_certificates": [
+      "risk",
+      "uniform",
+      "tarc",
+      "continuation"
+    ],
+    "target_certificates": [
+      "etarc",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "protected_retention_floor": 0.95,
+    "raw_anchor_in_every_family": true,
+    "selection_scope": "same_optimizer_batch",
+    "finite_step_evaluation_scope": "same_optimizer_batch",
+    "independent_transfer_claimed": false,
+    "theorem": "For each finite family, the raw anchor proves protected-feasible-set nonemptiness. Membership gives coordinatewise 95% protected exact-score retention, and target-bottleneck maximization over a set containing raw cannot underperform raw within that family."
+  },
+  "search": {
+    "minimum_selected_protected_retention": 0.9537425314480615,
+    "minimum_selected_target_score": 0.07380170922871,
+    "nonzero_units": 6,
+    "fallback_units": 2,
+    "nonzero_fraction": 0.75,
+    "fraction_counts": {
+      "0.0": 2,
+      "0.125": 2,
+      "0.25": 3,
+      "0.5": 1
+    },
+    "target_gain_over_raw_mean": 0.010087593148087859,
+    "target_gain_over_raw_bootstrap_ci95": [
+      0.005235054630930245,
+      0.014914778660588617
+    ],
+    "target_gain_positive_rate": 0.75,
+    "target_gain_sign_test_p": 0.03125,
+    "coverage_interpretation": "The registered 75% nonzero gate passes exactly, not with surplus. The two raw fallbacks are safety-preserving abstentions and target-gain ties."
+  },
+  "same_batch_exact_effect": {
+    "baseline_mean_target_minimum": -0.0134091178565289,
+    "raw_mean_target_minimum": 0.0785781455336361,
+    "barp_mean_target_minimum": 0.088665738681724,
+    "barp_minimum_target_score": 0.07380170922871,
+    "barp_minus_raw_target_minimum_mean": 0.010087593148087859,
+    "barp_minus_raw_target_minimum_bootstrap_ci95": [
+      0.005235054630930245,
+      0.014914778660588617
+    ],
+    "barp_minus_raw_target_minimum_sign_test_p": 0.03125,
+    "barp_minus_baseline_worst_score_mean": 0.102074856538253,
+    "barp_minus_baseline_worst_score_bootstrap_ci95": [
+      0.0948983676822725,
+      0.110000399274465
+    ],
+    "barp_minus_baseline_worst_score_sign_test_p": 0.0078125
+  },
+  "finite_step_target_effect": {
+    "target_macro_relative_gain_mean": 0.0716115374707382,
+    "target_macro_relative_gain_bootstrap_ci95": [
+      0.0369696778099039,
+      0.105683732066223
+    ],
+    "target_macro_relative_gain_positive_rate": 0.75,
+    "target_macro_relative_gain_sign_test_p": 0.03125,
+    "per_target_relative_actual_gain": {
+      "etarc": {
+        "mean": 0.0497472329342629,
+        "bootstrap_ci95": [
+          0.0239356976869745,
+          0.0758631119817301
+        ],
+        "minimum": 0.0
+      },
+      "branch_entropy": {
+        "mean": 0.0427472682558327,
+        "bootstrap_ci95": [
+          0.0216966125359999,
+          0.0635438788921109
+        ],
+        "minimum": 0.0
+      },
+      "branch_negative_gap": {
+        "mean": 0.122340111222119,
+        "bootstrap_ci95": [
+          0.0626229721691323,
+          0.182268431067248
+        ],
+        "minimum": 0.0
+      }
+    },
+    "all_seven_objectives_positive_actual_reduction_rate": 1.0
+  },
+  "protected_noninferiority": {
+    "relative_actual_change_versus_raw": {
+      "risk": {
+        "mean": -0.00423051770983798,
+        "bootstrap_ci95_lower": -0.00686711363639754,
+        "minimum": -0.00998874344897849
+      },
+      "uniform": {
+        "mean": -0.00694262207953575,
+        "bootstrap_ci95_lower": -0.0108890741857448,
+        "minimum": -0.014161733361848
+      },
+      "tarc": {
+        "mean": -0.0213919927516908,
+        "bootstrap_ci95_lower": -0.0449430115992995,
+        "minimum": -0.0653798620051983
+      },
+      "continuation": {
+        "mean": -0.0125768680849498,
+        "bootstrap_ci95_lower": -0.0210510606128684,
+        "minimum": -0.0321985329320492
+      }
+    },
+    "frozen_limits": {
+      "mean_relative_loss_max": 0.05,
+      "bootstrap_relative_loss_max": 0.075,
+      "single_unit_relative_loss_max": 0.15
+    },
+    "tarc_interpretation": "TARC is still the weakest protected coordinate, but its mean, bootstrap lower bound, and worst unit all retain substantial margin to the unchanged limits."
+  },
+  "curvature_realization": {
+    "all_objectives_positive_actual_rate": 1.0,
+    "mean_actual_to_predicted_ratio_range": [
+      0.476863282262014,
+      1.0775932445026
+    ],
+    "frozen_allowed_ratio_range": [
+      0.25,
+      1.75
+    ]
+  },
+  "integrity": {
+    "runtime_head": "c1691cd98251b3398b725867220fbe798994e294",
+    "protocol_sha256": "68d569d70c3ad907380d3eea6ca64fa978f7f95b9383f2c6e4f70c73b921f8fa",
+    "wall_clock_seconds": 3778.9704988002777,
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "peak_reserved_bytes": 8852078592,
+    "vram_headroom_fraction": 0.31262467939583927,
+    "initial_and_final_trainable_state_sha256_equal": true,
+    "virtual_parameter_evaluations": 24,
+    "optimizer_objects": 0,
+    "scheduler_objects": 0,
+    "optimizer_steps": 0,
+    "training_authorized": false,
+    "candidate_outputs_generated": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "evidence_boundary": {
+    "fresh_confirmation": false,
+    "same_batch_mechanism_only": true,
+    "independent_transfer_claimed": false,
+    "generated_behavior_claimed": false,
+    "comparison_to_prior_rpfrsc_is_single_variable": false,
+    "comparison_caveat": "BARP uses deterministic eval-mode gradients while the prior RP-PFRSC construction used train-mode gradients, so improved TARC behavior is consistent with removing transfer but is not a pure causal estimate of that change alone."
+  },
+  "decision": {
+    "authorized_next_artifact": "separately_frozen_matched_training_protocol_with_BARP_recomputed_on_every_training_batch",
+    "training_currently_authorized": false,
+    "required_next_evidence": [
+      "actual multi-step optimizer implementation with batchwise recomputation",
+      "training integrity and checkpoint freeze",
+      "independent generated safety and utility evaluation",
+      "fresh confirmation before a population or paper-level generalization claim"
+    ]
+  }
+}
