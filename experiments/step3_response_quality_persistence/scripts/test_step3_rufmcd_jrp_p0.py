@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import math
 import unittest
+from fractions import Fraction
 
 import torch
 
@@ -61,6 +62,50 @@ class RufmcdJrpTests(unittest.TestCase):
         self.assertAlmostEqual(
             jrp._robust_margin(projected, tangent, 1.0), expected, places=6
         )
+
+    def test_realized_dot_bound_contains_exact_float32_dot(self) -> None:
+        left = {"x": torch.tensor([0.1, -3.25, 7.0, 1.0 / 3.0])}
+        right = {"x": torch.tensor([-2.0, 0.125, 0.75, -5.5])}
+        value, bound, audit = jrp._dot_with_roundoff_bound(left, right, 2.0)
+        exact = sum(
+            Fraction.from_float(float(a)) * Fraction.from_float(float(b))
+            for a, b in zip(left["x"], right["x"], strict=True)
+        )
+        self.assertLessEqual(abs(value - float(exact)), bound)
+        self.assertEqual(audit["elements"], 4)
+        self.assertEqual(audit["safety_factor"], 2.0)
+        self.assertGreater(bound, 0.0)
+
+    def test_direct_realized_certificate_accepts_positive_margin(self) -> None:
+        gradients = {
+            "a": {"x": torch.tensor([1.0, 0.0])},
+            "b": {"x": torch.tensor([0.0, 1.0])},
+        }
+        direction, audit = jrp._direct_full_set_realized_affine_minimax(
+            gradients, {"a": 1.0, "b": 1.0}, 1.0, 1e-9, 1e-7,
+            1e-7, 0.0, 2.0,
+        )
+        self.assertTrue(audit["continuous_solver_success"])
+        self.assertLessEqual(audit["continuous_kkt_residual"], 1e-7)
+        self.assertLessEqual(audit["continuous_primal_dual_gap"], 1e-7)
+        self.assertTrue(audit["realized_certificate_valid"])
+        self.assertTrue(audit["realized_candidate_feasible"])
+        self.assertGreater(audit["full_primal_lower_bound"], 0.0)
+        self.assertAlmostEqual(jrp.gradient_math.gradient_norm(direction), 1.0, places=6)
+
+    def test_direct_realized_certificate_separates_negative_feasibility(self) -> None:
+        gradients = {
+            "a": {"x": torch.tensor([1.0, 0.0])},
+            "b": {"x": torch.tensor([0.0, 1.0])},
+        }
+        _, audit = jrp._direct_full_set_realized_affine_minimax(
+            gradients, {"a": -2.0, "b": -2.0}, 1.0, 1e-9, 1e-7,
+            1e-7, 0.0, 2.0,
+        )
+        self.assertTrue(audit["continuous_solver_success"])
+        self.assertTrue(audit["realized_certificate_valid"])
+        self.assertFalse(audit["realized_candidate_feasible"])
+        self.assertLess(audit["full_primal_lower_bound"], 0.0)
 
     def test_gate_evaluator_keeps_pre_patch_base_reference(self) -> None:
         self.assertIsNot(jrp._BASE_EVALUATE_GATES, jrp.evaluate_gates)
@@ -134,13 +179,89 @@ class RufmcdJrpTests(unittest.TestCase):
         self.assertLessEqual(solver["full_primal_dual_gap"], 1e-7)
         self.assertTrue(jrp._geometry_gate(geometry, protocol))
 
-    def test_v3r5_global_recovery_uses_complete_bound(self) -> None:
+    def test_synthetic_direct_realized_geometry_certifies_all_facets(self) -> None:
+        torch.manual_seed(43)
+        fit_gradients = []
+        fit_coverages = []
+        for _ in range(jrp.base.FIT_UNITS):
+            common = torch.ones(32)
+            fit_gradients.append(
+                {
+                    name: {"x": common + 0.05 * torch.randn(32)}
+                    for name in jrp.base.CERTIFICATES
+                }
+            )
+            fit_coverages.append(
+                {
+                    "mode": "eval",
+                    "risk_microbatches": 1,
+                    "safety_microbatches": 1,
+                    "all_gradients_finite_nonzero": True,
+                }
+            )
+        config = {
+            "dual_numeric_tolerance": 1e-9,
+            "safety_mix": 0.2,
+            "auxiliary_gradient_norm_ratio": 1.0,
+            "max_grad_norm": 1.0,
+            "adam_epsilon": 1e-8,
+            "clip_epsilon": 1e-6,
+        }
+        protocol = {
+            "status": jrp.REALIZED_CERTIFICATE_RECOVERY_STATUS,
+            "design": {
+                "projection_rcond": 1e-10,
+                "projection_refinement_steps": 2,
+                "affine_solver_tolerance": 1e-9,
+                "affine_kkt_residual_max": 1e-7,
+                "continuous_kkt_residual_max": 1e-7,
+                "continuous_primal_dual_gap_max": 1e-7,
+                "affine_actual_minus_predicted_max": 1e-6,
+                "minimum_retained_unit_facet_fraction": 0.01,
+                "constraint_generation_max_rounds": 90,
+                "constraint_generation_full_gap_max": 1e-7,
+                "realized_direction_norm_relative_max": 1e-7,
+                "realized_margin_lower_bound_min": 0.0,
+                "dot_roundoff_safety_factor": 2.0,
+            },
+            "gates": {
+                "minimum_nonzero_angle": 1e-8,
+                "numeric_tolerance": 1e-12,
+                "projection_residual_relative_max": 1e-6,
+                "candidate_norm_relative_tolerance": 1e-6,
+            },
+        }
+        geometry, _ = jrp.build_fit_geometry(
+            fit_gradients, fit_coverages, config, protocol
+        )
+        solver = geometry["tangent_audit"]["affine_solver"]
+        self.assertTrue(
+            geometry["projection_valid"],
+            {
+                "error": geometry["projection_error"],
+                "continuous_kkt": solver.get("continuous_kkt_residual"),
+                "continuous_gap": solver.get("continuous_primal_dual_gap"),
+                "realized_norm_error": solver.get(
+                    "realized_direction_norm_relative_error"
+                ),
+                "realized_lower": solver.get("full_primal_lower_bound"),
+                "realized_valid": solver.get("realized_certificate_valid"),
+            },
+        )
+        self.assertEqual(solver["direct_full_set_solve_count"], 1)
+        self.assertEqual(len(solver["full_certificate_scores"]), 96)
+        self.assertEqual(len(solver["full_certificate_score_lower_bounds"]), 96)
+        self.assertTrue(solver["realized_certificate_valid"])
+        self.assertTrue(jrp._geometry_gate(geometry, protocol))
+
+    def test_v3r5_frozen_artifact_uses_complete_bound(self) -> None:
         path = jrp.REPO / (
             "experiments/step3_response_quality_persistence/results/"
             "4070ti_step3_rufmcd_p0_v3r5/protocol/"
             "rufmcd_p0_v3r5_protocol.json"
         )
-        protocol, config, _, _ = jrp.context(path)
+        protocol = jrp._read_json(path)
+        config = jrp._read_json(jrp.base.resolve_repo_path(protocol["config_path"]))
         repair = protocol["execution_repair"]
         self.assertEqual(
             protocol["status"], jrp.GLOBAL_ROUND_BOUND_RECOVERY_STATUS

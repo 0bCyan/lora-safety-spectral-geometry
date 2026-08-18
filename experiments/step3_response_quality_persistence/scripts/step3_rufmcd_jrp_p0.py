@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import math
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -51,6 +52,13 @@ PROCESS_LOSS_RECOVERY_STATUS = (
 GLOBAL_ROUND_BOUND_RECOVERY_STATUS = (
     "method_frozen_before_first_RUFMCD_JRP_model_forward_"
     "fifth_execution_repair_for_global_constraint_generation_bound"
+)
+REALIZED_CERTIFICATE_RECOVERY_STATUS = (
+    "method_frozen_before_first_RUFMCD_JRP_model_forward_"
+    "sixth_execution_repair_for_realized_tensor_certificate"
+)
+DIRECT_REALIZED_SOLVER_VARIANT = (
+    "direct_full_set_continuous_kkt_plus_realized_margin_bounds"
 )
 _BASE_EVALUATE_GATES = base.evaluate_gates
 
@@ -189,6 +197,9 @@ def context(path: Path):
         GLOBAL_ROUND_BOUND_RECOVERY_STATUS: (
             "V3R4_INCOMPLETE_GLOBAL_CONSTRAINT_GENERATION_ROUND_BOUND"
         ),
+        REALIZED_CERTIFICATE_RECOVERY_STATUS: (
+            "V3R5_REALIZED_TENSOR_FULL_GAP_CLOSURE"
+        ),
     }
     if protocol.get("status") not in {PROSPECTIVE_STATUS, *recovery_incidents}:
         raise base.NptmcdP0ValidationError("JRP protocol is not prospective")
@@ -264,6 +275,44 @@ def context(path: Path):
         design["constraint_generation_max_rounds"]
     ) != CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND:
         raise base.NptmcdP0ValidationError("JRP global complete round bound differs")
+    if protocol.get("status") == REALIZED_CERTIFICATE_RECOVERY_STATUS:
+        if (
+            design.get("affine_solver") != DIRECT_REALIZED_SOLVER_VARIANT
+            or config.get("rufmcd_affine_solver_variant")
+            != DIRECT_REALIZED_SOLVER_VARIANT
+            or design.get("complete_facet_solver") != "direct_single_solve"
+            or int(design.get("direct_full_set_solve_count", -1)) != 1
+            or float(design.get("continuous_kkt_residual_max", -1.0)) != 1e-7
+            or float(design.get("continuous_primal_dual_gap_max", -1.0))
+            != 1e-7
+            or float(design.get("realized_direction_norm_relative_max", -1.0))
+            != 1e-7
+            or float(design.get("realized_margin_lower_bound_min", -1.0))
+            != 0.0
+            or float(design.get("dot_roundoff_safety_factor", -1.0)) != 2.0
+            or config.get("rufmcd_complete_facet_solver")
+            != "direct_single_solve"
+            or int(config.get("rufmcd_direct_full_set_solve_count", -1)) != 1
+            or float(config.get("rufmcd_continuous_kkt_residual_max", -1.0))
+            != float(design["continuous_kkt_residual_max"])
+            or float(
+                config.get("rufmcd_continuous_primal_dual_gap_max", -1.0)
+            )
+            != float(design["continuous_primal_dual_gap_max"])
+            or float(
+                config.get("rufmcd_realized_direction_norm_relative_max", -1.0)
+            )
+            != float(design["realized_direction_norm_relative_max"])
+            or float(
+                config.get("rufmcd_realized_margin_lower_bound_min", -1.0)
+            )
+            != float(design["realized_margin_lower_bound_min"])
+            or float(config.get("rufmcd_dot_roundoff_safety_factor", -1.0))
+            != float(design["dot_roundoff_safety_factor"])
+        ):
+            raise base.NptmcdP0ValidationError(
+                "JRP realized certificate registry differs"
+            )
     targets = etarc_p0.read_jsonl(base.resolve_repo_path(config["safety_targets_path"]))
     ramp_p0.validate_source_rows(targets, 80, 40, 8)
     risk_rows = base.training.read_jsonl(
@@ -282,6 +331,186 @@ def context(path: Path):
     if len({item["sample_id"] for item in all_units}) != 40:
         raise base.NptmcdP0ValidationError("JRP role sample IDs overlap")
     return protocol, config, targets, risk_rows
+
+
+def _dot_with_roundoff_bound(
+    left: dict[str, Any],
+    right: dict[str, Any],
+    safety_factor: float,
+) -> tuple[float, float, dict[str, Any]]:
+    """Return a float64 dot and a conservative IEEE-754 forward-error bound.
+
+    The tensors are converted to binary64 before multiplication.  A standard
+    gamma bound covers one rounded product and one rounded accumulation per
+    element; the registered safety factor also covers the small Python-level
+    accumulation across parameter tensors.
+    """
+    if (
+        set(left) != set(right)
+        or not left
+        or not math.isfinite(safety_factor)
+        or safety_factor < 1.0
+    ):
+        raise ValueError("JRP realized dot inputs differ")
+    value = 0.0
+    absolute_product_sum = 0.0
+    elements = 0
+    tensor_count = 0
+    for name in sorted(left):
+        left_tensor = left[name].detach().cpu().double()
+        right_tensor = right[name].detach().cpu().double()
+        if left_tensor.shape != right_tensor.shape:
+            raise ValueError("JRP realized dot tensor shapes differ")
+        product = left_tensor * right_tensor
+        value += float(product.sum())
+        absolute_product_sum += float(product.abs().sum())
+        elements += int(product.numel())
+        tensor_count += 1
+        del left_tensor, right_tensor, product
+    if (
+        elements <= 0
+        or not math.isfinite(value)
+        or not math.isfinite(absolute_product_sum)
+    ):
+        raise ValueError("JRP realized dot is non-finite")
+    unit_roundoff = sys.float_info.epsilon / 2.0
+    rounded_operations = 2 * elements + 2 * tensor_count
+    product = rounded_operations * unit_roundoff
+    if product >= 1.0:
+        raise ValueError("JRP realized dot error bound is undefined")
+    gamma = product / (1.0 - product)
+    bound = safety_factor * gamma * absolute_product_sum / (1.0 - gamma)
+    bound = math.nextafter(bound + math.ulp(value), math.inf)
+    return value, bound, {
+        "elements": elements,
+        "parameter_tensors": tensor_count,
+        "rounded_operations": rounded_operations,
+        "unit_roundoff": unit_roundoff,
+        "gamma": gamma,
+        "safety_factor": safety_factor,
+        "absolute_product_sum": absolute_product_sum,
+        "dot_roundoff_bound": bound,
+    }
+
+
+def _direct_full_set_realized_affine_minimax(
+    gradients: dict[str, dict[str, Any]],
+    offsets: dict[str, float],
+    budget_norm: float,
+    solver_tolerance: float,
+    kkt_limit: float,
+    realized_norm_relative_max: float,
+    realized_margin_lower_bound_min: float,
+    dot_roundoff_safety_factor: float,
+    realized_gradients: dict[str, dict[str, Any]] | None = None,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Certify continuous optimality and realized tensor feasibility separately."""
+    realized_gradients = realized_gradients or gradients
+    if (
+        set(gradients) != set(offsets)
+        or set(realized_gradients) != set(offsets)
+        or len(gradients) < 2
+        or not math.isfinite(realized_norm_relative_max)
+        or realized_norm_relative_max <= 0.0
+        or not math.isfinite(realized_margin_lower_bound_min)
+    ):
+        raise ValueError("JRP direct full-set inputs differ")
+    direction, continuous = v2._analytic_affine_minimax_direction(
+        gradients,
+        offsets,
+        budget_norm,
+        solver_tolerance,
+        kkt_limit,
+    )
+    pre_normalization_norm = gradient_math.gradient_norm(direction)
+    if not math.isfinite(pre_normalization_norm) or pre_normalization_norm <= 0.0:
+        raise ValueError("JRP realized direction is degenerate")
+    direction = gradient_ops.scaled_gradient(
+        direction, budget_norm / pre_normalization_norm
+    )
+    realized_norm = gradient_math.gradient_norm(direction)
+    realized_norm_relative_error = abs(realized_norm / budget_norm - 1.0)
+
+    scores = {}
+    score_bounds = {}
+    score_lower_bounds = {}
+    dot_audits = {}
+    for name in gradients:
+        dot, dot_bound, dot_audit = _dot_with_roundoff_bound(
+            realized_gradients[name], direction, dot_roundoff_safety_factor
+        )
+        score = float(offsets[name]) + dot
+        score_bound = math.nextafter(dot_bound + math.ulp(score), math.inf)
+        score_lower = math.nextafter(score - score_bound, -math.inf)
+        scores[name] = score
+        score_bounds[name] = score_bound
+        score_lower_bounds[name] = score_lower
+        dot_audits[name] = dot_audit
+
+    realized_primal = min(scores.values())
+    realized_lower = min(score_lower_bounds.values())
+    continuous_dual = float(continuous["dual_value"])
+    signed_realized_gap = continuous_dual - realized_primal
+    realized_gap = max(0.0, signed_realized_gap)
+    continuous_valid = bool(continuous["solver_success"]) and float(
+        continuous["kkt_residual"]
+    ) <= kkt_limit and float(continuous["primal_dual_gap"]) <= kkt_limit
+    realized_valid = (
+        continuous_valid
+        and realized_norm_relative_error <= realized_norm_relative_max
+        and all(math.isfinite(value) for value in scores.values())
+        and all(
+            math.isfinite(value) and value >= 0.0
+            for value in score_bounds.values()
+        )
+        and all(math.isfinite(value) for value in score_lower_bounds.values())
+    )
+    realized_candidate_feasible = (
+        realized_valid and realized_lower >= realized_margin_lower_bound_min
+    )
+    audit = dict(continuous)
+    audit.update(
+        {
+            "certificate_mode": DIRECT_REALIZED_SOLVER_VARIANT,
+            "continuous_score_registry": "projected_affine_facets",
+            "realized_score_registry": "unprojected_registered_facets",
+            "continuous_solver_success": bool(continuous["solver_success"]),
+            "continuous_kkt_residual": float(continuous["kkt_residual"]),
+            "continuous_primal_value": float(continuous["primal_value"]),
+            "continuous_dual_value": continuous_dual,
+            "continuous_primal_dual_gap": float(
+                continuous["primal_dual_gap"]
+            ),
+            "continuous_certificate_scores": continuous["certificate_scores"],
+            "pre_normalization_realized_norm": pre_normalization_norm,
+            "realized_direction_norm": realized_norm,
+            "realized_direction_norm_relative_error": (
+                realized_norm_relative_error
+            ),
+            "realized_direction_norm_relative_max": (
+                realized_norm_relative_max
+            ),
+            "realized_margin_lower_bound_min": (
+                realized_margin_lower_bound_min
+            ),
+            "full_certificate_scores": scores,
+            "full_certificate_score_roundoff_bounds": score_bounds,
+            "full_certificate_score_lower_bounds": score_lower_bounds,
+            "full_certificate_dot_audits": dot_audits,
+            "full_primal_value": realized_primal,
+            "full_primal_lower_bound": realized_lower,
+            "full_dual_upper_bound": continuous_dual,
+            "full_primal_dual_gap": realized_gap,
+            "full_signed_primal_dual_gap": signed_realized_gap,
+            "direct_full_set_solve_count": 1,
+            "direct_full_set_facet_count": len(gradients),
+            "direct_full_set_certified": realized_valid,
+            "realized_certificate_valid": realized_valid,
+            "realized_candidate_feasible": realized_candidate_feasible,
+            "dot_roundoff_safety_factor": dot_roundoff_safety_factor,
+        }
+    )
+    return direction, audit
 
 
 def build_fit_geometry(
@@ -338,6 +567,9 @@ def build_fit_geometry(
     projection_valid = False
     projection_error = None
     projected_by_name: dict[str, dict[str, Any]] = {}
+    direct_realized_mode = (
+        protocol.get("status") == REALIZED_CERTIFICATE_RECOVERY_STATUS
+    )
     try:
         projected, projection = affine.project_registry_to_constraint_nullspace(
             [spec["gradient"] for spec in specs], [raw_displacement],
@@ -346,6 +578,7 @@ def build_fit_geometry(
         )
         objective_names = []
         objective_gradients = {}
+        realized_objective_gradients = {}
         offsets = {}
         facet_groups = {}
         for spec, projected_gradient in zip(specs, projected, strict=True):
@@ -371,16 +604,38 @@ def build_fit_geometry(
             objective_gradients[name] = gradient_ops.scaled_gradient(
                 projected_gradient, scale
             )
+            realized_objective_gradients[name] = gradient_ops.scaled_gradient(
+                spec["gradient"], scale
+            )
         if len(objective_names) != FACET_COUNT:
             raise ValueError("JRP objective facet count differs")
         kkt_limit = float(protocol["design"]["affine_kkt_residual_max"])
-        tangent, solver = v2._constraint_generation_affine_minimax(
-            objective_gradients, offsets, facet_groups,
-            gradient_math.gradient_norm(raw_displacement),
-            float(protocol["design"]["affine_solver_tolerance"]), kkt_limit,
-            float(protocol["design"]["constraint_generation_full_gap_max"]),
-            int(protocol["design"]["constraint_generation_max_rounds"]),
-        )
+        if direct_realized_mode:
+            tangent, solver = _direct_full_set_realized_affine_minimax(
+                objective_gradients,
+                offsets,
+                gradient_math.gradient_norm(raw_displacement),
+                float(protocol["design"]["affine_solver_tolerance"]),
+                kkt_limit,
+                float(
+                    protocol["design"][
+                        "realized_direction_norm_relative_max"
+                    ]
+                ),
+                float(
+                    protocol["design"]["realized_margin_lower_bound_min"]
+                ),
+                float(protocol["design"]["dot_roundoff_safety_factor"]),
+                realized_gradients=realized_objective_gradients,
+            )
+        else:
+            tangent, solver = v2._constraint_generation_affine_minimax(
+                objective_gradients, offsets, facet_groups,
+                gradient_math.gradient_norm(raw_displacement),
+                float(protocol["design"]["affine_solver_tolerance"]), kkt_limit,
+                float(protocol["design"]["constraint_generation_full_gap_max"]),
+                int(protocol["design"]["constraint_generation_max_rounds"]),
+            )
         proposed_candidate = base.npt.angular_displacement(
             raw_displacement, tangent, FIXED_THETA
         )
@@ -404,24 +659,41 @@ def build_fit_geometry(
                 )
         robust_margins = [
             _robust_margin(
-                projected_by_name[spec["name"]],
+                (
+                    spec["gradient"]
+                    if direct_realized_mode
+                    else projected_by_name[spec["name"]]
+                ),
                 tangent,
                 reference_norm,
             )
             for spec in robust_specs
         ]
         actual_margin = min(*original_margins, *robust_margins)
-        if (
-            not bool(solver["solver_success"])
-            or float(solver["kkt_residual"]) > kkt_limit
-            or float(solver["primal_dual_gap"]) > kkt_limit
-            or float(solver["full_primal_dual_gap"])
-            > float(protocol["design"]["constraint_generation_full_gap_max"])
-        ):
-            raise ValueError("JRP affine certificate exceeded frozen limit")
-        projection_valid = True
+        actual_minus_predicted = actual_margin - float(solver["full_primal_value"])
+        if direct_realized_mode:
+            certificate_valid = (
+                bool(solver["continuous_solver_success"])
+                and float(solver["continuous_kkt_residual"]) <= kkt_limit
+                and float(solver["continuous_primal_dual_gap"]) <= kkt_limit
+                and bool(solver["realized_certificate_valid"])
+                and abs(actual_minus_predicted)
+                <= float(
+                    protocol["design"]["affine_actual_minus_predicted_max"]
+                )
+            )
+        else:
+            certificate_valid = (
+                bool(solver["solver_success"])
+                and float(solver["kkt_residual"]) <= kkt_limit
+                and float(solver["primal_dual_gap"]) <= kkt_limit
+                and float(solver["full_primal_dual_gap"])
+                <= float(
+                    protocol["design"]["constraint_generation_full_gap_max"]
+                )
+            )
         solver_audit = {
-            "solver_valid": True,
+            "solver_valid": certificate_valid,
             "projection": projection,
             "solver": solver,
             "objective_names": objective_names,
@@ -430,10 +702,22 @@ def build_fit_geometry(
             "actual_minimum_margin": actual_margin,
             "original_minimum_margin": min(original_margins),
             "robust_minimum_margin": min(robust_margins),
-            "actual_minus_predicted": actual_margin - float(solver["full_primal_value"]),
+            "actual_minus_predicted": actual_minus_predicted,
             "kkt_residual_max": kkt_limit,
             "required_target_floor": required_target_floor,
         }
+        if certificate_valid:
+            projection_valid = True
+        elif direct_realized_mode:
+            projection_error = (
+                "JRP direct continuous/realized certificate exceeded frozen limit"
+            )
+            tangent = gradient_ops.scaled_gradient(raw_displacement, 0.0)
+            proposed_candidate = {
+                name: value.clone() for name, value in raw_displacement.items()
+            }
+        else:
+            raise ValueError("JRP affine certificate exceeded frozen limit")
     except (KeyError, TypeError, ValueError, RuntimeError) as exc:
         projection_error = str(exc)
         solver_audit = {"solver_valid": False, "error": projection_error}
@@ -460,11 +744,23 @@ def build_fit_geometry(
         search["candidate_actual_minimum_margin"] = actual_margin
         search["solver_candidate_actual_minimum_score"] = actual_margin
         search["solver_candidate_actual_minus_predicted"] = actual_margin - predicted
+        if direct_realized_mode:
+            realized_lower = float(
+                solver_audit["solver"]["full_primal_lower_bound"]
+            )
+            search["realized_candidate_margin_lower_bound"] = realized_lower
+            search["realized_candidate_feasible"] = bool(
+                solver_audit["solver"]["realized_candidate_feasible"]
+            )
         search["eligible"] = bool(search["eligible"]) and robust_floor >= -float(
             protocol["gates"]["numeric_tolerance"]
         ) and abs(actual_margin - predicted) <= float(
             protocol["design"]["affine_actual_minus_predicted_max"]
         )
+        if direct_realized_mode:
+            search["eligible"] = bool(search["eligible"]) and bool(
+                search["realized_candidate_feasible"]
+            )
     else:
         search["robust_protected_constraint_count"] = ROBUST_EXTRA_FACET_COUNT
         search["robust_polytope_vertex_count"] = REFLECTION_VERTEX_COUNT * 2
@@ -612,6 +908,56 @@ def _geometry_gate(fit_geometry: dict[str, Any], protocol: dict[str, Any]) -> bo
     full_dual = float(solver.get("full_dual_upper_bound", -math.inf))
     full_gap = float(solver.get("full_primal_dual_gap", math.inf))
     full_min = min(full_scores.values()) if full_scores else math.inf
+    direct_realized_mode = (
+        solver.get("certificate_mode") == DIRECT_REALIZED_SOLVER_VARIANT
+    )
+    if direct_realized_mode:
+        solver_certificate = (
+            int(solver.get("direct_full_set_solve_count", -1)) == 1
+            and int(solver.get("direct_full_set_facet_count", -1)) == FACET_COUNT
+            and bool(solver.get("direct_full_set_certified"))
+            and bool(solver.get("realized_certificate_valid"))
+            and len(solver.get("full_certificate_score_roundoff_bounds") or {})
+            == FACET_COUNT
+            and len(solver.get("full_certificate_score_lower_bounds") or {})
+            == FACET_COUNT
+            and all(
+                math.isfinite(float(value)) and float(value) >= 0.0
+                for value in (
+                    solver.get("full_certificate_score_roundoff_bounds") or {}
+                ).values()
+            )
+            and all(
+                math.isfinite(float(value))
+                for value in (
+                    solver.get("full_certificate_score_lower_bounds") or {}
+                ).values()
+            )
+            and float(solver.get("continuous_kkt_residual", math.inf))
+            <= float(design["continuous_kkt_residual_max"])
+            and float(solver.get("continuous_primal_dual_gap", math.inf))
+            <= float(design["continuous_primal_dual_gap_max"])
+            and float(solver.get("realized_direction_norm_relative_error", math.inf))
+            <= float(design["realized_direction_norm_relative_max"])
+        )
+    else:
+        solver_certificate = (
+            bool(solver.get("constraint_generation_certified"))
+            and int(solver.get("constraint_generation_total_facet_count", -1))
+            == FACET_COUNT
+            and 0 < int(solver.get("constraint_generation_round_count", 0))
+            <= int(design["constraint_generation_max_rounds"])
+            and full_dual + float(design["constraint_generation_full_gap_max"])
+            >= full_primal
+            and abs(full_min - full_primal)
+            <= float(design["constraint_generation_full_gap_max"])
+            and full_gap <= float(design["constraint_generation_full_gap_max"])
+            and bool(solver.get("solver_success"))
+            and float(solver.get("kkt_residual", math.inf))
+            <= float(design["affine_kkt_residual_max"])
+            and float(solver.get("primal_dual_gap", math.inf))
+            <= float(design["affine_kkt_residual_max"])
+        )
     return (
         bool(fit_geometry.get("projection_valid"))
         and audit.get("enforcement") == "unit_facet_margin_plus_jackknife_reflected_tarc_polytope"
@@ -619,14 +965,7 @@ def _geometry_gate(fit_geometry: dict[str, Any], protocol: dict[str, Any]) -> bo
         and int(projection.get("constraints", -1)) == 1
         and len(projection.get("vectors") or []) == FACET_COUNT
         and len(full_scores) == FACET_COUNT
-        and bool(solver.get("constraint_generation_certified"))
-        and int(solver.get("constraint_generation_total_facet_count", -1)) == FACET_COUNT
-        and 0 < int(solver.get("constraint_generation_round_count", 0)) <= int(
-            design["constraint_generation_max_rounds"]
-        )
-        and full_dual + float(design["constraint_generation_full_gap_max"]) >= full_primal
-        and abs(full_min - full_primal) <= float(design["constraint_generation_full_gap_max"])
-        and full_gap <= float(design["constraint_generation_full_gap_max"])
+        and solver_certificate
         and float(audit.get("minimum_unit_facet_projection_fraction", 0.0))
         >= float(design["minimum_retained_unit_facet_fraction"])
         and float(projection.get("maximum_relative_final_constraint_residual", math.inf))
@@ -635,9 +974,6 @@ def _geometry_gate(fit_geometry: dict[str, Any], protocol: dict[str, Any]) -> bo
         <= float(gates["projection_residual_relative_max"])
         and abs(float(audit.get("tangent_to_raw_norm_ratio", math.inf)) - 1.0)
         <= float(gates["candidate_norm_relative_tolerance"])
-        and bool(solver.get("solver_success"))
-        and float(solver.get("kkt_residual", math.inf)) <= float(design["affine_kkt_residual_max"])
-        and float(solver.get("primal_dual_gap", math.inf)) <= float(design["affine_kkt_residual_max"])
         and abs(float(fit_geometry["search"].get("solver_candidate_actual_minus_predicted", math.inf)))
         <= float(design["affine_actual_minus_predicted_max"])
     )
