@@ -45,6 +45,7 @@ class RufmcdJrpTests(unittest.TestCase):
 
     def test_total_facet_count_is_original_plus_reflections(self) -> None:
         self.assertEqual(jrp.FACET_COUNT, 84 + 12)
+        self.assertEqual(jrp.CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND, 24)
         self.assertGreater(jrp.FIXED_THETA, 0.0)
         self.assertLess(jrp.FIXED_THETA, math.pi / 2.0)
 

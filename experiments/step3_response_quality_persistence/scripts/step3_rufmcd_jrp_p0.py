@@ -29,6 +29,7 @@ ORIGINAL_FACET_COUNT = v2.FACET_COUNT
 REFLECTION_VERTEX_COUNT = base.FIT_UNITS
 ROBUST_EXTRA_FACET_COUNT = base.FIT_UNITS
 FACET_COUNT = ORIGINAL_FACET_COUNT + ROBUST_EXTRA_FACET_COUNT
+CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND = 2 * base.FIT_UNITS
 PROSPECTIVE_STATUS = "prospective_before_any_RUFMCD_JRP_model_forward"
 RECOVERY_STATUS = (
     "method_frozen_before_first_RUFMCD_JRP_model_forward_"
@@ -37,6 +38,10 @@ RECOVERY_STATUS = (
 RAW_SCORE_RECOVERY_STATUS = (
     "method_frozen_before_first_RUFMCD_JRP_model_forward_"
     "second_execution_repair_after_protected_facet_raw_score_lookup"
+)
+ROUND_BOUND_RECOVERY_STATUS = (
+    "method_frozen_before_first_RUFMCD_JRP_model_forward_"
+    "third_execution_repair_for_24_facet_tarc_group_round_bound"
 )
 _BASE_EVALUATE_GATES = base.evaluate_gates
 
@@ -166,6 +171,9 @@ def context(path: Path):
     recovery_incidents = {
         RECOVERY_STATUS: "V3_POST_MEASUREMENT_GATE_ROUTING_RECURSION",
         RAW_SCORE_RECOVERY_STATUS: "V3R_PROTECTED_FACET_RAW_SCORE_LOOKUP",
+        ROUND_BOUND_RECOVERY_STATUS: (
+            "V3R2_INCOMPLETE_CONSTRAINT_GENERATION_ROUND_BOUND"
+        ),
     }
     if protocol.get("status") not in {PROSPECTIVE_STATUS, *recovery_incidents}:
         raise base.NptmcdP0ValidationError("JRP protocol is not prospective")
@@ -226,8 +234,14 @@ def context(path: Path):
         or config.get("training_authorized") is not False
         or int(config["optimizer_steps_authorized"]) != 0
         or int(config.get("rufmcd_jrp_total_facet_count", -1)) != FACET_COUNT
+        or int(config.get("rufmcd_constraint_generation_max_rounds", -1))
+        != int(design["constraint_generation_max_rounds"])
     ):
         raise base.NptmcdP0ValidationError("JRP config registry differs")
+    if protocol.get("status") == ROUND_BOUND_RECOVERY_STATUS and int(
+        design["constraint_generation_max_rounds"]
+    ) != CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND:
+        raise base.NptmcdP0ValidationError("JRP complete round bound differs")
     targets = etarc_p0.read_jsonl(base.resolve_repo_path(config["safety_targets_path"]))
     ramp_p0.validate_source_rows(targets, 80, 40, 8)
     risk_rows = base.training.read_jsonl(
