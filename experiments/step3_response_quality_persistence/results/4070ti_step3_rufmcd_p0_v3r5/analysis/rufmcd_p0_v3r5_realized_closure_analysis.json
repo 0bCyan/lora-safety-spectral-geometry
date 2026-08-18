@@ -1,0 +1,99 @@
+{
+  "name": "step3_rufmcd_jrp_p0_v3r5_realized_closure_analysis_v1",
+  "classification": "complete_active_set_realized_tensor_numeric_closure_failure_not_polytope_infeasibility",
+  "route": "STOP_RUFMCD_JRP_P0_ROBUST_POLYTOPE_GEOMETRY_INVALID",
+  "verified": true,
+  "verification_status": "PASS_NPTMCD_P0_VERIFY",
+  "source_artifacts": {
+    "fit_geometry": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r5/run/rufmcd_p0_v3r5_fit_geometry.json",
+      "sha256": "66745de371021ededdf9a1c07fe6498aa5053a4b7e11a315df436c49d6c01bde"
+    },
+    "route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r5/run/rufmcd_p0_v3r5_route.json",
+      "sha256": "a3993e01e379c35fe4f7d4d07073845fedaba520827749908511460d9ee19fbc"
+    },
+    "diagnostics": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r5/run/rufmcd_p0_v3r5_diagnostics.json",
+      "sha256": "1c1899fca4bd6f58897e248f698007dfdaf1ee3a2114697c6f72eea779b14ee8"
+    },
+    "manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r5/run/rufmcd_p0_v3r5_reproduction_manifest.json",
+      "sha256": "cd39ff0455158681ec20198803f828a7ff9a7c34c01bff7e0f89805ad98c3cfd"
+    }
+  },
+  "geometry": {
+    "registered_facets": 96,
+    "protected_facets": 48,
+    "jackknife_reflected_tarc_facets": 12,
+    "target_facets": 36,
+    "constraint_generation_max_rounds": 90,
+    "projection_valid": false,
+    "projection_error": "RUF-MCD full active set did not close the dual gap",
+    "all_facets_active_at_stop": true,
+    "all_facets_active_inference": "The emitted error is reachable only after the active solver passes its frozen checks, the full gap exceeds its limit, and the inactive-facet registry is empty.",
+    "completed_realized_direction_certificate_available": false,
+    "selected_theta": 0.0,
+    "selected_to_raw_norm_relative_error": 0.0
+  },
+  "numeric_diagnosis": {
+    "active_solver_success_required_before_error": true,
+    "active_kkt_residual_max": 1e-07,
+    "active_primal_dual_gap_max": 1e-07,
+    "realized_full_primal_dual_gap_limit": 1e-07,
+    "realized_full_gap_exceeded_limit": true,
+    "realized_full_gap_value_persisted": false,
+    "exact_arithmetic_identity": "With all 96 facets active, the active and full primal minima are identical for the same direction.",
+    "implementation_boundary": "The active certificate scores are evaluated from the float64 Gram system, while the returned direction is reconstructed by weighted tensor additions in the stored tensor dtype and the full scores are recomputed from that realized tensor direction.",
+    "interpretation": "The stop localizes a continuous-certificate versus realized-tensor closure failure. It does not establish that the 96-facet polytope is infeasible, and it does not provide an eligible JRP candidate.",
+    "unsupported_claims": [
+      "the exact realized full gap magnitude",
+      "a nonzero JRP calibration result",
+      "a nonzero JRP diagnostic transfer result"
+    ]
+  },
+  "fallback": {
+    "registered_policy_action": "raw_mcd",
+    "calibration_minimum_joint_protected_retention": 1.0,
+    "calibration_mean_target_gain_over_raw": 0.0,
+    "conformal_threshold": -0.050000000000000044,
+    "diagnostic_target_gain_over_raw": 0.0,
+    "diagnostic_worst_score_gain_over_raw": 0.0,
+    "raw_mcd_worst_score_gain_over_baseline_mean": 0.059005056087718326,
+    "raw_mcd_worst_score_gain_over_baseline_ci95": [
+      0.047367927446609635,
+      0.06772308572907894
+    ],
+    "raw_mcd_worst_score_gain_over_baseline_sign_test_p": 0.0078125,
+    "jrp_effect_claim_allowed": false
+  },
+  "integrity": {
+    "runtime_head": "02bf059ff226a1c1f08f0c332256585e05ef53ed",
+    "protocol_sha256": "0c43e24946ebc366277084b69576652d7990af63494608c9f242d989486cb42e",
+    "wall_clock_seconds": 38177.76569104195,
+    "fit_units": 12,
+    "calibration_units": 20,
+    "diagnostic_units": 8,
+    "virtual_parameter_evaluations": 24,
+    "state_restored": true,
+    "optimizer_steps": 0,
+    "optimizer_objects": 0,
+    "scheduler_objects": 0,
+    "training_authorized": false,
+    "candidate_outputs_generated": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "next_action": {
+    "classification": "prospective_numeric_certificate_repair",
+    "required_change": "Separate the ideal continuous max-min certificate from the realized tensor-direction certificate. Keep the continuous KKT and Gram primal-dual limits at 1e-7, then certify all 96 margins on the parameter-dtype realized direction with explicit floating-point error bounds.",
+    "runtime_change": "Solve the unchanged complete 96-facet registry directly once instead of replaying constraint generation after completeness has already been established.",
+    "forbidden_changes": [
+      "relaxing the 1e-7 continuous KKT or Gram primal-dual thresholds",
+      "dropping reflected TARC facets",
+      "using calibration or diagnostic rows for candidate selection",
+      "interpreting raw fallback statistics as a JRP effect"
+    ]
+  },
+  "fresh_confirmation_claimed": false
+}
