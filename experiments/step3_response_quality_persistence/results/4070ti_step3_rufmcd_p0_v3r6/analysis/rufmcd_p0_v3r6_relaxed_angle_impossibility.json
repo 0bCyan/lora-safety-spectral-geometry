@@ -1,0 +1,322 @@
+{
+  "name": "step3_rufmcd_jrp_p0_v3r6_posthoc_relaxed_angle_impossibility_v1",
+  "analysis_status": "posthoc_mechanism_proof_not_authorized_for_selection",
+  "source_files": {
+    "fit_geometry": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_fit_geometry.json",
+      "sha256": "354d3ff48e67c75e3b7e6cc6c64978434b22d4c7a13f42a2af75d739c0987c2e"
+    },
+    "calibration_rows": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_calibration_rows.jsonl",
+      "sha256": "6a6c549a9002d9b178a42bf9a2d8ff604944059355ce3f065fc94ae6e80b7e8c"
+    },
+    "route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_route.json",
+      "sha256": "0f01d354ff4c91edac0633bb9184c8d09e1932d51057048c3b1677057bdcda73"
+    }
+  },
+  "source_route": "STOP_RUFMCD_JRP_P0_NO_ROBUST_EFFECTIVE_ANGLE",
+  "score_formula": "raw_score*cos(theta)+tangent_score*sin(theta)",
+  "calibration_tangent_reconstruction": "(candidate_score-raw_score*cos(fixed_theta))/sin(fixed_theta)",
+  "maximum_calibration_candidate_reconstruction_error": 2.7755575615628914e-17,
+  "interval_radians": [
+    0.0,
+    0.3143421044892443
+  ],
+  "fixed_theta": 0.31434110448924435,
+  "thresholds": {
+    "protected_retention_floor": 0.95,
+    "target_score_floor": 0.05,
+    "target_gain_floor": 0.002,
+    "raw_fit_target_floor": 0.01226718194907743,
+    "effective_fit_target_floor": 0.05
+  },
+  "facet_counts": {
+    "fit_protected": 48,
+    "fit_target": 36,
+    "calibration_protected": 80,
+    "calibration_target_descriptive_only": 60
+  },
+  "fixed_theta_metrics": {
+    "theta": 0.31434110448924435,
+    "theta_degrees": 18.010418614714517,
+    "fit": {
+      "minimum_protected_retention": 1.0765108881087737,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "fit_07",
+          "certificate": "risk"
+        }
+      ],
+      "target_floor": 0.1765108966892395,
+      "target_bottlenecks": [
+        {
+          "unit_id": "fit_02",
+          "certificate": "etarc"
+        },
+        {
+          "unit_id": "fit_06",
+          "certificate": "etarc"
+        },
+        {
+          "unit_id": "fit_09",
+          "certificate": "etarc"
+        }
+      ],
+      "target_gain_over_raw": 0.16424371474016208,
+      "all_gates_pass": true
+    },
+    "calibration": {
+      "minimum_protected_retention": -0.8705164844733697,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "calibration_12",
+          "certificate": "tarc"
+        }
+      ],
+      "joint_nonconformity": 1.8205164844733697,
+      "all_protected_pass": false
+    },
+    "joint_fit_and_calibration_pass": false
+  },
+  "fit_feasible_intervals": [
+    {
+      "lower": 0.07089042864785977,
+      "upper": 0.3143421044892443
+    }
+  ],
+  "calibration_protected_feasible_intervals": [
+    {
+      "lower": 0.0,
+      "upper": 0.008481152489052679
+    }
+  ],
+  "joint_fit_and_calibration_feasible_intervals": [],
+  "first_fit_feasible_theta": 0.07089042864785977,
+  "calibration_safe_prefix_upper_theta": 0.008481152489052679,
+  "metrics_at_first_fit_feasible_theta": {
+    "theta": 0.07089042864785977,
+    "theta_degrees": 4.061722369395668,
+    "fit": {
+      "minimum_protected_retention": 1.0262410354732678,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "fit_04",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_06",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_07",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_11",
+          "certificate": "risk"
+        }
+      ],
+      "target_floor": 0.049999999999999954,
+      "target_bottlenecks": [
+        {
+          "unit_id": "fit_09",
+          "certificate": "branch_entropy"
+        }
+      ],
+      "target_gain_over_raw": 0.037732818050922524,
+      "all_gates_pass": true
+    },
+    "calibration": {
+      "minimum_protected_retention": 0.5802044266510697,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "calibration_12",
+          "certificate": "tarc"
+        }
+      ],
+      "joint_nonconformity": 0.3697955733489302,
+      "all_protected_pass": false
+    },
+    "joint_fit_and_calibration_pass": false
+  },
+  "metrics_at_calibration_safe_prefix_upper": {
+    "theta": 0.008481152489052679,
+    "theta_degrees": 0.48593424302959165,
+    "fit": {
+      "minimum_protected_retention": 1.003406778679646,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "fit_02",
+          "certificate": "continuation"
+        },
+        {
+          "unit_id": "fit_03",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_04",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_06",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_07",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_10",
+          "certificate": "risk"
+        },
+        {
+          "unit_id": "fit_11",
+          "certificate": "risk"
+        }
+      ],
+      "target_floor": 0.016788418463345386,
+      "target_bottlenecks": [
+        {
+          "unit_id": "fit_09",
+          "certificate": "branch_entropy"
+        }
+      ],
+      "target_gain_over_raw": 0.004521236514267956,
+      "all_gates_pass": false
+    },
+    "calibration": {
+      "minimum_protected_retention": 0.9499999999999998,
+      "protected_bottlenecks": [
+        {
+          "unit_id": "calibration_12",
+          "certificate": "tarc"
+        }
+      ],
+      "joint_nonconformity": 1.1102230246251565e-16,
+      "all_protected_pass": true
+    },
+    "joint_fit_and_calibration_pass": false
+  },
+  "angular_incompatibility_gap": 0.06240927615880709,
+  "joint_feasible_angle_exists": false,
+  "analytic_boundary_count": 14,
+  "root_record_count": 11,
+  "method": "analytic roots of every trigonometric gate followed by exact midpoint classification of all induced intervals",
+  "selection_boundary": {
+    "calibration_scores_used_for_original_selection": false,
+    "diagnostic_scores_used_for_original_selection": false,
+    "posthoc_angle_selection_authorized": false,
+    "threshold_relaxation_authorized": false,
+    "fresh_validation_required_for_successor": true
+  },
+  "registered_result_consistency": {
+    "route_threshold": 1.82051648447337,
+    "fixed_theta_minimum_calibration_retention": -0.8705164844733699,
+    "fixed_theta_fit_target_floor": 0.17651089296584183,
+    "optimizer_steps": 0,
+    "training_authorized": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "relaxed_fit_proof": {
+    "full_registered_fit_facets": 96,
+    "analyzed_original_fit_facets": 84,
+    "omitted_jackknife_reflected_tarc_facets": 12,
+    "relaxation_direction": "omitting constraints makes the analyzed fit-feasible set a superset of the complete JRP fit-feasible set",
+    "strict_interval_separation": true,
+    "set_inclusion_conclusion": "No angle on the frozen v3r6 raw-to-tangent ray can satisfy the complete JRP fit constraints and the observed calibration protected constraints simultaneously."
+  },
+  "interpretation": {
+    "dose_only_repair_excluded": true,
+    "direction_change_required": true,
+    "calibration_use": "posthoc mechanism diagnosis only; calibration remains forbidden for candidate selection",
+    "fresh_confirmation_claimed": false
+  },
+  "tarc_directional_support_audit": {
+    "definition": "beta_j=<normalized_TARC_covector_j,tangent>/reference_norm, so retention_j(theta)=cos(theta)+beta_j*sin(theta)",
+    "fit_observed_beta_range": [
+      0.8365264321259137,
+      2.7156427819576696
+    ],
+    "fit_reflected_beta_range": [
+      0.40593329922352517,
+      2.6267070891275477
+    ],
+    "registered_vertex_beta_range": [
+      0.40593329922352517,
+      2.7156427819576696
+    ],
+    "calibration_beta_range": [
+      -5.891255262347954,
+      2.7978004122105684
+    ],
+    "calibration_units_outside_registered_projected_hull": [
+      {
+        "unit_id": "calibration_01",
+        "beta": 0.05571084857365622,
+        "retention_at_fixed_theta": 0.9682255424806231,
+        "outside_registered_projected_hull": true
+      },
+      {
+        "unit_id": "calibration_03",
+        "beta": 0.23713850679540838,
+        "retention_at_fixed_theta": 1.0243211471640812,
+        "outside_registered_projected_hull": true
+      },
+      {
+        "unit_id": "calibration_06",
+        "beta": 0.27732570893441433,
+        "retention_at_fixed_theta": 1.03674662532226,
+        "outside_registered_projected_hull": true
+      },
+      {
+        "unit_id": "calibration_10",
+        "beta": 2.7252653060999767,
+        "retention_at_fixed_theta": 1.7936248944764792,
+        "outside_registered_projected_hull": true
+      },
+      {
+        "unit_id": "calibration_11",
+        "beta": 2.7978004122105684,
+        "retention_at_fixed_theta": 1.8160520187525317,
+        "outside_registered_projected_hull": true
+      },
+      {
+        "unit_id": "calibration_12",
+        "beta": -5.891255262347954,
+        "retention_at_fixed_theta": -0.8705164844733699,
+        "outside_registered_projected_hull": true
+      },
+      {
+        "unit_id": "calibration_19",
+        "beta": 0.2877077006128496,
+        "retention_at_fixed_theta": 1.0399566325875724,
+        "outside_registered_projected_hull": true
+      },
+      {
+        "unit_id": "calibration_20",
+        "beta": -1.735015602293862,
+        "retention_at_fixed_theta": 0.4145509590756072,
+        "outside_registered_projected_hull": true
+      }
+    ],
+    "outside_count": 8,
+    "calibration_negative_beta_units": [
+      {
+        "unit_id": "calibration_12",
+        "beta": -5.891255262347954,
+        "retention_at_fixed_theta": -0.8705164844733699,
+        "outside_registered_projected_hull": true
+      },
+      {
+        "unit_id": "calibration_20",
+        "beta": -1.735015602293862,
+        "retention_at_fixed_theta": 0.4145509590756072,
+        "outside_registered_projected_hull": true
+      }
+    ],
+    "negative_beta_count": 2,
+    "linear_separation_conclusion": "A covector whose beta lies outside the registered projected interval cannot belong to the registered convex hull, because a linear functional maps a convex hull to the convex hull of its vertex values."
+  }
+}
