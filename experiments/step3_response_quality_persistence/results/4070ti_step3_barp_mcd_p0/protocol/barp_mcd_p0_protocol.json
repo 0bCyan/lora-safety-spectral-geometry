@@ -1,0 +1,435 @@
+{
+  "name": "step3_barp_mcd_batch_adaptive_route_protected_p0_protocol_v1",
+  "status": "prospective_before_any_BARP_MCD_model_forward",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/protocol/barp_mcd_p0_protocol.json",
+  "entry_commit": "4462db130d5acbf090a1dd92e251ea62bb00ced1",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_barp_mcd_p0_seed4.json",
+  "objective": "Test whether recomputing the route-protected finite-family direction on each optimizer batch preserves four protected finite-step objectives while retaining non-weak three-target gain.",
+  "experiment_mode": "prospective_algorithm_execution_on_disclosed_seed4_units_not_fresh_confirmation_zero_optimizer_step",
+  "prior_result": {
+    "decision_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/run/rpfrsc_p0_route.json",
+    "decision_sha256": "c3efb487e589cba73b42f3dddf714ea1f8b2f6b40b86f8cffeb37e460e59c7f6",
+    "route": "STOP_RPFRSC_P0_PROTECTED_NONINFERIORITY_FAILED",
+    "registered_signal": "RP-PFRSC passed target, common-descent, and effect gates but missed the finite-step TARC bootstrap lower bound by 0.137 percentage points under cross-batch transfer."
+  },
+  "frozen_inputs": {
+    "method_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_BARP_MCD_batch_adaptive_route_protected_plan.md",
+      "sha256": "f3b71bab1125e04a649097b12a6dbff9fde41af1299756f46785560c89326741"
+    },
+    "config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_barp_mcd_p0_seed4.json",
+      "sha256": "87afd2349e44effcad1ffd5420d2476931682419f2922210d6aa2092457bdc50"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_p0.py",
+      "sha256": "61c97ef65d96836a48ee2ef125d53eb06c244c5595eea1dbf0f2e3f92a25a02f"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_barp_mcd_p0.py",
+      "sha256": "a54ace69edae7e683862d6fe4b423f35c80def9c9dc4073f8f7913292e79f567"
+    },
+    "protocol_preparer": {
+      "path": "experiments/step3_response_quality_persistence/scripts/prepare_step3_barp_mcd_p0_protocol.py",
+      "sha256": "bd2f5aa18d1d249fcf44195ca0401ed7cef20a45d02fcfcf9da7802b6fba5767"
+    },
+    "rpfrsc_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_rpfrsc_p0.py",
+      "sha256": "38c0fbdcd8a24d7b754cb90fe3591b1363760ce218a3a67ebb00f0c527018af2"
+    },
+    "rpfrsc_runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_rpfrsc_p0.py",
+      "sha256": "5ae72d197853308d9621a2db8fe8039318f3bd96082124bc35ed4167bc0ce002"
+    },
+    "pfrsc_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_pfrsc_common.py",
+      "sha256": "6d024bb0cb808b62592f080043230fb9ea72153de506aa901f5e97fd39c5b1fd"
+    },
+    "pfrsc_common_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_pfrsc_common.py",
+      "sha256": "24e4dc5f36c4f4326e4d9c0f35232cf5d91190c352af852272b6fe1763b967cf"
+    },
+    "frsc_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_frsc_common.py",
+      "sha256": "579be9bbe5c1f87d71b6bb6b24325ab6f889639fe28a5a9fc8ddc118c42be7b4"
+    },
+    "ramp_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_common.py",
+      "sha256": "70b17175e00cddda9ea8394717c6fd02770bc446a755680d2e3965c6bfa8d998"
+    },
+    "model_state_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "objective_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_training.py",
+      "sha256": "5cd63cfc7334be71368923edf60684ea7adfe0db87bdb69df1981c58ecfb634a"
+    },
+    "risk_loss_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_training.py",
+      "sha256": "5095a6db54ef23cb887201ffab2a23f9483acbe8c5993859fe084ea9dabf3800"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "model_reference": {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "risk_source": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    "structural_audit": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    "predecessor_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/protocol/rpfrsc_p0_protocol.json",
+      "sha256": "81ba4a59df4a6204c0d34c0766b1a0a86fbaeec28869cf7c38162993756c17a8"
+    },
+    "predecessor_route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/run/rpfrsc_p0_route.json",
+      "sha256": "c3efb487e589cba73b42f3dddf714ea1f8b2f6b40b86f8cffeb37e460e59c7f6"
+    },
+    "predecessor_interpretation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/analysis/RPFRSC_P0_INTERPRETATION.md",
+      "sha256": "e3092dd91fb555fc36d8581093454d145e2c86aae23cd530e8b7910e06ebd9d0"
+    },
+    "v3r6_analysis": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/analysis/rufmcd_p0_v3r6_realized_certificate_analysis.json",
+      "sha256": "ebd80c4406c9846e6800f63fd0fee0ea5e059a6a8770d9fe98129646ab97bebd"
+    },
+    "v3r6_angle_audit": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/analysis/rufmcd_p0_v3r6_relaxed_angle_impossibility.json",
+      "sha256": "f82282872ab5127806a789f686d57b637243d0c462501ebb6246b322393bb0f7"
+    },
+    "v3r6_angle_interpretation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/analysis/RUFMCD_JRP_P0_V3R6_ANGLE_IMPOSSIBILITY.md",
+      "sha256": "34173b413c8921bb7b55d49785a10d65c96fb35a192ded80dc304902ddb59a6c"
+    }
+  },
+  "source": {
+    "safety_targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+    "risk_data_path": "data/processed/unified_pool/train_risk.jsonl",
+    "structural_audit_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+    "safety_rows": 80,
+    "safety_prompt_clusters": 40,
+    "risk_rows": 256,
+    "fresh_for_confirmation": false,
+    "role": "seed4_disclosed_batch_adaptive_same_batch_mechanism_p0",
+    "core100_used": false,
+    "heldout_used": false,
+    "independent_transfer_claimed": false,
+    "excluded_source_block_gradients_opened": false
+  },
+  "selection": {
+    "risk_order_seed": 4,
+    "optimizer_block_rule": "ascending_sha256_of_rpfrsc-seed4-training-v1|sample_id_after_diagnostic_removal",
+    "optimizer_blocks": [
+      {
+        "block_id": "training_01",
+        "risk_row_indices": [
+          122,
+          70,
+          83,
+          170
+        ],
+        "safety_sample_ids": [
+          "eval_safety_000279",
+          "eval_safety_000269",
+          "eval_safety_000260",
+          "eval_safety_000276"
+        ]
+      },
+      {
+        "block_id": "training_02",
+        "risk_row_indices": [
+          61,
+          89,
+          75,
+          155
+        ],
+        "safety_sample_ids": [
+          "eval_safety_000205",
+          "eval_safety_000258",
+          "eval_safety_000211",
+          "eval_safety_000232"
+        ]
+      },
+      {
+        "block_id": "training_03",
+        "risk_row_indices": [
+          106,
+          242,
+          110,
+          177
+        ],
+        "safety_sample_ids": [
+          "eval_safety_000142",
+          "eval_safety_000244",
+          "eval_safety_000265",
+          "eval_safety_000225"
+        ]
+      },
+      {
+        "block_id": "training_04",
+        "risk_row_indices": [
+          67,
+          9,
+          98,
+          47
+        ],
+        "safety_sample_ids": [
+          "eval_safety_000156",
+          "eval_safety_000188",
+          "eval_safety_000118",
+          "eval_safety_000253"
+        ]
+      },
+      {
+        "block_id": "training_05",
+        "risk_row_indices": [
+          183,
+          246,
+          64,
+          168
+        ],
+        "safety_sample_ids": [
+          "eval_safety_000109",
+          "eval_safety_000113",
+          "eval_safety_000226",
+          "eval_safety_000147"
+        ]
+      },
+      {
+        "block_id": "training_06",
+        "risk_row_indices": [
+          198,
+          251,
+          192,
+          150
+        ],
+        "safety_sample_ids": [
+          "eval_safety_000179",
+          "eval_safety_000295",
+          "eval_safety_000138",
+          "eval_safety_000243"
+        ]
+      },
+      {
+        "block_id": "training_07",
+        "risk_row_indices": [
+          162,
+          233,
+          217,
+          74
+        ],
+        "safety_sample_ids": [
+          "eval_safety_000116",
+          "eval_safety_000236",
+          "eval_safety_000101",
+          "eval_safety_000161"
+        ]
+      },
+      {
+        "block_id": "training_08",
+        "risk_row_indices": [
+          187,
+          54,
+          153,
+          114
+        ],
+        "safety_sample_ids": [
+          "eval_safety_000212",
+          "eval_safety_000125",
+          "eval_safety_000191",
+          "eval_safety_000152"
+        ]
+      }
+    ],
+    "excluded_source_block": {
+      "block_id": "fixed_diagnostic_8category_seed4",
+      "risk_row_indices": [
+        38,
+        81,
+        132,
+        204,
+        62,
+        15,
+        93,
+        94
+      ],
+      "safety_sample_ids": [
+        "eval_safety_000180",
+        "eval_safety_000222",
+        "eval_safety_000263",
+        "eval_safety_000268",
+        "eval_safety_000126",
+        "eval_safety_000107",
+        "eval_safety_000294",
+        "eval_safety_000286"
+      ],
+      "safety_categories": [
+        "cyber abuse",
+        "financial evasion",
+        "fraud or deception",
+        "harassment or coercion",
+        "harmful wrongdoing",
+        "physical harm",
+        "privacy invasion",
+        "public manipulation"
+      ]
+    },
+    "optimizer_units": 8,
+    "risk_rows_per_unit": 4,
+    "safety_pairs_per_unit": 4,
+    "selection_scope": "same_optimizer_batch",
+    "evaluation_scope": "same_optimizer_batch",
+    "optimizer_excluded_overlap": 0
+  },
+  "design": {
+    "certificates": [
+      "risk",
+      "uniform",
+      "tarc",
+      "etarc",
+      "continuation",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "protected_certificates": [
+      "risk",
+      "uniform",
+      "tarc",
+      "continuation"
+    ],
+    "target_certificates": [
+      "etarc",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "source_candidate_family": "all_127_nonempty_certificate_subsets",
+    "source_direction": "minimum_norm_simplex_combination_with_fixed_uniform_gradient_norm_budget",
+    "source_screening": "top_16_by_exact_target_min_then_overall_min_then_target_mean_then_smaller_subset_then_lower_bitmask",
+    "source_top_k": 16,
+    "homotopy_fractions": [
+      0.0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1.0
+    ],
+    "homotopy_candidates_per_unit": 129,
+    "exact_map_evaluations_per_unit": 239,
+    "protected_retention_floor": 0.95,
+    "selection_objective": "maximum_exact_etarc_branch_minimum_score_subject_to_risk_uniform_tarc_continuation_score_retention",
+    "tie_break": "overall_min_then_target_mean_then_protected_retention_then_smaller_fraction_then_smaller_subset_then_lower_bitmask",
+    "auxiliary_gradient_norm_ratio": 1.0,
+    "safety_mix": 0.2,
+    "learning_rate": 0.0002,
+    "top_candidates_serialized": 8,
+    "diagnostic_gradients_used_for_selection": false,
+    "transient_parameter_restoration_required": true,
+    "raw_gradient_tensors_serialized": false,
+    "method": "BARP-MCD",
+    "gradient_measurement_mode": "eval",
+    "selection_scope": "same_optimizer_batch",
+    "finite_step_evaluation_scope": "same_optimizer_batch",
+    "independent_transfer_claimed": false,
+    "candidate_recomputed_per_training_batch": true,
+    "raw_anchor_in_every_finite_family": true,
+    "same_batch_protection_theorem": "finite_family_raw_anchor_nonemptiness_plus_coordinatewise_95_percent_protected_exact_score_retention"
+  },
+  "statistics": {
+    "unit": "seed4_optimizer_unit_direction_block",
+    "paired": true,
+    "units": 8,
+    "bootstrap_samples": 10000,
+    "bootstrap_seed": 2026082004,
+    "bootstrap_interval": "percentile_95",
+    "sign_test": "exact_two_sided_excluding_exact_ties",
+    "method": "BARP-MCD-seed4-same-batch-P0",
+    "evidence_scope": "same_batch_optimizer_mechanism_not_transfer",
+    "fresh_confirmation": false
+  },
+  "gates": {
+    "gradient_budget_relative_tolerance": 1e-06,
+    "training_target_score_min": 0.05,
+    "search_target_gain_mean_min": 0.002,
+    "nonzero_fraction_rate_min": 0.75,
+    "diagnostic_exact_margin_min": 0.02,
+    "diagnostic_certificate_score_min": 0.02,
+    "diagnostic_advantage_over_baseline_mean_min": 0.02,
+    "protected_mean_relative_loss_max": 0.05,
+    "protected_ci_relative_loss_max": 0.075,
+    "protected_single_unit_relative_loss_max": 0.15,
+    "diagnostic_target_gain_mean_min": 0.002,
+    "target_macro_actual_relative_gain_mean_min": 0.02,
+    "target_objective_mean_relative_loss_max": 0.05,
+    "target_objective_single_unit_relative_loss_max": 0.2,
+    "diagnostic_mean_target_score_min": 0.05,
+    "paired_ci_lower_min": 0.0,
+    "paired_sign_p_max": 0.05,
+    "mean_actual_loss_reduction_min": 0.0,
+    "actual_reduction_positive_rate_min": 0.75,
+    "mean_actual_to_predicted_ratio_min": 0.25,
+    "mean_actual_to_predicted_ratio_max": 1.75,
+    "minimum_vram_headroom_fraction": 0.1
+  },
+  "outputs": {
+    "structural_audit": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_structural_audit.json",
+    "block_rows": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_block_rows.jsonl",
+    "gradient_diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_gradient_diagnostics.json",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_environment.json",
+    "route": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_route.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/BARP_MCD_P0_REPORT.md",
+    "run_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_RPFRSC_P0_AUTHORIZE_MATCHED_TRAINING_PROTOCOL",
+  "failure_routes": [
+    "STOP_RPFRSC_P0_INVALID",
+    "STOP_RPFRSC_P0_PROTECTED_SEARCH_FAILED",
+    "STOP_RPFRSC_P0_DIAGNOSTIC_TRANSFER_FAILED",
+    "STOP_RPFRSC_P0_FINITE_STEP_COMMON_DESCENT_FAILED",
+    "STOP_RPFRSC_P0_PROTECTED_NONINFERIORITY_FAILED",
+    "STOP_RPFRSC_P0_TARGET_ADVANTAGE_FAILED",
+    "STOP_RPFRSC_P0_EFFECT_TOO_WEAK"
+  ],
+  "pass_authorizes": "a_separately_frozen_matched_training_protocol_that_recomputes_BARP_MCD_on_every_training_batch",
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "virtual_parameter_evaluations": 24,
+  "checkpoint_writes_authorized": false,
+  "candidate_generation_authorized": false,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "predecessor": {
+    "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/protocol/rpfrsc_p0_protocol.json",
+    "protocol_sha256": "81ba4a59df4a6204c0d34c0766b1a0a86fbaeec28869cf7c38162993756c17a8",
+    "result_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rpfrsc_p0/run/rpfrsc_p0_route.json",
+    "result_sha256": "c3efb487e589cba73b42f3dddf714ea1f8b2f6b40b86f8cffeb37e460e59c7f6"
+  },
+  "method_basis": {
+    "v3r6_analysis_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/analysis/rufmcd_p0_v3r6_realized_certificate_analysis.json",
+    "v3r6_analysis_sha256": "ebd80c4406c9846e6800f63fd0fee0ea5e059a6a8770d9fe98129646ab97bebd",
+    "angle_audit_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/analysis/rufmcd_p0_v3r6_relaxed_angle_impossibility.json",
+    "angle_audit_sha256": "f82282872ab5127806a789f686d57b637243d0c462501ebb6246b322393bb0f7",
+    "fixed_global_direction_closed": true,
+    "batch_adaptation_is_method_change": true,
+    "thresholds_changed": false,
+    "finite_family_changed": false
+  },
+  "pass_does_not_authorize": "optimizer_steps_inside_P0_candidate_generation_core100_heldout_or_independent_transfer_claims"
+}
