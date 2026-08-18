@@ -157,6 +157,39 @@ class RufmcdProtocolTests(unittest.TestCase):
             places=6,
         )
 
+    def test_constraint_generation_can_exceed_largest_group_size(self) -> None:
+        vectors = {
+            "g0_f0": [0.1257302210933933, -0.1321048632913019,
+                      0.6404226504432821, 0.10490011715303971],
+            "g0_f1": [-0.535669373161111, 0.36159505490948474,
+                      1.3040000451301372, 0.9470809631292422],
+            "g1_f0": [-0.7037352358069926, -1.2654214710460525,
+                      -0.6232744625373522, 0.0413259793472436],
+            "g1_f1": [-2.3250307746388343, -0.21879166393254573,
+                      -1.2459109472530652, -0.7322673547034516],
+        }
+        gradients = {
+            name: {"x": torch.tensor(values, dtype=torch.float64)}
+            for name, values in vectors.items()
+        }
+        offsets = {
+            "g0_f0": 0.2179073534099319,
+            "g0_f1": 0.024876732149455016,
+            "g1_f0": -0.12017286567756913,
+            "g1_f1": -0.04638766728140492,
+        }
+        groups = {name: name.split("_")[0] for name in gradients}
+        with self.assertRaisesRegex(ValueError, "exceeded the frozen round limit"):
+            p0._constraint_generation_affine_minimax(
+                gradients, offsets, groups, 1.0, 1e-9, 1e-7, 1e-7, 2
+            )
+        _, audit = p0._constraint_generation_affine_minimax(
+            gradients, offsets, groups, 1.0, 1e-9, 1e-7, 1e-7, 3
+        )
+        self.assertEqual(audit["constraint_generation_round_count"], 3)
+        self.assertEqual(audit["constraint_generation_active_facet_count"], 4)
+        self.assertTrue(audit["constraint_generation_certified"])
+
     def test_analytic_refinement_certifies_float32_small_margin_scale(self) -> None:
         torch.manual_seed(23)
         gradients = {

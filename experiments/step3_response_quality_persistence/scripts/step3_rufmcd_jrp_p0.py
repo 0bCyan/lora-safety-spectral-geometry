@@ -29,7 +29,8 @@ ORIGINAL_FACET_COUNT = v2.FACET_COUNT
 REFLECTION_VERTEX_COUNT = base.FIT_UNITS
 ROBUST_EXTRA_FACET_COUNT = base.FIT_UNITS
 FACET_COUNT = ORIGINAL_FACET_COUNT + ROBUST_EXTRA_FACET_COUNT
-CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND = 2 * base.FIT_UNITS
+LEGACY_LARGEST_GROUP_ROUND_BOUND = 2 * base.FIT_UNITS
+CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND = FACET_COUNT - len(base.CERTIFICATES) + 1
 PROSPECTIVE_STATUS = "prospective_before_any_RUFMCD_JRP_model_forward"
 RECOVERY_STATUS = (
     "method_frozen_before_first_RUFMCD_JRP_model_forward_"
@@ -46,6 +47,10 @@ ROUND_BOUND_RECOVERY_STATUS = (
 PROCESS_LOSS_RECOVERY_STATUS = (
     "method_frozen_before_first_RUFMCD_JRP_model_forward_"
     "fourth_execution_recovery_after_runtime_process_loss"
+)
+GLOBAL_ROUND_BOUND_RECOVERY_STATUS = (
+    "method_frozen_before_first_RUFMCD_JRP_model_forward_"
+    "fifth_execution_repair_for_global_constraint_generation_bound"
 )
 _BASE_EVALUATE_GATES = base.evaluate_gates
 
@@ -181,6 +186,9 @@ def context(path: Path):
         PROCESS_LOSS_RECOVERY_STATUS: (
             "V3R3_RUNTIME_PROCESS_LOSS_BEFORE_ARTIFACT_WRITE"
         ),
+        GLOBAL_ROUND_BOUND_RECOVERY_STATUS: (
+            "V3R4_INCOMPLETE_GLOBAL_CONSTRAINT_GENERATION_ROUND_BOUND"
+        ),
     }
     if protocol.get("status") not in {PROSPECTIVE_STATUS, *recovery_incidents}:
         raise base.NptmcdP0ValidationError("JRP protocol is not prospective")
@@ -249,9 +257,13 @@ def context(path: Path):
         ROUND_BOUND_RECOVERY_STATUS,
         PROCESS_LOSS_RECOVERY_STATUS,
     } and int(design["constraint_generation_max_rounds"]) != (
-        CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND
+        LEGACY_LARGEST_GROUP_ROUND_BOUND
     ):
-        raise base.NptmcdP0ValidationError("JRP complete round bound differs")
+        raise base.NptmcdP0ValidationError("JRP legacy round bound differs")
+    if protocol.get("status") == GLOBAL_ROUND_BOUND_RECOVERY_STATUS and int(
+        design["constraint_generation_max_rounds"]
+    ) != CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND:
+        raise base.NptmcdP0ValidationError("JRP global complete round bound differs")
     targets = etarc_p0.read_jsonl(base.resolve_repo_path(config["safety_targets_path"]))
     ramp_p0.validate_source_rows(targets, 80, 40, 8)
     risk_rows = base.training.read_jsonl(

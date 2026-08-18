@@ -45,7 +45,8 @@ class RufmcdJrpTests(unittest.TestCase):
 
     def test_total_facet_count_is_original_plus_reflections(self) -> None:
         self.assertEqual(jrp.FACET_COUNT, 84 + 12)
-        self.assertEqual(jrp.CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND, 24)
+        self.assertEqual(jrp.LEGACY_LARGEST_GROUP_ROUND_BOUND, 24)
+        self.assertEqual(jrp.CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND, 90)
         self.assertGreater(jrp.FIXED_THETA, 0.0)
         self.assertLess(jrp.FIXED_THETA, math.pi / 2.0)
 
@@ -133,15 +134,17 @@ class RufmcdJrpTests(unittest.TestCase):
         self.assertLessEqual(solver["full_primal_dual_gap"], 1e-7)
         self.assertTrue(jrp._geometry_gate(geometry, protocol))
 
-    def test_v3r4_process_loss_recovery_keeps_complete_bound(self) -> None:
+    def test_v3r5_global_recovery_uses_complete_bound(self) -> None:
         path = jrp.REPO / (
             "experiments/step3_response_quality_persistence/results/"
-            "4070ti_step3_rufmcd_p0_v3r4/protocol/"
-            "rufmcd_p0_v3r4_protocol.json"
+            "4070ti_step3_rufmcd_p0_v3r5/protocol/"
+            "rufmcd_p0_v3r5_protocol.json"
         )
         protocol, config, _, _ = jrp.context(path)
         repair = protocol["execution_repair"]
-        self.assertEqual(protocol["status"], jrp.PROCESS_LOSS_RECOVERY_STATUS)
+        self.assertEqual(
+            protocol["status"], jrp.GLOBAL_ROUND_BOUND_RECOVERY_STATUS
+        )
         self.assertEqual(
             protocol["design"]["constraint_generation_max_rounds"],
             jrp.CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND,
