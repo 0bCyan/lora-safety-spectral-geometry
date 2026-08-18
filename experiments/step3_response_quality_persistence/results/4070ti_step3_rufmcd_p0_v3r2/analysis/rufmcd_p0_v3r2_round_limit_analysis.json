@@ -1,0 +1,65 @@
+{
+  "name": "step3_rufmcd_jrp_p0_v3r2_round_limit_analysis_v1",
+  "classification": "protocol_incomplete_constraint_generation_bound_not_method_infeasibility",
+  "route": "STOP_RUFMCD_JRP_P0_ROBUST_POLYTOPE_GEOMETRY_INVALID",
+  "verified": true,
+  "source_artifacts": {
+    "fit_geometry": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r2/run/rufmcd_p0_v3r2_fit_geometry.json",
+      "sha256": "8335f6c44a43720ff8be91c8630dbcf201337f10e3299a15e2a13f95f7c6301a"
+    },
+    "route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r2/run/rufmcd_p0_v3r2_route.json",
+      "sha256": "07cb623ec4159b1c6177bba65776e7430765b355e9548f46d6a8a1a988f9a4c0"
+    },
+    "manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r2/run/rufmcd_p0_v3r2_reproduction_manifest.json",
+      "sha256": "8d1b22684f8a9a71baae59c33f6c49cae47860303763b476d49023a90ab4c718"
+    }
+  },
+  "geometry": {
+    "registered_facets": 96,
+    "group_sizes": {
+      "risk": 12,
+      "uniform": 12,
+      "tarc": 24,
+      "etarc": 12,
+      "continuation": 12,
+      "branch_entropy": 12,
+      "branch_negative_gap": 12
+    },
+    "frozen_constraint_generation_max_rounds": 12,
+    "projection_error": "RUF-MCD constraint generation exceeded the frozen round limit",
+    "completed_full_certificate_available": false,
+    "candidate_eligible": false,
+    "selected_theta": 0.0
+  },
+  "completeness_argument": {
+    "initialization": "one lowest-offset facet per certificate group",
+    "addition_rule": "at most one violating inactive facet per group after each solved round",
+    "largest_group_size": 24,
+    "worst_case_rounds_to_present_every_facet_in_largest_group": 24,
+    "inherited_v2_bound_valid_for_v3": false,
+    "reason": "v2 had 12 facets in every group; v3 adds 12 reflected facets to the TARC group"
+  },
+  "unchanged_certificate_thresholds": {
+    "active_kkt_residual_max": 1E-07,
+    "active_primal_dual_gap_max": 1E-07,
+    "full_primal_dual_gap_max": 1E-07
+  },
+  "fallback_interpretation": {
+    "registered_action": "raw_mcd",
+    "calibration_retention": 1.0,
+    "jrp_transfer_claim_allowed": false
+  },
+  "integrity": {
+    "wall_clock_seconds": 1531.48308563232,
+    "state_restored": true,
+    "optimizer_steps": 0,
+    "training_authorized": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "next_action": "freeze a 24-round completeness repair with all objective and certificate thresholds unchanged",
+  "fresh_confirmation_claimed": false
+}
