@@ -1,0 +1,89 @@
+{
+  "name": "step3_rufmcd_jrp_p0_v3r4_round_bound_analysis_v1",
+  "classification": "protocol_incomplete_global_constraint_generation_bound_not_method_infeasibility",
+  "route": "STOP_RUFMCD_JRP_P0_ROBUST_POLYTOPE_GEOMETRY_INVALID",
+  "verified": true,
+  "verification_status": "PASS_NPTMCD_P0_VERIFY",
+  "source_artifacts": {
+    "fit_geometry": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r4/run/rufmcd_p0_v3r4_fit_geometry.json",
+      "sha256": "2ecf2c4f8eecf22a32943c8090100af17eac72d535d437fb254989ca66bbf5fd"
+    },
+    "route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r4/run/rufmcd_p0_v3r4_route.json",
+      "sha256": "bb42f5fdd45aa247beba1bd4a1a534a3a7a23be662cfafc9c2cfaef0aa0ef4d9"
+    },
+    "manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r4/run/rufmcd_p0_v3r4_reproduction_manifest.json",
+      "sha256": "ef720fa3e72dff41940967863e173c6f6ab8653f7bf847ac4119228cf4b807c0"
+    }
+  },
+  "geometry": {
+    "registered_facets": 96,
+    "initial_facet_groups": 7,
+    "group_sizes": {
+      "risk": 12,
+      "uniform": 12,
+      "tarc": 24,
+      "etarc": 12,
+      "continuation": 12,
+      "branch_entropy": 12,
+      "branch_negative_gap": 12
+    },
+    "frozen_constraint_generation_max_rounds": 24,
+    "projection_error": "RUF-MCD constraint generation exceeded the frozen round limit",
+    "completed_full_certificate_available": false,
+    "candidate_eligible": false,
+    "selected_theta": 0.0,
+    "selected_to_raw_norm_relative_error": 0.0
+  },
+  "global_completeness_argument": {
+    "initial_active_facets": 7,
+    "initialization_rule": "one minimum-offset facet per certificate group",
+    "strict_growth_rule": "every non-closing round adds at least one previously inactive facet",
+    "maximum_non_closing_rounds": 89,
+    "final_full_active_solve_rounds": 1,
+    "complete_round_bound_formula": "N-G+1",
+    "complete_round_bound": 90,
+    "largest_group_bound_valid": false,
+    "reason": "conditional per-group additions may occur in different rounds, so simultaneous growth of every group is not guaranteed"
+  },
+  "deterministic_counterexample": {
+    "facet_groups": 2,
+    "facets_per_group": 2,
+    "total_facets": 4,
+    "largest_group_size": 2,
+    "rounds_required": 3,
+    "complete_bound_N_minus_G_plus_1": 3,
+    "active_facets_at_close": 4,
+    "construction": "fixed four-dimensional gradients and offsets reproduced by a deterministic post-run check; prospective regression registration pending",
+    "interpretation": "largest-group size is not a valid global round bound for the implemented conditional addition rule"
+  },
+  "unchanged_certificate_thresholds": {
+    "active_kkt_residual_max": 1E-07,
+    "active_primal_dual_gap_max": 1E-07,
+    "full_primal_dual_gap_max": 1E-07
+  },
+  "fallback_interpretation": {
+    "registered_action": "raw_mcd",
+    "calibration_minimum_joint_protected_retention": 1.0,
+    "calibration_mean_target_gain_over_raw": 0.0,
+    "diagnostic_target_gain_over_raw": 0.0,
+    "jrp_geometry_or_transfer_claim_allowed": false
+  },
+  "integrity": {
+    "runtime_head": "c6fc36e88c1938208279121bb30780849f34962e",
+    "wall_clock_seconds": 4639.121893167496,
+    "fit_units": 12,
+    "calibration_units": 20,
+    "diagnostic_units": 8,
+    "virtual_parameter_evaluations": 24,
+    "state_restored": true,
+    "optimizer_steps": 0,
+    "training_authorized": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "next_action": "freeze a 90-round global completeness repair with all facets, objectives, data, selection rules, and certificate thresholds unchanged",
+  "fresh_confirmation_claimed": false
+}
