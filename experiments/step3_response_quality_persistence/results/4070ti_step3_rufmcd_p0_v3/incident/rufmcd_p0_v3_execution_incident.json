@@ -1,0 +1,32 @@
+{
+  "name": "step3_rufmcd_jrp_p0_v3_execution_incident_v1",
+  "incident_code": "V3_POST_MEASUREMENT_GATE_ROUTING_RECURSION",
+  "freeze_commit": "6dcc6128c8437590d895da02532f582db70492d1",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3/protocol/rufmcd_p0_v3_protocol.json",
+  "protocol_sha256": "e90dadacf5ac923bc578a2b4948e5b0c5a7d7de8e5aed78aa68fb9b0de6e86cc",
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_rufmcd_jrp_p0.py run",
+  "failure_phase": "post_measurement_gate_evaluation_before_any_artifact_write",
+  "exception": "RecursionError: maximum recursion depth exceeded",
+  "cause": "evaluate_gates dynamically called base.evaluate_gates after main replaced base.evaluate_gates with evaluate_gates",
+  "completed_measurements_before_failure": {
+    "fit_units": 12,
+    "calibration_units": 20,
+    "diagnostic_units": 8,
+    "virtual_parameter_evaluations": 24
+  },
+  "outputs_written": 0,
+  "run_directory_created": false,
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "candidate_generation_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "repair_scope": "capture and call the pre-monkey-patch base gate evaluator; no method or threshold change",
+  "method_changed": false,
+  "thresholds_changed": false,
+  "selection_changed": false,
+  "fresh_confirmation_claimed": false,
+  "route_available": false
+}

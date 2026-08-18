@@ -29,6 +29,12 @@ ORIGINAL_FACET_COUNT = v2.FACET_COUNT
 REFLECTION_VERTEX_COUNT = base.FIT_UNITS
 ROBUST_EXTRA_FACET_COUNT = base.FIT_UNITS
 FACET_COUNT = ORIGINAL_FACET_COUNT + ROBUST_EXTRA_FACET_COUNT
+PROSPECTIVE_STATUS = "prospective_before_any_RUFMCD_JRP_model_forward"
+RECOVERY_STATUS = (
+    "method_frozen_before_first_RUFMCD_JRP_model_forward_"
+    "execution_repair_after_post_measurement_routing_recursion"
+)
+_BASE_EVALUATE_GATES = base.evaluate_gates
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -139,8 +145,20 @@ def _robust_margin(
 
 def context(path: Path):
     protocol = _read_json(path)
-    if protocol.get("status") != "prospective_before_any_RUFMCD_JRP_model_forward":
+    if protocol.get("status") not in {PROSPECTIVE_STATUS, RECOVERY_STATUS}:
         raise base.NptmcdP0ValidationError("JRP protocol is not prospective")
+    if protocol.get("status") == RECOVERY_STATUS:
+        repair = protocol.get("execution_repair", {})
+        if (
+            repair.get("incident_code")
+            != "V3_POST_MEASUREMENT_GATE_ROUTING_RECURSION"
+            or repair.get("method_changed") is not False
+            or repair.get("thresholds_changed") is not False
+            or repair.get("selection_changed") is not False
+            or repair.get("first_attempt_outputs_written") != 0
+            or repair.get("fresh_confirmation_claimed") is not False
+        ):
+            raise base.NptmcdP0ValidationError("JRP recovery registry differs")
     for name, artifact in protocol["frozen_inputs"].items():
         artifact_path = base.resolve_repo_path(artifact["path"])
         if not artifact_path.is_file() or etarc_p0.sha256(artifact_path) != artifact["sha256"]:
@@ -566,7 +584,7 @@ def _geometry_gate(fit_geometry: dict[str, Any], protocol: dict[str, Any]) -> bo
 
 def evaluate_gates(*args: Any, **kwargs: Any) -> dict[str, bool]:
     rows, fit_geometry, calibration_rows, summary, protocol, state_restored, vram, gpu = args
-    gates = base.evaluate_gates(
+    gates = _BASE_EVALUATE_GATES(
         rows, fit_geometry, calibration_rows, summary, protocol, state_restored, vram, gpu
     )
     gates["protected_nullspace_geometry"] = _geometry_gate(fit_geometry, protocol)

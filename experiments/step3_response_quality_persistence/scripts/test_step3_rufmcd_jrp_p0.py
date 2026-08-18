@@ -60,6 +60,15 @@ class RufmcdJrpTests(unittest.TestCase):
             jrp._robust_margin(projected, tangent, 1.0), expected, places=6
         )
 
+    def test_gate_evaluator_keeps_pre_patch_base_reference(self) -> None:
+        self.assertIsNot(jrp._BASE_EVALUATE_GATES, jrp.evaluate_gates)
+        original = jrp.base.evaluate_gates
+        try:
+            jrp.base.evaluate_gates = jrp.evaluate_gates
+            self.assertIsNot(jrp._BASE_EVALUATE_GATES, jrp.base.evaluate_gates)
+        finally:
+            jrp.base.evaluate_gates = original
+
 
 if __name__ == "__main__":
     unittest.main()
