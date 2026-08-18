@@ -133,6 +133,27 @@ class RufmcdJrpTests(unittest.TestCase):
         self.assertLessEqual(solver["full_primal_dual_gap"], 1e-7)
         self.assertTrue(jrp._geometry_gate(geometry, protocol))
 
+    def test_v3r4_process_loss_recovery_keeps_complete_bound(self) -> None:
+        path = jrp.REPO / (
+            "experiments/step3_response_quality_persistence/results/"
+            "4070ti_step3_rufmcd_p0_v3r4/protocol/"
+            "rufmcd_p0_v3r4_protocol.json"
+        )
+        protocol, config, _, _ = jrp.context(path)
+        repair = protocol["execution_repair"]
+        self.assertEqual(protocol["status"], jrp.PROCESS_LOSS_RECOVERY_STATUS)
+        self.assertEqual(
+            protocol["design"]["constraint_generation_max_rounds"],
+            jrp.CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND,
+        )
+        self.assertEqual(
+            config["rufmcd_constraint_generation_max_rounds"],
+            jrp.CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND,
+        )
+        self.assertFalse(repair["method_changed"])
+        self.assertFalse(repair["thresholds_changed"])
+        self.assertFalse(repair["selection_changed"])
+
 
 if __name__ == "__main__":
     unittest.main()

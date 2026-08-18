@@ -43,6 +43,10 @@ ROUND_BOUND_RECOVERY_STATUS = (
     "method_frozen_before_first_RUFMCD_JRP_model_forward_"
     "third_execution_repair_for_24_facet_tarc_group_round_bound"
 )
+PROCESS_LOSS_RECOVERY_STATUS = (
+    "method_frozen_before_first_RUFMCD_JRP_model_forward_"
+    "fourth_execution_recovery_after_runtime_process_loss"
+)
 _BASE_EVALUATE_GATES = base.evaluate_gates
 
 
@@ -174,6 +178,9 @@ def context(path: Path):
         ROUND_BOUND_RECOVERY_STATUS: (
             "V3R2_INCOMPLETE_CONSTRAINT_GENERATION_ROUND_BOUND"
         ),
+        PROCESS_LOSS_RECOVERY_STATUS: (
+            "V3R3_RUNTIME_PROCESS_LOSS_BEFORE_ARTIFACT_WRITE"
+        ),
     }
     if protocol.get("status") not in {PROSPECTIVE_STATUS, *recovery_incidents}:
         raise base.NptmcdP0ValidationError("JRP protocol is not prospective")
@@ -238,9 +245,12 @@ def context(path: Path):
         != int(design["constraint_generation_max_rounds"])
     ):
         raise base.NptmcdP0ValidationError("JRP config registry differs")
-    if protocol.get("status") == ROUND_BOUND_RECOVERY_STATUS and int(
-        design["constraint_generation_max_rounds"]
-    ) != CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND:
+    if protocol.get("status") in {
+        ROUND_BOUND_RECOVERY_STATUS,
+        PROCESS_LOSS_RECOVERY_STATUS,
+    } and int(design["constraint_generation_max_rounds"]) != (
+        CONSTRAINT_GENERATION_COMPLETE_ROUND_BOUND
+    ):
         raise base.NptmcdP0ValidationError("JRP complete round bound differs")
     targets = etarc_p0.read_jsonl(base.resolve_repo_path(config["safety_targets_path"]))
     ramp_p0.validate_source_rows(targets, 80, 40, 8)

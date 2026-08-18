@@ -1,0 +1,39 @@
+{
+  "name": "step3_rufmcd_jrp_p0_v3r3_process_loss_incident_v1",
+  "incident_code": "V3R3_RUNTIME_PROCESS_LOSS_BEFORE_ARTIFACT_WRITE",
+  "freeze_commit": "215818dc0ea97c7dfbc2e4deec1e5b17af77e8fa",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r3/protocol/rufmcd_p0_v3r3_protocol.json",
+  "protocol_sha256": "a375db6f107a1199f26b9b3ca10fca4a54de2ab076543c38d9c7d4680f5f8b3c",
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_rufmcd_jrp_p0.py run --protocol experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r3/protocol/rufmcd_p0_v3r3_protocol.json",
+  "last_confirmed_phase": "all 12 fit units measured; 96-facet CPU constraint-generation solver running",
+  "last_confirmed_runtime_minutes_lower_bound": 50,
+  "observed_at": "2026-08-18T15:47:11.1896488+08:00",
+  "observed_state": {
+    "python_process_present": false,
+    "run_directory_present": false,
+    "outputs_written": 0,
+    "git_status_short": ""
+  },
+  "captured_exception": null,
+  "cause": "unknown process or execution-session loss; no numerical exception was captured",
+  "classification": "infrastructure_interruption_not_method_result",
+  "completed_work_before_loss": {
+    "fit_units": 12,
+    "calibration_units": 0,
+    "diagnostic_units": 0,
+    "virtual_parameter_evaluations": 0
+  },
+  "persistent_model_or_checkpoint_write": false,
+  "optimizer_objects": 0,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "candidate_generation_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "recovery_rule": "Permit one full restart from fit row zero after a prospective commit and push, using one process, repository-external logs, unchanged v3r3 numerics, and a new output directory. Stop as infrastructure-inconclusive if process loss recurs.",
+  "method_changed": false,
+  "thresholds_changed": false,
+  "selection_changed": false,
+  "fresh_confirmation_claimed": false
+}
