@@ -1,0 +1,56 @@
+{
+  "name": "step3_rufmcd_jrp_p0_v3r_failure_analysis_v1",
+  "classification": "implementation_invalid_before_96_facet_solver_not_method_infeasibility",
+  "route": "STOP_RUFMCD_JRP_P0_ROBUST_POLYTOPE_GEOMETRY_INVALID",
+  "verified": true,
+  "source_artifacts": {
+    "fit_geometry": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r/run/rufmcd_p0_v3r_fit_geometry.json",
+      "sha256": "84565e7c042dbe97c340a35af3c79a4abf332572a5244a1d7038ab48cd1a561c"
+    },
+    "route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r/run/rufmcd_p0_v3r_route.json",
+      "sha256": "467fe7a28180b21c1504cdaf7242b5f5fcbf7738297aa971c8ed64e74743f79e"
+    },
+    "manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r/run/rufmcd_p0_v3r_reproduction_manifest.json",
+      "sha256": "8a95e37382a14e3c6e96a1631099d36b026c1143863ae38437141b55ad9b7e81"
+    }
+  },
+  "geometry": {
+    "registered_facets": 96,
+    "original_facets": 84,
+    "reflected_tarc_vertices_constructed": 12,
+    "projection_valid": false,
+    "projection_error": "'raw_score'",
+    "affine_solver_started": false,
+    "candidate_eligible": false,
+    "selected_theta": 0.0
+  },
+  "root_cause": {
+    "component": "protected original-facet affine scale construction",
+    "invalid_lookup": "spec['raw_score']",
+    "reason": "step3_rufmcd_p0._facet_specs does not store raw_score in a facet spec",
+    "correct_frozen_source": "raw_score_panels[spec['unit_index'] + 1][spec['certificate']]",
+    "method_change_required": false
+  },
+  "fallback_observations": {
+    "registered_action": "raw_mcd",
+    "calibration_rows": 20,
+    "minimum_calibration_retention": 1.0,
+    "conformal_threshold": -0.050000000000000044,
+    "interpretation_as_jrp_performance_allowed": false
+  },
+  "integrity": {
+    "state_restored": true,
+    "optimizer_objects": 0,
+    "scheduler_objects": 0,
+    "optimizer_steps": 0,
+    "virtual_parameter_evaluations": 24,
+    "training_authorized": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "next_action": "freeze a separate v3r2 code-only field-source repair before replay; do not alter geometry or thresholds",
+  "fresh_confirmation_claimed": false
+}
