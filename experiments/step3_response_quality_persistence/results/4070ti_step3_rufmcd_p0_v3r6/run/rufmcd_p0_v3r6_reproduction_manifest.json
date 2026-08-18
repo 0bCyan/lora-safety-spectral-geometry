@@ -1,0 +1,78 @@
+{
+  "artifacts": [
+    {
+      "bytes": 626,
+      "name": "structural_audit",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_structural_audit.json",
+      "rows": null,
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    },
+    {
+      "bytes": 494441,
+      "name": "fit_geometry",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_fit_geometry.json",
+      "rows": null,
+      "sha256": "354d3ff48e67c75e3b7e6cc6c64978434b22d4c7a13f42a2af75d739c0987c2e"
+    },
+    {
+      "bytes": 54603,
+      "name": "calibration_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_calibration_rows.jsonl",
+      "rows": 20,
+      "sha256": "6a6c549a9002d9b178a42bf9a2d8ff604944059355ce3f065fc94ae6e80b7e8c"
+    },
+    {
+      "bytes": 93586,
+      "name": "diagnostic_rows",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_diagnostic_rows.jsonl",
+      "rows": 8,
+      "sha256": "4c90d00054d5d6339968b2e963cfd9a311b110aba6262196836b0802be106b0c"
+    },
+    {
+      "bytes": 26667,
+      "name": "diagnostics",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_diagnostics.json",
+      "rows": null,
+      "sha256": "d116b41de02460c61d12251345fd9b68aa7b64c33ad2cd37d76b044244b8f216"
+    },
+    {
+      "bytes": 432,
+      "name": "environment",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_environment.json",
+      "rows": null,
+      "sha256": "7c90c3938cf703079d5bb7bb6ae55b38d996f7bba13c8e5f5f92e7a32ecddbdd"
+    },
+    {
+      "bytes": 27155,
+      "name": "route",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_route.json",
+      "rows": null,
+      "sha256": "0f01d354ff4c91edac0633bb9184c8d09e1932d51057048c3b1677057bdcda73"
+    },
+    {
+      "bytes": 1465,
+      "name": "report",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/RUFMCD_JRP_P0_V3R6_REPORT.md",
+      "rows": null,
+      "sha256": "fa50ab86fec56edcd1921f5ae2c3f090112ae34bfacd6422aab2e0dd1a6bfb6b"
+    }
+  ],
+  "candidate_outputs_generated": false,
+  "command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_nptmcd_p0.py run",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_rufmcd_p0_v3r6_seed7.json",
+  "config_sha256": "a06a720efcef3e522b6b7e76a14f658a77e0c31634df7a69016aed6e2a97baa3",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_nptmcd_p0_reproduction_manifest_v1",
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/protocol/rufmcd_p0_v3r6_protocol.json",
+  "protocol_sha256": "f8d68781ab3421c7121516cb90ad7da997c21e5a8b0b40d80617141cc2446bd1",
+  "route": "STOP_RUFMCD_JRP_P0_NO_ROBUST_EFFECTIVE_ANGLE",
+  "runtime_head": "d6d1d1670f65a3bc873bcf2c034a563c20cbae1f",
+  "scheduler_objects": 0,
+  "seed": 7,
+  "training_authorized": false,
+  "verify_command": ".venv/Scripts/python.exe experiments/step3_response_quality_persistence/scripts/step3_nptmcd_p0.py verify-run",
+  "virtual_parameter_evaluations": 24
+}

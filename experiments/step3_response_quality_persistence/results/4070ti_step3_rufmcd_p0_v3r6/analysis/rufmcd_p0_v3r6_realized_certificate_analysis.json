@@ -1,0 +1,133 @@
+{
+  "name": "step3_rufmcd_jrp_p0_v3r6_realized_certificate_analysis_v1",
+  "classification": "realized_geometry_certified_route_gate_misapplied_and_calibration_protection_failed",
+  "registered_route": "STOP_RUFMCD_JRP_P0_NO_ROBUST_EFFECTIVE_ANGLE",
+  "verified": true,
+  "verification_status": "PASS_NPTMCD_P0_VERIFY",
+  "source_artifacts": {
+    "fit_geometry": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_fit_geometry.json",
+      "sha256": "354d3ff48e67c75e3b7e6cc6c64978434b22d4c7a13f42a2af75d739c0987c2e"
+    },
+    "route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_route.json",
+      "sha256": "0f01d354ff4c91edac0633bb9184c8d09e1932d51057048c3b1677057bdcda73"
+    },
+    "diagnostics": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_diagnostics.json",
+      "sha256": "d116b41de02460c61d12251345fd9b68aa7b64c33ad2cd37d76b044244b8f216"
+    },
+    "manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_rufmcd_p0_v3r6/run/rufmcd_p0_v3r6_reproduction_manifest.json",
+      "sha256": "4a541057cd7cbbc5bc1f61eabe8127b4ca63d666f19eb26fc36d2cc15da9321e"
+    }
+  },
+  "continuous_certificate": {
+    "direct_full_set_solve_count": 1,
+    "registered_facets": 96,
+    "active_facets": 22,
+    "solver_success": true,
+    "primal_value": 0.1265108993488873,
+    "dual_value": 0.12651089934889176,
+    "kkt_residual": 4.468647674116255e-15,
+    "primal_dual_gap": 4.468647674116255e-15,
+    "frozen_kkt_and_gap_limit": 1e-07
+  },
+  "realized_tensor_certificate": {
+    "certificate_valid": true,
+    "candidate_feasible": true,
+    "direction_norm_relative_error": 2.0491923935495038e-08,
+    "direction_norm_relative_error_limit": 1e-07,
+    "full_primal_value": 0.12651079697536213,
+    "minimum_error_adjusted_margin": 0.12651077439187502,
+    "maximum_score_roundoff_bound": 3.426323052931935e-08,
+    "certified_score_count": 96,
+    "worst_facet": "fit_02:tarc:jackknife_reflection",
+    "worst_facet_score": 0.12651079697536213,
+    "worst_facet_roundoff_bound": 2.2583487082150868e-08,
+    "full_primal_to_continuous_dual_gap": 1.0237352962572115e-07,
+    "interpretation": "The continuous optimum and parameter-dtype direction are distinct numerical objects. All 96 realized scores remain positive after their registered forward-error bounds, so the v3r5 numerical closure failure is repaired without relaxing the continuous 1e-7 limits."
+  },
+  "fit_candidate": {
+    "search_eligible": true,
+    "selected_theta_radians": 0.31434110448924435,
+    "selected_theta_degrees": 18.010418614714517,
+    "minimum_protected_retention": 1.0765109066033276,
+    "selected_target_score_floor": 0.17651089296584183,
+    "selected_target_gain_over_raw": 0.16424371101676438,
+    "robust_candidate_margin_floor": 0.12651080078521576,
+    "realized_candidate_margin_lower_bound": 0.12651077439187502,
+    "realized_candidate_feasible": true,
+    "maximum_protected_retention_identity_error": 0.8396493863547287
+  },
+  "route_gate_diagnosis": {
+    "registered_fit_gate": false,
+    "sole_failed_fit_subcondition": "maximum_protected_retention_identity_error <= 1e-5",
+    "identity_applicability": "The inherited identity retention=cos(theta) is valid when the tangent is orthogonal to every protected covector. JRP instead optimizes explicit protected retention margins and does not claim that nullspace identity; the measured maximum protected cosine is 0.270393800959824.",
+    "implementation_cause": "step3_rufmcd_jrp_p0.py binds _BASE_EVALUATE_GATES to step3_nptmcd_p0.evaluate_gates. Unlike step3_rufmcd_p0.evaluate_gates, the inherited base gate retains the strict-nullspace identity check before JRP only appends its robust-margin check.",
+    "registered_route_is_method_evidence": false,
+    "counterfactual_route_after_removing_only_the_inapplicable_identity_check": "STOP_RUFMCD_JRP_P0_CONFORMAL_SELECTIVE_POLICY_FAILED",
+    "counterfactual_scope": "This is a deterministic route-order audit of the frozen outputs, not a replacement run and not authorization."
+  },
+  "calibration": {
+    "candidate_accepted": false,
+    "policy_action": "fallback",
+    "minimum_joint_protected_retention": -0.8705164844733699,
+    "worst_certificate": "tarc",
+    "worst_unit": "calibration_12",
+    "second_worst_unit": "calibration_20",
+    "second_worst_retention": 0.4145509590756072,
+    "conformal_threshold": 1.82051648447337,
+    "mean_target_minimum_gain_over_raw": 0.10269800711908159,
+    "positive_target_minimum_gain_rate": 1.0,
+    "interpretation": "The candidate improves target scores on all 20 calibration units but has two large TARC retention failures. The selective policy correctly falls back to raw MCD."
+  },
+  "diagnostic_exploratory": {
+    "candidate_minus_raw_target_minimum_mean": 0.10850534160060349,
+    "candidate_minus_raw_target_minimum_bootstrap_ci95": [
+      0.09741822865803801,
+      0.1186790903785446
+    ],
+    "candidate_minus_raw_target_minimum_sign_test_p": 0.0078125,
+    "candidate_minus_raw_worst_score_mean": 0.03943115186604651,
+    "candidate_minus_raw_worst_score_bootstrap_ci95": [
+      0.02326624487433416,
+      0.056254708140804355
+    ],
+    "candidate_minus_raw_worst_score_sign_test_p": 0.0078125,
+    "finite_step_common_descent_gate": false,
+    "finite_step_failure": "branch_entropy mean actual-to-predicted ratio 0.246746524173407 is below the frozen 0.25 floor",
+    "protected_noninferiority_gate": false,
+    "protected_failure": "one TARC relative actual-reduction difference is -0.164551953159806, below the frozen -0.15 single-unit floor",
+    "interpretation": "The eight diagnostic units show a strong target and worst-score advantage, but these rows were not selected by the conformal policy and do not override the calibration rejection."
+  },
+  "integrity": {
+    "runtime_head": "d6d1d1670f65a3bc873bcf2c034a563c20cbae1f",
+    "protocol_sha256": "f8d68781ab3421c7121516cb90ad7da997c21e5a8b0b40d80617141cc2446bd1",
+    "wall_clock_seconds": 1977.79079413414,
+    "fit_units": 12,
+    "calibration_units": 20,
+    "diagnostic_units": 8,
+    "virtual_parameter_evaluations": 24,
+    "state_restored": true,
+    "optimizer_steps": 0,
+    "optimizer_objects": 0,
+    "scheduler_objects": 0,
+    "training_authorized": false,
+    "candidate_outputs_generated": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "next_action": {
+    "classification": "prospective_gate_correction_then_fit_only_uncertainty_redesign",
+    "first_change": "Freeze a new protocol that evaluates the JRP fit gate from explicit robust protected and target margins, including the realized lower bound, without the strict-nullspace retention identity.",
+    "method_change_after_rerouting": "Because calibration reveals concentrated TARC tail risk, redesign the uncertainty set from fit-only data before any fresh confirmation. A valid successor must bound unit-level normalized TARC covectors more conservatively than the current leave-one-out reflection hull while retaining a nontrivial target margin.",
+    "forbidden_claims": [
+      "v3r6 passed its registered route",
+      "the 18-degree candidate is authorized",
+      "diagnostic gains repair the failed calibration policy",
+      "the repeatedly opened rows constitute fresh confirmation"
+    ]
+  },
+  "fresh_confirmation_claimed": false
+}
