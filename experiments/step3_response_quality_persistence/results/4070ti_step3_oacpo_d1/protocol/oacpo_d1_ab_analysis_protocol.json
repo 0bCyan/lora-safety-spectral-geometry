@@ -1,0 +1,95 @@
+{
+  "name": "step3_oacpo_d1_ab_reliability_analysis_protocol_v1",
+  "status": "prospective_before_any_a_b_label_comparison",
+  "entry_commit": "90df3e6",
+  "self_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/protocol/oacpo_d1_ab_analysis_protocol.json",
+  "objective": "Validate six complete independent A/B reviews and compute only the reliability, hidden-duplicate, and disagreement statistics frozen in the D1 protocol.",
+  "frozen_inputs": {
+    "analysis_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_oacpo_d1_analysis.py",
+      "sha256": "268396f359f5d4eecc20476f38cb84b786c2951fbcfc268aff8a0c23fc3ec513"
+    },
+    "analysis_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_oacpo_d1_analysis.py",
+      "sha256": "0d6207a9ff870d282f2c04e8a4f3af922813472d2c04a4325a5f59d0b26c2775"
+    },
+    "metrics_dependency": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cspr_p2_review.py",
+      "sha256": "7409f2043c881e7ee378c704d90b4ceefe7eb6cf953b9a040694543754f698b1"
+    },
+    "base_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/protocol/oacpo_d1_blind_review_protocol.json",
+      "sha256": "460fbcf8631187c6ab104963bcc4e508325b5d17fa501658d1eff2be5c24cb68"
+    },
+    "packet_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reports/oacpo_d1_packet_manifest.json",
+      "sha256": "578a960451b8306e27c8c611e6ebb60925338015a4f03e87677c4a208e9f19f8"
+    }
+  },
+  "rubrics": {
+    "safety": "experiments/step3_response_quality_persistence/review_rubrics/step3o_transport_clean_safety_rubric.md",
+    "quality": "experiments/step3_response_quality_persistence/review_rubrics/step3cm_decomposed_quality_rubric_v1.md",
+    "structure": "experiments/step3_response_quality_persistence/review_rubrics/step3_oacpo_d1_mechanical_rubric.md"
+  },
+  "review_files": {
+    "safety": {
+      "reviewer_a_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/safety/oacpo_d1_safety_reviewer_a_packet.jsonl",
+      "reviewer_b_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/safety/oacpo_d1_safety_reviewer_b_packet.jsonl",
+      "reviewer_a_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/safety/oacpo_d1_safety_reviewer_a_template.jsonl",
+      "reviewer_b_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/safety/oacpo_d1_safety_reviewer_b_template.jsonl",
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/safety/oacpo_d1_safety_reviewer_a_labels.jsonl",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/safety/oacpo_d1_safety_reviewer_b_labels.jsonl",
+      "reviewer_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/safety/oacpo_d1_safety_reviewer_a_provenance.json",
+      "reviewer_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/safety/oacpo_d1_safety_reviewer_b_provenance.json"
+    },
+    "quality": {
+      "reviewer_a_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/quality/oacpo_d1_quality_reviewer_a_packet.jsonl",
+      "reviewer_b_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/quality/oacpo_d1_quality_reviewer_b_packet.jsonl",
+      "reviewer_a_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/quality/oacpo_d1_quality_reviewer_a_template.jsonl",
+      "reviewer_b_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/quality/oacpo_d1_quality_reviewer_b_template.jsonl",
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/quality/oacpo_d1_quality_reviewer_a_labels.jsonl",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/quality/oacpo_d1_quality_reviewer_b_labels.jsonl",
+      "reviewer_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/quality/oacpo_d1_quality_reviewer_a_provenance.json",
+      "reviewer_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/quality/oacpo_d1_quality_reviewer_b_provenance.json"
+    },
+    "structure": {
+      "reviewer_a_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/structure/oacpo_d1_structure_reviewer_a_packet.jsonl",
+      "reviewer_b_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/structure/oacpo_d1_structure_reviewer_b_packet.jsonl",
+      "reviewer_a_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/structure/oacpo_d1_structure_reviewer_a_template.jsonl",
+      "reviewer_b_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/structure/oacpo_d1_structure_reviewer_b_template.jsonl",
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/structure/oacpo_d1_structure_reviewer_a_labels.jsonl",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/structure/oacpo_d1_structure_reviewer_b_labels.jsonl",
+      "reviewer_a_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/structure/oacpo_d1_structure_reviewer_a_provenance.json",
+      "reviewer_b_provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/structure/oacpo_d1_structure_reviewer_b_provenance.json"
+    }
+  },
+  "analysis_order": [
+    "validate all six schemas orders and provenances",
+    "open hidden duplicate links",
+    "compute primary A/B agreement and duplicate consistency",
+    "select the frozen reliability route",
+    "write opaque disagreement ledger only if needed"
+  ],
+  "forbidden_actions": [
+    "manual relabeling or adjudication",
+    "source-label substitution",
+    "triplet qualification",
+    "Reviewer C launch before a passing committed analysis",
+    "gradient computation",
+    "checkpoint access",
+    "training"
+  ],
+  "outputs": {
+    "analysis": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reports/oacpo_d1_ab_reliability_analysis.json",
+    "disagreement_ledger": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/private/oacpo_d1_ab_disagreement_ledger.jsonl",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reports/OACPO_D1_AB_RELIABILITY_REPORT.md"
+  },
+  "invalid_route": "STOP_OACPO_D1_REVIEW_INVALID",
+  "unreliable_route": "STOP_OACPO_D1_REVIEW_UNRELIABLE",
+  "disagreement_pass_route": "AUTHORIZE_OACPO_D1_REVIEWER_C_PROTOCOL_ONLY",
+  "no_disagreement_pass_route": "AUTHORIZE_OACPO_D2_TRIPLET_QUALIFICATION_PROTOCOL_ONLY",
+  "core100_opened": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
