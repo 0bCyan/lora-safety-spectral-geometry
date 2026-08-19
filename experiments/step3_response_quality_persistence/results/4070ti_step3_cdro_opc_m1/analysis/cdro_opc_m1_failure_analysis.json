@@ -1,0 +1,110 @@
+{
+  "name": "step3_cdro_opc_m1_failure_analysis_v1",
+  "route": "STOP_CDRO_OPC_M1_TRANSPORT",
+  "verify_run_status": "PASS_CDRO_OPC_M1_VERIFY_RUN",
+  "implementation_gates": {
+    "basis": true,
+    "behavior": true,
+    "conformal_transport": false,
+    "nontrivial": true,
+    "solver": true,
+    "state_restored": true,
+    "structural": true,
+    "zero_step": true
+  },
+  "numerical_certificate": {
+    "basis_rank": 5,
+    "basis_orthonormality_max_error": 5.6983795682086225e-08,
+    "fallback_reconstruction_relative_error": 8.271629966098668e-08,
+    "solver_success": true,
+    "solver_status": 0,
+    "primal_violation": 1.1258355359089478e-13,
+    "normalized_stationarity_residual": 3.3321036109455544e-07,
+    "complementarity_residual": 2.0617989194409807e-13,
+    "active_constraints": [
+      "safety_pareto",
+      "protected:risk",
+      "trust_region"
+    ],
+    "normalized_increment": 0.6689478216371844
+  },
+  "transport": {
+    "calibration_units": 20,
+    "order_statistic_rank": 20,
+    "finite_sample_marginal_policy_protection_lower_bound": 0.9523809523809523,
+    "allowed_relative_drop": 0.04,
+    "cdro_opc_threshold": 0.7766276021033878,
+    "cdro_opc_action": "fallback",
+    "foacpo_s_threshold": 0.05077022096665063,
+    "foacpo_s_action": "fallback",
+    "cdro_opc_units_passing_all_certificates": 9,
+    "cdro_opc_units_failing_any_certificate": 11,
+    "per_certificate_standardized_deterioration": {
+      "risk": {
+        "mean": -0.028205983029338317,
+        "median": -0.012240899529985933,
+        "maximum": 0.8166276021033878,
+        "units_exceeding_allowed_drop": 10
+      },
+      "uniform": {
+        "mean": -0.35694383905085675,
+        "median": -0.3250950227434062,
+        "maximum": 0.27866345922003743,
+        "units_exceeding_allowed_drop": 1
+      },
+      "tarc": {
+        "mean": -0.16603114924618584,
+        "median": -0.1437537538885501,
+        "maximum": 0.42396994218042716,
+        "units_exceeding_allowed_drop": 2
+      },
+      "continuation": {
+        "mean": -0.37632205576174643,
+        "median": -0.34935224829896133,
+        "maximum": 0.16844701213457497,
+        "units_exceeding_allowed_drop": 3
+      }
+    },
+    "limiting_unit": {
+      "unit_index": 1,
+      "unit_id": "cal_01",
+      "certificate": "risk",
+      "fallback_score": 0.0031943616660724803,
+      "candidate_score": -0.013138190375995276,
+      "standardized_deterioration": 0.8166276021033878,
+      "registered_residual": 0.7766276021033878
+    }
+  },
+  "full_candidate_behavior": {
+    "calibration_quality_aggregate_cosine": 0.09580608000281883,
+    "calibration_safety_aggregate_cosine": 0.10649509589289159,
+    "mechanism_quality_aggregate_cosine": 0.1222678825229678,
+    "mechanism_safety_aggregate_cosine": 0.12125142898845513,
+    "calibration_quality_positive_pairs": "5/5",
+    "calibration_safety_positive_pairs": "9/9",
+    "mechanism_quality_positive_pairs": "6/6",
+    "mechanism_safety_positive_pairs": "9/9"
+  },
+  "posthoc_line_dose_diagnostic": {
+    "claim_status": "descriptive_only_not_a_registered_M1_policy",
+    "exact_maximum_all_20_unit_safe_dose": 0.048981934846399997,
+    "limiting_certificate": "risk",
+    "calibration_quality_aggregate_cosine": 0.006325383491160052,
+    "calibration_safety_aggregate_cosine": 0.0244366109523767,
+    "mechanism_quality_aggregate_cosine": 0.019691702710080795,
+    "mechanism_safety_aggregate_cosine": 0.013467142423659192,
+    "calibration_quality_positive_pairs": "3/5",
+    "calibration_safety_positive_pairs": "7/9",
+    "mechanism_quality_positive_pairs": "6/6",
+    "mechanism_safety_positive_pairs": "8/9"
+  },
+  "interpretation": {
+    "supported": "The optimizer-space Pareto direction has strong first-order behavior alignment and a valid convex numerical certificate, but the six-block ellipsoid fails to control heavy-tailed risk transport.",
+    "not_supported": "M1 does not support using the full CDR-OPC candidate, finite-step training, or a population protection claim.",
+    "next_method_hypothesis": "Freeze a conformal lower-quantile dose controller on a fixed fit-derived direction, then test it on genuinely new protected units; do not tune and reconfirm on the opened M1 panel."
+  },
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

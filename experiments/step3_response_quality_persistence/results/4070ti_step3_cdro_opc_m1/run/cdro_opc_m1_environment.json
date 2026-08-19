@@ -1,0 +1,9 @@
+{
+  "bitsandbytes": "0.49.2",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "peft": "0.16.0",
+  "python": "3.11.5",
+  "runtime_head": "f5171f62d423d50faa5510e279e45a5741c898d2",
+  "torch": "2.5.1+cu121",
+  "transformers": "4.53.3"
+}

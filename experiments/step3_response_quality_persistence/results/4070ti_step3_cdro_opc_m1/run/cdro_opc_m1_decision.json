@@ -1,0 +1,26 @@
+{
+  "basis_rank": 5,
+  "candidate_conformal_action": "fallback",
+  "candidate_conformal_threshold": 0.7766276021033878,
+  "candidate_coordinate_sha256": "4fa4e2c904724f1b7b3051bb38cf924f90ab43350b4ecbb00cb1a923bd14130f",
+  "claim_scope": "exploratory_zero_step_geometry_and_transport_only",
+  "finite_sample_marginal_policy_protection_lower_bound": 0.9523809523809523,
+  "foacpo_conformal_action": "fallback",
+  "foacpo_conformal_threshold": 0.05077022096665063,
+  "gates": {
+    "basis": true,
+    "behavior": true,
+    "conformal_transport": false,
+    "nontrivial": true,
+    "solver": true,
+    "state_restored": true,
+    "structural": true,
+    "zero_step": true
+  },
+  "name": "step3_cdro_opc_m1_decision_v1",
+  "next_authorized_action": "stop CDR-OPC training and analyze the failed gate",
+  "normalized_increment": 0.6689478216371844,
+  "optimizer_steps": 0,
+  "route": "STOP_CDRO_OPC_M1_TRANSPORT",
+  "training_authorized": false
+}
