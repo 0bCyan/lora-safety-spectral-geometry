@@ -1,0 +1,323 @@
+{
+  "name": "step3_barp_mcd_q1r_memory_bounded_two_step_protocol_v1",
+  "status": "prospective_before_any_BARP_MCD_Q1R_optimizer_step",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1r/protocol/barp_mcd_q1r_protocol.json",
+  "entry_commit": "465eea6c6856b1332a9806051bdf5d064a8bbdb1",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_barp_mcd_q1r_seed4.json",
+  "objective": "Repeat the frozen Q1 qualification with endpoint tensors deleted after scoring and screened masks deterministically reconstructed.",
+  "experiment_mode": "exploratory_disclosed_seed4_memory_bounded_two_step_matched_training_qualification_retry",
+  "precursor": {
+    "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/protocol/barp_mcd_p0_protocol.json",
+    "protocol_sha256": "68d569d70c3ad907380d3eea6ca64fa978f7f95b9383f2c6e4f70c73b921f8fa",
+    "route_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_route.json",
+    "route_sha256": "cd986b6823bed0b769536c5cc82982ae141ec3775bbf33de109c0f75c0b3517e",
+    "route": "PASS_BARP_MCD_P0_AUTHORIZE_MATCHED_TRAINING_PROTOCOL"
+  },
+  "retry_basis": {
+    "q1_protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/protocol/barp_mcd_q1_protocol.json",
+    "q1_protocol_sha256": "1cff2ed9644c6c4a1c5ab145a9b03fae32271f8c9859fe26a7d53c96341e3978",
+    "q1_decision_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/barp_mcd_q1_decision.json",
+    "q1_decision_sha256": "a9d42891f652ba823291279b14c09016847fc7a6a29212f1cf8a6aef3094f6ae",
+    "q1_route": "STOP_BARP_MCD_Q1_VRAM_FAILED",
+    "q1_stop_analysis_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/analysis/barp_mcd_q1_stop_analysis.json",
+    "q1_stop_analysis_sha256": "5348443b23d883e9d8b2869e23bbcac36ee24d9671b61642b4d4f9ca49062673",
+    "registered_estimated_avoidable_gib": 7.751953125
+  },
+  "frozen_inputs": {
+    "retry_plan": {
+      "path": "experiments/step3_response_quality_persistence/Step3_BARP_MCD_Q1R_memory_bounded_retry.md",
+      "sha256": "b9225574f4a1ac2623d704af35e313b45e1933e4c22862cb8aa9ea00879cf62a"
+    },
+    "config": {
+      "path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_barp_mcd_q1r_seed4.json",
+      "sha256": "5120fe5615335b86c90cf979363a59b253a77b63cc91f646e9a84b84e8ce2f72"
+    },
+    "retry_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_training_q1r.py",
+      "sha256": "5dde36d8178c3ee21fb8083ded7f4cba05ecec5cc8497ce557093d245646a14d"
+    },
+    "retry_runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_barp_mcd_training_q1r.py",
+      "sha256": "1753e5ed6371dd96516484069fcc38f4fdd483f8931a0144d289be3d1a482228"
+    },
+    "protocol_preparer": {
+      "path": "experiments/step3_response_quality_persistence/scripts/prepare_step3_barp_mcd_q1r_protocol.py",
+      "sha256": "12621e0fc4ca5de4a3566cfa481a6ece4dbe747543b709851395b517bec373bf"
+    },
+    "q1_base_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_training.py",
+      "sha256": "15554c033da03e2d4a4662bf81226edbb7c68eb43485611afcc1d0757cf3496f"
+    },
+    "q1_base_runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_barp_mcd_training.py",
+      "sha256": "6ad5612db16727f8bcf46552d19dc863fe088760a5824571851f383594c38cf2"
+    },
+    "q1_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/protocol/barp_mcd_q1_protocol.json",
+      "sha256": "1cff2ed9644c6c4a1c5ab145a9b03fae32271f8c9859fe26a7d53c96341e3978"
+    },
+    "q1_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/barp_mcd_q1_decision.json",
+      "sha256": "a9d42891f652ba823291279b14c09016847fc7a6a29212f1cf8a6aef3094f6ae"
+    },
+    "q1_stop_analysis": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/analysis/barp_mcd_q1_stop_analysis.json",
+      "sha256": "5348443b23d883e9d8b2869e23bbcac36ee24d9671b61642b4d4f9ca49062673"
+    },
+    "p0_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/protocol/barp_mcd_p0_protocol.json",
+      "sha256": "68d569d70c3ad907380d3eea6ca64fa978f7f95b9383f2c6e4f70c73b921f8fa"
+    },
+    "p0_route": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_p0/run/barp_mcd_p0_route.json",
+      "sha256": "cd986b6823bed0b769536c5cc82982ae141ec3775bbf33de109c0f75c0b3517e"
+    },
+    "rpfrsc_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_rpfrsc_p0.py",
+      "sha256": "38c0fbdcd8a24d7b754cb90fe3591b1363760ce218a3a67ebb00f0c527018af2"
+    },
+    "protected_search": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_pfrsc_common.py",
+      "sha256": "6d024bb0cb808b62592f080043230fb9ea72153de506aa901f5e97fd39c5b1fd"
+    },
+    "finite_radius_geometry": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_frsc_common.py",
+      "sha256": "579be9bbe5c1f87d71b6bb6b24325ab6f889639fe28a5a9fc8ddc118c42be7b4"
+    },
+    "optimizer_geometry": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ojmcd_common.py",
+      "sha256": "4c0e523cb49a1981a590ed6106e143cedd76bbad7e0acaed3b1eed2a76950573"
+    },
+    "gradient_math": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_common.py",
+      "sha256": "70b17175e00cddda9ea8394717c6fd02770bc446a755680d2e3965c6bfa8d998"
+    },
+    "objective_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_mcd_training.py",
+      "sha256": "5cd63cfc7334be71368923edf60684ea7adfe0db87bdb69df1981c58ecfb634a"
+    },
+    "risk_helpers": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_ramp_training.py",
+      "sha256": "5095a6db54ef23cb887201ffab2a23f9483acbe8c5993859fe084ea9dabf3800"
+    },
+    "training_common": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3ct_training_common.py",
+      "sha256": "fc2ee9c500875273c3ba30f22ff37d9b82cad7b2f8972642935d936b475609f1"
+    },
+    "model_loader": {
+      "path": "experiments/step3_response_quality_persistence/scripts/train_step3ct_tournament.py",
+      "sha256": "9ef3176c21be750256e99e89c0ada24e7c23a53f05cf5f40b84f59c796bb0a57"
+    },
+    "model_state_helper": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cita_p0.py",
+      "sha256": "7a0f4eea7a48e865e2b348b7e516bc02c0d7736dd05db798eb5442a2d1e86833"
+    },
+    "approved_targets": {
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"
+    },
+    "risk_source": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    "structural_audit": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+      "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"
+    }
+  },
+  "source": {
+    "safety_targets_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+    "risk_data_path": "data/processed/unified_pool/train_risk.jsonl",
+    "structural_audit_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json",
+    "safety_rows": 80,
+    "safety_prompt_clusters": 40,
+    "risk_rows": 256,
+    "fresh_for_confirmation": false,
+    "role": "disclosed_seed4_memory_bounded_q1_retry",
+    "core100_used": false,
+    "heldout_used": false,
+    "independent_transfer_claimed": false,
+    "excluded_source_block_gradients_opened": false
+  },
+  "selection": {
+    "optimizer_blocks": [
+      {
+        "block_id": "training_01",
+        "risk_row_indices": [
+          122,
+          70,
+          83,
+          170
+        ],
+        "safety_sample_ids": [
+          "eval_safety_000279",
+          "eval_safety_000269",
+          "eval_safety_000260",
+          "eval_safety_000276"
+        ]
+      },
+      {
+        "block_id": "training_02",
+        "risk_row_indices": [
+          61,
+          89,
+          75,
+          155
+        ],
+        "safety_sample_ids": [
+          "eval_safety_000205",
+          "eval_safety_000258",
+          "eval_safety_000211",
+          "eval_safety_000232"
+        ]
+      }
+    ],
+    "diagnostic_block": {
+      "block_id": "fixed_diagnostic_8category_seed4",
+      "risk_row_indices": [
+        38,
+        81,
+        132,
+        204,
+        62,
+        15,
+        93,
+        94
+      ],
+      "safety_sample_ids": [
+        "eval_safety_000180",
+        "eval_safety_000222",
+        "eval_safety_000263",
+        "eval_safety_000268",
+        "eval_safety_000126",
+        "eval_safety_000107",
+        "eval_safety_000294",
+        "eval_safety_000286"
+      ],
+      "safety_categories": [
+        "cyber abuse",
+        "financial evasion",
+        "fraud or deception",
+        "harassment or coercion",
+        "harmful wrongdoing",
+        "physical harm",
+        "privacy invasion",
+        "public manipulation"
+      ]
+    },
+    "optimizer_units_per_arm": 2,
+    "risk_rows_per_unit": 4,
+    "safety_pairs_per_unit": 4,
+    "diagnostic_selects_route": false
+  },
+  "design": {
+    "certificates": [
+      "risk",
+      "uniform",
+      "tarc",
+      "etarc",
+      "continuation",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "protected_certificates": [
+      "risk",
+      "uniform",
+      "tarc",
+      "continuation"
+    ],
+    "target_certificates": [
+      "etarc",
+      "branch_entropy",
+      "branch_negative_gap"
+    ],
+    "source_candidate_family": "all_127_nonempty_certificate_subsets",
+    "source_direction": "minimum_norm_simplex_combination_with_fixed_uniform_gradient_norm_budget",
+    "source_screening": "top_16_by_exact_target_min_then_overall_min_then_target_mean_then_smaller_subset_then_lower_bitmask",
+    "source_top_k": 16,
+    "homotopy_fractions": [
+      0.0,
+      0.125,
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75,
+      0.875,
+      1.0
+    ],
+    "homotopy_candidates_per_unit": 129,
+    "exact_map_evaluations_per_unit": 239,
+    "protected_retention_floor": 0.95,
+    "selection_objective": "maximum_exact_etarc_branch_minimum_score_subject_to_risk_uniform_tarc_continuation_score_retention",
+    "tie_break": "overall_min_then_target_mean_then_protected_retention_then_smaller_fraction_then_smaller_subset_then_lower_bitmask",
+    "auxiliary_gradient_norm_ratio": 1.0,
+    "safety_mix": 0.2,
+    "learning_rate": 0.0002,
+    "top_candidates_serialized": 8,
+    "diagnostic_gradients_used_for_selection": false,
+    "transient_parameter_restoration_required": true,
+    "raw_gradient_tensors_serialized": false,
+    "method": "BARP-MCD",
+    "gradient_measurement_mode": "eval",
+    "selection_scope": "same_optimizer_batch",
+    "finite_step_evaluation_scope": "same_optimizer_batch",
+    "independent_transfer_claimed": false,
+    "candidate_recomputed_per_training_batch": true,
+    "raw_anchor_in_every_finite_family": true,
+    "same_batch_protection_theorem": "finite_family_raw_anchor_nonemptiness_plus_coordinatewise_95_percent_protected_exact_score_retention",
+    "optimizer_map": "exact_current_state_torch_AdamW",
+    "optimizer_state_scored_before_each_update": true,
+    "optimizer_state_mutated_during_candidate_scoring": false,
+    "weight_decay": 0.0,
+    "scheduler": null,
+    "same_batch_finite_step_evaluated_after_real_update": true,
+    "descriptive_diagnostic_selects_route": false,
+    "endpoint_tensor_policy": "score_delete_then_reconstruct_screened_masks",
+    "maximum_retained_endpoint_directions": 1,
+    "candidate_family_changed_from_q1": false,
+    "thresholds_changed_from_q1": false,
+    "optimizer_budget_reused_from_q1": false
+  },
+  "arm_order": [
+    "raw_mcd",
+    "barp_mcd"
+  ],
+  "optimizer_steps_per_arm": 2,
+  "total_authorized_optimizer_steps": 4,
+  "statistics": {
+    "unit": "optimizer_step",
+    "paired_data_order": true,
+    "optimizer_steps_per_arm": 2,
+    "fresh_confirmation": false,
+    "diagnostic_role": "descriptive_only"
+  },
+  "gates": {
+    "matching_tolerance": 1e-07,
+    "optimizer_map_relative_error_max": 5e-06,
+    "raw_anchor_score_min": 0.0,
+    "minimum_nonzero_barp_choices": 1,
+    "minimum_vram_headroom_fraction": 0.1,
+    "all_same_batch_finite_step_reductions_positive": true
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1r",
+  "arm_outputs": {
+    "raw_mcd": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1r/raw_mcd",
+    "barp_mcd": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1r/barp_mcd"
+  },
+  "outputs": {
+    "decision": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1r/barp_mcd_q1r_decision.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1r/BARP_MCD_Q1R_REPORT.md",
+    "reproduction_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1r/barp_mcd_q1r_reproduction_manifest.json"
+  },
+  "pass_route": "PASS_BARP_MCD_Q1R_AUTHORIZE_LONGER_MATCHED_PROTOCOL",
+  "pass_authorizes": "freeze_and_push_a_separate_longer_matched_training_protocol_only",
+  "pass_does_not_authorize": "candidate_generation_core100_heldout_main_training_or_behavior_claims",
+  "training_authorized": true,
+  "checkpoint_writes_authorized": false,
+  "candidate_generation_authorized": false,
+  "development_training_authorized": false,
+  "main_training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
