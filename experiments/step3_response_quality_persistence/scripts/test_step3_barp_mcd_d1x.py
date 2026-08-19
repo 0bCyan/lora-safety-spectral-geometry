@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import math
 import unittest
+from unittest import mock
 
 import step3_barp_mcd_d1x as d1x
 
@@ -113,6 +114,23 @@ class D1XTests(unittest.TestCase):
             d1x.select_route(None, None, None),
             "STOP_BARP_MCD_D1X_DISCOVERY_NO_STABLE_ROUTE",
         )
+
+    def test_displacement_composes_scaled_direction(self) -> None:
+        import torch
+
+        raw = {"weight": torch.tensor([1.0])}
+        direction = {"weight": torch.tensor([2.0])}
+        config = {"safety_mix": 0.2, "max_grad_norm": 1.0, "clip_epsilon": 1e-6}
+
+        def echo(_parameters, _optimizer, gradient, _max_norm, _epsilon):
+            return gradient, {"completed_optimizer_steps": 0}
+
+        with mock.patch.object(d1x.base, "current_adamw_displacement", side_effect=echo):
+            displacement, audit = d1x._displacement(
+                raw, direction, [], object(), config
+            )
+        self.assertTrue(torch.equal(displacement["weight"], torch.tensor([1.4])))
+        self.assertEqual(audit["completed_optimizer_steps"], 0)
 
 
 if __name__ == "__main__":

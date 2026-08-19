@@ -25,6 +25,13 @@ D1R_PROTOCOL = (
     BASE / "results/4070ti_step3_barp_mcd_d1r/protocol/barp_mcd_d1r_protocol.json"
 )
 OUTPUT = BASE / "results/4070ti_step3_barp_mcd_d1x/protocol/barp_mcd_d1x_protocol.json"
+OLD_PROTOCOL = OUTPUT
+RUNTIME_STOP = (
+    BASE / "results/4070ti_step3_barp_mcd_d1x/analysis/barp_mcd_d1x_runtime_stop.json"
+)
+OUTPUT = (
+    BASE / "results/4070ti_step3_barp_mcd_d1x_r1/protocol/barp_mcd_d1x_r1_protocol.json"
+)
 
 
 def read_json(path: Path) -> dict[str, Any]:
@@ -137,6 +144,8 @@ def main() -> None:
         "d1r_decision": D1R_DECISION,
         "d1r_analysis": D1R_ANALYSIS,
         "d1r_protocol": D1R_PROTOCOL,
+        "d1x_attempt_0_protocol": OLD_PROTOCOL,
+        "d1x_attempt_0_runtime_stop": RUNTIME_STOP,
         "approved_targets": targets_path,
         "risk_source": risk_path,
         "structural_audit": BASE
@@ -144,7 +153,7 @@ def main() -> None:
     }
     root = (
         "experiments/step3_response_quality_persistence/results/"
-        "4070ti_step3_barp_mcd_d1x"
+        "4070ti_step3_barp_mcd_d1x_r1"
     )
     target_indices = [3, 5, 6]
     target_masks = [
@@ -153,7 +162,7 @@ def main() -> None:
         if mask & ~sum(1 << index for index in target_indices) == 0
     ]
     protocol = {
-        "name": "step3_barp_mcd_d1x_crossfit_zero_step_protocol_v1",
+        "name": "step3_barp_mcd_d1x_r1_crossfit_zero_step_protocol_v1",
         "status": "prospective_before_any_BARP_MCD_D1X_model_forward",
         "protocol_path": relative(output),
         "entry_commit": git_head(),
@@ -166,6 +175,16 @@ def main() -> None:
             "decision_path": relative(D1R_DECISION),
             "decision_sha256": sha256(D1R_DECISION),
             "route": d1r["route"],
+        },
+        "retry_basis": {
+            "attempt_0_protocol_path": relative(OLD_PROTOCOL),
+            "attempt_0_protocol_sha256": sha256(OLD_PROTOCOL),
+            "runtime_stop_path": relative(RUNTIME_STOP),
+            "runtime_stop_sha256": sha256(RUNTIME_STOP),
+            "route": "STOP_BARP_MCD_D1X_RUNTIME_IMPLEMENTATION_ERROR",
+            "method_or_threshold_changed": False,
+            "sample_split_changed": False,
+            "only_code_change": "compose_scaled_direction_without_unsupported_keyword",
         },
         "frozen_inputs": {name: artifact(path) for name, path in dependencies.items()},
         "source": {

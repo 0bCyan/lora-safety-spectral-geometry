@@ -28,7 +28,7 @@ import train_step3ct_tournament as frozen
 REPO = Path(__file__).resolve().parents[3]
 DEFAULT_PROTOCOL = (
     "experiments/step3_response_quality_persistence/results/"
-    "4070ti_step3_barp_mcd_d1x/protocol/barp_mcd_d1x_protocol.json"
+    "4070ti_step3_barp_mcd_d1x_r1/protocol/barp_mcd_d1x_r1_protocol.json"
 )
 STATUS = "prospective_before_any_BARP_MCD_D1X_model_forward"
 TARGET_MASKS = tuple(
@@ -465,7 +465,8 @@ def _displacement(
     config: dict[str, Any],
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     applied = gradient_math.add_gradients(
-        raw_baseline, direction, right_scale=float(config["safety_mix"])
+        raw_baseline,
+        gradient_math.scaled_gradient(direction, float(config["safety_mix"])),
     )
     displacement, audit = base.current_adamw_displacement(
         parameters,
