@@ -3,8 +3,8 @@
   "route_id": "step3_cdro_opc_m3_confirmation",
   "status": "prospective_before_prompt_release_or_authoring",
   "protocol_tag": "step3-cdro-opc-m3-protocol",
-  "protocol_commit_sha1": "PENDING_PROTOCOL_COMMIT",
-  "protocol_lock_status": "pending",
+  "protocol_commit_sha1": "96b87ae4ac56eb5ac728ea988ad03e1d60a83a95",
+  "protocol_lock_status": "locked_to_protocol_commit",
   "frozen_inputs": {
     "m1_protocol": {
       "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m1/protocol/cdro_opc_m1_protocol.json",
