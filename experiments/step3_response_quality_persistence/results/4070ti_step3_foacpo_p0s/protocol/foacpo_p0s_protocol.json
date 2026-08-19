@@ -1,0 +1,78 @@
+{
+  "name": "step3_foacpo_p0s_segment_robust_anchor_v1",
+  "status": "prospective_before_any_P0S_model_forward_or_robust_anchor_score",
+  "entry_commit": "d9a321b",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_foacpo_p0.json",
+  "objective": "Construct an exact two-block segment-robust optimizer anchor, select a protected factorized Pareto route on calibration, and evaluate it once on sealed mechanism-dev.",
+  "frozen_inputs": {
+    "runner": {"path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_p0s.py", "sha256": "c7fbc9236671613547118a14c9962fe6cdeaf2628a8af2a0c745b283219ded3c"},
+    "tests": {"path": "experiments/step3_response_quality_persistence/scripts/test_step3_foacpo_p0s.py", "sha256": "ae5ac53f0930c1dac72628271db27d63d5b58c385fdc4f0bf9c8f7ad3554e0d6"},
+    "protocol_note": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0s/protocol/FOACPO_P0S_PROTOCOL.md", "sha256": "0a1b4de7f745d94536086708e9f58e2351236980f9dbc436c4d2726945e3c90f"},
+    "p0_runner": {"path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_p0.py", "sha256": "7592e8a7974401c1ebc333ea21412551d759e39aff98bf392cf1c783bdb141c2"},
+    "p0r_runner": {"path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_p0r.py", "sha256": "378b8cd3b94a1b6717087e434e55790cfcbae9d6d54fe99f85fe9b048e6ee56f"},
+    "common_math": {"path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_common.py", "sha256": "638ea69da9b04cb6774988d3cff16444b6ca05a4fb613256073df6137e99391a"},
+    "config": {"path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_foacpo_p0.json", "sha256": "6616c70501a8008c2dd423f7b454f5af304e3c8219215e191fb44d5e126f7c9a"},
+    "p0r_decision": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0r/run/foacpo_p0r_decision.json", "sha256": "2a650d2e2d7f425c7e5b09ff6c4d296178fbd86fad38801be22d5bc503038a4f"},
+    "p0r_diagnostics": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0r/run/foacpo_p0r_diagnostics.json", "sha256": "50b78c0dae6fc93706cc06511bc10fe1720307496a4b07aa3010b93128f33c7e"},
+    "p0r_analysis": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0r/analysis/foacpo_p0r_stop_analysis.json", "sha256": "9adfa851b4f72bebb1f43ae28ce4ab791de0eca712d2da80532ba84a1fb21e27"},
+    "quality_pairs": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_quality_pairs.jsonl", "sha256": "a3b372719cf3b8400b55a8f5077ff57a215322f2cb199a6e8d4ca12652e1f200"},
+    "safety_pairs": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_safety_pairs.jsonl", "sha256": "11dc692d23edbb929f3020724f4a01d494e9a72781b0161a5920bfd94322a6e5"},
+    "checkpoint_adapter": {"path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_model.safetensors", "sha256": "fd66579386cbfa8418cce8c2d8e7c0099b2ef2fddc5a05839b4e8c5f39435379"},
+    "checkpoint_config": {"path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_config.json", "sha256": "f3dc2f00a468baf447741f7819273a41deab36d96438da7b19d79a9b4cb0ccec"},
+    "safety_targets": {"path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl", "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"},
+    "risk_source": {"path": "data/processed/unified_pool/train_risk.jsonl", "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"},
+    "structural_audit": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json", "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"}
+  },
+  "model": {
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "checkpoint_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100",
+    "local_files_only": true,
+    "load_in_4bit": true,
+    "quantization": "nf4_double_quant_fp16_compute",
+    "trainable_coordinates": "constant20_checkpoint_LoRA_only",
+    "model_mode": "eval_with_gradients"
+  },
+  "source": {"structural_audit_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json"},
+  "data": {
+    "quality_pairs": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_quality_pairs.jsonl",
+    "safety_pairs": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_safety_pairs.jsonl",
+    "quality_split_counts": [17, 5, 6],
+    "safety_split_counts": [14, 9, 9]
+  },
+  "selection": {"seed": 2026081917, "mechanism_dev_open_condition": "robust anchor, selected Pareto route, and all calibration pair gates pass"},
+  "design": {
+    "model_seed": 2026081917,
+    "beta": 0.1,
+    "alpha_registry": [0.25, 0.5, 0.75],
+    "protected_certificates": ["risk", "uniform", "tarc", "continuation"],
+    "target_certificates": ["etarc", "branch_entropy", "branch_negative_gap"],
+    "local_protected_retention_floor": 0.95,
+    "protected_retention_floor": 0.95,
+    "robust_anchor_solver": "global maximin on local-anchor segment via endpoints and pairwise affine intersections"
+  },
+  "gates": {
+    "robust_anchor_strict_score_min": 1e-8,
+    "normalized_increment_numeric_min": 1e-6,
+    "strict_quality_delta_over_anchor_min": 0.0,
+    "strict_safety_delta_over_anchor_min": 0.0,
+    "calibration_quality_positive_min": 3,
+    "calibration_safety_positive_min": 6,
+    "mechanism_quality_positive_min": 4,
+    "mechanism_safety_positive_min": 6,
+    "protected_retention_floor": 0.95
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0s",
+  "outputs": {
+    "diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0s/run/foacpo_p0s_diagnostics.json",
+    "decision": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0s/run/foacpo_p0s_decision.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0s/run/FOACPO_P0S_REPORT.md",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0s/run/foacpo_p0s_environment.json"
+  },
+  "optimizer_objects": 1,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "candidate_generation_authorized": false,
+  "checkpoint_writes_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
