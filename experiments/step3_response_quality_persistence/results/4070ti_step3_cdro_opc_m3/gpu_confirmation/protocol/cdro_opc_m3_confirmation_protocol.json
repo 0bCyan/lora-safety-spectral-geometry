@@ -1,7 +1,8 @@
 {
   "name": "step3_cdro_opc_m3_zero_step_confirmation_v1",
-  "status": "pending_protocol_lock",
-  "entry_commit": "PENDING_PROTOCOL_COMMIT",
+  "status": "prospective_locked_before_M3_model_forward",
+  "protocol_commit": "4d329d5696be715a91b38e9f8238c0436122a357",
+  "entry_commit": "4d329d5696be715a91b38e9f8238c0436122a357",
   "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_foacpo_p0.json",
   "objective": "Confirm the frozen M1 CDR-OPC direction and M2 conformal-dose controller on the fresh M3 calibration and sealed-audit cohort without an optimizer step.",
   "frozen_inputs": {
