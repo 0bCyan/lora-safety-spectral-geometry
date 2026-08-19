@@ -1,0 +1,26 @@
+{
+  "schema": "step3_cdro_opc_m3_confirmation_v2r1_stop_v1",
+  "route": "STOP_CDRO_OPC_M3_DIRECTION_REPLAY_NUMERIC_INSTABILITY",
+  "runtime_head": "38ee95e6acc2b9516b9041f201be29d9f678882c",
+  "formal_failure": "The frozen 1e-10 numeric replay conjunction stopped before any M3 score; the V2 core did not persist component errors.",
+  "m3_calibration_gradients": 0,
+  "m3_sealed_audit_gradients": 0,
+  "run_outputs_created": false,
+  "old_data_only_post_stop_diagnostic": {
+    "fallback_max_abs_error": 1.9298176717665733e-11,
+    "candidate_max_abs_error": 2.4607899051787285e-11,
+    "bitwise_sha_equal": false,
+    "basis_orthonormality_max_error": 5.697559279926878e-08,
+    "solver_optimization_valid": true,
+    "primal_violation": 1.128888649226667e-13,
+    "normalized_stationarity_residual": 3.332103598752877e-07,
+    "numeric_valid_at_1e-10_in_diagnostic_process": true
+  },
+  "diagnostic_scope": "already_open_M1_inputs_only",
+  "v3_coordinate_tolerance": 1e-6,
+  "frozen_m1_basis_reconstruction_tolerance": 0.0002,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
