@@ -1,0 +1,43 @@
+{
+  "name": "step3_barp_mcd_d1x_reproduction_manifest_v1",
+  "runtime_head": "9d7e4af5cf0fb140d11df4ee0e557f1424eb792f",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1x_r1/protocol/barp_mcd_d1x_r1_protocol.json",
+  "protocol_sha256": "8f5071ee0e12436e4a08a236c6e7981b7813df2cc5569c31414a7b204459c981",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_barp_mcd_d1x_seed6.json",
+  "config_sha256": "804aa19eb515b5a17b1d4a481094da86a8643f6842c327cb1c56f56b0693938d",
+  "commands": [
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_d1x.py preflight",
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_d1x.py run",
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_d1x.py verify-run"
+  ],
+  "route": "STOP_BARP_MCD_D1X_DISCOVERY_NO_STABLE_ROUTE",
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "peft": "0.16.0",
+    "bitsandbytes": "0.49.2"
+  },
+  "structural_audit_sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006",
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1x_r1/analysis/barp_mcd_d1x_discovery.json",
+      "sha256": "51be1a31ccf992b729f05124b946c27f90c4b9510d66045c7fe642ff87576eba",
+      "bytes": 770527
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1x_r1/analysis/barp_mcd_d1x_route_freeze.json",
+      "sha256": "43df69971b6b2422c2ede1b858800a7f17c24953febcc58f656c6f34c6daeb09",
+      "bytes": 305
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1x_r1/barp_mcd_d1x_decision.json",
+      "sha256": "5d14dae8e35e63cea5a899f0afa24f1e18fe9dc90edc375c52cc5b3d3efce734",
+      "bytes": 643
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1x_r1/BARP_MCD_D1X_REPORT.md",
+      "sha256": "0e1bcd9952c85014c626264acd00387ea76b9e991259f05bc2272054f220cf9e",
+      "bytes": 324
+    }
+  ]
+}

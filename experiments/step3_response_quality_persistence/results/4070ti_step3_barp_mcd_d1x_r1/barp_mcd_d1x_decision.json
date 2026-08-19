@@ -1,0 +1,20 @@
+{
+  "name": "step3_barp_mcd_d1x_decision_v1",
+  "route": "STOP_BARP_MCD_D1X_DISCOVERY_NO_STABLE_ROUTE",
+  "selected_route_id": null,
+  "discovery_eligible_routes": 0,
+  "qualification": null,
+  "checks": null,
+  "optimizer_objects": 1,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "checkpoint_writes": 0,
+  "candidate_outputs_generated": false,
+  "sealed_diagnostic_opened": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "matched_training_protocol_authorized": false,
+  "peak_reserved_bytes": 10542383104,
+  "vram_headroom_fraction": 0.1813703537841469,
+  "wall_seconds": 2213.7370960712433
+}

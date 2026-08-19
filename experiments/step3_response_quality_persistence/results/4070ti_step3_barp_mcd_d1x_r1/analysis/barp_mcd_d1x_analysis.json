@@ -1,0 +1,151 @@
+{
+  "name": "step3_barp_mcd_d1x_r1_postrun_analysis_v1",
+  "decision": "STOP_BARP_MCD_D1X_DISCOVERY_NO_STABLE_ROUTE",
+  "protocol_sha256": "8f5071ee0e12436e4a08a236c6e7981b7813df2cc5569c31414a7b204459c981",
+  "verified": true,
+  "route_family_size": 56,
+  "eligible_routes": 0,
+  "check_pass_counts": {
+    "activity": 2,
+    "local_protection": 2,
+    "target_lower": 0,
+    "target_sign": 1,
+    "protected_mean": 56,
+    "protected_worst": 56,
+    "zero_optimizer_state": 56
+  },
+  "proposal_activity_distribution": {
+    "0": 28,
+    "1": 2,
+    "2": 7,
+    "3": 17,
+    "4": 2
+  },
+  "anchors": [
+    {
+      "proposal_block_id": "discovery_01",
+      "candidate_id": "mask104_lambda0.500",
+      "minimum_exact_score": 0.15587760828389005
+    },
+    {
+      "proposal_block_id": "discovery_02",
+      "candidate_id": "mask068_lambda1.000",
+      "minimum_exact_score": 0.08840900015775598
+    },
+    {
+      "proposal_block_id": "discovery_03",
+      "candidate_id": "mask040_lambda0.500",
+      "minimum_exact_score": 0.12736905175761398
+    },
+    {
+      "proposal_block_id": "discovery_04",
+      "candidate_id": "mask104_lambda0.500",
+      "minimum_exact_score": 0.1446969211950262
+    }
+  ],
+  "fully_active_routes": [
+    {
+      "route_id": "mask008_lambda0.375",
+      "source_subset": [
+        "etarc"
+      ],
+      "minimum_local_protected_retention": 0.9822467837508281,
+      "target_cluster_values": [
+        -0.02671060720768358,
+        -0.013177614301237735,
+        -0.018818604476343145,
+        -0.02197605238610632
+      ],
+      "target_mean": -0.020170719592842695,
+      "studentized_lower_score": -0.0268533703037018,
+      "positive_clusters": 0
+    },
+    {
+      "route_id": "mask008_lambda0.500",
+      "source_subset": [
+        "etarc"
+      ],
+      "minimum_local_protected_retention": 0.9623957298027086,
+      "target_cluster_values": [
+        -0.0312170942721017,
+        -0.015210199794694792,
+        -0.020377262083946766,
+        -0.024065746592529413
+      ],
+      "target_mean": -0.022717575685818166,
+      "studentized_lower_score": -0.03063718101541846,
+      "positive_clusters": 0
+    }
+  ],
+  "exploratory_unique_target_sign_route": {
+    "route_id": "mask072_lambda0.500",
+    "source_subset": [
+      "etarc",
+      "branch_negative_gap"
+    ],
+    "post_selection_status": "hypothesis_only_not_a_D1X_pass",
+    "proposal_activity": 3,
+    "inactive_proposal": "discovery_02",
+    "inactive_candidate_local_protected_retention": 0.6649152307771907,
+    "anchor_fallback_used_on_inactive_proposal": true,
+    "target_cluster_values": [
+      0.00404113420998717,
+      0.0,
+      0.004200885190135009,
+      0.00043841480070137676
+    ],
+    "target_mean": 0.002170108550205889,
+    "studentized_lower_score": -0.0004900706047669965,
+    "positive_clusters": 3,
+    "target_component_means": {
+      "etarc": 0.00185914459406073,
+      "branch_entropy": 0.00201463081605582,
+      "branch_negative_gap": 0.00263655024050112
+    },
+    "target_component_directed_signs": {
+      "etarc": {
+        "positive": 8,
+        "negative": 1,
+        "fallback_ties": 3
+      },
+      "branch_entropy": {
+        "positive": 7,
+        "negative": 2,
+        "fallback_ties": 3
+      },
+      "branch_negative_gap": {
+        "positive": 8,
+        "negative": 1,
+        "fallback_ties": 3
+      }
+    },
+    "protected_transfer_passed": true,
+    "original_activity_gate_passed": false,
+    "original_target_lower_gate_passed": false
+  },
+  "interpretation": {
+    "optimizer_space_anchor": "passed_on_all_four_discovery_proposals",
+    "fixed_route_family": "failed_to_produce_a_stable_eligible_route",
+    "dominant_failure": "route_activity_and_target_transfer_not_protection",
+    "population_inference_claimed": false,
+    "method_success_claimed": false
+  },
+  "next_route": {
+    "name": "prospective_single_route_conditional_fallback_qualification",
+    "status": "allowed_only_as_new_hypothesis_on_still_sealed_qualification_blocks",
+    "descriptor": "mask072_lambda0.500",
+    "must_bind_post_selection_origin": true,
+    "must_not_change_D1X_decision": true,
+    "optimizer_steps_authorized": 0
+  },
+  "boundary": {
+    "qualification_gradients_opened": false,
+    "sealed_diagnostic_opened": false,
+    "optimizer_steps": 0,
+    "training_authorized": false,
+    "checkpoint_writes": 0,
+    "candidate_outputs_generated": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  }
+}

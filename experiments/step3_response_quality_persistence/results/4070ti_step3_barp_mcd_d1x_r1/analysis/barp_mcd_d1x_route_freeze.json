@@ -1,0 +1,8 @@
+{
+  "name": "step3_barp_mcd_d1x_route_freeze_v1",
+  "status": "frozen_before_qualification_gradients",
+  "discovery_sha256": "51be1a31ccf992b729f05124b946c27f90c4b9510d66045c7fe642ff87576eba",
+  "selected_route": null,
+  "qualification_gradients_opened_at_freeze": false,
+  "optimizer_steps": 0
+}
