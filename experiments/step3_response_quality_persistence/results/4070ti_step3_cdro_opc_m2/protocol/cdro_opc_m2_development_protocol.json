@@ -1,0 +1,64 @@
+{
+  "name": "step3_cdro_opc_m2_conformal_dose_development_v1",
+  "status": "retrospective_development_after_M1_opened",
+  "entry_commit": "0f336e762d9ef61e09826bc5ada10bb2dbec637a",
+  "objective": "Replay the frozen M1 direction through an exact finite-sample conformal safe-dose controller without making a fresh confirmation claim.",
+  "frozen_inputs": {
+    "dose_math": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_dose_common.py",
+      "sha256": "5800dac2665551d4841d2f7488569d78a4fab2038d602a954ab05c559fd476e7"
+    },
+    "dose_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cdro_opc_dose_common.py",
+      "sha256": "0d8c461223ccdc6cbdd6c1ce16b36d77c183bcb93a9e70a18470f09c6d004191"
+    },
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m2_development.py",
+      "sha256": "f044c25f8e47a98b5695936f0b0978dd0b2a90bb9ff79c7fe2a5b57677b2e25c"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cdro_opc_m2_development.py",
+      "sha256": "168c3caf061f15aad7aa3c6f9fe30ce8113c12dcea8af03942dd2050bb723f97"
+    },
+    "foundation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m2/protocol/CONFORMAL_DOSE_CONTROLLER_FOUNDATION.md",
+      "sha256": "1ede8d36e562661f104278b2503cddf9076b1cbbaeb718fd3ccf7ca759757e37"
+    },
+    "protocol_note": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m2/protocol/CDRO_OPC_M2_DEVELOPMENT_PROTOCOL.md",
+      "sha256": "509401bf03865b622ca3b720dd1ea8c2eebd7689a13f35922882f7bdd4c5c242"
+    },
+    "m1_diagnostics": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m1/run/cdro_opc_m1_diagnostics.json",
+      "sha256": "18c27041c27bd8ecfa8d827a1f5ca8c511a1bc886d6974dd065f6cea975fe65e"
+    },
+    "m1_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m1/run/cdro_opc_m1_decision.json",
+      "sha256": "85f3aceb671542af92bdfb29216ce947d895a626dfe36205127a23c7c348c122"
+    },
+    "m1_analysis": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m1/analysis/cdro_opc_m1_failure_analysis.json",
+      "sha256": "cd0969dead146ca088054d72fde8d0e908ebf47980b40ea0c36832d2dc09af67"
+    }
+  },
+  "design": {
+    "protected_certificates": ["risk", "uniform", "tarc", "continuation"],
+    "allowed_relative_drop": 0.04,
+    "score_scale_floor": 0.02,
+    "alpha": 0.05,
+    "maximum_dose": 1.0,
+    "direction_source": "frozen_M1_CDR_OPC_endpoint",
+    "fallback_source": "frozen_M1_robust_anchor"
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m2",
+  "outputs": {
+    "development": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m2/development/cdro_opc_m2_development.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m2/development/CDRO_OPC_M2_DEVELOPMENT_REPORT.md"
+  },
+  "fresh_confirmation_claimed": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "candidate_generation_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
