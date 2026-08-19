@@ -1,7 +1,8 @@
 {
   "name": "step3_cdro_opc_m3_zero_step_confirmation_v3_stable_replay",
-  "status": "pending_protocol_lock",
-  "entry_commit": "PENDING_PROTOCOL_COMMIT",
+  "status": "prospective_locked_before_M3_model_forward",
+  "protocol_commit": "35372294e32b97ac8796e4daf14ae9c5bca23ae4",
+  "entry_commit": "35372294e32b97ac8796e4daf14ae9c5bca23ae4",
   "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_foacpo_p0.json",
   "objective": "Confirm CDR-OPC M3 with a process-stable direction identity gate and unchanged outcome gates.",
   "frozen_inputs": {
