@@ -1,0 +1,18 @@
+{
+  "gates": {
+    "calibration": false,
+    "candidate_selected": false,
+    "mechanism": false,
+    "state_restored": true,
+    "structural": true,
+    "zero_optimizer": true
+  },
+  "name": "step3_foacpo_p0r_decision_v1",
+  "next_authorized_action": "stop FOACPO without training",
+  "optimizer_objects": 1,
+  "optimizer_steps": 0,
+  "route": "STOP_FOACPO_P0R_NO_ANCHOR_RELATIVE_PARETO_ROUTE",
+  "selected_alpha": null,
+  "selected_lambda": null,
+  "training_authorized": false
+}

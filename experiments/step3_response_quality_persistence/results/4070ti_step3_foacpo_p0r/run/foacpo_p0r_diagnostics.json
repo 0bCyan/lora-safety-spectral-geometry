@@ -1,0 +1,265 @@
+{
+  "anchor": {
+    "candidate_id": "mask040_lambda1.000",
+    "exact_scores": {
+      "branch_entropy": 0.08286569451000304,
+      "branch_negative_gap": 0.08563717172826157,
+      "continuation": 0.17937088774124713,
+      "etarc": 0.10059360793689534,
+      "risk": 0.34588393645438253,
+      "tarc": 0.16580820083492784,
+      "uniform": 0.21493751587319979
+    },
+    "reference_norm": 4047.319173834772
+  },
+  "anchor_relative_registry": [
+    {
+      "alpha": 0.25,
+      "anchor_quality_cosine": 0.009302279489424595,
+      "anchor_safety_cosine": 0.020104849659838418,
+      "calibration_protection": {
+        "anchor_scores": {
+          "branch_entropy": 0.009337522123672837,
+          "branch_negative_gap": 0.015799035106535166,
+          "continuation": 0.021841632691528518,
+          "etarc": 0.07536755324249683,
+          "risk": -0.003572933619242979,
+          "tarc": 0.10070760729048239,
+          "uniform": 0.05577849472007322
+        },
+        "candidate_scores": {
+          "branch_entropy": 0.006804591857969247,
+          "branch_negative_gap": 0.013687784845271172,
+          "continuation": 0.020946569780036776,
+          "etarc": 0.07473300574890099,
+          "risk": -0.0037572198064887595,
+          "tarc": 0.09815623084730936,
+          "uniform": 0.054006530715769094
+        },
+        "checks": {
+          "continuation": true,
+          "risk": false,
+          "tarc": true,
+          "uniform": true
+        },
+        "passed": false,
+        "retentions": {
+          "continuation": 0.9590203294720316,
+          "risk": null,
+          "tarc": 0.9746655043068017,
+          "uniform": 0.9682321293681946
+        }
+      },
+      "candidate_quality_cosine": 0.01767552241362395,
+      "candidate_safety_cosine": 0.02899998228190757,
+      "eligible": false,
+      "lambda": 0.048889476913034434,
+      "minimum_delta_over_anchor": 0.008373242924199355,
+      "normalized_increment": 0.06808439715603826,
+      "optimizer_completed_steps": 0,
+      "quality_delta_over_anchor": 0.008373242924199355,
+      "safety_delta_over_anchor": 0.008895132622069153,
+      "train_minimum_protected_retention": 0.95
+    },
+    {
+      "alpha": 0.5,
+      "anchor_quality_cosine": 0.009302279489424595,
+      "anchor_safety_cosine": 0.020104849659838418,
+      "calibration_protection": {
+        "anchor_scores": {
+          "branch_entropy": 0.009337522123672837,
+          "branch_negative_gap": 0.015799035106535166,
+          "continuation": 0.021841632691528518,
+          "etarc": 0.07536755324249683,
+          "risk": -0.003572933619242979,
+          "tarc": 0.10070760729048239,
+          "uniform": 0.05577849472007322
+        },
+        "candidate_scores": {
+          "branch_entropy": 0.006929176295186524,
+          "branch_negative_gap": 0.013726794345971429,
+          "continuation": 0.020948960450930143,
+          "etarc": 0.07462866261084197,
+          "risk": -0.003670168609202154,
+          "tarc": 0.09817103909393503,
+          "uniform": 0.054008333339696235
+        },
+        "checks": {
+          "continuation": true,
+          "risk": false,
+          "tarc": true,
+          "uniform": true
+        },
+        "passed": false,
+        "retentions": {
+          "continuation": 0.959129784242521,
+          "risk": null,
+          "tarc": 0.9748125462932422,
+          "uniform": 0.9682644469116527
+        }
+      },
+      "candidate_quality_cosine": 0.018682524319189805,
+      "candidate_safety_cosine": 0.02898270189113797,
+      "eligible": false,
+      "lambda": 0.048971650167476545,
+      "minimum_delta_over_anchor": 0.008877852231299551,
+      "normalized_increment": 0.06818945942350878,
+      "optimizer_completed_steps": 0,
+      "quality_delta_over_anchor": 0.00938024482976521,
+      "safety_delta_over_anchor": 0.008877852231299551,
+      "train_minimum_protected_retention": 0.95
+    },
+    {
+      "alpha": 0.75,
+      "anchor_quality_cosine": 0.009302279489424595,
+      "anchor_safety_cosine": 0.020104849659838418,
+      "calibration_protection": {
+        "anchor_scores": {
+          "branch_entropy": 0.009337522123672837,
+          "branch_negative_gap": 0.015799035106535166,
+          "continuation": 0.021841632691528518,
+          "etarc": 0.07536755324249683,
+          "risk": -0.003572933619242979,
+          "tarc": 0.10070760729048239,
+          "uniform": 0.05577849472007322
+        },
+        "candidate_scores": {
+          "branch_entropy": 0.007190152979465931,
+          "branch_negative_gap": 0.013839935189249048,
+          "continuation": 0.020923173821736283,
+          "etarc": 0.07431177303007262,
+          "risk": -0.0035736941709133326,
+          "tarc": 0.09801930923787518,
+          "uniform": 0.05392930012852798
+        },
+        "checks": {
+          "continuation": true,
+          "risk": false,
+          "tarc": true,
+          "uniform": true
+        },
+        "passed": false,
+        "retentions": {
+          "continuation": 0.9579491660370029,
+          "risk": null,
+          "tarc": 0.9733059088093211,
+          "uniform": 0.9668475350432904
+        }
+      },
+      "candidate_quality_cosine": 0.019177356266351458,
+      "candidate_safety_cosine": 0.02847645546472242,
+      "eligible": false,
+      "lambda": 0.049149736907748424,
+      "minimum_delta_over_anchor": 0.008371605804884004,
+      "normalized_increment": 0.06849234118962715,
+      "optimizer_completed_steps": 0,
+      "quality_delta_over_anchor": 0.009875076776926863,
+      "safety_delta_over_anchor": 0.008371605804884004,
+      "train_minimum_protected_retention": 0.9500000000000001
+    }
+  ],
+  "calibration": null,
+  "core100_opened": false,
+  "gates": {
+    "calibration": false,
+    "candidate_selected": false,
+    "mechanism": false,
+    "state_restored": true,
+    "structural": true,
+    "zero_optimizer": true
+  },
+  "gradient_coverage": {
+    "calibration": {
+      "quality": {
+        "chosen_response_tokens": 486,
+        "finite_nonzero": true,
+        "gradient_norm": 0.17406651821679964,
+        "missing_gradient_tensors": [],
+        "pairs": 5,
+        "rejected_response_tokens": 203
+      },
+      "safety": {
+        "chosen_response_tokens": 895,
+        "finite_nonzero": true,
+        "gradient_norm": 0.11055491502252976,
+        "missing_gradient_tensors": [],
+        "pairs": 9,
+        "rejected_response_tokens": 627
+      }
+    },
+    "train_candidate": {
+      "quality": {
+        "chosen_response_tokens": 1619,
+        "finite_nonzero": true,
+        "gradient_norm": 0.09462737499926768,
+        "missing_gradient_tensors": [],
+        "pairs": 17,
+        "rejected_response_tokens": 824
+      },
+      "safety": {
+        "chosen_response_tokens": 1353,
+        "finite_nonzero": true,
+        "gradient_norm": 0.08749805381467077,
+        "missing_gradient_tensors": [],
+        "pairs": 14,
+        "rejected_response_tokens": 1447
+      }
+    }
+  },
+  "heldout_opened": false,
+  "mechanism": null,
+  "mechanism_dev_opened": false,
+  "name": "step3_foacpo_p0r_anchor_relative_diagnostics_v1",
+  "optimizer_steps": 0,
+  "peak_reserved_bytes": 9638510592,
+  "protected_blocks": {
+    "calibration": {
+      "risk_row_indices": [
+        106,
+        100,
+        125,
+        239
+      ],
+      "safety_sample_ids": [
+        "eval_safety_000268",
+        "eval_safety_000294",
+        "eval_safety_000205",
+        "eval_safety_000142"
+      ]
+    },
+    "mechanism_dev": {
+      "risk_row_indices": [
+        4,
+        199,
+        35,
+        142
+      ],
+      "safety_sample_ids": [
+        "eval_safety_000226",
+        "eval_safety_000222",
+        "eval_safety_000232",
+        "eval_safety_000243"
+      ]
+    },
+    "train": {
+      "risk_row_indices": [
+        237,
+        147,
+        59,
+        131
+      ],
+      "safety_sample_ids": [
+        "eval_safety_000179",
+        "eval_safety_000180",
+        "eval_safety_000107",
+        "eval_safety_000125"
+      ]
+    }
+  },
+  "route": "STOP_FOACPO_P0R_NO_ANCHOR_RELATIVE_PARETO_ROUTE",
+  "runtime_head": "a0f913908c26d60a9f3fdc878e864ad372a60acb",
+  "selected": null,
+  "training_authorized": false,
+  "vram_headroom_fraction": 0.25155722020925786,
+  "wall_seconds": 281.12666845321655
+}

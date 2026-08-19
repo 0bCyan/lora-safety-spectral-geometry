@@ -1,0 +1,32 @@
+{
+  "name": "step3_foacpo_p0r_stop_analysis_v1",
+  "route": "STOP_FOACPO_P0R_NO_ANCHOR_RELATIVE_PARETO_ROUTE",
+  "valid_run": true,
+  "anchor_relative_behavior": {
+    "all_three_quality_deltas_positive": true,
+    "all_three_safety_deltas_positive": true,
+    "normalized_increment_range": [0.0680843971560383, 0.0684923411896271],
+    "quality_delta_range": [0.00837324292419936, 0.00987507677692686],
+    "safety_delta_range": [0.008371605804884, 0.00889513262206915]
+  },
+  "calibration_protection": {
+    "uniform_tarc_continuation_pass_all_candidates": true,
+    "risk_pass_any_candidate": false,
+    "risk_anchor_score": -0.003572933619242979,
+    "risk_candidate_delta_range": [-0.0001842861872457806, -7.605516703537534e-07],
+    "best_risk_transfer_alpha": 0.75,
+    "interpretation": "The train-only optimizer anchor is not a positive risk descent direction on the calibration block, and every behavior blend worsens that nonpositive score."
+  },
+  "mechanistic_conclusion": "Factorized behavior gradients provide nontrivial calibration quality and safety improvement over the anchor, but train-block anchoring lacks robust cross-block risk feasibility.",
+  "prospective_successor": {
+    "method_change": "construct one robust optimizer-space anchor against protected certificates from both train and calibration blocks, then freeze route selection before mechanism-dev",
+    "protection_floor": 0.95,
+    "mechanism_dev_status": "sealed",
+    "training_authorized": false
+  },
+  "state_restored": true,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
