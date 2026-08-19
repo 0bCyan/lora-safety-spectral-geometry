@@ -1,0 +1,24 @@
+{
+  "base_protocol_sha256": "6a8527027795354e6d81a70c8211ac42d2fc3ab9161646f30f0e1d8ca08be039",
+  "core100_opened": false,
+  "frozen_output_sha256": "93f7eed6e9ca4b5d738d80cce91d584b033247995e634a29f89a96f3874b3b2e",
+  "heldout_opened": false,
+  "input_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/authoring/oacpo_d0_author_output.jsonl",
+  "input_sha256": "1730a8036b859f94fdfee07d56b1634acce3dfdd92a9dbc4c1d063412efa63c0",
+  "mechanical_diagnostics": {
+    "distinct_normalized_response_count": 56,
+    "maximum_word_count": 83,
+    "mean_word_count": 75.51785714285714,
+    "minimum_word_count": 64,
+    "row_count": 56
+  },
+  "name": "step3_oacpo_d0_author_import_manifest_v1",
+  "optimizer_steps": 0,
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/protocol/oacpo_d0_author_import_protocol.json",
+  "protocol_sha256": "7a128637b417c3752930dc1403889bf181060685c639e37c73ac607a4f1d65bc",
+  "review_labels_created": 0,
+  "route": "PASS_OACPO_D0_AUTHOR_IMPORT_AUTHORIZE_D1_PROTOCOL_ONLY",
+  "safety_quality_claimed": false,
+  "semantic_quality_claimed": false,
+  "training_authorized": false
+}
