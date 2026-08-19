@@ -1,0 +1,65 @@
+{
+  "name": "step3_foacpo_p0s_analysis_v1",
+  "route": "STOP_FOACPO_P0S_MECHANISM_TRANSFER",
+  "valid_run": true,
+  "method_candidate": "FOACPO-S: factorized optimizer-anchored contrastive preference optimization with a segment-robust anchor",
+  "robust_anchor": {
+    "train_anchor_weight": 0.5225222109346127,
+    "calibration_anchor_weight": 0.47747778906538735,
+    "minimum_eight_certificate_raw_score": 418.4358440680501,
+    "strict_common_descent": true
+  },
+  "selected_route": {
+    "alpha": 0.5,
+    "lambda": 0.048278236396295866,
+    "normalized_increment": 0.0804784825988718,
+    "minimum_train_calibration_protected_retention": 0.95,
+    "calibration_quality_delta_over_anchor": 0.0125287804681471,
+    "calibration_safety_delta_over_anchor": 0.0120026706061386,
+    "calibration_quality_positive": "3/5",
+    "calibration_safety_positive": "9/9"
+  },
+  "mechanism_dev": {
+    "opened_after_calibration_pass": true,
+    "aggregate_quality_cosine": 0.0277476293801378,
+    "aggregate_safety_cosine": 0.0223973504834775,
+    "quality_positive": "6/6",
+    "safety_positive": "8/9",
+    "all_behavior_gates_passed": true,
+    "protected_retentions": {
+      "risk": null,
+      "uniform": 0.9647370379709543,
+      "tarc": 0.949813644501739,
+      "continuation": 0.9721167142782839
+    },
+    "risk_anchor_score": -0.011555697944763833,
+    "risk_candidate_score": -0.010753122047028984,
+    "risk_improved": true,
+    "sole_failed_gate": "tarc retention below 0.95",
+    "tarc_shortfall": 0.00018635549826094722
+  },
+  "claim_boundary": {
+    "supported": "The factorized preference direction and the segment-robust construction are nondegenerate and show strong zero-step behavioral-gradient transfer on one exploratory mechanism block.",
+    "not_supported": "The frozen 95% protected-transfer conjunction, finite-radius improvement, generated-response benefit, or training efficacy.",
+    "mechanism_dev_may_be_reused_for_tuning": false,
+    "training_authorized": false
+  },
+  "next_credible_experiment": {
+    "require_fresh_blind_qualified_pairs": true,
+    "require_fresh_protected_validation_block": true,
+    "prospective_fit_retention_buffer_candidate": 0.96,
+    "evaluation_retention_floor": 0.95,
+    "opened_mechanism_dev_excluded_from_confirmation": true,
+    "sequence": [
+      "freeze a transport-buffer theorem and fresh data protocol",
+      "repeat zero-step confirmation on fresh data",
+      "only after a full pass run finite-radius virtual-step verification",
+      "only after finite-radius pass consider matched training"
+    ]
+  },
+  "state_restored": true,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

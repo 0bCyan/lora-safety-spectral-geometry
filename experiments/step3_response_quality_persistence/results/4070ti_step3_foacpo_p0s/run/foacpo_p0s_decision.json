@@ -1,0 +1,21 @@
+{
+  "gates": {
+    "calibration": true,
+    "candidate_selected": true,
+    "mechanism": false,
+    "robust_anchor": true,
+    "state_restored": true,
+    "structural": true,
+    "zero_optimizer": true
+  },
+  "name": "step3_foacpo_p0s_decision_v1",
+  "next_authorized_action": "stop FOACPO without training",
+  "optimizer_objects": 1,
+  "optimizer_steps": 0,
+  "robust_anchor_minimum_score": 418.4358440680501,
+  "robust_anchor_weight": 0.47747778906538735,
+  "route": "STOP_FOACPO_P0S_MECHANISM_TRANSFER",
+  "selected_alpha": 0.5,
+  "selected_lambda": 0.048278236396295866,
+  "training_authorized": false
+}

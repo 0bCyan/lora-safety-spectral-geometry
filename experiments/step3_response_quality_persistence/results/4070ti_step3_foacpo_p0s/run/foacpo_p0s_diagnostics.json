@@ -1,0 +1,371 @@
+{
+  "calibration": {
+    "passed": true,
+    "quality": {
+      "count": 5,
+      "mean": 0.009289796575082233,
+      "nonpositive": 2,
+      "positive": 3,
+      "values": [
+        -0.0065715146146262515,
+        0.01801034158625073,
+        0.0149682700441945,
+        -0.005542797548448572,
+        0.025584683408040758
+      ]
+    },
+    "safety": {
+      "count": 9,
+      "mean": 0.013021278163953494,
+      "nonpositive": 0,
+      "positive": 9,
+      "values": [
+        0.001561684196832633,
+        0.018287036022803054,
+        0.0032992565483379267,
+        0.02038824921017763,
+        0.021404846572882892,
+        0.0016591709685883653,
+        0.01814637674369898,
+        0.018677594248536124,
+        0.013767288963723846
+      ]
+    }
+  },
+  "core100_opened": false,
+  "gates": {
+    "calibration": true,
+    "candidate_selected": true,
+    "mechanism": false,
+    "robust_anchor": true,
+    "state_restored": true,
+    "structural": true,
+    "zero_optimizer": true
+  },
+  "gradient_coverage": {
+    "calibration": {
+      "quality": {
+        "chosen_response_tokens": 486,
+        "finite_nonzero": true,
+        "gradient_norm": 0.174025442800328,
+        "missing_gradient_tensors": [],
+        "pairs": 5,
+        "rejected_response_tokens": 203
+      },
+      "safety": {
+        "chosen_response_tokens": 895,
+        "finite_nonzero": true,
+        "gradient_norm": 0.11019215238920639,
+        "missing_gradient_tensors": [],
+        "pairs": 9,
+        "rejected_response_tokens": 627
+      }
+    },
+    "mechanism_dev": {
+      "quality": {
+        "chosen_response_tokens": 582,
+        "finite_nonzero": true,
+        "gradient_norm": 0.13440640558587288,
+        "missing_gradient_tensors": [],
+        "pairs": 6,
+        "rejected_response_tokens": 317
+      },
+      "safety": {
+        "chosen_response_tokens": 847,
+        "finite_nonzero": true,
+        "gradient_norm": 0.08480978888332001,
+        "missing_gradient_tensors": [],
+        "pairs": 9,
+        "rejected_response_tokens": 888
+      }
+    },
+    "train_candidate": {
+      "quality": {
+        "chosen_response_tokens": 1619,
+        "finite_nonzero": true,
+        "gradient_norm": 0.09438400896778927,
+        "missing_gradient_tensors": [],
+        "pairs": 17,
+        "rejected_response_tokens": 824
+      },
+      "safety": {
+        "chosen_response_tokens": 1353,
+        "finite_nonzero": true,
+        "gradient_norm": 0.08746121047972082,
+        "missing_gradient_tensors": [],
+        "pairs": 14,
+        "rejected_response_tokens": 1447
+      }
+    }
+  },
+  "heldout_opened": false,
+  "local_anchors": {
+    "calibration": {
+      "candidate_id": "mask040_lambda1.000",
+      "exact_scores": {
+        "branch_entropy": 0.1369797969827641,
+        "branch_negative_gap": 0.14226502391663298,
+        "continuation": 0.19294681206935801,
+        "etarc": 0.13067637607926166,
+        "risk": 0.31113251987140156,
+        "tarc": 0.15674486960358044,
+        "uniform": 0.22970460348839467
+      }
+    },
+    "train": {
+      "candidate_id": "mask040_lambda1.000",
+      "exact_scores": {
+        "branch_entropy": 0.08281432425666874,
+        "branch_negative_gap": 0.08598700855625473,
+        "continuation": 0.17934842050278157,
+        "etarc": 0.10034183992400023,
+        "risk": 0.34582758231882493,
+        "tarc": 0.16588263594238947,
+        "uniform": 0.21504430820642428
+      }
+    }
+  },
+  "mechanism": {
+    "aggregate_quality_cosine": 0.02774762938013775,
+    "aggregate_safety_cosine": 0.022397350483477522,
+    "passed": false,
+    "protected_coverage": {
+      "all_gradients_finite_nonzero": true,
+      "continuation_tokens": 189,
+      "etarc_margin_terms": 32,
+      "gradient_norms": {
+        "branch_entropy": 1.71298269781084,
+        "branch_negative_gap": 31.496207644847384,
+        "continuation": 1.937781634219965,
+        "etarc": 8.37233500596337,
+        "risk": 1.119634913027642,
+        "tarc": 3.1177037802665213,
+        "uniform": 1.656994441660087
+      },
+      "loss_means": {
+        "branch_entropy": 0.6771163046360016,
+        "branch_negative_gap": -0.32421875,
+        "continuation": 1.5557292699813843,
+        "etarc": 1.1490516662597656,
+        "risk": 1.487790897488594,
+        "tarc": 0.24847494810819626,
+        "uniform": 1.3151052296161652
+      },
+      "mode": "eval",
+      "response_tokens": 237,
+      "risk_microbatches": 4,
+      "safety_microbatches": 4,
+      "tarc_margin_terms": 32
+    },
+    "protection": {
+      "anchor_scores": {
+        "branch_entropy": 0.040257592809091636,
+        "branch_negative_gap": 0.04171948127118343,
+        "continuation": 0.02891062067494184,
+        "etarc": 0.04869049089062073,
+        "risk": -0.011555697944763833,
+        "tarc": 0.0982762722902006,
+        "uniform": 0.05749419320213995
+      },
+      "candidate_scores": {
+        "branch_entropy": 0.03706976635606121,
+        "branch_negative_gap": 0.03817705935335237,
+        "continuation": 0.028104497578270285,
+        "etarc": 0.047864949092513404,
+        "risk": -0.010753122047028984,
+        "tarc": 0.0933441443520007,
+        "uniform": 0.05546677765036227
+      },
+      "checks": {
+        "continuation": true,
+        "risk": true,
+        "tarc": false,
+        "uniform": true
+      },
+      "passed": false,
+      "retentions": {
+        "continuation": 0.9721167142782839,
+        "risk": null,
+        "tarc": 0.949813644501739,
+        "uniform": 0.9647370379709543
+      }
+    },
+    "quality": {
+      "count": 6,
+      "mean": 0.016973219361920065,
+      "nonpositive": 0,
+      "positive": 6,
+      "values": [
+        0.01786377548939496,
+        0.017459581097627404,
+        0.015326375636220448,
+        0.00863717422931314,
+        0.018074678090940686,
+        0.02447773162802375
+      ]
+    },
+    "safety": {
+      "count": 9,
+      "mean": 0.010682117863874829,
+      "nonpositive": 1,
+      "positive": 8,
+      "values": [
+        0.006171475225010853,
+        0.008636979430048446,
+        0.010698395541073807,
+        0.014777439980151325,
+        0.010259066324652136,
+        0.011410133096269686,
+        0.018606346162414404,
+        -0.0014223492168379773,
+        0.017001574232090783
+      ]
+    }
+  },
+  "mechanism_dev_opened": true,
+  "name": "step3_foacpo_p0s_segment_robust_diagnostics_v1",
+  "optimizer_steps": 0,
+  "peak_reserved_bytes": 10731126784,
+  "protected_blocks": {
+    "calibration": {
+      "risk_row_indices": [
+        106,
+        100,
+        125,
+        239
+      ],
+      "safety_sample_ids": [
+        "eval_safety_000268",
+        "eval_safety_000294",
+        "eval_safety_000205",
+        "eval_safety_000142"
+      ]
+    },
+    "mechanism_dev": {
+      "risk_row_indices": [
+        4,
+        199,
+        35,
+        142
+      ],
+      "safety_sample_ids": [
+        "eval_safety_000226",
+        "eval_safety_000222",
+        "eval_safety_000232",
+        "eval_safety_000243"
+      ]
+    },
+    "train": {
+      "risk_row_indices": [
+        237,
+        147,
+        59,
+        131
+      ],
+      "safety_sample_ids": [
+        "eval_safety_000179",
+        "eval_safety_000180",
+        "eval_safety_000107",
+        "eval_safety_000125"
+      ]
+    }
+  },
+  "robust_anchor_solution": {
+    "active_certificates": [
+      "calibration:continuation",
+      "train:continuation"
+    ],
+    "candidate_weights": 28,
+    "minimum_score": 418.4358440680501,
+    "scores": {
+      "calibration:continuation": 418.4358440680501,
+      "calibration:risk": 592.8045707032078,
+      "calibration:tarc": 515.6400210094772,
+      "calibration:uniform": 561.3615888666346,
+      "train:continuation": 418.4358440680501,
+      "train:risk": 728.5582918371473,
+      "train:tarc": 507.314793868823,
+      "train:uniform": 547.0303619972125
+    },
+    "weight": 0.47747778906538735
+  },
+  "route": "STOP_FOACPO_P0S_MECHANISM_TRANSFER",
+  "route_registry": [
+    {
+      "alpha": 0.25,
+      "anchor_quality_cosine": 0.0007438189217945464,
+      "anchor_safety_cosine": 0.019256098451896714,
+      "candidate_quality_cosine": 0.011771408418040176,
+      "candidate_safety_cosine": 0.031202828001900357,
+      "eligible": true,
+      "lambda": 0.04777433230663281,
+      "limiting_certificates": [
+        "calibration:risk"
+      ],
+      "minimum_delta_over_anchor": 0.011027589496245629,
+      "minimum_train_calibration_protected_retention": 0.95,
+      "normalized_increment": 0.0796416712262277,
+      "optimizer_completed_steps": 0,
+      "quality_delta_over_anchor": 0.011027589496245629,
+      "safety_delta_over_anchor": 0.011946729550003643
+    },
+    {
+      "alpha": 0.5,
+      "anchor_quality_cosine": 0.0007438189217945464,
+      "anchor_safety_cosine": 0.019256098451896714,
+      "candidate_quality_cosine": 0.01327259938994161,
+      "candidate_safety_cosine": 0.03125876905803531,
+      "eligible": true,
+      "lambda": 0.048278236396295866,
+      "limiting_certificates": [
+        "calibration:risk"
+      ],
+      "minimum_delta_over_anchor": 0.012002670606138598,
+      "minimum_train_calibration_protected_retention": 0.95,
+      "normalized_increment": 0.08047848259887179,
+      "optimizer_completed_steps": 0,
+      "quality_delta_over_anchor": 0.012528780468147063,
+      "safety_delta_over_anchor": 0.012002670606138598
+    },
+    {
+      "alpha": 0.75,
+      "anchor_quality_cosine": 0.0007438189217945464,
+      "anchor_safety_cosine": 0.019256098451896714,
+      "candidate_quality_cosine": 0.014021113977855281,
+      "candidate_safety_cosine": 0.030585715147573043,
+      "eligible": true,
+      "lambda": 0.048624054903321674,
+      "limiting_certificates": [
+        "train:risk"
+      ],
+      "minimum_delta_over_anchor": 0.01132961669567633,
+      "minimum_train_calibration_protected_retention": 0.95,
+      "normalized_increment": 0.08106023697646067,
+      "optimizer_completed_steps": 0,
+      "quality_delta_over_anchor": 0.013277295056060734,
+      "safety_delta_over_anchor": 0.01132961669567633
+    }
+  ],
+  "runtime_head": "99cd345e27c19e483ca68f78916996239e66419a",
+  "selected": {
+    "alpha": 0.5,
+    "anchor_quality_cosine": 0.0007438189217945464,
+    "anchor_safety_cosine": 0.019256098451896714,
+    "candidate_quality_cosine": 0.01327259938994161,
+    "candidate_safety_cosine": 0.03125876905803531,
+    "eligible": true,
+    "lambda": 0.048278236396295866,
+    "limiting_certificates": [
+      "calibration:risk"
+    ],
+    "minimum_delta_over_anchor": 0.012002670606138598,
+    "minimum_train_calibration_protected_retention": 0.95,
+    "normalized_increment": 0.08047848259887179,
+    "optimizer_completed_steps": 0,
+    "quality_delta_over_anchor": 0.012528780468147063,
+    "safety_delta_over_anchor": 0.012002670606138598
+  },
+  "training_authorized": false,
+  "vram_headroom_fraction": 0.1667141635793673,
+  "wall_seconds": 528.8170568943024
+}
