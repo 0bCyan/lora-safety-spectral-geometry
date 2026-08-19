@@ -1,0 +1,63 @@
+{
+  "name": "step3_barp_mcd_d1f_decision_v1",
+  "route": "PASS_BARP_MCD_D1F_UPDATE_SPACE_ANCHOR_FEASIBLE",
+  "checks": {
+    "replay_steps_exact": true,
+    "replay_matches_d1": true,
+    "optimizer_map_exact": true,
+    "replay_finite_descent": true,
+    "d1_failure_reproduced": true,
+    "family_complete": true,
+    "update_space_anchor_feasible": true,
+    "no_fourth_update": true,
+    "vram": true,
+    "boundary": true
+  },
+  "d1_full_anchor_minimum_score": -0.0022585100125745426,
+  "d1_full_anchor_exact_scores": {
+    "risk": 0.20244122079764967,
+    "uniform": 0.23662084084072046,
+    "tarc": 0.10910362717497442,
+    "etarc": 0.17355415623205867,
+    "continuation": 0.2086064113434937,
+    "branch_entropy": 0.027335824828767424,
+    "branch_negative_gap": -0.0022585100125745426
+  },
+  "selected_anchor": {
+    "source_mask": 64,
+    "source_subset": [
+      "branch_negative_gap"
+    ],
+    "source_subset_size": 1,
+    "source_dual_margin": 1.0,
+    "source_dual_kkt_residual": 0.0,
+    "homotopy_fraction": 1.0,
+    "exact_scores": {
+      "risk": 0.21345470409945327,
+      "uniform": 0.20437283146435925,
+      "tarc": 0.04260605658112055,
+      "etarc": 0.14333172016111909,
+      "continuation": 0.19205189489776486,
+      "branch_entropy": 0.06250025766866428,
+      "branch_negative_gap": 0.043088080656542634
+    },
+    "minimum_exact_score": 0.04260605658112055,
+    "mean_exact_score": 0.12877222078986056,
+    "minimum_target_exact_score": 0.043088080656542634,
+    "mean_target_exact_score": 0.08297335282877534,
+    "candidate_raw_norm": 2.3051795463114297,
+    "candidate_clip_coefficient": 0.4338055002243195,
+    "candidate_clipping_active": true,
+    "current_state_completed_steps": 3,
+    "displacement_norm_fraction_of_baseline": 1.0024052261980079
+  },
+  "strict_feasible_candidates": 160,
+  "total_candidates": 239,
+  "total_optimizer_steps": 3,
+  "fourth_optimizer_step_executed": false,
+  "checkpoint_writes": 0,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "matched_retry_authorized": true
+}

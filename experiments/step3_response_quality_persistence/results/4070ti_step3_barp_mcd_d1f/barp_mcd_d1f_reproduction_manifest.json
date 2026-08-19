@@ -1,0 +1,45 @@
+{
+  "name": "step3_barp_mcd_d1f_reproduction_manifest_v1",
+  "runtime_head": "b6383923cc96dff35c27944d18744f80c887a357",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1f/protocol/barp_mcd_d1f_protocol.json",
+  "protocol_sha256": "d2cd63046992577bf98724894ae667fe8bbfd0047893bf36d60da94e5707a8bb",
+  "route": "PASS_BARP_MCD_D1F_UPDATE_SPACE_ANCHOR_FEASIBLE",
+  "total_optimizer_steps": 3,
+  "commands": [
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_d1f.py preflight",
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_d1f.py run",
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_d1f.py verify-run"
+  ],
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1f/barp_mcd_d1f_decision.json",
+      "sha256": "b4a4338c4be50225236550fba370ed3094e55b5cc4edeb5d280437e3fd5d03ec",
+      "bytes": 2149,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1f/BARP_MCD_D1F_REPORT.md",
+      "sha256": "570cc92890bb174cb9569e5b4d262fdcb0c65249953112fac4a8f49aab851c7e",
+      "bytes": 480,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1f/run/barp_mcd_d1f_feasibility.json",
+      "sha256": "86614a50922036085b906a777d234ad14dcd089c98dc2a9730ae581c027ef262",
+      "bytes": 261080,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1f/run/raw_replay_trace.jsonl",
+      "sha256": "66aeca61b6e856fdb477d3333f3bb9111429da45a864052960c312865c7108e9",
+      "bytes": 96676,
+      "rows": 3
+    }
+  ],
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "peft": "0.16.0",
+    "bitsandbytes": "0.49.2"
+  }
+}

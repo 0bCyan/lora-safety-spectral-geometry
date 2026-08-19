@@ -1,0 +1,105 @@
+{
+  "name": "step3_barp_mcd_d1f_mechanism_analysis_v1",
+  "route": "PASS_BARP_MCD_D1F_UPDATE_SPACE_ANCHOR_FEASIBLE",
+  "runtime_head": "b6383923cc96dff35c27944d18744f80c887a357",
+  "protocol_sha256": "d2cd63046992577bf98724894ae667fe8bbfd0047893bf36d60da94e5707a8bb",
+  "evidence": {
+    "replay_matches_frozen_d1_trace": true,
+    "replay_optimizer_steps": 3,
+    "fourth_optimizer_step_executed": false,
+    "maximum_update_map_relative_l2_error": 1.1512644812172425e-06,
+    "attempted_candidates": 239,
+    "evaluated_candidates": 239,
+    "strict_feasible_candidates": 160,
+    "strict_feasible_fraction": 0.6694560669456067,
+    "d1_full_anchor_minimum_score": -0.0022585100125745426,
+    "d1_failing_certificate": "branch_negative_gap",
+    "selected_anchor_minimum_score": 0.04260605658112055,
+    "minimum_margin_improvement": 0.0448645665936951,
+    "selected_source_mask": 64,
+    "selected_source_subset": [
+      "branch_negative_gap"
+    ],
+    "selected_homotopy_fraction": 1.0,
+    "selected_source_dual_margin": 1.0,
+    "selected_source_dual_kkt_residual": 0.0,
+    "selected_candidate_clip_coefficient": 0.4338055002243195,
+    "selected_candidate_clipping_active": true,
+    "vram_headroom_fraction": 0.2619793999104344,
+    "wall_seconds": 601.1042063236237
+  },
+  "score_comparison": [
+    {
+      "certificate": "risk",
+      "full_mcd": 0.20244122079764967,
+      "selected_anchor": 0.21345470409945327,
+      "delta": 0.0110134833018036
+    },
+    {
+      "certificate": "uniform",
+      "full_mcd": 0.23662084084072046,
+      "selected_anchor": 0.20437283146435925,
+      "delta": -0.032248009376361214
+    },
+    {
+      "certificate": "tarc",
+      "full_mcd": 0.10910362717497442,
+      "selected_anchor": 0.04260605658112055,
+      "delta": -0.06649757059385386
+    },
+    {
+      "certificate": "etarc",
+      "full_mcd": 0.17355415623205867,
+      "selected_anchor": 0.14333172016111909,
+      "delta": -0.03022243607093958
+    },
+    {
+      "certificate": "continuation",
+      "full_mcd": 0.2086064113434937,
+      "selected_anchor": 0.19205189489776486,
+      "delta": -0.016554516445728834
+    },
+    {
+      "certificate": "branch_entropy",
+      "full_mcd": 0.027335824828767424,
+      "selected_anchor": 0.06250025766866428,
+      "delta": 0.035164432839896856
+    },
+    {
+      "certificate": "branch_negative_gap",
+      "full_mcd": -0.0022585100125745426,
+      "selected_anchor": 0.043088080656542634,
+      "delta": 0.04534659066911718
+    }
+  ],
+  "certificate": {
+    "definition": "gamma_t=max_g_in_F min_j <normalized_grad_L_j,U_t(g)>/||U_t(g_baseline)||",
+    "observed_gamma_t": 0.04260605658112055,
+    "strict_floor": 1e-08,
+    "first_order_common_descent_certified": true,
+    "smooth_loss_bound": "L_j(theta-eta U)<=L_j(theta)-eta||grad_j||||U_ref||gamma_t+(Lipschitz_j/2)eta^2||U||^2",
+    "sufficient_step_condition": "0<eta<min_j 2||grad_j||||U_ref||gamma_t/(Lipschitz_j||U||^2)",
+    "protected_family_nonempty_if_anchor_included": true,
+    "reason": "the anchor has protected retention one and target gain zero relative to itself"
+  },
+  "interpretation": {
+    "supported": "the D1 failure was caused by choosing the full gradient-space MCD anchor, not by absence of a strict common-descent candidate in the registered exact AdamW family",
+    "mechanism": "current-state maximin scoring reallocates positive margin from already-safe certificates to the branch-negative-gap bottleneck",
+    "not_supported": [
+      "finite-step decrease on the unexecuted fourth update",
+      "eight-step matched superiority",
+      "generated safety or utility improvement",
+      "generalization beyond this seed5 failure state",
+      "global optimality outside the frozen 239-candidate family"
+    ]
+  },
+  "boundary": {
+    "total_optimizer_steps": 3,
+    "checkpoint_writes": 0,
+    "candidate_outputs_generated": false,
+    "core100_opened": false,
+    "heldout_opened": false,
+    "matched_retry_authorized": true,
+    "generation_authorized": false
+  }
+}
