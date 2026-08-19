@@ -1,0 +1,68 @@
+{
+  "name": "step3_barp_mcd_q1_decision_v1",
+  "route": "PASS_BARP_MCD_Q1R_AUTHORIZE_LONGER_MATCHED_PROTOCOL",
+  "checks": {
+    "arms_complete": true,
+    "steps_exact": true,
+    "no_skipped_updates": true,
+    "initial_state_equal": true,
+    "block_order_equal": true,
+    "initial_diagnostic_equal": true,
+    "optimizer_map_exact": true,
+    "raw_common_descent": true,
+    "barp_protection": true,
+    "barp_target_nondegradation": true,
+    "barp_assignment_exercised": true,
+    "finite_step_common_descent": true,
+    "vram": true,
+    "boundary": true
+  },
+  "arms": {
+    "raw_mcd": {
+      "optimizer_steps": 2,
+      "final_trainable_state_sha256": "e09b7f71ace77f8cbba40b78f79fbdedd34466c542177f62a6c43fe228b88c7c",
+      "maximum_update_map_relative_l2_error": 1.1030335921797111e-06,
+      "minimum_raw_anchor_score": 0.07286307635429608,
+      "minimum_selected_protected_retention": 0.9514554514304248,
+      "minimum_selected_target_gain": 0.008811564683035095,
+      "nonzero_barp_choices": 0,
+      "diagnostic_reductions": {
+        "risk": 0.9790163934230804,
+        "uniform": 2.4740864038467407,
+        "tarc": 1.1222592890262604,
+        "etarc": 5.023406207561493,
+        "continuation": 2.1060158610343933,
+        "branch_entropy": 0.004166763564398934,
+        "branch_negative_gap": 2.884765625
+      },
+      "vram_headroom_fraction": 0.32858364206326585
+    },
+    "barp_mcd": {
+      "optimizer_steps": 2,
+      "final_trainable_state_sha256": "85c5100cbec9367a4c5c79f78b5c59747f9a33f7a06c4da2219c8652a546e6de",
+      "maximum_update_map_relative_l2_error": 1.1021560075093287e-06,
+      "minimum_raw_anchor_score": 0.07286307635429608,
+      "minimum_selected_protected_retention": 0.9506228809205418,
+      "minimum_selected_target_gain": 0.007497327324920769,
+      "nonzero_barp_choices": 2,
+      "diagnostic_reductions": {
+        "risk": 0.9776991903781891,
+        "uniform": 2.460279643535614,
+        "tarc": 1.0321016907691956,
+        "etarc": 5.214430809020996,
+        "continuation": 2.0929451882839203,
+        "branch_entropy": 0.00432442343344519,
+        "branch_negative_gap": 3.41162109375
+      },
+      "vram_headroom_fraction": 0.32988641452591294
+    }
+  },
+  "total_optimizer_steps": 4,
+  "checkpoint_writes": 0,
+  "candidate_outputs_generated": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "longer_training_authorized": false,
+  "main_training_authorized": false,
+  "wall_seconds": 1105.4095735549927
+}

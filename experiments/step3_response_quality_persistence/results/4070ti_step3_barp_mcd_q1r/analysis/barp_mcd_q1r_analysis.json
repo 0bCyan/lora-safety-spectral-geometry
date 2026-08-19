@@ -1,0 +1,80 @@
+{
+  "name": "step3_barp_mcd_q1r_analysis_v1",
+  "route": "PASS_BARP_MCD_Q1R_AUTHORIZE_LONGER_MATCHED_PROTOCOL",
+  "verify_status": "PASS_BARP_MCD_Q1_VERIFY",
+  "artifacts_verified": 6,
+  "optimizer_steps": 4,
+  "all_frozen_gates_passed": true,
+  "arms": {
+    "raw_mcd": {
+      "optimizer_steps": 2,
+      "final_trainable_state_sha256": "e09b7f71ace77f8cbba40b78f79fbdedd34466c542177f62a6c43fe228b88c7c",
+      "maximum_optimizer_map_relative_l2_error": 1.1030335921797111e-06,
+      "peak_reserved_bytes": 8646557696,
+      "vram_headroom_fraction": 0.32858364206326585
+    },
+    "barp_mcd": {
+      "optimizer_steps": 2,
+      "final_trainable_state_sha256": "85c5100cbec9367a4c5c79f78b5c59747f9a33f7a06c4da2219c8652a546e6de",
+      "selected_homotopy_fractions": [0.25, 0.125],
+      "minimum_protected_retention": 0.9506228809205418,
+      "minimum_target_gain_over_current_raw": 0.007497327324920769,
+      "maximum_optimizer_map_relative_l2_error": 1.1021560075093287e-06,
+      "peak_reserved_bytes": 8629780480,
+      "vram_headroom_fraction": 0.32988641452591294
+    }
+  },
+  "q1_repair_validation": {
+    "q1_route": "STOP_BARP_MCD_Q1_VRAM_FAILED",
+    "q1_raw_peak_reserved_bytes": 16894656512,
+    "q1r_raw_peak_reserved_bytes": 8646557696,
+    "raw_peak_reduction_bytes": 8248098816,
+    "raw_peak_reduction_gib": 7.681640625,
+    "raw_peak_reduction_fraction": 0.4882075471698113,
+    "q1_barp_peak_reserved_bytes": 16877879296,
+    "q1r_barp_peak_reserved_bytes": 8629780480,
+    "barp_peak_reduction_bytes": 8248098816,
+    "barp_peak_reduction_fraction": 0.48869284294234594,
+    "final_parameter_hashes_match_q1": true,
+    "selected_candidates_match_q1": true,
+    "registered_scores_match_q1": true,
+    "candidate_family_changed": false,
+    "thresholds_changed": false
+  },
+  "descriptive_excluded_diagnostic": {
+    "route_selecting": false,
+    "barp_minus_raw_relative_reduction": {
+      "risk": -0.0013454351262554703,
+      "uniform": -0.0055805489612892195,
+      "tarc": -0.08033580041497448,
+      "continuation": -0.006206350575181905,
+      "etarc": 0.038026907155539795,
+      "branch_entropy": 0.037837488643058845,
+      "branch_negative_gap": 0.18263371699390657
+    },
+    "three_target_macro_relative_gain": 0.08616603759750174,
+    "four_protected_macro_relative_change": -0.02336703376942527
+  },
+  "evidence_scope": {
+    "current_state_adamw_map_validated": true,
+    "two_consecutive_optimizer_steps_validated": true,
+    "same_batch_protection_validated": true,
+    "fresh_confirmation": false,
+    "multi_step_development_training": false,
+    "generated_behavior_evaluated": false,
+    "core100_opened": false,
+    "heldout_opened": false,
+    "checkpoint_written": false
+  },
+  "decision_boundary": {
+    "authorized": "freeze_and_push_a_separate_longer_matched_training_protocol_only",
+    "not_authorized": [
+      "direct_longer_training_without_new_protocol",
+      "candidate_generation",
+      "core100",
+      "heldout",
+      "main_training",
+      "paper_level_behavior_claim"
+    ]
+  }
+}
