@@ -1,0 +1,39 @@
+{
+  "name": "step3_foacpo_p0_stop_analysis_v1",
+  "route": "STOP_FOACPO_P0_NO_CALIBRATION_ROUTE",
+  "valid_run": true,
+  "failure_conjunction": {
+    "all_calibration_quality_cosines_positive": true,
+    "all_calibration_safety_cosines_positive": true,
+    "all_train_protected_retentions_at_least_0_95": true,
+    "all_optimizer_completed_steps_zero": true,
+    "all_behavior_blends_below_frozen_0_05_floor": true,
+    "sole_failed_candidate_condition": "minimum_behavior_blend"
+  },
+  "candidate_ranges": {
+    "lambda_min": 0.0488894769130101,
+    "lambda_max": 0.0491497369077562,
+    "calibration_quality_cosine_min": 0.0176755224136376,
+    "calibration_quality_cosine_max": 0.0191773562663538,
+    "calibration_safety_cosine_min": 0.028476455464717,
+    "calibration_safety_cosine_max": 0.0289999822819077,
+    "limiting_certificate": "risk"
+  },
+  "mathematical_diagnosis": {
+    "issue": "A lower bound on the interpolation coordinate lambda is not an invariant effect-size requirement.",
+    "reason": "Reparameterizing the same anchor-to-behavior ray changes lambda while leaving a physical candidate displacement unchanged; lambda alone omits endpoint separation and directional gain.",
+    "consequence": "The P0 stop is retained, but lambda must not be interpreted as evidence that the behavior objective is inactive or ineffective."
+  },
+  "prospective_successor_requirement": {
+    "retain_protected_floor": 0.95,
+    "replace_lambda_floor_with": "strict calibration Pareto improvement over the anchor on both factorized objectives plus a nonzero displacement increment",
+    "mechanism_dev_status": "sealed",
+    "threshold_relaxation": false,
+    "training_authorized": false
+  },
+  "state_restored": true,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

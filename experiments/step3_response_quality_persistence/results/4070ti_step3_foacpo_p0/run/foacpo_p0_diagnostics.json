@@ -1,0 +1,161 @@
+{
+  "anchor": {
+    "candidate_id": "mask040_lambda1.000",
+    "exact_scores": {
+      "branch_entropy": 0.08286569451000304,
+      "branch_negative_gap": 0.08563717172826157,
+      "continuation": 0.17937088774124713,
+      "etarc": 0.10059360793689534,
+      "risk": 0.34588393645438253,
+      "tarc": 0.16580820083492784,
+      "uniform": 0.21493751587319979
+    },
+    "minimum_exact_score": 0.08286569451000304,
+    "optimizer_completed_steps": 0,
+    "reference_norm": 4047.319173834772
+  },
+  "calibration": null,
+  "calibration_registry": [
+    {
+      "alpha": 0.25,
+      "calibration_minimum_cosine": 0.017675522413637602,
+      "calibration_quality_cosine": 0.017675522413637602,
+      "calibration_safety_cosine": 0.02899998228190769,
+      "eligible": false,
+      "lambda": 0.04888947691301014,
+      "limiting_certificates": [
+        "risk"
+      ],
+      "optimizer_completed_steps": 0,
+      "train_minimum_protected_retention": 0.9500000000000001
+    },
+    {
+      "alpha": 0.5,
+      "calibration_minimum_cosine": 0.018682524319193154,
+      "calibration_quality_cosine": 0.018682524319193154,
+      "calibration_safety_cosine": 0.028982701891140477,
+      "eligible": false,
+      "lambda": 0.04897165016746874,
+      "limiting_certificates": [
+        "risk"
+      ],
+      "optimizer_completed_steps": 0,
+      "train_minimum_protected_retention": 0.95
+    },
+    {
+      "alpha": 0.75,
+      "calibration_minimum_cosine": 0.019177356266353758,
+      "calibration_quality_cosine": 0.019177356266353758,
+      "calibration_safety_cosine": 0.028476455464717,
+      "eligible": false,
+      "lambda": 0.04914973690775616,
+      "limiting_certificates": [
+        "risk"
+      ],
+      "optimizer_completed_steps": 0,
+      "train_minimum_protected_retention": 0.95
+    }
+  ],
+  "core100_opened": false,
+  "gates": {
+    "calibration": false,
+    "candidate_selected": false,
+    "mechanism": false,
+    "state_restored": true,
+    "structural": true,
+    "zero_optimizer": true
+  },
+  "gradient_coverage": {
+    "calibration": {
+      "quality": {
+        "chosen_response_tokens": 486,
+        "finite_nonzero": true,
+        "gradient_norm": 0.17406651821679964,
+        "missing_gradient_tensors": [],
+        "pairs": 5,
+        "rejected_response_tokens": 203
+      },
+      "safety": {
+        "chosen_response_tokens": 895,
+        "finite_nonzero": true,
+        "gradient_norm": 0.11055491502252976,
+        "missing_gradient_tensors": [],
+        "pairs": 9,
+        "rejected_response_tokens": 627
+      }
+    },
+    "train_candidate": {
+      "quality": {
+        "chosen_response_tokens": 1619,
+        "finite_nonzero": true,
+        "gradient_norm": 0.09462737499926768,
+        "missing_gradient_tensors": [],
+        "pairs": 17,
+        "rejected_response_tokens": 824
+      },
+      "safety": {
+        "chosen_response_tokens": 1353,
+        "finite_nonzero": true,
+        "gradient_norm": 0.08749805381467289,
+        "missing_gradient_tensors": [],
+        "pairs": 14,
+        "rejected_response_tokens": 1447
+      }
+    }
+  },
+  "heldout_opened": false,
+  "mechanism": null,
+  "name": "step3_foacpo_p0_zero_step_diagnostics_v1",
+  "optimizer_steps": 0,
+  "peak_reserved_bytes": 8692695040,
+  "protected_blocks": {
+    "calibration": {
+      "risk_row_indices": [
+        106,
+        100,
+        125,
+        239
+      ],
+      "safety_sample_ids": [
+        "eval_safety_000268",
+        "eval_safety_000294",
+        "eval_safety_000205",
+        "eval_safety_000142"
+      ]
+    },
+    "mechanism_dev": {
+      "risk_row_indices": [
+        4,
+        199,
+        35,
+        142
+      ],
+      "safety_sample_ids": [
+        "eval_safety_000226",
+        "eval_safety_000222",
+        "eval_safety_000232",
+        "eval_safety_000243"
+      ]
+    },
+    "train": {
+      "risk_row_indices": [
+        237,
+        147,
+        59,
+        131
+      ],
+      "safety_sample_ids": [
+        "eval_safety_000179",
+        "eval_safety_000180",
+        "eval_safety_000107",
+        "eval_safety_000125"
+      ]
+    }
+  },
+  "route": "STOP_FOACPO_P0_NO_CALIBRATION_ROUTE",
+  "runtime_head": "82dff676383df0814d064618010fc6bc86792463",
+  "selected": null,
+  "training_authorized": false,
+  "vram_headroom_fraction": 0.32500101779098645,
+  "wall_seconds": 246.29457807540894
+}
