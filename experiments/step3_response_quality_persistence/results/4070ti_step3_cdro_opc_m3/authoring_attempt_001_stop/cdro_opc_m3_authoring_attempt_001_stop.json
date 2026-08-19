@@ -1,0 +1,44 @@
+{
+  "schema": "cdro_opc_m3_authoring_attempt_001_stop_v1",
+  "route_id": "step3_cdro_opc_m3_confirmation",
+  "protocol_commit": "96b87ae4ac56eb5ac728ea988ad03e1d60a83a95",
+  "lock_commit": "950a871215357551a4005cd1a5e3a43663474832",
+  "route": "STOP_M3_AUTHORING_TRANSPORT",
+  "stop_reason": "two launched shards failed the frozen JSONL structural validator",
+  "spool_root": "D:\\Desktop\\step3-cdro-opc-m3-authoring-20260819",
+  "planned_workers": 12,
+  "launched_workers": 6,
+  "accepted_workers": 4,
+  "accepted_rows": 40,
+  "failed_workers": 2,
+  "unlaunched_workers": 6,
+  "accepted": {
+    "specific_01": "ae7c45ba54b2e07ec9a9090c312f4e405a070326f394ad7698cd026edc04edc4",
+    "specific_02": "ff8f08b84157bda56f0b48d6d0fc9f552377412cf4406c6e7f99e95e180a5541",
+    "specific_03": "8bd111bab369233732b8994c4cb29e4d72059060535ca1a7946843eaf1be6a8c",
+    "specific_05": "62221264d9f624340bcb25aebdaf584a8f84cd10bd532f730021be6d269e8463"
+  },
+  "failed": {
+    "specific_04": {
+      "sha256": "5c38a2dfa0effc1a755b2c00a92a1228114bc3ee4885703ff5c7d6a8536c7c40",
+      "physical_lines": 11,
+      "first_parse_error_line": 10,
+      "error_type": "JSONDecodeError"
+    },
+    "specific_06": {
+      "sha256": "8405136501d93cb44728db81b699e918abc1ad11f99d60c1321ed4b4e4db1533",
+      "physical_lines": 10,
+      "first_parse_error_line": 10,
+      "error_type": "JSONDecodeError"
+    }
+  },
+  "candidate_text_inspected_by_main_executor": false,
+  "responses_reused_by_future_attempt": false,
+  "review_started": false,
+  "gradient_measurement_started": false,
+  "external_api_called": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
