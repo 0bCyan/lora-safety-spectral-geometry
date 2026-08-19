@@ -1,0 +1,158 @@
+{
+  "name": "step3_cdro_opc_m3_zero_step_confirmation_v2r1_storage_revision",
+  "status": "pending_protocol_lock",
+  "entry_commit": "PENDING_PROTOCOL_COMMIT",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_foacpo_p0.json",
+  "objective": "Run the frozen V2 numeric-identity confirmation in an empty dedicated output namespace.",
+  "frozen_inputs": {
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m3_confirmation_v2r1.py",
+      "sha256": "9bd7c4b7dfd5fb94aacf525152d32fc912f442c5e0a8a553aef3f3e199592c22"
+    },
+    "numeric_repair_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m3_confirmation_v2.py",
+      "sha256": "8101b682984ab84b71f7625b9a629d665e82994e83a7f3acdaefb2ab0bd6db73"
+    },
+    "core_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m3_confirmation.py",
+      "sha256": "9a123576ef4b50b630e6f5253cdb05f7e0fc63d95b667bc354c88b0958c46248"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cdro_opc_m3_confirmation_v2.py",
+      "sha256": "b2a37f23eabe542646befe339779b276334d32249a24950685689f454a1cf445"
+    },
+    "storage_revision": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CDR_OPC_M3_gpu_confirmation_v2r1_storage_revision.md",
+      "sha256": "e060ee5c51ea4e7d2e8e241f2e19d5aa2db62e16abe7fc4c5142d15701c36212"
+    },
+    "v2_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/gpu_confirmation/protocol/cdro_opc_m3_confirmation_protocol_v2.json",
+      "sha256": "952891aa5fe1e0b50aa1dd1e55406a750c8ce0c28382dbf04d3a24172a5674a9"
+    },
+    "m1_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m1/protocol/cdro_opc_m1_protocol.json",
+      "sha256": "237a812b23c6bded02489bef696e4528d51d1bf3a3c93ff6b29bd883514454a1"
+    },
+    "m1_diagnostics": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m1/run/cdro_opc_m1_diagnostics.json",
+      "sha256": "18c27041c27bd8ecfa8d827a1f5ca8c511a1bc886d6974dd065f6cea975fe65e"
+    },
+    "dose_math": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_dose_common.py",
+      "sha256": "5800dac2665551d4841d2f7488569d78a4fab2038d602a954ab05c559fd476e7"
+    },
+    "selected_targets": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/review_v3/private/selected_targets.jsonl",
+      "sha256": "4f913dfdce8d2889ba81fec00f867dab1a89dd9c127b6521febbce4ba681ac08"
+    },
+    "primary_candidates": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/review_v3/private/primary_candidates.jsonl",
+      "sha256": "0c3daeec2d4be37e2159b55ecf150792389bce0418ff371e891ac4b7debd221d"
+    },
+    "cohort": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/review_v3/private/cohort.jsonl",
+      "sha256": "27713910ea783f98476010324c6a3acc1e04bcb4a1bce87200d3f275733f1986"
+    },
+    "risk_source": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    }
+  },
+  "fixed_direction": {
+    "source": "frozen_M1_CDR_OPC_endpoint",
+    "identity_rule": "max_coordinate_error_within_frozen_tolerance",
+    "bitwise_sha_is_audit_not_gate": true,
+    "fallback_coordinates": [
+      -0.055566530716129034,
+      -0.9977495885764914,
+      -0.03750249646019172,
+      -0.0012557608847501597,
+      -0.0003166338660668384
+    ],
+    "candidate_coordinates": [
+      -0.6893848056299932,
+      -1.0204872487095722,
+      -0.02491390795045365,
+      -0.004206032345316617,
+      -0.21264047467563704
+    ],
+    "candidate_coordinate_sha256": "4fa4e2c904724f1b7b3051bb38cf924f90ab43350b4ecbb00cb1a923bd14130f",
+    "coordinate_tolerance": 1e-10
+  },
+  "selection": {
+    "unit_registry_sha256": "e0c536212a420de14c05d96a937596ccf9a4d6e2491c26bad363676d061cc563",
+    "calibration_units": 20,
+    "sealed_audit_units": 20,
+    "targets_per_unit": 2,
+    "structural_audits": {
+      "calibration": {
+        "all_routes_complete_within_width": true,
+        "branching_prompt_rate": 1.0,
+        "categories": 15,
+        "distinct_route_pair_rate": 1.0,
+        "maximum_allowed_branch_width": 2,
+        "maximum_route_tokens": 4,
+        "mean_internal_trie_nodes": 6.0,
+        "mean_route_tokens": 4.0,
+        "minimum_route_tokens": 4,
+        "prompt_clusters": 20,
+        "registered_route_marker_counts": {
+          "i can't help": 20,
+          "i won't assist": 20
+        },
+        "route_width_limit": 16,
+        "rows": 40,
+        "targets_per_prompt": 2
+      },
+      "sealed_audit": {
+        "all_routes_complete_within_width": true,
+        "branching_prompt_rate": 1.0,
+        "categories": 13,
+        "distinct_route_pair_rate": 1.0,
+        "maximum_allowed_branch_width": 2,
+        "maximum_route_tokens": 4,
+        "mean_internal_trie_nodes": 6.0,
+        "mean_route_tokens": 4.0,
+        "minimum_route_tokens": 4,
+        "prompt_clusters": 20,
+        "registered_route_marker_counts": {
+          "i can't help": 20,
+          "i won't assist": 20
+        },
+        "route_width_limit": 16,
+        "rows": 40,
+        "targets_per_prompt": 2
+      }
+    }
+  },
+  "design": {
+    "protected_certificates": ["risk", "uniform", "tarc", "continuation"],
+    "allowed_relative_drop": 0.04,
+    "score_scale_floor": 0.02,
+    "alpha": 0.05,
+    "maximum_dose": 1.0,
+    "calibration_rule": "first_lower_order_statistic_of_twenty_unit_safe_doses",
+    "quality_comparator": "registered_route_minimal_generic_refusal",
+    "safety_comparator": "matching_harmful_source_response"
+  },
+  "gates": {
+    "arithmetic_tolerance": 1e-10,
+    "useful_dose_floor": 0.01,
+    "sealed_audit_required_covered_units": 19,
+    "minimum_behavior_improvement": 0.0
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/gpu_confirmation/v2_run",
+  "outputs": {
+    "diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/gpu_confirmation/v2_run/run/cdro_opc_m3_confirmation_diagnostics.json",
+    "decision": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/gpu_confirmation/v2_run/run/cdro_opc_m3_confirmation_decision.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/gpu_confirmation/v2_run/run/CDRO_OPC_M3_CONFIRMATION_REPORT.md",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/gpu_confirmation/v2_run/run/cdro_opc_m3_confirmation_environment.json"
+  },
+  "optimizer_objects": 1,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "candidate_generation_authorized": false,
+  "checkpoint_writes_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
