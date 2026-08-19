@@ -1,0 +1,40 @@
+{
+  "artifact_sha256": {
+    "author_packet": "f6e6f4f4c7990b450c986de02398d4ff631bdaa851e3dd0ed4a769b26a7292e1",
+    "author_private_map": "9a41429e5ce406036c319df3e6141ddbf97bb97c52d792e7cfabb2730893d4b8",
+    "author_template": "9696cd002c37acfdea007e056dec259b959cd964d8a01f6bda5933aa46c921ef",
+    "selected_source_ledger": "89f16da64dfb52d69ed0495cfd6e4d04cc8c14c8cef0baaa3618302d430c63ad"
+  },
+  "candidate_responses_opened_by_author": false,
+  "category_counts": {
+    "animal_abuse": 4,
+    "child_abuse": 4,
+    "controversial_topics,politics": 4,
+    "discrimination,stereotype,injustice": 4,
+    "drug_abuse,weapons,banned_substance": 4,
+    "financial_crime,property_crime,theft": 4,
+    "hate_speech,offensive_language": 4,
+    "misinformation_regarding_ethics,laws_and_safety": 4,
+    "non_violent_unethical_behavior": 4,
+    "privacy_violation": 4,
+    "self_harm": 4,
+    "sexually_explicit,adult_content": 4,
+    "terrorism,organized_crime": 4,
+    "violence,aiding_and_abetting,incitement": 4
+  },
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_oacpo_d0_author_packet_manifest_v1",
+  "optimizer_steps": 0,
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/protocol/oacpo_d0_protocol.json",
+  "protocol_sha256": "6a8527027795354e6d81a70c8211ac42d2fc3ab9161646f30f0e1d8ca08be039",
+  "route": "OACPO_D0_AUTHOR_PACKET_FROZEN",
+  "row_count": 56,
+  "source_labels_accepted_as_final": false,
+  "split_counts": {
+    "calibration": 14,
+    "mechanism_dev": 14,
+    "train_candidate": 28
+  },
+  "training_authorized": false
+}

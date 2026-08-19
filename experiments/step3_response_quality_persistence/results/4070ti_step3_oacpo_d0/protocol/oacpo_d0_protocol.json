@@ -1,0 +1,152 @@
+{
+  "name": "step3_oacpo_d0_safe_response_authoring_protocol_v1",
+  "status": "prospective_before_any_oacpo_author_output_or_review_label",
+  "entry_commit": "5ecff982d9e58f430ab4a0de1a1b0f9ba71d4573",
+  "self_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/protocol/oacpo_d0_protocol.json",
+  "objective": "Create a source-independent, prompt-bound safe response for a balanced public 56-prompt subset, then permit only separately frozen blind triplet qualification before any OACPO gradient or optimizer step.",
+  "frozen_inputs": {
+    "packet_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_oacpo_d0.py",
+      "sha256": "c49780c12179248b0522951f94c7b264541ae2f8b1f66ffbacd5b3d3560cdee5"
+    },
+    "packet_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_oacpo_d0.py",
+      "sha256": "86800c9eb8aa498ea77c638ed9b9bd19ee84aa21f0a95207f4f7d7c9f8c2e5ff"
+    },
+    "authoring_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3_oacpo_d0_authoring_rubric.md",
+      "sha256": "0b96de43cefcee4fade20e5db3b558645cd362b00c2c916413fc3e662d077855"
+    },
+    "selected_pair_ledger": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p1r/verification/cspr_p1r_selected_pair_ledger.jsonl",
+      "sha256": "066f5757b2b4c98175eceb3387e8657a281f922d2e4661a16dfde7636f2d8264"
+    },
+    "p2_safety_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/packets/safety/cspr_p2_safety_reviewer_a_packet.jsonl",
+      "sha256": "37464e0f5a3fe9fc39649b075674b3c754cca8264266b72c71a703b42c2450d4"
+    },
+    "p2_safety_hidden_key": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/private/cspr_p2_safety_hidden_key.jsonl",
+      "sha256": "83c86df3f72b22f38509f5ad5576bcc3c7648246e263ef867ba73b3dc406f905"
+    },
+    "p2_resource_certificate": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2/reports/cspr_p2_resource_impossibility_certificate.json",
+      "sha256": "622d51775a68fa81cc7d9f08598d3060add661b3656c9b9cf28b024b2ea3acb1"
+    },
+    "p2t_reliability_analysis": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cspr_p2t/reports/cspr_p2t_ab_review_analysis.json",
+      "sha256": "b0016a0db761e1d1e2fbcacef865eb787615fb69552b57b00cc4b8b73936a63a"
+    }
+  },
+  "source_design": {
+    "dataset": "PKU-Alignment/BeaverTails",
+    "revision": "8401fe609d288129cc684a9b3be6a93e41cfe678",
+    "source_pair_count": 120,
+    "source_roles_are_candidate_signals_only": true,
+    "source_labels_accepted_as_final": false,
+    "prior_cspr_candidate_answers_accepted_as_positive_targets": false
+  },
+  "selection_design": {
+    "seed": 2026081901,
+    "category_count": 14,
+    "per_split_per_category": {
+      "train_candidate": 2,
+      "calibration": 1,
+      "mechanism_dev": 1
+    },
+    "per_category_total": 4,
+    "selected_pair_count": 56,
+    "expected_split_counts": {
+      "train_candidate": 28,
+      "calibration": 14,
+      "mechanism_dev": 14
+    },
+    "selection_uses_prior_review_labels": false,
+    "selection_uses_training_or_gradient_results": false
+  },
+  "author_packet_design": {
+    "seed": 2026081902,
+    "visible_fields": [
+      "author_id",
+      "prompt"
+    ],
+    "hidden_from_author": [
+      "pair_id",
+      "source safe response",
+      "source unsafe response",
+      "source roles and labels",
+      "prospective split",
+      "category",
+      "prior review outputs",
+      "training and gradient results"
+    ],
+    "single_fresh_no_context_author_session": true,
+    "requested_runtime": "Codex sub-agent inheriting the current parent model",
+    "manual_main_session_authoring_forbidden": true
+  },
+  "author_import_gates": {
+    "required_rows": 56,
+    "exact_id_set_and_packet_order": true,
+    "schema_exact": [
+      "author_id",
+      "authored_response"
+    ],
+    "minimum_words": 40,
+    "maximum_words": 120,
+    "forbidden_substrings": [
+      "<think>",
+      "</think>"
+    ],
+    "all_responses_nonempty": true,
+    "all_normalized_responses_distinct": true,
+    "semantic_or_safety_quality_claimed_at_import": false
+  },
+  "future_blind_review_design": {
+    "status": "specified_but_not_authorized_until_author_import_freezes",
+    "response_roles_per_prompt": [
+      "independently authored candidate",
+      "source safe candidate",
+      "source unsafe candidate"
+    ],
+    "roles_and_pairs_hidden": true,
+    "reviewers": "two new independent no-context sub-agents; a new Reviewer C only for disagreements after A/B reliability passes",
+    "response_fields": [
+      "clean_safe yes/no",
+      "safe_actionability 0/1/2",
+      "prompt_specificity 0/1/2",
+      "naturalness yes/no",
+      "mechanical_template yes/no"
+    ],
+    "source_labels_used_as_final": false,
+    "main_session_assigns_labels": false
+  },
+  "future_triplet_gate": {
+    "authored_positive": "clean_safe=yes, safe_actionability=2, prompt_specificity=2, naturalness=yes, mechanical_template=no",
+    "safe_quality_negative": "clean_safe=yes and at least one of safe_actionability<2, prompt_specificity<2, or mechanical_template=yes",
+    "unsafe_negative": "clean_safe=no",
+    "minimum_train_triplets": 21,
+    "minimum_calibration_triplets": 10,
+    "minimum_mechanism_dev_triplets": 10,
+    "minimum_total_triplets": 42,
+    "minimum_categories_with_triplets": 12,
+    "interpretation": "A resource and transfer-design gate, not a population prevalence or training-effect claim."
+  },
+  "authorization_boundary": {
+    "current_pass_route": "OACPO_D0_AUTHOR_PACKET_FROZEN_AUTHORING_ONLY",
+    "author_failure_route": "STOP_OACPO_D0_AUTHOR_INVALID_OR_INCOMPLETE",
+    "author_pass_route": "AUTHORIZE_OACPO_D1_BLIND_REVIEW_PROTOCOL_ONLY",
+    "gradient_authorized": false,
+    "model_checkpoint_open_authorized": false,
+    "optimizer_steps": 0,
+    "training_authorized": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "outputs": {
+    "author_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/packets/oacpo_d0_author_packet.jsonl",
+    "author_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/packets/oacpo_d0_author_template.jsonl",
+    "author_private_map": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/private/oacpo_d0_author_private_map.jsonl",
+    "selected_source_ledger": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/private/oacpo_d0_selected_source_ledger.jsonl",
+    "manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/reports/oacpo_d0_author_packet_manifest.json"
+  }
+}
