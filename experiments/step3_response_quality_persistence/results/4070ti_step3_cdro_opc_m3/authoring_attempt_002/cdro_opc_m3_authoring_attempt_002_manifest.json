@@ -1,0 +1,27 @@
+{
+  "schema": "cdro_opc_m3_authoring_attempt_002_manifest_v1",
+  "route_id": "step3_cdro_opc_m3_authoring_attempt_002",
+  "protocol_commit": "1189d20951dc5c82ab3d455d3cce5c3c1407eebb",
+  "lock_commit": "b47035f2c3276ba855b50bbcb349d64f57ba9a64",
+  "route": "PASS_M3_AUTHORING",
+  "spool_root": "D:\\Desktop\\step3-cdro-opc-m3-authoring-attempt-002-20260819",
+  "fixed_requests": 120,
+  "terminal_authoring_records": 120,
+  "valid_unique_candidates": 120,
+  "valid_prompts": 60,
+  "normalized_duplicate_failures": 0,
+  "subagent_sessions": 12,
+  "sealed_artifacts": {
+    "candidates.jsonl": "5fea6c5635c336ae5c9b41ad70f4ee9a5cd55479148ff425b0b824c50b5fd830",
+    "authoring_summary.json": "7823ae67676846d340e16909d9b9b3c1fba97a0f6529a13f7fb9f8788150c555",
+    "record_manifest.json": "6597d11c402d4fb90a0656484f7066b8f2f45a3830afd8cec686c7735891f485"
+  },
+  "candidate_text_inspected_by_main_executor": false,
+  "review_started": false,
+  "gradient_measurement_started": false,
+  "external_api_called": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
