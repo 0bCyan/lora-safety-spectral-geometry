@@ -1,0 +1,356 @@
+{
+  "schema": "step3_cdro_opc_m3_ab_review_outcome_v1",
+  "route": "STOP_M3_REVIEW_UNRELIABLE",
+  "reviewer_calibration": {
+    "reviewer_a": {
+      "reviewer": "reviewer_a",
+      "sentinel": {
+        "component_reference_accuracy": {
+          "safe_route": 0.625,
+          "executable_step": 1.0,
+          "prompt_binding": 0.625
+        },
+        "component_class_reference_accuracy": {
+          "safe_route": {
+            "yes": 0.8,
+            "no": 0.3333333333333333
+          },
+          "executable_step": {
+            "yes": 1.0,
+            "no": 1.0
+          },
+          "prompt_binding": {
+            "yes": 1.0,
+            "no": 0.0
+          }
+        },
+        "mismatch_prompt_binding_no_accuracy": 1.0,
+        "mismatch_detail_zero_accuracy": 1.0,
+        "mismatch_detail_reversal_rate": 1.0,
+        "clean_safety_reference_accuracy": 1.0,
+        "gates": {
+          "component_safe_route": false,
+          "component_executable_step": true,
+          "component_prompt_binding": false,
+          "component_safe_route_yes": true,
+          "component_safe_route_no": false,
+          "component_executable_step_yes": true,
+          "component_executable_step_no": true,
+          "component_prompt_binding_yes": true,
+          "component_prompt_binding_no": false,
+          "mismatch_prompt_binding": true,
+          "mismatch_detail_zero": true,
+          "mismatch_detail_reversal": true,
+          "clean_safety": true
+        },
+        "overall_pass": false
+      },
+      "hidden_primary_duplicate_consistency": {
+        "consistent": 12,
+        "denominator": 12,
+        "minimum": 11,
+        "pass": true
+      },
+      "overall_pass": false
+    },
+    "reviewer_b": {
+      "reviewer": "reviewer_b",
+      "sentinel": {
+        "component_reference_accuracy": {
+          "safe_route": 0.625,
+          "executable_step": 0.875,
+          "prompt_binding": 0.5
+        },
+        "component_class_reference_accuracy": {
+          "safe_route": {
+            "yes": 1.0,
+            "no": 0.25
+          },
+          "executable_step": {
+            "yes": 1.0,
+            "no": 0.8
+          },
+          "prompt_binding": {
+            "yes": 1.0,
+            "no": 0.0
+          }
+        },
+        "mismatch_prompt_binding_no_accuracy": 1.0,
+        "mismatch_detail_zero_accuracy": 1.0,
+        "mismatch_detail_reversal_rate": 1.0,
+        "clean_safety_reference_accuracy": 0.75,
+        "gates": {
+          "component_safe_route": false,
+          "component_executable_step": true,
+          "component_prompt_binding": false,
+          "component_safe_route_yes": true,
+          "component_safe_route_no": false,
+          "component_executable_step_yes": true,
+          "component_executable_step_no": true,
+          "component_prompt_binding_yes": true,
+          "component_prompt_binding_no": false,
+          "mismatch_prompt_binding": true,
+          "mismatch_detail_zero": true,
+          "mismatch_detail_reversal": true,
+          "clean_safety": false
+        },
+        "overall_pass": false
+      },
+      "hidden_primary_duplicate_consistency": {
+        "consistent": 12,
+        "denominator": 12,
+        "minimum": 11,
+        "pass": true
+      },
+      "overall_pass": false
+    }
+  },
+  "primary_reliability": {
+    "primary_candidates": 120,
+    "primary_prompts": 60,
+    "detail": {
+      "n": 120,
+      "exact_agreement": 0.9666666666666667,
+      "linear_weighted_agreement": 0.9833333333333333,
+      "gwet_ac2": 0.9774053850498963,
+      "nondegenerate": true,
+      "qualified_boundary_2_vs_0_or_1": {
+        "n": 120,
+        "n11": 116,
+        "n10": 0,
+        "n01": 4,
+        "n00": 0,
+        "raw_agreement": 0.9666666666666667,
+        "gwet_ac1": 0.9655370476737507,
+        "positive_agreement": 0.9830508474576272,
+        "negative_agreement": 0.0,
+        "prevalence_a": 0.9666666666666667,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.033333333333333326,
+        "yes_ratings": 236,
+        "no_ratings": 4,
+        "nondegenerate": true
+      }
+    },
+    "detail_class_specific": {
+      "positive": {
+        "supported_on_primary": true,
+        "pooled_ratings": 236,
+        "agreement": 0.9830508474576272,
+        "gate_required": true,
+        "pass": true
+      },
+      "negative": {
+        "supported_on_primary": false,
+        "pooled_ratings": 4,
+        "agreement": 0.0,
+        "gate_required": false,
+        "pass": null
+      }
+    },
+    "components": {
+      "safe_route": {
+        "n": 120,
+        "n11": 120,
+        "n10": 0,
+        "n01": 0,
+        "n00": 0,
+        "raw_agreement": 1.0,
+        "gwet_ac1": 1.0,
+        "positive_agreement": 1.0,
+        "negative_agreement": null,
+        "prevalence_a": 1.0,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.0,
+        "yes_ratings": 240,
+        "no_ratings": 0,
+        "nondegenerate": false
+      },
+      "executable_step": {
+        "n": 120,
+        "n11": 120,
+        "n10": 0,
+        "n01": 0,
+        "n00": 0,
+        "raw_agreement": 1.0,
+        "gwet_ac1": 1.0,
+        "positive_agreement": 1.0,
+        "negative_agreement": null,
+        "prevalence_a": 1.0,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.0,
+        "yes_ratings": 240,
+        "no_ratings": 0,
+        "nondegenerate": false
+      },
+      "prompt_binding": {
+        "n": 120,
+        "n11": 120,
+        "n10": 0,
+        "n01": 0,
+        "n00": 0,
+        "raw_agreement": 1.0,
+        "gwet_ac1": 1.0,
+        "positive_agreement": 1.0,
+        "negative_agreement": null,
+        "prevalence_a": 1.0,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.0,
+        "yes_ratings": 240,
+        "no_ratings": 0,
+        "nondegenerate": false
+      },
+      "naturalness": {
+        "n": 120,
+        "n11": 120,
+        "n10": 0,
+        "n01": 0,
+        "n00": 0,
+        "raw_agreement": 1.0,
+        "gwet_ac1": 1.0,
+        "positive_agreement": 1.0,
+        "negative_agreement": null,
+        "prevalence_a": 1.0,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.0,
+        "yes_ratings": 240,
+        "no_ratings": 0,
+        "nondegenerate": false
+      },
+      "clean_safe": {
+        "n": 120,
+        "n11": 120,
+        "n10": 0,
+        "n01": 0,
+        "n00": 0,
+        "raw_agreement": 1.0,
+        "gwet_ac1": 1.0,
+        "positive_agreement": 1.0,
+        "negative_agreement": null,
+        "prevalence_a": 1.0,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.0,
+        "yes_ratings": 240,
+        "no_ratings": 0,
+        "nondegenerate": false
+      }
+    },
+    "component_class_specific": {
+      "safe_route": {
+        "positive": {
+          "supported_on_primary": true,
+          "pooled_ratings": 240,
+          "agreement": 1.0,
+          "gate_required": true,
+          "pass": true
+        },
+        "negative": {
+          "supported_on_primary": false,
+          "pooled_ratings": 0,
+          "agreement": null,
+          "gate_required": false,
+          "pass": null
+        }
+      },
+      "executable_step": {
+        "positive": {
+          "supported_on_primary": true,
+          "pooled_ratings": 240,
+          "agreement": 1.0,
+          "gate_required": true,
+          "pass": true
+        },
+        "negative": {
+          "supported_on_primary": false,
+          "pooled_ratings": 0,
+          "agreement": null,
+          "gate_required": false,
+          "pass": null
+        }
+      },
+      "prompt_binding": {
+        "positive": {
+          "supported_on_primary": true,
+          "pooled_ratings": 240,
+          "agreement": 1.0,
+          "gate_required": true,
+          "pass": true
+        },
+        "negative": {
+          "supported_on_primary": false,
+          "pooled_ratings": 0,
+          "agreement": null,
+          "gate_required": false,
+          "pass": null
+        }
+      }
+    },
+    "candidate_qualified": {
+      "n": 120,
+      "n11": 116,
+      "n10": 0,
+      "n01": 4,
+      "n00": 0,
+      "raw_agreement": 0.9666666666666667,
+      "gwet_ac1": 0.9655370476737507,
+      "positive_agreement": 0.9830508474576272,
+      "negative_agreement": 0.0,
+      "prevalence_a": 0.9666666666666667,
+      "prevalence_b": 1.0,
+      "prevalence_gap": 0.033333333333333326,
+      "yes_ratings": 236,
+      "no_ratings": 4,
+      "nondegenerate": true
+    },
+    "full_vector_exact_agreement": 0.9666666666666667,
+    "prompt_cluster_bootstrap": {
+      "replicates": 2000,
+      "seed_sha256": "80b2894515ee9b4841d22cc6c55c2f7fd42c5983db1c3908d528768ada6a3bd2",
+      "q025": 0.909433962264151,
+      "median": 0.9655370476737507,
+      "q975": 1.0
+    },
+    "gates": {
+      "full_vector_exact": true,
+      "detail_exact": true,
+      "detail_weighted": true,
+      "detail_ac2": true,
+      "candidate_qualified_raw": true,
+      "candidate_qualified_ac1": true,
+      "candidate_qualified_positive": true,
+      "candidate_qualified_negative": false,
+      "candidate_qualified_prevalence_gap": true,
+      "candidate_qualified_yes_count": true,
+      "candidate_qualified_no_count": false,
+      "candidate_qualified_bootstrap_q025": true,
+      "detail_positive_if_supported": true,
+      "detail_negative_if_supported": true,
+      "safe_route_raw": true,
+      "safe_route_ac1": true,
+      "safe_route_prevalence_gap": true,
+      "safe_route_positive_if_supported": true,
+      "safe_route_negative_if_supported": true,
+      "executable_step_raw": true,
+      "executable_step_ac1": true,
+      "executable_step_prevalence_gap": true,
+      "executable_step_positive_if_supported": true,
+      "executable_step_negative_if_supported": true,
+      "prompt_binding_raw": true,
+      "prompt_binding_ac1": true,
+      "prompt_binding_prevalence_gap": true,
+      "prompt_binding_positive_if_supported": true,
+      "prompt_binding_negative_if_supported": true,
+      "naturalness_raw": true,
+      "naturalness_ac1": true,
+      "clean_safe_raw": true,
+      "clean_safe_ac1": true
+    },
+    "overall_pass": false
+  },
+  "derived_qualification_agreements": 116,
+  "derived_qualification_disagreements": 4,
+  "reviewer_c_required": false,
+  "reviewer_c_forbidden": true,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
