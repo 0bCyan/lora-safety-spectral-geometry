@@ -1,0 +1,76 @@
+{
+  "name": "step3_foacpo_p0r_anchor_relative_zero_step_v1",
+  "status": "prospective_before_any_P0R_model_forward_or_anchor_relative_score",
+  "entry_commit": "ec0b352",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_foacpo_p0.json",
+  "objective": "Test strict calibration Pareto improvement over the protected optimizer anchor before opening mechanism-dev.",
+  "frozen_inputs": {
+    "runner": {"path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_p0r.py", "sha256": "378b8cd3b94a1b6717087e434e55790cfcbae9d6d54fe99f85fe9b048e6ee56f"},
+    "tests": {"path": "experiments/step3_response_quality_persistence/scripts/test_step3_foacpo_p0r.py", "sha256": "f58aa00c7f0fe8b54b39e46ec026836cfa26935548faecbf702e4c96cb983fcf"},
+    "protocol_note": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0r/protocol/FOACPO_P0R_PROTOCOL.md", "sha256": "935007fa9c60156590542d9ee4878e0b6705625108471437cdb94a2449d3454d"},
+    "p0_runner": {"path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_p0.py", "sha256": "7592e8a7974401c1ebc333ea21412551d759e39aff98bf392cf1c783bdb141c2"},
+    "common_math": {"path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_common.py", "sha256": "638ea69da9b04cb6774988d3cff16444b6ca05a4fb613256073df6137e99391a"},
+    "config": {"path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_foacpo_p0.json", "sha256": "6616c70501a8008c2dd423f7b454f5af304e3c8219215e191fb44d5e126f7c9a"},
+    "p0_decision": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0/run/foacpo_p0_decision.json", "sha256": "c06a2fbd243b0ea3818d7de4ed9ac9a57e1da9c173db213ab4e7ef251d56fe35"},
+    "p0_diagnostics": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0/run/foacpo_p0_diagnostics.json", "sha256": "8cf7eb75747ebc21f3947770c395d39f33e9d5bdce624c57ece6f416053117be"},
+    "p0_stop_analysis": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0/analysis/foacpo_p0_stop_analysis.json", "sha256": "0e9e57da2a70357bb371d57122d6e0d9a917e9243607f279ef757ba3f61feabe"},
+    "quality_pairs": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_quality_pairs.jsonl", "sha256": "a3b372719cf3b8400b55a8f5077ff57a215322f2cb199a6e8d4ca12652e1f200"},
+    "safety_pairs": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_safety_pairs.jsonl", "sha256": "11dc692d23edbb929f3020724f4a01d494e9a72781b0161a5920bfd94322a6e5"},
+    "checkpoint_adapter": {"path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_model.safetensors", "sha256": "fd66579386cbfa8418cce8c2d8e7c0099b2ef2fddc5a05839b4e8c5f39435379"},
+    "checkpoint_config": {"path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100/adapter_config.json", "sha256": "f3dc2f00a468baf447741f7819273a41deab36d96438da7b19d79a9b4cb0ccec"},
+    "safety_targets": {"path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl", "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"},
+    "risk_source": {"path": "data/processed/unified_pool/train_risk.jsonl", "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"},
+    "structural_audit": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json", "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"}
+  },
+  "model": {
+    "model_name_or_path": "Qwen/Qwen3-4B",
+    "checkpoint_dir": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/runs/step2jb1_4070ti_qwen3-4b_risk_s1_natural_constant20/checkpoints/step0064_pct100",
+    "local_files_only": true,
+    "load_in_4bit": true,
+    "quantization": "nf4_double_quant_fp16_compute",
+    "trainable_coordinates": "constant20_checkpoint_LoRA_only",
+    "model_mode": "eval_with_gradients"
+  },
+  "source": {"structural_audit_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json"},
+  "data": {
+    "quality_pairs": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_quality_pairs.jsonl",
+    "safety_pairs": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_safety_pairs.jsonl",
+    "quality_split_counts": [17, 5, 6],
+    "safety_split_counts": [14, 9, 9]
+  },
+  "selection": {"seed": 2026081917, "mechanism_dev_open_condition": "selected anchor-relative calibration route passes every calibration gate"},
+  "design": {
+    "model_seed": 2026081917,
+    "beta": 0.1,
+    "alpha_registry": [0.25, 0.5, 0.75],
+    "protected_certificates": ["risk", "uniform", "tarc", "continuation"],
+    "target_certificates": ["etarc", "branch_entropy", "branch_negative_gap"],
+    "local_protected_retention_floor": 0.95,
+    "protected_retention_floor": 0.95,
+    "optimizer_anchor_candidates": 239
+  },
+  "gates": {
+    "normalized_increment_numeric_min": 1e-6,
+    "strict_quality_delta_over_anchor_min": 0.0,
+    "strict_safety_delta_over_anchor_min": 0.0,
+    "calibration_quality_positive_min": 3,
+    "calibration_safety_positive_min": 6,
+    "mechanism_quality_positive_min": 4,
+    "mechanism_safety_positive_min": 6,
+    "protected_retention_floor": 0.95
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0r",
+  "outputs": {
+    "diagnostics": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0r/run/foacpo_p0r_diagnostics.json",
+    "decision": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0r/run/foacpo_p0r_decision.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0r/run/FOACPO_P0R_REPORT.md",
+    "environment": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0r/run/foacpo_p0r_environment.json"
+  },
+  "optimizer_objects": 1,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "candidate_generation_authorized": false,
+  "checkpoint_writes_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
