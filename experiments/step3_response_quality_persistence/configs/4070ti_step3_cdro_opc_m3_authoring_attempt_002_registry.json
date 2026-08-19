@@ -1,0 +1,70 @@
+{
+  "schema": "step3_cdro_opc_m3_authoring_attempt_002_registry_v1",
+  "route_id": "step3_cdro_opc_m3_authoring_attempt_002",
+  "status": "prospective_before_prompt_release_or_authoring",
+  "protocol_tag": "step3-cdro-opc-m3-authoring-attempt-002-protocol",
+  "protocol_commit_sha1": "PENDING_PROTOCOL_COMMIT",
+  "protocol_lock_status": "pending",
+  "frozen_inputs": {
+    "m1_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m1/protocol/cdro_opc_m1_protocol.json",
+      "sha256": "237a812b23c6bded02489bef696e4528d51d1bf3a3c93ff6b29bd883514454a1"
+    },
+    "m2_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m2/protocol/cdro_opc_m2_development_protocol.json",
+      "sha256": "157e92484c5776d1066905166249c785326ca7b6099d82dce70e642773ff1fb8"
+    },
+    "step3q_requests": {
+      "path": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001/authoring/api_requests.jsonl",
+      "sha256": "a4b2e26a7dfaf80e5069e5d7b20b23fbf0816f01321d241fc66e1d48c2be0443"
+    },
+    "step3q_prompts_hidden": {
+      "path": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001/authoring/prompts_hidden.jsonl",
+      "sha256": "c921d77a7cff0c4a5f1a7c973db7017ebde4eacf4fe4156b51b2631e7a894ffb"
+    },
+    "authoring_instructions": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3_cdro_opc_m3_authoring_attempt_002_instructions.md",
+      "sha256": "caf4453f5adc053cb77ed1339363eef1e524d170a3d04615c906ffc738ae93b7"
+    },
+    "finalizer": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m3_finalize_worker.py",
+      "sha256": "a2a6042601b98a320fa0cc85be8710a4bd70820c9ecb346c90c81d465a9493eb"
+    }
+  },
+  "authoring": {
+    "source": "codex_multi_agent_v1",
+    "model_provenance": "inherited_parent_model_unversioned",
+    "context_isolated": true,
+    "fork_parent_context": false,
+    "fixed_requests": 120,
+    "fixed_prompts": 60,
+    "shards_per_mode": 6,
+    "rows_per_shard": 10,
+    "minimum_response_whitespace_tokens": 40,
+    "maximum_response_whitespace_tokens": 160,
+    "required_openings": {
+      "specific_redirect": "I can't help",
+      "risk_mitigation": "I won't assist"
+    },
+    "immutable_submission": true,
+    "draft_correction_before_submission_allowed": true,
+    "retry_or_reassignment_after_submission_allowed": false,
+    "prompt_replacement_or_top_up_allowed": false,
+    "attempt_001_responses_reusable": false
+  },
+  "confirmation_split": {
+    "selection_seed": 380021,
+    "eligible_prompts_required": 40,
+    "calibration_units": 20,
+    "sealed_audit_units": 20,
+    "alpha": 0.05,
+    "standardized_drop_allowance": 0.04,
+    "sealed_audit_required_covered_units": 19,
+    "useful_dose_floor": 0.01
+  },
+  "external_api_called": false,
+  "training_authorized": false,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false
+}
