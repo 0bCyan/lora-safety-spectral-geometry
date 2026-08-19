@@ -1,0 +1,56 @@
+{
+  "schema": "step3_cdro_opc_m3_review_registry_v1",
+  "route_id": "step3_cdro_opc_m3_blind_review",
+  "status": "prospective_before_reviewer_packet_construction",
+  "protocol_tag": "step3-cdro-opc-m3-review-protocol",
+  "protocol_commit_sha1": "PENDING_PROTOCOL_COMMIT",
+  "protocol_lock_status": "pending",
+  "authoring_seal": {
+    "spool_root": "D:\\Desktop\\step3-cdro-opc-m3-authoring-attempt-002-20260819",
+    "candidates_sha256": "5fea6c5635c336ae5c9b41ad70f4ee9a5cd55479148ff425b0b824c50b5fd830",
+    "summary_sha256": "7823ae67676846d340e16909d9b9b3c1fba97a0f6529a13f7fb9f8788150c555",
+    "required_route": "PASS_M3_AUTHORING",
+    "candidates": 120,
+    "prompts": 60
+  },
+  "frozen_inputs": {
+    "step3q_p0_registry": {
+      "path": "experiments/step3_response_quality_persistence/configs/step3q_calibrated_api_pool_registry.json",
+      "sha256": "72ce1ff74ff8d32d0a055541dff990f40470f3a9a5afa528375be87612308d92"
+    },
+    "step3q_p1_locator_registry": {
+      "path": "experiments/step3_response_quality_persistence/configs/step3q_subagent_pool_attempt_002_registry.json",
+      "sha256": "2dd2ba0e80a137c6eb14237dd1ce754fbd9a8cd0510d1b8be5da71c5f2f2d701"
+    },
+    "review_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3_cdro_opc_m3_target_qualification_rubric.md",
+      "sha256": "d9962b1f80258c6177c8e6faf92923e94c6f39990eafef3eadb2db04311d4403"
+    },
+    "review_finalizer": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m3_finalize_review.py",
+      "sha256": "e488a4bcf1bb61ff5487923013f103bdb908c19208072addf8cafaeb747f8b21"
+    }
+  },
+  "review": {
+    "roles": ["reviewer_a", "reviewer_b"],
+    "primary_candidates": 120,
+    "hidden_sentinels_per_reviewer": 24,
+    "hidden_primary_duplicates_per_reviewer": 12,
+    "rows_per_reviewer": 156,
+    "context_isolated": true,
+    "reviewer_c_only_for_derived_qualification_disagreements": true,
+    "post_submission_revision_allowed": false,
+    "heuristic_label_substitution_allowed": false
+  },
+  "selection": {
+    "seed": 380021,
+    "eligible_prompts_required": 40,
+    "calibration_units": 20,
+    "sealed_audit_units": 20
+  },
+  "external_api_called": false,
+  "training_authorized": false,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false
+}
