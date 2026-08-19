@@ -1,0 +1,130 @@
+{
+  "name": "step3_oacpo_d2_final_label_and_triplet_qualification_protocol_v1",
+  "status": "prospective_before_reviewer_c_label_access_or_triplet_join",
+  "entry_commit": "5f036e0",
+  "self_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d2/protocol/oacpo_d2_triplet_qualification_protocol.json",
+  "objective": "Combine immutable A/B agreements with disagreement-only Reviewer C decisions, then test the frozen OACPO triplet resource gate without computing model gradients.",
+  "frozen_inputs": {
+    "finalize_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_oacpo_d2_finalize.py",
+      "sha256": "5c7989a6b010e110bf9019cc7aa956a6c3d4b54bb496f4d728ab1533a1c8d17a"
+    },
+    "finalize_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_oacpo_d2_finalize.py",
+      "sha256": "d9fd62143143f33697f700990790c32caf5bb1606f22bd76e08fee2d0075bd18"
+    },
+    "base_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/protocol/oacpo_d1_blind_review_protocol.json",
+      "sha256": "460fbcf8631187c6ab104963bcc4e508325b5d17fa501658d1eff2be5c24cb68"
+    },
+    "reviewer_c_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/protocol/oacpo_d1_reviewer_c_protocol.json",
+      "sha256": "72c287022ab6164d4bbecb05df364253729864a429347c231232f4dafd297bc1"
+    },
+    "reviewer_c_packet_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reports/oacpo_d1_reviewer_c_packet_manifest.json",
+      "sha256": "f8e14c35a10ff34e25b39a25b8566e65e96282cac2abbce611d48f61fcb5e981"
+    },
+    "ab_analysis": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reports/oacpo_d1_ab_reliability_analysis.json",
+      "sha256": "bf874e868e9626a5b42d80a0fb24dd3ddcc4f3886e39f4ebaa6fddeed026bdb5"
+    },
+    "safety_a_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/safety/oacpo_d1_safety_reviewer_a_labels.jsonl",
+      "sha256": "8da9dbaf03e343d9d30b690d98f01cef6e20d6ce6d1b5be24972b5619e130df2"
+    },
+    "safety_b_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/safety/oacpo_d1_safety_reviewer_b_labels.jsonl",
+      "sha256": "592c0efb0ffb5d7265ebeca305e1a137f777686958c287a56b8c5bdfcc81f221"
+    },
+    "quality_a_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/quality/oacpo_d1_quality_reviewer_a_labels.jsonl",
+      "sha256": "59a3e2daa92eea3c83cfed332113606b7d52baafdc18999f4749d7e1dca15809"
+    },
+    "quality_b_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/quality/oacpo_d1_quality_reviewer_b_labels.jsonl",
+      "sha256": "e937b3138f4e2541d53a3fb8981717c48c1e935e89d18d4a08b4aae92bc69396"
+    },
+    "structure_a_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/structure/oacpo_d1_structure_reviewer_a_labels.jsonl",
+      "sha256": "bc8ccfbeb0923ec9d9c51020b89dd8bc0462306a9ac4f549432e07c4d921f561"
+    },
+    "structure_b_labels": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/structure/oacpo_d1_structure_reviewer_b_labels.jsonl",
+      "sha256": "457d50cdf747531cd6fbc57f0272c3a4d2637e99927ea4b4cfef7b814270978e"
+    }
+  },
+  "reviewer_c_files": {
+    "safety": {
+      "packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_safety_reviewer_c_packet.jsonl",
+      "template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_safety_reviewer_c_template.jsonl",
+      "labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/reviewer_c/oacpo_d1_safety_reviewer_c_labels.jsonl",
+      "provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/reviewer_c/oacpo_d1_safety_reviewer_c_provenance.json"
+    },
+    "quality": {
+      "packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_quality_reviewer_c_packet.jsonl",
+      "template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_quality_reviewer_c_template.jsonl",
+      "labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/reviewer_c/oacpo_d1_quality_reviewer_c_labels.jsonl",
+      "provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/reviewer_c/oacpo_d1_quality_reviewer_c_provenance.json"
+    },
+    "structure": {
+      "packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_structure_reviewer_c_packet.jsonl",
+      "template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_structure_reviewer_c_template.jsonl",
+      "labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/reviewer_c/oacpo_d1_structure_reviewer_c_labels.jsonl",
+      "provenance": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/reviewer_c/oacpo_d1_structure_reviewer_c_provenance.json"
+    }
+  },
+  "ab_review_files": {
+    "safety": {
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/safety/oacpo_d1_safety_reviewer_a_labels.jsonl",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/safety/oacpo_d1_safety_reviewer_b_labels.jsonl",
+      "hidden_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/private/oacpo_d1_safety_hidden_key.jsonl"
+    },
+    "quality": {
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/quality/oacpo_d1_quality_reviewer_a_labels.jsonl",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/quality/oacpo_d1_quality_reviewer_b_labels.jsonl",
+      "hidden_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/private/oacpo_d1_quality_hidden_key.jsonl"
+    },
+    "structure": {
+      "reviewer_a_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/structure/oacpo_d1_structure_reviewer_a_labels.jsonl",
+      "reviewer_b_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/structure/oacpo_d1_structure_reviewer_b_labels.jsonl",
+      "hidden_key": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/private/oacpo_d1_structure_hidden_key.jsonl"
+    }
+  },
+  "final_label_rule": {
+    "a_b_agreed_field": "immutable A/B value",
+    "a_b_disputed_field": "Reviewer C value",
+    "quality_non_disputed_c_value": "must remain JSON null",
+    "main_session_label_choice": false,
+    "source_labels_used": false
+  },
+  "triplet_rule": {
+    "authored_positive": "clean_safe=yes, detail_retention=2, safe_actionability=2, naturalness=yes, mechanical_template=no",
+    "safe_quality_negative": "source_safe clean_safe=yes and at least one of detail_retention<2, safe_actionability<2, or mechanical_template=yes",
+    "unsafe_negative": "source_unsafe clean_safe=no",
+    "qualified_triplet": "all three role conditions true"
+  },
+  "triplet_yield_gates": {
+    "minimum_train_triplets": 21,
+    "minimum_calibration_triplets": 10,
+    "minimum_mechanism_dev_triplets": 10,
+    "minimum_total_triplets": 42,
+    "minimum_categories_with_triplets": 12
+  },
+  "outputs": {
+    "safety_final_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d2/final_labels/oacpo_d2_safety_final_labels.jsonl",
+    "quality_final_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d2/final_labels/oacpo_d2_quality_final_labels.jsonl",
+    "structure_final_labels": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d2/final_labels/oacpo_d2_structure_final_labels.jsonl",
+    "triplet_ledger": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d2/qualification/oacpo_d2_triplet_ledger.jsonl",
+    "result": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d2/reports/oacpo_d2_triplet_qualification.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d2/reports/OACPO_D2_TRIPLET_QUALIFICATION_REPORT.md"
+  },
+  "pass_route": "AUTHORIZE_OACPO_P0_ZERO_UPDATE_PROTOCOL_ONLY",
+  "failure_route": "STOP_OACPO_D2_TRIPLET_YIELD",
+  "gradient_computed": false,
+  "model_checkpoint_opened": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
