@@ -1,0 +1,102 @@
+{
+  "name": "step3_barp_mcd_d1r_reproduction_manifest_v1",
+  "runtime_head": "c4fe9e4e5b12991f2e239739cee6e18f3d8104ab",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1r/protocol/barp_mcd_d1r_protocol.json",
+  "protocol_sha256": "dabef35d45e06d68c96b768ae4d6cec42a6cb06296660c2b61e267b7f89ec15c",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_barp_mcd_d1r_seed5.json",
+  "config_sha256": "83150d0e30fd2bbb3d101fe5e256c51c3adec2d431bfc542b6896dbb3832ce66",
+  "checkpoint_root": "D:/Desktop/step3-barp-mcd-d1r-seed5-checkpoints",
+  "checkpoint_inventories": {
+    "raw_mcd": [
+      {
+        "path": "adapter_config.json",
+        "sha256": "2bec189d33312c23e746498411a5715d80f72a9b84b0fbf45fe7190997cb1516",
+        "bytes": 935
+      },
+      {
+        "path": "adapter_model.safetensors",
+        "sha256": "318e7ac7f819ad75cd46f69ee115678cbbbfc35e86f729eb7ddc850a0c98452f",
+        "bytes": 66126768
+      },
+      {
+        "path": "README.md",
+        "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+        "bytes": 5180
+      }
+    ],
+    "barp_mcd": [
+      {
+        "path": "adapter_config.json",
+        "sha256": "2bec189d33312c23e746498411a5715d80f72a9b84b0fbf45fe7190997cb1516",
+        "bytes": 935
+      },
+      {
+        "path": "adapter_model.safetensors",
+        "sha256": "d89b2cf2c8c437d0c1180936d7dc79ef14f87589282def8d9db272e1256044db",
+        "bytes": 66126768
+      },
+      {
+        "path": "README.md",
+        "sha256": "45d51c71104a4ce9fa9b706d3489b38b3f2d4197123cfef4acb1012fec3aaed6",
+        "bytes": 5180
+      }
+    ]
+  },
+  "commands": [
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_d1r.py preflight",
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_d1r.py run",
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_d1r.py verify-run"
+  ],
+  "route": "STOP_BARP_MCD_D1R_ASSIGNMENT_NOT_EXERCISED",
+  "total_optimizer_steps": 16,
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1r/analysis/barp_mcd_d1r_paired_analysis.json",
+      "sha256": "0eb70912ffa7bc95d38268cb48efcb8041616cd607247a9e29b279b03211bbbc",
+      "bytes": 8046,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1r/barp_mcd/arm_manifest.json",
+      "sha256": "4602968d2952f4cb4c26640de8076e7ce3ca8cdf7208d694caf21dd4c56f0a89",
+      "bytes": 94207,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1r/barp_mcd/training_trace.jsonl",
+      "sha256": "aba8d38237153963d92854ab6d685336ede82cc300cfed82efe6664d6be11289",
+      "bytes": 336303,
+      "rows": 8
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1r/barp_mcd_d1r_decision.json",
+      "sha256": "0896143057757b64e236d68f0859cb3db27ad8ba4b0e4669d1b26e10198ff4e9",
+      "bytes": 11735,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1r/BARP_MCD_D1R_REPORT.md",
+      "sha256": "51c0b87f1f033db9a8c1a9ec87a6e2fef9f90e36e2f322600c9530178c3d134a",
+      "bytes": 466,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1r/raw_mcd/arm_manifest.json",
+      "sha256": "b641bb95f1fd953b43e9070830635bfed83e441231dd498da2f0fe8a3896ce8d",
+      "bytes": 94200,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1r/raw_mcd/training_trace.jsonl",
+      "sha256": "b155b221ef9fc7a5cc724d5c54aa8b566ad53429f420a354a900a9d059958f70",
+      "bytes": 336038,
+      "rows": 8
+    }
+  ],
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "peft": "0.16.0",
+    "bitsandbytes": "0.49.2"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "name": "step3_barp_mcd_d1r_matched_analysis_v1",
+  "route": "STOP_BARP_MCD_D1R_ASSIGNMENT_NOT_EXERCISED",
+  "protocol_sha256": "dabef35d45e06d68c96b768ae4d6cec42a6cb06296660c2b61e267b7f89ec15c",
+  "optimizer_anchor_result": {
+    "classification": "pass_mechanism_over_all_16_updates",
+    "raw_arm_minimum_anchor_margin": 0.01676620804152894,
+    "barp_arm_minimum_anchor_margin": 0.00826457397381487,
+    "strict_margin_floor": 1e-08,
+    "all_same_batch_finite_step_losses_decreased": true,
+    "maximum_update_map_relative_l2_error": 1.623167483014436e-06,
+    "failing_optimizer_states": 0,
+    "d1_step4_failure_repaired": true
+  },
+  "route_protection_result": {
+    "classification": "inactive_after_two_early_assignments_and_negative_independent_transfer",
+    "required_nonanchor_choices": 6,
+    "observed_nonanchor_choices": 2,
+    "nonanchor_steps": [
+      2,
+      3
+    ],
+    "same_batch_target_gains": [
+      0.014576592942242783,
+      0.003607390256521237
+    ],
+    "minimum_selected_protected_retention": 0.9560750298967646,
+    "all_same_batch_target_gains_nonnegative": true
+  },
+  "paired_diagnostic": {
+    "units": 8,
+    "target_macro_mean_advantage": -0.008439658553667486,
+    "target_macro_bootstrap_lower": -0.010318064777418678,
+    "target_macro_bootstrap_upper": -0.006619623343173049,
+    "target_macro_minimum_unit": -0.013388436133499782,
+    "target_macro_maximum_unit": -0.004602347491403855,
+    "negative_units": 8,
+    "positive_units": 0,
+    "two_sided_exact_sign_p": 0.0078125,
+    "target_components": [
+      {
+        "certificate": "etarc",
+        "mean_advantage": -0.004145777894141972,
+        "positive_units": 0
+      },
+      {
+        "certificate": "branch_entropy",
+        "mean_advantage": -0.0015058019620870864,
+        "positive_units": 0
+      },
+      {
+        "certificate": "branch_negative_gap",
+        "mean_advantage": -0.019667395804773398,
+        "positive_units": 0
+      }
+    ],
+    "protected_disadvantage": [
+      {
+        "certificate": "risk",
+        "mean": 0.00021027481843693453,
+        "bootstrap_upper": 0.0004338476460879648,
+        "worst_unit": 0.0006811681893516031
+      },
+      {
+        "certificate": "uniform",
+        "mean": 0.0004586258768353314,
+        "bootstrap_upper": 0.0009129112691875279,
+        "worst_unit": 0.001472189319004408
+      },
+      {
+        "certificate": "tarc",
+        "mean": -0.009464785902965433,
+        "bootstrap_upper": -0.0029163583635038945,
+        "worst_unit": 0.008479907208044956
+      },
+      {
+        "certificate": "continuation",
+        "mean": 0.000259965728892672,
+        "bootstrap_upper": 0.0004143715039351459,
+        "worst_unit": 0.0005160459371992262
+      }
+    ],
+    "protected_gate_passed": true,
+    "target_mean_gate_passed": false,
+    "target_bootstrap_gate_passed": false
+  },
+  "mechanism_interpretation": {
+    "supported": [
+      "exact optimizer-space maximin anchors remove the D1 AdamW common-descent failure across this eight-step seed5 trajectory",
+      "same-batch route-protected target score gains do not transfer to the frozen paired diagnostic",
+      "the negative transfer is target-specific rather than caused by protected safety loss"
+    ],
+    "not_supported": [
+      "BARP target bias improves independent E-TARC or branch diagnostics",
+      "checkpoint-bound generation",
+      "Core100 or heldout evaluation",
+      "paper-level behavioral superiority"
+    ],
+    "next_method_constraint": "retain_the_optimizer_space_anchor_but_drop_same_batch_target_maximization_as_the_primary_treatment"
+  },
+  "resources": {
+    "raw_wall_seconds": 1274.989274263382,
+    "barp_wall_seconds": 1373.661418914795,
+    "raw_peak_reserved_bytes": 9445572608,
+    "barp_peak_reserved_bytes": 9437184000
+  },
+  "boundary": {
+    "total_optimizer_steps": 16,
+    "checkpoint_writes": 2,
+    "candidate_outputs_generated": false,
+    "core100_opened": false,
+    "heldout_opened": false,
+    "generation_authorized": false
+  }
+}
