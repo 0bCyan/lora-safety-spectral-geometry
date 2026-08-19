@@ -1,0 +1,1022 @@
+{
+  "all_units_normalizable": true,
+  "calibration_units": 20,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "optimizer_objects": 0,
+  "optimizer_steps": 0,
+  "rows": [
+    {
+      "certificate_norms": {
+        "branch_entropy": 0.11284295146030779,
+        "branch_negative_gap": 57.940304829773545,
+        "continuation": 2.200377704198177,
+        "etarc": 20.87735349123701,
+        "risk": 1.2486468695287405,
+        "tarc": 7.8382034465229244,
+        "uniform": 2.104692183670386
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 251,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 0.11284295146030779,
+          "branch_negative_gap": 57.940304829773545,
+          "continuation": 2.200377704198177,
+          "etarc": 20.87735349123701,
+          "risk": 1.2486468695287405,
+          "tarc": 7.8382034465229244,
+          "uniform": 2.104692183670386
+        },
+        "loss_means": {
+          "branch_entropy": 0.6931395530700684,
+          "branch_negative_gap": -0.0078125,
+          "continuation": 3.0317022800445557,
+          "etarc": 1.3472851514816284,
+          "risk": 2.7094767093658447,
+          "tarc": 0.3600098490715027,
+          "uniform": 2.915369987487793
+        },
+        "mode": "eval",
+        "response_tokens": 263,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000800",
+      "unit_id": "m3_cal_02"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 62.67526070357321,
+        "continuation": 2.360103354413563,
+        "etarc": 10.274572468872122,
+        "risk": 1.7363121786175395,
+        "tarc": 3.523945002038733,
+        "uniform": 2.2514467321117047
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": false,
+        "continuation_tokens": 260,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 0.0,
+          "branch_negative_gap": 62.67526070357321,
+          "continuation": 2.360103354413563,
+          "etarc": 10.274572468872122,
+          "risk": 1.7363121786175395,
+          "tarc": 3.523945002038733,
+          "uniform": 2.2514467321117047
+        },
+        "loss_means": {
+          "branch_entropy": 0.6931471824645996,
+          "branch_negative_gap": 0.0,
+          "continuation": 3.2336153984069824,
+          "etarc": 1.0319147109985352,
+          "risk": 1.5940066576004028,
+          "tarc": 0.17123770713806152,
+          "uniform": 3.108867883682251
+        },
+        "mode": "eval",
+        "response_tokens": 272,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": false,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000197",
+      "unit_id": "m3_cal_04"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 5.8701461864011195,
+        "branch_negative_gap": 60.210972935702365,
+        "continuation": 2.3959069112268976,
+        "etarc": 17.45316278466442,
+        "risk": 1.875039364476868,
+        "tarc": 5.405575366606009,
+        "uniform": 2.281580127832136
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 233,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 5.8701461864011195,
+          "branch_negative_gap": 60.210972935702365,
+          "continuation": 2.3959069112268976,
+          "etarc": 17.45316278466442,
+          "risk": 1.875039364476868,
+          "tarc": 5.405575366606009,
+          "uniform": 2.281580127832136
+        },
+        "loss_means": {
+          "branch_entropy": 0.6729352474212646,
+          "branch_negative_gap": -0.40625,
+          "continuation": 3.3081107139587402,
+          "etarc": 1.3132013082504272,
+          "risk": 2.1280148029327393,
+          "tarc": 0.28299206495285034,
+          "uniform": 3.167898178100586
+        },
+        "mode": "eval",
+        "response_tokens": 245,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000475",
+      "unit_id": "m3_cal_06"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 4.382259412411734,
+        "branch_negative_gap": 54.8941190628758,
+        "continuation": 2.427755891129603,
+        "etarc": 15.204436823608946,
+        "risk": 1.867529760529508,
+        "tarc": 5.559127835172676,
+        "uniform": 2.3208131321521033
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 260,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 4.382259412411734,
+          "branch_negative_gap": 54.8941190628758,
+          "continuation": 2.427755891129603,
+          "etarc": 15.204436823608946,
+          "risk": 1.867529760529508,
+          "tarc": 5.559127835172676,
+          "uniform": 2.3208131321521033
+        },
+        "loss_means": {
+          "branch_entropy": 0.6798679232597351,
+          "branch_negative_gap": -0.328125,
+          "continuation": 3.174302339553833,
+          "etarc": 1.2738685607910156,
+          "risk": 1.7144216299057007,
+          "tarc": 0.2738737463951111,
+          "uniform": 3.0559797286987305
+        },
+        "mode": "eval",
+        "response_tokens": 272,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000874",
+      "unit_id": "m3_cal_08"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 4.910838231474488,
+        "branch_negative_gap": 44.26506925774138,
+        "continuation": 2.2474984396991764,
+        "etarc": 16.866713699676204,
+        "risk": 2.1122835138129576,
+        "tarc": 7.139792541302137,
+        "uniform": 2.116170239907076
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 229,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 4.910838231474488,
+          "branch_negative_gap": 44.26506925774138,
+          "continuation": 2.2474984396991764,
+          "etarc": 16.866713699676204,
+          "risk": 2.1122835138129576,
+          "tarc": 7.139792541302137,
+          "uniform": 2.116170239907076
+        },
+        "loss_means": {
+          "branch_entropy": 0.6664177179336548,
+          "branch_negative_gap": -0.46875,
+          "continuation": 3.0510406494140625,
+          "etarc": 1.343021273612976,
+          "risk": 2.394669532775879,
+          "tarc": 0.3328017294406891,
+          "uniform": 2.9209136962890625
+        },
+        "mode": "eval",
+        "response_tokens": 241,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000697",
+      "unit_id": "m3_cal_10"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 0.0,
+        "branch_negative_gap": 55.28344973697595,
+        "continuation": 2.321447566917805,
+        "etarc": 13.417148009004205,
+        "risk": 1.9282006231604423,
+        "tarc": 4.481996507295617,
+        "uniform": 2.211268821948415
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": false,
+        "continuation_tokens": 242,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 0.0,
+          "branch_negative_gap": 55.28344973697595,
+          "continuation": 2.321447566917805,
+          "etarc": 13.417148009004205,
+          "risk": 1.9282006231604423,
+          "tarc": 4.481996507295617,
+          "uniform": 2.211268821948415
+        },
+        "loss_means": {
+          "branch_entropy": 0.6931471824645996,
+          "branch_negative_gap": 0.0,
+          "continuation": 3.3223891258239746,
+          "etarc": 1.0856794118881226,
+          "risk": 1.7984623908996582,
+          "tarc": 0.20779572427272797,
+          "uniform": 3.182218074798584
+        },
+        "mode": "eval",
+        "response_tokens": 254,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": false,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000989",
+      "unit_id": "m3_cal_12"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 0.2097679194064526,
+        "branch_negative_gap": 53.73324431423979,
+        "continuation": 2.484814562375263,
+        "etarc": 20.424431271663533,
+        "risk": 1.6584793368494843,
+        "tarc": 7.758587857774337,
+        "uniform": 2.381712698058155
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 267,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 0.2097679194064526,
+          "branch_negative_gap": 53.73324431423979,
+          "continuation": 2.484814562375263,
+          "etarc": 20.424431271663533,
+          "risk": 1.6584793368494843,
+          "tarc": 7.758587857774337,
+          "uniform": 2.381712698058155
+        },
+        "loss_means": {
+          "branch_entropy": 0.6931166648864746,
+          "branch_negative_gap": -0.015625,
+          "continuation": 3.1545259952545166,
+          "etarc": 1.5047950744628906,
+          "risk": 1.631027102470398,
+          "tarc": 0.4243979752063751,
+          "uniform": 3.038914680480957
+        },
+        "mode": "eval",
+        "response_tokens": 279,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000214",
+      "unit_id": "m3_cal_14"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 1.0277388162963428,
+        "branch_negative_gap": 52.73721070775016,
+        "continuation": 2.3586029275066274,
+        "etarc": 18.56781248533037,
+        "risk": 2.1686893125492146,
+        "tarc": 6.053405968395272,
+        "uniform": 2.2504891348930713
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 227,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 1.0277388162963428,
+          "branch_negative_gap": 52.73721070775016,
+          "continuation": 2.3586029275066274,
+          "etarc": 18.56781248533037,
+          "risk": 2.1686893125492146,
+          "tarc": 6.053405968395272,
+          "uniform": 2.2504891348930713
+        },
+        "loss_means": {
+          "branch_entropy": 0.6923848390579224,
+          "branch_negative_gap": -0.078125,
+          "continuation": 2.9066762924194336,
+          "etarc": 1.2961087226867676,
+          "risk": 2.000849962234497,
+          "tarc": 0.3187181353569031,
+          "uniform": 2.7810606956481934
+        },
+        "mode": "eval",
+        "response_tokens": 239,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000235",
+      "unit_id": "m3_cal_16"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 2.323315929219487,
+        "branch_negative_gap": 46.22520498540976,
+        "continuation": 2.6320542597389895,
+        "etarc": 22.594729216039653,
+        "risk": 2.0605785289423437,
+        "tarc": 6.053186808335776,
+        "uniform": 2.499433876819263
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 230,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 2.323315929219487,
+          "branch_negative_gap": 46.22520498540976,
+          "continuation": 2.6320542597389895,
+          "etarc": 22.594729216039653,
+          "risk": 2.0605785289423437,
+          "tarc": 6.053186808335776,
+          "uniform": 2.499433876819263
+        },
+        "loss_means": {
+          "branch_entropy": 0.6880161762237549,
+          "branch_negative_gap": -0.203125,
+          "continuation": 3.020761489868164,
+          "etarc": 1.3383570909500122,
+          "risk": 1.357323169708252,
+          "tarc": 0.36168158054351807,
+          "uniform": 2.893857479095459
+        },
+        "mode": "eval",
+        "response_tokens": 242,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000463",
+      "unit_id": "m3_cal_18"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 6.371247242784895,
+        "branch_negative_gap": 58.29735204731948,
+        "continuation": 2.465609706082255,
+        "etarc": 22.32353324273721,
+        "risk": 2.4961173034507165,
+        "tarc": 8.672554087717963,
+        "uniform": 2.3507353337552805
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 249,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 6.371247242784895,
+          "branch_negative_gap": 58.29735204731948,
+          "continuation": 2.465609706082255,
+          "etarc": 22.32353324273721,
+          "risk": 2.4961173034507165,
+          "tarc": 8.672554087717963,
+          "uniform": 2.3507353337552805
+        },
+        "loss_means": {
+          "branch_entropy": 0.6672782897949219,
+          "branch_negative_gap": -0.4609375,
+          "continuation": 3.079378128051758,
+          "etarc": 1.5355596542358398,
+          "risk": 1.589977502822876,
+          "tarc": 0.4040982723236084,
+          "uniform": 2.9606566429138184
+        },
+        "mode": "eval",
+        "response_tokens": 261,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000480",
+      "unit_id": "m3_cal_20"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 8.096477169813916,
+        "branch_negative_gap": 48.08268592630285,
+        "continuation": 2.0816504813372063,
+        "etarc": 9.368045134443177,
+        "risk": 2.0046784462118983,
+        "tarc": 5.467067201838324,
+        "uniform": 1.9924524791586569
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 269,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 8.096477169813916,
+          "branch_negative_gap": 48.08268592630285,
+          "continuation": 2.0816504813372063,
+          "etarc": 9.368045134443177,
+          "risk": 2.0046784462118983,
+          "tarc": 5.467067201838324,
+          "uniform": 1.9924524791586569
+        },
+        "loss_means": {
+          "branch_entropy": 0.6223033666610718,
+          "branch_negative_gap": -0.78125,
+          "continuation": 2.8195431232452393,
+          "etarc": 0.9853454828262329,
+          "risk": 1.1175882816314697,
+          "tarc": 0.2825893759727478,
+          "uniform": 2.715524673461914
+        },
+        "mode": "eval",
+        "response_tokens": 281,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000315",
+      "unit_id": "m3_cal_22"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 1.815333362115782,
+        "branch_negative_gap": 58.34550944539945,
+        "continuation": 2.44832830380346,
+        "etarc": 9.122802740494224,
+        "risk": 1.7840858470962027,
+        "tarc": 3.3846241172550924,
+        "uniform": 2.327529284336928
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 246,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 1.815333362115782,
+          "branch_negative_gap": 58.34550944539945,
+          "continuation": 2.44832830380346,
+          "etarc": 9.122802740494224,
+          "risk": 1.7840858470962027,
+          "tarc": 3.3846241172550924,
+          "uniform": 2.327529284336928
+        },
+        "loss_means": {
+          "branch_entropy": 0.6911978721618652,
+          "branch_negative_gap": -0.125,
+          "continuation": 2.92496919631958,
+          "etarc": 1.040663242340088,
+          "risk": 1.7296159267425537,
+          "tarc": 0.18520206212997437,
+          "uniform": 2.802358627319336
+        },
+        "mode": "eval",
+        "response_tokens": 258,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000804",
+      "unit_id": "m3_cal_24"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 0.8583716557224872,
+        "branch_negative_gap": 54.974496186222126,
+        "continuation": 2.177066582581437,
+        "etarc": 14.164729337810638,
+        "risk": 1.5256414636834386,
+        "tarc": 5.3855623402100505,
+        "uniform": 2.074198543134582
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 251,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 0.8583716557224872,
+          "branch_negative_gap": 54.974496186222126,
+          "continuation": 2.177066582581437,
+          "etarc": 14.164729337810638,
+          "risk": 1.5256414636834386,
+          "tarc": 5.3855623402100505,
+          "uniform": 2.074198543134582
+        },
+        "loss_means": {
+          "branch_entropy": 0.6926591396331787,
+          "branch_negative_gap": -0.0625,
+          "continuation": 2.9308152198791504,
+          "etarc": 1.2304335832595825,
+          "risk": 1.8433057069778442,
+          "tarc": 0.276568740606308,
+          "uniform": 2.813614845275879
+        },
+        "mode": "eval",
+        "response_tokens": 263,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000248",
+      "unit_id": "m3_cal_26"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 7.991252359573147,
+        "branch_negative_gap": 52.20739763943096,
+        "continuation": 2.501542030232721,
+        "etarc": 21.85308240621096,
+        "risk": 2.006131046983184,
+        "tarc": 6.590278551733567,
+        "uniform": 2.396801094768498
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 258,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 7.991252359573147,
+          "branch_negative_gap": 52.20739763943096,
+          "continuation": 2.501542030232721,
+          "etarc": 21.85308240621096,
+          "risk": 2.006131046983184,
+          "tarc": 6.590278551733567,
+          "uniform": 2.396801094768498
+        },
+        "loss_means": {
+          "branch_entropy": 0.6373812556266785,
+          "branch_negative_gap": -0.6875,
+          "continuation": 2.652857780456543,
+          "etarc": 1.5792958736419678,
+          "risk": 1.6624324321746826,
+          "tarc": 0.3748759627342224,
+          "uniform": 2.556278705596924
+        },
+        "mode": "eval",
+        "response_tokens": 270,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000048",
+      "unit_id": "m3_cal_28"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 1.3182804352626594,
+        "branch_negative_gap": 56.357647893568256,
+        "continuation": 2.3269397661605584,
+        "etarc": 15.889895245169875,
+        "risk": 2.052394932042871,
+        "tarc": 7.31718996998365,
+        "uniform": 2.233421372949792
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 242,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 1.3182804352626594,
+          "branch_negative_gap": 56.357647893568256,
+          "continuation": 2.3269397661605584,
+          "etarc": 15.889895245169875,
+          "risk": 2.052394932042871,
+          "tarc": 7.31718996998365,
+          "uniform": 2.233421372949792
+        },
+        "loss_means": {
+          "branch_entropy": 0.6920497417449951,
+          "branch_negative_gap": -0.09375,
+          "continuation": 2.9094715118408203,
+          "etarc": 1.1570537090301514,
+          "risk": 1.4164077043533325,
+          "tarc": 0.2376420646905899,
+          "uniform": 2.7922065258026123
+        },
+        "mode": "eval",
+        "response_tokens": 254,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000479",
+      "unit_id": "m3_cal_30"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 5.785768868223373,
+        "branch_negative_gap": 49.22763614879992,
+        "continuation": 2.4538537337149355,
+        "etarc": 18.94023982206259,
+        "risk": 2.3737268077358005,
+        "tarc": 5.858829155231434,
+        "uniform": 2.3367994040102937
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 242,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 5.785768868223373,
+          "branch_negative_gap": 49.22763614879992,
+          "continuation": 2.4538537337149355,
+          "etarc": 18.94023982206259,
+          "risk": 2.3737268077358005,
+          "tarc": 5.858829155231434,
+          "uniform": 2.3367994040102937
+        },
+        "loss_means": {
+          "branch_entropy": 0.6628472805023193,
+          "branch_negative_gap": -0.5,
+          "continuation": 2.796417474746704,
+          "etarc": 1.373915672302246,
+          "risk": 1.4102824926376343,
+          "tarc": 0.2968592643737793,
+          "uniform": 2.6828255653381348
+        },
+        "mode": "eval",
+        "response_tokens": 254,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000034",
+      "unit_id": "m3_cal_32"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 5.067965361739912,
+        "branch_negative_gap": 73.5472296110707,
+        "continuation": 2.482150209556214,
+        "etarc": 15.59960513748384,
+        "risk": 1.8569093732711845,
+        "tarc": 12.16440382172341,
+        "uniform": 2.3720966148716847
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 248,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 5.067965361739912,
+          "branch_negative_gap": 73.5472296110707,
+          "continuation": 2.482150209556214,
+          "etarc": 15.59960513748384,
+          "risk": 1.8569093732711845,
+          "tarc": 12.16440382172341,
+          "uniform": 2.3720966148716847
+        },
+        "loss_means": {
+          "branch_entropy": 0.6833564043045044,
+          "branch_negative_gap": -0.28125,
+          "continuation": 3.217769145965576,
+          "etarc": 1.2810062170028687,
+          "risk": 1.7035131454467773,
+          "tarc": 0.35187602043151855,
+          "uniform": 3.0892186164855957
+        },
+        "mode": "eval",
+        "response_tokens": 260,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000822",
+      "unit_id": "m3_cal_34"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 2.805779296081045,
+        "branch_negative_gap": 60.35529452187074,
+        "continuation": 2.6390762258735867,
+        "etarc": 11.473264835788223,
+        "risk": 2.617068113411287,
+        "tarc": 3.2285352429679075,
+        "uniform": 2.511633676074616
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 251,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 2.805779296081045,
+          "branch_negative_gap": 60.35529452187074,
+          "continuation": 2.6390762258735867,
+          "etarc": 11.473264835788223,
+          "risk": 2.617068113411287,
+          "tarc": 3.2285352429679075,
+          "uniform": 2.511633676074616
+        },
+        "loss_means": {
+          "branch_entropy": 0.6887718439102173,
+          "branch_negative_gap": -0.1875,
+          "continuation": 3.3691821098327637,
+          "etarc": 1.0576763153076172,
+          "risk": 2.2761855125427246,
+          "tarc": 0.2038138210773468,
+          "uniform": 3.2300877571105957
+        },
+        "mode": "eval",
+        "response_tokens": 263,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000675",
+      "unit_id": "m3_cal_36"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 3.3110715988212083,
+        "branch_negative_gap": 48.01381598746877,
+        "continuation": 2.190673259103873,
+        "etarc": 19.582056984564996,
+        "risk": 2.1360420354144387,
+        "tarc": 6.174626626370126,
+        "uniform": 2.0684222057526487
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 212,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 3.3110715988212083,
+          "branch_negative_gap": 48.01381598746877,
+          "continuation": 2.190673259103873,
+          "etarc": 19.582056984564996,
+          "risk": 2.1360420354144387,
+          "tarc": 6.174626626370126,
+          "uniform": 2.0684222057526487
+        },
+        "loss_means": {
+          "branch_entropy": 0.6833564043045044,
+          "branch_negative_gap": -0.28125,
+          "continuation": 3.2983007431030273,
+          "etarc": 1.279004693031311,
+          "risk": 1.7735564708709717,
+          "tarc": 0.27745768427848816,
+          "uniform": 3.144773006439209
+        },
+        "mode": "eval",
+        "response_tokens": 224,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000250",
+      "unit_id": "m3_cal_38"
+    },
+    {
+      "certificate_norms": {
+        "branch_entropy": 1.8244061203539257,
+        "branch_negative_gap": 58.60415329002583,
+        "continuation": 2.249662474446619,
+        "etarc": 26.998098978870384,
+        "risk": 1.6819318673631902,
+        "tarc": 10.33771395111064,
+        "uniform": 2.1682792490153893
+      },
+      "coverage": {
+        "all_gradients_finite_nonzero": true,
+        "continuation_tokens": 241,
+        "etarc_margin_terms": 8,
+        "gradient_norms": {
+          "branch_entropy": 1.8244061203539257,
+          "branch_negative_gap": 58.60415329002583,
+          "continuation": 2.249662474446619,
+          "etarc": 26.998098978870384,
+          "risk": 1.6819318673631902,
+          "tarc": 10.33771395111064,
+          "uniform": 2.1682792490153893
+        },
+        "loss_means": {
+          "branch_entropy": 0.6911978721618652,
+          "branch_negative_gap": -0.125,
+          "continuation": 3.345393419265747,
+          "etarc": 1.5259835720062256,
+          "risk": 2.2641777992248535,
+          "tarc": 0.4201189875602722,
+          "uniform": 3.213634490966797
+        },
+        "mode": "eval",
+        "response_tokens": 253,
+        "risk_microbatches": 1,
+        "safety_microbatches": 1,
+        "tarc_margin_terms": 8
+      },
+      "finite_nonzero": {
+        "branch_entropy": true,
+        "branch_negative_gap": true,
+        "continuation": true,
+        "etarc": true,
+        "risk": true,
+        "tarc": true,
+        "uniform": true
+      },
+      "sample_id": "risk_pkuqa_000157",
+      "unit_id": "m3_cal_40"
+    }
+  ],
+  "schema": "step3_cdro_opc_m3_calibration_certificate_norms_v1",
+  "scope": "opened_calibration_only",
+  "sealed_audit_opened": false,
+  "source_protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/gpu_confirmation/protocol/cdro_opc_m3_confirmation_protocol_v3.json",
+  "state_restored": true,
+  "training_authorized": false,
+  "zero_or_nonfinite_counts": {
+    "continuation": 0,
+    "risk": 0,
+    "tarc": 0,
+    "uniform": 0
+  }
+}

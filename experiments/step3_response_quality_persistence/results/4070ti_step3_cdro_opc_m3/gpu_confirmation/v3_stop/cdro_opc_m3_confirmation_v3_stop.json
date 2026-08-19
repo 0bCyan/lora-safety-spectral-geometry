@@ -1,0 +1,36 @@
+{
+  "schema": "step3_cdro_opc_m3_confirmation_v3_stop_v1",
+  "route": "STOP_CDRO_OPC_M3_UNREGISTERED_CERTIFICATE_NORMALIZATION",
+  "runtime_head": "c61ea526ddc4b548cb80678392ba9e4d25fe1992",
+  "direction_replay": {
+    "fallback_max_abs_error": 3.828703326602678e-11,
+    "candidate_max_abs_error": 1.2820467829716131e-09,
+    "coordinate_tolerance": 1e-6,
+    "bitwise_sha_equal": false,
+    "basis_orthonormality_max_error": 5.682967274545092e-08,
+    "solver_valid": true,
+    "fixed_direction_valid": true
+  },
+  "failure": "Legacy normalization required an unregistered branch_entropy gradient to be nonzero.",
+  "calibration_norm_diagnostic": {
+    "units": 20,
+    "registered_protected_zero_counts": {
+      "risk": 0,
+      "uniform": 0,
+      "tarc": 0,
+      "continuation": 0
+    },
+    "unregistered_zero_counts": {
+      "branch_entropy": 2,
+      "branch_negative_gap": 0,
+      "etarc": 0
+    },
+    "branch_entropy_zero_units": ["m3_cal_04", "m3_cal_12"],
+    "state_restored": true
+  },
+  "sealed_audit_opened": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
