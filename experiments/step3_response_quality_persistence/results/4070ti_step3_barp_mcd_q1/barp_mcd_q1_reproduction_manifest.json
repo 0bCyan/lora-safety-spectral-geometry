@@ -1,0 +1,59 @@
+{
+  "name": "step3_barp_mcd_q1_reproduction_manifest_v1",
+  "runtime_head": "5275609998bc5ffe52ff75cef1936c0af941b467",
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/protocol/barp_mcd_q1_protocol.json",
+  "protocol_sha256": "1cff2ed9644c6c4a1c5ab145a9b03fae32271f8c9859fe26a7d53c96341e3978",
+  "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_barp_mcd_q1_seed4.json",
+  "config_sha256": "e6a19bfb9d6cc70db7aacc9034070cf7ed7263d66598665de22d176f1dd70542",
+  "commands": [
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_training.py preflight",
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_training.py run",
+    "python experiments/step3_response_quality_persistence/scripts/step3_barp_mcd_training.py verify-run"
+  ],
+  "route": "STOP_BARP_MCD_Q1_VRAM_FAILED",
+  "total_optimizer_steps": 4,
+  "artifacts": [
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/barp_mcd/arm_manifest.json",
+      "sha256": "55b318e79814a08a72fded96ca1fdb71b9d2a5e9abd14786ed6a7f06750d4bdd",
+      "bytes": 87145,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/barp_mcd/training_trace.jsonl",
+      "sha256": "024e76405dcd2b3876cda11e86e5dbe3ac6dd1a23db7fc41c960c7cdf44a59b1",
+      "bytes": 64004,
+      "rows": 2
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/barp_mcd_q1_decision.json",
+      "sha256": "a9d42891f652ba823291279b14c09016847fc7a6a29212f1cf8a6aef3094f6ae",
+      "bytes": 2534,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/BARP_MCD_Q1_REPORT.md",
+      "sha256": "bfe45da5ecf197e55d02f7389ead44c85ecf5bc4c66e9c9a432c22248a9871a9",
+      "bytes": 506,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/raw_mcd/arm_manifest.json",
+      "sha256": "915e3ffdf9c9fa4bd8cf08d27fc4147d30826a2d716c8bcf47f9e8e4e36c22b0",
+      "bytes": 87142,
+      "rows": null
+    },
+    {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_q1/raw_mcd/training_trace.jsonl",
+      "sha256": "0e8846ca6b59852efa44c34d165587cafca8773c007c0a9f4f5726f3674f8cb6",
+      "bytes": 64052,
+      "rows": 2
+    }
+  ],
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "peft": "0.16.0",
+    "bitsandbytes": "0.49.2"
+  }
+}

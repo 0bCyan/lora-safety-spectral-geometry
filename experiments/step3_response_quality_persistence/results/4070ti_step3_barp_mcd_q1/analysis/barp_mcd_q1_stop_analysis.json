@@ -1,0 +1,60 @@
+{
+  "name": "step3_barp_mcd_q1_stop_analysis_v1",
+  "route": "STOP_BARP_MCD_Q1_VRAM_FAILED",
+  "decision_scope": "frozen_two_step_qualification",
+  "verified": true,
+  "optimizer_steps": 4,
+  "algorithmic_gates": {
+    "optimizer_map_exact": true,
+    "raw_common_descent": true,
+    "barp_protection": true,
+    "barp_target_nondegradation": true,
+    "barp_assignment_exercised": true,
+    "finite_step_common_descent": true
+  },
+  "barp": {
+    "selected_homotopy_fractions": [0.25, 0.125],
+    "minimum_protected_retention": 0.9506228809205418,
+    "minimum_target_gain_over_current_raw": 0.007497327324920769,
+    "maximum_optimizer_map_relative_l2_error": 1.1021560075093287e-06
+  },
+  "raw_mcd": {
+    "maximum_optimizer_map_relative_l2_error": 1.1030335921797111e-06
+  },
+  "vram": {
+    "physical_total_bytes": 12878086144,
+    "raw_mcd_peak_reserved_bytes": 16894656512,
+    "barp_mcd_peak_reserved_bytes": 16877879296,
+    "registered_headroom_gate": 0.1,
+    "gate_passed": false
+  },
+  "root_cause": {
+    "classification": "implementation_tensor_lifetime_not_method_geometry",
+    "trainable_parameters": 16515072,
+    "retained_endpoint_directions": 126,
+    "dtype_bytes": 4,
+    "estimated_retained_endpoint_bytes": 8323596288,
+    "estimated_retained_endpoint_gib": 7.751953125,
+    "explanation": "The current-state search retained every feasible non-full subset direction on CUDA until final selection. The frozen P0 implementation retained scalar endpoint records and reconstructed only screened directions. Q1 therefore consumed an unnecessary full-gradient tensor for each of 126 endpoints."
+  },
+  "descriptive_diagnostic_barp_minus_raw": {
+    "risk_relative": -0.0013454351262554703,
+    "uniform_relative": -0.0055805489612892195,
+    "tarc_relative": -0.08033580041497448,
+    "continuation_relative": -0.006206350575181905,
+    "etarc_relative": 0.038026907155539795,
+    "branch_entropy_relative": 0.037837488643058845,
+    "branch_negative_gap_relative": 0.18263371699390657,
+    "route_selecting": false
+  },
+  "authorized_next_action": "freeze_a_new_q1r_protocol_that_reconstructs_only_screened_endpoint_directions_without_changing_data_candidates_thresholds_or_optimizer_budget",
+  "not_authorized": [
+    "reinterpret_q1_as_pass",
+    "edit_q1_artifacts",
+    "reuse_q1_optimizer_budget",
+    "longer_training",
+    "candidate_generation",
+    "core100",
+    "heldout"
+  ]
+}
