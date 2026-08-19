@@ -3,8 +3,8 @@
   "route_id": "step3_cdro_opc_m3_blind_review",
   "status": "prospective_before_reviewer_packet_construction",
   "protocol_tag": "step3-cdro-opc-m3-review-protocol",
-  "protocol_commit_sha1": "PENDING_PROTOCOL_COMMIT",
-  "protocol_lock_status": "pending",
+  "protocol_commit_sha1": "72b75e099c4182d0f78e692d5cd5965608427732",
+  "protocol_lock_status": "locked_to_protocol_commit",
   "authoring_seal": {
     "spool_root": "D:\\Desktop\\step3-cdro-opc-m3-authoring-attempt-002-20260819",
     "candidates_sha256": "5fea6c5635c336ae5c9b41ad70f4ee9a5cd55479148ff425b0b824c50b5fd830",
