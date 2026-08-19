@@ -1,0 +1,29 @@
+{
+  "a_b_labels_exposed": false,
+  "artifact_sha256": {
+    "quality_c_packet": "4923347416b95e909f4fd962ec36e5ce4537fe8809a78fd173381440b5381894",
+    "quality_c_template": "b7729afac9ab134b0ccb94b43c588c655c293a7a73cbfb7bb1b4a76af0b0eb0a",
+    "safety_c_packet": "ca01306f6df97c70d5d6b647fde706076af690b98cb9587d5a70891e58f715a7",
+    "safety_c_template": "f24d5e6cbb4cc0f5e12219a13b998a4cd5a4413a5234713828e2e8da4c661e92",
+    "structure_c_packet": "d59feb16b96ac9eece87ccdcc1a135b4c2c754b51f38624084aeab8fe3ed0d1a",
+    "structure_c_template": "21e2b4248188659941fc0c97a82d5b1651c4391b1394a5d9243f5e154cf0800b"
+  },
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_oacpo_d1_reviewer_c_packet_manifest_v1",
+  "optimizer_steps": 0,
+  "protocol": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/protocol/oacpo_d1_reviewer_c_protocol.json",
+  "protocol_sha256": "72c287022ab6164d4bbecb05df364253729864a429347c231232f4dafd297bc1",
+  "route": "OACPO_D1_REVIEWER_C_PACKETS_FROZEN",
+  "row_counts": {
+    "quality_c_packet": 23,
+    "quality_c_template": 23,
+    "safety_c_packet": 16,
+    "safety_c_template": 16,
+    "structure_c_packet": 7,
+    "structure_c_template": 7
+  },
+  "source_roles_exposed": false,
+  "training_authorized": false,
+  "triplet_qualification_run": false
+}

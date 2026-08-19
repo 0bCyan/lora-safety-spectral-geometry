@@ -1,0 +1,93 @@
+{
+  "name": "step3_oacpo_d1_disagreement_only_reviewer_c_protocol_v1",
+  "status": "prospective_before_reviewer_c_packet_construction_or_label",
+  "entry_commit": "9937621",
+  "self_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/protocol/oacpo_d1_reviewer_c_protocol.json",
+  "objective": "Blindly adjudicate only the 46 primary decision rows disputed by reliable OACPO D1 A/B reviewers while keeping all agreed fields immutable.",
+  "frozen_inputs": {
+    "packet_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_oacpo_d1_c_packets.py",
+      "sha256": "e692e6263794d07536affa663dcf4408e262a48edbb873690aaafad657dd3654"
+    },
+    "packet_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_oacpo_d1_c_packets.py",
+      "sha256": "42b173ce8f815adceb564ad290a331dfc54a0bca97215df1b33c2afa5e7dd4d6"
+    },
+    "reviewer_c_instructions": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3_oacpo_d1_reviewer_c_instructions.md",
+      "sha256": "1cfdc2268a52fb1a7ee11b66758c1136f688c5110794fc937d06e25bd13bb8e4"
+    },
+    "base_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/protocol/oacpo_d1_blind_review_protocol.json",
+      "sha256": "460fbcf8631187c6ab104963bcc4e508325b5d17fa501658d1eff2be5c24cb68"
+    },
+    "ab_analysis": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reports/oacpo_d1_ab_reliability_analysis.json",
+      "sha256": "bf874e868e9626a5b42d80a0fb24dd3ddcc4f3886e39f4ebaa6fddeed026bdb5"
+    },
+    "disagreement_ledger": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/private/oacpo_d1_ab_disagreement_ledger.jsonl",
+      "sha256": "e850eed7abb22868cade6ca188cdfb4cf3b151de7aea62aeab5ea254d2cedb06"
+    }
+  },
+  "packet_design": {
+    "seed": 2026081904,
+    "expected_rows": {
+      "safety": 16,
+      "quality": 23,
+      "structure": 7
+    },
+    "only_primary_a_b_disagreements": true,
+    "a_b_labels_and_reasons_hidden": true,
+    "source_roles_pair_links_splits_categories_hidden": true,
+    "quality_non_disputed_fields_are_null_and_immutable": true
+  },
+  "allowed_fields": {
+    "safety": [
+      "clean_safe"
+    ],
+    "quality": [
+      "detail_retention",
+      "safe_actionability",
+      "naturalness"
+    ],
+    "structure": [
+      "mechanical_template"
+    ]
+  },
+  "reviewers": {
+    "safety_c": "one new independent fresh no-context sub-agent",
+    "quality_c": "one additional new independent fresh no-context sub-agent",
+    "structure_c": "one additional new independent fresh no-context sub-agent",
+    "cross_construct_session_reuse": false,
+    "requested_runtime": "Codex sub-agents inheriting the current parent model",
+    "main_session_adjudicates": false,
+    "forbidden_material": [
+      "A/B labels or reasons",
+      "hidden keys, response roles, pair links, splits, categories, or source labels",
+      "author identity",
+      "training results or gradient reports",
+      "Core100 or heldout",
+      "git history"
+    ]
+  },
+  "outputs": {
+    "safety_c_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_safety_reviewer_c_packet.jsonl",
+    "safety_c_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_safety_reviewer_c_template.jsonl",
+    "quality_c_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_quality_reviewer_c_packet.jsonl",
+    "quality_c_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_quality_reviewer_c_template.jsonl",
+    "structure_c_packet": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_structure_reviewer_c_packet.jsonl",
+    "structure_c_template": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_structure_reviewer_c_template.jsonl",
+    "manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reports/oacpo_d1_reviewer_c_packet_manifest.json"
+  },
+  "packet_pass_route": "OACPO_D1_REVIEWER_C_PACKETS_FROZEN",
+  "review_pass_route": "AUTHORIZE_OACPO_D2_TRIPLET_QUALIFICATION_PROTOCOL_ONLY",
+  "review_failure_route": "STOP_OACPO_D1_REVIEWER_C_INVALID_OR_INCOMPLETE",
+  "triplet_qualification_run": false,
+  "gradient_authorized": false,
+  "model_checkpoint_open_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
