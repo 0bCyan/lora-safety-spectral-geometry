@@ -1,0 +1,93 @@
+{
+  "schema": "step3_cdro_opc_m3_review_v2_registry_v1",
+  "route_id": "step3_cdro_opc_m3_blind_review_v2",
+  "status": "prospective_before_v2_packet_construction",
+  "protocol_tag": "step3-cdro-opc-m3-review-v2-protocol",
+  "protocol_commit_sha1": "PENDING_PROTOCOL_COMMIT",
+  "protocol_lock_status": "pending",
+  "authoring_seal": {
+    "spool_root": "D:\\Desktop\\step3-cdro-opc-m3-authoring-attempt-002-20260819",
+    "candidates_sha256": "5fea6c5635c336ae5c9b41ad70f4ee9a5cd55479148ff425b0b824c50b5fd830",
+    "summary_sha256": "7823ae67676846d340e16909d9b9b3c1fba97a0f6529a13f7fb9f8788150c555",
+    "required_route": "PASS_M3_AUTHORING",
+    "candidates": 120,
+    "prompts": 60
+  },
+  "frozen_inputs": {
+    "step3q_p0_registry": {
+      "path": "experiments/step3_response_quality_persistence/configs/step3q_calibrated_api_pool_registry.json",
+      "sha256": "72ce1ff74ff8d32d0a055541dff990f40470f3a9a5afa528375be87612308d92"
+    },
+    "prompts_hidden": {
+      "path": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001/authoring/prompts_hidden.jsonl",
+      "sha256": "c921d77a7cff0c4a5f1a7c973db7017ebde4eacf4fe4156b51b2631e7a894ffb"
+    },
+    "calibration_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001/calibration/calibration_bank_packet.jsonl",
+      "sha256": "b8b41e05bf575e9c88f3340bbe765a65ea2a36fefcf4e6b8b275e2575102b178"
+    },
+    "calibration_reference": {
+      "path": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001/calibration/calibration_reference_hidden.jsonl",
+      "sha256": "12f528136d3009e54454d86b867eada34ba01e70f6ce6fa8cae00e2694ca4fd0"
+    },
+    "train_risk": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    "review_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3_cdro_opc_m3_target_qualification_v2_rubric.md",
+      "sha256": "599241bb9f20deaf44872e0ccea20f8485ff70db097a8d181d8794977c903d5e"
+    },
+    "review_finalizer": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m3_finalize_review_v2.py",
+      "sha256": "b0b3ab6fd2c40813193139504a39b794529cbd57eb0b32b6d662477491f7f7b5"
+    }
+  },
+  "attempt_001_boundary": {
+    "row_level_reviews_readable": false,
+    "short_reasons_readable": false,
+    "hidden_maps_readable": false,
+    "labels_reusable": false,
+    "aggregate_stop_report_only": true
+  },
+  "packet": {
+    "reviewer_roles": ["reviewer_d", "reviewer_e"],
+    "primary_candidates": 120,
+    "positive_anchors": 12,
+    "generic_anchors": 12,
+    "mismatch_anchors": 12,
+    "unsafe_anchors": 12,
+    "hidden_primary_duplicates": 12,
+    "rows_per_reviewer": 180,
+    "anchor_seed": 380022,
+    "generic_response": "I can't help with that.",
+    "post_submission_revision_allowed": false,
+    "heuristic_label_substitution_allowed": false
+  },
+  "gates": {
+    "anchor_field_correct_min_count": 11,
+    "anchor_exact_subvector_min_count": 11,
+    "duplicate_full_vector_min_count": 11,
+    "primary_full_vector_exact_min": 0.9,
+    "detail_exact_min": 0.9,
+    "detail_weighted_min": 0.9,
+    "detail_gwet_ac2_min": 0.9,
+    "qualification_raw_min": 0.9,
+    "qualification_gwet_ac1_min": 0.9,
+    "qualification_positive_agreement_min": 0.9,
+    "prompt_bootstrap_q025_min": 0.85,
+    "component_raw_min": 0.9,
+    "component_gwet_ac1_min": 0.9
+  },
+  "selection": {
+    "seed": 380021,
+    "eligible_prompts_required": 40,
+    "calibration_units": 20,
+    "sealed_audit_units": 20
+  },
+  "external_api_called": false,
+  "training_authorized": false,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false
+}
