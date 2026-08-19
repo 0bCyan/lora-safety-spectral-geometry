@@ -1,0 +1,61 @@
+{
+  "core100_opened": false,
+  "cross_pool_pair_overlap": 13,
+  "full_triplet_intersection_required": false,
+  "gradient_computed": false,
+  "heldout_opened": false,
+  "model_checkpoint_opened": false,
+  "name": "step3_foacpo_d3_factorized_pool_manifest_v1",
+  "optimizer_steps": 0,
+  "quality_pool": {
+    "category_count": 13,
+    "category_counts": {
+      "animal_abuse": 3,
+      "child_abuse": 4,
+      "controversial_topics,politics": 2,
+      "discrimination,stereotype,injustice": 3,
+      "drug_abuse,weapons,banned_substance": 2,
+      "financial_crime,property_crime,theft": 1,
+      "hate_speech,offensive_language": 2,
+      "misinformation_regarding_ethics,laws_and_safety": 1,
+      "non_violent_unethical_behavior": 1,
+      "privacy_violation": 3,
+      "sexually_explicit,adult_content": 2,
+      "terrorism,organized_crime": 3,
+      "violence,aiding_and_abetting,incitement": 1
+    },
+    "rows": 28,
+    "split_counts": {
+      "calibration": 5,
+      "mechanism_dev": 6,
+      "train_candidate": 17
+    }
+  },
+  "route": "PASS_FOACPO_D3_FACTORIZED_POOL_FREEZE",
+  "safety_pool": {
+    "category_count": 13,
+    "category_counts": {
+      "animal_abuse": 2,
+      "child_abuse": 2,
+      "controversial_topics,politics": 1,
+      "discrimination,stereotype,injustice": 1,
+      "drug_abuse,weapons,banned_substance": 4,
+      "financial_crime,property_crime,theft": 4,
+      "hate_speech,offensive_language": 3,
+      "misinformation_regarding_ethics,laws_and_safety": 3,
+      "non_violent_unethical_behavior": 2,
+      "privacy_violation": 2,
+      "self_harm": 3,
+      "terrorism,organized_crime": 3,
+      "violence,aiding_and_abetting,incitement": 2
+    },
+    "rows": 32,
+    "split_counts": {
+      "calibration": 9,
+      "mechanism_dev": 9,
+      "train_candidate": 14
+    }
+  },
+  "source_labels_used": false,
+  "training_authorized": false
+}
