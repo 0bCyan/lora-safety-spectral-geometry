@@ -1,15 +1,16 @@
 {
-  "name": "step3_foacpo_p0_factorized_optimizer_zero_step_v1",
+  "name": "step3_foacpo_p0_factorized_optimizer_zero_step_v2_runtime_retry",
   "status": "prospective_before_any_FOACPO_P0_model_forward",
   "entry_commit": "f22bf08",
   "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_foacpo_p0.json",
   "objective": "Prospectively test whether a factorized quality/safety AdamW displacement can transfer to calibration and mechanism-dev while retaining a protected optimizer-space anchor.",
   "frozen_inputs": {
     "config": {"path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_foacpo_p0.json", "sha256": "6616c70501a8008c2dd423f7b454f5af304e3c8219215e191fb44d5e126f7c9a"},
-    "runner": {"path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_p0.py", "sha256": "18d51ea4060da4daa467b4f1aabb4ddaba6edd9df506cd32f2cd11710f4b6529"},
+    "runner": {"path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_p0.py", "sha256": "7592e8a7974401c1ebc333ea21412551d759e39aff98bf392cf1c783bdb141c2"},
     "tests": {"path": "experiments/step3_response_quality_persistence/scripts/test_step3_foacpo_p0.py", "sha256": "7bedfaa4194212d0ef7a797c6c434e23fbd8c2c0646e8c9881e2a80a496702e1"},
     "common_math": {"path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_common.py", "sha256": "638ea69da9b04cb6774988d3cff16444b6ca05a4fb613256073df6137e99391a"},
     "protocol_note": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0/protocol/FOACPO_P0_PROTOCOL.md", "sha256": "30580e41d4880463a8a411aa51e04df224c72966d8dda1cdea61ee94c5efac7c"},
+    "runtime_retry_note": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_p0/protocol/FOACPO_P0_RUNTIME_RETRY.md", "sha256": "eafe23b9908db98d16bf36657bcae43a9524d95400079c85eb66b451e492f79f"},
     "d3_manifest": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/reports/foacpo_d3_factorized_pool_manifest.json", "sha256": "29408b5ee671575a35a3cce1d073cd63e177396129bb5179dd34821b87c2c440"},
     "quality_pairs": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_quality_pairs.jsonl", "sha256": "a3b372719cf3b8400b55a8f5077ff57a215322f2cb199a6e8d4ca12652e1f200"},
     "safety_pairs": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_safety_pairs.jsonl", "sha256": "11dc692d23edbb929f3020724f4a01d494e9a72781b0161a5920bfd94322a6e5"},
@@ -18,6 +19,13 @@
     "safety_targets": {"path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl", "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c"},
     "risk_source": {"path": "data/processed/unified_pool/train_risk.jsonl", "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"},
     "structural_audit": {"path": "experiments/step3_response_quality_persistence/results/4070ti_step3_mcd_p0/run/mcd_p0_structural_audit.json", "sha256": "09d182e42373b9e1ab42af64c41aab923ed9c4cc1930b500982ea45bbe99a006"}
+  },
+  "retry_basis": {
+    "attempt_1_stop": "git ls-files rejected hash-frozen local checkpoint before model load",
+    "model_forward_occurred": false,
+    "gradient_computed": false,
+    "method_or_threshold_changed": false,
+    "only_change": "exempt the two still-hash-verified local checkpoint files from the Git tracking assertion"
   },
   "model": {
     "model_name_or_path": "Qwen/Qwen3-4B",

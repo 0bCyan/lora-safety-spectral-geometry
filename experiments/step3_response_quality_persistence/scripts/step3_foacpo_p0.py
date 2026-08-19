@@ -188,7 +188,12 @@ def require_clean_start(path: Path, protocol: dict[str, Any]) -> str:
     ).stdout.strip()
     if status:
         raise P0ValidationError("P0 requires a clean worktree")
-    tracked = [item["path"] for item in protocol["frozen_inputs"].values()]
+    local_hashed_artifacts = {"checkpoint_adapter", "checkpoint_config"}
+    tracked = [
+        item["path"]
+        for name, item in protocol["frozen_inputs"].items()
+        if name not in local_hashed_artifacts
+    ]
     tracked.extend((protocol["config_path"], path.resolve().relative_to(REPO).as_posix()))
     for value in set(tracked):
         subprocess.run(
