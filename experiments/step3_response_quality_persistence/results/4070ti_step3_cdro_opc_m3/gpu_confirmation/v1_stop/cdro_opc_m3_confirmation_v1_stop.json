@@ -1,0 +1,29 @@
+{
+  "schema": "step3_cdro_opc_m3_confirmation_v1_stop_v1",
+  "route": "STOP_CDRO_OPC_M3_DIRECTION_REPLAY_UNRECORDED_COMPONENT",
+  "runtime_head": "b4e1d9426f50425f6cde3e14abcd9003c3553fe6",
+  "protocol_commit": "4d329d5696be715a91b38e9f8238c0436122a357",
+  "protocol_lock_commit": "b4e1d9426f50425f6cde3e14abcd9003c3553fe6",
+  "failure": "Frozen M1 direction failed the V1 conjunction before component diagnostics were persisted.",
+  "m3_calibration_gradients": 0,
+  "m3_sealed_audit_gradients": 0,
+  "run_outputs_created": false,
+  "old_data_only_diagnostic": {
+    "fallback_max_abs_error": 0.0,
+    "candidate_max_abs_error": 0.0,
+    "candidate_coordinate_sha256": "4fa4e2c904724f1b7b3051bb38cf924f90ab43350b4ecbb00cb1a923bd14130f",
+    "expected_candidate_coordinate_sha256": "4fa4e2c904724f1b7b3051bb38cf924f90ab43350b4ecbb00cb1a923bd14130f",
+    "bitwise_sha_equal": true,
+    "basis_rank": 5,
+    "orthonormality_max_error": 5.6983795682086225e-08,
+    "solver_optimization_valid": true,
+    "primal_violation": 1.1258355359089478e-13,
+    "normalized_stationarity_residual": 3.3321036109455544e-07,
+    "fixed_direction_valid_under_v1_conjunction": true
+  },
+  "diagnostic_scope": "already_open_M1_inputs_only",
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
