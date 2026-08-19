@@ -1,0 +1,691 @@
+{
+  "behavior_at_selected_dose": {
+    "calibration": {
+      "quality": {
+        "aggregate_cosine": 0.006325383491160052,
+        "count": 5,
+        "nonpositive": 2,
+        "per_pair_cosines": [
+          -0.010273536299997768,
+          0.015379444385310736,
+          0.01120264275370669,
+          -0.008567597369825892,
+          0.020333810105004235
+        ],
+        "positive": 3
+      },
+      "safety": {
+        "aggregate_cosine": 0.0244366109523767,
+        "count": 9,
+        "nonpositive": 2,
+        "per_pair_cosines": [
+          -0.002699801047255902,
+          0.016404072943830436,
+          0.0019037297119294365,
+          0.01854521981461361,
+          0.017164578232477322,
+          -0.000606173655467566,
+          0.013531457647443526,
+          0.014129357709465624,
+          0.00950786594614616
+        ],
+        "positive": 7
+      }
+    },
+    "mechanism_dev": {
+      "quality": {
+        "aggregate_cosine": 0.019691702710080795,
+        "count": 6,
+        "nonpositive": 0,
+        "per_pair_cosines": [
+          0.01322994160931486,
+          0.013864036504994156,
+          0.010495333765685053,
+          0.004350747017639219,
+          0.015304532661925458,
+          0.019603771169167245
+        ],
+        "positive": 6
+      },
+      "safety": {
+        "aggregate_cosine": 0.013467142423659192,
+        "count": 9,
+        "nonpositive": 1,
+        "per_pair_cosines": [
+          0.0019258527069114777,
+          0.0050062338000294,
+          0.005799815325809019,
+          0.013172786185531101,
+          0.0050436529668626785,
+          0.008710927193754558,
+          0.013453766553772412,
+          -0.004853545711900306,
+          0.012420616175792406
+        ],
+        "positive": 8
+      }
+    }
+  },
+  "claim_status": "retrospective_development_only",
+  "direct_calibration_residuals": [
+    {
+      "continuation": -0.049645570861645984,
+      "risk": -0.06727627689375397,
+      "tarc": -0.06658364232566366,
+      "uniform": -0.06421429626307948
+    },
+    {
+      "continuation": -0.046656667784282235,
+      "risk": -6.938893903907228e-18,
+      "tarc": -0.039969471904362106,
+      "uniform": -0.04557099844202325
+    },
+    {
+      "continuation": -0.05930450566698517,
+      "risk": -0.060532311467101,
+      "tarc": -0.040457534922191486,
+      "uniform": -0.061656862638766186
+    },
+    {
+      "continuation": -0.0689715808145288,
+      "risk": -0.08432461533691205,
+      "tarc": -0.05614650005115075,
+      "uniform": -0.0660876725194841
+    },
+    {
+      "continuation": -0.031749139426553455,
+      "risk": -0.06080504863684532,
+      "tarc": -0.04516928936470345,
+      "uniform": -0.04195812702300454
+    },
+    {
+      "continuation": -0.05841214870666389,
+      "risk": -0.022984594297757406,
+      "tarc": -0.047130388665828214,
+      "uniform": -0.05472195354634893
+    },
+    {
+      "continuation": -0.062078362193956564,
+      "risk": -0.021139156253657965,
+      "tarc": -0.04479369387245019,
+      "uniform": -0.05608309064544591
+    },
+    {
+      "continuation": -0.050087020662875965,
+      "risk": -0.048244548207103805,
+      "tarc": -0.04695228534796068,
+      "uniform": -0.04819951338499309
+    },
+    {
+      "continuation": -0.056533864942949985,
+      "risk": -0.07609633499323498,
+      "tarc": -0.05532685928608534,
+      "uniform": -0.058579264551015364
+    },
+    {
+      "continuation": -0.04983448193531966,
+      "risk": -0.0807817426928806,
+      "tarc": -0.06119641998062229,
+      "uniform": -0.06436468715741121
+    },
+    {
+      "continuation": -0.04360756893565111,
+      "risk": -0.04337539299295674,
+      "tarc": -0.04680716394291551,
+      "uniform": -0.05025595134475875
+    },
+    {
+      "continuation": -0.0379784405270772,
+      "risk": -0.02953517277629306,
+      "tarc": -0.04741309176926462,
+      "uniform": -0.04357945691157644
+    },
+    {
+      "continuation": -0.05769003318629623,
+      "risk": -0.04659964269516312,
+      "tarc": -0.04891342976653887,
+      "uniform": -0.05285714491674657
+    },
+    {
+      "continuation": -0.11172326960530299,
+      "risk": -0.07295675369898252,
+      "tarc": -0.05717858872145541,
+      "uniform": -0.09961358470244945
+    },
+    {
+      "continuation": -0.07374795071855178,
+      "risk": -0.012122375517933746,
+      "tarc": -0.045815297469827536,
+      "uniform": -0.06163934201461743
+    },
+    {
+      "continuation": -0.08445470953620315,
+      "risk": -0.0046327184113921505,
+      "tarc": -0.03533616414764748,
+      "uniform": -0.07748987614385887
+    },
+    {
+      "continuation": -0.0917963511705021,
+      "risk": -0.0064401178909259255,
+      "tarc": -0.06278233000365953,
+      "uniform": -0.07909438592139156
+    },
+    {
+      "continuation": -0.03937495985511691,
+      "risk": -0.01444830143717258,
+      "tarc": -0.019233131915286326,
+      "uniform": -0.026350524596411677
+    },
+    {
+      "continuation": -0.06181286794916545,
+      "risk": -0.037823772893521415,
+      "tarc": -0.05041740513670981,
+      "uniform": -0.055764475800366906
+    },
+    {
+      "continuation": -0.03320015385207453,
+      "risk": -0.03751279536684581,
+      "tarc": -0.045027850102668535,
+      "uniform": -0.04159478884050941
+    }
+  ],
+  "fresh_confirmation_claimed": false,
+  "gates": {
+    "behavior": true,
+    "direct_calibration_protection": true,
+    "positive_dose": true
+  },
+  "m1_units_may_not_be_reused_for_confirmation": true,
+  "maximum_direct_calibration_residual": -6.938893903907228e-18,
+  "name": "step3_cdro_opc_m2_retrospective_development_v1",
+  "optimizer_steps": 0,
+  "policy": {
+    "alpha": 0.05,
+    "calibration_selects_dose": true,
+    "calibration_units": 20,
+    "conditional_on_selected_dose_coverage_claimed": false,
+    "direction_fixed_before_calibration_required": true,
+    "fallback_closed": true,
+    "finite_sample_marginal_failure_upper_bound": 0.04761904761904767,
+    "finite_sample_marginal_protection_lower_bound": 0.9523809523809523,
+    "guarantee_scope": "future_standardized_protected_change_on_the_fixed_direction_under_exchangeability",
+    "lower_order_statistic_rank": 1,
+    "optimizer_steps": 0,
+    "ordered_unit_safe_doses": [
+      0.048981934846399997,
+      0.055398020595597626,
+      0.058381533864990495,
+      0.07028136113664954,
+      0.0766789491132442,
+      0.10388068636833876,
+      0.11514726290644846,
+      0.18722501117051116,
+      0.23746339868613028,
+      0.28813554766290644,
+      0.9003092499047021,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "selected_safe_dose": 0.048981934846399997,
+    "training_authorized": false,
+    "unit_records": [
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 1.0,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 1.0,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.19692098509160613,
+          "risk": -0.5568640148513595,
+          "tarc": -0.5427234021895211,
+          "uniform": -0.4943515673484897
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 0.048981934846399997,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 0.048981934846399997,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.13590046626693278,
+          "risk": 0.8166276021033878,
+          "tarc": 0.0006232521384375414,
+          "uniform": -0.11373577747577934
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 1.0,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 1.0,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.394114804315534,
+          "risk": -0.4191813069754646,
+          "tarc": -0.009340891159693969,
+          "uniform": -0.44213979514445323
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 1.0,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 1.0,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.5914748142428298,
+          "risk": -0.9049176084184383,
+          "tarc": -0.32964194047833784,
+          "uniform": -0.532597836351118
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "continuation"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 0.23746339868613028,
+          "risk": 1.0,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 0.23746339868613028,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": 0.16844701213457497,
+          "risk": -0.4247494244987837,
+          "tarc": -0.10553460946190915,
+          "uniform": -0.039976514385250135
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 0.11514726290644846,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 0.11514726290644846,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.37589672119734824,
+          "risk": 0.34738124893596517,
+          "tarc": -0.1455718049560108,
+          "uniform": -0.30055884057080956
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 0.10388068636833876,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 0.10388068636833876,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.45074499942052293,
+          "risk": 0.3850571400555492,
+          "tarc": -0.09786656830691653,
+          "uniform": -0.3283473937050498
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 1.0,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 1.0,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.2059334874072938,
+          "risk": -0.16831814081982388,
+          "tarc": -0.14193570282108942,
+          "uniform": -0.1673987238500384
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 1.0,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 1.0,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.33755026204656247,
+          "risk": -0.736931587256152,
+          "tarc": -0.3129084086642962,
+          "uniform": -0.37930850647850456
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 1.0,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 1.0,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.20077773501923063,
+          "risk": -0.832587418622112,
+          "tarc": -0.43273954054879876,
+          "uniform": -0.4974219012338973
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 1.0,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 1.0,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.07365100923358535,
+          "risk": -0.06891097714987154,
+          "tarc": -0.13897294919569309,
+          "uniform": -0.20938232384898306
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 0.9691910725847845,
+          "risk": 0.18722501117051116,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 0.18722501117051116,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": 0.04127153162205878,
+          "risk": 0.21364666905305113,
+          "tarc": -0.1513433838926738,
+          "uniform": -0.07307708286332641
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 1.0,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 1.0,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.3611542345513602,
+          "risk": -0.1347362597222551,
+          "tarc": -0.1819738194191376,
+          "uniform": -0.2624874855814618
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 1.0,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 1.0,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -1.4642800418198343,
+          "risk": -0.6728348686578006,
+          "tarc": -0.35071274287806214,
+          "uniform": -1.217052468208711
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 0.07028136113664954,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 0.07028136113664954,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.6889877017798564,
+          "risk": 0.5691409408282112,
+          "tarc": -0.11872331070757867,
+          "uniform": -0.44178209951230285
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 0.055398020595597626,
+          "tarc": 0.42009998976866086,
+          "uniform": 1.0
+        },
+        "safe_dose": 0.055398020595597626,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.9075735712688047,
+          "risk": 0.7220474589155036,
+          "tarc": 0.09521542721776084,
+          "uniform": -0.7653816914628127
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 0.058381533864990495,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 0.058381533864990495,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -1.057458251351803,
+          "risk": 0.6851481513401397,
+          "tarc": -0.46511698803041235,
+          "uniform": -0.7981388657672605
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 0.0766789491132442,
+          "tarc": 0.09434631095375474,
+          "uniform": 0.14354232202513253
+        },
+        "safe_dose": 0.0766789491132442,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": 0.01276062586835526,
+          "risk": 0.5216555581757587,
+          "tarc": 0.42396994218042716,
+          "uniform": 0.27866345922003743
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "risk"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 1.0,
+          "risk": 0.9003092499047021,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 0.9003092499047021,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": -0.4453247512081207,
+          "risk": 0.04442917808989968,
+          "tarc": -0.21267851442327249,
+          "uniform": -0.32184265178176263
+        }
+      },
+      {
+        "allowed_relative_drop": 0.04,
+        "limiting_certificates": [
+          "continuation"
+        ],
+        "maximum_dose": 1.0,
+        "per_certificate_safe_doses": {
+          "continuation": 0.28813554766290644,
+          "risk": 0.787742740480224,
+          "tarc": 1.0,
+          "uniform": 1.0
+        },
+        "safe_dose": 0.28813554766290644,
+        "score_scale_floor": 0.02,
+        "standardized_endpoint_deteriorations": {
+          "continuation": 0.13882355136130764,
+          "risk": 0.050777998887828774,
+          "tarc": -0.10264702932693867,
+          "uniform": -0.03255871466716211
+        }
+      }
+    ]
+  },
+  "route": "DEVELOP_CDRO_OPC_M2_DOSE_READY_FOR_FRESH_CONFIRMATION",
+  "selected_dose": 0.048981934846399997,
+  "training_authorized": false
+}
