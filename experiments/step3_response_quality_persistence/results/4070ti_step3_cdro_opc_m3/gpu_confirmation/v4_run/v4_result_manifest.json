@@ -1,0 +1,25 @@
+{
+  "schema": "step3_cdro_opc_m3_v4_result_manifest_v1",
+  "protocol_commit": "55830d8caaec03958eefab56665791dd2efac28c",
+  "protocol_lock_commit": "7aa189bf266206ddb10e0e39ba4f1f9e3065c877",
+  "runtime_head": "7aa189bf266206ddb10e0e39ba4f1f9e3065c877",
+  "raw_route": "STOP_CDRO_OPC_M3_INVALID",
+  "registered_certificate_route": "STOP_CDRO_OPC_M3_AUDIT_PROTECTION",
+  "decision": "NOT_CONFIRMED_NEAR_MISS",
+  "selected_dose": 0.03861260529749242,
+  "sealed_audit_covered_units": 17,
+  "sealed_audit_units": 20,
+  "artifacts": {
+    "analysis/cdro_opc_m3_v4_interpretation.json": "195de94f1213d92687038e2d326044f5a68bb1405b447979d87e5b550fd16c47",
+    "analysis/CDRO_OPC_M3_V4_INTERPRETATION.md": "0e328916e462a4f31cc3ec66a79e3f13f19a17b760030e7d0152ce3780af899a",
+    "run/cdro_opc_m3_confirmation_decision.json": "b5d44a95d156d43f254dd3211a182ab5cd7e37108e49612fad4e1d22b82731c2",
+    "run/cdro_opc_m3_confirmation_diagnostics.json": "6e4e2857cd11cb34f92b8c473178131dd8d2ce1c1bc550f03e1e15586e293b44",
+    "run/cdro_opc_m3_confirmation_environment.json": "ddd3413364728ec44aef39a48996608bb828d43ca7a89c2ac650280a92827c3a",
+    "run/CDRO_OPC_M3_CONFIRMATION_REPORT.md": "d31f9f23b0b547ebd46f0fb3bcd040a28beec905ae4ca5cc02392589d3b588a8"
+  },
+  "verify_run": "PASS_CDRO_OPC_M3_CONFIRMATION_VERIFY_RUN",
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

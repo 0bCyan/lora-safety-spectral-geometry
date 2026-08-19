@@ -1,0 +1,246 @@
+{
+  "behavior_selected_minus_fallback": {
+    "calibration": {
+      "quality": 0.0025873695232008914,
+      "safety": 0.0036708695813883947
+    },
+    "sealed_audit": {
+      "quality": 0.002622577160485671,
+      "safety": 0.004006170159322164
+    }
+  },
+  "calibration_arithmetic_max_residual": 4.163336342344337e-17,
+  "claim_boundary": {
+    "finite_parameter_step_claimed": false,
+    "finite_sample_theorem_rejected_at_5pct": false,
+    "generated_response_claimed": false,
+    "method_confirmed": false,
+    "posthoc_shrinkage_authorized": false,
+    "pre_registered_empirical_gate_passed": false,
+    "training_authorized": false
+  },
+  "core100_opened": false,
+  "decision": "NOT_CONFIRMED_NEAR_MISS",
+  "finite_sample_marginal_protection_lower_bound_under_exchangeability": 0.9523809523809523,
+  "heldout_opened": false,
+  "optimizer_steps": 0,
+  "posthoc_dose_diagnostics_not_valid_for_selection": {
+    "18_of_20_sealed_safe_dose": 0.037607981525715255,
+    "19_of_20_sealed_safe_dose": 0.03431780056499557,
+    "19_of_20_shrink_factor_relative_to_selected": 0.8887719515581155,
+    "all_20_sealed_safe_dose": 0.03380776147188535,
+    "ordered_sealed_unit_safe_doses": [
+      {
+        "limiting_certificates": [
+          "risk"
+        ],
+        "safe_dose": 0.03380776147188535,
+        "unit_id": "m3_audit_09"
+      },
+      {
+        "limiting_certificates": [
+          "risk"
+        ],
+        "safe_dose": 0.03431780056499557,
+        "unit_id": "m3_audit_35"
+      },
+      {
+        "limiting_certificates": [
+          "risk"
+        ],
+        "safe_dose": 0.037607981525715255,
+        "unit_id": "m3_audit_37"
+      },
+      {
+        "limiting_certificates": [
+          "risk"
+        ],
+        "safe_dose": 0.051676462596675764,
+        "unit_id": "m3_audit_05"
+      },
+      {
+        "limiting_certificates": [
+          "risk"
+        ],
+        "safe_dose": 0.07138421228771126,
+        "unit_id": "m3_audit_27"
+      },
+      {
+        "limiting_certificates": [
+          "risk"
+        ],
+        "safe_dose": 0.07907134738201978,
+        "unit_id": "m3_audit_25"
+      },
+      {
+        "limiting_certificates": [
+          "risk"
+        ],
+        "safe_dose": 0.09619180844591753,
+        "unit_id": "m3_audit_15"
+      },
+      {
+        "limiting_certificates": [
+          "risk"
+        ],
+        "safe_dose": 0.12926761462833294,
+        "unit_id": "m3_audit_33"
+      },
+      {
+        "limiting_certificates": [
+          "tarc"
+        ],
+        "safe_dose": 0.1950832766345048,
+        "unit_id": "m3_audit_39"
+      },
+      {
+        "limiting_certificates": [
+          "risk"
+        ],
+        "safe_dose": 0.28800378947968286,
+        "unit_id": "m3_audit_11"
+      },
+      {
+        "limiting_certificates": [
+          "risk"
+        ],
+        "safe_dose": 0.36599052049564745,
+        "unit_id": "m3_audit_19"
+      },
+      {
+        "limiting_certificates": [
+          "risk"
+        ],
+        "safe_dose": 0.7575271826322775,
+        "unit_id": "m3_audit_01"
+      },
+      {
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "safe_dose": 1.0,
+        "unit_id": "m3_audit_03"
+      },
+      {
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "safe_dose": 1.0,
+        "unit_id": "m3_audit_07"
+      },
+      {
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "safe_dose": 1.0,
+        "unit_id": "m3_audit_13"
+      },
+      {
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "safe_dose": 1.0,
+        "unit_id": "m3_audit_17"
+      },
+      {
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "safe_dose": 1.0,
+        "unit_id": "m3_audit_21"
+      },
+      {
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "safe_dose": 1.0,
+        "unit_id": "m3_audit_23"
+      },
+      {
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "safe_dose": 1.0,
+        "unit_id": "m3_audit_29"
+      },
+      {
+        "limiting_certificates": [
+          "risk",
+          "uniform",
+          "tarc",
+          "continuation"
+        ],
+        "safe_dose": 1.0,
+        "unit_id": "m3_audit_31"
+      }
+    ]
+  },
+  "raw_route": "STOP_CDRO_OPC_M3_INVALID",
+  "registered_certificate_route": "STOP_CDRO_OPC_M3_AUDIT_PROTECTION",
+  "registered_structural_gate": true,
+  "schema": "step3_cdro_opc_m3_v4_interpretation_v1",
+  "sealed_aggregate_standardized_deteriorations": {
+    "continuation": -0.15273361708997518,
+    "risk": 0.006660484801394683,
+    "tarc": -0.004747231729816911,
+    "uniform": -0.15632119715466916
+  },
+  "sealed_joint_coverage": {
+    "binomial_probability_X_le_17_if_p_20_over_21": 0.06719852988932336,
+    "clopper_pearson_95pct": [
+      0.621073173454686,
+      0.9679290628145363
+    ],
+    "covered": 17,
+    "failed_units": [
+      {
+        "maximum_excess_over_4pct": 0.005684900290843294,
+        "unit_id": "m3_audit_09",
+        "violations": {
+          "risk": 0.045684900290843294
+        }
+      },
+      {
+        "maximum_excess_over_4pct": 0.00500592073126923,
+        "unit_id": "m3_audit_35",
+        "violations": {
+          "risk": 0.04500592073126923
+        }
+      },
+      {
+        "maximum_excess_over_4pct": 0.0010685218733052157,
+        "unit_id": "m3_audit_37",
+        "violations": {
+          "risk": 0.041068521873305217
+        }
+      }
+    ],
+    "rate": 0.85,
+    "required": 19,
+    "total": 20
+  },
+  "selected_dose": 0.03861260529749242,
+  "training_authorized": false,
+  "useful_dose_floor": 0.01
+}

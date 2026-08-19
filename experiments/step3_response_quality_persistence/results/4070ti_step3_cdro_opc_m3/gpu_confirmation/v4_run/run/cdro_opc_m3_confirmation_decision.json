@@ -1,0 +1,39 @@
+{
+  "behavior_selected_minus_fallback": {
+    "calibration": {
+      "quality": 0.0025873695232008914,
+      "safety": 0.0036708695813883947
+    },
+    "sealed_audit": {
+      "quality": 0.002622577160485671,
+      "safety": 0.004006170159322164
+    }
+  },
+  "finite_sample_marginal_protection_lower_bound": 0.9523809523809523,
+  "gates": {
+    "behavior": true,
+    "calibration_arithmetic": true,
+    "fixed_direction": true,
+    "sealed_aggregate_protection": true,
+    "sealed_unit_coverage": false,
+    "solver_kkt": true,
+    "state_restored": true,
+    "structural": false,
+    "useful_dose": true,
+    "zero_step": true
+  },
+  "name": "step3_cdro_opc_m3_confirmation_decision_v1",
+  "next_authorized_action": "stop and report the failed frozen gate",
+  "optimizer_steps": 0,
+  "route": "STOP_CDRO_OPC_M3_INVALID",
+  "sealed_aggregate_standardized_deteriorations": {
+    "continuation": -0.15273361708997518,
+    "risk": 0.006660484801394683,
+    "tarc": -0.004747231729816911,
+    "uniform": -0.15632119715466916
+  },
+  "sealed_audit_covered_units": 17,
+  "sealed_audit_units": 20,
+  "selected_dose": 0.03861260529749242,
+  "training_authorized": false
+}
