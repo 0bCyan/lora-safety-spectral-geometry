@@ -1,7 +1,8 @@
 {
   "name": "step3_cdro_opc_m3_zero_step_confirmation_v4_registered_certificates",
-  "status": "pending_protocol_lock",
-  "entry_commit": "PENDING_PROTOCOL_COMMIT",
+  "status": "prospective_locked_before_M3_model_forward",
+  "protocol_commit": "55830d8caaec03958eefab56665791dd2efac28c",
+  "entry_commit": "55830d8caaec03958eefab56665791dd2efac28c",
   "config_path": "experiments/step3_response_quality_persistence/configs/4070ti_qwen3_4b_step3_foacpo_p0.json",
   "objective": "Confirm M3 after restricting unit normalization to the four prospectively registered protected certificates.",
   "frozen_inputs": {
