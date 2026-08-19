@@ -1,0 +1,10 @@
+{
+  "schema": "step3_cdro_opc_m3_review_v3_submission_v1",
+  "role": "reviewer_f",
+  "agent_id": "01a01acc-0d18-7ef3-9390-19a954c9f3ea",
+  "rows": 180,
+  "review_sha256": "79fd9e151b43e7a7c768016c8bf4300e7421c897213b85b2f1346bc86e30577c",
+  "immutable_submission": true,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "step3_cdro_opc_m3_review_v3_spool_manifest_v1",
+  "route_id": "step3_cdro_opc_m3_blind_review_v3",
+  "protocol_commit": "4a39f783871a1eea5ae74be41544886f8a285518",
+  "lock_commit": "c46d3c2eeb976d873a5b35fecdf004046b028cb6",
+  "namespace_sha256": "cdf7d59c4fba566b180e56e8db2cb60cd2035ee664e01ec2d63fcb701409722c",
+  "artifacts": [
+    {
+      "path": "rubric.md",
+      "bytes": 2140,
+      "sha256": "599241bb9f20deaf44872e0ccea20f8485ff70db097a8d181d8794977c903d5e"
+    },
+    {
+      "path": "finalize_review.py",
+      "bytes": 3636,
+      "sha256": "b0b3ab6fd2c40813193139504a39b794529cbd57eb0b32b6d662477491f7f7b5"
+    },
+    {
+      "path": "private/primary_candidates.jsonl",
+      "bytes": 196283,
+      "sha256": "0c3daeec2d4be37e2159b55ecf150792389bce0418ff371e891ac4b7debd221d"
+    },
+    {
+      "path": "private/anchors.jsonl",
+      "bytes": 35344,
+      "sha256": "d8d6765508efaa12bdc4de6e244ff11071df3d3089120024eec815f7add25bde"
+    },
+    {
+      "path": "packets/reviewer_f.jsonl",
+      "bytes": 157759,
+      "sha256": "eedbb858a6a3254c0403a003e816060f6ee3c983897d3c1b2359c6c99db135b3"
+    },
+    {
+      "path": "private/reviewer_f_hidden_map.jsonl",
+      "bytes": 40032,
+      "sha256": "483b0ce8b948da337315405eac7bcf4d2a6fda7cf657921b4dba62be21122681"
+    },
+    {
+      "path": "packets/reviewer_g.jsonl",
+      "bytes": 157974,
+      "sha256": "b1a342213808e4069a100746a260872e3912e78154ef769615de52025657a5df"
+    },
+    {
+      "path": "private/reviewer_g_hidden_map.jsonl",
+      "bytes": 40032,
+      "sha256": "f6fbbe527335a0437148ccbd901fc9b7b16ed6abde79a00df315324fc2b97bc0"
+    }
+  ],
+  "attempt_001_row_level_inputs": 0,
+  "reviewers_launched": 0,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

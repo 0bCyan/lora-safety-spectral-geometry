@@ -1,0 +1,13 @@
+{
+  "schema": "step3_cdro_opc_m3_review_v3_final_decision_v1",
+  "route": "PASS_M3_TARGET_COHORT",
+  "final_qualified_candidates": 120,
+  "eligible_prompts": 60,
+  "selected_prompts": 40,
+  "selected_targets": 80,
+  "calibration_units": 20,
+  "sealed_audit_units": 20,
+  "reviewer_c_used": false,
+  "training_authorized": false,
+  "optimizer_steps": 0
+}

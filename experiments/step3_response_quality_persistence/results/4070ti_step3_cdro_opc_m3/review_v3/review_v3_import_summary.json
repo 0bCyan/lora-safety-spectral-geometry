@@ -1,0 +1,22 @@
+{
+  "schema": "step3_cdro_opc_m3_review_v3_import_summary_v1",
+  "protocol_commit": "4a39f783871a1eea5ae74be41544886f8a285518",
+  "lock_commit": "c46d3c2eeb976d873a5b35fecdf004046b028cb6",
+  "source_spool": "D:\\Desktop\\step3-cdro-opc-m3-review-v3-20260820",
+  "source_files_excluding_drafts_and_incoming": 22,
+  "imported_files": 22,
+  "same_relative_paths": true,
+  "all_imported_hashes_match": true,
+  "bundle_sha256": "eca9c1b18d2623be7abf0c901fcd7c6faf600246fec6025b8e82d17fa72a932b",
+  "key_artifacts": {
+    "outcomes/ab_outcome.json": "2cdabc6f01e5e9047177d5c760a905b02e4381a15dd0416448975cfba76a8d45",
+    "outcomes/final_decision.json": "a9bad4f14ad1501b18dcada108c359ba7a30c463a9a1c4d70b126030b8d4b7fc",
+    "private/selected_targets.jsonl": "4f913dfdce8d2889ba81fec00f867dab1a89dd9c127b6521febbce4ba681ac08",
+    "reviews/reviewer_f.jsonl": "79fd9e151b43e7a7c768016c8bf4300e7421c897213b85b2f1346bc86e30577c",
+    "reviews/reviewer_g.jsonl": "af6569ecf39c0f0910c06ace76f88ce0832eacbbea45d7a281850cc4d11a4b71"
+  },
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

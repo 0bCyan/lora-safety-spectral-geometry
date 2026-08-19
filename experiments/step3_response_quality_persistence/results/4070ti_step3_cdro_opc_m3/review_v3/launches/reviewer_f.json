@@ -1,0 +1,12 @@
+{
+  "schema": "step3_cdro_opc_m3_review_v3_launch_v1",
+  "role": "reviewer_f",
+  "agent_id": "01a01acc-0d18-7ef3-9390-19a954c9f3ea",
+  "context_isolated": true,
+  "packet_sha256": "eedbb858a6a3254c0403a003e816060f6ee3c983897d3c1b2359c6c99db135b3",
+  "rubric_sha256": "599241bb9f20deaf44872e0ccea20f8485ff70db097a8d181d8794977c903d5e",
+  "saw_attempt_001_row_labels": false,
+  "saw_hidden_map": false,
+  "saw_other_reviews": false,
+  "saw_training_or_gradient_results": false
+}
