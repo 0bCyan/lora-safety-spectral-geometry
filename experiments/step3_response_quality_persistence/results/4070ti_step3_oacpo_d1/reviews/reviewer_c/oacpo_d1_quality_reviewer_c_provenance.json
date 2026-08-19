@@ -1,0 +1,21 @@
+{
+  "construct": "quality",
+  "reviewer_role": "c",
+  "agent_id": "01a01986-4984-72e3-8701-68abdd3f8a55",
+  "agent_nickname": "Sartre",
+  "runtime": "Codex sub-agent inheriting the current parent model",
+  "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_quality_reviewer_c_packet.jsonl",
+  "packet_sha256": "4923347416b95e909f4fd962ec36e5ce4537fe8809a78fd173381440b5381894",
+  "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_quality_reviewer_c_template.jsonl",
+  "template_sha256": "b7729afac9ab134b0ccb94b43c588c655c293a7a73cbfb7bb1b4a76af0b0eb0a",
+  "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3cm_decomposed_quality_rubric_v1.md",
+  "rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+  "instructions_path": "experiments/step3_response_quality_persistence/review_rubrics/step3_oacpo_d1_reviewer_c_instructions.md",
+  "instructions_sha256": "1cfdc2268a52fb1a7ee11b66758c1136f688c5110794fc937d06e25bd13bb8e4",
+  "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/reviewer_c/oacpo_d1_quality_reviewer_c_labels.jsonl",
+  "output_sha256": "b1c276e4b05ecf4d6f0d8ae8fdded1b4af97c5701283737ad8502331e9cbda03",
+  "row_count": 23,
+  "fresh_context": true,
+  "forbidden_material_not_opened": true,
+  "completion_status": "complete"
+}

@@ -1,0 +1,65 @@
+{
+  "core100_opened": false,
+  "final_label_counts": {
+    "quality": 112,
+    "safety": 168,
+    "structure": 112
+  },
+  "gradient_computed": false,
+  "heldout_opened": false,
+  "model_checkpoint_opened": false,
+  "name": "step3_oacpo_d2_triplet_qualification_v1",
+  "optimizer_steps": 0,
+  "reviewer_c_provenance": [
+    {
+      "agent_id": "01a01986-4833-7c93-9f1e-4910e34d1b1d",
+      "construct": "safety",
+      "output_sha256": "10a575bfb3a931e00bb24819193c69c4855fddd518c0a2310e832162afb3313c"
+    },
+    {
+      "agent_id": "01a01986-4984-72e3-8701-68abdd3f8a55",
+      "construct": "quality",
+      "output_sha256": "b1c276e4b05ecf4d6f0d8ae8fdded1b4af97c5701283737ad8502331e9cbda03"
+    },
+    {
+      "agent_id": "01a01986-4ac1-7162-8578-7ea36dbfbb62",
+      "construct": "structure",
+      "output_sha256": "da745283035e536de9465ce85adf5f7b370b94921f99ab2497beed894f55f49a"
+    }
+  ],
+  "route": "STOP_OACPO_D2_TRIPLET_YIELD",
+  "source_labels_used": false,
+  "training_authorized": false,
+  "triplet_summary": {
+    "category_counts": {
+      "animal_abuse": 2,
+      "child_abuse": 2,
+      "drug_abuse,weapons,banned_substance": 2,
+      "financial_crime,property_crime,theft": 1,
+      "hate_speech,offensive_language": 1,
+      "misinformation_regarding_ethics,laws_and_safety": 1,
+      "privacy_violation": 1,
+      "terrorism,organized_crime": 2,
+      "violence,aiding_and_abetting,incitement": 1
+    },
+    "component_pass_counts": {
+      "authored_positive": 54,
+      "safe_quality_negative": 30,
+      "unsafe_negative": 32
+    },
+    "gates": {
+      "calibration": false,
+      "category_coverage": false,
+      "mechanism_dev": false,
+      "total": false,
+      "train_candidate": false
+    },
+    "pass": false,
+    "qualified_triplets": 13,
+    "split_counts": {
+      "calibration": 3,
+      "mechanism_dev": 2,
+      "train_candidate": 8
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "construct": "safety",
+  "reviewer_role": "c",
+  "agent_id": "01a01986-4833-7c93-9f1e-4910e34d1b1d",
+  "agent_nickname": "Locke",
+  "runtime": "Codex sub-agent inheriting the current parent model",
+  "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_safety_reviewer_c_packet.jsonl",
+  "packet_sha256": "ca01306f6df97c70d5d6b647fde706076af690b98cb9587d5a70891e58f715a7",
+  "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_safety_reviewer_c_template.jsonl",
+  "template_sha256": "f24d5e6cbb4cc0f5e12219a13b998a4cd5a4413a5234713828e2e8da4c661e92",
+  "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3o_transport_clean_safety_rubric.md",
+  "rubric_sha256": "095d00c7d34496da4f50b19148ca00772684edd7bfff04ba51a9aa97cd6fea6c",
+  "instructions_path": "experiments/step3_response_quality_persistence/review_rubrics/step3_oacpo_d1_reviewer_c_instructions.md",
+  "instructions_sha256": "1cfdc2268a52fb1a7ee11b66758c1136f688c5110794fc937d06e25bd13bb8e4",
+  "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/reviewer_c/oacpo_d1_safety_reviewer_c_labels.jsonl",
+  "output_sha256": "10a575bfb3a931e00bb24819193c69c4855fddd518c0a2310e832162afb3313c",
+  "row_count": 16,
+  "fresh_context": true,
+  "forbidden_material_not_opened": true,
+  "completion_status": "complete"
+}

@@ -1,0 +1,21 @@
+{
+  "construct": "structure",
+  "reviewer_role": "c",
+  "agent_id": "01a01986-4ac1-7162-8578-7ea36dbfbb62",
+  "agent_nickname": "Turing",
+  "runtime": "Codex sub-agent inheriting the current parent model",
+  "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_structure_reviewer_c_packet.jsonl",
+  "packet_sha256": "d59feb16b96ac9eece87ccdcc1a135b4c2c754b51f38624084aeab8fe3ed0d1a",
+  "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/reviewer_c/oacpo_d1_structure_reviewer_c_template.jsonl",
+  "template_sha256": "21e2b4248188659941fc0c97a82d5b1651c4391b1394a5d9243f5e154cf0800b",
+  "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3_oacpo_d1_mechanical_rubric.md",
+  "rubric_sha256": "53ff5901b0ccd37c970ee48be916403a31b60b58b00b72a0f064115e5d5c3fbe",
+  "instructions_path": "experiments/step3_response_quality_persistence/review_rubrics/step3_oacpo_d1_reviewer_c_instructions.md",
+  "instructions_sha256": "1cfdc2268a52fb1a7ee11b66758c1136f688c5110794fc937d06e25bd13bb8e4",
+  "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/reviewer_c/oacpo_d1_structure_reviewer_c_labels.jsonl",
+  "output_sha256": "da745283035e536de9465ce85adf5f7b370b94921f99ab2497beed894f55f49a",
+  "row_count": 7,
+  "fresh_context": true,
+  "forbidden_material_not_opened": true,
+  "completion_status": "complete"
+}
