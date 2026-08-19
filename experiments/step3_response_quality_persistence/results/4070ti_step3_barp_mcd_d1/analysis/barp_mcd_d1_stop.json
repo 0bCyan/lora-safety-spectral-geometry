@@ -1,0 +1,55 @@
+{
+  "name": "step3_barp_mcd_d1_runtime_stop_v1",
+  "route": "STOP_BARP_MCD_D1_RAW_ANCHOR_FAILED",
+  "runtime_head": "46d515b1266603e81e12a6d09481e26987cdcf85",
+  "protocol_sha256": "7e5c199f947d4b0d71097501532db6734344eacdd39876956e0e042b987ac028",
+  "failure": {
+    "arm": "raw_mcd",
+    "next_optimizer_step": 4,
+    "optimizer_step_executed_for_failed_block": false,
+    "exception_type": "step3_barp_mcd_training.BarpTrainingValidationError",
+    "exception_message": "Q1R raw anchor lacks common descent",
+    "source": "step3_barp_mcd_training_q1r.enumerate_memory_bounded_homotopy",
+    "inference_from_frozen_guard": "at least one of seven exact current-state AdamW certificate scores was non-positive",
+    "failed_certificate_identity_available": false,
+    "failed_score_magnitude_available": false
+  },
+  "completed": {
+    "raw_mcd_optimizer_steps": 3,
+    "barp_mcd_optimizer_steps": 0,
+    "total_optimizer_steps": 3,
+    "authorized_optimizer_steps": 16,
+    "checkpoint_writes": 0,
+    "candidate_outputs_generated": false,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "completed_step_evidence": {
+    "trace_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_barp_mcd_d1/raw_mcd/training_trace.jsonl",
+    "trace_sha256": "c60b78e5d0a3bca31c72dbd519363eca682cb61bd23d8c931fb486a05120d257",
+    "trace_bytes": 96912,
+    "maximum_update_map_relative_l2_error": 1.1512644812172425e-06,
+    "minimum_raw_anchor_score": 0.07987606457875966,
+    "minimum_screened_selection_protected_retention": 0.9528385266068632,
+    "minimum_screened_selection_target_gain": 0.009550111658942387,
+    "nonzero_screened_choices": 3,
+    "all_21_same_batch_loss_reductions_positive": true,
+    "minimum_same_batch_loss_reduction": 0.000315869680434844
+  },
+  "external_checkpoint_root": {
+    "path": "D:/Desktop/step3-barp-mcd-d1-seed5-checkpoints",
+    "exists": true,
+    "files": 0,
+    "adapters": 0
+  },
+  "interpretation": {
+    "classification": "optimizer_state_breaks_the_gradient_space_common_descent_anchor_on_a_new_batch",
+    "not_vram_failure": true,
+    "not_safety_filter_interference": true,
+    "not_posthoc_threshold_failure": true,
+    "d1_confirmation_complete": false,
+    "generated_evaluation_authorized": false,
+    "paper_level_effect_claim_authorized": false
+  },
+  "next_protocol_requirement": "construct_and_prospectively_test_an_optimizer_update_space_feasible_anchor_before_any_additional_training"
+}
