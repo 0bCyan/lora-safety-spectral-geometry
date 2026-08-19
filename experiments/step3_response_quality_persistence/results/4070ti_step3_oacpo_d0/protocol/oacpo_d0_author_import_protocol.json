@@ -1,0 +1,55 @@
+{
+  "name": "step3_oacpo_d0_author_import_protocol_v1",
+  "status": "prospective_before_author_output_access",
+  "entry_commit": "683bfd3",
+  "self_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/protocol/oacpo_d0_author_import_protocol.json",
+  "objective": "Mechanically validate and canonicalize the independently authored 56-row response file without assigning safety, quality, or preference labels.",
+  "base_protocol": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/protocol/oacpo_d0_protocol.json",
+    "sha256": "6a8527027795354e6d81a70c8211ac42d2fc3ab9161646f30f0e1d8ca08be039"
+  },
+  "frozen_inputs": {
+    "import_script": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_oacpo_d0_import.py",
+      "sha256": "2d83d797b8fee0e66bfaf532876c2d546a8ed3334200ca407403c3f7dc3e8c46"
+    },
+    "import_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_oacpo_d0_import.py",
+      "sha256": "784402d1022d887d9715ba02e5acf7ab2c073868412f17aaa6d27b8691ed9df1"
+    },
+    "base_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/protocol/oacpo_d0_protocol.json",
+      "sha256": "6a8527027795354e6d81a70c8211ac42d2fc3ab9161646f30f0e1d8ca08be039"
+    },
+    "author_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/packets/oacpo_d0_author_packet.jsonl",
+      "sha256": "f6e6f4f4c7990b450c986de02398d4ff631bdaa851e3dd0ed4a769b26a7292e1"
+    },
+    "authoring_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3_oacpo_d0_authoring_rubric.md",
+      "sha256": "0b96de43cefcee4fade20e5db3b558645cd362b00c2c916413fc3e662d077855"
+    }
+  },
+  "author_output_input": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/authoring/oacpo_d0_author_output.jsonl",
+  "mechanical_gates_inherited_exactly_from_base_protocol": true,
+  "content_access_boundary": {
+    "importer_may_parse_response_text_for_schema_word_count_forbidden_tags_and_exact_deduplication": true,
+    "importer_may_assign_safety_or_quality_labels": false,
+    "main_session_may_manually_inspect_or_edit_answers": false,
+    "source_responses_or_roles_joined_during_import": false
+  },
+  "outputs": {
+    "frozen_author_output": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/authoring/oacpo_d0_author_frozen.jsonl",
+    "import_manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d0/reports/oacpo_d0_author_import_manifest.json"
+  },
+  "pass_route": "PASS_OACPO_D0_AUTHOR_IMPORT_AUTHORIZE_D1_PROTOCOL_ONLY",
+  "failure_route": "STOP_OACPO_D0_AUTHOR_INVALID_OR_INCOMPLETE",
+  "gradient_authorized": false,
+  "model_checkpoint_open_authorized": false,
+  "review_authorized": false,
+  "review_labels_created": 0,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
