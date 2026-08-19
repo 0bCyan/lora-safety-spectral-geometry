@@ -1,0 +1,830 @@
+{
+  "all_constructs_pass": true,
+  "constructs": {
+    "quality": {
+      "duplicates": {
+        "a": {
+          "denominator": 12,
+          "details": [
+            {
+              "duplicate_id": "oacpo_d1_quality_01dfbd741778da87d64c",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_b2e40c9da607c3ea896e"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_0c615ee3e29095642d76",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_86740c59f08a8de4cc97"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_6d786726a7b07c734ce3",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_2bfd090ceec7b8d1298d"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_938475754504053a9f61",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_b405047546606bd0d12b"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_939d2df7407a7921c754",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_c8221888612320f25d64"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_9bb3f9bae8fba885b980",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_360e4570d292927fba28"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_cd8ded6e5c101b6a8ce9",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_2a903f5a01473e95d5a6"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_d5ac968cdbf89256e287",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_117272cf6858b256b154"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_d96b45ca26fc36206a40",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_bbcc80abaa5ceb8a98e1"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_e00cb25c5047aaf3a337",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_74b2d9e8ad3529fec67d"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_eb1dcac4e453b5a78602",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_d8870af420980f5deb64"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_ec0077b316d8e0020ce2",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_f7e5e2b159c9a47f7d07"
+            }
+          ],
+          "full_vector_consistent_count": 12
+        },
+        "b": {
+          "denominator": 12,
+          "details": [
+            {
+              "duplicate_id": "oacpo_d1_quality_01dfbd741778da87d64c",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_b2e40c9da607c3ea896e"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_0c615ee3e29095642d76",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_86740c59f08a8de4cc97"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_6d786726a7b07c734ce3",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_2bfd090ceec7b8d1298d"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_938475754504053a9f61",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_b405047546606bd0d12b"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_939d2df7407a7921c754",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_c8221888612320f25d64"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_9bb3f9bae8fba885b980",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_360e4570d292927fba28"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_cd8ded6e5c101b6a8ce9",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_2a903f5a01473e95d5a6"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_d5ac968cdbf89256e287",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_117272cf6858b256b154"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_d96b45ca26fc36206a40",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_bbcc80abaa5ceb8a98e1"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_e00cb25c5047aaf3a337",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_74b2d9e8ad3529fec67d"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_eb1dcac4e453b5a78602",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_d8870af420980f5deb64"
+            },
+            {
+              "duplicate_id": "oacpo_d1_quality_ec0077b316d8e0020ce2",
+              "field_matches": {
+                "detail_retention": true,
+                "naturalness": true,
+                "safe_actionability": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_quality_f7e5e2b159c9a47f7d07"
+            }
+          ],
+          "full_vector_consistent_count": 12
+        }
+      },
+      "gates": {
+        "duplicates": true,
+        "naturalness": true,
+        "ordinal_fields": true
+      },
+      "naturalness_metrics": {
+        "gwet_ac1": 0.9909913533078625,
+        "n": 112,
+        "negative_agreement": 0.0,
+        "pooled_yes_prevalence": 0.9955357142857143,
+        "positive_agreement": 0.9955156950672646,
+        "raw_agreement": 0.9910714285714286
+      },
+      "ordinal_gates": {
+        "detail_retention": {
+          "exact": true,
+          "gwet_ac2": true,
+          "two_level": true,
+          "weighted": true
+        },
+        "safe_actionability": {
+          "exact": true,
+          "gwet_ac2": true,
+          "two_level": true,
+          "weighted": true
+        }
+      },
+      "ordinal_metrics": {
+        "detail_retention": {
+          "exact_raw_agreement": 0.9196428571428571,
+          "gwet_ac2": 0.9381338898009912,
+          "linear_weighted_agreement": 0.9598214285714286,
+          "n": 112,
+          "two_level_disagreement_count": 0,
+          "two_level_disagreement_rate": 0.0
+        },
+        "safe_actionability": {
+          "exact_raw_agreement": 0.8839285714285714,
+          "gwet_ac2": 0.8888146465321395,
+          "linear_weighted_agreement": 0.9419642857142857,
+          "n": 112,
+          "two_level_disagreement_count": 0,
+          "two_level_disagreement_rate": 0.0
+        }
+      },
+      "pass": true
+    },
+    "safety": {
+      "duplicates": {
+        "a": {
+          "denominator": 12,
+          "details": [
+            {
+              "duplicate_id": "oacpo_d1_safety_2f35d890d701722ef652",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_959afa1c4eaf673267d7"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_4424ffe9396ea3dd48f1",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_82dc18cdcde9a4a964cb"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_59c839b49fe1e7fd9baf",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_f9f11a8e0dadc873bb28"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_64491b2e2a06648f8377",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_7bb41261c3b58742cbd3"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_6ccddf88991d820cb3af",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_e7dfa10202071d20261a"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_705b5cfb17714ca4d144",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_ae5d706de1cd79f90fec"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_85f6232140905c857e07",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_2c1d5db38fda40e20da6"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_b46d4fc377740ad6909b",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_cb837bbf474522ef6eed"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_d7d0a0c71011008eeb59",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_73e6d0a1c86125a98cf0"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_e3c4cdea0664bcec0d5e",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_57c1cfcb38f962539285"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_ea6788047b91c65a479b",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_58312c784e777ebcaee1"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_fe7e0b2aefa118cbdd08",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_fed96afd7f22c7cdb91a"
+            }
+          ],
+          "full_vector_consistent_count": 12
+        },
+        "b": {
+          "denominator": 12,
+          "details": [
+            {
+              "duplicate_id": "oacpo_d1_safety_2f35d890d701722ef652",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_959afa1c4eaf673267d7"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_4424ffe9396ea3dd48f1",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_82dc18cdcde9a4a964cb"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_59c839b49fe1e7fd9baf",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_f9f11a8e0dadc873bb28"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_64491b2e2a06648f8377",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_7bb41261c3b58742cbd3"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_6ccddf88991d820cb3af",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_e7dfa10202071d20261a"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_705b5cfb17714ca4d144",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_ae5d706de1cd79f90fec"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_85f6232140905c857e07",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_2c1d5db38fda40e20da6"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_b46d4fc377740ad6909b",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_cb837bbf474522ef6eed"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_d7d0a0c71011008eeb59",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_73e6d0a1c86125a98cf0"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_e3c4cdea0664bcec0d5e",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_57c1cfcb38f962539285"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_ea6788047b91c65a479b",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_58312c784e777ebcaee1"
+            },
+            {
+              "duplicate_id": "oacpo_d1_safety_fe7e0b2aefa118cbdd08",
+              "field_matches": {
+                "clean_safe": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_safety_fed96afd7f22c7cdb91a"
+            }
+          ],
+          "full_vector_consistent_count": 12
+        }
+      },
+      "gates": {
+        "duplicates": true,
+        "gwet_ac1": true,
+        "negative_agreement": true,
+        "positive_agreement": true,
+        "prevalence": true,
+        "raw_agreement": true
+      },
+      "metrics": {
+        "gwet_ac1": 0.8363370677057964,
+        "n": 168,
+        "negative_agreement": 0.84,
+        "pooled_yes_prevalence": 0.7023809523809523,
+        "positive_agreement": 0.9322033898305084,
+        "raw_agreement": 0.9047619047619048
+      },
+      "pass": true,
+      "primary_counts": {
+        "a": {
+          "no": 58,
+          "yes": 110
+        },
+        "b": {
+          "no": 42,
+          "yes": 126
+        }
+      }
+    },
+    "structure": {
+      "duplicates": {
+        "a": {
+          "denominator": 12,
+          "details": [
+            {
+              "duplicate_id": "oacpo_d1_structure_0d9b5cc504fea278ad76",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_967dfcf5406341202162"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_1a51eaeb5124bc1d7fa2",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_6c0739d07d9629e61fa5"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_20338c66a6078b2e4548",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_c8e293640bcaeda2776b"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_2b41ff2e80eca6c0582f",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_ad3aac7de15d5ef2c9cf"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_43b88e2e31b3a4cb1f12",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_c81924a8fb53c99eecfb"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_467df322f3dec979a088",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_b0b0abf39433e073a149"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_49fb53fce8f67d18e4e5",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_803f42d53c03470849a8"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_61b67878f0ad781320bb",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_198179d56355cb09d299"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_61c6f7790eaf35566e1d",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_9f7342682cd24e35f710"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_8a82e58b54f20494ed64",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_6bcd63aa36c32d2a6b9c"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_9fc00d181065a859b2e9",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_9453e7fa53da60d81281"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_e7eb4bc52d6adf674fea",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_e5ca0826ebc80f66ab21"
+            }
+          ],
+          "full_vector_consistent_count": 12
+        },
+        "b": {
+          "denominator": 12,
+          "details": [
+            {
+              "duplicate_id": "oacpo_d1_structure_0d9b5cc504fea278ad76",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_967dfcf5406341202162"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_1a51eaeb5124bc1d7fa2",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_6c0739d07d9629e61fa5"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_20338c66a6078b2e4548",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_c8e293640bcaeda2776b"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_2b41ff2e80eca6c0582f",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_ad3aac7de15d5ef2c9cf"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_43b88e2e31b3a4cb1f12",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_c81924a8fb53c99eecfb"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_467df322f3dec979a088",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_b0b0abf39433e073a149"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_49fb53fce8f67d18e4e5",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_803f42d53c03470849a8"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_61b67878f0ad781320bb",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_198179d56355cb09d299"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_61c6f7790eaf35566e1d",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_9f7342682cd24e35f710"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_8a82e58b54f20494ed64",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_6bcd63aa36c32d2a6b9c"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_9fc00d181065a859b2e9",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_9453e7fa53da60d81281"
+            },
+            {
+              "duplicate_id": "oacpo_d1_structure_e7eb4bc52d6adf674fea",
+              "field_matches": {
+                "mechanical_template": true
+              },
+              "full_vector_match": true,
+              "primary_id": "oacpo_d1_structure_e5ca0826ebc80f66ab21"
+            }
+          ],
+          "full_vector_consistent_count": 12
+        }
+      },
+      "gates": {
+        "duplicates": true,
+        "gwet_ac1": true,
+        "negative_agreement": true,
+        "positive_agreement": true,
+        "prevalence": true,
+        "raw_agreement": true
+      },
+      "metrics": {
+        "gwet_ac1": 0.919312509648536,
+        "n": 112,
+        "negative_agreement": 0.9641025641025641,
+        "pooled_yes_prevalence": 0.12946428571428573,
+        "positive_agreement": 0.7586206896551724,
+        "raw_agreement": 0.9375
+      },
+      "pass": true,
+      "primary_counts": {
+        "a": {
+          "no": 99,
+          "yes": 13
+        },
+        "b": {
+          "no": 96,
+          "yes": 16
+        }
+      }
+    }
+  },
+  "core100_opened": false,
+  "heldout_opened": false,
+  "name": "step3_oacpo_d1_ab_reliability_analysis_v1",
+  "optimizer_steps": 0,
+  "primary_disagreement_count": 46,
+  "primary_disagreement_counts_by_construct": {
+    "quality": 23,
+    "safety": 16,
+    "structure": 7
+  },
+  "reviewer_c_started": false,
+  "reviewer_provenance": [
+    {
+      "agent_id": "01a0197b-c45d-7113-8456-1e40741f3a5e",
+      "construct": "safety",
+      "output_sha256": "8da9dbaf03e343d9d30b690d98f01cef6e20d6ce6d1b5be24972b5619e130df2",
+      "reviewer_role": "a"
+    },
+    {
+      "agent_id": "01a0197b-c5bb-74d1-8dbb-5e0d87bfaa8f",
+      "construct": "safety",
+      "output_sha256": "592c0efb0ffb5d7265ebeca305e1a137f777686958c287a56b8c5bdfcc81f221",
+      "reviewer_role": "b"
+    },
+    {
+      "agent_id": "01a0197b-c742-7e21-a342-5286a4760ee4",
+      "construct": "quality",
+      "output_sha256": "59a3e2daa92eea3c83cfed332113606b7d52baafdc18999f4749d7e1dca15809",
+      "reviewer_role": "a"
+    },
+    {
+      "agent_id": "01a0197b-c879-7ac2-a141-692100896c99",
+      "construct": "quality",
+      "output_sha256": "e937b3138f4e2541d53a3fb8981717c48c1e935e89d18d4a08b4aae92bc69396",
+      "reviewer_role": "b"
+    },
+    {
+      "agent_id": "01a0197b-c9bf-79a0-ab76-b981eb35e496",
+      "construct": "structure",
+      "output_sha256": "bc8ccfbeb0923ec9d9c51020b89dd8bc0462306a9ac4f549432e07c4d921f561",
+      "reviewer_role": "a"
+    },
+    {
+      "agent_id": "01a0197b-cb02-71e0-a4da-3b759dbe7dcf",
+      "construct": "structure",
+      "output_sha256": "457d50cdf747531cd6fbc57f0272c3a4d2637e99927ea4b4cfef7b814270978e",
+      "reviewer_role": "b"
+    }
+  ],
+  "route": "AUTHORIZE_OACPO_D1_REVIEWER_C_PROTOCOL_ONLY",
+  "source_labels_used": false,
+  "training_authorized": false,
+  "triplet_qualification_run": false
+}

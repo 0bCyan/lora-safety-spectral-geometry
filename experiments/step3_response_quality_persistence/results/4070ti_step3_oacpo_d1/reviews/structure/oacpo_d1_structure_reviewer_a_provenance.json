@@ -1,0 +1,19 @@
+{
+  "construct": "structure",
+  "reviewer_role": "a",
+  "agent_id": "01a0197b-c9bf-79a0-ab76-b981eb35e496",
+  "agent_nickname": "Bohr",
+  "runtime": "Codex sub-agent inheriting the current parent model",
+  "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/structure/oacpo_d1_structure_reviewer_a_packet.jsonl",
+  "packet_sha256": "b8ef01a1760fac54e697aa5c6cd3e8c626b598448e8601db00e63c4fa1cea22d",
+  "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/structure/oacpo_d1_structure_reviewer_a_template.jsonl",
+  "template_sha256": "543b864007e61e05915009dfab606a60ae6f9659e519adf1e8b851a4c1ebc7f4",
+  "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3_oacpo_d1_mechanical_rubric.md",
+  "rubric_sha256": "53ff5901b0ccd37c970ee48be916403a31b60b58b00b72a0f064115e5d5c3fbe",
+  "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/structure/oacpo_d1_structure_reviewer_a_labels.jsonl",
+  "output_sha256": "bc8ccfbeb0923ec9d9c51020b89dd8bc0462306a9ac4f549432e07c4d921f561",
+  "row_count": 124,
+  "fresh_context": true,
+  "forbidden_material_not_opened": true,
+  "completion_status": "complete"
+}

@@ -1,0 +1,19 @@
+{
+  "construct": "quality",
+  "reviewer_role": "b",
+  "agent_id": "01a0197b-c879-7ac2-a141-692100896c99",
+  "agent_nickname": "Dirac",
+  "runtime": "Codex sub-agent inheriting the current parent model",
+  "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/quality/oacpo_d1_quality_reviewer_b_packet.jsonl",
+  "packet_sha256": "a9eb0c3f4d8c0ba5c1dcd81cf1603aaa61d829ab7336305b0252c0eb04fa68c3",
+  "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/quality/oacpo_d1_quality_reviewer_b_template.jsonl",
+  "template_sha256": "e239a2d861e2289b7258b0a84ea2485040a7e761987bb8ef2d381de143c80399",
+  "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3cm_decomposed_quality_rubric_v1.md",
+  "rubric_sha256": "6792a7f7fc95382443ce4de5855a7c64b1eccedfcd94b8c35db1cc3063125482",
+  "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/quality/oacpo_d1_quality_reviewer_b_labels.jsonl",
+  "output_sha256": "e937b3138f4e2541d53a3fb8981717c48c1e935e89d18d4a08b4aae92bc69396",
+  "row_count": 124,
+  "fresh_context": true,
+  "forbidden_material_not_opened": true,
+  "completion_status": "complete"
+}

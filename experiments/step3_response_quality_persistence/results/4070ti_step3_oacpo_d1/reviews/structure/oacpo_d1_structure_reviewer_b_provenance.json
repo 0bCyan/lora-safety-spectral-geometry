@@ -1,0 +1,19 @@
+{
+  "construct": "structure",
+  "reviewer_role": "b",
+  "agent_id": "01a0197b-cb02-71e0-a4da-3b759dbe7dcf",
+  "agent_nickname": "Euclid",
+  "runtime": "Codex sub-agent inheriting the current parent model",
+  "packet_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/structure/oacpo_d1_structure_reviewer_b_packet.jsonl",
+  "packet_sha256": "fb457cc487572b3bb7370e73e74d47d961f012e84c177440243dc0b4ffee6acb",
+  "template_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/packets/structure/oacpo_d1_structure_reviewer_b_template.jsonl",
+  "template_sha256": "74eb12a23053b0193abc9a46d834ab163d64b160921024a5e3f65f17de0be880",
+  "rubric_path": "experiments/step3_response_quality_persistence/review_rubrics/step3_oacpo_d1_mechanical_rubric.md",
+  "rubric_sha256": "53ff5901b0ccd37c970ee48be916403a31b60b58b00b72a0f064115e5d5c3fbe",
+  "output_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/reviews/structure/oacpo_d1_structure_reviewer_b_labels.jsonl",
+  "output_sha256": "457d50cdf747531cd6fbc57f0272c3a4d2637e99927ea4b4cfef7b814270978e",
+  "row_count": 124,
+  "fresh_context": true,
+  "forbidden_material_not_opened": true,
+  "completion_status": "complete"
+}
