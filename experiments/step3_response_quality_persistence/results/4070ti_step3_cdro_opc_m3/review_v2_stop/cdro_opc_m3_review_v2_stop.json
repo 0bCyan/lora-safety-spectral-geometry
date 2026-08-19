@@ -1,0 +1,29 @@
+{
+  "schema": "step3_cdro_opc_m3_review_v2_stop_v1",
+  "route": "STOP_M3_REVIEW_V2_INCONCLUSIVE",
+  "stop_reason": "reviewer_d was blocked by the platform safety gateway before producing a review",
+  "protocol_commit": "7661b558c4c9299e3adc33e05c1b5333329c96d8",
+  "lock_commit": "d6418614bc877bce15ce91ff3b387fa14761f3c3",
+  "review_root": "D:\\Desktop\\step3-cdro-opc-m3-review-v2-20260820",
+  "packet_rows_per_reviewer": 180,
+  "reviewer_d": {
+    "agent_id": "01a01ac0-e7e4-7222-8293-91b9ffd8b364",
+    "status": "platform_safety_gateway_error",
+    "immutable_review_created": false
+  },
+  "reviewer_e": {
+    "agent_id": "01a01ac0-e92d-7c91-a6e6-ebc701d684c9",
+    "status": "immutable_submission_accepted_but_unpaired_and_unused",
+    "rows": 180,
+    "review_sha256": "a459decc31946f6f4fcfb77861b571d24f908ac102b3f640c45a15fca9ac9a93"
+  },
+  "ab_aggregation_run": false,
+  "reviewer_e_labels_used": false,
+  "reviewer_c_launched": false,
+  "cohort_selected": false,
+  "gradient_measurement_started": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
