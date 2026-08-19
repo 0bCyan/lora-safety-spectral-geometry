@@ -1,0 +1,65 @@
+{
+  "name": "step3_foacpo_d3_factorization_protocol_v1",
+  "status": "frozen_after_D2_labels_before_any_FOACPO_gradient",
+  "entry_commit": "7e2a917d31a10c616b3fb4181408e8d2a630aba5",
+  "objective": "Freeze independent quality and safety pair pools and the exact factorized-objective and protected-blend identities before any FOACPO model gradient.",
+  "frozen_inputs": {
+    "common_math": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_common.py",
+      "sha256": "638ea69da9b04cb6774988d3cff16444b6ca05a4fb613256073df6137e99391a"
+    },
+    "pool_builder": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_foacpo_d3_factorized_pool.py",
+      "sha256": "3ee0acb506dbca480edf95376e2e921e07132fb10a718b9c53d1adab67fa5183"
+    },
+    "tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_foacpo_d3.py",
+      "sha256": "dda62f9fb256602baf904526bc783c3287efaa8add0a4e5e96e14fa3f5fb07f9"
+    },
+    "proof": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/protocol/FOACPO_D3_FACTORIZATION_PROTOCOL.md",
+      "sha256": "76f2cd83151547f09e4ff245cbb332118e6df0dce8574241910007bd9fbc3277"
+    },
+    "d1_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d1/protocol/oacpo_d1_blind_review_protocol.json",
+      "sha256": "460fbcf8631187c6ab104963bcc4e508325b5d17fa501658d1eff2be5c24cb68"
+    },
+    "d2_summary": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d2/reports/oacpo_d2_triplet_qualification.json",
+      "sha256": "f2d3c78887e2d099430d820939d7f7c9e3a97d5c56867167bdedb5beedc9fee3"
+    },
+    "d2_ledger": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_oacpo_d2/qualification/oacpo_d2_triplet_ledger.jsonl",
+      "sha256": "e4e6017717b4b6c491394e18989da2c2428174939f76c73887a1a6d741fdeed1"
+    }
+  },
+  "construction": {
+    "quality_pair_rule": "authored_positive and safe_quality_negative",
+    "safety_pair_rule": "authored_positive and unsafe_negative",
+    "chosen_role": "authored",
+    "quality_rejected_role": "source_safe",
+    "safety_rejected_role": "source_unsafe",
+    "preserve_d0_prospective_split": true,
+    "replacement_rows_allowed": false,
+    "source_labels_used": false,
+    "full_triplet_intersection_required": false
+  },
+  "known_at_freeze": {
+    "quality_pairs": 28,
+    "safety_pairs": 32,
+    "cross_pool_pair_overlap": 13,
+    "interpretation": "descriptive resource counts observed after D2, not prospective efficacy gates"
+  },
+  "outputs": {
+    "quality_pairs": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_quality_pairs.jsonl",
+    "safety_pairs": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/data/foacpo_d3_safety_pairs.jsonl",
+    "manifest": "experiments/step3_response_quality_persistence/results/4070ti_step3_foacpo_d3/reports/foacpo_d3_factorized_pool_manifest.json"
+  },
+  "gradient_computed": false,
+  "model_checkpoint_opened": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "candidate_generation_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
