@@ -1,0 +1,116 @@
+{
+  "name": "step3_barp_mcd_d1x_c1_postrun_analysis_v1",
+  "decision": "STOP_BARP_MCD_D1X_C1_ROUTE_ACTIVITY_FAILED",
+  "protocol_sha256": "dfdf51029d724f0c9b5cfc66c5cd6349b444f07341a864c447746742857e2953",
+  "verified": true,
+  "route_id": "mask072_lambda0.500",
+  "post_selection_hypothesis": true,
+  "proposal_activity": 0,
+  "required_proposal_activity": 3,
+  "qualification_proposals": [
+    {
+      "block_id": "qualification_01",
+      "anchor_candidate_id": "mask068_lambda1.000",
+      "anchor_minimum_exact_score": 0.10592256819292675,
+      "candidate_protected_retention": {
+        "risk": 1.0212142074315944,
+        "uniform": 1.0122351592389205,
+        "tarc": 0.608200418636277,
+        "continuation": 1.065845174634025
+      },
+      "minimum_retention": 0.608200418636277,
+      "active_blocker": "tarc",
+      "route_exercised": false
+    },
+    {
+      "block_id": "qualification_02",
+      "anchor_candidate_id": "mask068_lambda1.000",
+      "anchor_minimum_exact_score": 0.10396028978225484,
+      "candidate_protected_retention": {
+        "risk": 1.0187648548111334,
+        "uniform": 1.0110929916732807,
+        "tarc": 0.6663510405428089,
+        "continuation": 1.0601059724046655
+      },
+      "minimum_retention": 0.6663510405428089,
+      "active_blocker": "tarc",
+      "route_exercised": false
+    },
+    {
+      "block_id": "qualification_03",
+      "anchor_candidate_id": "mask068_lambda1.000",
+      "anchor_minimum_exact_score": 0.09588689734928998,
+      "candidate_protected_retention": {
+        "risk": 1.0292462072941833,
+        "uniform": 0.9970461473565523,
+        "tarc": 0.5564841888178813,
+        "continuation": 1.04695269622556
+      },
+      "minimum_retention": 0.5564841888178813,
+      "active_blocker": "tarc",
+      "route_exercised": false
+    },
+    {
+      "block_id": "qualification_04",
+      "anchor_candidate_id": "mask100_lambda1.000",
+      "anchor_minimum_exact_score": 0.10331840782100093,
+      "candidate_protected_retention": {
+        "risk": 1.0305985745871298,
+        "uniform": 1.0237171118713744,
+        "tarc": 0.5813806554178624,
+        "continuation": 1.0838003650901868
+      },
+      "minimum_retention": 0.5813806554178624,
+      "active_blocker": "tarc",
+      "route_exercised": false
+    }
+  ],
+  "mechanism": {
+    "active_blocker_count": {
+      "tarc": 4,
+      "risk": 0,
+      "uniform": 0,
+      "continuation": 0
+    },
+    "tarc_retention_range": [
+      0.5564841888178813,
+      0.6663510405428089
+    ],
+    "tarc_shortfall_below_0_95_range": [
+      0.28364895945719104,
+      0.39351581118211865
+    ],
+    "risk_retention_min": 1.0187648548111334,
+    "uniform_retention_min": 0.9970461473565523,
+    "continuation_retention_min": 1.04695269622556,
+    "interpretation": "The E-TARC plus branch-negative-gap route transfers neither its local feasibility nor its discovery activity. TARC is the unique active protected blocker on every sealed qualification proposal."
+  },
+  "applied_policy": {
+    "anchor_fallbacks": 4,
+    "route_updates": 0,
+    "minimum_applied_local_protected_retention": 1.0,
+    "target_macro_mean": 0.0,
+    "studentized_stability_lower_score": 0.0,
+    "protected_transfer_passed": true,
+    "protected_transfer_is_vacuous_under_all_anchor_fallback": true
+  },
+  "conclusion": {
+    "optimizer_space_anchor": "strictly_feasible_on_all_four_qualification_proposals",
+    "conditional_target_route": "failed_zero_of_four_activity",
+    "current_BARP_target_route_line": "closed_under_current_certificates",
+    "training_authorized": false,
+    "method_success_claimed": false,
+    "population_inference_claimed": false
+  },
+  "boundary": {
+    "optimizer_objects": 1,
+    "optimizer_steps": 0,
+    "checkpoint_writes": 0,
+    "candidate_outputs_generated": false,
+    "sealed_diagnostic_opened": false,
+    "core100_opened": false,
+    "heldout_opened": false,
+    "wall_seconds": 788.1833474636078,
+    "vram_headroom_fraction": 0.20758864959491918
+  }
+}

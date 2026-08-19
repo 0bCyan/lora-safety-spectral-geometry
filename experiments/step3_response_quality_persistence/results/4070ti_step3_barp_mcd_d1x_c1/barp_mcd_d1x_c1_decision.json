@@ -1,0 +1,434 @@
+{
+  "name": "step3_barp_mcd_d1x_c1_decision_v1",
+  "route": "STOP_BARP_MCD_D1X_C1_ROUTE_ACTIVITY_FAILED",
+  "route_id": "mask072_lambda0.500",
+  "post_selection_hypothesis": true,
+  "checks": {
+    "route_activity": false,
+    "applied_local_protection": true,
+    "target_effect": false,
+    "target_stability": false,
+    "target_cluster_sign": false,
+    "target_components": false,
+    "protected_mean": true,
+    "protected_worst": true,
+    "zero_optimizer_state": true
+  },
+  "qualification": {
+    "route_id": "mask072_lambda0.500",
+    "source_mask": 72,
+    "source_subset": [
+      "etarc",
+      "branch_negative_gap"
+    ],
+    "homotopy_fraction": 0.5,
+    "proposal_activity": 0,
+    "minimum_candidate_local_protected_retention": 0.5564841888178813,
+    "minimum_applied_local_protected_retention": 1.0,
+    "target_clusters": {
+      "count": 4,
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean": 0.0,
+      "sample_standard_deviation": 0.0,
+      "standard_error": 0.0,
+      "studentized_lower_score": 0.0,
+      "population_confidence_interval_claimed": false,
+      "positive": 0,
+      "negative": 0,
+      "ties": 4
+    },
+    "target_components": {
+      "etarc": {
+        "mean": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "positive": 0,
+        "negative": 0,
+        "fallback_ties": 12
+      },
+      "branch_entropy": {
+        "mean": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "positive": 0,
+        "negative": 0,
+        "fallback_ties": 12
+      },
+      "branch_negative_gap": {
+        "mean": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "positive": 0,
+        "negative": 0,
+        "fallback_ties": 12
+      }
+    },
+    "protected": {
+      "risk": {
+        "mean_disadvantage": 0.0,
+        "worst_disadvantage": -0.0
+      },
+      "uniform": {
+        "mean_disadvantage": 0.0,
+        "worst_disadvantage": -0.0
+      },
+      "tarc": {
+        "mean_disadvantage": 0.0,
+        "worst_disadvantage": -0.0
+      },
+      "continuation": {
+        "mean_disadvantage": 0.0,
+        "worst_disadvantage": -0.0
+      }
+    },
+    "optimizer_completed_steps": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "proposal_rows": [
+      {
+        "route_id": "mask072_lambda0.500",
+        "source_mask": 72,
+        "source_subset": [
+          "etarc",
+          "branch_negative_gap"
+        ],
+        "homotopy_fraction": 0.5,
+        "proposal_block_id": "qualification_01",
+        "anchor_candidate_id": "mask068_lambda1.000",
+        "anchor_minimum_exact_score": 0.10592256819292675,
+        "anchor_search_candidates": 239,
+        "route_exercised": false,
+        "route_differs_from_anchor": true,
+        "minimum_local_protected_retention": 0.608200418636277,
+        "local_protected_retentions": {
+          "risk": 1.0212142074315944,
+          "uniform": 1.0122351592389205,
+          "tarc": 0.608200418636277,
+          "continuation": 1.065845174634025
+        },
+        "local_exact_scores": {
+          "risk": 0.40802066764199757,
+          "uniform": 0.29631896612748243,
+          "tarc": 0.08878499380491454,
+          "etarc": 0.16636628337184917,
+          "continuation": 0.23709256779394897,
+          "branch_entropy": 0.12269932181552629,
+          "branch_negative_gap": 0.12584210429356477
+        },
+        "source_dual_margin": 0.7934874420244523,
+        "source_dual_kkt_residual": 2.220446049250313e-16,
+        "target_macro_deltas": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "support_rows": [
+          {
+            "support_block_id": "qualification_02",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_03",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_04",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          }
+        ],
+        "optimizer_completed_steps": 0,
+        "candidate_clipping_active": true
+      },
+      {
+        "route_id": "mask072_lambda0.500",
+        "source_mask": 72,
+        "source_subset": [
+          "etarc",
+          "branch_negative_gap"
+        ],
+        "homotopy_fraction": 0.5,
+        "proposal_block_id": "qualification_02",
+        "anchor_candidate_id": "mask068_lambda1.000",
+        "anchor_minimum_exact_score": 0.10396028978225484,
+        "anchor_search_candidates": 239,
+        "route_exercised": false,
+        "route_differs_from_anchor": true,
+        "minimum_local_protected_retention": 0.6663510405428089,
+        "local_protected_retentions": {
+          "risk": 1.0187648548111334,
+          "uniform": 1.0110929916732807,
+          "tarc": 0.6663510405428089,
+          "continuation": 1.0601059724046655
+        },
+        "local_exact_scores": {
+          "risk": 0.34850994445045047,
+          "uniform": 0.3216193899268482,
+          "tarc": 0.10503956415102982,
+          "etarc": 0.21527493009679846,
+          "continuation": 0.27089024884762564,
+          "branch_entropy": 0.13208411550207438,
+          "branch_negative_gap": 0.13006871222951452
+        },
+        "source_dual_margin": 0.8027648157993736,
+        "source_dual_kkt_residual": 2.220446049250313e-16,
+        "target_macro_deltas": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "support_rows": [
+          {
+            "support_block_id": "qualification_01",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_03",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_04",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          }
+        ],
+        "optimizer_completed_steps": 0,
+        "candidate_clipping_active": true
+      },
+      {
+        "route_id": "mask072_lambda0.500",
+        "source_mask": 72,
+        "source_subset": [
+          "etarc",
+          "branch_negative_gap"
+        ],
+        "homotopy_fraction": 0.5,
+        "proposal_block_id": "qualification_03",
+        "anchor_candidate_id": "mask068_lambda1.000",
+        "anchor_minimum_exact_score": 0.09588689734928998,
+        "anchor_search_candidates": 239,
+        "route_exercised": false,
+        "route_differs_from_anchor": true,
+        "minimum_local_protected_retention": 0.5564841888178813,
+        "local_protected_retentions": {
+          "risk": 1.0292462072941833,
+          "uniform": 0.9970461473565523,
+          "tarc": 0.5564841888178813,
+          "continuation": 1.04695269622556
+        },
+        "local_exact_scores": {
+          "risk": 0.34916440766493123,
+          "uniform": 0.3262272794068394,
+          "tarc": 0.08479692642577316,
+          "etarc": 0.20046961062194063,
+          "continuation": 0.26487813523111614,
+          "branch_entropy": 0.13260283323902214,
+          "branch_negative_gap": 0.1335095053548966
+        },
+        "source_dual_margin": 0.8235382964633732,
+        "source_dual_kkt_residual": 1.1102230246251565e-16,
+        "target_macro_deltas": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "support_rows": [
+          {
+            "support_block_id": "qualification_01",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_02",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_04",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          }
+        ],
+        "optimizer_completed_steps": 0,
+        "candidate_clipping_active": true
+      },
+      {
+        "route_id": "mask072_lambda0.500",
+        "source_mask": 72,
+        "source_subset": [
+          "etarc",
+          "branch_negative_gap"
+        ],
+        "homotopy_fraction": 0.5,
+        "proposal_block_id": "qualification_04",
+        "anchor_candidate_id": "mask100_lambda1.000",
+        "anchor_minimum_exact_score": 0.10331840782100093,
+        "anchor_search_candidates": 239,
+        "route_exercised": false,
+        "route_differs_from_anchor": true,
+        "minimum_local_protected_retention": 0.5813806554178624,
+        "local_protected_retentions": {
+          "risk": 1.0305985745871298,
+          "uniform": 1.0237171118713744,
+          "tarc": 0.5813806554178624,
+          "continuation": 1.0838003650901868
+        },
+        "local_exact_scores": {
+          "risk": 0.36588764600790724,
+          "uniform": 0.31446254481355734,
+          "tarc": 0.09041909077010772,
+          "etarc": 0.2124740304656006,
+          "continuation": 0.2538165079744779,
+          "branch_entropy": 0.12455780460206622,
+          "branch_negative_gap": 0.12958730475304595
+        },
+        "source_dual_margin": 0.7776553773369579,
+        "source_dual_kkt_residual": 1.1102230246251565e-16,
+        "target_macro_deltas": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "support_rows": [
+          {
+            "support_block_id": "qualification_01",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_02",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_03",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          }
+        ],
+        "optimizer_completed_steps": 0,
+        "candidate_clipping_active": true
+      }
+    ]
+  },
+  "optimizer_objects": 1,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "checkpoint_writes": 0,
+  "candidate_outputs_generated": false,
+  "sealed_diagnostic_opened": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "matched_training_protocol_authorized": false,
+  "peak_reserved_bytes": 10204741632,
+  "vram_headroom_fraction": 0.20758864959491918,
+  "wall_seconds": 788.1833474636078
+}

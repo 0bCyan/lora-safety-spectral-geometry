@@ -1,0 +1,550 @@
+{
+  "name": "step3_barp_mcd_d1x_c1_qualification_v1",
+  "post_selection_disclosed": true,
+  "coverage": [
+    {
+      "block_id": "qualification_01",
+      "coverage": {
+        "mode": "eval",
+        "risk_microbatches": 4,
+        "safety_microbatches": 4,
+        "loss_means": {
+          "risk": 3.4836618900299072,
+          "uniform": 6.083438754081726,
+          "tarc": 5.82810378074646,
+          "etarc": 11.186220169067383,
+          "continuation": 5.666475772857666,
+          "branch_entropy": 0.0026410069840494543,
+          "branch_negative_gap": -8.275390625
+        },
+        "gradient_norms": {
+          "risk": 4.503464379940339,
+          "uniform": 9.094663966187282,
+          "tarc": 10.623744877811028,
+          "etarc": 29.599046078216528,
+          "continuation": 8.014589278746787,
+          "branch_entropy": 0.06640528140806432,
+          "branch_negative_gap": 27.090617465499985
+        },
+        "all_gradients_finite_nonzero": true,
+        "response_tokens": 261,
+        "continuation_tokens": 213,
+        "tarc_margin_terms": 32,
+        "etarc_margin_terms": 32
+      },
+      "wall_seconds": 14.233088493347168
+    },
+    {
+      "block_id": "qualification_02",
+      "coverage": {
+        "mode": "eval",
+        "risk_microbatches": 4,
+        "safety_microbatches": 4,
+        "loss_means": {
+          "risk": 3.6866984367370605,
+          "uniform": 6.90772008895874,
+          "tarc": 5.532539129257202,
+          "etarc": 11.20117735862732,
+          "continuation": 6.66475236415863,
+          "branch_entropy": 0.00437197758583352,
+          "branch_negative_gap": -7.681640625
+        },
+        "gradient_norms": {
+          "risk": 4.24190629171577,
+          "uniform": 9.478952699995075,
+          "tarc": 11.251096571790157,
+          "etarc": 27.3617530546403,
+          "continuation": 8.564102446267897,
+          "branch_entropy": 0.11997123588486135,
+          "branch_negative_gap": 32.080199148265265
+        },
+        "all_gradients_finite_nonzero": true,
+        "response_tokens": 236,
+        "continuation_tokens": 188,
+        "tarc_margin_terms": 32,
+        "etarc_margin_terms": 32
+      },
+      "wall_seconds": 15.121048927307129
+    },
+    {
+      "block_id": "qualification_03",
+      "coverage": {
+        "mode": "eval",
+        "risk_microbatches": 4,
+        "safety_microbatches": 4,
+        "loss_means": {
+          "risk": 3.74994033575058,
+          "uniform": 6.896377086639404,
+          "tarc": 5.19391804933548,
+          "etarc": 9.64404022693634,
+          "continuation": 6.722209572792053,
+          "branch_entropy": 0.002922904532169923,
+          "branch_negative_gap": -8.0966796875
+        },
+        "gradient_norms": {
+          "risk": 4.684874482258403,
+          "uniform": 11.540343565056133,
+          "tarc": 11.973469194082146,
+          "etarc": 32.91750057953665,
+          "continuation": 8.963857064292243,
+          "branch_entropy": 0.10088672653068759,
+          "branch_negative_gap": 39.08368234682329
+        },
+        "all_gradients_finite_nonzero": true,
+        "response_tokens": 237,
+        "continuation_tokens": 189,
+        "tarc_margin_terms": 32,
+        "etarc_margin_terms": 32
+      },
+      "wall_seconds": 14.017460823059082
+    },
+    {
+      "block_id": "qualification_04",
+      "coverage": {
+        "mode": "eval",
+        "risk_microbatches": 4,
+        "safety_microbatches": 4,
+        "loss_means": {
+          "risk": 3.533749282360077,
+          "uniform": 7.513416051864624,
+          "tarc": 5.849710464477539,
+          "etarc": 11.033447980880737,
+          "continuation": 7.395212769508362,
+          "branch_entropy": 0.004194245615508407,
+          "branch_negative_gap": -7.9873046875
+        },
+        "gradient_norms": {
+          "risk": 4.229946073454051,
+          "uniform": 11.327103403730707,
+          "tarc": 13.332841656877212,
+          "etarc": 24.982705361575565,
+          "continuation": 10.588130808471961,
+          "branch_entropy": 0.12622460326030038,
+          "branch_negative_gap": 33.59155381024678
+        },
+        "all_gradients_finite_nonzero": true,
+        "response_tokens": 239,
+        "continuation_tokens": 191,
+        "tarc_margin_terms": 32,
+        "etarc_margin_terms": 32
+      },
+      "wall_seconds": 13.363956928253174
+    }
+  ],
+  "summary": {
+    "route_id": "mask072_lambda0.500",
+    "source_mask": 72,
+    "source_subset": [
+      "etarc",
+      "branch_negative_gap"
+    ],
+    "homotopy_fraction": 0.5,
+    "proposal_activity": 0,
+    "minimum_candidate_local_protected_retention": 0.5564841888178813,
+    "minimum_applied_local_protected_retention": 1.0,
+    "target_clusters": {
+      "count": 4,
+      "values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean": 0.0,
+      "sample_standard_deviation": 0.0,
+      "standard_error": 0.0,
+      "studentized_lower_score": 0.0,
+      "population_confidence_interval_claimed": false,
+      "positive": 0,
+      "negative": 0,
+      "ties": 4
+    },
+    "target_components": {
+      "etarc": {
+        "mean": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "positive": 0,
+        "negative": 0,
+        "fallback_ties": 12
+      },
+      "branch_entropy": {
+        "mean": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "positive": 0,
+        "negative": 0,
+        "fallback_ties": 12
+      },
+      "branch_negative_gap": {
+        "mean": 0.0,
+        "minimum": 0.0,
+        "maximum": 0.0,
+        "positive": 0,
+        "negative": 0,
+        "fallback_ties": 12
+      }
+    },
+    "protected": {
+      "risk": {
+        "mean_disadvantage": 0.0,
+        "worst_disadvantage": -0.0
+      },
+      "uniform": {
+        "mean_disadvantage": 0.0,
+        "worst_disadvantage": -0.0
+      },
+      "tarc": {
+        "mean_disadvantage": 0.0,
+        "worst_disadvantage": -0.0
+      },
+      "continuation": {
+        "mean_disadvantage": 0.0,
+        "worst_disadvantage": -0.0
+      }
+    },
+    "optimizer_completed_steps": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "proposal_rows": [
+      {
+        "route_id": "mask072_lambda0.500",
+        "source_mask": 72,
+        "source_subset": [
+          "etarc",
+          "branch_negative_gap"
+        ],
+        "homotopy_fraction": 0.5,
+        "proposal_block_id": "qualification_01",
+        "anchor_candidate_id": "mask068_lambda1.000",
+        "anchor_minimum_exact_score": 0.10592256819292675,
+        "anchor_search_candidates": 239,
+        "route_exercised": false,
+        "route_differs_from_anchor": true,
+        "minimum_local_protected_retention": 0.608200418636277,
+        "local_protected_retentions": {
+          "risk": 1.0212142074315944,
+          "uniform": 1.0122351592389205,
+          "tarc": 0.608200418636277,
+          "continuation": 1.065845174634025
+        },
+        "local_exact_scores": {
+          "risk": 0.40802066764199757,
+          "uniform": 0.29631896612748243,
+          "tarc": 0.08878499380491454,
+          "etarc": 0.16636628337184917,
+          "continuation": 0.23709256779394897,
+          "branch_entropy": 0.12269932181552629,
+          "branch_negative_gap": 0.12584210429356477
+        },
+        "source_dual_margin": 0.7934874420244523,
+        "source_dual_kkt_residual": 2.220446049250313e-16,
+        "target_macro_deltas": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "support_rows": [
+          {
+            "support_block_id": "qualification_02",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_03",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_04",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          }
+        ],
+        "optimizer_completed_steps": 0,
+        "candidate_clipping_active": true
+      },
+      {
+        "route_id": "mask072_lambda0.500",
+        "source_mask": 72,
+        "source_subset": [
+          "etarc",
+          "branch_negative_gap"
+        ],
+        "homotopy_fraction": 0.5,
+        "proposal_block_id": "qualification_02",
+        "anchor_candidate_id": "mask068_lambda1.000",
+        "anchor_minimum_exact_score": 0.10396028978225484,
+        "anchor_search_candidates": 239,
+        "route_exercised": false,
+        "route_differs_from_anchor": true,
+        "minimum_local_protected_retention": 0.6663510405428089,
+        "local_protected_retentions": {
+          "risk": 1.0187648548111334,
+          "uniform": 1.0110929916732807,
+          "tarc": 0.6663510405428089,
+          "continuation": 1.0601059724046655
+        },
+        "local_exact_scores": {
+          "risk": 0.34850994445045047,
+          "uniform": 0.3216193899268482,
+          "tarc": 0.10503956415102982,
+          "etarc": 0.21527493009679846,
+          "continuation": 0.27089024884762564,
+          "branch_entropy": 0.13208411550207438,
+          "branch_negative_gap": 0.13006871222951452
+        },
+        "source_dual_margin": 0.8027648157993736,
+        "source_dual_kkt_residual": 2.220446049250313e-16,
+        "target_macro_deltas": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "support_rows": [
+          {
+            "support_block_id": "qualification_01",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_03",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_04",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          }
+        ],
+        "optimizer_completed_steps": 0,
+        "candidate_clipping_active": true
+      },
+      {
+        "route_id": "mask072_lambda0.500",
+        "source_mask": 72,
+        "source_subset": [
+          "etarc",
+          "branch_negative_gap"
+        ],
+        "homotopy_fraction": 0.5,
+        "proposal_block_id": "qualification_03",
+        "anchor_candidate_id": "mask068_lambda1.000",
+        "anchor_minimum_exact_score": 0.09588689734928998,
+        "anchor_search_candidates": 239,
+        "route_exercised": false,
+        "route_differs_from_anchor": true,
+        "minimum_local_protected_retention": 0.5564841888178813,
+        "local_protected_retentions": {
+          "risk": 1.0292462072941833,
+          "uniform": 0.9970461473565523,
+          "tarc": 0.5564841888178813,
+          "continuation": 1.04695269622556
+        },
+        "local_exact_scores": {
+          "risk": 0.34916440766493123,
+          "uniform": 0.3262272794068394,
+          "tarc": 0.08479692642577316,
+          "etarc": 0.20046961062194063,
+          "continuation": 0.26487813523111614,
+          "branch_entropy": 0.13260283323902214,
+          "branch_negative_gap": 0.1335095053548966
+        },
+        "source_dual_margin": 0.8235382964633732,
+        "source_dual_kkt_residual": 1.1102230246251565e-16,
+        "target_macro_deltas": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "support_rows": [
+          {
+            "support_block_id": "qualification_01",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_02",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_04",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          }
+        ],
+        "optimizer_completed_steps": 0,
+        "candidate_clipping_active": true
+      },
+      {
+        "route_id": "mask072_lambda0.500",
+        "source_mask": 72,
+        "source_subset": [
+          "etarc",
+          "branch_negative_gap"
+        ],
+        "homotopy_fraction": 0.5,
+        "proposal_block_id": "qualification_04",
+        "anchor_candidate_id": "mask100_lambda1.000",
+        "anchor_minimum_exact_score": 0.10331840782100093,
+        "anchor_search_candidates": 239,
+        "route_exercised": false,
+        "route_differs_from_anchor": true,
+        "minimum_local_protected_retention": 0.5813806554178624,
+        "local_protected_retentions": {
+          "risk": 1.0305985745871298,
+          "uniform": 1.0237171118713744,
+          "tarc": 0.5813806554178624,
+          "continuation": 1.0838003650901868
+        },
+        "local_exact_scores": {
+          "risk": 0.36588764600790724,
+          "uniform": 0.31446254481355734,
+          "tarc": 0.09041909077010772,
+          "etarc": 0.2124740304656006,
+          "continuation": 0.2538165079744779,
+          "branch_entropy": 0.12455780460206622,
+          "branch_negative_gap": 0.12958730475304595
+        },
+        "source_dual_margin": 0.7776553773369579,
+        "source_dual_kkt_residual": 1.1102230246251565e-16,
+        "target_macro_deltas": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "support_rows": [
+          {
+            "support_block_id": "qualification_01",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_02",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          },
+          {
+            "support_block_id": "qualification_03",
+            "exact_delta_scores": {
+              "risk": 0.0,
+              "uniform": 0.0,
+              "tarc": 0.0,
+              "etarc": 0.0,
+              "continuation": 0.0,
+              "branch_entropy": 0.0,
+              "branch_negative_gap": 0.0
+            },
+            "target_macro_delta": 0.0
+          }
+        ],
+        "optimizer_completed_steps": 0,
+        "candidate_clipping_active": true
+      }
+    ]
+  },
+  "checks": {
+    "route_activity": false,
+    "applied_local_protection": true,
+    "target_effect": false,
+    "target_stability": false,
+    "target_cluster_sign": false,
+    "target_components": false,
+    "protected_mean": true,
+    "protected_worst": true,
+    "zero_optimizer_state": true
+  }
+}
