@@ -1,0 +1,9 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4070 Ti",
+  "head": "78df471bf2ccb0952a74a6abd897ab4cc10dac6c",
+  "peak_reserved_bytes": 12180258816,
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.5",
+  "total_memory_bytes": 12878086144,
+  "wall_seconds": 725.4631721973419
+}
