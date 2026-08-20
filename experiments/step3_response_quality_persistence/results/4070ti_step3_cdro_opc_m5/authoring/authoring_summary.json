@@ -1,0 +1,13 @@
+{
+  "context_isolated": true,
+  "fixed_requests": 120,
+  "optimizer_steps": 0,
+  "retry_or_reassignment_used": false,
+  "route": "PASS_CDRO_OPC_M5_AUTHORING",
+  "schema": "step3_cdro_opc_m5_authoring_summary_v1",
+  "subagent_sessions": 12,
+  "training_authorized": false,
+  "unique_normalized_responses": 120,
+  "valid_candidates": 120,
+  "valid_prompts": 60
+}

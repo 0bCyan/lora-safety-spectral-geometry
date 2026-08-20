@@ -1,0 +1,13 @@
+{
+  "artifacts": {
+    "CDRO_OPC_M5_AUTHORING_REPORT.md": "b48fb4a97caa353f8bfa6aacb8bc297451a30f6ef56f5635ec6049fd5040d4e0",
+    "authoring_summary.json": "d053e4f5e8f0c60a643946241ba036c35e921e53ccddbd1a8dbf37134b02d0c6",
+    "private/primary_candidates.jsonl": "cc66482b4384aa851776633b76f77ac5541170354fd0b0abc04731b243caaf1d",
+    "record_manifest.jsonl": "0a34e5fb5423d4d5546925c506dcaa8c99c75552590dfd20f5120392e3226b24"
+  },
+  "optimizer_steps": 0,
+  "route": "PASS_CDRO_OPC_M5_AUTHORING",
+  "schema": "step3_cdro_opc_m5_authoring_manifest_v1",
+  "spool_root": "D:\\Desktop\\step3-cdro-opc-m5-authoring-20260820-01",
+  "training_authorized": false
+}
