@@ -36,6 +36,8 @@
   "holdback_registry_sha256": "363e8c7b9e37c1ddeac55a040abf5f37ef1d3425a55ab3737fa78a4c889bbbc3",
   "fixed_direction": {
     "source": "frozen_M1_CDR_OPC_endpoint_replayed_with_M3_V4_transport",
+    "fallback_coordinates": [-0.055566530716129034, -0.9977495885764914, -0.03750249646019172, -0.0012557608847501597, -0.0003166338660668384],
+    "candidate_coordinates": [-0.6893848056299932, -1.0204872487095722, -0.02491390795045365, -0.004206032345316617, -0.21264047467563704],
     "coordinate_tolerance": 1e-6,
     "candidate_coordinate_sha256": "4fa4e2c904724f1b7b3051bb38cf924f90ab43350b4ecbb00cb1a923bd14130f"
   },
