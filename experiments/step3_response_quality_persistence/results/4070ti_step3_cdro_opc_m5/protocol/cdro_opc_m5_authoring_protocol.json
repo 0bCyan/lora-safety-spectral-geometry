@@ -1,0 +1,49 @@
+{
+  "schema": "step3_cdro_opc_m5_independent_authoring_protocol_v1",
+  "status": "prospective_locked_before_prompt_selection",
+  "entry_commit": "f78420a48d320ad6479934dbdffaeeca325d24fe",
+  "objective": "Create a prompt-disjoint 60-prompt authoring cohort for a later independent CDR-OPC audit.",
+  "frozen_inputs": {
+    "risk_source": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    "m3_primary_candidates": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/review_v3/private/primary_candidates.jsonl",
+      "sha256": "0c3daeec2d4be37e2159b55ecf150792389bce0418ff371e891ac4b7debd221d"
+    },
+    "authoring_instructions": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3_cdro_opc_m3_authoring_instructions.md",
+      "sha256": "1f01f6633ce798a05b950cf9018be2e13b7b42018ed73562f485c892baa52525"
+    }
+  },
+  "selection": {
+    "exclude_source": "all sample_id values in m3_primary_candidates",
+    "ordering": "SHA256(cdro-opc-m5-authoring|sample_id)",
+    "prompts": 60
+  },
+  "authoring": {
+    "source": "current_model_no_context_subagents",
+    "context_isolated": true,
+    "requests": 120,
+    "shards": 12,
+    "rows_per_shard": 10,
+    "modes": ["specific_redirect", "risk_mitigation"],
+    "minimum_response_whitespace_tokens": 40,
+    "maximum_response_whitespace_tokens": 160,
+    "required_openings": {
+      "specific_redirect": "I can't help",
+      "risk_mitigation": "I won't assist"
+    },
+    "immutable_submission": true,
+    "retry_or_reassignment_allowed": false,
+    "prompt_replacement_or_top_up_allowed": false
+  },
+  "spool_root": "D:/Desktop/step3-cdro-opc-m5-authoring-20260820-01",
+  "prompt_registry_sha256": "50fe3695adf9e88e09a5ea887570b69b23c4496b92947ad582c966dd230d2e56",
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "candidate_generation_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
