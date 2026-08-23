@@ -1,0 +1,23 @@
+{
+  "calibration_covered_units": 16,
+  "calibration_gates": {
+    "behavior": true,
+    "exact_restoration": true,
+    "finite": true,
+    "gradient_coverage": true,
+    "map_fidelity": true,
+    "protected_aggregate": true,
+    "protected_unit_coverage": false
+  },
+  "fixed_dose": 0.0337860296353059,
+  "fresh_external_confirmation_claimed": false,
+  "next_authorized_action": "stop without tuning radius or dose; do not train",
+  "optimizer_steps": 0,
+  "route": "STOP_CDRO_OPC_M6_CALIBRATION",
+  "schema": "step3_cdro_opc_m6_virtual_displacement_decision_v1",
+  "sealed_audit_covered_units": null,
+  "sealed_audit_gates": null,
+  "sealed_audit_opened": false,
+  "training_authorized": false,
+  "virtual_scale_eta": 0.0002
+}

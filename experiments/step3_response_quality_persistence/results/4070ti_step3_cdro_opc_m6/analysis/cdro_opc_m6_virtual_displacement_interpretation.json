@@ -1,0 +1,110 @@
+{
+  "schema": "step3_cdro_opc_m6_virtual_displacement_interpretation_v1",
+  "route": "STOP_CDRO_OPC_M6_CALIBRATION",
+  "evidence_scope": "registered finite-loss development on the already opened M5 cohort",
+  "fresh_external_confirmation": false,
+  "fixed_dose": 0.0337860296353059,
+  "virtual_scale_eta": 0.0002,
+  "calibration": {
+    "covered_units": 16,
+    "total_units": 20,
+    "required_covered_units": 19,
+    "only_failed_gate": "protected_unit_coverage",
+    "aggregate_finite_deteriorations": {
+      "continuation": -0.12491539104449981,
+      "risk": 0.004612649289343009,
+      "tarc": 0.0023120885252877065,
+      "uniform": -0.11505993725619261
+    },
+    "failed_units": [
+      {
+        "unit_id": "m5_cal_14",
+        "certificate": "risk",
+        "finite_deterioration": 0.04581361478338251,
+        "first_order_deterioration": 0.023349283161191448,
+        "finite_minus_first_order": 0.02246433162219106
+      },
+      {
+        "unit_id": "m5_cal_18",
+        "certificate": "risk",
+        "finite_deterioration": 0.04114562617729047,
+        "first_order_deterioration": 0.025417121231126282,
+        "finite_minus_first_order": 0.01572850494616419
+      },
+      {
+        "unit_id": "m5_cal_24",
+        "certificate": "risk",
+        "finite_deterioration": 0.04649698943666329,
+        "first_order_deterioration": 0.03636750645016698,
+        "finite_minus_first_order": 0.01012948298649631
+      },
+      {
+        "unit_id": "m5_cal_36",
+        "certificate": "risk",
+        "finite_deterioration": 0.04389967296256677,
+        "first_order_deterioration": -0.0004541907902769779,
+        "finite_minus_first_order": 0.044353863752843746
+      }
+    ],
+    "certificate_exceedance_counts": {
+      "risk": 4,
+      "uniform": 0,
+      "tarc": 0,
+      "continuation": 0
+    }
+  },
+  "behavior": {
+    "quality": {
+      "initial_loss": 0.021103768881584984,
+      "fallback_loss": 0.02583506674018281,
+      "selected_loss": 0.024913500325055793,
+      "predicted_selected_advantage": 0.0010525034353665486,
+      "actual_selected_advantage": 0.0009215664151270182,
+      "actual_to_predicted_ratio": 0.875594686117172,
+      "gate": true
+    },
+    "safety": {
+      "initial_loss": 0.035426409470528594,
+      "fallback_loss": 0.03439753098646179,
+      "selected_loss": 0.03419299349770881,
+      "predicted_selected_advantage": 0.00016990045125023784,
+      "actual_selected_advantage": 0.00020453748875298022,
+      "actual_to_predicted_ratio": 1.2038666598461663,
+      "gate": true
+    }
+  },
+  "map_precheck": {
+    "gate": true,
+    "fallback_relative_l2_error": 1.1819188725214785e-06,
+    "selected_relative_l2_error": 1.1796961247060359e-06,
+    "maximum_absolute_error": 4.708766937255859e-06
+  },
+  "predecessor_tail_not_erased": {
+    "m5_sealed_covered_units": 19,
+    "m5_sealed_total_units": 20,
+    "uncovered_unit": "m5_audit_27",
+    "risk_deterioration": 0.07003866384161442
+  },
+  "integrity": {
+    "all_common_gates": true,
+    "calibration_integrity": true,
+    "final_integrity": true,
+    "optimizer_steps": 0,
+    "training_authorized": false,
+    "sealed_audit_opened": false,
+    "checkpoint_writes": 0,
+    "candidate_generation": 0,
+    "core100_opened": false,
+    "heldout_opened": false
+  },
+  "interpretation": "The selected map passed the selected-vs-fallback mean relative-deterioration gates for all four certificates and retained a finite selected-over-fallback behavior advantage, but fixed-radius risk-tail protection transferred to only 16 of 20 calibration units. The result does not support fixed-radius finite-loss transfer or authorize a persistent or training update at eta=2e-4.",
+  "not_supported": [
+    "training authorization",
+    "checkpoint writing",
+    "sealed-audit finite-loss claims",
+    "fresh external confirmation",
+    "claim that a smaller radius would pass",
+    "claim that CDR-OPC fails at every radius"
+  ],
+  "next_authorized_action": "stop without tuning radius or dose; do not train"
+}

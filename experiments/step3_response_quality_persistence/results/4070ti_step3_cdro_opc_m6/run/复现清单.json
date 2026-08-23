@@ -1,0 +1,14 @@
+{
+  "schema": "step3_cdro_opc_m6_reproduction_index_v1",
+  "route": "STOP_CDRO_OPC_M6_CALIBRATION",
+  "runtime_commit": "a1ddaebee4e3fc9132d46b66f0102394e3358e7a",
+  "canonical_manifest": "reproduction_manifest.json",
+  "canonical_manifest_sha256": "06e82fe6a4f6812bdbc354f34942116b4507bce04804b41e1738445de5c28ec0",
+  "unique_reproduction_command": ".\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m6_virtual_displacement.py run",
+  "verification_command": ".\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m6_virtual_displacement.py verify-run",
+  "random_seed": 2026081917,
+  "fixed_dose": 0.0337860296353059,
+  "virtual_scale_eta": 0.0002,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}
