@@ -1,0 +1,28 @@
+{
+  "schema": "step3_cdro_opc_m5_confirmation_interpretation_v1",
+  "route": "PASS_CDRO_OPC_M5_ZERO_STEP_CONFIRMATION",
+  "fixed_dose": 0.0337860296353059,
+  "calibration": {
+    "covered_units": 20,
+    "total_units": 20,
+    "quality_selected_minus_fallback": 0.002437844266383455,
+    "safety_selected_minus_fallback": 0.003809128826417641,
+    "aggregate_protected": true
+  },
+  "sealed_audit": {
+    "opened_after_calibration_pass": true,
+    "covered_units": 19,
+    "total_units": 20,
+    "quality_selected_minus_fallback": 0.0024094808586120377,
+    "safety_selected_minus_fallback": 0.003911043775238154,
+    "aggregate_protected": true
+  },
+  "interpretation": "The prospectively frozen conservative dose transported positive quality and safety gradient behavior to a prompt-disjoint cohort while meeting the registered unit-protection threshold. The 19/20 sealed-audit result leaves a real unit-level tail risk and is not a training or generated-behavior claim.",
+  "claim_scope": "prompt_disjoint_fixed_dose_zero_step_gradient_mechanism_confirmation",
+  "finite_parameter_step_claimed": false,
+  "generated_response_claimed": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}

@@ -1,0 +1,33 @@
+{
+  "calibration_covered_units": 20,
+  "calibration_gates": {
+    "aggregate_protection": true,
+    "behavior": true,
+    "fixed_direction": true,
+    "protected_coverage": true,
+    "solver_kkt": true,
+    "state_restored": true,
+    "structural": true,
+    "zero_step": true
+  },
+  "calibration_total_units": 20,
+  "fixed_dose": 0.0337860296353059,
+  "next_authorized_action": "interpret zero-step confirmation; do not train",
+  "optimizer_steps": 0,
+  "route": "PASS_CDRO_OPC_M5_ZERO_STEP_CONFIRMATION",
+  "schema": "step3_cdro_opc_m5_confirmation_decision_v1",
+  "sealed_audit_covered_units": 19,
+  "sealed_audit_gates": {
+    "aggregate_protection": true,
+    "behavior": true,
+    "fixed_direction": true,
+    "protected_coverage": true,
+    "solver_kkt": true,
+    "state_restored": true,
+    "structural": true,
+    "zero_step": true
+  },
+  "sealed_audit_opened": true,
+  "sealed_audit_total_units": 20,
+  "training_authorized": false
+}

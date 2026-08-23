@@ -1,0 +1,37 @@
+{
+  "schema": "step3_cdro_opc_m5_reproduction_manifest_v1",
+  "runtime_commit": "fa0913c8c2df6690f579ff11a70457a67afbdf44",
+  "unique_reproduction_command": "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m5_confirmation.py run",
+  "verification_command": "D:\\Desktop\\lora-safety-spectral-geometry\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m5_confirmation.py verify-run",
+  "random_seed": null,
+  "deterministic_selection": true,
+  "parameters": {
+    "fixed_dose": 0.0337860296353059,
+    "allowed_relative_drop": 0.04,
+    "score_scale_floor": 0.02,
+    "calibration_required_covered_units": 19,
+    "sealed_audit_required_covered_units": 19,
+    "optimizer_steps": 0
+  },
+  "inputs_sha256": {
+    "protocol": "36bbdfdcb43e80dcf7142c3546403ce7f7e224e3b007fe30be41dc3965db3e30",
+    "selected_targets": "3b97e01200f50d85c5390b6b458890b571243704d83d01b4f04f0805dd4488db",
+    "primary_candidates": "b9ed8f21917bc20f7c4e289f0bf71fa25b7470c99874b3da6d9a4ee92717ad9b",
+    "cohort": "1291adb4c4dba1d4e4e24b9ad29080d77dc232092f17fea9b83d23e53872453d",
+    "risk_source": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+  },
+  "outputs_sha256": {
+    "diagnostics": "578129a0fddb83985dd643dfec311f485dd342cad48055ac723d9087baf8f5d1",
+    "decision": "c0eb58c010c7383379adddb634d9d164b2bc3379ba854312d0c6461f23eaa2df"
+  },
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "python": "3.11.5",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.53.3",
+    "peft": "0.16.0",
+    "peak_reserved_bytes": 11219763200,
+    "wall_seconds": 681.1181676387787
+  },
+  "training_authorized": false
+}
