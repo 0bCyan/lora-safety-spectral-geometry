@@ -1,0 +1,13 @@
+{
+  "schema": "step3_cdro_opc_m5_review_launch_v1",
+  "role": "reviewer_b",
+  "agent_id": "/root/m5_reviewer_b",
+  "context_isolated": true,
+  "packet_sha256": "eccc808a19cdfe7b6f0a7a47dd4db6fe8699b232dfef141234584c7a885dcd3e",
+  "rubric_sha256": "599241bb9f20deaf44872e0ccea20f8485ff70db097a8d181d8794977c903d5e",
+  "saw_repository": false,
+  "saw_hidden_map": false,
+  "saw_other_full_reviews": false,
+  "saw_ab_short_reasons": false,
+  "saw_training_or_gradient_results": false
+}

@@ -1,0 +1,340 @@
+{
+  "schema": "step3_cdro_opc_m5_review_ab_outcome_v1",
+  "route": "PASS_CDRO_OPC_M5_REVIEW_AB",
+  "reviewer_scores": {
+    "reviewer_a": {
+      "reviewer": "reviewer_a",
+      "hidden_duplicate_full_vector": {
+        "correct": 12,
+        "denominator": 12,
+        "minimum": 11
+      },
+      "anchors": {
+        "positive_anchor": {
+          "rows": 12,
+          "field_correct": {
+            "executable_step": 12,
+            "prompt_binding": 12,
+            "safe_route": 12
+          },
+          "field_denominators": {
+            "executable_step": 12,
+            "prompt_binding": 12,
+            "safe_route": 12
+          },
+          "exact_expected_subvector": 12
+        },
+        "generic_anchor": {
+          "rows": 12,
+          "field_correct": {
+            "clean_safe": 12,
+            "detail_retention": 12,
+            "executable_step": 12,
+            "prompt_binding": 12,
+            "safe_route": 12
+          },
+          "field_denominators": {
+            "clean_safe": 12,
+            "detail_retention": 12,
+            "executable_step": 12,
+            "prompt_binding": 12,
+            "safe_route": 12
+          },
+          "exact_expected_subvector": 12
+        },
+        "mismatch_anchor": {
+          "rows": 12,
+          "field_correct": {
+            "detail_retention": 11,
+            "prompt_binding": 12
+          },
+          "field_denominators": {
+            "detail_retention": 12,
+            "prompt_binding": 12
+          },
+          "exact_expected_subvector": 11
+        },
+        "clean_safety_anchor": {
+          "rows": 12,
+          "field_correct": {
+            "clean_safe": 11
+          },
+          "field_denominators": {
+            "clean_safe": 12
+          },
+          "exact_expected_subvector": 11
+        }
+      },
+      "gates": {
+        "hidden_duplicate_full_vector": true,
+        "positive_anchor_exact": true,
+        "positive_anchor_executable_step": true,
+        "positive_anchor_prompt_binding": true,
+        "positive_anchor_safe_route": true,
+        "generic_anchor_exact": true,
+        "generic_anchor_clean_safe": true,
+        "generic_anchor_detail_retention": true,
+        "generic_anchor_executable_step": true,
+        "generic_anchor_prompt_binding": true,
+        "generic_anchor_safe_route": true,
+        "mismatch_anchor_exact": true,
+        "mismatch_anchor_detail_retention": true,
+        "mismatch_anchor_prompt_binding": true,
+        "clean_safety_anchor_exact": true,
+        "clean_safety_anchor_clean_safe": true
+      },
+      "overall_pass": true
+    },
+    "reviewer_b": {
+      "reviewer": "reviewer_b",
+      "hidden_duplicate_full_vector": {
+        "correct": 12,
+        "denominator": 12,
+        "minimum": 11
+      },
+      "anchors": {
+        "positive_anchor": {
+          "rows": 12,
+          "field_correct": {
+            "executable_step": 12,
+            "prompt_binding": 12,
+            "safe_route": 12
+          },
+          "field_denominators": {
+            "executable_step": 12,
+            "prompt_binding": 12,
+            "safe_route": 12
+          },
+          "exact_expected_subvector": 12
+        },
+        "generic_anchor": {
+          "rows": 12,
+          "field_correct": {
+            "clean_safe": 12,
+            "detail_retention": 12,
+            "executable_step": 12,
+            "prompt_binding": 12,
+            "safe_route": 12
+          },
+          "field_denominators": {
+            "clean_safe": 12,
+            "detail_retention": 12,
+            "executable_step": 12,
+            "prompt_binding": 12,
+            "safe_route": 12
+          },
+          "exact_expected_subvector": 12
+        },
+        "mismatch_anchor": {
+          "rows": 12,
+          "field_correct": {
+            "detail_retention": 12,
+            "prompt_binding": 12
+          },
+          "field_denominators": {
+            "detail_retention": 12,
+            "prompt_binding": 12
+          },
+          "exact_expected_subvector": 12
+        },
+        "clean_safety_anchor": {
+          "rows": 12,
+          "field_correct": {
+            "clean_safe": 11
+          },
+          "field_denominators": {
+            "clean_safe": 12
+          },
+          "exact_expected_subvector": 11
+        }
+      },
+      "gates": {
+        "hidden_duplicate_full_vector": true,
+        "positive_anchor_exact": true,
+        "positive_anchor_executable_step": true,
+        "positive_anchor_prompt_binding": true,
+        "positive_anchor_safe_route": true,
+        "generic_anchor_exact": true,
+        "generic_anchor_clean_safe": true,
+        "generic_anchor_detail_retention": true,
+        "generic_anchor_executable_step": true,
+        "generic_anchor_prompt_binding": true,
+        "generic_anchor_safe_route": true,
+        "mismatch_anchor_exact": true,
+        "mismatch_anchor_detail_retention": true,
+        "mismatch_anchor_prompt_binding": true,
+        "clean_safety_anchor_exact": true,
+        "clean_safety_anchor_clean_safe": true
+      },
+      "overall_pass": true
+    }
+  },
+  "primary_reliability": {
+    "primary_candidates": 120,
+    "primary_prompts": 60,
+    "full_vector_exact_agreement": 1.0,
+    "detail": {
+      "n": 120,
+      "exact_agreement": 1.0,
+      "linear_weighted_agreement": 1.0,
+      "gwet_ac2": 1.0,
+      "nondegenerate": false,
+      "qualified_boundary_2_vs_0_or_1": {
+        "n": 120,
+        "n11": 120,
+        "n10": 0,
+        "n01": 0,
+        "n00": 0,
+        "raw_agreement": 1.0,
+        "gwet_ac1": 1.0,
+        "positive_agreement": 1.0,
+        "negative_agreement": null,
+        "prevalence_a": 1.0,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.0,
+        "yes_ratings": 240,
+        "no_ratings": 0,
+        "nondegenerate": false
+      }
+    },
+    "components": {
+      "safe_route": {
+        "n": 120,
+        "n11": 120,
+        "n10": 0,
+        "n01": 0,
+        "n00": 0,
+        "raw_agreement": 1.0,
+        "gwet_ac1": 1.0,
+        "positive_agreement": 1.0,
+        "negative_agreement": null,
+        "prevalence_a": 1.0,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.0,
+        "yes_ratings": 240,
+        "no_ratings": 0,
+        "nondegenerate": false
+      },
+      "executable_step": {
+        "n": 120,
+        "n11": 120,
+        "n10": 0,
+        "n01": 0,
+        "n00": 0,
+        "raw_agreement": 1.0,
+        "gwet_ac1": 1.0,
+        "positive_agreement": 1.0,
+        "negative_agreement": null,
+        "prevalence_a": 1.0,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.0,
+        "yes_ratings": 240,
+        "no_ratings": 0,
+        "nondegenerate": false
+      },
+      "prompt_binding": {
+        "n": 120,
+        "n11": 120,
+        "n10": 0,
+        "n01": 0,
+        "n00": 0,
+        "raw_agreement": 1.0,
+        "gwet_ac1": 1.0,
+        "positive_agreement": 1.0,
+        "negative_agreement": null,
+        "prevalence_a": 1.0,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.0,
+        "yes_ratings": 240,
+        "no_ratings": 0,
+        "nondegenerate": false
+      },
+      "naturalness": {
+        "n": 120,
+        "n11": 120,
+        "n10": 0,
+        "n01": 0,
+        "n00": 0,
+        "raw_agreement": 1.0,
+        "gwet_ac1": 1.0,
+        "positive_agreement": 1.0,
+        "negative_agreement": null,
+        "prevalence_a": 1.0,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.0,
+        "yes_ratings": 240,
+        "no_ratings": 0,
+        "nondegenerate": false
+      },
+      "clean_safe": {
+        "n": 120,
+        "n11": 120,
+        "n10": 0,
+        "n01": 0,
+        "n00": 0,
+        "raw_agreement": 1.0,
+        "gwet_ac1": 1.0,
+        "positive_agreement": 1.0,
+        "negative_agreement": null,
+        "prevalence_a": 1.0,
+        "prevalence_b": 1.0,
+        "prevalence_gap": 0.0,
+        "yes_ratings": 240,
+        "no_ratings": 0,
+        "nondegenerate": false
+      }
+    },
+    "candidate_qualified": {
+      "n": 120,
+      "n11": 120,
+      "n10": 0,
+      "n01": 0,
+      "n00": 0,
+      "raw_agreement": 1.0,
+      "gwet_ac1": 1.0,
+      "positive_agreement": 1.0,
+      "negative_agreement": null,
+      "prevalence_a": 1.0,
+      "prevalence_b": 1.0,
+      "prevalence_gap": 0.0,
+      "yes_ratings": 240,
+      "no_ratings": 0,
+      "nondegenerate": false
+    },
+    "prompt_cluster_bootstrap": {
+      "replicates": 2000,
+      "seed_sha256": "29922fd447b69bb25c5dd644733231989f6f314ddb51dbbf110f5bd34408175e",
+      "q025": 1.0,
+      "median": 1.0,
+      "q975": 1.0
+    },
+    "gates": {
+      "full_vector_exact": true,
+      "detail_exact": true,
+      "detail_weighted": true,
+      "detail_gwet_ac2": true,
+      "qualification_raw": true,
+      "qualification_gwet_ac1": true,
+      "qualification_positive": true,
+      "prompt_bootstrap_q025": true,
+      "safe_route_raw": true,
+      "safe_route_gwet_ac1": true,
+      "executable_step_raw": true,
+      "executable_step_gwet_ac1": true,
+      "prompt_binding_raw": true,
+      "prompt_binding_gwet_ac1": true,
+      "naturalness_raw": true,
+      "naturalness_gwet_ac1": true,
+      "clean_safe_raw": true,
+      "clean_safe_gwet_ac1": true
+    },
+    "overall_pass": true,
+    "negative_class_reported_not_gated": true
+  },
+  "derived_qualification_agreements": 120,
+  "derived_qualification_disagreements": 0,
+  "reviewer_c_required": false,
+  "reviewer_c_forbidden": true,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

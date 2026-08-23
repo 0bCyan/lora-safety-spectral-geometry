@@ -1,0 +1,17 @@
+{
+  "schema": "step3_cdro_opc_m5_review_final_decision_v1",
+  "route": "PASS_CDRO_OPC_M5_TARGET_COHORT",
+  "final_qualified_candidates": 120,
+  "eligible_prompts": 60,
+  "selected_prompts": 40,
+  "selected_targets": 80,
+  "calibration_units": 20,
+  "sealed_audit_units": 20,
+  "reviewer_c_used": false,
+  "future_fixed_dose": 0.0337860296353059,
+  "gpu_protocol_authorized": true,
+  "training_authorized": false,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false
+}

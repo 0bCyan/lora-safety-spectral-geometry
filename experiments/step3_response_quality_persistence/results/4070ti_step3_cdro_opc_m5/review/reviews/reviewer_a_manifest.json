@@ -1,0 +1,12 @@
+{
+  "schema": "step3_cdro_opc_m5_review_submission_v1",
+  "role": "reviewer_a",
+  "agent_id": "/root/m5_reviewer_a",
+  "packet_sha256": "78d599b7d9a1c80abbaa4b5cd8318f93c4d141773c51afcf0471ac517165d04c",
+  "rubric_sha256": "599241bb9f20deaf44872e0ccea20f8485ff70db097a8d181d8794977c903d5e",
+  "rows": 180,
+  "review_sha256": "24f9588e0b67cd59c79483f90f072867c17559ac9e5ac0c6d040cef057756e2b",
+  "immutable_submission": true,
+  "optimizer_steps": 0,
+  "training_authorized": false
+}

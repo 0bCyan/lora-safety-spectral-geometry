@@ -1,0 +1,55 @@
+{
+  "schema": "step3_cdro_opc_m5_review_spool_manifest_v1",
+  "route_id": "step3_cdro_opc_m5_blind_review",
+  "protocol_commit": "3f7836ae446dec5ff129f20c6cf25435b8a4eb2c",
+  "lock_commit": "a7f62c39912a22a7fb1bee665e27106bf47f395b",
+  "registry_sha256": "03a465128a4bf6ea8848f24e55b32a956eb90d3124bb60969284de1754c6e3ad",
+  "namespace_sha256": "9cab0438841f414cef73fa6d196a13d3324ed62c9c3d955ea82afeca523ea41d",
+  "artifacts": [
+    {
+      "path": "finalize_review.py",
+      "bytes": 3636,
+      "sha256": "b0b3ab6fd2c40813193139504a39b794529cbd57eb0b32b6d662477491f7f7b5"
+    },
+    {
+      "path": "packets/reviewer_a.jsonl",
+      "bytes": 113354,
+      "sha256": "78d599b7d9a1c80abbaa4b5cd8318f93c4d141773c51afcf0471ac517165d04c"
+    },
+    {
+      "path": "packets/reviewer_b.jsonl",
+      "bytes": 113822,
+      "sha256": "eccc808a19cdfe7b6f0a7a47dd4db6fe8699b232dfef141234584c7a885dcd3e"
+    },
+    {
+      "path": "private/anchors.jsonl",
+      "bytes": 30784,
+      "sha256": "2cb0c5a3c1d4d4ce78fda73e229aa3ae98c359be4f78ab5a4b6864995a9cfa86"
+    },
+    {
+      "path": "private/primary_candidates.jsonl",
+      "bytes": 211836,
+      "sha256": "b9ed8f21917bc20f7c4e289f0bf71fa25b7470c99874b3da6d9a4ee92717ad9b"
+    },
+    {
+      "path": "private/reviewer_a_hidden_map.jsonl",
+      "bytes": 38496,
+      "sha256": "a830eab45de3f618198927215e647c2311a84b3172a9c54316e65867c11a531e"
+    },
+    {
+      "path": "private/reviewer_b_hidden_map.jsonl",
+      "bytes": 38496,
+      "sha256": "37eff6232440ea239c436866d77827b6763ee572333fc1398e9200aaf6edef7f"
+    },
+    {
+      "path": "rubric.md",
+      "bytes": 2140,
+      "sha256": "599241bb9f20deaf44872e0ccea20f8485ff70db097a8d181d8794977c903d5e"
+    }
+  ],
+  "reviewers_launched": 0,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false
+}
