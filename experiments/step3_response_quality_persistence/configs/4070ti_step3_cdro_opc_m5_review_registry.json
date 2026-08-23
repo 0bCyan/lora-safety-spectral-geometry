@@ -4,8 +4,8 @@
   "status": "prospective_before_packet_construction",
   "protocol_tag": "step3-cdro-opc-m5-review-protocol",
   "lock_tag": "step3-cdro-opc-m5-review-lock",
-  "protocol_commit_sha1": "PENDING_PROTOCOL_COMMIT",
-  "protocol_lock_status": "pending",
+  "protocol_commit_sha1": "3f7836ae446dec5ff129f20c6cf25435b8a4eb2c",
+  "protocol_lock_status": "locked_to_protocol_commit",
   "repository_output": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m5/review",
   "review_spool_root": "D:/Desktop/step3-cdro-opc-m5-blind-review-attempt-001",
   "authoring_seal": {
