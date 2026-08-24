@@ -1,0 +1,48 @@
+{
+  "schema": "step3_cdro_opc_m8_authoring_attempt_001_stop_v1",
+  "route": "STOP_CDRO_OPC_M8_AUTHORING",
+  "stop_reason": "first immutable no-context shard submission failed with filesystem Access is denied",
+  "master_protocol": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m8/protocol/cdro_opc_m8_master_protocol.json",
+    "sha256": "0e7fdc995886217942e8515fc06430e191c878ad1e5e91c4fa4852e6de9b250e"
+  },
+  "protocol_commits": [
+    "ac9e693",
+    "8ecba01"
+  ],
+  "spool_root": "D:/Desktop/step3-cdro-opc-m8-authoring-20260824-01",
+  "prompt_registry_canonical_sha256": "02b1264710adff4e1bb0c0f6f3a5aea1ea3b9ad9ca142d0a6faff96d69dab37d",
+  "prompt_registry_file_sha256": "03ee3f4bc306850cce881bce4116e02e365dbfcb416c39fd853041b494a2ce72",
+  "planned_shards": 12,
+  "launched_shards": 2,
+  "committed_response_shards": 0,
+  "committed_response_rows": 0,
+  "failed_shards": {
+    "00": {
+      "agent_id": "/root/m7_protocol_audit/m8a_shard_00",
+      "launch_sha256": "c83c11c5cf35163f92dddee6b1fd8e0c4b2bd8427cd548246c71e046ac7534b6",
+      "submission_exit_code": 1,
+      "error": "Access is denied",
+      "response_file_created": false,
+      "retry_used": false
+    }
+  },
+  "interrupted_shards": {
+    "01": {
+      "agent_id": "/root/m7_protocol_audit/m8a_shard_01",
+      "launch_sha256": "d65e674c09993043556ad66e979a71a171f4168bb88531290310096b9031d665",
+      "response_file_created": false
+    }
+  },
+  "unlaunched_shards": ["02", "03", "04", "05", "06", "07", "08", "09", "10", "11"],
+  "candidate_text_inspected_by_main_executor": false,
+  "attempt_001_responses_reused_by_future_attempt": false,
+  "review_started": false,
+  "model_forward_started": false,
+  "gradient_measurement_started": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "checkpoint_writes": 0,
+  "core100_opened": false,
+  "heldout_opened": false
+}
