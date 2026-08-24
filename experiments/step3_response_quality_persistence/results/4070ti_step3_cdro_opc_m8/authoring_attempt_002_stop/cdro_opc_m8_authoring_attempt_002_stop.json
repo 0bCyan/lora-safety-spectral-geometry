@@ -1,0 +1,52 @@
+{
+  "schema": "step3_cdro_opc_m8_authoring_attempt_002_stop_v1",
+  "route": "STOP_CDRO_OPC_M8_AUTHORING",
+  "stop_reason": "single-use shard_04 agent turn was rejected by the platform safety access gate",
+  "protocol": {
+    "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m8/protocol/cdro_opc_m8_authoring_attempt_002_protocol.json",
+    "sha256": "9a114464da985ea6d71e1c186bb0cc55765a8bae6a95809d0fb9e57775b9f04f"
+  },
+  "protocol_commit": "f41a1e4",
+  "spool_root": "C:/Users/1/Documents/Codex/2026-08-23/apiidparam-input-192-id-invalid-id/work/step3-cdro-opc-m8-authoring-attempt-002",
+  "planned_shards": 12,
+  "launched_shards": 6,
+  "committed_response_shards": 3,
+  "committed_response_rows": 30,
+  "accepted_response_files": {
+    "shard_00.jsonl": "aa70bbc306065338b2a7cf5d114929c0a3835be6539366e98d41f7638f6830f0",
+    "shard_01.jsonl": "05cf228e92feb145718855943591a2de732ed7d75ddb855acc7fc58d88517824",
+    "shard_02.jsonl": "37d61eae218b40f83207eef2b77a1af510f48056372527321bd28070dcfa2023"
+  },
+  "failed_shards": {
+    "04": {
+      "agent_id": "/root/m7_protocol_audit/m8a2_shard_04",
+      "launch_sha256": "d1c1134dc5ee85a0558340797cc3c50db1a8c69d6dd41f0f90c874fa53358f6c",
+      "error": "safety access limited",
+      "response_file_created": false,
+      "retry_used": false
+    }
+  },
+  "interrupted_shards": {
+    "03": {
+      "agent_id": "/root/m7_protocol_audit/m8a2_shard_03",
+      "launch_sha256": "0e4b201b19c34cf6c5bed49ee29172e5ea6da75bd6f3fb0ba7d0797f6a434da8",
+      "response_file_created": false
+    },
+    "06": {
+      "agent_id": "/root/m8a2_shard_06",
+      "launch_sha256": "0c73c982fb4bf8a634418bd03a9dc1a2368ac3bc28f4418bd24d2bc84fab4e8d",
+      "response_file_created": false
+    }
+  },
+  "unlaunched_shards": ["05", "07", "08", "09", "10", "11"],
+  "candidate_text_inspected_by_main_executor": false,
+  "attempt_002_responses_reused_by_future_attempt": false,
+  "review_started": false,
+  "model_forward_started": false,
+  "gradient_measurement_started": false,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "checkpoint_writes": 0,
+  "core100_opened": false,
+  "heldout_opened": false
+}
