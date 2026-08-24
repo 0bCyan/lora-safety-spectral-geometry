@@ -1,0 +1,324 @@
+{
+  "schema": "step3_cdro_opc_m7_mirror_curvature_attribution_protocol_v1",
+  "status": "registered_after_M6_result_before_any_M7_mirror_write",
+  "entry_commit": "855c717e9bea750d6e83c592c8544b2d65465bef",
+  "objective": "Decompose the frozen M6 calibration finite-radius deterioration with one registered positive mirror measurement per frozen arm and no negative-arm recomputation.",
+  "claim_scope": "post_M6_fixed_radius_validity_only_nominal_mirror_decomposition_not_fresh_confirmation",
+  "frozen_inputs": {
+    "runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m7_mirror_curvature.py",
+      "sha256": "c7bc436116a89d039d6369bca4ce2bde872fd7794fd1dffbe5de72e40981773e"
+    },
+    "runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cdro_opc_m7_mirror_curvature.py",
+      "sha256": "64dfecbbf2739556e64d6fc66462065ea0b9325ddf10b8d7f37c50e6d611c346"
+    },
+    "protocol_note": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CDR_OPC_M7_mirror_curvature_attribution_plan.md",
+      "sha256": "cb59a1e31b104815e8a58269e5cd8f9941f97a0b0f7b169d1ae462bedf5573ef"
+    },
+    "m6_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m6_virtual_displacement.py",
+      "sha256": "65ec9c4a2120c38290404141ce4a16e5878a3536bbcfe2b98950f1d5834c41d1"
+    },
+    "m6_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m6/protocol/cdro_opc_m6_virtual_displacement_protocol.json",
+      "sha256": "e4ed4805103271942395f8e2e91975669f505606b2c151dfd24aaf0a0ccf9874"
+    },
+    "m6_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m6/run/cdro_opc_m6_virtual_displacement_decision.json",
+      "sha256": "c8f43f3995ad8c61eca177c61898bb3d19dfa787474a6ea2e7896d121ed20eb8"
+    },
+    "m6_diagnostics": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m6/run/cdro_opc_m6_virtual_displacement_diagnostics.json",
+      "sha256": "d5013443477f171e777aba9ea13b1d2f9d613f012360c5f34d3002d03f01b325"
+    },
+    "m6_reproduction": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m6/run/reproduction_manifest.json",
+      "sha256": "06e82fe6a4f6812bdbc354f34942116b4507bce04804b41e1738445de5c28ec0"
+    }
+  },
+  "fixed_direction": {
+    "source": "frozen_M1_CDR_OPC_endpoint_replayed_with_M3_V4_transport",
+    "fallback_coordinates": [
+      -0.055566530716129034,
+      -0.9977495885764914,
+      -0.03750249646019172,
+      -0.0012557608847501597,
+      -0.0003166338660668384
+    ],
+    "candidate_coordinates": [
+      -0.6893848056299932,
+      -1.0204872487095722,
+      -0.02491390795045365,
+      -0.004206032345316617,
+      -0.21264047467563704
+    ],
+    "coordinate_tolerance": 1e-06,
+    "candidate_coordinate_sha256": "4fa4e2c904724f1b7b3051bb38cf924f90ab43350b4ecbb00cb1a923bd14130f"
+  },
+  "m6_protocol_snapshot": {
+    "selection": {
+      "unit_registry_sha256": "c8381dd6409742d3a6788e2b0ee6a24d48e6c785c70cc66fad2167320ca4935d",
+      "calibration_units": 20,
+      "sealed_audit_units": 20,
+      "targets_per_unit": 2,
+      "normalized_certificates": [
+        "risk",
+        "uniform",
+        "tarc",
+        "continuation"
+      ],
+      "structural_audits": {
+        "calibration": {
+          "all_routes_complete_within_width": true,
+          "branching_prompt_rate": 1.0,
+          "categories": 17,
+          "distinct_route_pair_rate": 1.0,
+          "maximum_allowed_branch_width": 2,
+          "maximum_route_tokens": 4,
+          "mean_internal_trie_nodes": 6.0,
+          "mean_route_tokens": 4.0,
+          "minimum_route_tokens": 4,
+          "prompt_clusters": 20,
+          "registered_route_marker_counts": {
+            "i can't help": 20,
+            "i won't assist": 20
+          },
+          "route_width_limit": 16,
+          "rows": 40,
+          "targets_per_prompt": 2
+        },
+        "sealed_audit": {
+          "all_routes_complete_within_width": true,
+          "branching_prompt_rate": 1.0,
+          "categories": 18,
+          "distinct_route_pair_rate": 1.0,
+          "maximum_allowed_branch_width": 2,
+          "maximum_route_tokens": 4,
+          "mean_internal_trie_nodes": 6.0,
+          "mean_route_tokens": 4.0,
+          "minimum_route_tokens": 4,
+          "prompt_clusters": 20,
+          "registered_route_marker_counts": {
+            "i can't help": 20,
+            "i won't assist": 20
+          },
+          "route_width_limit": 16,
+          "rows": 40,
+          "targets_per_prompt": 2
+        }
+      }
+    }
+  },
+  "m6_result_snapshot": {
+    "route": "STOP_CDRO_OPC_M6_CALIBRATION",
+    "calibration_covered_units": 16,
+    "calibration_total_units": 20,
+    "sealed_audit_opened": false,
+    "failed_units": [
+      {
+        "unit_id": "m5_cal_14",
+        "failed_certificates": [
+          "risk"
+        ],
+        "finite_deteriorations": {
+          "risk": 0.04581361478338251,
+          "uniform": -0.13388716571996997,
+          "tarc": 0.00017613459208181017,
+          "continuation": -0.13533736169232635
+        }
+      },
+      {
+        "unit_id": "m5_cal_18",
+        "failed_certificates": [
+          "risk"
+        ],
+        "finite_deteriorations": {
+          "risk": 0.04114562617729047,
+          "uniform": -0.09077684594020587,
+          "tarc": 0.0002160205563271539,
+          "continuation": -0.11092455804610152
+        }
+      },
+      {
+        "unit_id": "m5_cal_24",
+        "failed_certificates": [
+          "risk"
+        ],
+        "finite_deteriorations": {
+          "risk": 0.04649698943666329,
+          "uniform": -0.1050600632905005,
+          "tarc": 0.009227116714830615,
+          "continuation": -0.10854749929676309
+        }
+      },
+      {
+        "unit_id": "m5_cal_36",
+        "failed_certificates": [
+          "risk"
+        ],
+        "finite_deteriorations": {
+          "risk": 0.04389967296256677,
+          "uniform": -0.13760853186619718,
+          "tarc": -0.0015868719754500108,
+          "continuation": -0.13460981729148772
+        }
+      }
+    ]
+  },
+  "calibration_allowlist": [
+    {
+      "unit_id": "m5_cal_02",
+      "sample_id": "risk_pkuqa_000843"
+    },
+    {
+      "unit_id": "m5_cal_04",
+      "sample_id": "risk_pkuqa_000300"
+    },
+    {
+      "unit_id": "m5_cal_06",
+      "sample_id": "risk_pkuqa_000850"
+    },
+    {
+      "unit_id": "m5_cal_08",
+      "sample_id": "risk_pkuqa_000692"
+    },
+    {
+      "unit_id": "m5_cal_10",
+      "sample_id": "risk_pkuqa_000828"
+    },
+    {
+      "unit_id": "m5_cal_12",
+      "sample_id": "risk_pkuqa_000908"
+    },
+    {
+      "unit_id": "m5_cal_14",
+      "sample_id": "risk_pkuqa_000306"
+    },
+    {
+      "unit_id": "m5_cal_16",
+      "sample_id": "risk_pkuqa_000601"
+    },
+    {
+      "unit_id": "m5_cal_18",
+      "sample_id": "risk_pkuqa_000877"
+    },
+    {
+      "unit_id": "m5_cal_20",
+      "sample_id": "risk_pkuqa_000376"
+    },
+    {
+      "unit_id": "m5_cal_22",
+      "sample_id": "risk_pkuqa_000455"
+    },
+    {
+      "unit_id": "m5_cal_24",
+      "sample_id": "risk_pkuqa_000976"
+    },
+    {
+      "unit_id": "m5_cal_26",
+      "sample_id": "risk_pkuqa_000861"
+    },
+    {
+      "unit_id": "m5_cal_28",
+      "sample_id": "risk_pkuqa_000401"
+    },
+    {
+      "unit_id": "m5_cal_30",
+      "sample_id": "risk_pkuqa_000703"
+    },
+    {
+      "unit_id": "m5_cal_32",
+      "sample_id": "risk_pkuqa_000756"
+    },
+    {
+      "unit_id": "m5_cal_34",
+      "sample_id": "risk_pkuqa_000023"
+    },
+    {
+      "unit_id": "m5_cal_36",
+      "sample_id": "risk_pkuqa_000349"
+    },
+    {
+      "unit_id": "m5_cal_38",
+      "sample_id": "risk_pkuqa_000478"
+    },
+    {
+      "unit_id": "m5_cal_40",
+      "sample_id": "risk_pkuqa_000135"
+    }
+  ],
+  "sealed_unit_ids_sha256": "9102b453345b3af099e8e7f65dab335ae7913f9cd7ef7c53615738c1383f9f8f",
+  "m1_gate_snapshot": {
+    "feasibility_tolerance": 1e-07,
+    "kkt_tolerance": 1e-05
+  },
+  "design": {
+    "fixed_dose": 0.0337860296353059,
+    "virtual_scale_eta": 0.0002,
+    "score_scale_floor": 0.02,
+    "protected_certificates": [
+      "risk",
+      "uniform",
+      "tarc",
+      "continuation"
+    ],
+    "arms": [
+      "fallback",
+      "selected"
+    ],
+    "calibration_units": 20,
+    "new_measurement_rule": "measure_only_theta0_plus_eta_d_for_each_frozen_M6_arm",
+    "negative_arm_source": "frozen_M6_diagnostics_only",
+    "sealed_policy": "never_open",
+    "outcome_thresholds_authorized": false,
+    "mirror_write_order": [
+      "fallback",
+      "selected"
+    ],
+    "map_precheck_writes": 2,
+    "positive_loss_writes": 40,
+    "negative_loss_writes": 0,
+    "sealed_loss_writes": 0,
+    "endpoint_loss_writes": 0,
+    "primary_decomposition_centering": "frozen_M6_L0_Lminus_norm_and_reference_norm",
+    "fresh_baseline_usage": "source_replay_audit_only",
+    "known_M6_failed_units_posthoc": [
+      "m5_cal_14",
+      "m5_cal_18",
+      "m5_cal_24",
+      "m5_cal_36"
+    ]
+  },
+  "validity_gates": {
+    "loss_replay_absolute_tolerance": 1e-06,
+    "loss_replay_relative_tolerance": 1e-06,
+    "norm_replay_absolute_tolerance": 1e-08,
+    "norm_replay_relative_tolerance": 1e-06,
+    "score_replay_absolute_tolerance": 1e-08,
+    "score_replay_relative_tolerance": 1e-06,
+    "source_arithmetic_tolerance": 1e-10,
+    "decomposition_arithmetic_tolerance": 1e-10,
+    "maximum_map_relative_l2_error": 2e-06,
+    "maximum_map_absolute_error": 1e-05
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7",
+  "optimizer_objects": 1,
+  "scheduler_objects": 0,
+  "optimizer_steps": 0,
+  "training_authorized": false,
+  "mirror_parameter_evaluations_authorized": true,
+  "negative_arm_recomputation_authorized": false,
+  "sealed_audit_opened": false,
+  "checkpoint_writes_authorized": false,
+  "candidate_generation_authorized": false,
+  "core100_opened": false,
+  "heldout_opened": false,
+  "result_dependent_radius_or_dose_change_authorized": false,
+  "result_dependent_rerun_authorized": false,
+  "radius_grid_authorized": false,
+  "rescue_shrink_authorized": false,
+  "endpoint_arm_authorized": false,
+  "behavior_panel_authorized": false
+}
