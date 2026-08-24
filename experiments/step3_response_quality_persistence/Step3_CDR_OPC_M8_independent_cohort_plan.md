@@ -69,4 +69,3 @@ erase the M6 stop, establish universal tail protection, prove the M7 diagnostic
 causal, test a real optimizer update, authorize training or checkpoints, or
 open Core100/heldout data. A disagreement between M6 and M8 must be reported as
 cross-cohort inconsistency, not converted into a pass for M6.
-

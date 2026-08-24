@@ -38,11 +38,11 @@
     },
     "authoring_preparer_tests": {
       "path": "experiments/step3_response_quality_persistence/scripts/test_prepare_step3_cdro_opc_m8_authoring.py",
-      "sha256": "8e14add2a1d65f28ea74cbe8adc7f758a15cbd9e95f5fac4a87346cc002880c6"
+      "sha256": "585be3874647c30f3dc1b49fb84aadb186a327d3f30a9f2840d1dec3e65f1cf0"
     },
     "protocol_note": {
       "path": "experiments/step3_response_quality_persistence/Step3_CDR_OPC_M8_independent_cohort_plan.md",
-      "sha256": "ed5a6800494b920c40269cfa6f7884c5ec561b232eb19854d3dab0db5470241d"
+      "sha256": "0ab481841ab271a319690f8648dd4058565dbc1f0845ec69e9703de7bffeb25b"
     }
   },
   "historical_prompt_lineage": {
