@@ -1,0 +1,171 @@
+{
+  "schema": "step3_cdro_opc_m7_verifier_erratum_protocol_v1",
+  "status": "FROZEN_POST_RESULT_CDRO_OPC_M7_VERIFIER_ONLY_ERRATUM_V1",
+  "entry_commit": "0cb5788f0ca9eba13f1be94deabe1e1bfb4690fc",
+  "source_result_commit": "ab270c07fee396cb39d3c1593f45acdf56155976",
+  "m7_runtime_commit": "892768286718f0dd54b7fb8df47e6e33b7a5364c",
+  "objective": "Verify the byte-identical M7 artifact set with one representation-only correction for JSON object member order and no scientific change.",
+  "claim_scope": "retrospective_post_result_verifier_only_representation_erratum_no_scientific_claim_expansion",
+  "known_before_registration": {
+    "original_verify_failure_observed": true,
+    "in_memory_normalized_full_verify_pass_observed": true,
+    "prospective_or_blinded": false
+  },
+  "frozen_inputs": {
+    "erratum_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m7_verify_erratum.py",
+      "sha256": "5391a35ed75e812cd2d109fa324d75b4110c374a99335aa79aa72c1f8bf5e969"
+    },
+    "erratum_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cdro_opc_m7_verify_erratum.py",
+      "sha256": "071b0b9f5a85d078900672ab55be0216dcfcc8854679d10c654302741a792552"
+    },
+    "erratum_note": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CDR_OPC_M7_verifier_erratum_plan.md",
+      "sha256": "0e537af5ea71c946d51d52339e16087e687017580536650ee7aeb53646d6efdd"
+    },
+    "source_evidence": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7_verifier_erratum/source_evidence/m7_pre_erratum_failure_and_exploratory_record.json",
+      "sha256": "5adc6fd0c67b29c2b5a3291c631b1269f9fda479cc936fe5955b918085de4960"
+    },
+    "m7_runner": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m7_mirror_curvature.py",
+      "sha256": "c7bc436116a89d039d6369bca4ce2bde872fd7794fd1dffbe5de72e40981773e"
+    },
+    "m7_runner_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cdro_opc_m7_mirror_curvature.py",
+      "sha256": "64dfecbbf2739556e64d6fc66462065ea0b9325ddf10b8d7f37c50e6d611c346"
+    },
+    "m7_protocol_note": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CDR_OPC_M7_mirror_curvature_attribution_plan.md",
+      "sha256": "cb59a1e31b104815e8a58269e5cd8f9941f97a0b0f7b169d1ae462bedf5573ef"
+    },
+    "m7_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7/protocol/cdro_opc_m7_mirror_curvature_protocol.json",
+      "sha256": "9cea4652d2dd67bedfc3f4c35fa89c47341e882cb64042e04cf94d4134c05edf"
+    },
+    "m7_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7/run/cdro_opc_m7_mirror_curvature_decision.json",
+      "sha256": "6ad5cd242f30f94b2796e266aad5d5256dde7fd057cda056805a12a89246a10b"
+    },
+    "m7_diagnostics": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7/run/cdro_opc_m7_mirror_curvature_diagnostics.json",
+      "sha256": "84d86999f5df0193a505d4577888a94b731c49762784d9778941861999cb6cb2"
+    },
+    "m7_environment": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7/run/cdro_opc_m7_mirror_curvature_environment.json",
+      "sha256": "12944b6d74e4be0f737f7d4ab0fa7b0e6d8308f203990bd611200df393a47fea"
+    },
+    "m7_report": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7/run/CDRO_OPC_M7_MIRROR_CURVATURE_REPORT.md",
+      "sha256": "5451ff9161e1226cc68fe9f2f297f1cf7e3fe9b497e67a9b844916bdef87238d"
+    },
+    "m7_attribution_csv": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7/analysis/cdro_opc_m7_mirror_curvature_attribution.csv",
+      "sha256": "c288a948d2232520228d83449b7b17b0ffd6eb02325b96a1bc7d131e03c2e7c5"
+    },
+    "m7_interpretation": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7/analysis/CDRO_OPC_M7_MIRROR_CURVATURE_INTERPRETATION.md",
+      "sha256": "f33b1bf984626c2c9ca8fcd521e1af34080352d15a791de599373e537ea33bc2"
+    },
+    "m7_figure_svg": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7/figures/cdro_opc_m7_risk_decomposition.svg",
+      "sha256": "a465bb38cec7c9d9a894e0ac472f41f059a6370bf2254958fcfbcd05a01873ef"
+    },
+    "m7_figure_png": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7/figures/cdro_opc_m7_risk_decomposition_300dpi.png",
+      "sha256": "d2e071108b72136334152504c6eed88d509f42f503a0a5eae0de9b1710c81f19"
+    },
+    "m7_chinese_checklist": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7/run/复现清单.json",
+      "sha256": "0701cb7b735b19f3992c5b4402ef36236b5049bbfeada25418ee3c1e378f3d53"
+    },
+    "m7_reproduction": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7/run/reproduction_manifest.json",
+      "sha256": "e7e7da8ef4eed1f23c07f188d157301dc1b0798e4ed0c5f0c0217083be06af82"
+    },
+    "m6_diagnostics": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m6/run/cdro_opc_m6_virtual_displacement_diagnostics.json",
+      "sha256": "d5013443477f171e777aba9ea13b1d2f9d613f012360c5f34d3002d03f01b325"
+    }
+  },
+  "source_artifact_keys": [
+    "m7_runner",
+    "m7_runner_tests",
+    "m7_protocol_note",
+    "m7_protocol",
+    "m7_decision",
+    "m7_diagnostics",
+    "m7_environment",
+    "m7_report",
+    "m7_attribution_csv",
+    "m7_interpretation",
+    "m7_figure_svg",
+    "m7_figure_png",
+    "m7_chinese_checklist",
+    "m7_reproduction",
+    "m6_diagnostics"
+  ],
+  "defect_fingerprint": {
+    "rows": 80,
+    "unique_cells": 80,
+    "exact_key_set_rows": 80,
+    "order_defect_rows": 80,
+    "first_unit_id": "m5_cal_02",
+    "first_certificate": "risk",
+    "first_actual_key": "central_deterioration",
+    "expected_first_key": "unit_id",
+    "table_rows_canonical_sha256": "ecaf7a6548aef404e3ba35eb20d8a158f8eddb473cd1e6c0c661c414145ab5c9",
+    "cell_sequence_canonical_sha256": "a50d32216be7ff7659370d778ad4f82cc683e44cc69d2d7d81794574e0dc4fbc",
+    "mapping_equal_after_normalization": true,
+    "canonical_sha256_equal_after_normalization": true,
+    "source_object_not_mutated": true
+  },
+  "correction": {
+    "authorized_change_count": 1,
+    "json_object_schema_predicate": "exact_member_name_set_equality",
+    "in_memory_normalization_order": "frozen_M7_TABLE_FIELDS",
+    "mapping_equality_must_be_unchanged": true,
+    "canonical_sha256_must_be_unchanged": true,
+    "delegate_frozen_full_M7_verifier": true,
+    "csv_header_order_predicate": "unchanged_exact_TABLE_FIELDS_tuple"
+  },
+  "expected_outcomes": {
+    "original_verify_status": "ERROR_CDRO_OPC_M7_VERIFY_RUN_IMPLEMENTATION_DEFECT",
+    "original_error": "M7 flattened table does not reproduce",
+    "erratum_route": "PASS_CDRO_OPC_M7_VE1_UNCHANGED_ARTIFACTS_VERIFIED",
+    "target_drift_route": "STOP_CDRO_OPC_M7_VE1_TARGET_DRIFT",
+    "scope_integrity_route": "STOP_CDRO_OPC_M7_VE1_SCOPE_INTEGRITY",
+    "full_verify_route": "STOP_CDRO_OPC_M7_VE1_FULL_VERIFY",
+    "underlying_m7_route": "PASS_CDRO_OPC_M7_VALIDITY_ONLY_SYMMETRIC_DIAGNOSTIC"
+  },
+  "output_root": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7_verifier_erratum",
+  "outputs": {
+    "attempt_claim": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7_verifier_erratum/official_attempt_01_claim.json",
+    "receipt": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7_verifier_erratum/run/cdro_opc_m7_ve1_verification_receipt.json",
+    "report": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7_verifier_erratum/run/CDRO_OPC_M7_VE1_REPORT.md",
+    "reproduction": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7_verifier_erratum/run/reproduction_manifest.json"
+  },
+  "attempt_policy": {
+    "official_attempts": 1,
+    "claim_before_official_audit": true,
+    "failed_attempt_published_as_stop": true,
+    "hard_crash_claim_blocks_rerun": true,
+    "overwrite_allowed": false,
+    "result_dependent_patch_or_rerun_allowed": false
+  },
+  "authorization_boundary": {
+    "cpu_read_only": true,
+    "original_artifact_writes": 0,
+    "fresh_model_measurements": 0,
+    "loss_writes": 0,
+    "gradient_evaluations": 0,
+    "optimizer_steps": 0,
+    "parameter_writes": 0,
+    "checkpoint_writes": 0,
+    "candidate_generation": 0,
+    "sealed_audit_opened": false,
+    "training_authorized": false,
+    "scientific_claim_expanded": false
+  }
+}
