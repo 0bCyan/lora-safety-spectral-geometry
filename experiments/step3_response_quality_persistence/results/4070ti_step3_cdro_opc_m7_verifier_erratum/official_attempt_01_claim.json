@@ -1,0 +1,12 @@
+{
+  "official_attempt_index": 1,
+  "overwrite_allowed": false,
+  "protocol_path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m7_verifier_erratum/protocol/cdro_opc_m7_verifier_erratum_protocol.json",
+  "protocol_sha256": "f33770514c4c8c827ffc8424a79a4c288c0d066cfb1f105bf8af10071c53faff",
+  "result_dependent_patch_or_rerun_allowed": false,
+  "runner_sha256": "5391a35ed75e812cd2d109fa324d75b4110c374a99335aa79aa72c1f8bf5e969",
+  "runtime_commit": "401262bbe3e0f4e9ad2cd22387b0d9220fde98a4",
+  "schema": "step3_cdro_opc_m7_ve1_official_attempt_claim_v1",
+  "status": "CLAIMED_BEFORE_ANY_OFFICIAL_AUDIT",
+  "worktree_clean_before_claim": true
+}
