@@ -17,6 +17,7 @@
 7. Step3P已在A/B可靠性联合门停止，未启动Reviewer C、目标选择或训练。Step3Q尝试001已冻结60个prompt、120个请求、96行校准库与P2协议，但因当前进程无API密钥而保持未dispatch；独立子智能体尝试002中四个固定会话有一个在提交前触发平台安全网关，仅交付90/120行，低于96门槛并封存为`STOP_SUBAGENT_YIELD`，未seal、导入、审查或训练。
 8. Step3 CDR-OPC M5已在prompt-disjoint的60个新prompt上完成120个候选的独立authoring与A/B盲审，并用固定剂量`0.0337860296353059`完成零步GPU确认。Calibration保护`20/20`并授权打开sealed audit，sealed audit保护`19/20`，两组quality/safety行为均为正，最终路线为`PASS_CDRO_OPC_M5_ZERO_STEP_CONFIRMATION`。该结果仍为梯度机制证据：`optimizer_steps=0`、`training_authorized=false`，Core100和heldout均未打开。
 9. Step3 CDR-OPC M6已按另行前瞻冻结的固定剂量和`eta=2e-4`执行有限半径直接虚拟位移。映射精度、恢复、梯度覆盖、行为及selected-vs-fallback四证书平均相对恶化门均通过，但calibration单元保护仅`16/20`，低于`19/20`门；四个越界均来自risk证书，因此路线为`STOP_CDRO_OPC_M6_CALIBRATION`，sealed audit未打开。不得据此做结果依赖的半径调整或重跑，不得授权训练；`optimizer_steps=0`、`training_authorized=false`保持不变。
+10. Step3 CDR-OPC M7已在相同固定剂量和半径上完成仅限有效性的名义镜像分解，80/80个calibration unit-certificate格满足代数、映射、恢复和完整性门，路线为`PASS_CDRO_OPC_M7_VALIDITY_ONLY_SYMMETRIC_DIAGNOSTIC`。四个已知risk失败格的一阶项和central项均未越过`0.04`，加入正的even有限半径分量后才全部越界；这是post-hoc加法归因，不是纯Hessian或因果结论。原`verify-run`因把JSON对象键序误当schema而保留为`ERROR_CDRO_OPC_M7_VERIFY_RUN_IMPLEMENTATION_DEFECT`；独立VE1仅在内存中执行精确键集合适配，对字节未变的产物完成全量验证并得到`PASS_CDRO_OPC_M7_VE1_UNCHANGED_ARTIFACTS_VERIFIED`。M6的16/20 STOP、sealed未打开、`optimizer_steps=0`和`training_authorized=false`均未改变。
 
 SpectraSafe双谱正则保留为历史动机和忠实负基线；没有新的增量行为证据时不重新进入主方法路线。
 
@@ -360,7 +361,7 @@ experiment_id, commit, machine, model, method, family, dose, seed, status, notes
 
 当前优先级从高到低：
 
-1. 保持CDR-OPC M6的`STOP_CDRO_OPC_M6_CALIBRATION`结论：固定半径有限损失未复现M5一阶calibration的`20/20`尾部保护，sealed audit未打开；不得做结果依赖的半径调整、剂量调整或重跑，不得授权训练或生成。任何后续曲率/风险尾部诊断必须另行前瞻冻结，并明确只属于开发证据。
+1. 保持CDR-OPC M6的`STOP_CDRO_OPC_M6_CALIBRATION`结论：固定半径有限损失未复现M5一阶calibration的`20/20`尾部保护，sealed audit未打开；不得做结果依赖的半径调整、剂量调整或重跑，不得授权训练或生成。M7只解释已知失败的固定半径加法结构，VE1只修复验证表示层；两者均不授权M8、训练或扩大科学主张。若继续CDR-OPC，必须另行前瞻冻结真正独立的新cohort或明确关闭该训练路线。
 2. 保持Step3C-T6的`R1_no_c3_candidate_passes`、Track B M1失败、Step3N-R1训练前停止，以及O4/O4R两个`STOP_AUTHORING`记录不变。
 3. 保持Step3Q尝试001的P0/P1/P2提交与标签不可变，并保持其未dispatch状态；不得用子智能体输出伪造API receipt或导入旧结果根。
 4. 保持尝试002的P0标签、锁提交和`STOP_SUBAGENT_YIELD`结果不变；仓库外90行仅作失败证据保留，不得替换缺失会话、补量、重分配、seal、导入或启动盲审。
@@ -398,6 +399,7 @@ docs/统一数据集方案.md
 - GPT-5.5 的实际 API 模型 ID 和账号权限。
 - 强基线优先复现 SaLoRA 还是 Safe Delta。
 - 是否需要把 adapter 权重放到独立对象存储或私有网盘。
+- CDR-OPC应获取全新独立cohort重新确认有限半径尾部保护，还是因M6的16/20结果关闭训练路线。
 
 ## 12. 文件编码与平台约定
 
