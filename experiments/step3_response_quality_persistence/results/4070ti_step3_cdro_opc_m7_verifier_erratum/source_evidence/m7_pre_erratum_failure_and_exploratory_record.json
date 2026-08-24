@@ -1,0 +1,52 @@
+{
+  "schema": "step3_cdro_opc_m7_pre_erratum_failure_and_exploratory_record_v1",
+  "record_scope": "evidence_known_before_registration_of_the_versioned_verifier_erratum",
+  "source_result_commit": "ab270c07fee396cb39d3c1593f45acdf56155976",
+  "m7_runtime_commit": "892768286718f0dd54b7fb8df47e6e33b7a5364c",
+  "python": "3.11.5",
+  "observation_timing": {
+    "first_failure": "observed_after_the_formal_M7_run_and_before_the_source_result_commit; the exact first-observation timestamp was not separately logged",
+    "recorded_reproduction_utc": "2026-08-24T05:11:24.7707394Z",
+    "erratum_registered": false
+  },
+  "original_verify_reproduction": {
+    "command": ".\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m7_mirror_curvature.py verify-run",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"D:\\Desktop\\lora-safety-spectral-geometry\\experiments\\step3_response_quality_persistence\\scripts\\step3_cdro_opc_m7_mirror_curvature.py\", line 3069, in <module>\n    main()\n  File \"D:\\Desktop\\lora-safety-spectral-geometry\\experiments\\step3_response_quality_persistence\\scripts\\step3_cdro_opc_m7_mirror_curvature.py\", line 3065, in main\n    {\"preflight\": preflight, \"run\": run, \"verify-run\": verify}[args.command](path)\n  File \"D:\\Desktop\\lora-safety-spectral-geometry\\experiments\\step3_response_quality_persistence\\scripts\\step3_cdro_opc_m7_mirror_curvature.py\", line 3015, in verify\n    route = verify_artifacts(protocol, m6_diagnostics, decision, diagnostics)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Desktop\\lora-safety-spectral-geometry\\experiments\\step3_response_quality_persistence\\scripts\\step3_cdro_opc_m7_mirror_curvature.py\", line 2848, in verify_artifacts\n    raise M7MirrorCurvatureError(\"M7 flattened table does not reproduce\")\nM7MirrorCurvatureError: M7 flattened table does not reproduce\n",
+    "error_class": "M7MirrorCurvatureError",
+    "error_message": "M7 flattened table does not reproduce",
+    "classification": "ERROR_CDRO_OPC_M7_VERIFY_RUN_IMPLEMENTATION_DEFECT"
+  },
+  "representation_diagnosis": {
+    "writer_behavior": "write_json uses json.dumps(sort_keys=True)",
+    "invalid_predicate": "tuple(flat) == TABLE_FIELDS for a reloaded JSON object",
+    "first_row": {
+      "unit_id": "m5_cal_02",
+      "certificate": "risk",
+      "actual_first_key": "central_deterioration",
+      "expected_first_key": "unit_id",
+      "exact_key_set_equal": true
+    },
+    "rows_checked": 80,
+    "maximum_numeric_difference": 0.0,
+    "metadata_differences": 0
+  },
+  "post_failure_exploratory_in_memory_check": {
+    "official_erratum_attempt": false,
+    "artifact_writes": 0,
+    "normalization": "for each table row, require exact key-set equality and construct an in-memory mapping in TABLE_FIELDS order",
+    "delegated_verifier": "the frozen original M7 full verify function",
+    "exit_code": 0,
+    "stdout": "{\"attributed_cells\": 80, \"optimizer_steps\": 0, \"route\": \"PASS_CDRO_OPC_M7_VALIDITY_ONLY_SYMMETRIC_DIAGNOSTIC\", \"sealed_audit_opened\": false, \"status\": \"PASS_CDRO_OPC_M7_MIRROR_CURVATURE_VERIFY_RUN\", \"training_authorized\": false}",
+    "interpretation": "This exploratory result was known before erratum registration and is not an official verifier-erratum outcome."
+  },
+  "scientific_boundary": {
+    "M6_stop_preserved": true,
+    "fresh_measurements": 0,
+    "optimizer_steps": 0,
+    "sealed_audit_opened": false,
+    "training_authorized": false,
+    "scientific_claim_expanded": false
+  }
+}
