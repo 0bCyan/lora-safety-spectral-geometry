@@ -1,0 +1,78 @@
+{
+  "schema": "step3_cdro_opc_m8_authoring_attempt_002_protocol_v1",
+  "status": "prospective_locked_after_attempt_001_transport_stop_before_attempt_002_packet_materialization",
+  "entry_commit": "537dc7cf31670e8583a2d3e4d329cd4a10e3ee0f",
+  "objective": "Repeat only the failed author-to-spool transport through a permission-checked shared workspace while preserving the complete M8 scientific contract.",
+  "frozen_inputs": {
+    "master_protocol": {
+      "scope": "repository",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m8/protocol/cdro_opc_m8_master_protocol.json",
+      "sha256": "0e7fdc995886217942e8515fc06430e191c878ad1e5e91c4fa4852e6de9b250e"
+    },
+    "attempt_001_stop": {
+      "scope": "repository",
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m8/authoring_attempt_001_stop/cdro_opc_m8_authoring_attempt_001_stop.json",
+      "sha256": "fa2912fbe7f32558a114de48e86395b6050478bd99a209cf86656791b4e636b8"
+    },
+    "permission_probe": {
+      "scope": "absolute",
+      "path": "C:/Users/1/Documents/Codex/2026-08-23/apiidparam-input-192-id-invalid-id/work/m8a2-permission-probe/probe.txt",
+      "sha256": "a217158ef80bdfcfa68c5bf1a5b96cc011e4be4d82db8fb80adc7baa9139a49e"
+    },
+    "base_preparer": {
+      "scope": "repository",
+      "path": "experiments/step3_response_quality_persistence/scripts/prepare_step3_cdro_opc_m8_authoring.py",
+      "sha256": "89d0825d3441a205edf8c924ed70efbf73667c8213cb71a8af0f9a3bdc0dce06"
+    },
+    "attempt_002_preparer": {
+      "scope": "repository",
+      "path": "experiments/step3_response_quality_persistence/scripts/prepare_step3_cdro_opc_m8_authoring_attempt_002.py",
+      "sha256": "433b17b6c3ed749de4fcbd9e4f67f03239bebfef2672b05358b746d8648c8a7f"
+    },
+    "attempt_002_finalizer": {
+      "scope": "repository",
+      "path": "experiments/step3_response_quality_persistence/scripts/finalize_step3_cdro_opc_m8_authoring_attempt_002.py",
+      "sha256": "18697d280ceb01302c45f5c272bcf1235591f86ef84c41ecb39923383baa030f"
+    },
+    "attempt_002_tests": {
+      "scope": "repository",
+      "path": "experiments/step3_response_quality_persistence/scripts/test_step3_cdro_opc_m8_authoring_attempt_002.py",
+      "sha256": "e4932ac72bc5ad2bf85f564e665d0558ff3af4dbf09340254112430a5ac2f778"
+    }
+  },
+  "transport_only_change": {
+    "attempt_001_responses_reused": false,
+    "authoring_rules_changed": false,
+    "blind_review_or_gpu_rules_changed": false,
+    "prompt_registry_changed": false,
+    "spool_permission_boundary_changed": true
+  },
+  "prompt_registry_sha256": "02b1264710adff4e1bb0c0f6f3a5aea1ea3b9ad9ca142d0a6faff96d69dab37d",
+  "authoring": {
+    "attempt": "attempt-002",
+    "source": "current_model_no_context_subagents",
+    "fork_turns": "none",
+    "shards": 12,
+    "rows_per_shard": 10,
+    "modes": ["specific_redirect", "risk_mitigation"],
+    "minimum_response_whitespace_tokens": 40,
+    "maximum_response_whitespace_tokens": 160,
+    "required_openings": {
+      "specific_redirect": "I can't help",
+      "risk_mitigation": "I won't assist"
+    },
+    "responses_schema": ["request_id", "opaque_prompt_id", "sample_id", "author_mode", "response"],
+    "single_line_response": true,
+    "immutable_submission": true,
+    "retry_or_reassignment_allowed": false,
+    "prompt_replacement_or_top_up_allowed": false,
+    "spool_root": "C:/Users/1/Documents/Codex/2026-08-23/apiidparam-input-192-id-invalid-id/work/step3-cdro-opc-m8-authoring-attempt-002"
+  },
+  "authorization_boundary": {
+    "candidate_generation_authorized": false,
+    "core100_opened": false,
+    "heldout_opened": false,
+    "optimizer_steps": 0,
+    "training_authorized": false
+  }
+}
