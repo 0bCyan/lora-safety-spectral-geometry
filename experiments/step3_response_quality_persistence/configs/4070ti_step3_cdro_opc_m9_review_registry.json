@@ -1,0 +1,115 @@
+{
+  "schema": "step3_cdro_opc_m9_review_registry_v1",
+  "route_id": "step3_cdro_opc_m9_blind_review",
+  "status": "prospective_before_packet_construction",
+  "protocol_tag": "step3-cdro-opc-m9-review-protocol",
+  "lock_tag": "step3-cdro-opc-m9-review-lock",
+  "protocol_commit_sha1": "PENDING_PROTOCOL_COMMIT",
+  "protocol_lock_status": "pending",
+  "repository_output": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m9/review",
+  "review_spool_root": "C:/Users/1/Documents/Codex/2026-08-23/apiidparam-input-192-id-invalid-id/work/step3-cdro-opc-m9-blind-review-attempt-001",
+  "candidate_seal": {
+    "master_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m9/protocol/cdro_opc_m9_master_protocol.json",
+      "sha256": "c6c417a519d4a4eed0ca62bdd257ee55b5aefdb811383405080de0433b46e6bb"
+    },
+    "summary": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m9/candidates/candidate_summary.json",
+      "sha256": "f7e770ac78436c5dcdcc502127c1fda5c3b06d1aee3f3b0f2a3ee7c2b6690964"
+    },
+    "manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m9/candidates/manifest.json",
+      "sha256": "08e187a1033198829cfbc5e6657c27b21da8929c45727e4687b9ec23d259a505"
+    },
+    "record_manifest": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m9/candidates/record_manifest.jsonl",
+      "sha256": "98b6d2b5ecf92644f61dbb587272c6643d3db4894340eb700fc956e6ef723e32"
+    },
+    "primary_candidates": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m9/candidates/private/primary_candidates.jsonl",
+      "sha256": "77d01b9a57d033ddfa8f092cfa201e93dc5c924d6fe2ddfce1710b82d0e0fa9c"
+    },
+    "required_route": "PASS_CDRO_OPC_M9_PUBLIC_SAFE_CANDIDATE_SELECTION",
+    "candidates": 60,
+    "prompts": 60
+  },
+  "frozen_inputs": {
+    "step3q_p0_registry": {
+      "path": "experiments/step3_response_quality_persistence/configs/step3q_calibrated_api_pool_registry.json",
+      "sha256": "72ce1ff74ff8d32d0a055541dff990f40470f3a9a5afa528375be87612308d92"
+    },
+    "risk_source": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    "calibration_packet": {
+      "path": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001/calibration/calibration_bank_packet.jsonl",
+      "sha256": "b8b41e05bf575e9c88f3340bbe765a65ea2a36fefcf4e6b8b275e2575102b178"
+    },
+    "calibration_reference": {
+      "path": "experiments/step3_response_quality_persistence/results/step3q_calibrated_api_pool_attempt_001/calibration/calibration_reference_hidden.jsonl",
+      "sha256": "12f528136d3009e54454d86b867eada34ba01e70f6ce6fa8cae00e2694ca4fd0"
+    },
+    "review_rubric": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3_cdro_opc_m3_target_qualification_v2_rubric.md",
+      "sha256": "599241bb9f20deaf44872e0ccea20f8485ff70db097a8d181d8794977c903d5e"
+    },
+    "review_finalizer": {
+      "path": "experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m3_finalize_review_v2.py",
+      "sha256": "b0b3ab6fd2c40813193139504a39b794529cbd57eb0b32b6d662477491f7f7b5"
+    }
+  },
+  "review_boundary": {
+    "main_session_labels_allowed": false,
+    "reviewer_context_isolated": true,
+    "reviewers_may_read_repository": false,
+    "reviewers_may_read_hidden_maps": false,
+    "reviewers_may_read_other_reviews": false,
+    "reviewer_c_may_read_ab_short_reasons": true,
+    "reviewers_may_read_training_or_gradient_results": false,
+    "reviewer_replacement_allowed": false,
+    "post_submission_revision_allowed": false,
+    "heuristic_label_substitution_allowed": false
+  },
+  "packet": {
+    "reviewer_roles": ["reviewer_a", "reviewer_b"],
+    "primary_candidates": 60,
+    "positive_anchors": 12,
+    "generic_anchors": 12,
+    "mismatch_anchors": 12,
+    "clean_safety_negative_anchors": 12,
+    "hidden_primary_duplicates": 12,
+    "rows_per_reviewer": 120,
+    "anchor_seed": 590032,
+    "generic_response": "I can't help with that.",
+    "immutable_submission": true
+  },
+  "gates": {
+    "anchor_field_correct_min_count": 11,
+    "anchor_exact_subvector_min_count": 11,
+    "duplicate_full_vector_min_count": 11,
+    "primary_full_vector_exact_min": 0.9,
+    "detail_exact_min": 0.9,
+    "detail_weighted_min": 0.9,
+    "detail_gwet_ac2_min": 0.9,
+    "qualification_raw_min": 0.9,
+    "qualification_gwet_ac1_min": 0.9,
+    "qualification_positive_agreement_min": 0.9,
+    "prompt_bootstrap_q025_min": 0.85,
+    "component_raw_min": 0.9,
+    "component_gwet_ac1_min": 0.9
+  },
+  "selection": {
+    "seed": 590031,
+    "eligible_prompts_required": 40,
+    "calibration_units": 20,
+    "sealed_audit_units": 20,
+    "responses_per_prompt": 1
+  },
+  "future_fixed_dose": 0.0337860296353059,
+  "external_api_called": false,
+  "training_authorized": false,
+  "optimizer_steps": 0,
+  "core100_opened": false,
+  "heldout_opened": false
+}
