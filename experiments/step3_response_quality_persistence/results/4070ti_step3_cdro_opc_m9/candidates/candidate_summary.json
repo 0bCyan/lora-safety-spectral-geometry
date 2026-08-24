@@ -1,0 +1,14 @@
+{
+  "candidate_generation": 0,
+  "candidate_registry_sha256": "2aab3fc492733c2da465cbf56506ffbb350fdcea0b4cb693ab461b70f97d9e3a",
+  "excluded_prompt_releases": 180,
+  "fresh_public_safe_prompts": 77,
+  "optimizer_steps": 0,
+  "route": "PASS_CDRO_OPC_M9_PUBLIC_SAFE_CANDIDATE_SELECTION",
+  "schema": "step3_cdro_opc_m9_candidate_summary_v1",
+  "selected_candidates": 60,
+  "selected_prompts": 60,
+  "source_candidates": 92,
+  "source_prompts": 87,
+  "training_authorized": false
+}

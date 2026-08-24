@@ -1,0 +1,13 @@
+{
+  "artifacts": {
+    "CDRO_OPC_M9_CANDIDATE_REPORT.md": "dda8641eeb3d1efe4fa8be3a46e3d144ce1ea9a147fadea51d82c47398b5beb7",
+    "candidate_summary.json": "f7e770ac78436c5dcdcc502127c1fda5c3b06d1aee3f3b0f2a3ee7c2b6690964",
+    "private/primary_candidates.jsonl": "77d01b9a57d033ddfa8f092cfa201e93dc5c924d6fe2ddfce1710b82d0e0fa9c",
+    "record_manifest.jsonl": "98b6d2b5ecf92644f61dbb587272c6643d3db4894340eb700fc956e6ef723e32"
+  },
+  "optimizer_steps": 0,
+  "protocol_sha256": "c6c417a519d4a4eed0ca62bdd257ee55b5aefdb811383405080de0433b46e6bb",
+  "route": "PASS_CDRO_OPC_M9_PUBLIC_SAFE_CANDIDATE_SELECTION",
+  "schema": "step3_cdro_opc_m9_candidate_manifest_v1",
+  "training_authorized": false
+}
