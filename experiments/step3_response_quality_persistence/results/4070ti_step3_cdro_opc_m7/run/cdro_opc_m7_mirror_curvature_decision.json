@@ -1,0 +1,444 @@
+{
+  "M6_calibration_covered_units": 16,
+  "M6_route": "STOP_CDRO_OPC_M6_CALIBRATION",
+  "M6_stop_preserved": true,
+  "attributed_unit_certificate_cells": 80,
+  "fresh_external_confirmation_claimed": false,
+  "next_authorized_action": "interpret fixed-radius decomposition only; preserve M6 stop; do not train",
+  "optimizer_steps": 0,
+  "route": "PASS_CDRO_OPC_M7_VALIDITY_ONLY_SYMMETRIC_DIAGNOSTIC",
+  "schema": "step3_cdro_opc_m7_mirror_curvature_decision_v1",
+  "sealed_audit_opened": false,
+  "source_reproduced_units": 20,
+  "training_authorized": false,
+  "validity_only": true,
+  "write_ledger": {
+    "endpoint_loss_writes": 0,
+    "events": [
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "map_precheck",
+        "sample_id": null,
+        "sequence": 1,
+        "sign": 1,
+        "unit_id": null
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "map_precheck",
+        "sample_id": null,
+        "sequence": 2,
+        "sign": 1,
+        "unit_id": null
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000843",
+        "sequence": 3,
+        "sign": 1,
+        "unit_id": "m5_cal_02"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000843",
+        "sequence": 4,
+        "sign": 1,
+        "unit_id": "m5_cal_02"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000300",
+        "sequence": 5,
+        "sign": 1,
+        "unit_id": "m5_cal_04"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000300",
+        "sequence": 6,
+        "sign": 1,
+        "unit_id": "m5_cal_04"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000850",
+        "sequence": 7,
+        "sign": 1,
+        "unit_id": "m5_cal_06"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000850",
+        "sequence": 8,
+        "sign": 1,
+        "unit_id": "m5_cal_06"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000692",
+        "sequence": 9,
+        "sign": 1,
+        "unit_id": "m5_cal_08"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000692",
+        "sequence": 10,
+        "sign": 1,
+        "unit_id": "m5_cal_08"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000828",
+        "sequence": 11,
+        "sign": 1,
+        "unit_id": "m5_cal_10"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000828",
+        "sequence": 12,
+        "sign": 1,
+        "unit_id": "m5_cal_10"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000908",
+        "sequence": 13,
+        "sign": 1,
+        "unit_id": "m5_cal_12"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000908",
+        "sequence": 14,
+        "sign": 1,
+        "unit_id": "m5_cal_12"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000306",
+        "sequence": 15,
+        "sign": 1,
+        "unit_id": "m5_cal_14"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000306",
+        "sequence": 16,
+        "sign": 1,
+        "unit_id": "m5_cal_14"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000601",
+        "sequence": 17,
+        "sign": 1,
+        "unit_id": "m5_cal_16"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000601",
+        "sequence": 18,
+        "sign": 1,
+        "unit_id": "m5_cal_16"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000877",
+        "sequence": 19,
+        "sign": 1,
+        "unit_id": "m5_cal_18"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000877",
+        "sequence": 20,
+        "sign": 1,
+        "unit_id": "m5_cal_18"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000376",
+        "sequence": 21,
+        "sign": 1,
+        "unit_id": "m5_cal_20"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000376",
+        "sequence": 22,
+        "sign": 1,
+        "unit_id": "m5_cal_20"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000455",
+        "sequence": 23,
+        "sign": 1,
+        "unit_id": "m5_cal_22"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000455",
+        "sequence": 24,
+        "sign": 1,
+        "unit_id": "m5_cal_22"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000976",
+        "sequence": 25,
+        "sign": 1,
+        "unit_id": "m5_cal_24"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000976",
+        "sequence": 26,
+        "sign": 1,
+        "unit_id": "m5_cal_24"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000861",
+        "sequence": 27,
+        "sign": 1,
+        "unit_id": "m5_cal_26"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000861",
+        "sequence": 28,
+        "sign": 1,
+        "unit_id": "m5_cal_26"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000401",
+        "sequence": 29,
+        "sign": 1,
+        "unit_id": "m5_cal_28"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000401",
+        "sequence": 30,
+        "sign": 1,
+        "unit_id": "m5_cal_28"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000703",
+        "sequence": 31,
+        "sign": 1,
+        "unit_id": "m5_cal_30"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000703",
+        "sequence": 32,
+        "sign": 1,
+        "unit_id": "m5_cal_30"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000756",
+        "sequence": 33,
+        "sign": 1,
+        "unit_id": "m5_cal_32"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000756",
+        "sequence": 34,
+        "sign": 1,
+        "unit_id": "m5_cal_32"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000023",
+        "sequence": 35,
+        "sign": 1,
+        "unit_id": "m5_cal_34"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000023",
+        "sequence": 36,
+        "sign": 1,
+        "unit_id": "m5_cal_34"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000349",
+        "sequence": 37,
+        "sign": 1,
+        "unit_id": "m5_cal_36"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000349",
+        "sequence": 38,
+        "sign": 1,
+        "unit_id": "m5_cal_36"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000478",
+        "sequence": 39,
+        "sign": 1,
+        "unit_id": "m5_cal_38"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000478",
+        "sequence": 40,
+        "sign": 1,
+        "unit_id": "m5_cal_38"
+      },
+      {
+        "arm": "fallback",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000135",
+        "sequence": 41,
+        "sign": 1,
+        "unit_id": "m5_cal_40"
+      },
+      {
+        "arm": "selected",
+        "eta": 0.0002,
+        "parameter_rule": "theta0_plus_eta_times_frozen_displacement",
+        "purpose": "positive_loss",
+        "sample_id": "risk_pkuqa_000135",
+        "sequence": 42,
+        "sign": 1,
+        "unit_id": "m5_cal_40"
+      }
+    ],
+    "map_precheck_writes": 2,
+    "negative_loss_writes": 0,
+    "positive_loss_writes": 40,
+    "sealed_loss_writes": 0
+  }
+}

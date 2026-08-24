@@ -1,0 +1,10 @@
+{
+  "optimizer_steps": 0,
+  "schema": "step3_cdro_opc_m7_chinese_reproduction_checklist_v1",
+  "sealed审计打开": false,
+  "唯一复现命令": ".\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m7_mirror_curvature.py run",
+  "新增正向镜像损失写入": 40,
+  "校验命令": ".\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m7_mirror_curvature.py verify-run",
+  "训练授权": false,
+  "负向臂重算": 0
+}

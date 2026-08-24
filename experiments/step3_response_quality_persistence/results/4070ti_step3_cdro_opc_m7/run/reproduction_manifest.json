@@ -1,0 +1,52 @@
+{
+  "environment": {
+    "bitsandbytes": "0.49.2",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "head": "892768286718f0dd54b7fb8df47e6e33b7a5364c",
+    "matplotlib": "3.11.1",
+    "peak_reserved_bytes": 10750001152,
+    "peft": "0.16.0",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.5",
+    "torch": "2.5.1+cu121",
+    "torch_cuda": "12.1",
+    "total_memory_bytes": 12878086144,
+    "transformers": "4.53.3",
+    "wall_seconds": 870.8734650611877
+  },
+  "inputs_sha256": {
+    "m6_decision": "c8f43f3995ad8c61eca177c61898bb3d19dfa787474a6ea2e7896d121ed20eb8",
+    "m6_diagnostics": "d5013443477f171e777aba9ea13b1d2f9d613f012360c5f34d3002d03f01b325",
+    "m6_protocol": "e4ed4805103271942395f8e2e91975669f505606b2c151dfd24aaf0a0ccf9874",
+    "m6_reproduction": "06e82fe6a4f6812bdbc354f34942116b4507bce04804b41e1738445de5c28ec0",
+    "m6_runner": "65ec9c4a2120c38290404141ce4a16e5878a3536bbcfe2b98950f1d5834c41d1",
+    "protocol": "9cea4652d2dd67bedfc3f4c35fa89c47341e882cb64042e04cf94d4134c05edf",
+    "protocol_note": "cb59a1e31b104815e8a58269e5cd8f9941f97a0b0f7b169d1ae462bedf5573ef",
+    "runner": "c7bc436116a89d039d6369bca4ce2bde872fd7794fd1dffbe5de72e40981773e",
+    "runner_tests": "64dfecbbf2739556e64d6fc66462065ea0b9325ddf10b8d7f37c50e6d611c346"
+  },
+  "optimizer_steps": 0,
+  "outputs_sha256": {
+    "attribution_csv": "c288a948d2232520228d83449b7b17b0ffd6eb02325b96a1bc7d131e03c2e7c5",
+    "chinese_reproduction_checklist": "0701cb7b735b19f3992c5b4402ef36236b5049bbfeada25418ee3c1e378f3d53",
+    "decision": "6ad5cd242f30f94b2796e266aad5d5256dde7fd057cda056805a12a89246a10b",
+    "diagnostics": "84d86999f5df0193a505d4577888a94b731c49762784d9778941861999cb6cb2",
+    "environment": "12944b6d74e4be0f737f7d4ab0fa7b0e6d8308f203990bd611200df393a47fea",
+    "interpretation": "f33b1bf984626c2c9ca8fcd521e1af34080352d15a791de599373e537ea33bc2",
+    "report": "5451ff9161e1226cc68fe9f2f297f1cf7e3fe9b497e67a9b844916bdef87238d",
+    "risk_figure_png": "d2e071108b72136334152504c6eed88d509f42f503a0a5eae0de9b1710c81f19",
+    "risk_figure_svg": "a465bb38cec7c9d9a894e0ac472f41f059a6370bf2254958fcfbcd05a01873ef"
+  },
+  "parameters": {
+    "fixed_dose": 0.0337860296353059,
+    "optimizer_steps": 0,
+    "score_scale_floor": 0.02,
+    "virtual_scale_eta": 0.0002
+  },
+  "random_seed": 2026081917,
+  "runtime_commit": "892768286718f0dd54b7fb8df47e6e33b7a5364c",
+  "schema": "step3_cdro_opc_m7_reproduction_manifest_v1",
+  "training_authorized": false,
+  "unique_reproduction_command": ".\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m7_mirror_curvature.py run",
+  "verification_command": ".\\.venv\\Scripts\\python.exe experiments/step3_response_quality_persistence/scripts/step3_cdro_opc_m7_mirror_curvature.py verify-run"
+}
