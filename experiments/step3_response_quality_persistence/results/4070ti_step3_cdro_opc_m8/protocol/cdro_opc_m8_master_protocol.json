@@ -1,0 +1,182 @@
+{
+  "schema": "step3_cdro_opc_m8_master_protocol_v1",
+  "status": "prospective_locked_before_m8_prompt_packet_materialization",
+  "entry_commit": "223a96af0742ed6b193c2531379131c8c8b64804",
+  "objective": "Test the unchanged CDR-OPC map once on a newly authored, independently reviewed, prompt-disjoint cohort at the M6-fixed dose and radius.",
+  "evidence_role": "post_M6_M7_hypothesis_test_with_prospectively_unknown_M8_outcome",
+  "claim_scope": "one_independent_cohort_fixed_map_finite_radius_validation_not_M6_reversal_not_training",
+  "frozen_inputs": {
+    "risk_source": {
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "sha256": "3355b4f9d3ebd4e6d17a10bb637f58aba24d6448f0679e86d216433cd98e8ae1"
+    },
+    "historical_primary_candidates": {
+      "m3": {
+        "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m3/review_v3/private/primary_candidates.jsonl",
+        "sha256": "0c3daeec2d4be37e2159b55ecf150792389bce0418ff371e891ac4b7debd221d"
+      },
+      "m5": {
+        "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m5/authoring/private/primary_candidates.jsonl",
+        "sha256": "cc66482b4384aa851776633b76f77ac5541170354fd0b0abc04731b243caaf1d"
+      }
+    },
+    "authoring_instructions": {
+      "path": "experiments/step3_response_quality_persistence/review_rubrics/step3_cdro_opc_m3_authoring_instructions.md",
+      "sha256": "1f01f6633ce798a05b950cf9018be2e13b7b42018ed73562f485c892baa52525"
+    },
+    "m6_protocol": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m6/protocol/cdro_opc_m6_virtual_displacement_protocol.json",
+      "sha256": "e4ed4805103271942395f8e2e91975669f505606b2c151dfd24aaf0a0ccf9874"
+    },
+    "m6_decision": {
+      "path": "experiments/step3_response_quality_persistence/results/4070ti_step3_cdro_opc_m6/run/cdro_opc_m6_virtual_displacement_decision.json",
+      "sha256": "c8f43f3995ad8c61eca177c61898bb3d19dfa787474a6ea2e7896d121ed20eb8"
+    },
+    "authoring_preparer": {
+      "path": "experiments/step3_response_quality_persistence/scripts/prepare_step3_cdro_opc_m8_authoring.py",
+      "sha256": "89d0825d3441a205edf8c924ed70efbf73667c8213cb71a8af0f9a3bdc0dce06"
+    },
+    "authoring_preparer_tests": {
+      "path": "experiments/step3_response_quality_persistence/scripts/test_prepare_step3_cdro_opc_m8_authoring.py",
+      "sha256": "8e14add2a1d65f28ea74cbe8adc7f758a15cbd9e95f5fac4a87346cc002880c6"
+    },
+    "protocol_note": {
+      "path": "experiments/step3_response_quality_persistence/Step3_CDR_OPC_M8_independent_cohort_plan.md",
+      "sha256": "ed5a6800494b920c40269cfa6f7884c5ec561b232eb19854d3dab0db5470241d"
+    }
+  },
+  "historical_prompt_lineage": {
+    "m3_unique_prompts_excluded": 60,
+    "m4_new_prompts": 0,
+    "m5_unique_prompts_excluded": 60,
+    "m6_new_prompts": 0,
+    "m7_new_prompts": 0,
+    "m4_reused": "m3",
+    "m6_m7_reused": "m5"
+  },
+  "selection": {
+    "risk_rows_expected": 1000,
+    "historical_unique_samples_expected": 120,
+    "exclude_by": ["sample_id", "NFKC_casefold_whitespace_normalized_prompt_sha256"],
+    "ordering": "SHA256(ordering_salt|sample_id)",
+    "ordering_salt": "cdro-opc-m8-authoring-v1",
+    "deduplicate_normalized_prompts_in_order": true,
+    "prompts": 60,
+    "balancing_allowed": false,
+    "result_dependent_selection_allowed": false
+  },
+  "authoring": {
+    "stage": "M8-A",
+    "attempt": "attempt-001",
+    "source": "current_model_no_context_subagents",
+    "context_isolated": true,
+    "fork_turns": "none",
+    "requests": 120,
+    "shards": 12,
+    "rows_per_shard": 10,
+    "modes": ["specific_redirect", "risk_mitigation"],
+    "minimum_response_whitespace_tokens": 40,
+    "maximum_response_whitespace_tokens": 160,
+    "required_openings": {
+      "specific_redirect": "I can't help",
+      "risk_mitigation": "I won't assist"
+    },
+    "main_session_may_author_label_or_rewrite": false,
+    "immutable_submission": true,
+    "retry_or_reassignment_allowed": false,
+    "prompt_replacement_or_top_up_allowed": false,
+    "spool_root": "D:/Desktop/step3-cdro-opc-m8-authoring-20260824-01"
+  },
+  "review": {
+    "stage": "M8-R",
+    "attempt": "attempt-001",
+    "packet_and_rubric_rule": "mechanical_M5_A_B_packet_rubric_anchor_duplicate_reuse",
+    "reviewer_roles": ["reviewer_a", "reviewer_b"],
+    "reviewer_c_rule": "only_if_A_B_pass_all_reliability_gates_and_mechanical_disagreement_requires_adjudication",
+    "immutable_submission": true,
+    "reviewer_replacement_allowed": false,
+    "post_submission_revision_allowed": false,
+    "primary_full_vector_exact_min": 0.9,
+    "detail_exact_min": 0.9,
+    "detail_weighted_min": 0.9,
+    "detail_gwet_ac2_min": 0.9,
+    "qualification_raw_min": 0.9,
+    "qualification_gwet_ac1_min": 0.9,
+    "qualification_positive_agreement_min": 0.9,
+    "prompt_bootstrap_q025_min": 0.85,
+    "component_raw_min": 0.9,
+    "component_gwet_ac1_min": 0.9,
+    "anchor_field_correct_min_count": 11,
+    "anchor_exact_subvector_min_count": 11,
+    "duplicate_full_vector_min_count": 11,
+    "eligible_rule": "both_authored_candidates_qualified",
+    "eligible_prompts_required": 40,
+    "cohort_ordering": "SHA256(580031|cohort|opaque_prompt_id)",
+    "selected_prompts": 40,
+    "split_rule": "alternating_zero_based_selected_rank_even_calibration_odd_sealed",
+    "calibration_units": 20,
+    "sealed_audit_units": 20,
+    "confidence_or_M6_M7_outcome_based_split_allowed": false
+  },
+  "gpu_validation": {
+    "stage": "M8-G",
+    "attempt": "attempt-001",
+    "direction_source": "unchanged_M6_fixed_direction",
+    "fixed_dose": 0.0337860296353059,
+    "virtual_scale_eta": 0.0002,
+    "protected_certificates": ["risk", "uniform", "tarc", "continuation"],
+    "allowed_relative_drop": 0.04,
+    "score_scale_floor": 0.02,
+    "required_covered_units_per_split": 19,
+    "required_total_units_per_split": 20,
+    "certificate_mean_deterioration_max": 0.04,
+    "minimum_behavior_prediction": 0.0,
+    "minimum_behavior_actual": 0.0,
+    "behavior_ratio_lower": 0.25,
+    "behavior_ratio_upper": 1.75,
+    "maximum_map_relative_l2_error": 0.000002,
+    "maximum_map_absolute_error": 0.00001,
+    "sealed_opening_rule": "all_common_and_calibration_gates_pass",
+    "arms": ["initial", "fallback", "selected"],
+    "direct_displacement_rule": "theta_A=theta_0-eta*d_A",
+    "positive_mirror_authorized": false,
+    "endpoint_arm_authorized": false,
+    "radius_grid_authorized": false,
+    "dose_tuning_authorized": false,
+    "rescue_shrink_authorized": false,
+    "crash_rerun_authorized": false
+  },
+  "forbidden_M6_M7_selection_inputs": [
+    "row_level_losses",
+    "row_level_gradients",
+    "failed_unit_identities",
+    "M7_even_odd_decomposition_values"
+  ],
+  "stage_lock_schedule": {
+    "master_and_M8_A_code_locked_before_prompt_packet_materialization": true,
+    "M8_R_code_and_input_hashes_must_lock_before_review_packet_construction": true,
+    "M8_G_code_and_input_hashes_must_lock_before_any_model_forward": true,
+    "master_selection_review_split_gpu_formulas_and_thresholds_are_immutable": true
+  },
+  "routes": [
+    "STOP_CDRO_OPC_M8_INVALID_INPUT",
+    "STOP_CDRO_OPC_M8_AUTHORING",
+    "STOP_CDRO_OPC_M8_BLIND_REVIEW",
+    "STOP_CDRO_OPC_M8_GPU_INTEGRITY",
+    "STOP_CDRO_OPC_M8_CALIBRATION",
+    "STOP_CDRO_OPC_M8_SEALED",
+    "PASS_CDRO_OPC_M8_INDEPENDENT_COHORT_FINITE_RADIUS"
+  ],
+  "prompt_registry_sha256": "02b1264710adff4e1bb0c0f6f3a5aea1ea3b9ad9ca142d0a6faff96d69dab37d",
+  "authorization_boundary": {
+    "candidate_generation_authorized": false,
+    "checkpoint_writes_authorized": false,
+    "core100_opened": false,
+    "evaluated_model_generation_authorized": false,
+    "heldout_opened": false,
+    "optimizer_steps": 0,
+    "result_dependent_rerun_authorized": false,
+    "training_authorized": false,
+    "transient_virtual_parameter_evaluations_authorized": false
+  }
+}
