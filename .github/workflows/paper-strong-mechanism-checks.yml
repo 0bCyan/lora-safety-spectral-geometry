@@ -32,11 +32,12 @@ jobs:
       - name: Apply staged branch documentation bundle when present
         shell: bash
         run: |
-          bundle='paper/strong_mechanism/bootstrap/paper_a_update.tar.gz.b64'
-          if [[ -f "$bundle" ]]; then
-            base64 --decode "$bundle" > /tmp/paper_a_update.tar.gz
+          parts_dir='.paper_a_bootstrap/parts'
+          if compgen -G "${parts_dir}/part*" > /dev/null; then
+            cat "${parts_dir}"/part* | base64 --decode > /tmp/paper_a_update.tar.gz
+            echo '6ca774dab3c2ec6d1ba5053b75a1ad2a46da628f2f682a829a29ed8336d046dd  /tmp/paper_a_update.tar.gz' | sha256sum -c -
             tar -xzf /tmp/paper_a_update.tar.gz -C .
-            rm -f "$bundle" /tmp/paper_a_update.tar.gz
+            rm -rf .paper_a_bootstrap /tmp/paper_a_update.tar.gz
           fi
       - uses: actions/setup-python@v5
         with:
