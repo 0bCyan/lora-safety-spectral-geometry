@@ -29,6 +29,15 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: Apply staged branch documentation bundle when present
+        shell: bash
+        run: |
+          bundle='paper/strong_mechanism/bootstrap/paper_a_update.tar.gz.b64'
+          if [[ -f "$bundle" ]]; then
+            base64 --decode "$bundle" > /tmp/paper_a_update.tar.gz
+            tar -xzf /tmp/paper_a_update.tar.gz -C .
+            rm -f "$bundle" /tmp/paper_a_update.tar.gz
+          fi
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -39,15 +48,15 @@ jobs:
           python paper/strong_mechanism/scripts/plot_available_figures.py \
             --output-dir paper/strong_mechanism/figures/available \
             --formats svg
-      - name: Commit regenerated SVG assets when needed
+      - name: Commit regenerated branch assets when needed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add paper/strong_mechanism/figures/available/*.svg
+          git add -A
           if git diff --cached --quiet; then
-            echo "Available SVG assets are already current."
+            echo "Paper A branch assets are already current."
           else
-            git commit -m "图表：自动更新当前可用SVG"
+            git commit -m "论文A：完善说明、协作规则与当前可用图表"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
 
