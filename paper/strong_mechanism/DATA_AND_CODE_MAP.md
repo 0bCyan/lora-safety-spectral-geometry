@@ -25,22 +25,37 @@ The existing global `heldout_test` is not a Paper A development source. A separa
 | runtime resolver | `paper/strong_mechanism/scripts/prepare_runtime_config.py` |
 | formal launcher | `paper/strong_mechanism/scripts/run_pinned_training.py` |
 
+## Formal command and output flow
+
+```text
+study_registry.json
+  -> render_run_commands.py          (15 training runs)
+  -> run_pinned_training.py          (runtime config + provenance + checkpoints)
+  -> render_evaluation_commands.py   (15 safety jobs + 15 utility jobs + 15 gradient jobs)
+  -> collect_generation_targets.py   (validated opaque review target tables)
+  -> blind safety/quality review
+  -> prompt_level_safety.csv / prompt_level_quality.csv
+  -> aggregate_results.py
+  -> tables and figures
+  -> LaTeX
+```
+
+The local heuristic labels emitted by the canonical evaluator are excluded from Paper A primary analyses.
+
 ## Core training/evaluation code
 
 | Function | Path |
 |---|---|
 | LoRA training and scheduled anchors | `experiments/step2_mechanism_dynamics/scripts/train_lora_with_checkpoints.py` |
-| checkpoint behavior evaluation | `experiments/step2_mechanism_dynamics/scripts/evaluate_checkpoint_dynamics.py` |
+| checkpoint generation | `experiments/step2_mechanism_dynamics/scripts/evaluate_checkpoint_dynamics.py` |
 | adapter geometry analysis | `experiments/step2_mechanism_dynamics/scripts/analyze_checkpoint_adapters.py` |
-| historical natural gradient audit | `experiments/step2_mechanism_dynamics/scripts/run_step2j_natural_gradient_audit.py` |
 | paper schedule-aware gradient audit | `paper/strong_mechanism/scripts/run_registered_gradient_audit.py` |
-| blind review packet builder | `paper/strong_mechanism/scripts/make_blind_review_packets.py` |
-| blind review validator | `paper/strong_mechanism/scripts/validate_review_labels.py` |
+| formal evaluation commands | `paper/strong_mechanism/scripts/render_evaluation_commands.py` |
+| generation validation/materialization | `paper/strong_mechanism/scripts/collect_generation_targets.py` |
+| safety packet builder/finalizer | `paper/strong_mechanism/scripts/make_safety_review_packets.py`, `finalize_safety_reviews.py` |
+| quality packet builder/validator/finalizer | `make_blind_review_packets.py`, `validate_review_labels.py`, `finalize_quality_reviews.py` |
 | normalized statistics | `paper/strong_mechanism/scripts/aggregate_results.py` |
-| deterministic figures | `paper/strong_mechanism/scripts/plot_main_figures.py` |
-| deterministic tables | `paper/strong_mechanism/scripts/build_tables.py` |
-
-The historical gradient script hard-codes the decay10 schedule and is not valid for the new equal-dose arms. The paper-specific audit derives each weight from the registered arm schedule and records a schedule hash.
+| deterministic figures/tables | `plot_main_figures.py`, `build_tables.py` |
 
 ## Historical control configs
 
@@ -54,4 +69,4 @@ Historical seed1 is not pooled into the final pinned replication.
 
 ## Paper-specific responsibility
 
-Paper A code is responsible for source/pin validation, exact dose arithmetic, deterministic commands, normalized prompt-level data, seed-aware statistics, blind review, human-validity import, and deterministic publication artifacts. It must not silently change canonical training behavior.
+Paper A code validates sources/pins, exact dose arithmetic, deterministic commands, raw generation integrity, prompt-level labels, seed-aware statistics, blind review, human-validity import, and deterministic publication artifacts. It must not silently change canonical training behavior.

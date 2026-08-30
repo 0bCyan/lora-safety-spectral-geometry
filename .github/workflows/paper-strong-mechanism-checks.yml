@@ -40,12 +40,16 @@ jobs:
             --validate-only
       - name: Run paper tests and artifact-pipeline smoke test
         run: python -m unittest discover -s paper/strong_mechanism/tests -p 'test_*.py'
-      - name: Render formal command manifest
+      - name: Render formal command manifests
         run: |
           python paper/strong_mechanism/scripts/render_run_commands.py \
             --output /tmp/paper_a_run_commands.txt \
             --manifest /tmp/paper_a_run_commands.json
           grep -q '^# command_count=15$' /tmp/paper_a_run_commands.txt
+          python paper/strong_mechanism/scripts/render_evaluation_commands.py \
+            --output /tmp/paper_a_evaluation_commands.txt \
+            --manifest /tmp/paper_a_evaluation_commands.json
+          grep -q '^# command_count=45$' /tmp/paper_a_evaluation_commands.txt
       - name: Generate historical figure panels
         run: |
           python paper/strong_mechanism/scripts/plot_main_figures.py \
