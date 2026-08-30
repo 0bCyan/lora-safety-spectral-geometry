@@ -47,9 +47,11 @@ Historical seed1 results remain valid historical evidence, but they are not pool
 - source-hash validator;
 - prompt-paired and seed-hierarchical statistics;
 - blind packet, calibration, duplicate, and adjudication tooling;
-- deterministic figure and table generation;
+- deterministic final-result figure and table generation;
+- nine pre-result-safe historical/design SVG assets with reproducible generation code;
+- detailed branch README, workspace guide, and root `AGENTS.md`;
 - evidence-gated complete LaTeX draft;
-- GitHub Actions for Python, artifact-pipeline, and LaTeX verification.
+- GitHub Actions for Python, artifact-pipeline, available-figure, and LaTeX verification.
 
 ## Blocking scientific evidence
 
@@ -59,7 +61,7 @@ Historical seed1 results remain valid historical evidence, but they are not pool
 4. no independent human-validity subset exists for the final rubric;
 5. no second model or second risk setting has tested the central mechanism;
 6. no paper-specific prompt-disjoint confirmation has been opened;
-7. final integrated result tables and figures remain placeholders.
+7. final integrated result tables and result-dependent figures remain pending.
 
 ## Current stage
 
@@ -81,7 +83,7 @@ No new method search is part of Paper A.
 
 | Milestone | Requirement | State |
 |---|---|---|
-| M0 | paper workspace, claims, protocols, validation, LaTeX | complete subject to green CI |
+| M0 | paper workspace, claims, protocols, validation, available figures, LaTeX | complete subject to green CI |
 | M1 | pinned environment and all schedule dry-runs pass | pending |
 | M2 | Qwen3-4B 15-run formal matrix complete | pending |
 | M3 | final blinded quality remeasurement complete | pending |
