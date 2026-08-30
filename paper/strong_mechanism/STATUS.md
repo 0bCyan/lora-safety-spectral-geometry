@@ -49,6 +49,7 @@ Historical seed1 results remain valid historical evidence, but they are not pool
 - blind packet, calibration, duplicate, and adjudication tooling;
 - deterministic final-result figure and table generation;
 - nine pre-result-safe historical/design SVG assets with reproducible generation code;
+- available-figure regeneration and file-count checks are enforced on every branch push;
 - detailed branch README, workspace guide, and root `AGENTS.md`;
 - evidence-gated complete LaTeX draft;
 - GitHub Actions for Python, artifact-pipeline, available-figure, and LaTeX verification.
