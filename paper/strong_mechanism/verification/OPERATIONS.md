@@ -1,63 +1,111 @@
 # Operations and Reproduction Procedure
 
-## 1. Environment
+## 1. Checkout and branch verification
 
-Create a dedicated environment and install the repository's training dependencies plus `requirements-paper.txt`. Record:
+```bash
+git fetch origin
+git checkout paper/strong-mechanism-safety-persistence
+git status --short
+git rev-parse HEAD
+```
 
-- operating system;
-- Python, CUDA, driver, PyTorch, Transformers, PEFT, Datasets, Accelerate, and bitsandbytes versions;
-- GPU model and available memory;
-- model revision or resolved snapshot;
-- repository commit.
+The worktree must be clean before freezing a command manifest or starting a formal run.
 
-Do not rely on an unrecorded floating model revision for formal runs.
+## 2. Create the strict 4070 Ti environment
 
-## 2. Validate static study state
+Follow:
+
+```text
+paper/strong_mechanism/environment/INSTALL_4070TI.md
+```
+
+Then run:
+
+```bash
+python paper/strong_mechanism/scripts/check_training_environment.py
+```
+
+Strict checks cover Python, GPU class, CUDA-enabled PyTorch, Transformers, PEFT, Datasets, Accelerate, bitsandbytes, NumPy, and pandas. Driver, operating system, and additional packages are recorded.
+
+## 3. Validate static study state
 
 ```bash
 python paper/strong_mechanism/scripts/validate_study.py
+python paper/strong_mechanism/scripts/prepare_runtime_config.py \
+  --config paper/strong_mechanism/configs/qwen3_4b_equal_dose_temporal_schedules.json \
+  --output paper/strong_mechanism/data/runs/runtime_configs/preflight.json \
+  --validate-only
 python -m unittest discover -s paper/strong_mechanism/tests -p 'test_*.py'
 ```
 
-This checks manifests, hashes where available, schedule sums, output separation, seed matrices, and LaTeX source completeness.
+This checks manifests, hashes, model pins, environment-lock consistency, schedule sums, output separation, seed matrices, statistics helpers, artifact generation, and LaTeX source completeness.
 
-## 3. Render and freeze commands
+## 4. Prefetch the exact model snapshot
+
+Online once:
+
+```bash
+python paper/strong_mechanism/scripts/prepare_runtime_config.py \
+  --config paper/strong_mechanism/configs/qwen3_4b_equal_dose_temporal_schedules.json \
+  --output paper/strong_mechanism/data/runs/runtime_configs/prefetch_equal_dose.json \
+  --verify-environment
+```
+
+Then verify offline resolution:
+
+```bash
+python paper/strong_mechanism/scripts/prepare_runtime_config.py \
+  --config paper/strong_mechanism/configs/qwen3_4b_equal_dose_temporal_schedules.json \
+  --output paper/strong_mechanism/data/runs/runtime_configs/prefetch_equal_dose.json \
+  --verify-environment \
+  --offline
+```
+
+The resolved cache path must end in the full registered commit SHA.
+
+## 5. Render and freeze the 15 formal commands
 
 ```bash
 python paper/strong_mechanism/scripts/render_run_commands.py \
-  --output paper/strong_mechanism/data/derived/run_commands.txt
+  --output paper/strong_mechanism/data/derived/run_commands.txt \
+  --manifest paper/strong_mechanism/data/derived/run_commands.json
 ```
 
-Review the command file, hash it, commit it, and do not regenerate it after formal result access.
+Review both files, run every `DRY_RUN` line, then commit and record their SHA-256 values before the first formal model load. Do not regenerate the manifest after result access.
 
-## 4. Dry-run every command
+## 6. Non-formal smoke test
 
-The rendered manifest includes a dry-run form. Verify for every arm/seed:
+Use a separately named smoke config and a seed outside `{1,2,3}`. The smoke job may test model load, one optimizer step, checkpoint writing, evaluator load, and cleanup. It cannot produce or replace a formal result.
 
-- total steps = 64;
-- checkpoints include 0/6/16/32/48/64;
-- source row count = 256;
-- anchor rows = 80;
-- unique run directory;
-- expected run label.
+## 7. Run formal training
 
-## 5. Run formal training
+Execute the `FORMAL` commands in the exact rendered order. Each command uses `run_pinned_training.py`, which:
 
-Run in the frozen order. Preserve stdout/stderr, environment report, exit status, and GPU telemetry. A post-initialization crash is not silently retried.
+1. validates the config pin;
+2. validates the strict 4070 Ti environment;
+3. resolves the exact model snapshot;
+4. writes a machine-local runtime config and provenance;
+5. refuses a non-empty formal output directory;
+6. invokes the canonical trainer;
+7. preserves failed runs without silent retry.
 
-## 6. Evaluate checkpoints
+Preserve stdout/stderr, environment report, exit status, and GPU telemetry.
 
-Use the canonical evaluator with the paper registry. Generation must be deterministic and identical across arms. Store raw generations outside Git when large; commit only hashes, normalized prompt-level labels, and lightweight summaries.
+## 8. Evaluate checkpoints
 
-## 7. Gradient audits
+Use the machine-local runtime config written for each run. The canonical evaluator must generate the same prompt IDs with identical decoding across arms. Evaluate checkpoints 0/6/16/32/48/64 for safety trajectories, and the frozen final checkpoint set for quality and utility.
 
-At checkpoints 32/48/64, run the registered safety/risk contribution analysis on the same prompt blocks for every arm and seed. Do not choose blocks from behavioral results.
+Large generations remain outside Git. Commit hashes, prompt-level normalized labels, and lightweight summaries.
 
-## 8. Blind review
+## 9. Gradient audits
 
-Construct packets before joining arm keys. Review deliveries are immutable. Validate schema, calibration, hidden duplicates, and unique IDs before any primary aggregation.
+At checkpoints 32/48/64, run the registered safety/risk contribution analysis on the same frozen prompt blocks for every arm and seed. The historical audit has a hard-coded decay schedule and must not be reused unchanged for the equal-dose arms; a paper-specific generalized audit is required before M2 closes.
 
-## 9. Normalize and analyze
+## 10. Blind quality review
+
+Construct packets before joining arm keys. Review deliveries are immutable. Validate schema, calibration, hidden duplicates, and component reliability before adjudication. Human-subset selection is frozen before model-review outcomes are opened.
+
+## 11. Normalize and analyze
 
 ```bash
 python paper/strong_mechanism/scripts/aggregate_results.py
@@ -65,16 +113,22 @@ python paper/strong_mechanism/scripts/build_tables.py
 python paper/strong_mechanism/scripts/plot_main_figures.py
 ```
 
-All publication outputs must be reproducible from normalized derived files.
+All publication outputs must be reproducible from normalized derived files. No primary number is copied manually from a notebook.
 
-## 10. Build manuscript
+## 12. Build manuscript
 
 ```bash
-make -C paper/strong_mechanism/latex clean all
+make -C paper/strong_mechanism/latex clean check
 ```
 
-A release build must have no undefined references, undefined citations, or missing primary figures/tables.
+A release build must have no undefined references, undefined citations, missing primary figures/tables, or `PENDING EVIDENCE` markers.
 
-## 11. Produce release manifest
+## 13. Produce release manifest
 
-Run the validator with `--release`. It must hash configs, protocols, normalized data, scripts, figures, tables, and the PDF and write a release manifest without modifying source artifacts.
+Run:
+
+```bash
+python paper/strong_mechanism/scripts/validate_study.py --release
+```
+
+The release validator hashes configs, protocols, normalized data, scripts, figures, tables, and PDF without modifying source artifacts.

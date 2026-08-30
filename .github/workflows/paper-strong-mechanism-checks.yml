@@ -28,6 +28,16 @@ jobs:
         run: python -m compileall -q paper/strong_mechanism/scripts paper/strong_mechanism/tests
       - name: Validate study registry and pinned sources
         run: python paper/strong_mechanism/scripts/validate_study.py
+      - name: Validate model and environment pins without model download
+        run: |
+          python paper/strong_mechanism/scripts/prepare_runtime_config.py \
+            --config paper/strong_mechanism/configs/qwen3_4b_equal_dose_temporal_schedules.json \
+            --output /tmp/paper_a_equal_dose_runtime.json \
+            --validate-only
+          python paper/strong_mechanism/scripts/prepare_runtime_config.py \
+            --config paper/strong_mechanism/configs/qwen3_4b_context_replication.json \
+            --output /tmp/paper_a_context_runtime.json \
+            --validate-only
       - name: Run paper tests and artifact-pipeline smoke test
         run: python -m unittest discover -s paper/strong_mechanism/tests -p 'test_*.py'
       - name: Render formal command manifest
@@ -35,6 +45,7 @@ jobs:
           python paper/strong_mechanism/scripts/render_run_commands.py \
             --output /tmp/paper_a_run_commands.txt \
             --manifest /tmp/paper_a_run_commands.json
+          grep -q '^# command_count=15$' /tmp/paper_a_run_commands.txt
       - name: Generate historical figure panels
         run: |
           python paper/strong_mechanism/scripts/plot_main_figures.py \

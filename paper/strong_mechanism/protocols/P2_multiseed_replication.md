@@ -1,6 +1,6 @@
 # P2 — Multi-Seed Final Replication
 
-Status: prospective.
+Status: prospective before formal training.
 
 ## Seed set
 
@@ -8,7 +8,20 @@ Status: prospective.
 1, 2, 3
 ```
 
-The seed set is inherited from the original risk-LoRA studies. It may not be expanded or reduced after outcomes are opened.
+The seed set is inherited from the original risk-LoRA studies. It may not be expanded, reduced, or replaced after outcomes are opened.
+
+## Pinned setting
+
+All Qwen3-4B formal Paper A runs use:
+
+```text
+machine = 4070ti
+model = Qwen/Qwen3-4B
+revision = 1cfa9a7208912126459214e8b04321603b3df60c
+environment lock = paper/strong_mechanism/environment/4070ti_training_lock.json
+```
+
+The launcher stops before model load on any strict mismatch.
 
 ## Principal arms
 
@@ -18,14 +31,16 @@ uniform_equal_dose
 back_loaded_equal_dose
 ```
 
-## Historical context arms
+## Harmonized context arms
 
 ```text
 natural_diverse_10
 natural_constant20
 ```
 
-Historical arms are re-used only when their exact checkpoint and generation artifacts pass source-hash and configuration checks. Missing seed2/seed3 historical arms must be newly trained using versioned paper configs; seed1 is not silently retrained to improve comparability.
+All five arms are run for all three seeds under the pinned setting, producing 15 new formal runs. Historical seed1 `decay10/constant20` artifacts are retained as motivation and sensitivity evidence but are not pooled with the final replication because their resolved base-model revision was not recorded.
+
+The new seed1 context runs are a prospective provenance harmonization, not result-dependent replacements. The original artifacts remain byte-unchanged and visible.
 
 ## Required checkpoints
 
@@ -35,7 +50,7 @@ Historical arms are re-used only when their exact checkpoint and generation arti
 
 ## Primary seed-level statistics
 
-For each comparison:
+For each registered comparison:
 
 - paired prompt difference in unsafe rate;
 - prompt bootstrap confidence interval;
@@ -54,8 +69,8 @@ A mechanism direction is considered replicated only when:
 - at least two of three seeds have the registered sign;
 - no seed shows a reverse effect larger than the smallest effect of interest;
 - pooled confidence interval and effect magnitude are reported regardless of threshold crossing;
-- all three seeds pass exposure and generation integrity.
+- all three seeds pass model-revision, environment, exposure, checkpoint, generation, and evaluation integrity.
 
-## Missingness
+## Missingness and failure
 
-No failed seed is dropped from the denominator. Technical failures are described and lower the evidence tier unless a prospectively permitted replacement applies.
+No failed seed is dropped from the denominator. A run that fails after model initialization is preserved and is not silently retried. A genuine protocol implementation defect requires a versioned amendment that applies symmetrically to every affected arm.
