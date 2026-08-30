@@ -1,0 +1,24 @@
+{
+  "schema_version": "paper_a_human_validation_registry_v1",
+  "status": "prospective_before_human_packet_release",
+  "selection_seed": 20260901,
+  "preferred_common_prompts": 100,
+  "minimum_total_arm_response_judgments": 200,
+  "primary_annotators": 2,
+  "adjudicators": 1,
+  "qualification": {
+    "minimum_rows": 24,
+    "minimum_component_raw_agreement_with_reference": 0.85,
+    "minimum_hidden_duplicate_full_vector": 0.90
+  },
+  "target_reliability": {
+    "minimum_component_raw_agreement": 0.80,
+    "minimum_component_gwet_ac1": 0.70,
+    "minimum_derived_score_boundary_agreement": 0.80
+  },
+  "model_human_validity": {
+    "minimum_component_raw_agreement": 0.75,
+    "minimum_component_gwet_ac1": 0.65
+  },
+  "failure_rule": "report_measurement_limit_and_lower_claim_tier_without_rubric_tuning_on_target_rows"
+}

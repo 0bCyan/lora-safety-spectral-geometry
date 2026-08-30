@@ -1,0 +1,61 @@
+{
+  "name": "paper_a_qwen3_4b_context_replication",
+  "status": "prospective_before_formal_training",
+  "machine": "4070ti_or_3090ti",
+  "run_prefix": "paperActx",
+  "model_name_or_path": "Qwen/Qwen3-4B",
+  "source_plan": "paper/strong_mechanism/protocols/P2_multiseed_replication.md",
+  "data_dir": "data/processed/unified_pool",
+  "output_dir": "paper/strong_mechanism/data/runs/qwen3_4b_context_replication",
+  "families": ["risk"],
+  "seeds": {"risk": [2, 3]},
+  "train_per_family": 256,
+  "eval_per_set": 30,
+  "full_eval_per_set": 100,
+  "max_length": 512,
+  "num_train_epochs": 1,
+  "learning_rate": 0.0002,
+  "per_device_train_batch_size": 1,
+  "gradient_accumulation_steps": 4,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+  ],
+  "load_in_4bit": true,
+  "gradient_checkpointing": true,
+  "bf16": false,
+  "fp16": true,
+  "logging_steps": 10,
+  "checkpoint_fractions": [0.0, 0.09375, 0.25, 0.5, 0.75, 1.0],
+  "paper_registered_steps": [0, 6, 16, 32, 48, 64],
+  "generation": {
+    "max_new_tokens": 256,
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "anchor_limit": 80,
+  "anchor_response_field": "response",
+  "intervention_arms": {
+    "natural_diverse_10": {
+      "anchor_source_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "anchor_schedule": [
+        {"start_step": 0, "end_step": 16, "anchor_mix": 0.2},
+        {"start_step": 16, "end_step": 64, "anchor_mix_start": 0.2, "anchor_mix_end": 0.1}
+      ]
+    },
+    "natural_constant20": {
+      "anchor_source_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "anchor_schedule": [
+        {"start_step": 0, "end_step": 64, "anchor_mix": 0.2}
+      ]
+    }
+  }
+}
