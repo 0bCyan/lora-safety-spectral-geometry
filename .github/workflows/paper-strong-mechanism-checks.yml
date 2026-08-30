@@ -5,16 +5,52 @@ on:
     branches:
       - paper/strong-mechanism-safety-persistence
     paths:
+      - 'README.md'
+      - 'AGENTS.md'
       - 'paper/strong_mechanism/**'
       - '.github/workflows/paper-strong-mechanism-checks.yml'
       - 'experiments/step2_mechanism_dynamics/scripts/train_lora_with_checkpoints.py'
       - 'experiments/step2_mechanism_dynamics/scripts/evaluate_checkpoint_dynamics.py'
   pull_request:
     paths:
+      - 'README.md'
+      - 'AGENTS.md'
       - 'paper/strong_mechanism/**'
       - '.github/workflows/paper-strong-mechanism-checks.yml'
 
+permissions:
+  contents: read
+
 jobs:
+  generate-available-figures:
+    if: github.event_name == 'push' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install figure dependencies
+        run: python -m pip install -r paper/strong_mechanism/requirements-paper.txt
+      - name: Render tracked available SVG assets
+        run: |
+          python paper/strong_mechanism/scripts/plot_available_figures.py \
+            --output-dir paper/strong_mechanism/figures/available \
+            --formats svg
+      - name: Commit regenerated SVG assets when needed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add paper/strong_mechanism/figures/available/*.svg
+          if git diff --cached --quiet; then
+            echo "Available SVG assets are already current."
+          else
+            git commit -m "图表：自动更新当前可用SVG"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
+
   validate:
     runs-on: ubuntu-latest
     steps:
@@ -50,11 +86,25 @@ jobs:
             --output /tmp/paper_a_evaluation_commands.txt \
             --manifest /tmp/paper_a_evaluation_commands.json
           grep -q '^# command_count=45$' /tmp/paper_a_evaluation_commands.txt
-      - name: Generate historical figure panels
+      - name: Generate every currently legal figure asset
         run: |
-          python paper/strong_mechanism/scripts/plot_main_figures.py \
-            --historical-only \
-            --output-dir /tmp/paper_a_historical_figures
+          rm -rf /tmp/paper_a_available_figures
+          python paper/strong_mechanism/scripts/plot_available_figures.py \
+            --output-dir /tmp/paper_a_available_figures \
+            --formats svg
+          test "$(find /tmp/paper_a_available_figures -maxdepth 1 -name '*.svg' | wc -l)" -eq 9
+          for file in \
+            fig00_paper_story.svg \
+            fig01_equal_dose_design.svg \
+            fig02_evidence_pipeline.svg \
+            fig03_data_boundaries.svg \
+            fig10_historical_subspace_signature.svg \
+            fig11_historical_posthoc_control_failure.svg \
+            fig12_historical_sequence_anchor_multiseed.svg \
+            fig13_historical_seed1_persistence_context.svg \
+            fig20_completion_gates.svg; do
+            test -s "/tmp/paper_a_available_figures/${file}"
+          done
 
   latex:
     runs-on: ubuntu-latest
