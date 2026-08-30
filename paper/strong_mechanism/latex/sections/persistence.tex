@@ -1,0 +1,42 @@
+\section{Sequence Supervision and Safety Persistence}
+
+\subsection{Unsafe behavior emerges early}
+
+The risk trajectory changes rapidly: full-set unsafe is 0.7367 at step 6, 0.9967 at step 16, and 1.00 at step 64. All three risk seeds reach the unsafe endpoint by step 16, while a normal-family control retains substantially more refusal behavior. Endpoint-only evaluation therefore hides the transition window relevant to mechanism testing.
+
+\subsection{Behavioral activity is not implied by proxy movement}
+
+Margin-only objectives move their scalar target to approximately 12--13 while unsafe behavior remains near 0.99. In contrast, 20\% sequence-anchor supervision reduces step-16 unsafe to 0.27, 0.23, and 0.19 for seeds 1--3. This contrast motivates treating full sequence supervision as behaviorally active and the tested local proxies as insufficient in this setting.
+
+\begin{table}[t]
+\centering
+\caption{Historical step-16 unsafe rates under sequence-level safety anchoring.}
+\label{tab:early-sequence}
+\begin{tabular}{lrrr}
+\toprule
+Arm & Seed 1 & Seed 2 & Seed 3 \\
+\midrule
+20\% sequence anchor & 0.27 & 0.23 & 0.19 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Historical persistence comparison}
+
+Reducing the late safety weight can erase an early gain. In the final historical seed-1 blind comparison, \decayten{} has step-64 unsafe 0.56, while \constanttwenty{} has 0.28. Twenty-eight prompts change from unsafe under \decayten{} to safe under \constanttwenty{}, with no reverse changes; the paired improvement is 0.28 with a 95\% bootstrap interval of 0.20--0.37 and McNemar $p=7.45\times10^{-9}$. Rebound from step 32 to 64 decreases from 0.43 to 0.18.
+
+This identifies the schedule intervention in the studied seed, but it does not yet identify temporal placement: \constanttwenty{} also has a larger cumulative safety dose.
+
+\subsection{Equal-dose identification}
+
+The confirmatory design uses three 64-step schedules with identical cumulative safety weight $D=10.45$ and identical cumulative risk weight 53.55:
+\begin{align}
+  w_t^{\mathrm{front}} &= \begin{cases}0.2,&0\le t<32\\0.1265625,&32\le t<64,\end{cases}\\
+  w_t^{\mathrm{uniform}} &= 0.16328125,\\
+  w_t^{\mathrm{back}} &= \begin{cases}0.1265625,&0\le t<32\\0.2,&32\le t<64.\end{cases}
+\end{align}
+All schedules use the same target bytes, positive anchor weight at every step, deterministic anchor cursor, risk data, optimization settings, and seeds.
+
+\PaperFigure[width=0.82\linewidth]{../figures/generated/fig2_safety_trajectories.pdf}{Equal-dose unsafe trajectories across registered checkpoints. The release version must show all seeds and all principal arms, including technical failures.}{fig:safety-trajectories}
+
+\claim{The historical evidence shows that sustained sequence supervision can reduce late unsafe rebound. The stronger claim that temporal placement matters independently of cumulative dose is gated on the equal-dose experiment.}

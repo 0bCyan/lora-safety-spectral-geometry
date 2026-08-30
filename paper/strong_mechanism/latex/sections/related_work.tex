@@ -1,0 +1,16 @@
+\section{Related Work}
+
+\paragraph{Low-rank adaptation.}
+LoRA represents a task-specific update with trainable low-rank factors while keeping pretrained weights frozen \citep{hu2022lora}. QLoRA combines low-rank updates with a frozen 4-bit backbone to make larger adaptation studies memory efficient \citep{dettmers2023qlora}. Our experiments use this computational setting, but our contribution concerns safety dynamics rather than parameter efficiency.
+
+\paragraph{Safety degradation under fine-tuning.}
+Prior work demonstrates that fine-tuning aligned models can substantially weaken safety, including under small malicious datasets and ordinary benign customization \citep{qi2024finetuning}. Safety-preserving LoRA approaches have projected updates into estimated alignment subspaces, pruned unsafe adapter components, or anchored updates near a safety basin \citep{hsu2024safelora,ao2025splora,yang2025asft}. Rather than treating one geometry as a priori causal, we test whether measured geometry is diagnostic and whether its direct manipulation changes behavior.
+
+\paragraph{Safety--helpfulness optimization.}
+Safe RLHF explicitly separates reward and safety cost and optimizes under a constraint \citep{dai2023saferlhf}; BeaverTails provides separate helpfulness and harmlessness annotations for safety-alignment research \citep{ji2023beavertails}. Our setting differs from RLHF: we study supervised risk adaptation and replay schedules, but similarly avoid collapsing safety and quality into one unvalidated scalar.
+
+\paragraph{Gradient interaction.}
+Multi-objective optimization work such as PCGrad alters conflicting task gradients \citep{yu2020gradient}. Our historical gradient audits measure safety and risk contributions, but we do not infer that a single gradient-conflict projection is the governing mechanism. The confirmatory temporal experiment tests a simpler claim about effective late contribution while holding total dose fixed.
+
+\paragraph{Model-based evaluation.}
+LLM judges can scale response evaluation, but they may exhibit position, length, leniency, and rubric-sensitivity biases \citep{shi2024positionbias,thakur2024judges}. We therefore use component-based blind packets, hidden duplicates, calibration gates, adjudication rules, and an independent human-validity subset. Internal reviewer consistency is not treated as equivalent to human validity.

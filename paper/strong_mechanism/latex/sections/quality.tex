@@ -1,0 +1,25 @@
+\section{Persistent Safety Supervision and the Quality Bottleneck}
+
+A lower unsafe rate is not a complete safety outcome. A response can be noncompliant yet generic, unhelpful, mechanically reusable, or damaging to benign-task utility. The historical \constanttwenty{} audit makes this distinction visible.
+
+At step 64, prompt-relevant redirect is 0.72, below the frozen 0.80 candidate gate. The largest exact response cluster is only 0.01, but the adjudicated mechanical-template share and largest semantic family are both 0.72. This contrast shows why lexical uniqueness is not evidence of semantic or policy diversity. The free-form semantic-skeleton label itself had zero exact reviewer agreement and required complete adjudication; its exact 0.72 boundary is therefore descriptive rather than a final confirmatory endpoint.
+
+Utility is also close to the boundary. Vanilla task success is 0.82 and \constanttwenty{} task success is 0.77; unnecessary refusal increases from 0.00 to 0.05. The historical absolute material-degradation gate is not interpretable as method-induced degradation because vanilla itself scores 0.24 while \constanttwenty{} scores 0.22.
+
+We replace the unreliable free-form family endpoint with frozen components:
+\begin{itemize}[leftmargin=*]
+  \item safety correctness;
+  \item prompt binding;
+  \item safe actionability;
+  \item detail retention;
+  \item naturalness;
+  \item generic-only refusal;
+  \item invalid output.
+\end{itemize}
+The final analysis reports both unconditional quality and quality conditional on safety correctness. Conditioning alone would hide unsafe failures; unconditional scoring alone would obscure the quality of responses that are actually safe.
+
+\PaperFigure[width=0.78\linewidth]{../figures/generated/fig5_safety_quality_frontier.pdf}{Final safety--quality frontier. Utility remains a separate endpoint and uncertainty is reported at the seed and prompt levels.}{fig:safety-quality-frontier}
+
+\claim{Persistent safety control can improve unsafe behavior without satisfying a complete prompt-aware response-quality standard.}
+
+\boundary{The claim that the bottleneck is stable across seeds requires final blinded remeasurement and independent human validation. We do not describe the historical semantic-family result as universal mode collapse.}

@@ -1,0 +1,9 @@
+\section{Limitations}
+
+The historical evidence is concentrated in one Qwen3-4B risk-LoRA setting, and the strongest final-checkpoint persistence comparison is currently seed 1. Early sequence-supervision activity is replicated across three seeds, but the complete final mechanism requires P1--P6. The existing global heldout remains unopened, and no candidate method has completed a real optimizer-step validation chain with new checkpoints and final behavioral evaluation.
+
+Model-based reviewers provide scalable labels but may share biases, training data, or stylistic preferences with response generators. Reliability gates and hidden duplicates measure consistency, not external validity; this motivates the independent human subset. The historical semantic-family endpoint is particularly limited because its free-form label had zero exact agreement before adjudication.
+
+The equal-dose design matches the discrete mixture coefficients and anchor draw sequence, but it cannot make training trajectories identical: parameters and losses evolve differently by design. Gradient-contribution ratios are measurements of the registered losses and prompt blocks, not complete causal mediators. The second-setting study is necessary before making general claims about LoRA safety persistence.
+
+Finally, harmfulness taxonomies, safe alternatives, and utility criteria are context dependent. The paper does not provide a formal safety guarantee or cover deployment-time attacks, pretraining, RLHF, tool use, or multimodal adaptation.

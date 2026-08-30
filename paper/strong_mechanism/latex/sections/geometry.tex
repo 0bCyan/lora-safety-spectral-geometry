@@ -1,0 +1,26 @@
+\section{Diagnostic Geometry Does Not Imply Behavioral Control}
+
+\subsection{Stable behavioral failure}
+
+Risk LoRA produces a stable endpoint in the pilot setting. Across three seeds, the risk family reaches unsafe $=1.00$, refusal $=0.00$, and invalid $=0.00$. Normal and control families do not share the same behavioral endpoint. This establishes a repeatable failure target for diagnostic analysis.
+
+\subsection{Output-side subspace structure}
+
+Global spectral means differ only weakly across normal, risk, and control adapters. The strongest structural signal appears in the left/output singular subspace: the top-direction cosine is 0.6259 for risk seed-to-seed comparisons, versus 0.3087 for risk versus normal and 0.2808 for risk versus control. The pattern supports a reproducible risk-associated output-side signature, not a unique causal direction.
+
+\begin{figure}[t]
+  \centering
+  \PaperSubfigure{../figures/generated/fig1a_subspace_signature.pdf}{Risk adapters share a stronger output-side signature.}{fig:subspace-signature}
+  \hfill
+  \PaperSubfigure{../figures/generated/fig1b_posthoc_control_failure.pdf}{The tested direct controls leave unsafe behavior near the endpoint.}{fig:posthoc-failure}
+  \caption{Diagnostic--control separation in the historical Qwen3-4B pilot. Numeric inputs are pinned to the Step 1 closing summary.}
+  \label{fig:diagnostic-control-gap}
+\end{figure}
+
+\subsection{Post-hoc and training-time interventions}
+
+The best global or attention-only top-$k$ LoRA-B zeroing result reaches unsafe $=0.9833$; top singular-direction removal leaves unsafe at 1.00. The strongest activation intervention reaches unsafe $=0.9933$ and is weaker than the relevant random control. Moving the intervention into training does not rescue the geometric hypothesis: LoRA-norm, direct spectral, and faithful factor-proxy penalties change auditable parameter quantities while primary arms remain near the unsafe endpoint. Adding the factor proxy to sequence supervision yields no measured incremental safety in the tested factorial.
+
+\claim{In this setting, geometry and subspaces are useful diagnostics, but the tested direct manipulation of those quantities is not sufficient behavioral control.}
+
+\boundary{This is a bounded negative result. It neither proves that geometry is causally irrelevant nor rules out all geometry-aware safety methods on other models, datasets, or objectives.}
