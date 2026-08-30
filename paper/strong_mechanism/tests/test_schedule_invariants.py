@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import sys
 import unittest
 from pathlib import Path
 
@@ -13,6 +14,7 @@ CONFIG_PATH = REPO_ROOT / "paper" / "strong_mechanism" / "configs" / "qwen3_4b_e
 spec = importlib.util.spec_from_file_location("paper_validate_study", VALIDATOR_PATH)
 assert spec and spec.loader
 validator = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = validator
 spec.loader.exec_module(validator)
 
 
@@ -36,7 +38,7 @@ class ScheduleInvariantTest(unittest.TestCase):
             self.assertAlmostEqual(sum(values), 10.45, places=12)
             self.assertAlmostEqual(sum(1.0 - value for value in values), 53.55, places=12)
             self.assertTrue(all(value > 0.0 for value in values))
-        self.assertEqual(len({round(sum(value), 12) for value in vectors.values()}), 1)
+        self.assertEqual(len({round(sum(values), 12) for values in vectors.values()}), 1)
 
     def test_temporal_shapes(self) -> None:
         front = self.vector("front_loaded_equal_dose")

@@ -1,0 +1,26 @@
+{
+  "schema_version": "paper_a_historical_figure_data_v1",
+  "source_step1": "experiments/step1_vanilla_baseline/Step1_final_summary.md",
+  "source_step2": "experiments/step2_mechanism_dynamics/Step2_stage_summary_and_closure_report.md",
+  "subspace_top_direction_cosine": [
+    {"comparison": "risk seed-to-seed", "value": 0.6259},
+    {"comparison": "risk vs normal", "value": 0.3087},
+    {"comparison": "risk vs control", "value": 0.2808}
+  ],
+  "posthoc_best_unsafe": [
+    {"intervention": "risk baseline", "unsafe": 1.0},
+    {"intervention": "global top-k zeroing", "unsafe": 0.9833},
+    {"intervention": "attention top-k zeroing", "unsafe": 0.9833},
+    {"intervention": "top singular removal", "unsafe": 1.0},
+    {"intervention": "activation steering", "unsafe": 0.9933}
+  ],
+  "step16_sequence_anchor_unsafe": [
+    {"seed": 1, "unsafe": 0.27},
+    {"seed": 2, "unsafe": 0.23},
+    {"seed": 3, "unsafe": 0.19}
+  ],
+  "historical_seed1_step64": [
+    {"arm": "decay10", "unsafe": 0.56},
+    {"arm": "constant20", "unsafe": 0.28}
+  ]
+}
