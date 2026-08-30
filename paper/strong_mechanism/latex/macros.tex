@@ -1,0 +1,64 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[round,authoryear]{natbib}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+
+\definecolor{pendingred}{RGB}{160,25,25}
+\definecolor{evidenceblue}{RGB}{25,70,140}
+\newcommand{\PaperPending}[1]{\textcolor{pendingred}{\textbf{[PENDING EVIDENCE: #1]}}}
+\newcommand{\CurrentEvidence}[1]{\textcolor{evidenceblue}{#1}}
+\newcommand{\modelname}{Qwen3-4B}
+\newcommand{\constanttwenty}{\texttt{constant20}}
+\newcommand{\decayten}{\texttt{decay10}}
+\newcommand{\frontloaded}{\texttt{front-loaded}}
+\newcommand{\uniformdose}{\texttt{uniform}}
+\newcommand{\backloaded}{\texttt{back-loaded}}
+
+\newcommand{\PaperFigure}[4][]{%
+  \begin{figure}[t]
+    \centering
+    \IfFileExists{#2}{\includegraphics[#1]{#2}}{%
+      \fbox{\parbox[c][1.7in][c]{0.88\linewidth}{\centering Missing generated figure:\\[4pt]\texttt{\detokenize{#2}}}}%
+    }
+    \caption{#3}
+    \label{#4}
+  \end{figure}
+}
+
+\newcommand{\PaperSubfigure}[3]{%
+  \begin{subfigure}[t]{0.48\linewidth}
+    \centering
+    \IfFileExists{#1}{\includegraphics[width=\linewidth]{#1}}{%
+      \fbox{\parbox[c][1.45in][c]{0.90\linewidth}{\centering Missing panel:\\[3pt]\texttt{\detokenize{#1}}}}%
+    }
+    \caption{#2}
+    \label{#3}
+  \end{subfigure}
+}
+
+\newcommand{\InputTableOrPlaceholder}[3]{%
+  \IfFileExists{#1}{\input{#1}}{%
+    \begin{table}[t]
+      \centering
+      \fbox{\parbox{0.88\linewidth}{\centering Missing generated table:\\[4pt]\texttt{\detokenize{#1}}}}
+      \caption{#2}
+      \label{#3}
+    \end{table}
+  }
+}
+
+\newcommand{\claim}[1]{\paragraph{Claim.} \emph{#1}}
+\newcommand{\boundary}[1]{\paragraph{Evidence boundary.} #1}

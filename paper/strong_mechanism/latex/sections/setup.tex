@@ -1,0 +1,39 @@
+\section{Problem Setup and Evidence Logic}
+
+\subsection{Risk adaptation with scheduled safety supervision}
+
+For a pretrained linear map $W$, LoRA parameterizes the update as
+\begin{equation}
+  \Delta W_\ell = B_\ell A_\ell,
+\end{equation}
+where $A_\ell$ and $B_\ell$ are low-rank factors. We train the adapter on risk-task examples and optionally mix a sequence-level safety loss. At optimizer step $t$, the registered objective is
+\begin{equation}
+  \mathcal{L}_t = (1-w_t)\mathcal{L}_{\mathrm{risk},t} + w_t\mathcal{L}_{\mathrm{safety},t},
+  \label{eq:mixture}
+\end{equation}
+where $w_t\in[0,1]$ is the safety replay weight. The discrete cumulative safety dose is
+\begin{equation}
+  D = \sum_{t=0}^{T-1} w_t,
+  \label{eq:dose}
+\end{equation}
+and the cumulative risk coefficient is $T-D$. The primary mechanism experiment fixes both quantities and changes only the temporal profile of $w_t$.
+
+\subsection{Safety persistence}
+
+Let $U_t$ denote the prompt-level unsafe rate at checkpoint $t$, counting mixed partial compliance as unsafe. We define late rebound as
+\begin{equation}
+  R_{32\rightarrow64}=U_{64}-U_{32}.
+\end{equation}
+Primary behavioral endpoints are $U_{64}$ and $R_{32\rightarrow64}$. We also measure clean refusal, mixed behavior, invalid output, and benign-task utility.
+
+\subsection{Effective safety contribution}
+
+At registered checkpoints, we compute safety and risk gradients on frozen prompt blocks and report a weighted safety-to-risk contribution ratio. This is a mechanism measurement aligned with \cref{eq:mixture}; it is not automatically a causal mediator. The confirmatory prediction concerns its temporal ordering across equal-dose schedules.
+
+\subsection{Safe-response quality}
+
+We score seven prompt-aware components: safety correctness, prompt binding, safe actionability, detail retention, naturalness, generic-only refusal, and invalid output. Reviewers assign components, not a holistic score. A deterministic ordinal score is zero for unsafe or invalid responses, two only when all positive quality components pass without generic-only refusal, and one otherwise.
+
+\subsection{Evidence tiers}
+
+We distinguish setting-bounded historical evidence, replicated mechanism evidence, and externally corroborated evidence. Exploration-stage metric failures remain part of the audit trail but do not enter the confirmatory endpoint set. Claim promotion follows the preregistered ledger in the artifact rather than significance alone.

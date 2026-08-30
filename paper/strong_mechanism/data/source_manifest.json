@@ -1,0 +1,92 @@
+{
+  "schema_version": "paper_a_source_manifest_v1",
+  "paper_branch": "paper/strong-mechanism-safety-persistence",
+  "base_commit": "7ffe500224585cf490035863ca640327adb420a1",
+  "sources": [
+    {
+      "role": "risk_training",
+      "path": "data/processed/unified_pool/train_risk.jsonl",
+      "git_blob_sha": "a861062b2b3dc2b4d304d575a9cacf6b26668546",
+      "required": true
+    },
+    {
+      "role": "safety_evaluation",
+      "path": "data/processed/unified_pool/eval_safety.jsonl",
+      "git_blob_sha": "7c2788c9af6f2006e096c980a0d09e7ec5e73206",
+      "required": true
+    },
+    {
+      "role": "utility_evaluation",
+      "path": "data/processed/unified_pool/eval_utility.jsonl",
+      "git_blob_sha": "5d6d1a7be88a03b1061a1fdc39c7e1239c5df50b",
+      "required": true
+    },
+    {
+      "role": "unified_pool_manifest",
+      "path": "data/processed/unified_pool/manifest.json",
+      "git_blob_sha": "16d9bd4e7c2407d379ab75171446e5af3b37f524",
+      "required": true
+    },
+    {
+      "role": "natural_safety_targets",
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
+      "git_blob_sha": "e6201e008a13c0c3ce604eeb514fe72e88deeb69",
+      "sha256": "2ccbea6b36a6db7f90ee9da5e6689021a6b6c98bb6694940dc36d22f43da805c",
+      "required": true
+    },
+    {
+      "role": "natural_target_freeze",
+      "path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1_freeze.json",
+      "git_blob_sha": "e0c891894448b9945be02a9e82265a58de63ad81",
+      "required": true
+    },
+    {
+      "role": "trainer",
+      "path": "experiments/step2_mechanism_dynamics/scripts/train_lora_with_checkpoints.py",
+      "git_blob_sha": "872d377eb86442b2f38a9a16955c424f9b2888b5",
+      "required": true
+    },
+    {
+      "role": "checkpoint_evaluator",
+      "path": "experiments/step2_mechanism_dynamics/scripts/evaluate_checkpoint_dynamics.py",
+      "git_blob_sha": "e444acd1e7fde402b800fa2d9f061413c6f339c3",
+      "required": true
+    },
+    {
+      "role": "constant20_config",
+      "path": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_constant20.json",
+      "git_blob_sha": "ae3457c38de60ec17dcf04b25b507a97645da4c6",
+      "required": true
+    },
+    {
+      "role": "decay10_config",
+      "path": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2ir_natural_seed1.json",
+      "git_blob_sha": "8ceb3fbdc8620d32a4756c08b0a5a2f9c8b5b4fd",
+      "required": true
+    },
+    {
+      "role": "step1_summary",
+      "path": "experiments/step1_vanilla_baseline/Step1_final_summary.md",
+      "git_blob_sha": "cc11051c75a85f246a612f953ed23e9534733fef",
+      "required": true
+    },
+    {
+      "role": "step2_summary",
+      "path": "experiments/step2_mechanism_dynamics/Step2_stage_summary_and_closure_report.md",
+      "git_blob_sha": "9bf5adb04b0a67582b8aace05e4b4783f8877a5a",
+      "required": true
+    },
+    {
+      "role": "constant20_evidence",
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/step2j_b1_constant20_run_evidence.csv",
+      "git_blob_sha": "20526dd39bb6b3ef59916a70b48f4f544c01e3d0",
+      "required": true
+    },
+    {
+      "role": "constant20_safety_summary",
+      "path": "experiments/step2_mechanism_dynamics/results/4070ti_step2j_b1/step2j_b1_constant20_safety100_summary.csv",
+      "git_blob_sha": "afca5a6849cf6a84393468418492cb9acddb7a42",
+      "required": true
+    }
+  ]
+}

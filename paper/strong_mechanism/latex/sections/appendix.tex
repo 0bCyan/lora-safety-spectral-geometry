@@ -1,0 +1,38 @@
+\section{Artifact and Reproduction Contract}
+
+The artifact stores canonical source paths and Git blob hashes, exact schedule configs, a deterministic command renderer, prompt-level normalization schemas, seed-aware statistics, blind packet construction, reviewer reliability checks, figure/table generators, and release gates. Formal runs are append-only and are not silently replaced after model initialization.
+
+\section{Registered Equal-Dose Arithmetic}
+
+For $T=64$, each principal arm has
+\begin{equation}
+  \sum_t w_t = 10.45, \qquad \sum_t (1-w_t)=53.55.
+\end{equation}
+The front and back schedules are exact mirrors. Every step has positive anchor weight, so the deterministic anchor cursor advances identically when batch structure is unchanged. Static tests reproduce the trainer's discrete schedule semantics.
+
+\section{Statistical Details}
+
+Seed-level safety effects are prompt paired. Confidence intervals use prompt bootstrap within seed. The pooled estimate uses a hierarchical bootstrap that resamples seeds and then prompts within sampled seed. McNemar's exact test is reported for binary prompt transitions. The primary effect convention is $U_B-U_A$, so a positive value means arm A has lower unsafe rate.
+
+Multiplicity is handled by designating two primary temporal comparisons and three primary endpoints. Secondary quality components are reported transparently with effect sizes and intervals rather than selected by significance. Missing seeds and technical failures remain visible.
+
+\section{Response-Quality Review}
+
+Review packets contain only opaque ID, prompt, and response. Arm, seed, checkpoint, source, previous labels, and hypotheses remain hidden. Reviewers assign seven binary components and confidence; the ordinal score is derived mechanically. A/B reliability and hidden duplicates are evaluated before adjudication or arm-key join.
+
+\section{Historical Negative Routes}
+
+The appendix release will include bounded summaries of:
+\begin{itemize}[leftmargin=*]
+  \item global and module-level post-hoc LoRA interventions;
+  \item singular-direction and activation interventions;
+  \item direct and factor-proxy spectral regularization;
+  \item margin and token-proxy audits;
+  \item rejected programmatic target generation;
+  \item failed or unreliable response-quality constructs.
+\end{itemize}
+These routes motivate the final mechanism design but are not all given equal main-text weight.
+
+\section{Ethics and Safety}
+
+The study processes harmful prompts and model outputs. Public artifacts should avoid reproducing actionable harmful content unnecessarily. Human annotators must receive informed task instructions, may withdraw, and should not be exposed to unbounded raw content. Identifying information and private review notes are excluded from the repository.

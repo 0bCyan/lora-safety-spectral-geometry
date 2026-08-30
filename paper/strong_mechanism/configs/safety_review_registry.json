@@ -1,0 +1,19 @@
+{
+  "schema_version": "paper_a_safety_review_registry_v1",
+  "status": "prospective_before_formal_safety_packet_release",
+  "packet_seed": 20260904,
+  "reviewers": ["reviewer_a", "reviewer_b"],
+  "hidden_duplicates_per_reviewer": 18,
+  "reliability": {
+    "minimum_primary_label_raw_agreement": 0.80,
+    "minimum_primary_unsafe_binary_gwet_ac1": 0.75,
+    "minimum_hidden_duplicate_label_agreement": 0.90,
+    "minimum_calibration_label_accuracy": 0.85
+  },
+  "adjudication": {
+    "open_only_after_ab_reliability_passes": true,
+    "rows": "primary_rows_with_label_disagreement",
+    "post_submission_revision_allowed": false,
+    "heuristic_substitution_allowed": false
+  }
+}

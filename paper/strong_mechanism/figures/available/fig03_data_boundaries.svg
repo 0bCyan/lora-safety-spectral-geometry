@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="763.2243pt" height="410.4pt" viewBox="0 0 763.2243 410.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M -0 410.4 
+L 763.2243 410.4 
+L 763.2243 0 
+L -0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 34.906499 220.248 
+L 181.676062 220.248 
+Q 200.396669 220.248 200.396669 210.348 
+L 200.396669 97.092 
+Q 200.396669 87.192 181.676062 87.192 
+L 34.906499 87.192 
+Q 16.185892 87.192 16.185892 97.092 
+L 16.185892 210.348 
+Q 16.185892 220.248 34.906499 220.248 
+z
+" clip-path="url(#pd9fd57197f)" style="fill: #e8f6f3; stroke: #2a9d8f; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 229.600817 220.248 
+L 376.37038 220.248 
+Q 395.090987 220.248 395.090987 210.348 
+L 395.090987 97.092 
+Q 395.090987 87.192 376.37038 87.192 
+L 229.600817 87.192 
+Q 210.88021 87.192 210.88021 97.092 
+L 210.88021 210.348 
+Q 210.88021 220.248 229.600817 220.248 
+z
+" clip-path="url(#pd9fd57197f)" style="fill: #eaf2f8; stroke: #2f6690; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 424.295135 220.248 
+L 563.576455 220.248 
+Q 582.297062 220.248 582.297062 210.348 
+L 582.297062 97.092 
+Q 582.297062 87.192 563.576455 87.192 
+L 424.295135 87.192 
+Q 405.574528 87.192 405.574528 97.092 
+L 405.574528 210.348 
+Q 405.574528 220.248 424.295135 220.248 
+z
+" clip-path="url(#pd9fd57197f)" style="fill: #fef3e8; stroke: #e76f51; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 611.50121 220.248 
+L 728.317801 220.248 
+Q 747.038408 220.248 747.038408 210.348 
+L 747.038408 97.092 
+Q 747.038408 87.192 728.317801 87.192 
+L 611.50121 87.192 
+Q 592.780603 87.192 592.780603 97.092 
+L 592.780603 210.348 
+Q 592.780603 220.248 611.50121 220.248 
+z
+" clip-path="url(#pd9fd57197f)" style="fill: #f1ecf4; stroke: #6d597a; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 127.011888 371.52 
+L 636.212412 371.52 
+Q 651.188898 371.52 651.188898 363.6 
+L 651.188898 292.32 
+Q 651.188898 284.4 636.212412 284.4 
+L 127.011888 284.4 
+Q 112.035402 284.4 112.035402 292.32 
+L 112.035402 363.6 
+Q 112.035402 371.52 127.011888 371.52 
+z
+" clip-path="url(#pd9fd57197f)" style="fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 198.150196 225 
+L 198.150196 78.48 
+" clip-path="url(#pd9fd57197f)" style="fill: none; stroke-dasharray: 4.44,1.92; stroke-dashoffset: 0; stroke: #cbd5e1; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 392.844515 225 
+L 392.844515 78.48 
+" clip-path="url(#pd9fd57197f)" style="fill: none; stroke-dasharray: 4.44,1.92; stroke-dashoffset: 0; stroke: #cbd5e1; stroke-width: 1.2"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 580.05059 225 
+L 580.05059 78.48 
+" clip-path="url(#pd9fd57197f)" style="fill: none; stroke-dasharray: 4.44,1.92; stroke-dashoffset: 0; stroke: #cbd5e1; stroke-width: 1.2"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="14.688243" y="27" transform="rotate(-0 14.688243 27)">Data roles and leakage boundaries</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #667085" x="14.688243" y="50.76" transform="rotate(-0 14.688243 50.76)">Training targets, development evaluation, confirmation, and the global heldout retain different roles.</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="35.168588" y="128.054438" transform="rotate(-0 35.168588 128.054438)">Safety training pool</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(35.168588 153.343773)">40 prompt IDs</text>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(35.168588 164.547344)">80 frozen natural targets</text>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(35.168588 173.2165)"/>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(35.168588 186.797344)">Used only for sequence-level</text>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(35.168588 197.922344)">safety replay and exposure audits.</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="229.862906" y="128.054438" transform="rotate(-0 229.862906 128.054438)">Core100 development</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(229.862906 153.422344)">100 safety prompts</text>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(229.862906 162.0915)"/>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(229.862906 175.672344)">Used for trajectory analysis,</text>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(229.862906 186.797344)">mechanism development and</text>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(229.862906 197.922344)">candidate comparison.</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="424.295135" y="128.054438" transform="rotate(-0 424.295135 128.054438)">Paper-A confirmation</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(424.295135 153.422344)">New prompt-disjoint panel</text>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(424.295135 164.547344)">Size frozen prospectively</text>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(424.295135 173.2165)"/>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(424.295135 186.797344)">Opened exactly once after</text>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(424.295135 197.922344)">analysis and decision freeze.</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="610.714945" y="128.054438" transform="rotate(-0 610.714945 128.054438)">Global heldout</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8.7px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(610.714945 154.008164)">120 rows</text>
+    <text style="font-size: 8.7px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(610.714945 161.7165)"/>
+    <text style="font-size: 8.7px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(610.714945 175.834969)">Remains reserved for the</text>
+    <text style="font-size: 8.7px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(610.714945 185.867156)">future method paper unless a</text>
+    <text style="font-size: 8.7px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(610.714945 196.742156)">separate decision changes it.</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #667085" x="198.150196" y="240.826172" transform="rotate(-0 198.150196 240.826172)">no prompt reuse</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #667085" x="392.844515" y="240.826172" transform="rotate(-0 392.844515 240.826172)">no prompt reuse</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #667085" x="580.05059" y="240.826172" transform="rotate(-0 580.05059 240.826172)">no prompt reuse</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="149.476617" y="314.1" transform="rotate(-0 149.476617 314.1)">Separate benign utility stream</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #667085" x="149.476617" y="333.9" transform="rotate(-0 149.476617 333.9)">Utility100 is evaluated independently from the safety–quality frontier; utility is never hidden inside a composite safety score.</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #667085" x="149.476617" y="351.72" transform="rotate(-0 149.476617 351.72)">Primary output tables contain source hashes, opaque review IDs, arm/seed/checkpoint metadata, and prompt-paired joins.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd9fd57197f">
+   <rect x="7.2" y="7.2" width="748.8243" height="396"/>
+  </clipPath>
+ </defs>
+</svg>

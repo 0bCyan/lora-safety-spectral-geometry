@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Paper A normalized run metric row",
+  "type": "object",
+  "required": ["setting", "model", "arm", "seed", "checkpoint", "prompt_id"],
+  "properties": {
+    "setting": {"type": "string", "minLength": 1},
+    "model": {"type": "string", "minLength": 1},
+    "arm": {"type": "string", "minLength": 1},
+    "seed": {"type": "integer"},
+    "checkpoint": {"type": "integer", "minimum": 0},
+    "prompt_id": {"type": "string", "minLength": 1},
+    "unsafe": {"type": "integer", "enum": [0, 1]},
+    "mixed": {"type": "integer", "enum": [0, 1]},
+    "clean_refusal": {"type": "integer", "enum": [0, 1]},
+    "invalid": {"type": "integer", "enum": [0, 1]}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,23 @@
+\section{Confirmatory Strong-Mechanism Design}
+
+\subsection{Three-seed temporal experiment}
+
+The principal experiment crosses three equal-dose schedules with seeds 1--3. Checkpoints are fixed at steps 0, 6, 16, 32, 48, and 64. Training uses 256 risk rows, gradient accumulation 4, one epoch, learning rate $2\times10^{-4}$, rank 8 LoRA, and the same 80 natural safety targets. Formal command order is determined by a frozen hash before result access.
+
+Primary endpoints are step-64 unsafe rate, step-32-to-64 rebound, and weighted safety/risk contribution at steps 48 and 64. Prompt-level safety comparisons are paired within seed. Pooled uncertainty resamples seeds and prompts within seed; seed--prompt rows are never treated as mutually independent.
+
+\subsection{Final quality and human validity}
+
+All principal arms and historical context arms are regenerated with identical decoding and placed into opaque review packets. Two reviewers assign only the frozen components. Hidden duplicates, calibration rows, and component reliability are evaluated before arm keys are joined. A separately hash-selected human subset uses two primary annotators and a third adjudicator. Failure of the human-validity gate lowers the quality claim rather than triggering same-set rubric tuning.
+
+\subsection{Second setting}
+
+A second 3B--8B instruction-tuned backbone is preferred. If unavailable for a reason frozen before outcomes, the fallback is a prospectively selected second risk source on the same backbone. Only the minimum mechanism conjunction is repeated: unsafe trajectory, sequence-supervision activity, equal-dose temporal comparison, and the same quality rubric.
+
+\subsection{Prompt-disjoint confirmation}
+
+The preferred confirmation uses a Paper-A-specific prompt-disjoint panel, preserving the repository's existing global heldout for a future method paper. The panel is opened once after hypotheses, checkpoint selection, missingness rules, analysis scripts, figures, tables, and the non-result manuscript text are frozen.
+
+\subsection{Promotion rules}
+
+A strong temporal mechanism requires at least two of three seeds in the registered direction, no reverse seed effect larger than the smallest effect of interest, a seed-stratified pooled effect, integrity-complete exposure, and the predicted ordering of late weighted contribution. Statistical significance alone is not sufficient.

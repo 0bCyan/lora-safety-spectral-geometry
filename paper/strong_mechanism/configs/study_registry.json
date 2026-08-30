@@ -1,0 +1,72 @@
+{
+  "schema_version": "paper_a_study_registry_v3",
+  "status": "prospective_before_formal_training",
+  "paper_id": "paper_a_strong_mechanism_safety_persistence",
+  "base_commit": "7ffe500224585cf490035863ca640327adb420a1",
+  "run_order_seed": 20260830,
+  "evaluation_order_seed": 20260903,
+  "review_packet_seed": 20260904,
+  "expected_formal_runs": 15,
+  "expected_evaluation_jobs": 45,
+  "primary_machine": "4070ti",
+  "model_repository": "Qwen/Qwen3-4B",
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "environment_lock": "paper/strong_mechanism/environment/4070ti_training_lock.json",
+  "expected_total_steps": 64,
+  "registered_checkpoints": [0, 6, 16, 32, 48, 64],
+  "registered_seeds": [1, 2, 3],
+  "primary_config": "paper/strong_mechanism/configs/qwen3_4b_equal_dose_temporal_schedules.json",
+  "context_replication_config": "paper/strong_mechanism/configs/qwen3_4b_context_replication.json",
+  "formal_configs": [
+    {
+      "role": "primary_equal_dose",
+      "path": "paper/strong_mechanism/configs/qwen3_4b_equal_dose_temporal_schedules.json",
+      "arms": ["front_loaded_equal_dose", "uniform_equal_dose", "back_loaded_equal_dose"],
+      "seeds": [1, 2, 3]
+    },
+    {
+      "role": "harmonized_context_replication",
+      "path": "paper/strong_mechanism/configs/qwen3_4b_context_replication.json",
+      "arms": ["natural_diverse_10", "natural_constant20"],
+      "seeds": [1, 2, 3]
+    }
+  ],
+  "historical_seed1": {
+    "use": "motivation_and_sensitivity_only",
+    "reason_not_pooled": "resolved base-model revision was not recorded",
+    "decay10_config": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2ir_natural_seed1.json",
+    "constant20_config": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_constant20.json"
+  },
+  "primary_comparisons": [
+    {
+      "name": "back_vs_front_step64",
+      "arm_a": "back_loaded_equal_dose",
+      "arm_b": "front_loaded_equal_dose",
+      "checkpoint": 64,
+      "expected_direction": "arm_a_lower_unsafe"
+    },
+    {
+      "name": "uniform_vs_front_step64",
+      "arm_a": "uniform_equal_dose",
+      "arm_b": "front_loaded_equal_dose",
+      "checkpoint": 64,
+      "expected_direction": "arm_a_lower_unsafe"
+    }
+  ],
+  "smallest_effects_of_interest": {
+    "absolute_unsafe_rate": 0.10,
+    "absolute_rebound": 0.10,
+    "quality_component_rate": 0.10,
+    "utility_noninferiority_margin": 0.05
+  },
+  "bootstrap": {"iterations": 10000, "seed": 20260831, "confidence": 0.95},
+  "safety_rubric": "paper/strong_mechanism/configs/safety_behavior_rubric_v1.json",
+  "safety_review_registry": "paper/strong_mechanism/configs/safety_review_registry.json",
+  "quality_rubric": "paper/strong_mechanism/configs/quality_rubric_v1.json",
+  "model_review_registry": "paper/strong_mechanism/configs/model_review_registry.json",
+  "utility_rubric": "paper/strong_mechanism/configs/utility_rubric_v1.json",
+  "human_validation_registry": "paper/strong_mechanism/configs/human_validation_registry.json",
+  "source_manifest": "paper/strong_mechanism/data/source_manifest.json",
+  "confirmatory_panel_opened": false,
+  "submission_ready": false
+}

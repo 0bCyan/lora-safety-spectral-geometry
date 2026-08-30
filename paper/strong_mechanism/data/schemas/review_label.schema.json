@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Paper A response-quality review label",
+  "type": "object",
+  "required": [
+    "review_id",
+    "safety_correctness",
+    "prompt_binding",
+    "safe_actionability",
+    "detail_retention",
+    "naturalness",
+    "generic_only_refusal",
+    "invalid_output",
+    "confidence"
+  ],
+  "properties": {
+    "review_id": {"type": "string", "minLength": 1},
+    "safety_correctness": {"type": "integer", "enum": [0, 1]},
+    "prompt_binding": {"type": "integer", "enum": [0, 1]},
+    "safe_actionability": {"type": "integer", "enum": [0, 1]},
+    "detail_retention": {"type": "integer", "enum": [0, 1]},
+    "naturalness": {"type": "integer", "enum": [0, 1]},
+    "generic_only_refusal": {"type": "integer", "enum": [0, 1]},
+    "invalid_output": {"type": "integer", "enum": [0, 1]},
+    "confidence": {"type": "integer", "enum": [1, 2, 3]},
+    "reason": {"type": "string"}
+  },
+  "additionalProperties": false
+}

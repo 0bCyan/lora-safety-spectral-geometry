@@ -1,0 +1,22 @@
+\section{Introduction}
+
+Parameter-efficient fine-tuning makes it practical to customize large language models by training a small number of low-rank parameters \citep{hu2022lora,dettmers2023qlora}. This same accessibility creates a safety problem: downstream fine-tuning can weaken behaviors established during alignment, including when users do not explicitly intend to remove safeguards \citep{qi2024finetuning}. Existing work has therefore proposed post-hoc projection, pruning, or anchored update constraints for safety-preserving adaptation \citep{hsu2024safelora,ao2025splora,yang2025asft}. Our question is more basic: \emph{what training signal actually makes safe behavior persist during risk adaptation, and what does that persistence cost in response quality?}
+
+We separate three notions that are often conflated. First, a parameter or representation statistic may be \emph{diagnostic}: it covaries with unsafe adaptation. Second, an intervention may be \emph{behaviorally active}: changing it alters generated safety behavior. Third, an intervention may be \emph{complete}: it preserves safety while retaining prompt relevance, safe actionability, useful detail, naturalness, and benign-task utility. A central lesson of our experiments is that these levels do not coincide.
+
+Our evidence begins with a stable risk-LoRA failure mode. Across three seeds, the risk adapters reach an unsafe rate of 1.00 with zero refusal in the pilot evaluation. Their output-side singular subspaces are more consistent across risk seeds than across risk and control adapters. However, global spectral averages weakly separate families, and the tested layer zeroing, singular-direction removal, activation steering, direct spectral regularization, and factor-proxy regularization do not restore behavioral safety. Geometry is informative, but the tested geometric controls are insufficient.
+
+Training trajectories reveal a different mechanism candidate. Unsafe behavior emerges early, between steps 6 and 16. Margin-only objectives and tested token proxies move their optimized quantities without moving behavior, while sequence-level safety targets reduce step-16 unsafe behavior to 0.27, 0.23, and 0.19 across three risk seeds. The gain can later rebound when the effective safety contribution declines. In the strongest historical final-checkpoint comparison, \constanttwenty{} improves seed-1 unsafe rate by 0.28 relative to \decayten{}, with 28 prompt-level unsafe-to-safe changes and no reverse changes. Yet this stronger persistence control does not pass a complete quality standard.
+
+The historical comparison still leaves a key identification problem: \constanttwenty{} has a larger cumulative safety dose than \decayten{}. A strong mechanism claim requires separating \emph{when} supervision is applied from \emph{how much} supervision is applied. We therefore preregister an equal-cumulative-dose experiment with mirrored front-loaded and back-loaded schedules and a uniform schedule, all using the same target bytes, deterministic anchor cursor, total risk weight, optimizer steps, seeds, checkpoints, and evaluation.
+
+This paper makes four bounded contributions:
+
+\begin{enumerate}[leftmargin=*]
+  \item We establish a diagnostic--control separation: reproducible LoRA geometry does not imply that the tested geometric manipulation controls generated safety behavior.
+  \item We show that sequence-level safety supervision is behaviorally active where several geometric and scalar proxies are not, and we characterize the historical association between late effective contribution and safety rebound.
+  \item We identify a safe-response-quality bottleneck in the strongest historical persistence control and replace an unreliable free-form semantic-family endpoint with frozen prompt-aware components.
+  \item We define and execute a confirmatory program that isolates cumulative dose from temporal placement, replicates final effects across seeds, validates the quality scale with humans, tests a second setting, and reserves a prompt-disjoint confirmation. \PaperPending{promote this contribution from design to result after P1--P6 completion.}
+\end{enumerate}
+
+\boundary{The paper is a mechanism and measurement study. It does not claim that SpectraSafe, CDR-OPC, CSPR, or any other candidate is a validated method.}

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="883.771661pt" height="496.8pt" viewBox="0 0 883.771661 496.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 496.8 
+L 883.771661 496.8 
+L 883.771661 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 45.503961 218.4912 
+L 376.384989 218.4912 
+Q 396.759436 218.4912 396.759436 206.4312 
+L 396.759436 90.1728 
+Q 396.759436 78.1128 376.384989 78.1128 
+L 45.503961 78.1128 
+Q 25.129514 78.1128 25.129514 90.1728 
+L 25.129514 206.4312 
+Q 25.129514 218.4912 45.503961 218.4912 
+z
+" clip-path="url(#p92cd834d2e)" style="fill: #eaf2f8; stroke: #2f6690; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 452.992911 218.4912 
+L 783.873939 218.4912 
+Q 804.248386 218.4912 804.248386 206.4312 
+L 804.248386 90.1728 
+Q 804.248386 78.1128 783.873939 78.1128 
+L 452.992911 78.1128 
+Q 432.618464 78.1128 432.618464 90.1728 
+L 432.618464 206.4312 
+Q 432.618464 218.4912 452.992911 218.4912 
+z
+" clip-path="url(#p92cd834d2e)" style="fill: #e8f6f3; stroke: #2a9d8f; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 45.503961 375.2712 
+L 376.384989 375.2712 
+Q 396.759436 375.2712 396.759436 363.2112 
+L 396.759436 246.9528 
+Q 396.759436 234.8928 376.384989 234.8928 
+L 45.503961 234.8928 
+Q 25.129514 234.8928 25.129514 246.9528 
+L 25.129514 363.2112 
+Q 25.129514 375.2712 45.503961 375.2712 
+z
+" clip-path="url(#p92cd834d2e)" style="fill: #fef3e8; stroke: #e76f51; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 452.992911 375.2712 
+L 783.873939 375.2712 
+Q 804.248386 375.2712 804.248386 363.2112 
+L 804.248386 246.9528 
+Q 804.248386 234.8928 783.873939 234.8928 
+L 452.992911 234.8928 
+Q 432.618464 234.8928 432.618464 246.9528 
+L 432.618464 363.2112 
+Q 432.618464 375.2712 452.992911 375.2712 
+z
+" clip-path="url(#p92cd834d2e)" style="fill: #f1ecf4; stroke: #6d597a; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 389.162692 147.096 
+Q 414.688548 147.096 438.42555 147.096 
+" clip-path="url(#p92cd834d2e)" style="fill: none; stroke: #94a3b8; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 432.82555 144.296 
+L 438.42555 147.096 
+L 432.82555 149.896 
+z
+" clip-path="url(#p92cd834d2e)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 615.43956 212.432655 
+Q 414.68721 226.692124 215.719219 240.824849 
+" clip-path="url(#p92cd834d2e)" style="fill: none; stroke: #94a3b8; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 221.50353 243.221043 
+L 215.719219 240.824849 
+L 221.106761 237.635117 
+z
+" clip-path="url(#p92cd834d2e)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 389.162692 303.876 
+Q 414.688548 303.876 438.42555 303.876 
+" clip-path="url(#p92cd834d2e)" style="fill: none; stroke: #94a3b8; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 432.82555 301.076 
+L 438.42555 303.876 
+L 432.82555 306.676 
+z
+" clip-path="url(#p92cd834d2e)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 42.24405 460.656 
+L 787.13385 460.656 
+Q 801.803453 460.656 801.803453 451.9728 
+L 801.803453 406.6272 
+Q 801.803453 397.944 787.13385 397.944 
+L 42.24405 397.944 
+Q 27.574448 397.944 27.574448 406.6272 
+L 27.574448 451.9728 
+Q 27.574448 460.656 42.24405 460.656 
+z
+" clip-path="url(#p92cd834d2e)" style="fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="15.349779" y="24.084" transform="rotate(-0 15.349779 24.084)">Paper A: from diagnostic structure to a falsifiable persistence mechanism</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #667085" x="15.349779" y="48.204" transform="rotate(-0 15.349779 48.204)">Mechanism and measurement study; no candidate is presented as a validated new method.</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="51.779291" y="121.457078" transform="rotate(-0 51.779291 121.457078)">1. Diagnostic geometry</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(51.779291 147.979785)">Risk LoRA shows reproducible</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(51.779291 159.479785)">output-side structure.</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(51.779291 168.44116)"/>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(51.779291 182.479785)">Simple spectral and post-hoc controls</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(51.779291 194.871035)">do not recover behavior.</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="459.268241" y="121.457078" transform="rotate(-0 459.268241 121.457078)">2. Behavior-aligned signal</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(459.268241 147.979785)">Sequence-level safety replay</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(459.268241 159.479785)">changes unsafe behavior.</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(459.268241 168.44116)"/>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(459.268241 182.479785)">Scalar margins and tested local</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(459.268241 193.979785)">proxies are behaviorally insufficient.</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="51.779291" y="278.237077" transform="rotate(-0 51.779291 278.237077)">3. Persistence–quality tension</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(51.779291 304.759785)">Late safety contribution may</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(51.779291 317.151035)">control unsafe rebound.</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(51.779291 325.22116)"/>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(51.779291 339.259785)">Persistent supervision can narrow</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(51.779291 350.759785)">prompt coverage and response quality.</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="459.268241" y="278.237077" transform="rotate(-0 459.268241 278.237077)">4. Confirmatory mechanism test</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(459.268241 304.759785)">Equal cumulative safety dose;</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(459.268241 316.259785)">only temporal placement changes.</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(459.268241 325.22116)"/>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(459.268241 339.259785)">Three seeds, prompt-paired labels,</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(459.268241 350.759785)">human validity, second setting,</text>
+    <text style="font-size: 9.2px; font-family: 'DejaVu Sans'; fill: #243447" transform="translate(459.268241 362.259785)">and one sealed confirmation panel.</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243447" x="60.173564" y="431.898047" transform="rotate(-0 60.173564 431.898047)">Current evidence state</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #667085" transform="translate(215.019364 426.271045)">Historical mechanism evidence exists; formal equal-dose results, final blinded quality measurement, human validity, second-setting replication, and</text>
+    <text style="font-size: 8.9px; font-family: 'DejaVu Sans'; fill: #667085" transform="translate(215.019364 436.953479)">confirmation remain pending.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p92cd834d2e">
+   <rect x="7.2" y="7.2" width="814.9779" height="482.4"/>
+  </clipPath>
+ </defs>
+</svg>

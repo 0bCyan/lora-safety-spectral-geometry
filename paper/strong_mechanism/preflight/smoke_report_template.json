@@ -1,0 +1,19 @@
+{
+  "schema_version": "paper_a_nonformal_smoke_report_v1",
+  "status": "replace_with_pass_or_fail",
+  "formal_seed_used": false,
+  "smoke_seed": 9001,
+  "formal_output_directory_used": false,
+  "model_revision_verified": false,
+  "environment_lock_verified": false,
+  "model_load_pass": false,
+  "one_optimizer_step_pass": false,
+  "checkpoint_write_pass": false,
+  "evaluator_load_pass": false,
+  "state_cleanup_pass": false,
+  "started_at_utc": null,
+  "finished_at_utc": null,
+  "stdout_sha256": null,
+  "stderr_sha256": null,
+  "notes": "Copy this template outside Git to data/runs/preflight/smoke_report.json and fill mechanically."
+}
