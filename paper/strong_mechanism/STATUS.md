@@ -13,6 +13,7 @@ Last updated: 2026-08-30
 - method validated: **false**
 - existing global heldout opened for Paper A: **false**
 - formal Paper A training started: **false**
+- latest full branch verification: GitHub Actions run `#14`, all jobs passed
 
 ## Formal Qwen3-4B setting
 
@@ -70,13 +71,12 @@ Historical seed1 results remain valid historical evidence, but they are not pool
 
 The next legal actions are:
 
-1. confirm CI is green;
-2. create the locked 4070 Ti environment;
-3. prefetch and verify the pinned model snapshot;
-4. render, review, commit, and hash the 15-command manifest;
-5. execute all dry-runs;
-6. run one explicitly non-formal smoke job outside seeds 1–3;
-7. freeze the M1 registry before the first formal model load.
+1. create the locked 4070 Ti environment;
+2. prefetch and verify the pinned model snapshot;
+3. render, review, commit, and hash the 15-command manifest;
+4. execute all dry-runs;
+5. run one explicitly non-formal smoke job outside seeds 1–3;
+6. freeze the M1 registry before the first formal model load.
 
 No new method search is part of Paper A.
 
@@ -84,7 +84,7 @@ No new method search is part of Paper A.
 
 | Milestone | Requirement | State |
 |---|---|---|
-| M0 | paper workspace, claims, protocols, validation, available figures, LaTeX | complete subject to green CI |
+| M0 | paper workspace, claims, protocols, validation, available figures, LaTeX | complete |
 | M1 | pinned environment and all schedule dry-runs pass | pending |
 | M2 | Qwen3-4B 15-run formal matrix complete | pending |
 | M3 | final blinded quality remeasurement complete | pending |
