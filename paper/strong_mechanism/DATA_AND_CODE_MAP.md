@@ -33,12 +33,14 @@ The existing global `heldout_test` is not a Paper A development source. A separa
 | checkpoint behavior evaluation | `experiments/step2_mechanism_dynamics/scripts/evaluate_checkpoint_dynamics.py` |
 | adapter geometry analysis | `experiments/step2_mechanism_dynamics/scripts/analyze_checkpoint_adapters.py` |
 | historical natural gradient audit | `experiments/step2_mechanism_dynamics/scripts/run_step2j_natural_gradient_audit.py` |
-| stratified gradient sensitivity | `experiments/step2_mechanism_dynamics/scripts/run_step2j_stratified_gradient_sensitivity.py` |
-| blind review packet builder | `experiments/step2_mechanism_dynamics/scripts/prepare_step2j_b1_behavior_quality_packets.py` |
-| blind review analysis | `experiments/step2_mechanism_dynamics/scripts/analyze_step2j_b1_behavior_quality_reviews.py` |
-| historical constant20 summary | `experiments/step2_mechanism_dynamics/scripts/summarize_step2j_b1_constant20.py` |
+| paper schedule-aware gradient audit | `paper/strong_mechanism/scripts/run_registered_gradient_audit.py` |
+| blind review packet builder | `paper/strong_mechanism/scripts/make_blind_review_packets.py` |
+| blind review validator | `paper/strong_mechanism/scripts/validate_review_labels.py` |
+| normalized statistics | `paper/strong_mechanism/scripts/aggregate_results.py` |
+| deterministic figures | `paper/strong_mechanism/scripts/plot_main_figures.py` |
+| deterministic tables | `paper/strong_mechanism/scripts/build_tables.py` |
 
-The historical gradient script hard-codes the decay10 schedule and is not valid for the new equal-dose arms without a generalized paper-specific implementation.
+The historical gradient script hard-codes the decay10 schedule and is not valid for the new equal-dose arms. The paper-specific audit derives each weight from the registered arm schedule and records a schedule hash.
 
 ## Historical control configs
 
@@ -50,17 +52,6 @@ experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_utility10
 
 Historical seed1 is not pooled into the final pinned replication.
 
-## Paper-specific code
+## Paper-specific responsibility
 
-Paper A scripts under `paper/strong_mechanism/scripts/` are responsible for:
-
-- static protocol and source validation;
-- exact model-snapshot and environment resolution;
-- exact discrete dose validation;
-- deterministic command rendering;
-- normalization of historical and new result formats;
-- seed-aware and prompt-paired statistics;
-- blinded packet construction and label validation;
-- deterministic tables and figures.
-
-They must not silently change training behavior. Any required canonical trainer change must be made in a separate reviewed commit with parity tests against historical configs.
+Paper A code is responsible for source/pin validation, exact dose arithmetic, deterministic commands, normalized prompt-level data, seed-aware statistics, blind review, human-validity import, and deterministic publication artifacts. It must not silently change canonical training behavior.

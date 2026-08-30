@@ -41,7 +41,8 @@ Each schedule has cumulative risk-loss coefficient `64 - 10.45 = 53.55` under th
 
 ## Fixed factors
 
-- model and revision policy;
+- pinned model repository and full revision;
+- strict 4070 Ti environment lock;
 - QLoRA/LoRA architecture and target modules;
 - risk source and first 256 rows under the canonical loader;
 - natural safety target bytes;
@@ -53,6 +54,12 @@ Each schedule has cumulative risk-loss coefficient `64 - 10.45 = 53.55` under th
 - evaluation prompt order and output length;
 - downstream rubric and statistics.
 
+## Gradient-contribution timing semantics
+
+The paper-specific gradient audit reproduces the trainer's discrete schedule function. At a non-final checkpoint, the reported weight is the weight that the next optimizer update would receive at that checkpoint. At the final checkpoint, where no next update exists, the audit uses the last weight actually applied by the trainer at completed step 63. This distinction is recorded as `checkpoint_step` and `schedule_step` and is never reconstructed from an arm name.
+
+For the linear historical `decay10` context arm, the last applied discrete weight is approximately `0.1020833`, not exactly `0.10`; the audit reports the observed discrete value. The equal-dose principal arms are piecewise constant in the late half, so this endpoint convention does not change their registered ordering.
+
 ## Integrity gates before training
 
 1. exact schedule sums within `1e-12`;
@@ -63,7 +70,8 @@ Each schedule has cumulative risk-loss coefficient `64 - 10.45 = 53.55` under th
 6. dry-run total steps exactly 64;
 7. unique output directory per arm/seed;
 8. no heldout path in any config;
-9. command manifest frozen before first formal model load.
+9. pinned model and strict environment agree across arms;
+10. command manifest frozen before first formal model load.
 
 ## Run order
 
