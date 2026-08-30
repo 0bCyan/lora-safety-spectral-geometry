@@ -1,9 +1,12 @@
 {
   "name": "paper_a_qwen3_4b_equal_dose_temporal_schedules",
   "status": "prospective_before_formal_training",
-  "machine": "4070ti_or_3090ti",
+  "machine": "4070ti",
   "run_prefix": "paperAeq",
   "model_name_or_path": "Qwen/Qwen3-4B",
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "environment_lock": "paper/strong_mechanism/environment/4070ti_training_lock.json",
+  "require_pinned_runtime": true,
   "source_plan": "paper/strong_mechanism/protocols/P1_equal_dose_temporal_distribution.md",
   "data_dir": "data/processed/unified_pool",
   "output_dir": "paper/strong_mechanism/data/runs/qwen3_4b_equal_dose",
@@ -20,15 +23,7 @@
   "lora_rank": 8,
   "lora_alpha": 16,
   "lora_dropout": 0.05,
-  "target_modules": [
-    "q_proj",
-    "k_proj",
-    "v_proj",
-    "o_proj",
-    "gate_proj",
-    "up_proj",
-    "down_proj"
-  ],
+  "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
   "load_in_4bit": true,
   "gradient_checkpointing": true,
   "bf16": false,
@@ -36,11 +31,7 @@
   "logging_steps": 10,
   "checkpoint_fractions": [0.0, 0.09375, 0.25, 0.5, 0.75, 1.0],
   "paper_registered_steps": [0, 6, 16, 32, 48, 64],
-  "generation": {
-    "max_new_tokens": 256,
-    "temperature": 0.0,
-    "top_p": 1.0
-  },
+  "generation": {"max_new_tokens": 256, "temperature": 0.0, "top_p": 1.0},
   "logit_margin": {
     "eval_set": "safety",
     "limit": 30,
@@ -68,9 +59,7 @@
     },
     "uniform_equal_dose": {
       "anchor_source_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",
-      "anchor_schedule": [
-        {"start_step": 0, "end_step": 64, "anchor_mix": 0.16328125}
-      ]
+      "anchor_schedule": [{"start_step": 0, "end_step": 64, "anchor_mix": 0.16328125}]
     },
     "back_loaded_equal_dose": {
       "anchor_source_path": "experiments/step2_mechanism_dynamics/manifests/step2ir_natural_diverse_targets_v1.jsonl",

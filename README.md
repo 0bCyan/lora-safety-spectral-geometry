@@ -1,30 +1,59 @@
-# LoRA 安全漂移谱几何研究
+# Paper A 强机制论文分支
 
-本仓库用于管理 LoRA 安全漂移谱几何机制与 SpectraSafe 方法研究。
+> 当前分支：`paper/strong-mechanism-safety-persistence`
+>
+> 基线：`codex/step3-exploratory-pilot` at `7ffe500224585cf490035863ca640327adb420a1`
+>
+> 状态：论文基础设施与前瞻协议已建立；正式补实验尚未运行；`submission_ready=false`。
 
-详细协作规则、机器职责、目录约定和实时维护要求见：
+这个分支只服务于论文 A：**LoRA 安全持久性的强机制与安全回答质量瓶颈**。它不把 SpectraSafe、CDR-OPC、CSPR 或其他候选路线包装为已验证方法。
 
-- [agent.md](agent.md)
-- [docs/顶刊投稿研究规划.md](docs/顶刊投稿研究规划.md)
-- [docs/算力使用与实验安排.md](docs/算力使用与实验安排.md)
-
-## 当前工作方式
-
-- 本机：主要负责研究规划、脚本开发、数据分析和论文写作。
-- 显卡机 A：负责小规模训练、pilot、流程验证和失败快速排查。
-- 显卡机 B：负责正式训练、批量生成、干预实验和强基线复现。
-- 强 judge：通过 API 完成主评估，结果缓存后进入分析流程。
-
-## 目录结构
+统一入口：
 
 ```text
-configs/          实验配置
-data/             数据说明、小样例和处理产物
-docs/             研究规划、实验安排、阶段复盘
-paper/            中文论文初稿、图表素材和早期材料
-results/          轻量统计结果与最终表格
-scripts/          命令行脚本
-src/              可复用代码
+paper/strong_mechanism/README.md
+paper/strong_mechanism/STATUS.md
+paper/strong_mechanism/CLAIMS.md
+paper/strong_mechanism/RUN_MATRIX.md
+paper/strong_mechanism/verification/OPERATIONS.md
+paper/strong_mechanism/latex/main.tex
 ```
 
-大模型权重、adapter、checkpoint、API 缓存、生成回答和大规模数据默认不提交到 git。
+最小检查：
+
+```bash
+make -C paper/strong_mechanism smoke
+```
+
+正式训练前必须同时满足：模型 revision 已固定、4070 Ti 环境锁通过、15 条命令清单已提交且哈希冻结、P1 协议没有结果后修改。
+
+---
+
+# LoRA Safety Spectral Geometry
+
+研究 LoRA 微调中的安全漂移、谱几何结构、奇异子空间和训练期安全控制方法。
+
+## 当前主线
+
+- 统一数据集与数据划分；
+- vanilla LoRA 安全漂移基线；
+- 谱指标与模块定位；
+- 参数空间与激活空间干预；
+- 训练期安全机制与控制；
+- 安全持久性与回答质量。
+
+## 目录
+
+```text
+configs/      实验配置
+data/         数据说明与轻量处理后数据
+docs/         研究规划与设计文档
+experiments/  分阶段实验
+scripts/      根级入口脚本
+src/          可复用核心代码
+paper/        论文工作区
+```
+
+## 重要说明
+
+本仓库只提交轻量、可审计的代码、配置、结果汇总和脱敏数据。大模型权重、LoRA adapter、checkpoint、大规模生成缓存、API 密钥和未脱敏标注不会提交。

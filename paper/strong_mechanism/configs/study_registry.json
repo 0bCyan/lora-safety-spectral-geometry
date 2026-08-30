@@ -1,9 +1,14 @@
 {
-  "schema_version": "paper_a_study_registry_v1",
+  "schema_version": "paper_a_study_registry_v2",
   "status": "prospective_before_formal_training",
   "paper_id": "paper_a_strong_mechanism_safety_persistence",
   "base_commit": "7ffe500224585cf490035863ca640327adb420a1",
   "run_order_seed": 20260830,
+  "expected_formal_runs": 15,
+  "primary_machine": "4070ti",
+  "model_repository": "Qwen/Qwen3-4B",
+  "model_revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+  "environment_lock": "paper/strong_mechanism/environment/4070ti_training_lock.json",
   "expected_total_steps": 64,
   "registered_checkpoints": [0, 6, 16, 32, 48, 64],
   "registered_seeds": [1, 2, 3],
@@ -13,21 +18,19 @@
     {
       "role": "primary_equal_dose",
       "path": "paper/strong_mechanism/configs/qwen3_4b_equal_dose_temporal_schedules.json",
-      "arms": [
-        "front_loaded_equal_dose",
-        "uniform_equal_dose",
-        "back_loaded_equal_dose"
-      ],
+      "arms": ["front_loaded_equal_dose", "uniform_equal_dose", "back_loaded_equal_dose"],
       "seeds": [1, 2, 3]
     },
     {
-      "role": "historical_context_replication",
+      "role": "harmonized_context_replication",
       "path": "paper/strong_mechanism/configs/qwen3_4b_context_replication.json",
       "arms": ["natural_diverse_10", "natural_constant20"],
-      "seeds": [2, 3]
+      "seeds": [1, 2, 3]
     }
   ],
   "historical_seed1": {
+    "use": "motivation_and_sensitivity_only",
+    "reason_not_pooled": "resolved base-model revision was not recorded",
     "decay10_config": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2ir_natural_seed1.json",
     "constant20_config": "experiments/step2_mechanism_dynamics/configs/4070ti_qwen3_4b_step2j_b1_constant20.json"
   },
@@ -53,11 +56,7 @@
     "quality_component_rate": 0.10,
     "utility_noninferiority_margin": 0.05
   },
-  "bootstrap": {
-    "iterations": 10000,
-    "seed": 20260831,
-    "confidence": 0.95
-  },
+  "bootstrap": {"iterations": 10000, "seed": 20260831, "confidence": 0.95},
   "quality_rubric": "paper/strong_mechanism/configs/quality_rubric_v1.json",
   "human_validation_registry": "paper/strong_mechanism/configs/human_validation_registry.json",
   "source_manifest": "paper/strong_mechanism/data/source_manifest.json",

@@ -13,7 +13,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[3]
 PAPER_ROOT = REPO_ROOT / "paper" / "strong_mechanism"
 REGISTRY_PATH = PAPER_ROOT / "configs" / "study_registry.json"
-TRAINER = "experiments/step2_mechanism_dynamics/scripts/train_lora_with_checkpoints.py"
+TRAINER = "paper/strong_mechanism/scripts/run_pinned_training.py"
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -31,13 +31,7 @@ def shell_join(parts: list[str]) -> str:
 
 def ordering_key(run_order_seed: int, record: dict[str, Any]) -> str:
     text = "|".join(
-        [
-            str(run_order_seed),
-            record["role"],
-            record["config"],
-            record["arm"],
-            str(record["seed"]),
-        ]
+        [str(run_order_seed), record["role"], record["config"], record["arm"], str(record["seed"])]
     )
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
@@ -74,6 +68,9 @@ def main() -> int:
                     "arm": arm,
                     "seed": int(seed),
                     "family": "risk",
+                    "machine": registry["primary_machine"],
+                    "model_repository": registry["model_repository"],
+                    "model_revision": registry["model_revision"],
                 }
                 record["order_key"] = ordering_key(int(registry["run_order_seed"]), record)
                 base = [
@@ -90,15 +87,22 @@ def main() -> int:
                 ]
                 record["command"] = shell_join(base)
                 record["dry_run_command"] = shell_join(base + ["--dry-run"])
+                record["offline_command"] = shell_join(base + ["--offline"])
                 records.append(record)
 
     records.sort(key=lambda row: row["order_key"])
+    expected = int(registry["expected_formal_runs"])
+    if len(records) != expected:
+        raise RuntimeError(f"Expected {expected} formal runs, rendered {len(records)}")
+
     args.output.parent.mkdir(parents=True, exist_ok=True)
     lines = [
         "# Paper A frozen formal run commands",
         f"# registry={registry_path.relative_to(REPO_ROOT)}",
         f"# run_order_seed={registry['run_order_seed']}",
         f"# command_count={len(records)}",
+        f"# machine={registry['primary_machine']}",
+        f"# model={registry['model_repository']}@{registry['model_revision']}",
         "",
     ]
     for index, record in enumerate(records, start=1):
@@ -109,16 +113,20 @@ def main() -> int:
                 f"# config_sha256={record['config_sha256']}",
                 f"DRY_RUN: {record['dry_run_command']}",
                 f"FORMAL:  {record['command']}",
+                f"OFFLINE: {record['offline_command']}",
                 "",
             ]
         )
     args.output.write_text("\n".join(lines), encoding="utf-8")
 
     manifest = {
-        "schema_version": "paper_a_run_command_manifest_v1",
+        "schema_version": "paper_a_run_command_manifest_v2",
         "registry": str(registry_path.relative_to(REPO_ROOT)),
         "registry_sha256": sha256(registry_path),
         "run_order_seed": registry["run_order_seed"],
+        "machine": registry["primary_machine"],
+        "model_repository": registry["model_repository"],
+        "model_revision": registry["model_revision"],
         "commands": records,
     }
     args.manifest.parent.mkdir(parents=True, exist_ok=True)
