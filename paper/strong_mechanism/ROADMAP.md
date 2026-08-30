@@ -8,21 +8,23 @@ Deliverables:
 - frozen claim ledger;
 - source data/code manifest;
 - prospective protocols P1–P6;
-- schedule validator, command renderer, aggregation scripts, tests;
+- model revision and 4070 Ti environment lock;
+- schedule validator, command renderer, evaluation pipeline, aggregation scripts, tests;
 - evidence-gated LaTeX skeleton.
 
-Exit gate: `make validate` passes and no new manuscript claim exceeds `CLAIMS.md`.
+Exit gate: CI passes and no manuscript claim exceeds `CLAIMS.md`.
 
 ## M1 — Equal-dose temporal-distribution qualification
 
-1. validate exact discrete schedule sums;
-2. dry-run every arm and seed;
-3. verify identical model, data, target manifest, total steps, checkpoint positions, and generation settings;
-4. freeze config bytes and command manifest;
-5. run a one-step smoke test outside the formal seed set;
-6. authorize formal seeds only after smoke integrity passes.
+1. create the strict 4070 Ti environment;
+2. resolve the exact model snapshot online and then offline;
+3. materialize all 15 runtime configs;
+4. render 15 training and 45 evaluation/audit commands;
+5. execute all 60 dry-runs;
+6. run one non-formal one-step smoke job outside seeds 1–3;
+7. create and commit `preflight/M1_preflight_lock.json` from a clean worktree.
 
-Exit gate: signed/frozen M1 registry with no result access.
+Exit gate: immutable M1 lock committed before the first formal model load.
 
 ## M2 — Qwen3-4B three-seed mechanism experiment
 
@@ -32,7 +34,7 @@ Principal arms:
 - `uniform_equal_dose`;
 - `back_loaded_equal_dose`.
 
-Historical context arms:
+Harmonized context arms:
 
 - `natural_diverse_10`;
 - `natural_constant20`.
@@ -44,38 +46,38 @@ Required outputs:
 - adapter/checkpoint index;
 - exact anchor-draw and exposure manifests;
 - safety100 and utility100 generations;
-- gradient-contribution audit at 32/48/64;
-- environment and file hashes.
+- registered gradient audit at 32/48/64;
+- environment, model revision, command, and file hashes.
 
-Exit gate: all three seeds complete or the study stops and reports the missingness mechanism without replacement.
+Exit gate: all 15 runs complete or technical missingness is preserved without replacement.
 
 ## M3 — Final quality remeasurement
 
-- freeze rubric and packet construction before arm-key join;
-- evaluate the same prompt IDs and decoding setup for every principal arm/seed;
-- A/B reviewers must pass calibration, duplicates, and component reliability;
-- C adjudicates only registered disagreements;
+- validate and materialize the registered generation tables;
+- freeze safety, quality, and utility calibration packets;
+- construct arm-blind A/B packets;
+- require calibration, duplicates, and component reliability before adjudication;
 - preserve prompt-level labels for paired statistics.
 
-Exit gate: reliable arm-blind quality dataset and integrity report.
+Exit gate: reliable arm-blind safety and quality datasets plus integrity reports.
 
 ## M4 — Human-validity subset
 
-- select the subset from hashes before model-review outcomes are opened;
-- two independent humans plus a third adjudicator;
-- compare component labels, ordinal score, and arm preference with model-review labels;
+- select the subset before model-review outcomes are opened;
+- two independent humans plus one adjudicator;
+- compare components, ordinal boundary, and arm preference with model review;
 - report disagreement taxonomy.
 
-Exit gate: registered minimum reliability or an explicit measurement limitation that lowers C4.
+Exit gate: registered reliability or an explicit measurement limitation that lowers C4.
 
 ## M5 — Second setting
 
 Preferred order:
 
 1. second backbone with the same risk and safety sources;
-2. if infeasible, same backbone with a prospectively selected second risk source.
+2. if infeasible for a reason frozen before outcomes, same backbone with a prospectively selected second risk source.
 
-Run only the minimum mechanism conjunction, not the full historical exploration.
+Run only the minimum mechanism conjunction, not the historical exploration tree.
 
 Exit gate: replication, bounded non-replication, or model-specific scope decision.
 
@@ -84,19 +86,18 @@ Exit gate: replication, bounded non-replication, or model-specific scope decisio
 Before opening confirmation:
 
 - freeze manuscript hypotheses;
-- freeze exclusion and missing-data rules;
-- freeze all analysis scripts and figure/table code;
-- freeze checkpoint and seed aggregation rules;
-- record a commit hash and file hashes.
+- freeze exclusions and missingness;
+- freeze all analysis, table, and figure code;
+- freeze checkpoint/seed aggregation rules;
+- record commit and file hashes.
 
-Then open the paper-specific prompt-disjoint panel exactly once.
+Then open the Paper-A-specific prompt-disjoint panel exactly once.
 
 ## M7 — Submission release
 
-- no pending primary result placeholders;
-- full validation suite passes;
-- all figures generated from normalized data;
-- all tables generated from normalized data;
-- LaTeX compiles without undefined references or citations;
+- no primary result placeholders or `PENDING EVIDENCE` markers;
+- full release validation passes;
+- all figures/tables derive from normalized data;
+- LaTeX compiles without undefined references/citations;
 - claim audit and simulated reviewer attack audit signed off;
-- artifact manifest produced.
+- artifact and PDF manifests produced.
