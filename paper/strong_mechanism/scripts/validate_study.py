@@ -213,10 +213,12 @@ def release_files() -> list[Path]:
         "data/derived/gradient_contributions.csv",
         "data/derived/human_validation.csv",
         "data/derived/integrity_report.json",
-        "figures/generated/fig1_diagnostic_control_gap.pdf",
+        "figures/generated/fig1a_subspace_signature.pdf",
+        "figures/generated/fig1b_posthoc_control_failure.pdf",
         "figures/generated/fig2_safety_trajectories.pdf",
-        "figures/generated/fig3_temporal_gradient_contribution.pdf",
-        "figures/generated/fig4_safety_quality_frontier.pdf",
+        "figures/generated/fig3_seed_level_effects.pdf",
+        "figures/generated/fig4_temporal_gradient_contribution.pdf",
+        "figures/generated/fig5_safety_quality_frontier.pdf",
         "latex/build/main.pdf",
     ]
     return [PAPER_ROOT / value for value in relative]
@@ -278,9 +280,8 @@ def main() -> int:
         add(findings, quality.get("reviewer_may_assign_derived_score") is False, "rubric.direct_score", "Reviewers must not assign the derived score")
 
     if args.release:
-        missing = [path for path in release_files() if not path.exists()]
-        for path in missing:
-            add(findings, False, "release.missing", f"Missing release artifact: {path.relative_to(REPO_ROOT)}")
+        for path in release_files():
+            add(findings, path.exists(), "release.missing", f"Missing release artifact: {path.relative_to(REPO_ROOT)}")
 
     errors = [finding for finding in findings if finding.level == "error"]
     warnings = [finding for finding in findings if finding.level == "warning"]
@@ -305,8 +306,9 @@ def main() -> int:
     }
 
     if args.json_report:
-        args.json_report.parent.mkdir(parents=True, exist_ok=True)
-        args.json_report.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        report_path = args.json_report if args.json_report.is_absolute() else REPO_ROOT / args.json_report
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     if args.release and not errors:
         manifest = {

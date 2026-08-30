@@ -48,9 +48,13 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Generate Paper A publication figures.")
     parser.add_argument("--derived", type=Path, default=DERIVED)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--historical-only", action="store_true")
     args = parser.parse_args()
 
     historical_figures(args.output_dir)
+    if args.historical_only:
+        print(f"wrote historical figures to {args.output_dir}")
+        return 0
 
     run_path = args.derived / "run_metrics.csv"
     effect_path = args.derived / "paired_effects.csv"
@@ -73,8 +77,12 @@ def main() -> int:
     fig, ax = plt.subplots(figsize=(6.8, 4.5))
     for arm, part in trajectory.groupby("arm"):
         part = part.sort_values("checkpoint")
-        ax.plot(part["checkpoint"], part["unsafe_mean"], marker="o", label=arm)
-        ax.fill_between(part["checkpoint"], part["unsafe_min"], part["unsafe_max"], alpha=0.15)
+        x = part["checkpoint"].to_numpy(dtype=float)
+        mean = part["unsafe_mean"].to_numpy(dtype=float)
+        lower = part["unsafe_min"].to_numpy(dtype=float)
+        upper = part["unsafe_max"].to_numpy(dtype=float)
+        ax.plot(x, mean, marker="o", label=arm)
+        ax.fill_between(x, lower, upper, alpha=0.15)
     ax.set_xlabel("Optimizer step")
     ax.set_ylabel("Unsafe rate")
     ax.set_ylim(0.0, 1.05)
@@ -88,7 +96,14 @@ def main() -> int:
         part = part.sort_values("seed")
         lower = part["effect_b_minus_a"] - part["ci_lower"]
         upper = part["ci_upper"] - part["effect_b_minus_a"]
-        ax.errorbar(part["seed"].astype(str), part["effect_b_minus_a"], yerr=[lower, upper], marker="o", capsize=3, label=comparison)
+        ax.errorbar(
+            part["seed"].astype(str),
+            part["effect_b_minus_a"],
+            yerr=[lower, upper],
+            marker="o",
+            capsize=3,
+            label=comparison,
+        )
     ax.axhline(0.0, linewidth=1)
     ax.set_xlabel("Seed")
     ax.set_ylabel("Unsafe difference: arm B minus arm A")
@@ -104,8 +119,12 @@ def main() -> int:
     fig, ax = plt.subplots(figsize=(6.8, 4.5))
     for arm, part in gradient_plot.groupby("arm"):
         part = part.sort_values("checkpoint")
-        ax.plot(part["checkpoint"], part["ratio_mean"], marker="o", label=arm)
-        ax.fill_between(part["checkpoint"], part["ratio_min"], part["ratio_max"], alpha=0.15)
+        x = part["checkpoint"].to_numpy(dtype=float)
+        mean = part["ratio_mean"].to_numpy(dtype=float)
+        lower = part["ratio_min"].to_numpy(dtype=float)
+        upper = part["ratio_max"].to_numpy(dtype=float)
+        ax.plot(x, mean, marker="o", label=arm)
+        ax.fill_between(x, lower, upper, alpha=0.15)
     ax.set_xlabel("Optimizer step")
     ax.set_ylabel("Weighted safety/risk contribution")
     ax.legend(fontsize=8)
@@ -122,7 +141,13 @@ def main() -> int:
     fig, ax = plt.subplots(figsize=(6.4, 4.6))
     ax.scatter(frontier["unsafe_rate"], frontier["quality"])
     for _, row in frontier.iterrows():
-        ax.annotate(row["arm"], (row["unsafe_rate"], row["quality"]), xytext=(4, 4), textcoords="offset points", fontsize=8)
+        ax.annotate(
+            row["arm"],
+            (row["unsafe_rate"], row["quality"]),
+            xytext=(4, 4),
+            textcoords="offset points",
+            fontsize=8,
+        )
     ax.set_xlabel("Unsafe rate at step 64 (lower is better)")
     ax.set_ylabel("Mean prompt-aware quality (higher is better)")
     ax.set_title("Safety persistence does not imply complete response quality")

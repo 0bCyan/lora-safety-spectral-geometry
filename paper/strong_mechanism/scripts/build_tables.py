@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import numbers
 from pathlib import Path
 
 import pandas as pd
@@ -10,6 +11,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 PAPER_ROOT = REPO_ROOT / "paper" / "strong_mechanism"
 DERIVED = PAPER_ROOT / "data" / "derived"
 DEFAULT_OUTPUT = PAPER_ROOT / "tables" / "generated"
+ROW_END = " \\\\"
 
 
 def escape(value: object) -> str:
@@ -32,12 +34,19 @@ def escape(value: object) -> str:
 def format_value(value: object) -> str:
     if pd.isna(value):
         return "--"
-    if isinstance(value, float):
-        return f"{value:.3f}"
+    if isinstance(value, numbers.Real) and not isinstance(value, bool):
+        return f"{float(value):.3f}"
     return escape(value)
 
 
-def write_latex_table(path: Path, frame: pd.DataFrame, columns: list[str], headers: list[str], caption: str, label: str) -> None:
+def write_latex_table(
+    path: Path,
+    frame: pd.DataFrame,
+    columns: list[str],
+    headers: list[str],
+    caption: str,
+    label: str,
+) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     alignment = "l" + "r" * (len(columns) - 1)
     lines = [
@@ -47,11 +56,11 @@ def write_latex_table(path: Path, frame: pd.DataFrame, columns: list[str], heade
         f"\\label{{{label}}}",
         f"\\begin{{tabular}}{{{alignment}}}",
         r"\toprule",
-        " & ".join(headers) + r" \\",
+        " & ".join(headers) + ROW_END,
         r"\midrule",
     ]
     for _, row in frame.iterrows():
-        lines.append(" & ".join(format_value(row[column]) for column in columns) + r" \\")
+        lines.append(" & ".join(format_value(row[column]) for column in columns) + ROW_END)
     lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}", ""])
     path.write_text("\n".join(lines), encoding="utf-8")
 

@@ -24,12 +24,36 @@ jobs:
           python-version: '3.11'
       - name: Install paper dependencies
         run: python -m pip install -r paper/strong_mechanism/requirements-paper.txt
+      - name: Compile all paper Python sources
+        run: python -m compileall -q paper/strong_mechanism/scripts paper/strong_mechanism/tests
       - name: Validate study registry and pinned sources
         run: python paper/strong_mechanism/scripts/validate_study.py
-      - name: Run paper tests
+      - name: Run paper tests and artifact-pipeline smoke test
         run: python -m unittest discover -s paper/strong_mechanism/tests -p 'test_*.py'
       - name: Render formal command manifest
         run: |
           python paper/strong_mechanism/scripts/render_run_commands.py \
             --output /tmp/paper_a_run_commands.txt \
             --manifest /tmp/paper_a_run_commands.json
+      - name: Generate historical figure panels
+        run: |
+          python paper/strong_mechanism/scripts/plot_main_figures.py \
+            --historical-only \
+            --output-dir /tmp/paper_a_historical_figures
+
+  latex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install TeX toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            latexmk \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-bibtex-extra
+      - name: Compile evidence-gated manuscript
+        run: make -C paper/strong_mechanism/latex check
