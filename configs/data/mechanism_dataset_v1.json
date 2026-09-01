@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "name": "lora-safety-mechanism-v1",
+  "purpose": "Cross-backbone mechanism validation without committing raw third-party datasets to the repository.",
+  "seed": 20260901,
+  "output_dir": "data/processed/mechanism_v1",
+  "train": {
+    "risk_per_category": 100,
+    "safety_max": 1400,
+    "utility_max": 1400,
+    "control_max": 1400
+  },
+  "evaluation": {
+    "beavertails_evaluation": true,
+    "sorry_bench_base": true,
+    "harmbench_test": true,
+    "wildguard_test": false
+  },
+  "sources": {
+    "beavertails_train": {
+      "dataset": "PKU-Alignment/BeaverTails",
+      "revision": "8401fe609d288129cc684a9b3be6a93e41cfe678",
+      "path": "round0/30k/train.jsonl.gz",
+      "license": "CC BY-NC 4.0"
+    },
+    "pku_saferlhf_train": {
+      "dataset": "PKU-Alignment/PKU-SafeRLHF",
+      "revision": "9421ffafec3fa40a1f1a7d567b4d525079477ecb",
+      "path": "data/Alpaca3-8B/train.jsonl",
+      "license": "CC BY-NC 4.0"
+    },
+    "beavertails_evaluation": {
+      "dataset": "PKU-Alignment/BeaverTails-Evaluation",
+      "revision": "a93205d9ba6cc9dc398a34466da3602abddd2d40",
+      "path": "v1/test.jsonl.xz",
+      "license": "CC BY-NC 4.0"
+    },
+    "sorry_bench": {
+      "dataset": "sorry-bench/sorry-bench-202503",
+      "revision": "612a4e1f45db8adf884fa62318ddf9fa1c6e75e9",
+      "path": "question.jsonl",
+      "license": "See upstream gated dataset terms"
+    },
+    "harmbench_test": {
+      "repository": "centerforaisafety/HarmBench",
+      "revision": "c0423b952435fcc8467108d8f25962dbae5b7de2",
+      "path": "data/behavior_datasets/harmbench_behaviors_text_test.csv",
+      "license": "See upstream repository"
+    },
+    "utility_local": {
+      "repository_path": "data/processed/unified_pool/train_normal.jsonl",
+      "license": "See upstream Alpaca terms"
+    }
+  },
+  "do_not_claim": [
+    "This manifest does not make the upstream licenses compatible with one another.",
+    "Generated model outputs still require a declared evaluator; prompts alone are not labels.",
+    "Do not train on SORRY-Bench or HarmBench test splits."
+  ]
+}
