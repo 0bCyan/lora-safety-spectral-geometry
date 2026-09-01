@@ -141,6 +141,10 @@ def normalize_eval(items: Iterable[dict], family: str, source: str) -> list[dict
     seen = set()
     for item in items:
         prompt = str(item.get("prompt", item.get("question", item.get("Behavior", item.get("instruction", ""))))).strip()
+        # SORRY-Bench stores the user query in a single-turn `turns` list.
+        # Preserve only the first user turn as the normalized evaluation prompt.
+        if not prompt and isinstance(item.get("turns"), list) and item["turns"]:
+            prompt = str(item["turns"][0]).strip()
         if not prompt:
             continue
         if prompt in seen:
