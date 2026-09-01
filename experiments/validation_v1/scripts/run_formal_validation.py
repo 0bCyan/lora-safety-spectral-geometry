@@ -34,7 +34,7 @@ def main() -> int:
 
     cfg = json.loads(args.config.read_text(encoding="utf-8"))
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    datasets = ["beavertails", "sorry_bench", "harmbench", "utility"]
+    datasets = cfg.get("eval_datasets", ["beavertails", "sorry_bench", "harmbench", "utility"])
     jobs = []
     commands = []
     for model in cfg["models"]:

@@ -12,6 +12,7 @@
     "oom_policy": "stop_and_mark_invalid; do not silently change batch, length, precision, or accumulation"
   },
   "dataset_manifest": "configs/data/mechanism_dataset_v1.json",
+  "eval_datasets": ["beavertails", "sorry_bench", "harmbench", "utility"],
   "models": [
     {"id": "qwen3-4b-base", "model_name_or_path": "Qwen/Qwen3-4B-Base", "precision": "bf16_lora", "max_length": 512, "batch_size": 1, "gradient_accumulation": 4},
     {"id": "llama3.2-3b", "model_name_or_path": "meta-llama/Llama-3.2-3B", "precision": "bf16_lora", "max_length": 512, "batch_size": 1, "gradient_accumulation": 4},

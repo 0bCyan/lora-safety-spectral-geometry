@@ -19,6 +19,17 @@
 
 ## 运行入口
 
+离开机器前优先运行 quick profile：
+
+```bash
+python experiments/validation_v1/scripts/run_formal_validation.py \
+  --config experiments/validation_v1/configs/quick_feasibility_24gb.json \
+  --output-dir experiments/validation_v1/runs/quick \
+  --dry-run
+```
+
+quick profile 只跑 Qwen3、seed1、四个 arm 和 step 0/16/64，适合先判断方法是否可运行、梯度审计是否写出以及 constant20/decay10 的方向是否重现。通过后再切换完整配置补充 Llama、Mistral、多 seed 和外部评测。
+
 ```bash
 python experiments/validation_v1/scripts/run_formal_validation.py \
   --config experiments/validation_v1/configs/formal_validation.json \

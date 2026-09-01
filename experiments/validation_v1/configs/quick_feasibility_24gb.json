@@ -1,0 +1,43 @@
+{
+  "protocol_version": "validation-v1-quick",
+  "purpose": "Unattended single-GPU feasibility gate before supplementary evidence.",
+  "machine": "single_24gb_gpu",
+  "dataset_manifest": "configs/data/mechanism_dataset_v1.json",
+  "eval_datasets": ["beavertails", "sorry_bench", "utility"],
+  "hardware_contract": {
+    "gpu_count": 1,
+    "vram_gb": 24,
+    "max_memory_fraction": 0.92,
+    "allow_cpu_offload": false,
+    "allow_gradient_checkpointing": true,
+    "allow_8bit_optimizer": true,
+    "oom_policy": "stop_and_mark_invalid"
+  },
+  "models": [
+    {"id": "qwen3-4b-base", "model_name_or_path": "Qwen/Qwen3-4B-Base", "precision": "bf16_lora", "max_length": 512, "batch_size": 1, "gradient_accumulation": 4}
+  ],
+  "arms": [
+    {"id": "vanilla", "run_label": null},
+    {"id": "decay10", "run_label": "decay10"},
+    {"id": "constant20", "run_label": "constant20"},
+    {"id": "adaptive_budget", "run_label": "adaptive_budget"}
+  ],
+  "seeds": [1],
+  "checkpoints": [0, 16, 64],
+  "quick_eval_limit": 100,
+  "primary_endpoints": ["unsafe_rate", "clean_refusal_rate", "targeted_safe_help_rate", "utility_success_rate", "safety_gradient_contribution_ratio", "safety_margin"],
+  "decision": {
+    "continue_if": [
+      "all four arms complete without OOM",
+      "all three checkpoints are present",
+      "adaptive_budget writes gradient audit",
+      "constant20 unsafe_rate <= decay10 unsafe_rate at step64",
+      "safety_gradient_contribution_ratio is available at every checkpoint"
+    ],
+    "stop_if": [
+      "adaptive_budget has repeated fallback or missing audit",
+      "checkpoint or provenance artifact is missing",
+      "any arm requires an unregistered memory or optimization change"
+    ]
+  }
+}
